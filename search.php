@@ -159,6 +159,7 @@ a {
     <div class="col-sm-2" style="width:11.66667%;">
     </div>
     <div class="col-sm-2">
+
        <a href="missing_reports.php">
        <button style="background-color:#CCC;width:200px;height:60px" class="mdl-button mdl-js-button mdl-button--raised">
        <p>Missing Report</p>
