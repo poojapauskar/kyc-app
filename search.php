@@ -141,7 +141,7 @@ a {
     <div class="col-sm-1">
     </div>
     <div class="col-sm-2">
-      <a href="neworgan.php">
+      <a href="neworganization.php">
       <button style="background-color:#CCC;width:200px;height:60px" class="mdl-button mdl-js-button mdl-button--raised">
       <p>New Entry<br>Organization</p>
       </button>
