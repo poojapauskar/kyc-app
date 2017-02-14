@@ -38,7 +38,7 @@ $output2 = file_get_contents($url2, false,$context2);
 /*echo $output2;*/
 $arr2 = json_decode($output2,true);
 if($arr2['status']==200){
-  echo "<script>location='admin_page.php'</script>";
+  echo "<script>location='search.php'</script>";
 }elseif($arr2['status']==401){
   echo "<script>alert('Password Invalid')</script>";
 }elseif($arr2['status']==400){
