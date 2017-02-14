@@ -21,45 +21,35 @@ td, th {
 <body>
 
 <?php
-if(isset($_POST['login_btn'])){
 $url_missing_report = 'https://kyc-application.herokuapp.com/missing_report/';
 $options_missing_report = array(
   'http' => array(
-    'header'  => array(
-                  'USERNAME: '.$_POST['username'],
-                  'PASSWORD: '.$_POST['password'],
-                ),
     'method'  => 'GET',
   ),
 );
 $context_missing_report = stream_context_create($options_missing_report);
 $output_missing_report = file_get_contents($url_missing_report, false,$context_missing_report);
-/*echo $output_missing_report;*/
+/*echo count($output_missing_report);*/
 $arr_missing_report = json_decode($output_missing_report,true);
-if($arr_missing_report['status']==_missing_report00){
-  echo "<script>location='search.php'</script>";
-}elseif($arr_missing_report['status']==401){
-  echo "<script>alert('Password Invalid')</script>";
-}elseif($arr_missing_report['status']==400){
-  echo "<script>alert('Invalid Credentials')</script>";
-}
+/*echo count($arr_missing_report);*/
 
-}
 ?>
 
-<table style="margin-left:20%;margin-top:10%">
+<table style="margin-left:20%;margin-top:0%">
   <tr>
     <th>Name</th>
     <th>UID</th>
     <th>Missing File</th>
     <th>Action</th>
   </tr>
+  <?php for($i=0;$i<count($arr_missing_report);$i++){?>
   <tr>
-    <td>Alfreds Futterkiste</td>
-    <td>Maria Anders</td>
-    <td>Germany</td>
+    <td><?php echo $arr_missing_report[$i]['name'] ?></td>
+    <td><?php echo $arr_missing_report[$i]['uid'] ?></td>
+    <td><?php echo $arr_missing_report[$i]['missing_file'] ?></td>
     <td><button>Generate Link</button></td>
   </tr>
+  <?php }?>
   
 </table>
 </body>
