@@ -16,16 +16,40 @@
 
 <body>
 
+<?php
+if(isset($_POST['submit'])){
+  $url_org = 'https://kyc-application.herokuapp.com/search/';
+  $options_org = array(
+    'http' => array(
+      'header'  => array(
+                          'TEXT: '.$_POST['search'],
+                         ),
+      'method'  => 'GET',
+    ),
+  );
+  $context_org = stream_context_create($options_org);
+  $output_org = file_get_contents($url_org, false,$context_org);
+  /*echo $output_org;*/
+  $arr_org = json_decode($output_org,true);
+  if($arr_org['response'][0]['message'] == 'organization'){
+    echo "<script>window.location.href='search_organization.php';</script>";
+  }else{
+    echo "<script>window.location.href='search_user.php';</script>";
+  }
+
+}
+?>
+
 <a href="index.php" class="btn btn-default btn-sm" style="margin-left:60%;margin-top:4%;">
 <span class="glyphicon glyphicon-log-out"></span> Log out
 </a>
 
  <div class="container">
   <div class="row" style="margin-top:4%;margin-left:4%"> 
-    <form class="form-wrapper">
-    <input type="text" id="search" placeholder="Search firm,Individual
+    <form class="form-wrapper" method="post" action="search.php">
+    <input type="text" id="search" name="search" placeholder="Search firm,Individual
     " required>
-    <input type="submit" value="Search" id="submit">
+    <input type="submit" value="Search" id="submit" name="submit">
     </form>
 
     <div class="col-sm-1">
