@@ -226,7 +226,8 @@ if(isset($_POST["save_btn"])) {
 }
 ?>
 
-<form class="form-horizontal" method="post" action="neworganization.php" enctype="multipart/form-data">
+<form class="form-horizontal" method="post" action="new_organization.php" enctype="multipart/form-data">
+
 <fieldset>
 
 <!-- Form Name -->
