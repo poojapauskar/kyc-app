@@ -521,7 +521,7 @@ if(isset($_POST["generate_btn"]) and ($_POST['uid'] != '' || $_POST['uid'] != nu
   <label class="col-md-4 control-label" for="singlebutton"></label>
   <div class="col-md-4">
     <button id="generate_btn" name="generate_btn" type="submit">Generate</button>
-    <button id="singlebutton" style="margin-left:13%;" name="singlebutton" class="btn btn-primary">Discard</button>
+    <button id="singlebutton" style="margin-left:13%;" name="singlebutton" class="btn btn-primary"><a style="color:white" href="search.php">Discard</a></button>
   </div>
 </div>
 

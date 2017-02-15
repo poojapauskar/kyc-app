@@ -16,7 +16,7 @@
 
 <body>
 
-<a href="logout.php" class="btn btn-default btn-sm" style="margin-left:60%;margin-top:4%;">
+<a href="index.php" class="btn btn-default btn-sm" style="margin-left:60%;margin-top:4%;">
 <span class="glyphicon glyphicon-log-out"></span> Log out
 </a>
 

@@ -411,7 +411,8 @@ if(isset($_POST["save_btn"])) {
   <label class="col-md-4 control-label" for="save_btn"></label>
   <div class="col-md-8">
     <button id="save_btn" name="save_btn" type="submit" class="btn btn-success" style="width: 10em;">Save</button><span><span></span></span>
-    <button id="close_btn" name="close_btn" class="btn btn-warning" style="width: 10em;">Cancel</button>
+    <button onclick="ClickEvent()" class="btn btn-warning"><a style="color:white" href="search.php">Cancel</a></button>
+  
   </div>
 </div>
 </fieldset>
