@@ -141,7 +141,7 @@ a {
     <div class="col-sm-1">
     </div>
     <div class="col-sm-2">
-      <a href="neworganization.php">
+      <a href="new_organization.php">
       <button style="background-color:#CCC;width:200px;height:60px" class="mdl-button mdl-js-button mdl-button--raised">
       <p>New Entry<br>Organization</p>
       </button>
@@ -150,7 +150,7 @@ a {
     <div class="col-sm-2" style="width:11.66667%;">
     </div>
     <div class="col-sm-2">
-      <a href="4th page.php">
+      <a href="new_user.php">
       <button style="background-color:#CCC;width:200px;height:60px" class="mdl-button mdl-js-button mdl-button--raised">
       <p>New Entry<br>Individual</p>
       </button>
