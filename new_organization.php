@@ -20,18 +20,18 @@
 
 if(isset($_POST["save_btn"])) {
 
-        $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+        /*$characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
         $charactersLength = strlen($characters);
         $randomString = '';
         for ($i = 0; $i < 4; $i++) {
             $randomString .= $characters[rand(0, $charactersLength - 1)];
-        }
+        }*/
 
         $names=array();
-        $names[0]= $randomString.rand(0, 9999).".jpg";
-        $names[1]= $randomString.rand(0, 9999).".jpg";
-        $names[2]= $randomString.rand(0, 9999).".jpg";
-        $names[3]= $randomString.rand(0, 9999).".jpg";
+        $names[0]= "reg_cert".rand(0, 9999).".jpg";
+        $names[1]= "pan_card".rand(0, 9999).".jpg";
+        $names[2]= "pass_book".rand(0, 9999).".jpg";
+        $names[3]= "telephone_bill".rand(0, 9999).".jpg";
         $names[4]= $randomString.rand(0, 9999).".jpg";
 
 

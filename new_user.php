@@ -92,13 +92,13 @@ if(isset($_POST["generate_btn"]) and ($_POST['uid'] != '' || $_POST['uid'] != nu
         }
 
         $names=array();
-        $names[0]= $randomString.rand(0, 9999).".jpg";
-        $names[1]= $randomString.rand(0, 9999).".jpg";
-        $names[2]= $randomString.rand(0, 9999).".jpg";
-        $names[3]= $randomString.rand(0, 9999).".jpg";
-        $names[4]= $randomString.rand(0, 9999).".jpg";
-        $names[5]= $randomString.rand(0, 9999).".jpg";
-        $names[6]= $randomString.rand(0, 9999).".jpg";
+        $names[0]= "pan_card".rand(0, 9999).".jpg";
+        $names[1]= "voter_id".rand(0, 9999).".jpg";
+        $names[2]= "pass_book".rand(0, 9999).".jpg";
+        $names[3]= "telephone_bill".rand(0, 9999).".jpg";
+        $names[4]= "aadhar_card".rand(0, 9999).".jpg";
+        $names[5]= "passport".rand(0, 9999).".jpg";
+        $names[6]= "profile".rand(0, 9999).".jpg";
 
 
         /*Get Signed Urls*/
