@@ -50,12 +50,17 @@ if(isset($_POST["save_btn"])) {
         $result = file_get_contents($url, false, $context);
         /*echo $result;*/
         $arr = json_decode($result,true);
+
+        /*echo $arr[0][0];
+        echo $arr[0]['id'];
+        echo $arr[1][1];
+        echo $arr[1]['id'];*/
     
 
     $check = getimagesize($_FILES["reg_certificate"]["tmp_name"]);
     if($check !== false) {
         $url_upload = $arr[0][0];
-        echo $url_upload;
+        /*echo $url_upload;*/
 
 
         $filename = $_FILES["reg_certificate"]["tmp_name"];
@@ -73,17 +78,151 @@ if(isset($_POST["save_btn"])) {
         );
         $context_upload  = stream_context_create($options_upload);
         $result_upload = file_get_contents($url_upload, false, $context_upload);
-        var_dump($result_upload);
+        /*var_dump($result_upload);*/
         $arr_upload = json_decode($result_upload,true);
-        var_dump($arr_upload);
+        /*var_dump($arr_upload);*/
 
         $reg_certificate_id=$arr[0]['id'];
 
     } else {
-        /*echo "File is not an image.";
-        $uploadOk = 0;*/
         $reg_certificate_id="";
     }
+
+
+    $check_pan = getimagesize($_FILES["pan_card"]["tmp_name"]);
+    if($check_pan !== false) {
+        $url_upload_pan = $arr[1][1];
+        /*echo $url_upload;*/
+
+
+        $filename_pan = $_FILES["pan_card"]["tmp_name"];
+        $file_pan = fopen($filename_pan, "rb");
+        $data_pan = fread($file_pan, filesize($filename_pan));
+
+        /*echo $data;*/
+
+        $options_upload_pan = array(
+          'http' => array(
+            'header'  => "Content-type: \r\n",
+            'method'  => 'PUT',
+            'content' => $data_pan,
+          ),
+        );
+        $context_upload_pan  = stream_context_create($options_upload_pan);
+        $result_upload_pan = file_get_contents($url_upload_pan, false, $context_upload_pan);
+        /*var_dump($result_upload_pan);*/
+        $arr_upload_pan = json_decode($result_upload_pan,true);
+        /*var_dump($arr_upload_pan);*/
+
+        $pan_card_id=$arr[1]['id'];
+
+    } else {
+        $pan_card_id="";
+    }
+
+    $check_pass_book = getimagesize($_FILES["bank_pass_book"]["tmp_name"]);
+    if($check_pass_book !== false) {
+        $url_upload_pass_book = $arr[2][2];
+        /*echo $url_upload;*/
+
+
+        $filename_pass_book = $_FILES["bank_pass_book"]["tmp_name"];
+        $file_pass_book = fopen($filename_pass_book, "rb");
+        $data_pass_book = fread($file_pass_book, filesize($filename_pass_book));
+
+        /*echo $data;*/
+
+        $options_upload_pass_book = array(
+          'http' => array(
+            'header'  => "Content-type: \r\n",
+            'method'  => 'PUT',
+            'content' => $data_pass_book,
+          ),
+        );
+        $context_upload_pass_book  = stream_context_create($options_upload_pass_book);
+        $result_upload_pass_book = file_get_contents($url_upload_pass_book, false, $context_upload_pass_book);
+        /*var_dump($result_upload_pass_book);*/
+        $arr_upload_pass_book = json_decode($result_upload_pass_book,true);
+        /*var_dump($arr_upload_pass_book);*/
+
+        $pass_book_id=$arr[2]['id'];
+
+    } else {
+        $pass_book_id="";
+    }
+
+    $check_telephone_bill = getimagesize($_FILES["telephone_bill"]["tmp_name"]);
+    if($check_telephone_bill !== false) {
+        $url_upload_telephone_bill = $arr[3][3];
+        /*echo $url_upload;*/
+
+
+        $filename_telephone_bill = $_FILES["telephone_bill"]["tmp_name"];
+        $file_telephone_bill = fopen($filename_telephone_bill, "rb");
+        $data_telephone_bill = fread($file_telephone_bill, filesize($filename_telephone_bill));
+
+        /*echo $data;*/
+
+        $options_upload_telephone_bill = array(
+          'http' => array(
+            'header'  => "Content-type: \r\n",
+            'method'  => 'PUT',
+            'content' => $data_telephone_bill,
+          ),
+        );
+        $context_upload_telephone_bill  = stream_context_create($options_upload_telephone_bill);
+        $result_upload_telephone_bill = file_get_contents($url_upload_telephone_bill, false, $context_upload_telephone_bill);
+        /*var_dump($result_upload_telephone_bill);*/
+        $arr_upload_telephone_bill = json_decode($result_upload_telephone_bill,true);
+        /*var_dump($arr_upload_telephone_bill);*/
+
+        $telephone_bill_id=$arr[3]['id'];
+
+    } else {
+        $telephone_bill_id="";
+    }
+
+  
+  $partner_names='';
+  for($j=0;$j<count($_POST['partner_names']);$j++){
+    $partner_names=$partner_names.",".$_POST['partner_names'][$j];
+  }
+  $partner_names = ltrim($partner_names, ',');
+/*  echo $partner_names;*/
+  for($k=0;$k<count($_POST['partner_designations']);$k++){
+    $partner_designations=$partner_designations.",".$_POST['partner_designations'][$k];
+  }
+  $partner_designations = ltrim($partner_designations, ',');
+  /*echo $partner_designations;*/
+
+  $url_org = 'https://kyc-application.herokuapp.com/add_new_organization/';
+  $options_org = array(
+    'http' => array(
+      'header'  => array(
+                          'TYPE-OF-ORG: '.$_POST['type_of_org'],
+                          'NAME: '.$_POST['name'],
+                          'REGISTRATION: '.$_POST['registration'],
+                          'REG-CERTIFICATE: '.$reg_certificate_id,
+                          'PAN: '.$_POST['pan'],
+                          'PAN-CARD: '.$pan_card_id,
+                          'ADDRESS: '.$_POST['address'],
+                          'TELEPHONE-BILL: '.$telephone_bill_id,
+                          'PASS-BOOK: '.$pass_book_id,
+                          'NO-OF-PARTNERS: '.$_POST['no_of_partners'],
+                          'PARTNER-NAMES: '.$partner_names,
+                          'PARTNER-DESIGNATIONS: '.$partner_designations,
+                          ),
+      'method'  => 'GET',
+    ),
+  );
+  $context_org = stream_context_create($options_org);
+  $output_org = file_get_contents($url_org, false,$context_org);
+  $arr_org = json_decode($output_org,true);
+
+  if($arr_org['status']==200){
+    echo "<script>alert('New Organization Created')</script>";
+    $_POST = array();
+  }
 }
 ?>
 
@@ -152,7 +291,7 @@ if(isset($_POST["save_btn"])) {
 <div class="form-group">
   <label class="col-md-4 control-label" for="filebutton">PAN Card</label>
   <div class="col-md-4">
-    <input id="pan_card" name="pan_card" class="input-file" type="file">
+    <input id="pan_card" name="pan_card" type="file">
   </div>
 </div>
 
@@ -208,6 +347,34 @@ if(isset($_POST["save_btn"])) {
 
 
 
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="textinput">Name: </label>  
+  <div class="col-md-2 col-sm-2 col-2">
+  <input id="partner_names[]" name="partner_names[]" type="text" placeholder="Enter Full Name" class="form-control input-md">
+  </div>
+  <div class="col-md-2 col-sm-2 col-2">
+    <button id="singlebutton" name="singlebutton" class="btn btn-info ">New Entry</button>
+  </div>
+</div>
+
+
+<!-- Select Basic -->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="designation">Designation: </label>
+  <div class="col-md-4">
+    <select id="partner_designations[]" name="partner_designations[]" class="form-control">
+      <option value="Managing Partner">Managing Partner</option>
+      <option value="Manager">Manager</option>
+      <option value="Other">Other</option>
+    </select>
+  </div>
+  <div class="col-md-2">
+     <input id="textinput" name="textinput" type="text" placeholder="Specify if Other" class="form-control input-md">
+</div>
+
+</div>
 
 <!-- Text input-->
 <div class="form-group">
