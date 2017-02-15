@@ -14,93 +14,80 @@
 
   </style>
 </head>
-<body  style="overflow-x: hidden; overflow-y: scroll;" >
+<body  style="overflow-y: scroll;" >
 
 <?php
-if(isset($_POST['save_btn'])){
 
-$check = getimagesize($_FILES["reg_certificate"]["tmp_name"]);
-if($check !== false) {
-        
-        /*echo "File is an image - " . $check["mime"] . ".";
-        echo $_POST['name'];*/
+if(isset($_POST["save_btn"])) {
 
-        $uploadOk = 1;
-
-        /*$filename=$_FILES["reg_certificate"]["tmp_name"];
-        $file = fopen($filename, "rb");
-        $data = fread($file, filesize($filename));*/
-        /*echo $data;*/
-
-        $url8 = 'https://kyc-application.herokuapp.com/upload_image/';
-        $data8 = array('photo' => $_FILES["reg_certificate"]["tmp_name"]);
-        // use key 'http' even if you send the request to https://...
-        $options8 = array(
-          'http' => array(
-            'header'  => "Content-type: multipart/form-data\r\n",
-            'method'  => 'POST',
-            'content' => http_build_query($data8),
-          ),
-        );
-        $context8  = stream_context_create($options8);
-        $result8 = file_get_contents($url8, false, $context8);
-        echo $result8;
-        $arr9 = json_decode($result8,true);
-        if($arr9 != ''){
+        $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+        $charactersLength = strlen($characters);
+        $randomString = '';
+        for ($i = 0; $i < 4; $i++) {
+            $randomString .= $characters[rand(0, $charactersLength - 1)];
         }
 
-} else {
-        echo "File is not an image.";
-        $uploadOk = 0;
-}
-
-if($_FILES['pan_card']['size'] == 0 && $_FILES['pan_card']['error'] == 0){
-  $reg_certificate='';
-}else{
-
-}
-
-if($_FILES['telephone_bill']['size'] == 0 && $_FILES['telephone_bill']['error'] == 0){
-  $reg_certificate='';
-}else{
-
-}
-
-if($_FILES['bank_pass_book']['size'] == 0 && $_FILES['bank_pass_book']['error'] == 0){
-  $reg_certificate='';
-}else{
-
-}
+        $names=array();
+        $names[0]= $randomString.rand(0, 9999).".jpg";
+        $names[1]= $randomString.rand(0, 9999).".jpg";
+        $names[2]= $randomString.rand(0, 9999).".jpg";
+        $names[3]= $randomString.rand(0, 9999).".jpg";
+        $names[4]= $randomString.rand(0, 9999).".jpg";
 
 
-/*$url_add_new_organization = 'https://kyc-application.herokuapp.com/add_new_organization/';
-$options_add_new_organization = array(
-  'http' => array(
-    'header'  => array(
-                  'TYPE-OF-ORG: '.$_POST['type_of_org'],
-                  'NAME: '.$_POST['name'],
-                  'REGISTRATION: '.$_POST['registration'],
-                  'REG-CERTIFICATE: ',
-                  'PAN: '.$_POST['pan'],
-                  'PAN-CARD: ',
-                  'ADDRESS: '.$_POST['address'],
-                  'TELEPHONE-BILL: ',
-                  'PASS-BOOK: ',
-                  'NO-OF-PARTNERS: '.$_POST['no_of_partners'],
-                  'PARTNER-NAMES: ',
-                  'PARTNER-DESIGNATIONS: ',
-                ),
-    'method'  => 'GET',
-  ),
-);
-$context_add_new_organization = stream_context_create($options_add_new_organization);
-$output_add_new_organization = file_get_contents($url_add_new_organization, false,$context_add_new_organization);
+        /*Get Signed Urls*/
+        $url = 'https://kyc-application.herokuapp.com/get_signed_url/';
+        $data = array('image_list' => [$names[0],$names[1],$names[2],$names[3],$names[4]]);
 
-$arr_add_new_organization = json_decode($output_add_new_organization,true);*/
+        $options = array(
+          'http' => array(
+            'header'  => "Content-type: application/json\r\n",
+            'method'  => 'PUT',
+            'content' => json_encode($data),
+          ),
+        );
+        $context  = stream_context_create($options);
+        $result = file_get_contents($url, false, $context);
+        /*echo $result;*/
+        $arr = json_decode($result,true);
+    
+
+    $check = getimagesize($_FILES["reg_certificate"]["tmp_name"]);
+    if($check !== false) {
+        $url_upload = $arr[0][0];
+        echo $url_upload;
+
+
+        $filename = $_FILES["reg_certificate"]["tmp_name"];
+        $file = fopen($filename, "rb");
+        $data = fread($file, filesize($filename));
+
+        /*echo $data;*/
+
+        $options_upload = array(
+          'http' => array(
+            'header'  => "Content-type: \r\n",
+            'method'  => 'PUT',
+            'content' => $data,
+          ),
+        );
+        $context_upload  = stream_context_create($options_upload);
+        $result_upload = file_get_contents($url_upload, false, $context_upload);
+        var_dump($result_upload);
+        $arr_upload = json_decode($result_upload,true);
+        var_dump($arr_upload);
+
+        $reg_certificate_id=$arr[0]['id'];
+
+    } else {
+        /*echo "File is not an image.";
+        $uploadOk = 0;*/
+        $reg_certificate_id="";
+    }
 }
 ?>
 
-<form class="form-horizontal" method="post" action="neworganization.php"  enctype="multipart/form-data">
+<form class="form-horizontal" method="post" action="neworganization.php" enctype="multipart/form-data">
 <fieldset>
 
 <!-- Form Name -->
@@ -124,7 +111,7 @@ $arr_add_new_organization = json_decode($output_add_new_organization,true);*/
 <div class="form-group">
   <label class="col-md-4 control-label" for="textname">Name</label>  
   <div class="col-md-4">
-  <input id="name" name="name" type="text" placeholder="Enter Name" class="form-control input-md" required="">
+  <input id="name" name="name" type="text" placeholder="Enter Name" class="form-control input-md">
     
   </div>
 </div>
@@ -156,7 +143,7 @@ $arr_add_new_organization = json_decode($output_add_new_organization,true);*/
 <div class="form-group">
   <label class="col-md-4 control-label" for="textinput">PAN </label>  
   <div class="col-md-4">
-  <input id="pan" name="pan" type="text" placeholder="PAN Card Number" class="form-control input-md" required="">
+  <input id="pan" name="pan" type="text" placeholder="PAN Card Number" class="form-control input-md">
     
   </div>
 </div>
