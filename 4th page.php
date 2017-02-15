@@ -47,8 +47,8 @@
 }
 
 .profile-pic {
-    max-width: 200px;
-    max-height: 200px;
+    max-width: 160px;
+    max-height: 160px;
     display: block;
 }
 
@@ -62,11 +62,11 @@
 <fieldset>
 
 <!-- Form Name -->
-<legend>Form Name</legend>
+<legend><center>New Individual Entry</center></legend>
 <!--avatar upload-->
-<img class="profile-pic" style="margin-left:77%;position:absolute;z-index:2;" src="http://cdn.cutestpaw.com/wp-content/uploads/2012/07/l-Wittle-puppy-yawning.jpg" />
-<div class="upload-button" style="position:absolute;z-index:2;margin-left:78%;margin-top:16%;">Upload Image</div>
-<input class="file-upload1" type="file" accept="image/*"/>
+<img class="profile-pic" style="margin-left:77%;position:absolute;z-index:2;" src="/images/boy-512.png" />
+<div class="upload-button" style="position:absolute;z-index:2;margin-left:79%;margin-top:13%;">Upload Image</div>
+<input class="file-upload1" style="position:absolute;z-index:-2;margin-left:46%;margin-top:16%;" type="file">
 <!-- Text input-->
 <div class="form-group">
   <label class="col-md-4 control-label" for="textinput">UID:</label>  
