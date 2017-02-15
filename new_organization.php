@@ -343,22 +343,47 @@ if(isset($_POST["save_btn"])) {
 
 
 <!-- Added Partner 1 -->
-<label for="comment" id="number" style="margin-left: 334px;font-size: 17px;"> Partners  </label>
+<label for="comment" id="number" style="margin-left: 334px;font-size: 18px;"> Partners : </label>
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="textinput">Name: </label>  
+  <div class="col-md-2 col-sm-2 col-2">
+  <input id="textinput" name="textinput" type="text" placeholder="Enter Full Name" class="form-control input-md" style="width: 167px;">
+  </div>
+  <div class="col-md-2 col-sm-2 col-2">
+    <button id="singlebutton" name="singlebutton" class="btn btn-info ">New Entry</button>
+  </div>
+</div>
 
 
+<!-- Select Basic-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="selectbasic">Designation: </label>
+  <div class="col-md-4">
+    <select id="selectbasic" name="selectbasic" class="form-control" style="width: 166px;">
+      <option value="1">Managing Partner</option>
+      <option value="2">Manager</option>
+      <option value="3">Other</option>
+    </select>
+  </div>
+  <div class="col-md-2">
+     <input id="textinput" name="textinput" type="text" placeholder="Specify if Other" class="form-control input-md"  style="margin-left:-221px;">
+</div>
+
+</div> 
 
 <div class="form-group">
 <center>
 <div class="col-md-2 col-sm-2 col-2">
     <div class="input_fields_wrap">
-         <button class="add_field_button btn " style="margin-left: 443px;">Add New Partners</button>
+         <button class="add_field_button btn " onclick="incrementValue()" style="margin-left: 443px;">Add New Partners</button>
          <div>
          <input type="text" name="mytext[]" hidden="" ></div>
 </div>
 </div>
 </div>
-<br>
-
+<br
 
 <!-- Buttons SAve and Cancel -->
 <div class="form-group">
