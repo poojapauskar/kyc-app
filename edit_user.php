@@ -85,7 +85,307 @@ echo $arr_search['response'][0]['user_details']['aadhar_no'];*/
 <head>
 <body>
 
-<form onsubmit="return proceed();" name="Form" id="Form" class="form-horizontal" method="post" action="edit_user.php" enctype="multipart/form-data">
+<?php
+
+if(isset($_POST["edit_btn"])) {
+
+        $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+        $charactersLength = strlen($characters);
+        $randomString = '';
+        for ($i = 0; $i < 4; $i++) {
+            $randomString .= $characters[rand(0, $charactersLength - 1)];
+        }
+
+        $names=array();
+        $names[0]= "pan_card".rand(0, 9999).".jpg";
+        $names[1]= "voter_id".rand(0, 9999).".jpg";
+        $names[2]= "pass_book".rand(0, 9999).".jpg";
+        $names[3]= "telephone_bill".rand(0, 9999).".jpg";
+        $names[4]= "aadhar_card".rand(0, 9999).".jpg";
+        $names[5]= "passport".rand(0, 9999).".jpg";
+        $names[6]= "profile".rand(0, 9999).".jpg";
+
+
+        /*Get Signed Urls*/
+        $url = 'https://kyc-application.herokuapp.com/get_signed_url/';
+        $data = array('image_list' => [$names[0],$names[1],$names[2],$names[3],$names[4],$names[5],$names[6]]);
+
+        $options = array(
+          'http' => array(
+            'header'  => "Content-type: application/json\r\n",
+            'method'  => 'PUT',
+            'content' => json_encode($data),
+          ),
+        );
+        $context  = stream_context_create($options);
+        $result = file_get_contents($url, false, $context);
+        /*echo $result;*/
+        $arr = json_decode($result,true);
+
+        /*echo $arr[0][0];
+        echo $arr[0]['id'];
+        echo $arr[1][1];
+        echo $arr[1]['id'];*/
+    
+
+    $check = getimagesize($_FILES["pan_card"]["tmp_name"]);
+    if($check !== false) {
+        $url_upload = $arr[0][0];
+        /*echo $url_upload;*/
+
+
+        $filename = $_FILES["pan_card"]["tmp_name"];
+        $file = fopen($filename, "rb");
+        $data = fread($file, filesize($filename));
+
+        /*echo $data;*/
+
+        $options_upload = array(
+          'http' => array(
+            'header'  => "Content-type: \r\n",
+            'method'  => 'PUT',
+            'content' => $data,
+          ),
+        );
+        $context_upload  = stream_context_create($options_upload);
+        $result_upload = file_get_contents($url_upload, false, $context_upload);
+        /*var_dump($result_upload);*/
+        $arr_upload = json_decode($result_upload,true);
+        /*var_dump($arr_upload);*/
+
+        $pan_card_id=$arr[0]['id'];
+
+    } else {
+        $pan_card_id=$arr_search['response'][0]['pan_card_details'][0]['pk'];
+    }
+
+
+    $check_voter_id = getimagesize($_FILES["voter_id"]["tmp_name"]);
+    if($check_voter_id !== false) {
+        $url_upload_voter_id = $arr[1][1];
+        /*echo $url_upload;*/
+
+
+        $filename_voter_id = $_FILES["voter_id"]["tmp_name"];
+        $file_voter_id = fopen($filename_voter_id, "rb");
+        $data_voter_id = fread($file_voter_id, filesize($filename_voter_id));
+
+        /*echo $data;*/
+
+        $options_upload_voter_id = array(
+          'http' => array(
+            'header'  => "Content-type: \r\n",
+            'method'  => 'PUT',
+            'content' => $data_voter_id,
+          ),
+        );
+        $context_upload_voter_id  = stream_context_create($options_upload_voter_id);
+        $result_upload_voter_id = file_get_contents($url_upload_voter_id, false, $context_upload_voter_id);
+        /*var_dump($result_upload_voter_id);*/
+        $arr_upload_voter_id = json_decode($result_upload_voter_id,true);
+        /*var_dump($arr_upload_voter_id);*/
+
+        $voter_card_id=$arr[1]['id'];
+
+    } else {
+        $voter_card_id=$arr_search['response'][0]['voter_id_details'][0]['pk'];
+    }
+
+    $check_pass_book = getimagesize($_FILES["bank_pass_book"]["tmp_name"]);
+    if($check_pass_book !== false) {
+        $url_upload_pass_book = $arr[2][2];
+        /*echo $url_upload;*/
+
+
+        $filename_pass_book = $_FILES["bank_pass_book"]["tmp_name"];
+        $file_pass_book = fopen($filename_pass_book, "rb");
+        $data_pass_book = fread($file_pass_book, filesize($filename_pass_book));
+
+        /*echo $data;*/
+
+        $options_upload_pass_book = array(
+          'http' => array(
+            'header'  => "Content-type: \r\n",
+            'method'  => 'PUT',
+            'content' => $data_pass_book,
+          ),
+        );
+        $context_upload_pass_book  = stream_context_create($options_upload_pass_book);
+        $result_upload_pass_book = file_get_contents($url_upload_pass_book, false, $context_upload_pass_book);
+        /*var_dump($result_upload_pass_book);*/
+        $arr_upload_pass_book = json_decode($result_upload_pass_book,true);
+        /*var_dump($arr_upload_pass_book);*/
+
+        $pass_book_id=$arr[2]['id'];
+
+    } else {
+        $pass_book_id=$arr_search['response'][0]['bank_pass_book_details'][0]['pk'];
+    }
+
+    $check_telephone_bill = getimagesize($_FILES["telephone_bill"]["tmp_name"]);
+    if($check_telephone_bill !== false) {
+        $url_upload_telephone_bill = $arr[3][3];
+        /*echo $url_upload;*/
+
+
+        $filename_telephone_bill = $_FILES["telephone_bill"]["tmp_name"];
+        $file_telephone_bill = fopen($filename_telephone_bill, "rb");
+        $data_telephone_bill = fread($file_telephone_bill, filesize($filename_telephone_bill));
+
+        /*echo $data;*/
+
+        $options_upload_telephone_bill = array(
+          'http' => array(
+            'header'  => "Content-type: \r\n",
+            'method'  => 'PUT',
+            'content' => $data_telephone_bill,
+          ),
+        );
+        $context_upload_telephone_bill  = stream_context_create($options_upload_telephone_bill);
+        $result_upload_telephone_bill = file_get_contents($url_upload_telephone_bill, false, $context_upload_telephone_bill);
+        /*var_dump($result_upload_telephone_bill);*/
+        $arr_upload_telephone_bill = json_decode($result_upload_telephone_bill,true);
+        /*var_dump($arr_upload_telephone_bill);*/
+
+        $telephone_bill_id=$arr[3]['id'];
+
+    } else {
+        $telephone_bill_id=$arr_search['response'][0]['telephone_bill_details'][0]['pk'];
+    }
+
+    $check_aadhar_card = getimagesize($_FILES["aadhar_card"]["tmp_name"]);
+    if($check_aadhar_card !== false) {
+        $url_upload_aadhar_card = $arr[4][4];
+        /*echo $url_upload;*/
+
+
+        $filename_aadhar_card = $_FILES["aadhar_card"]["tmp_name"];
+        $file_aadhar_card = fopen($filename_aadhar_card, "rb");
+        $data_aadhar_card = fread($file_aadhar_card, filesize($filename_aadhar_card));
+
+        /*echo $data;*/
+
+        $options_upload_aadhar_card = array(
+          'http' => array(
+            'header'  => "Content-type: \r\n",
+            'method'  => 'PUT',
+            'content' => $data_aadhar_card,
+          ),
+        );
+        $context_upload_aadhar_card  = stream_context_create($options_upload_aadhar_card);
+        $result_upload_aadhar_card = file_get_contents($url_upload_aadhar_card, false, $context_upload_aadhar_card);
+        /*var_dump($result_upload_aadhar_card);*/
+        $arr_upload_aadhar_card = json_decode($result_upload_aadhar_card,true);
+        /*var_dump($arr_upload_aadhar_card);*/
+
+        $aadhar_card_id=$arr[4]['id'];
+
+    } else {
+        $aadhar_card_id=$arr_search['response'][0]['aadhar_card_details'][0]['pk'];
+    }
+
+    $check_passport = getimagesize($_FILES["passport"]["tmp_name"]);
+    if($check_passport !== false) {
+        $url_upload_passport = $arr[5][5];
+        /*echo $url_upload;*/
+
+
+        $filename_passport = $_FILES["passport"]["tmp_name"];
+        $file_passport = fopen($filename_passport, "rb");
+        $data_passport = fread($file_passport, filesize($filename_passport));
+
+        /*echo $data;*/
+
+        $options_upload_passport = array(
+          'http' => array(
+            'header'  => "Content-type: \r\n",
+            'method'  => 'PUT',
+            'content' => $data_passport,
+          ),
+        );
+        $context_upload_passport  = stream_context_create($options_upload_passport);
+        $result_upload_passport = file_get_contents($url_upload_passport, false, $context_upload_passport);
+        /*var_dump($result_upload_passport);*/
+        $arr_upload_passport = json_decode($result_upload_passport,true);
+        /*var_dump($arr_upload_passport);*/
+
+        $passport_id=$arr[5]['id'];
+
+    } else {
+        $passport_id=$arr_search['response'][0]['passport_details'][0]['pk'];
+    }
+
+    $check_image = getimagesize($_FILES["image"]["tmp_name"]);
+    if($check_image !== false) {
+        $url_upload_image = $arr[6][6];
+        /*echo $url_upload;*/
+
+
+        $filename_image = $_FILES["image"]["tmp_name"];
+        $file_image = fopen($filename_image, "rb");
+        $data_image = fread($file_image, filesize($filename_image));
+
+        /*echo $data;*/
+
+        $options_upload_image = array(
+          'http' => array(
+            'header'  => "Content-type: \r\n",
+            'method'  => 'PUT',
+            'content' => $data_image,
+          ),
+        );
+        $context_upload_image  = stream_context_create($options_upload_image);
+        $result_upload_image = file_get_contents($url_upload_image, false, $context_upload_image);
+        /*var_dump($result_upload_image);*/
+        $arr_upload_image = json_decode($result_upload_image,true);
+        /*var_dump($arr_upload_image);*/
+
+        $image_id=$arr[6]['id'];
+
+    } else {
+        $image_id=$arr_search['response'][0]['image_details'][0]['pk'];
+    }
+
+  $url_org = 'https://kyc-application.herokuapp.com/edit_user/';
+  $options_org = array(
+    'http' => array(
+      'header'  => array(
+                          'UID: '.$_POST['uid'],
+                          'NAME: '.$_POST['name'],
+                          'DOB: '.$_POST['date'],
+                          'PROFFESION: '.$_POST['profession'],
+                          'PAN: '.$_POST['pan'],
+                          'PAN-CARD: '.$pan_card_id,
+                          'ADDRESS: '.$_POST['address'],
+                          'TELEPHONE-BILL: '.$telephone_bill_id,
+                          'BANK-PASS-BOOK: '.$pass_book_id,
+                          'VOTER-ID: '.$voter_card_id,
+                          'PASSPORT: '.$passport_id,
+                          'AADHAR-NO: '.$_POST['aadhar_no'],
+                          'AADHAR-CARD: '.$aadhar_card_id,
+                          'IMAGE: '.$image_id,
+                          ),
+      'method'  => 'GET',
+    ),
+  );
+  $context_org = stream_context_create($options_org);
+  $output_org = file_get_contents($url_org, false,$context_org);
+  $arr_org = json_decode($output_org,true);
+
+  if($arr_org['status']==200){
+    /*echo "<script>alert('IndividualUpdated')</script>";*/
+
+    $string1="<script>window.location.href='search_user.php?text=".$arr_org['name']."'</script>";
+    echo $string1;
+
+    /*echo $output_org;*/
+
+  }
+}
+?>
+
+
+<form class="form-horizontal" method="post" action="edit_user.php" enctype="multipart/form-data">
 <fieldset>
 
 <!-- Form Name -->
@@ -134,7 +434,7 @@ echo $arr_search['response'][0]['user_details']['aadhar_no'];*/
 <div class="form-group">
   <label class="col-md-4 control-label" for="textinput">Name:</label>  
   <div class="col-md-4">
-  <input id="name" name="name" value="<?php echo $arr_search['response'][0]['user_details']['uid'] ?>" type="text" placeholder="" class="form-control input-md">
+  <input id="name" name="name" value="<?php echo $arr_search['response'][0]['user_details']['name'] ?>" type="text" placeholder="" class="form-control input-md">
     
   </div>
 </div>
@@ -464,7 +764,7 @@ echo $arr_search['response'][0]['user_details']['aadhar_no'];*/
 <div class="form-group">
   <label class="col-md-4 control-label" for="singlebutton"></label>
   <div class="col-md-4">
-    <button id="" name="" type="submit" class="btn btn-success" style="width: 10em;">Edit</button><span><span></span></span>
+    <button id="edit_btn" name="edit_btn" type="submit" class="btn btn-success" style="width: 10em;">Edit</button><span><span></span></span>
     <button class="btn btn-warning"><a style="color:white" href="search.php">Cancel</a></button>
   </div>
 </div>

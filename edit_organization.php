@@ -242,8 +242,10 @@ if(isset($_POST["edit_btn"])) {
   $arr_org = json_decode($output_org,true);
 
   if($arr_org['status']==200){
-    echo "<script>alert('Organization Updated')</script>";
-    echo "<script>window.location.href='search_organization.php';</script>";
+    /*echo "<script>alert('Organization Updated')</script>";*/
+    
+    $string1="<script>window.location.href='search_organization.php?text=".$arr_org['name']."'</script>";
+    echo $string1;
   }
 }
 ?>

@@ -31,10 +31,14 @@ if(isset($_POST['submit'])){
   $output_org = file_get_contents($url_org, false,$context_org);
   /*echo $output_org;*/
   $arr_org = json_decode($output_org,true);
+
+
   if($arr_org['response'][0]['message'] == 'organization'){
-    echo "<script>window.location.href='search_organization.php';</script>";
+    $string1="<script>window.location.href='search_organization.php?text=".$arr_org['response'][0]['text']."'</script>";
+    echo $string1;
   }else{
-    echo "<script>window.location.href='search_user.php';</script>";
+    $string2="<script>window.location.href='search_user.php?text=".$arr_org['response'][0]['text']."'</script>";
+    echo $string2;
   }
 
 }
@@ -46,7 +50,7 @@ if(isset($_POST['submit'])){
 
  <div class="container">
   <div class="row" style="margin-top:4%;margin-left:4%"> 
-    <form class="form-wrapper" method="post" action="search.php">
+    <form class="form-wrapper" method="post" action="">
     <input type="text" id="search" name="search" placeholder="Search firm,Individual
     " required>
     <input type="submit" value="Search" id="submit" name="submit">

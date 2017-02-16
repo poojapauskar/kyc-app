@@ -18,18 +18,17 @@
 
 <?php
 
+
+/*echo $_POST['search'];*/
 // if its cumin from edit org to search org then query based on edit org name
-if(isset($_POST['search'])){
-  $text=$_POST['search'];
-}else{
-  $text=$_POST['name'];
-}
+
+$text=$_GET['text'];
 
 $url_search = 'https://kyc-application.herokuapp.com/search/';
 $options_search = array(
   'http' => array(
     'header'  => array(
-                  'TEXT: '.$text,
+                  'TEXT: Company',
                 ),
     'method'  => 'GET',
   ),
