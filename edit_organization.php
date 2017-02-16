@@ -339,8 +339,9 @@ if(isset($_POST["edit_btn"])) {
   $arr_img_download = json_decode($output_img_download,true);
   
 ?>
+
 <button>
-<a target="_blank" href="<?php echo $arr_img_download[0]['url']; ?>">View</a>
+<a target="_blank" href="view_image.php?name=reg_certificate_details&link=<?php echo $arr_img_download[0]['url']; ?>">View</a>
 </button>
 
 </div>
@@ -384,7 +385,7 @@ if(isset($_POST["edit_btn"])) {
   
 ?>
 <button>
-<a target="_blank"  href=<?php echo $arr_img_download_2[0]['url']; ?>>View</a>
+<a target="_blank" href="view_image.php?name=pan_card_details&link=<?php echo $arr_img_download_2[0]['url']; ?>">View</a>
 </button>
 </div>
 
@@ -441,7 +442,7 @@ if(isset($_POST["edit_btn"])) {
   
 ?>
 <button>
-<a target="_blank"  href=<?php echo $arr_img_download_3[0]['url']; ?>>View</a>
+<a target="_blank" href="view_image.php?name=telephone_bill_details&link=<?php echo $arr_img_download_3[0]['url']; ?>">View</a>
 </button>
 </div> 
 
@@ -490,7 +491,7 @@ if(isset($_POST["edit_btn"])) {
   
 ?>
 <button>
-<a target="_blank" href=<?php echo $arr_img_download_4[0]['url']; ?>>View</a>
+<a target="_blank" href="view_image.php?name=pass_book_details&link=<?php echo $arr_img_download_4[0]['url']; ?>">View</a>
 </button>
 </div>
 

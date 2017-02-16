@@ -130,7 +130,7 @@ $arr_search = json_decode($output_search,true);
   
 ?>
 <button>
-<a target="_blank" href="<?php echo $arr_img_download[0]['url']; ?>">View</a>
+<a target="_blank" href="view_image.php?name=reg_certificate_details&link=<?php echo $arr_img_download[0]['url']; ?>">View</a>
 </button>
 
 </div>
@@ -174,7 +174,7 @@ $arr_search = json_decode($output_search,true);
   
 ?>
 <button>
-<a target="_blank"  href=<?php echo $arr_img_download_2[0]['url']; ?>>View</a>
+<a target="_blank" href="view_image.php?name=pan_card_details&link=<?php echo $arr_img_download_2[0]['url']; ?>">View</a>
 </button>
 </div>
 
@@ -231,7 +231,7 @@ $arr_search = json_decode($output_search,true);
   
 ?>
 <button>
-<a target="_blank"  href=<?php echo $arr_img_download_3[0]['url']; ?>>View</a>
+<a target="_blank" href="view_image.php?name=telephone_bill_details&link=<?php echo $arr_img_download_3[0]['url']; ?>">View</a>
 </button>
 </div> 
 
@@ -280,7 +280,7 @@ $arr_search = json_decode($output_search,true);
   
 ?>
 <button>
-<a target="_blank" href=<?php echo $arr_img_download_4[0]['url']; ?>>View</a>
+<a target="_blank" href="view_image.php?name=pass_book_details&link=<?php echo $arr_img_download_4[0]['url']; ?>">View</a>
 </button>
 </div>
 

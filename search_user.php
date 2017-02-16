@@ -225,7 +225,7 @@ echo $arr_search['response'][0]['user_details']['aadhar_no'];*/
   
 ?>
 <button>
-<a target="_blank" href="<?php echo $arr_img_download[0]['url']; ?>">View</a>
+<a target="_blank" href="view_image.php?name=pan_card_details&link=<?php echo $arr_img_download[0]['url']; ?>">View</a>
 </button>
 
 </div>
@@ -274,8 +274,9 @@ echo $arr_search['response'][0]['user_details']['aadhar_no'];*/
   $arr_img_download_2 = json_decode($output_img_download_2,true);
   
 ?>
+
 <button>
-<a target="_blank" href="<?php echo $arr_img_download_2[0]['url']; ?>">View</a>
+<a target="_blank" href="view_image.php?name=telephone_bill_details&link=<?php echo $arr_img_download_2[0]['url']; ?>">View</a>
 </button>
 
 </div>
@@ -319,8 +320,9 @@ echo $arr_search['response'][0]['user_details']['aadhar_no'];*/
   $arr_img_download_3 = json_decode($output_img_download_3,true);
   
 ?>
+
 <button>
-<a target="_blank" href="<?php echo $arr_img_download_3[0]['url']; ?>">View</a>
+<a target="_blank" href="view_image.php?name=bank_pass_book_details&link=<?php echo $arr_img_download_3[0]['url']; ?>">View</a>
 </button>
 
 </div>
@@ -369,9 +371,12 @@ echo $arr_search['response'][0]['user_details']['aadhar_no'];*/
 	  $arr_img_download_4 = json_decode($output_img_download_4,true);
 	  
 	?>
-	<button>
-	<a target="_blank" href="<?php echo $arr_img_download_4[0]['url']; ?>">View</a>
-	</button>
+
+
+<button>
+<a target="_blank" href="view_image.php?name=voter_id_details&link=<?php echo $arr_img_download_4[0]['url']; ?>">View</a>
+</button>
+
 
 	</div>
 
@@ -412,12 +417,14 @@ echo $arr_search['response'][0]['user_details']['aadhar_no'];*/
 	  $context_img_download_5 = stream_context_create($options_img_download_5);
 	  $output_img_download_5= file_get_contents($url_img_download_5, false,$context_img_download_5);
 	  /*echo $output_img_download;*/
-	  $arr_img_download_4 = json_decode($output_img_download_5,true);
+	  $arr_img_download_5 = json_decode($output_img_download_5,true);
 	  
 	?>
-	<button>
-	<a target="_blank" href="<?php echo $arr_img_download_4[0]['url']; ?>">View</a>
-	</button>
+
+
+<button>
+<a target="_blank" href="view_image.php?name=passport_details&link=<?php echo $arr_img_download_5[0]['url']; ?>">View</a>
+</button>
 
 	</div>
 </div>
@@ -460,9 +467,11 @@ echo $arr_search['response'][0]['user_details']['aadhar_no'];*/
 	  $arr_img_download_6 = json_decode($output_img_download_6,true);
 	  
 	?>
-	<button>
-	<a target="_blank" href="<?php echo $arr_img_download_6[0]['url']; ?>">View</a>
-	</button>
+
+
+<button>
+<a target="_blank" href="view_image.php?name=aadhar_card_details&link=<?php echo $arr_img_download_6[0]['url']; ?>">View</a>
+</button>
 
 	</div>
 
