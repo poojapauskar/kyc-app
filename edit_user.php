@@ -764,7 +764,7 @@ if(isset($_POST["edit_btn"])) {
 <div class="form-group">
   <label class="col-md-4 control-label" for="singlebutton"></label>
   <div class="col-md-4">
-    <button id="edit_btn" name="edit_btn" type="submit" class="btn btn-success" style="width: 10em;">Edit</button><span><span></span></span>
+    <button id="edit_btn" name="edit_btn" type="submit" class="btn btn-success" style="width: 10em;">Save</button><span><span></span></span>
     <button onclick="goBack()" class="btn btn-warning"><a style="color:white" href="">Cancel</a></button>
   </div>
 </div>
