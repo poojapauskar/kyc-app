@@ -412,12 +412,12 @@ if(isset($_POST["save_btn"])) {
         e.preventDefault();
         if(x < max_fields){ //max input box allowed
             x++; //text box increment
-            $(wrapper).append('<br><div style="margin-left:50px;"><center><div class="form-group"> <label class=" control-label" for="textinput" style="margin-left:327px;">Name: </label> <div > <input id="textinput" name="textinput" type="text" placeholder="Enter Full Name" class="form-control input-md" style="margin-top: -25px;margin-left: 403px;">  </div>  <div class="col-md-6" > <button id="singlebutton" name="singlebutton" class="btn btn-info " style="margin-left: 613px;margin-top: -62px;">New Entry</button>  </div></div> <div class="form-group">  <label class="control-label" for="selectbasic" style="margin-left:293px;">Designation: </label>  <div> <select id="selectbasic" name="selectbasic" class="form-control" style="margin-left: 405px;margin-top: -34px;">      <option value="1">Managing Partner</option>      <option value="2">Manager</option>      <option value="3">Other</option>    </select>  </div>  <div>  <input style="margin-left: 629px;margin-top: -35px;" id="textinput" name="textinput" type="text" placeholder="Specify if Other" class="form-control input-md"></div></div></center></div>'); //add input box\
+            $(wrapper).append('<br><div style="margin-left:50px;"><center><div class="form-group"> <label class=" control-label" for="textinput" style="margin-left:327px;">Name: </label> <div > <input id="textinput" name="textinput" type="text" placeholder="Enter Full Name" class="form-control input-md" style="margin-top: -25px;margin-left: 403px;">  </div>  <div class="col-md-6" > <button id="singlebutton" name="singlebutton" class="btn btn-info " style="margin-left: 613px;margin-top: -62px;">New Entry</button>  </div></div> <div class="form-group">  <label class="control-label" for="selectbasic" style="margin-left:293px;">Designation: </label>  <div> <select id="selectbasic" name="selectbasic" class="form-control" style="margin-left: 405px;margin-top: -34px;">      <option value="1">Managing Partner</option>      <option value="2">Manager</option>      <option value="3">Other</option>    </select>  </div>  <div>  <input style="margin-left: 629px;margin-top: -35px;" id="textinput" name="textinput" type="text" placeholder="Specify if Other" class="form-control input-md"></div></div></center><a href="#" class="remove_field"><img src="images/del24.png" style="margin-left: 810px; margin-top: -81px;"></a></a></div>'); //add input box\
         }
     });
     
     $(wrapper).on("click",".remove_field", function(e){ //user click on remove text
-        e.preventDefault(); $(this).parent('.append').remove(); x--;
+        e.preventDefault(); $(this).parent('div').remove(); x--;
     })
 });
     </script>
