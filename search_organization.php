@@ -17,11 +17,19 @@
 <body  style="overflow-y: scroll;" >
 
 <?php
+
+// if its cumin from edit org to search org then query based on edit org name
+if(isset($_POST['search'])){
+  $text=$_POST['search'];
+}else{
+  $text=$_POST['name'];
+}
+
 $url_search = 'https://kyc-application.herokuapp.com/search/';
 $options_search = array(
   'http' => array(
     'header'  => array(
-                  'TEXT: '.$_POST['search'],
+                  'TEXT: '.$text,
                 ),
     'method'  => 'GET',
   ),
@@ -36,13 +44,15 @@ $arr_search = json_decode($output_search,true);
 /*echo count($arr_search['response'][0]['partner_details'])*/
 ?>
 
-<form class="form-horizontal" method="post" action="search_organization.php" enctype="multipart/form-data">
+<form class="form-horizontal" method="post" action="edit_organization.php" enctype="multipart/form-data">
 
 <fieldset>
 
 <!-- Form Name -->
 <!-- <legend>CA Database</legend>
  --><h4><center><?php echo $arr_search['response'][0]['organization_details']['name'] ?></center></h4>
+
+ <input type="hidden" value="<?php echo $arr_search['response'][0]['organization_details']['pk'] ?>" name="org_id" id="org_id"></input>
 
 <!-- Select Basic -->
 <div class="form-group">
@@ -316,7 +326,7 @@ $arr_search = json_decode($output_search,true);
   <label class="col-md-4 control-label" for="designation">Designation: </label>
   <div class="col-md-4">
     <select id="partner_designations[]" name="partner_designations[]" class="form-control"  readonly>
- <option value="<?php echo $arr_search['response'][0]['partner_details'][$x]['detail'][$x]['designation'] ?>"><?php echo $arr_search['response'][0]['partner_details'][0]['detail'][0]['designation'] ?></option>
+ <option value="<?php echo $arr_search['response'][0]['partner_details'][$x]['detail'][0]['designation'] ?>"><?php echo $arr_search['response'][0]['partner_details'][$x]['detail'][0]['designation'] ?></option>
       <!-- <option value="Managing Partner">Managing Partner</option>
       <option value="Manager">Manager</option>
       <option value="Other">Other</option> -->
@@ -337,7 +347,7 @@ $arr_search = json_decode($output_search,true);
 <div class="form-group">
   <label class="col-md-4 control-label" for="save_btn"></label>
   <div class="col-md-8">
-    <button id="save_btn" name="save_btn" class="btn btn-success" style="width: 10em;">Edit</button><span><span></span></span>
+    <button id="save_btn" name="save_btn" type="submit" class="btn btn-success" style="width: 10em;">Edit</button><span><span></span></span>
     <button onclick="ClickEvent()" class="btn btn-warning"><a style="color:white" href="search.php">Cancel</a></button>
   
   </div>
