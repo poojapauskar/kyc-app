@@ -327,12 +327,12 @@ if(isset($_POST["save_btn"])) {
 </div>
 
 <!-- Input Type : Number -->
-<div class="form-group">
+<!-- <div class="form-group">
   <label class="col-md-4 control-label" for="typenumber">No of Partners: </label>
   <div class="col-md-4">                     
      <input type="number" name="no_of_partners" min="1" max="5" value="2" id="no_of_partners">
   </div>
-</div>
+</div> -->
 
 <!-- <div class="form-group col-md-4 ">
   <label class="col-md-4 control-label"><b> <font size="4">Partner1</font></b></label>
@@ -343,17 +343,13 @@ if(isset($_POST["save_btn"])) {
 
 
 <!-- Added Partner 1 -->
-<label for="comment" style="margin-left: 334px;font-size: 17px;"> Partner 1: </label>
-
-
-
-
+<label for="comment" id="number" style="margin-left: 334px;font-size: 18px;"> Partners : </label>
 
 <!-- Text input-->
 <div class="form-group">
   <label class="col-md-4 control-label" for="textinput">Name: </label>  
   <div class="col-md-2 col-sm-2 col-2">
-  <input id="partner_names[]" name="partner_names[]" type="text" placeholder="Enter Full Name" class="form-control input-md">
+  <input id="textinput" name="textinput" type="text" placeholder="Enter Full Name" class="form-control input-md" style="width: 167px;">
   </div>
   <div class="col-md-2 col-sm-2 col-2">
     <button id="singlebutton" name="singlebutton" class="btn btn-info ">New Entry</button>
@@ -361,50 +357,33 @@ if(isset($_POST["save_btn"])) {
 </div>
 
 
-<!-- Select Basic -->
+<!-- Select Basic-->
 <div class="form-group">
-  <label class="col-md-4 control-label" for="designation">Designation: </label>
+  <label class="col-md-4 control-label" for="selectbasic">Designation: </label>
   <div class="col-md-4">
-    <select id="partner_designations[]" name="partner_designations[]" class="form-control">
-      <option value="Managing Partner">Managing Partner</option>
-      <option value="Manager">Manager</option>
-      <option value="Other">Other</option>
+    <select id="selectbasic" name="selectbasic" class="form-control" style="width: 166px;">
+      <option value="1">Managing Partner</option>
+      <option value="2">Manager</option>
+      <option value="3">Other</option>
     </select>
   </div>
   <div class="col-md-2">
-     <input id="textinput" name="textinput" type="text" placeholder="Specify if Other" class="form-control input-md">
+     <input id="textinput" name="textinput" type="text" placeholder="Specify if Other" class="form-control input-md"  style="margin-left:-221px;">
 </div>
 
-</div>
+</div> 
 
-<!-- Text input-->
 <div class="form-group">
-  <label class="col-md-4 control-label" for="textinput">Name: </label>  
-  <div class="col-md-2 col-sm-2 col-2">
-  <input id="partner_names[]" name="partner_names[]" type="text" placeholder="Enter Full Name" class="form-control input-md">
-  </div>
-  <div class="col-md-2 col-sm-2 col-2">
-    <button id="singlebutton" name="singlebutton" class="btn btn-info ">New Entry</button>
-  </div>
+<center>
+<div class="col-md-2 col-sm-2 col-2">
+    <div class="input_fields_wrap">
+         <button class="add_field_button btn " onclick="incrementValue()" style="margin-left: 443px;">Add New Partners</button>
+         <div>
+         <input type="text" name="mytext[]" hidden="" ></div>
 </div>
-
-
-<!-- Select Basic -->
-<div class="form-group">
-  <label class="col-md-4 control-label" for="designation">Designation: </label>
-  <div class="col-md-4">
-    <select id="partner_designations[]" name="partner_designations[]" class="form-control">
-      <option value="Managing Partner">Managing Partner</option>
-      <option value="Manager">Manager</option>
-      <option value="Other">Other</option>
-    </select>
-  </div>
-  <div class="col-md-2">
-     <input id="textinput" name="textinput" type="text" placeholder="Specify if Other" class="form-control input-md">
 </div>
-
 </div>
-
+<br
 
 <!-- Buttons SAve and Cancel -->
 <div class="form-group">
@@ -417,8 +396,32 @@ if(isset($_POST["save_btn"])) {
 </div>
 </fieldset>
 </form>
-
-
+<script
+  src="https://code.jquery.com/jquery-2.2.4.js"
+  integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI="
+  crossorigin="anonymous"></script>
+  
+<script type="text/javascript">
+      
+      $(document).ready(function() {
+    var max_fields      = 10; //maximum input boxes allowed
+    var wrapper         = $(".input_fields_wrap"); //Fields wrapper
+    var add_button      = $(".add_field_button"); //Add button ID
+    
+    var x = 1; //initlal text box count
+    $(add_button).click(function(e){ //on add input button click
+        e.preventDefault();
+        if(x < max_fields){ //max input box allowed
+            x++; //text box increment
+            $(wrapper).append('<br><div style="margin-left:50px;"><center><div class="form-group"> <label class=" control-label" for="textinput" style="margin-left:327px;">Name: </label> <div > <input id="textinput" name="textinput" type="text" placeholder="Enter Full Name" class="form-control input-md" style="margin-top: -25px;margin-left: 403px;">  </div>  <div class="col-md-6" > <button id="singlebutton" name="singlebutton" class="btn btn-info " style="margin-left: 613px;margin-top: -62px;">New Entry</button>  </div></div> <div class="form-group">  <label class="control-label" for="selectbasic" style="margin-left:293px;">Designation: </label>  <div> <select id="selectbasic" name="selectbasic" class="form-control" style="margin-left: 405px;margin-top: -34px;">      <option value="1">Managing Partner</option>      <option value="2">Manager</option>      <option value="3">Other</option>    </select>  </div>  <div>  <input style="margin-left: 629px;margin-top: -35px;" id="textinput" name="textinput" type="text" placeholder="Specify if Other" class="form-control input-md"></div></div></center><a href="#" class="remove_field"><img src="images/del24.png" style="margin-left: 810px; margin-top: -81px;"></a></a></div>'); //add input box\
+        }
+    });
+    
+    $(wrapper).on("click",".remove_field", function(e){ //user click on remove text
+        e.preventDefault(); $(this).parent('div').remove(); x--;
+    })
+});
+    </script>
 <!-- <script type="text/javascript">
   
   $(document).ready(function() {
