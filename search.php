@@ -47,7 +47,7 @@ if(isset($_POST['submit'])){
 <a href="index.php" class="btn btn-default btn-sm" style="margin-left:60%;margin-top:4%;">
 <span class="glyphicon glyphicon-log-out"></span> Log out
 </a>
-
+<!-- AutoSearch Module -->
  <div class="container">
   <div class="row" style="margin-top:4%;margin-left:4%"> 
     <form class="form-wrapper" method="post" action="">
@@ -84,6 +84,23 @@ if(isset($_POST['submit'])){
        </button>
        </a>
     </div>
+
+    <!-- AutoSearch Script -->
+ <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+        <script type="text/javascript"
+        src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.18/jquery-ui.min.js"></script>
+        <link rel="stylesheet" type="text/css"
+        href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css" />
+<script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+<script type="text/javascript">
+                $(document).ready(function(){
+                    $("#search").autocomplete({
+                        source:'getautocomplete.php',
+                        minLength:1
+                    });
+                });
+        </script>
+        
 </div>
 </div>
 </body>
