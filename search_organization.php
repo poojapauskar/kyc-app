@@ -28,7 +28,7 @@ $url_search = 'https://kyc-application.herokuapp.com/search/';
 $options_search = array(
   'http' => array(
     'header'  => array(
-                  'TEXT: Company',
+                  'TEXT: '.$text,
                 ),
     'method'  => 'GET',
   ),

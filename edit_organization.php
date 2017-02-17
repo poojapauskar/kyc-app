@@ -521,11 +521,16 @@ if(isset($_POST["edit_btn"])) {
 
 <?php for($x=0;$x < count($arr_search['response'][0]['partner_details']); $x++){?>
 
+
 <!-- Text input-->
 <div class="form-group">
   <label class="col-md-4 control-label" for="textinput">Name</label>  
   <div class="col-md-2 col-sm-2 col-2">
-  <input id="partner_names[]" value="<?php echo $arr_search['response'][0]['partner_details'][$x]['detail'][0]['name'] ?>" name="partner_names[]" type="text" placeholder="Enter Full Name" class="form-control input-md">
+  <input style="width:170px" id="partner_names[]" value="<?php echo $arr_search['response'][0]['partner_details'][$x]['detail'][0]['name'] ?>" name="partner_names[]" type="text" placeholder="Enter Full Name" class="form-control input-md">
+  </div>
+
+  <div class="col-md-2 col-sm-2 col-2">
+    <button id="singlebutton" name="singlebutton" class="btn btn-info "><a href="new_user.php" style="color:white" target="_blank">New Entry</a></button>
   </div>
 </div>
 
@@ -535,20 +540,36 @@ if(isset($_POST["edit_btn"])) {
 <div class="form-group">
   <label class="col-md-4 control-label" for="designation">Designation: </label>
   <div class="col-md-4">
-    <select id="partner_designations[]" name="partner_designations[]" class="form-control">
- <option value="<?php echo $arr_search['response'][0]['partner_details'][$x]['detail'][0]['designation'] ?>"><?php echo $arr_search['response'][0]['partner_details'][$x]['detail'][0]['designation'] ?></option>
+    <select style="width:170px" id="partner_designations[]" name="partner_designations[]" class="form-control">
+      <option value="<?php echo $arr_search['response'][0]['partner_details'][$x]['detail'][0]['designation'] ?>"><?php echo $arr_search['response'][0]['partner_details'][$x]['detail'][0]['designation'] ?></option>
       <option value="Managing Partner">Managing Partner</option>
       <option value="Manager">Manager</option>
       <option value="Other">Other</option>
     </select>
   </div>
   <div class="col-md-2">
-     <input id="textinput" name="textinput" type="text" placeholder="Specify if Other" class="form-control input-md">
+     <input id="textinput" style="margin-left:-220px;width:165px" name="textinput" type="text" placeholder="Specify if Other" class="form-control input-md">
   </div>
+  <a href="#" class="remove_field"><img src="images/del24.png" style="margin-left:-235px;"></a>
 
 </div>
 
+
 <?php }?>
+
+<div class="form-group">
+<center>
+<div class="col-md-2 col-sm-2 col-2">
+    <div class="input_fields_wrap">
+         <button class="add_field_button btn " onclick="incrementValue()" style="margin-left: 443px;">Add New Partners</button>
+         <div>
+         <input type="text" name="mytext[]" hidden="" ></div>
+</div>
+</div>
+</div>
+<br
+
+
 
 
 
@@ -564,6 +585,34 @@ if(isset($_POST["edit_btn"])) {
 </div>
 </fieldset>
 </form>
+
+<script
+  src="https://code.jquery.com/jquery-2.2.4.js"
+  integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI="
+  crossorigin="anonymous"></script>
+  
+<script type="text/javascript">
+      
+      $(document).ready(function() {
+    var max_fields      = 10; //maximum input boxes allowed
+    var wrapper         = $(".input_fields_wrap"); //Fields wrapper
+    var add_button      = $(".add_field_button"); //Add button ID
+    
+    var x = 1; //initlal text box count
+    $(add_button).click(function(e){ //on add input button click
+        e.preventDefault();
+        if(x < max_fields){ //max input box allowed
+            x++; //text box increment
+            $(wrapper).append('<br><div style="margin-left:50px;"><center><div class="form-group"> <label class=" control-label" for="textinput" style="margin-left:327px;">Name: </label> <div > <input id="partner_names[]" name="partner_names[]" type="text" placeholder="Enter Full Name" class="form-control input-md" style="margin-top: -25px;margin-left: 403px;">  </div>  <div class="col-md-6" > <button id="singlebutton" name="singlebutton" class="btn btn-info " style="margin-left: 613px;margin-top: -62px;"><a href="new_user.php" style="color:white" target="_blank">New Entry</a></button>  </div></div> <div class="form-group">  <label class="control-label" for="selectbasic" style="margin-left:293px;">Designation: </label>  <div> <select id="partner_designations[]" name="partner_designations[]" class="form-control" style="margin-left: 405px;margin-top: -34px;">      <option value="Managing Partner">Managing Partner</option>      <option value="Manager">Manager</option>      <option value="Other">Other</option>    </select>  </div>  <div>  <input style="margin-left: 629px;margin-top: -35px;" id="textinput" name="textinput" type="text" placeholder="Specify if Other" class="form-control input-md"></div></div></center><a href="#" class="remove_field"><img src="images/del24.png" style="margin-left: 810px; margin-top: -81px;"></a></a></div>'); //add input box\
+        }
+    });
+    
+    $(wrapper).on("click",".remove_field", function(e){ //user click on remove text
+        e.preventDefault(); $(this).parent('div').remove(); x--;
+    })
+});
+    </script>
+
 <script>
 function goBack() {
     window.history.back();
