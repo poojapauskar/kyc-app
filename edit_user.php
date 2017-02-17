@@ -467,11 +467,12 @@ if(isset($_POST["edit_btn"])) {
     
   </div>
 </div>
+
 <!--date-->
-<div class="form-group">
-  <label for="textinput" class="col-md-4 control-label">Date:</label>
-  <div class="col-md-4">
-    <input id="date" name="date" value="<?php echo $arr_search['response'][0]['user_details']['dob'] ?>" type="text" class="form-control input-md">
+<div class="form-group row">
+  <label for="example-date-input" class="col-2 col-form-label" style="margin-left:29.5%;">Date:</label>
+  <div class="col-10">
+    <input class="form-control" id="date" name="date" value="<?php echo $arr_search['response'][0]['user_details']['date'] ?>" style="width:31%;margin-left:34.6%;margin-top:-2%;" type="date" value="" id="example-date-input">
   </div>
 </div>
 
