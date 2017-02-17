@@ -315,15 +315,12 @@ if(isset($_POST["save_btn"])) {
 </div>
 
 <!-- File Button --> 
-
-<!--   <label class="col-md-4 control-label" for="reg_certificate">Registration Certificate</label>
-  <div class="col-md-4" -->
-    <input id="uploadFile" placeholder="Choose File" disabled="disabled" />
-    <div class="fileUpload btn btn-primary">
-    <span>Upload</span>
-    <input id="reg_certificate" name="reg_certificate" type="file" class="upload" />
+<div class="form-group">
+<label class="col-md-4 control-label" for="reg_certificate">Registration Certificate</label>
+  <div class="col-md-4">
+    <input id="reg_certificate" name="reg_certificate" type="file"/>
 </div>
-
+</div>
 <!-- Text input-->
 <div class="form-group">
   <label class="col-md-4 control-label" for="textinput">PAN </label>  
