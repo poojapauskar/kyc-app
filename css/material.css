@@ -18,15 +18,7 @@ html {
     background: #b3d4fc;
     text-shadow: none
 }
-<<<<<<< HEAD
-=======
 
-.form-control{
-      border: 2px solid #74b25e;
-    border-radius: 7px;
-      }
-
->>>>>>> 2c57d394328b0475b4cf29f64ba4e861a9c1c432
 hr {
     display: block;
     height: 1px;
@@ -3960,18 +3952,8 @@ fieldset[disabled] .mdl-checkbox .mdl-checkbox__ripple-container .mdl-ripple,
     line-height: 56px;
     font-family: Helvetica, Arial, sans-serif;
     margin: 8px 12px;
-<<<<<<< HEAD
-    top: 0;
-    left: 0;
-=======
-<<<<<<< HEAD
     top: 38px;
     left: 30px;
-=======
-    top: 0;
-    left: 0;
->>>>>>> 9d5cd9375de1c42fde03bb0e7829f6f1119640d9
->>>>>>> 2c57d394328b0475b4cf29f64ba4e861a9c1c432
     color: rgb(255, 255, 255);
     z-index: 4
 }

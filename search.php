@@ -13,6 +13,12 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     
     </style>
+    <style type="text/css">
+      .form-control{
+      border: 2px solid #74b25e;
+    border-radius: 7px;
+      }
+    </style>
   </head>
 
 <body style="background-color:#E8E8E8;overflow-x:hidden;">
