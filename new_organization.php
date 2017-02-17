@@ -393,9 +393,7 @@ if(isset($_POST["save_btn"])) {
   <div class="col-md-2 col-sm-2 col-2">
   <input id="partner_names[]" name="partner_names[]" type="text" placeholder="Enter Full Name" class="form-control input-md" style="width: 167px;">
   </div>
-  <div class="col-md-2 col-sm-2 col-2">
-    <button id="singlebutton" name="singlebutton" class="btn btn-info "><a href="new_user.php" style="color:white" target="_blank">New Entry</a></button>
-  </div>
+  <!-- Here new entry button was there -->
 </div>
 
 
@@ -455,7 +453,7 @@ if(isset($_POST["save_btn"])) {
         e.preventDefault();
         if(x < max_fields){ //max input box allowed
             x++; //text box increment
-            $(wrapper).prepend('<br><div style="margin-left:50px;"><center><div class="form-group"> <label class=" control-label" for="textinput" style="margin-left:327px;">Name: </label> <div > <input id="partner_names[]" name="partner_names[]" type="text" placeholder="Enter Full Name" class="form-control input-md" style="margin-top: -25px;margin-left: 403px;">  </div>  <div class="col-md-6" > <button id="singlebutton" name="singlebutton" class="btn btn-info " style="margin-left: 613px;margin-top: -62px;"><a href="new_user.php" style="color:white" target="_blank">New Entry</a></button>  </div></div> <div class="form-group">  <label class="control-label" for="selectbasic" style="margin-left:293px;">Designation: </label>  <div> <select id="partner_designations[]" name="partner_designations[]" class="form-control" style="margin-left: 405px;margin-top: -34px;">      <option value="Managing Partner">Managing Partner</option>      <option value="Manager">Manager</option>      <option value="Other">Other</option>    </select>  </div>  <div>  <input style="margin-left: 629px;margin-top: -35px;" id="textinput" name="textinput" type="text" placeholder="Specify if Other" class="form-control input-md"></div></div></center><a href="#" class="remove_field"><img src="images/del24.png" style="margin-left: 810px; margin-top: -81px;"></a></a></div>'); //add input box\
+            $(wrapper).prepend('<br><div style="margin-left:50px;"><center><div class="form-group"> <label class=" control-label" for="textinput" style="margin-left:327px;">Name: </label> <div > <input id="partner_names[]" name="partner_names[]" type="text" placeholder="Enter Full Name" class="form-control input-md" style="margin-top: -25px;margin-left: 403px;">  </div>  </div> <div class="form-group">  <label class="control-label" for="selectbasic" style="margin-left:293px;">Designation: </label>  <div> <select id="partner_designations[]" name="partner_designations[]" class="form-control" style="margin-left: 405px;margin-top: -34px;">      <option value="Managing Partner">Managing Partner</option>      <option value="Manager">Manager</option>      <option value="Other">Other</option>    </select>  </div>  <div>  <input style="margin-left: 629px;margin-top: -35px;" id="textinput" name="textinput" type="text" placeholder="Specify if Other" class="form-control input-md"></div></div></center><a href="#" class="remove_field"><img src="images/del24.png" style="margin-left: 810px; margin-top: -81px;"></a></a></div>'); //add input box\
         }
     });
     
@@ -485,7 +483,14 @@ if(isset($_POST["save_btn"])) {
     })
 });
 </script>
+
  -->
+
+ <!-- <div class="col-md-6" > <button id="singlebutton" name="singlebutton" class="btn btn-info " style="margin-left: 613px;margin-top: -62px;"><a href="new_user.php" style="color:white" target="_blank">New Entry</a></button>  </div>
+
+ <div class="col-md-2 col-sm-2 col-2">
+    <button id="singlebutton" name="singlebutton" class="btn btn-info "><a href="new_user.php" style="color:white" target="_blank">New Entry</a></button>
+  </div> -->
 </body>
 </html>
 
