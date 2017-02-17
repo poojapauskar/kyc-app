@@ -4,7 +4,22 @@
   <title></title>
 
   <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-<link rel="stylesheet" type="text/css" href="css/material.indigo-pink.min.css">
+<!-- <link rel="stylesheet" type="text/css" href="css/material.indigo-pink.min.css"> -->
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/bootstrap.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <!-- Material Design Lite -->
+    <script src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+    <link rel="stylesheet" href="css/material.css">
+    <!-- Material Design icon font -->
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    
+    </style>
+  </head>
+
+<body style="background-color:#E8E8E8;overflow-x:hidden;">
   <style type="text/css">
     span:before{
     content:" "; 
@@ -226,16 +241,44 @@ if(isset($_POST["save_btn"])) {
 }
 ?>
 
+
+
+<div class="demo-layout-transparent mdl-layout mdl-js-layout">
+      <header style="background-color:#08426a;height:110px;-webkit-box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23) !important;
+     -moz-box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23) !important;
+     box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23) !important;" class="mdl-layout__header mdl-layout__header--transparent">
+        <div class="mdl-layout__header-row" >
+
+        <img style="margin-top:5%;margin-left:28px;" src="images/Different-Honda-Logo.png"></img>
+<h5 style="margin-left:35%;margin-top:9%;">New Entry Organization</h5>
+         <span class="mdl-layout-title" style="margin-left:26%;margin-top:7%;">KYChome</span>
+          <!-- Add spacer, to align navigation to the right -->
+      </header>
+      <div class="mdl-layout__drawer">
+        <span class="mdl-layout-title">Title</span>
+        <nav class="mdl-navigation">
+          <a class="mdl-navigation__link" href="">Home</a>
+          <a class="mdl-navigation__link" href="">New Entry Organization</a>
+          <a class="mdl-navigation__link" href="">New Entry Individual</a>
+          <a class="mdl-navigation__link" href="">Missing Reports</a>
+          <a class="mdl-navigation__link" href="">Admin</a>
+          <a class="mdl-navigation__link" href="">Help</a>
+          <a class="mdl-navigation__link" href="">About Us</a>
+          <a class="mdl-navigation__link" href="">Contact</a>
+        </nav>
+      </div>
+        </div>
+      </header>
 <form class="form-horizontal" method="post" action="new_organization.php" enctype="multipart/form-data">
 
 <fieldset>
 
 <!-- Form Name -->
 <!-- <legend>CA Database</legend>
- --><h4><center> New Entry Organization</center></h4>
+ -->
 
 <!-- Select Basic -->
-<div class="form-group">
+<div class="form-group" style="margin-top:12%;">
   <label class="col-md-4 control-label" for="type_of_org">Type of Organization</label>
   <div class="col-md-4">
     <select id="type_of_org" name="type_of_org" class="form-control">
@@ -273,12 +316,11 @@ if(isset($_POST["save_btn"])) {
 
 <!-- File Button --> 
 <div class="form-group">
-  <label class="col-md-4 control-label" for="reg_certificate">Registration Certificate</label>
+<label class="col-md-4 control-label" for="reg_certificate">Registration Certificate</label>
   <div class="col-md-4">
-    <input id="reg_certificate" name="reg_certificate" type="file">
-  </div>
+    <input id="reg_certificate" name="reg_certificate" type="file"/>
 </div>
-
+</div>
 <!-- Text input-->
 <div class="form-group">
   <label class="col-md-4 control-label" for="textinput">PAN </label>  
