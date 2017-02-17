@@ -57,7 +57,7 @@ td, th {
 }*/
 </style>
 </head>
-<body>
+<body style="background-color:#E8E8E8;overflow-x:hidden;">
 
 <?php
 $url_missing_report = 'https://kyc-application.herokuapp.com/missing_report/';
@@ -80,7 +80,7 @@ $arr_missing_report = json_decode($output_missing_report,true);
      box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23) !important;" class="mdl-layout__header mdl-layout__header--transparent">
         <div class="mdl-layout__header-row" >
 
-        <img style="margin-top:5%;margin-left:28px;" src="images/Different-Honda-Logo.png"></img>
+        <img style="margin-top:5%;margin-left:28px;width:50px;heigh:50px" src="images/green.png"></img>
 <h5 style="margin-left:35%;margin-top:9%;">Missing Report</h5>
          <span class="mdl-layout-title" style="margin-left:26%;margin-top:7%;">KYChome</span>
           <!-- Add spacer, to align navigation to the right -->
@@ -88,11 +88,11 @@ $arr_missing_report = json_decode($output_missing_report,true);
       <div class="mdl-layout__drawer">
         <span class="mdl-layout-title">Title</span>
         <nav class="mdl-navigation">
-          <a class="mdl-navigation__link" href="">Home</a>
-          <a class="mdl-navigation__link" href="">New Entry Organization</a>
-          <a class="mdl-navigation__link" href="">New Entry Individual</a>
-          <a class="mdl-navigation__link" href="">Missing Reports</a>
-          <a class="mdl-navigation__link" href="">Admin</a>
+          <a class="mdl-navigation__link" href="search.php">Home</a>
+          <a class="mdl-navigation__link" href="new_organization.php">New Entry Organization</a>
+          <a class="mdl-navigation__link" href="new_user.php">New Entry Individual</a>
+          <a class="mdl-navigation__link" href="missing_reports.php">Missing Reports</a>
+          <a class="mdl-navigation__link" href="search.php">Admin</a>
           <a class="mdl-navigation__link" href="">Help</a>
           <a class="mdl-navigation__link" href="">About Us</a>
           <a class="mdl-navigation__link" href="">Contact</a>
@@ -119,7 +119,7 @@ $arr_missing_report = json_decode($output_missing_report,true);
     <td><?php echo $arr_missing_report[$i]['name'] ?></td>
     <td><?php echo $arr_missing_report[$i]['uid'] ?></td>
     <td><?php echo $arr_missing_report[$i]['missing_file'] ?></td>
-    <td><button>Generate Link</button></td>
+    <td><button class="btn btn-success" style="color:white">Generate Link</button></td>
   </tr>
   <?php }?>
   
