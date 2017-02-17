@@ -67,7 +67,7 @@ echo $arr_search['response'][0]['user_details']['aadhar_no'];*/
   <style type="text/css">
     .upload-button {
     padding: 4px;
-    border: 1px solid black;
+   /* border: 1px solid black;*/
     border-radius: 5px;
     display: block;
     float: left;
@@ -468,10 +468,10 @@ if(isset($_POST["edit_btn"])) {
   </div>
 </div>
 <!--date-->
-<div class="form-group row">
+<div class="form-group">
   <label for="example-date-input" class="col-2 col-form-label" style="margin-left:29.5%;">Date:</label>
   <div class="col-10">
-    <input class="form-control" id="date" name="date" value="<?php echo $arr_search['response'][0]['user_details']['dob'] ?>" style="width:31%;margin-left:34.6%;margin-top:-2%;" type="date" value="" id="example-date-input">
+    <input id="date" name="date" value="<?php echo $arr_search['response'][0]['user_details']['dob'] ?>" style="width:31%;margin-left:34.6%;margin-top:-2%;" type="text" class="form-control input-md">
   </div>
 </div>
 
@@ -490,13 +490,13 @@ if(isset($_POST["edit_btn"])) {
 </div>
 
 <!-- Text input-->
-<div class="form-group">
+<!-- <div class="form-group">
   <label class="col-md-4 control-label" for="textinput"></label>  
   <div class="col-md-4">
   <input id="textinput" name="textinput" type="text" placeholder="specify " class="form-control input-md">
     
   </div>
-</div>
+</div> -->
 
 <!-- Textarea -->
 <div class="form-group">
