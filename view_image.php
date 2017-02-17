@@ -8,7 +8,7 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 
-<body>
+<body style="background-color:#E8E8E8;overflow-x:hidden;">
 <?php 
 
 $url= $_SERVER['REQUEST_URI'];
@@ -56,15 +56,15 @@ if($_GET['name'] == 'pan_card_details'){
  <div class="col-sm-3">
  </div>
  <div class="col-sm-2">
-  <button onclick="print()">Print</button>
+  <button class="btn btn-success" style="color:white;width:150px;height:50px" onclick="print()">Print</button>
  </div>
  <div class="col-sm-2">
-  <button><a href="mailto:test@gmail.com?subject=KYC Application
-&body=Thank You!">Email</a></button>
+  <button class="btn btn-success" style="color:white;width:150px;height:50px" ><a href="mailto:test@gmail.com?subject=KYC Application
+&body=Thank You!" style="color:white">Email</a></button>
  </div>
  <div class="col-sm-2">
-  <button>
-	  <a download="<?php echo $certificate_name."jpg"; ?>" href="<?php echo $url; ?>" title="Save">Save
+  <button class="btn btn-success" style="color:white;width:150px;height:50px">
+	  <a  style="color:white" download="<?php echo $certificate_name."jpg"; ?>" href="<?php echo $url; ?>" title="Save">Save
 	  </a>
   </button>
  </div>
