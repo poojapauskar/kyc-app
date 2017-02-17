@@ -47,7 +47,7 @@ if($arr2['status']==200){
      -moz-box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23) !important;  /* Firefox 3.6               */
      box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23) !important;" class="mdl-layout__header mdl-layout__header--transparent">
         <div class="mdl-layout__header-row" >
-        <img style="margin-top:5%" src="images/Different-Honda-Logo.png"></img>
+        <img style="margin-top:5%;width:50px;height:50px" src="images/green.png"></img>
          <span class="mdl-layout-title" style="margin-left:80%;margin-top:7%;">KYChome</span>
         </div>
       </header>
