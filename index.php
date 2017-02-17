@@ -9,10 +9,6 @@
     <!-- Material Design icon font -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <!-- Always shows a header, even in smaller screens. -->
-<<<<<<< HEAD
-
-=======
->>>>>>> 2c57d394328b0475b4cf29f64ba4e861a9c1c432
     <link rel="stylesheet" href="css/material.css">
     <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
 </head>
@@ -55,20 +51,11 @@ if($arr2['status']==200){
          <span class="mdl-layout-title" style="margin-left:80%;margin-top:7%;">KYChome</span>
         </div>
       </header>
-<<<<<<< HEAD
-
-=======
-     
->>>>>>> 2c57d394328b0475b4cf29f64ba4e861a9c1c432
       <main class="mdl-layout__content" style="margin-left:75%;">
         <div class="page-content"><!-- Your content goes here -->
       <div class="row">
     <div class="col-sm-9">
     </div>
-<<<<<<< HEAD
-
-=======
->>>>>>> 2c57d394328b0475b4cf29f64ba4e861a9c1c432
     <div class="col-sm-3" style="margin-top:15%;width:230px;">
     <form name="myForm" method="post" action=""  style="background-color:white !important;padding:12px 0px 15px 18px">
 
@@ -86,12 +73,7 @@ if($arr2['status']==200){
           </div>
           </p>
           <br>
-<<<<<<< HEAD
-
          <button type="submit" name="login_btn" id="login_btn" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" style="margin-top:-31px;">Log in</button>
-=======
-            <button type="submit" name="login_btn" id="login_btn" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" style="margin-top:-31px;">Log in</button>
->>>>>>> 2c57d394328b0475b4cf29f64ba4e861a9c1c432
           </div>
         </form>
       </div>
