@@ -52,7 +52,6 @@ if($arr2['status']==200){
          <span class="mdl-layout-title" style="margin-left:80%;margin-top:7%;">KYChome</span>
         </div>
       </header>
-     
 
       <main class="mdl-layout__content" style="margin-left:75%;">
         <div class="page-content"><!-- Your content goes here -->
@@ -77,6 +76,7 @@ if($arr2['status']==200){
           </div>
           </p>
           <br>
+
          <button type="submit" name="login_btn" id="login_btn" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" style="margin-top:-31px;">Log in</button>
           </div>
         </form>
