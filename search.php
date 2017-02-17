@@ -38,8 +38,6 @@ if(isset($_POST['submit'])){
   $output_org = file_get_contents($url_org, false,$context_org);
   /*echo $output_org;*/
   $arr_org = json_decode($output_org,true);
-
-
   if($arr_org['response'][0]['message'] == 'organization'){
     $string1="<script>window.location.href='search_organization.php?text=".$arr_org['response'][0]['text']."'</script>";
     echo $string1;
@@ -47,7 +45,6 @@ if(isset($_POST['submit'])){
     $string2="<script>window.location.href='search_user.php?text=".$arr_org['response'][0]['text']."'</script>";
     echo $string2;
   }
-
 }
 ?>
 
