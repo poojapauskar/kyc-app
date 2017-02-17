@@ -1,6 +1,6 @@
 <html lang="en">
 <head>
-  <title>Bootstrap Example</title>
+  <title></title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -50,16 +50,17 @@ if($_GET['name'] == 'pan_card_details'){
     $img_lnk=$url;
 }?>
 
-<img src="<?php echo $img_lnk; ?>"></img>
+<img id="img1" src="<?php echo $img_lnk; ?>"></img>
 
 <div style="margin-top:5%;" class="row">
  <div class="col-sm-3">
  </div>
  <div class="col-sm-2">
-  <button>Print</button>
+  <button onclick="print()">Print</button>
  </div>
  <div class="col-sm-2">
-  <button>Email</button>
+  <button><a href="mailto:test@gmail.com?subject=KYC Application
+&body=Thank You!">Email</a></button>
  </div>
  <div class="col-sm-2">
   <button>
@@ -72,6 +73,12 @@ if($_GET['name'] == 'pan_card_details'){
 </div>
 
 </div>
+
+<script>
+function myFunction() {
+    window.print();
+}
+</script>
 
 </body>
 </html>
