@@ -92,7 +92,7 @@ $arr_search = json_decode($output_search,true);
  <input type="hidden" value="<?php echo $arr_search['response'][0]['organization_details']['pk'] ?>" name="org_id" id="org_id"></input>
 
 <!-- Select Basic -->
-<div class="form-group" style="margin-top:2%">
+<div class="form-group" style="margin-top:10%">
   <label class="col-md-4 control-label" for="type_of_org">Type of Organization</label>
   <div class="col-md-4">
     <select id="type_of_org" name="type_of_org" class="form-control"  readonly>
@@ -167,8 +167,8 @@ $arr_search = json_decode($output_search,true);
   $arr_img_download = json_decode($output_img_download,true);
   
 ?>
-<button>
-<a target="_blank" href="view_image.php?name=reg_certificate_details&link=<?php echo $arr_img_download[0]['url']; ?>">View</a>
+<button style="background-color:#65AC4C" class="btn btn-success">
+<a target="_blank" style="color:white" href="view_image.php?name=reg_certificate_details&link=<?php echo $arr_img_download[0]['url']; ?>">View</a>
 </button>
 
 </div>
@@ -211,8 +211,8 @@ $arr_search = json_decode($output_search,true);
   $arr_img_download_2 = json_decode($output_img_download_2,true);
   
 ?>
-<button>
-<a target="_blank" href="view_image.php?name=pan_card_details&link=<?php echo $arr_img_download_2[0]['url']; ?>">View</a>
+<button style="background-color:#65AC4C" class="btn btn-success">
+<a target="_blank" style="color:white" href="view_image.php?name=pan_card_details&link=<?php echo $arr_img_download_2[0]['url']; ?>">View</a>
 </button>
 </div>
 
@@ -268,8 +268,10 @@ $arr_search = json_decode($output_search,true);
   $arr_img_download_3 = json_decode($output_img_download_3,true);
   
 ?>
-<button>
-<a target="_blank" href="view_image.php?name=telephone_bill_details&link=<?php echo $arr_img_download_3[0]['url']; ?>">View</a>
+
+<br>
+<button style="background-color:#65AC4C;margin-left:-97%" class="btn btn-success">
+<a target="_blank" style="color:white" href="view_image.php?name=telephone_bill_details&link=<?php echo $arr_img_download_3[0]['url']; ?>">View</a>
 </button>
 </div> 
 
@@ -317,8 +319,9 @@ $arr_search = json_decode($output_search,true);
   $arr_img_download_4 = json_decode($output_img_download_4,true);
   
 ?>
-<button>
-<a target="_blank" href="view_image.php?name=pass_book_details&link=<?php echo $arr_img_download_4[0]['url']; ?>">View</a>
+<br>
+<button style="background-color:#65AC4C;margin-left:-97%" class="btn btn-success">
+<a target="_blank" style="color:white" href="view_image.php?name=pass_book_details&link=<?php echo $arr_img_download_4[0]['url']; ?>">View</a>
 </button>
 </div>
 
@@ -370,7 +373,7 @@ $arr_search = json_decode($output_search,true);
     </select>
   </div>
   <div class="col-md-2">
-     <input id="textinput" name="textinput" type="text" placeholder="Specify if Other" class="form-control input-md">
+     <input id="textinput" name="textinput" type="text" placeholder="Specify if Other" class="form-control input-md" readonly>
   </div>
 
 </div>
