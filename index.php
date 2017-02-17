@@ -9,6 +9,7 @@
     <!-- Material Design icon font -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <!-- Always shows a header, even in smaller screens. -->
+
     <link rel="stylesheet" href="css/material.css">
     <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
 </head>
@@ -52,11 +53,13 @@ if($arr2['status']==200){
         </div>
       </header>
      
+
       <main class="mdl-layout__content" style="margin-left:75%;">
         <div class="page-content"><!-- Your content goes here -->
       <div class="row">
     <div class="col-sm-9">
     </div>
+
     <div class="col-sm-3" style="margin-top:15%;width:230px;">
     <form name="myForm" method="post" action=""  style="background-color:white !important;padding:12px 0px 15px 18px">
 
@@ -74,7 +77,7 @@ if($arr2['status']==200){
           </div>
           </p>
           <br>
-            <button type="submit" name="login_btn" id="login_btn" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" style="margin-top:-31px;">Log in</button>
+         <button type="submit" name="login_btn" id="login_btn" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" style="margin-top:-31px;">Log in</button>
           </div>
         </form>
       </div>
