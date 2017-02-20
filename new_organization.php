@@ -14,8 +14,8 @@
     <link rel="stylesheet" href="css/material.css">
     <!-- Material Design icon font -->
 
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    
+    <!-- <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"> -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     </style>
   </head>
 
@@ -24,10 +24,44 @@
     span:before{
     content:" "; 
     display:inline-block; 
-    width:32px;
+    width:32px;}
+
+    .fileUpload {
+    position: relative;
+    overflow: hidden;
+    margin: 10px;
 }
+.fileUpload input.upload {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 0;
+    padding: 0;
+    font-size: 20px;
+    cursor: pointer;
+    opacity: 0;
+    filter: alpha(opacity=0);
+}
+      .form-control{
+      border: 2px solid #74b25e;
+    border-radius: 4px;
+      }
+    </style>
 
   </style>
+  <script type="text/javascript">
+   function setfilename(val)
+  {
+    var fileName = val.substr(val.lastIndexOf("\\")+1, val.length);
+   document.getElementById("uploadFile").value = fileName;
+  }
+
+   function filename(val)
+  {
+    var fileName = val.substr(val.lastIndexOf("\\")+1, val.length);
+   document.getElementById("upload1").value = fileName;
+  }
+  </script>
 </head>
 <body  style="overflow-y: scroll;" >
 
@@ -279,7 +313,7 @@ if(isset($_POST["save_btn"])) {
 
 <!-- Select Basic -->
 <div class="form-group" style="margin-top:12%;">
-  <label class="col-md-4 control-label" for="type_of_org">Type of Organization</label>
+  <label class="col-md-4 control-label" for="type_of_org">Type of Organization:</label>
   <div class="col-md-4">
     <select id="type_of_org" name="type_of_org" class="form-control">
       <option value="Partnership">Partnership</option>
@@ -292,16 +326,16 @@ if(isset($_POST["save_btn"])) {
 
 <!-- Text input-->
 <div class="form-group">
-  <label class="col-md-4 control-label" for="textname">Name</label>  
+  <label class="col-md-4 control-label" for="textname">Name:</label>  
   <div class="col-md-4">
-  <input id="name" name="name" type="text" placeholder="Enter Name" class="form-control input-md">
+  <input id="name" name="name" type="text" placeholder="Enter Name" class="form-control input-md" required/>
     
   </div>
 </div>
 
 <!-- Multiple Radios (inline) -->
 <div class="form-group">
-  <label class="col-md-4 control-label" for="registration">Registration</label>
+  <label class="col-md-4 control-label" for="registration">Registration:</label>
   <div class="col-md-4"> 
     <label class="radio-inline" for="radios-0">
       <input type="radio" name="registration" id="radios-0" value="1" checked="checked">
@@ -316,14 +350,18 @@ if(isset($_POST["save_btn"])) {
 
 <!-- File Button --> 
 <div class="form-group">
-<label class="col-md-4 control-label" for="reg_certificate">Registration Certificate</label>
+<label class="col-md-4 control-label" for="reg_certificate">Registration Certificate:</label>
   <div class="col-md-4">
-    <input id="reg_certificate" name="reg_certificate" type="file"/>
+    <input id="uploadFile" placeholder="Choose File" class="form-control input-md"/>
+    <div class="fileUpload btn btn-info" style="margin-left:105%;margin-top:-12%;">
+    <label style="font-weight:500;margin-bottom: 2px;">ATTACH</label>
+    <input id="reg_certificate" name="reg_certificate" type="file" class="upload" onchange="setfilename(this.value);" />
+</div>
 </div>
 </div>
 <!-- Text input-->
 <div class="form-group">
-  <label class="col-md-4 control-label" for="textinput">PAN </label>  
+  <label class="col-md-4 control-label" for="textinput">PAN: </label>  
   <div class="col-md-4">
   <input id="pan" name="pan" type="text" placeholder="PAN Card Number" class="form-control input-md">
     
@@ -332,15 +370,19 @@ if(isset($_POST["save_btn"])) {
 
 <!-- File Button --> 
 <div class="form-group">
-  <label class="col-md-4 control-label" for="filebutton">PAN Card</label>
+  <label class="col-md-4 control-label" for="filebutton">PAN Card:</label>
   <div class="col-md-4">
-    <input id="pan_card" name="pan_card" type="file">
+    <input id="upload1" placeholder="Choose File" class="form-control input-md"/>
+    <div class="fileUpload btn btn-info" style="margin-left:105%;margin-top:-12%;">
+    <label style="font-weight:500;margin-bottom: 2px;">ATTACH</label>
+    <input id="pan_card" name="pan_card" type="file" class="upload" onchange="filename(this.value);" />
   </div>
+</div>
 </div>
 
 <!-- Textarea -->
 <div class="form-group">
-  <label class="col-md-4 control-label" for="textarea">Address</label>
+  <label class="col-md-4 control-label" for="textarea">Address:</label>
   <div class="col-md-4">                     
     <textarea class="form-control" id="address" name="address">Enter Address</textarea>
   </div>
@@ -349,23 +391,30 @@ if(isset($_POST["save_btn"])) {
 <!-- Multiple Checkboxes  and File upload Button -->   
 
     <div class="form-group">
- <label class="col-md-4 control-label" for="checkboxes"></label>
+ <label class="col-md-4 control-label" for="checkboxes">Address Proof:</label>
  <div class="col-md-4">
    <label class="checkbox-inline" for="checkboxes-0">
-     <input type="checkbox" name="checkboxes" id="checkboxes-0" value="1">Telephone</label>
-<input id="telephone_bill" style="margin-top: -20px;margin-left: 129px;" name="telephone_bill" class="input-file" type="file">     
+    <input type="checkbox" name="checkboxes" id="checkboxes-0" value="1">Telephone</label>
+     <input id="upload2" placeholder="Choose File" class="form-control input-md" style="width:68%;margin-left:32%;margin-top:-5%"/>
+    <div class="fileUpload btn btn-info" style="margin-left:105%;margin-top:-12%;">
+    <label style="font-weight:500;margin-bottom: 2px;">ATTACH</label>
+    <input id="telephone_bill" name="telephone_bill" type="file" class="upload" onchange="filename(this.value);" /> 
  </div>
+</div>
 </div>
 
 
-
-    <div class="form-group">
+<div class="form-group">
  <label class="col-md-4 control-label" for="checkboxes"></label>
  <div class="col-md-4">
    <label class="checkbox-inline" for="checkboxes-0">
-     <input type="checkbox" name="checkboxes" id="checkboxes-0" value="1">Bank Passbook</label>
-<input id="bank_pass_book" style="margin-top: -22px;margin-left: 129px;" name="bank_pass_book" class="input-file" type="file">     
+     <input type="checkbox" name="checkboxes" id="checkboxes-0" value="1">Bank Passbook:</label>
+     <input id="upload3" placeholder="Choose File" class="form-control input-md" style="width:68%;margin-left:32%;margin-top:-5%"/>
+     <div class="fileUpload btn btn-info" style="margin-left:105%;margin-top:-12%;">
+    <label style="font-weight:500;margin-bottom: 2px;">ATTACH</label>
+<input id="bank_pass_book" name="bank_pass_book" class="upload" type="file" onchange="setfilename(this.value);"  style="margin-top: -22px;margin-left: 129px;"/>     
  </div>
+</div>
 </div>
 
 <!-- Input Type : Number -->
@@ -390,11 +439,11 @@ if(isset($_POST["save_btn"])) {
 <!-- Text input-->
 <div class="form-group">
   <label class="col-md-4 control-label" for="textinput">Name: </label>  
-  <div class="col-md-2 col-sm-2 col-2">
-  <input id="partner_names[]" name="partner_names[]" type="text" placeholder="Enter Full Name" class="form-control input-md" style="width: 167px;">
+  <div class="col-md-4 col-sm-2 col-2">
+  <input id="partner_names[]" name="partner_names[]" type="text" placeholder="Enter Full Name" class="form-control input-md" style="width: 100%;">
   </div>
   <div class="col-md-2 col-sm-2 col-2">
-    <button id="singlebutton" name="singlebutton" class="btn btn-info "><a href="new_user.php" style="color:white" target="_blank">New Entry</a></button>
+    <button id="singlebutton" name="singlebutton" class="btn btn-info " style="margin-left:-6%"><a href="new_user.php" style="color:white" target="_blank">New Entry</a></button>
   </div>
 </div>
 
@@ -403,14 +452,14 @@ if(isset($_POST["save_btn"])) {
 <div class="form-group">
   <label class="col-md-4 control-label" for="selectbasic">Designation: </label>
   <div class="col-md-4">
-    <select id="partner_designations[]" name="partner_designations[]" class="form-control" style="width: 166px;">
+    <select id="partner_designations[]" name="partner_designations[]" class="form-control" style="width: 49%;">
       <option value="1">Managing Partner</option>
       <option value="2">Manager</option>
       <option value="3">Other</option>
     </select>
   </div>
   <div class="col-md-2">
-     <input id="textinput" name="textinput" type="text" placeholder="Specify if Other" class="form-control input-md"  style="margin-left:-221px;">
+     <input id="textinput" name="textinput" type="text" placeholder="Specify if Other" class="form-control input-md"  style="margin-left:-221px;width:103%;">
 </div>
 
 </div> 
@@ -431,8 +480,8 @@ if(isset($_POST["save_btn"])) {
 <div class="form-group">
   <label class="col-md-4 control-label" for="save_btn"></label>
   <div class="col-md-8">
-    <button id="save_btn" name="save_btn" type="submit" class="btn btn-success" style="width: 10em;">Save</button><span><span></span></span>
-    <button onclick="ClickEvent()" class="btn btn-warning"><a style="color:white" href="search.php">Cancel</a></button>
+    <button id="save_btn" name="save_btn" type="submit" class="btn btn-success" style="width: 10em;margin-left:10px">Save</button><span><span></span></span>
+    <button onclick="ClickEvent()" class="btn btn-warning" style="width: 10em;"><a style="color:white" href="search.php">Cancel</a></button>
   
   </div>
 </div>
@@ -455,7 +504,7 @@ if(isset($_POST["save_btn"])) {
         e.preventDefault();
         if(x < max_fields){ //max input box allowed
             x++; //text box increment
-            $(wrapper).append('<br><div style="margin-left:50px;"><center><div class="form-group"> <label class=" control-label" for="textinput" style="margin-left:327px;">Name: </label> <div > <input id="partner_names[]" name="partner_names[]" type="text" placeholder="Enter Full Name" class="form-control input-md" style="margin-top: -25px;margin-left: 403px;">  </div>  <div class="col-md-6" > <button id="singlebutton" name="singlebutton" class="btn btn-info " style="margin-left: 613px;margin-top: -62px;"><a href="new_user.php" style="color:white" target="_blank">New Entry</a></button>  </div></div> <div class="form-group">  <label class="control-label" for="selectbasic" style="margin-left:293px;">Designation: </label>  <div> <select id="partner_designations[]" name="partner_designations[]" class="form-control" style="margin-left: 405px;margin-top: -34px;">      <option value="Managing Partner">Managing Partner</option>      <option value="Manager">Manager</option>      <option value="Other">Other</option>    </select>  </div>  <div>  <input style="margin-left: 629px;margin-top: -35px;" id="textinput" name="textinput" type="text" placeholder="Specify if Other" class="form-control input-md"></div></div></center><a href="#" class="remove_field"><img src="images/del24.png" style="margin-left: 810px; margin-top: -81px;"></a></a></div>'); //add input box\
+            $(wrapper).prepend('<br><div style="margin-left:50px;"><center><div class="form-group"> <label class=" control-label" for="textinput" style="margin-left:327px;">Name: </label> <div > <input id="partner_names[]" name="partner_names[]" type="text" placeholder="Enter Full Name" class="form-control input-md" style="margin-top: -25px;margin-left: 403px;">  </div>  <div class="col-md-6" > <button id="singlebutton" name="singlebutton" class="btn btn-info " style="margin-left: 613px;margin-top: -62px;"><a href="new_user.php" style="color:white" target="_blank">New Entry</a></button>  </div></div> <div class="form-group">  <label class="control-label" for="selectbasic" style="margin-left:293px;">Designation: </label>  <div> <select id="partner_designations[]" name="partner_designations[]" class="form-control" style="margin-left: 405px;margin-top: -34px;">      <option value="Managing Partner">Managing Partner</option>      <option value="Manager">Manager</option>      <option value="Other">Other</option>    </select>  </div>  <div>  <input style="margin-left: 629px;margin-top: -35px;" id="textinput" name="textinput" type="text" placeholder="Specify if Other" class="form-control input-md"></div></div></center><a href="#" class="remove_field"><img src="images/del24.png" style="margin-left: 810px; margin-top: -81px;"></a></a></div>'); //add input box\
         }
     });
     

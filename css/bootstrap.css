@@ -2983,6 +2983,8 @@ select[multiple].input-lg {
     padding-top: 7px;
     margin-bottom: 0;
     text-align: right;
+    text-transform: uppercase;
+    font-weight: 600;
   }
 }
 .form-horizontal .has-feedback .form-control-feedback {
@@ -3299,8 +3301,8 @@ fieldset[disabled] .btn-info.focus {
 }
 .btn-warning:hover {
   color: #fff;
-  background-color: #ec971f;
-  border-color: #d58512;
+  background-color: ##d65656;
+  border-color: #d65656;
 }
 .btn-warning:active,
 .btn-warning.active,

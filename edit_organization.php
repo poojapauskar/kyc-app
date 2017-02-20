@@ -21,8 +21,30 @@
     display:inline-block; 
     width:32px;
 }
+
+    .fileUpload {
+    position: relative;
+    overflow: hidden;
+    margin: 10px;
+}
+.fileUpload input.upload {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 0;
+    padding: 0;
+    font-size: 20px;
+    cursor: pointer;
+    opacity: 0;
+    filter: alpha(opacity=0);
+}
       .form-control{
-      border: 1px solid #74b25e;
+      border: 2px solid #74b25e;
+    border-radius: 4px;
+      }
+
+      .form-control{
+      border: 2px solid #74b25e;
     border-radius: 6px;
       }
     </style>
@@ -356,8 +378,12 @@ if(isset($_POST["edit_btn"])) {
   <label class="col-md-4 control-label" for="reg_certificate">Registration Certificate</label>
 
 <div class="col-md-4">
-<?php echo $arr_search['response'][0]['reg_certificate_details'][0]['name']; ?>
-    <input id="reg_certificate" name="reg_certificate" style="margin-top:-4%;margin-left:31%;" type="file">
+
+    <input id="uploadFile" class="form-control input-md" value="<?php echo $arr_search['response'][0]['reg_certificate_details'][0]['name']; ?>">
+    <div class="fileUpload btn btn-info" style="margin-left:105%;margin-top:-12%;">
+    <label style="font-weight:500;margin-bottom: 2px;">ATTACH</label>
+    <input id="reg_certificate" name="reg_certificate" type="file" class="upload" onchange="setfilename(this.value);" />
+  
 
 <?php
   $url_img_download = 'https://kyc-application.herokuapp.com/download/';
@@ -376,7 +402,7 @@ if(isset($_POST["edit_btn"])) {
   
 ?></div>
 
-<button style="background-color:#65AC4C" class="btn btn-success">
+<button style="background-color:#65AC4C;margin-top:-24%;margin-left:129%;" class="btn btn-success">
 <a target="_blank" style="color:white" href="view_image.php?name=reg_certificate_details&link=<?php echo $arr_img_download[0]['url']; ?>">View</a>
 </button>
 
@@ -397,8 +423,12 @@ if(isset($_POST["edit_btn"])) {
 <div class="form-group">
   <label class="col-md-4 control-label" for="filebutton">PAN Card</label>
 <div class="col-md-4">
- <?php echo $arr_search['response'][0]['pan_card_details'][0]['name']; ?>
-    <input id="pan_card" name="pan_card" type="file" style="margin-top:-4%;margin-left:31%;">
+    <input id="uploadFile" class="form-control input-md" value="
+ <?php echo $arr_search['response'][0]['pan_card_details'][0]['name']; ?>"/>
+   <div class="fileUpload btn btn-info" style="margin-left:105%;margin-top:-12%;">
+    <label style="font-weight:500;margin-bottom: 2px;">ATTACH</label>
+    <input id="pan_card" name="pan_card" type="file" class="upload" onchange="setfilename(this.value);" />
+  
   
 <?php
   $url_img_download_2 = 'https://kyc-application.herokuapp.com/download/';
@@ -417,11 +447,10 @@ if(isset($_POST["edit_btn"])) {
   
 ?>
 </div>
-<button style="background-color:#65AC4C" class="btn btn-success">
+<button style="background-color:#65AC4C;margin-top:-24%;margin-left:129%;" class="btn btn-success">
 <a target="_blank" style="color:white" href="view_image.php?name=pan_card_details&link=<?php echo $arr_img_download_2[0]['url']; ?>">View</a>
 </button>
 </div>
-
 </div>
 
 <!-- Textarea -->
@@ -446,9 +475,13 @@ if(isset($_POST["edit_btn"])) {
     }?>
      <input <?php echo $check_box_select1;?> type="checkbox" name="checkboxes" id="checkboxes-0" value="1">Telephone</label>
   </div>
-<div class="col-md-3">
-     <?php echo $arr_search['response'][0]['telephone_bill_details'][0]['name']; ?>
-<input id="telephone_bill" value="<?php echo $arr_search['response'][0]['organization_details']['telephone'] ?>" style="margin-top: -20px;margin-left: 146px;" name="telephone_bill" class="input-file" type="file">  
+<div class="col-md-9">
+    <input id="uploadFile" style="width:146%;" class="form-control input-md" value="
+     <?php echo $arr_search['response'][0]['telephone_bill_details'][0]['name']; ?>">
+     <div class="fileUpload btn btn-info" style="margin-left:155%;margin-top:-21%;">
+    <label style="font-weight:500;margin-bottom: 2px;">ATTACH</label>
+    <input id="telephone_bill" name="telephone_bill"  value="<?php echo $arr_search['response'][0]['organization_details']['telephone'] ?>" style="margin-top: -20px;margin-left: 146px;" type="file" class="upload" onchange="setfilename(this.value);" /> 
+ 
 
 <?php
   $url_img_download_3 = 'https://kyc-application.herokuapp.com/download/';
@@ -469,7 +502,7 @@ if(isset($_POST["edit_btn"])) {
 </div>
 
 <br>
-<button style="background-color:#65AC4C;margin-left:115%;margin-top:-12%;" class="btn btn-success">
+<button style="background-color:#65AC4C;margin-top:-48%;margin-left:203%;" class="btn btn-success">
 <a target="_blank" style="color:white" href="view_image.php?name=telephone_bill_details&link=<?php echo $arr_img_download_3[0]['url']; ?>">View</a>
 </button>
 </div> 
@@ -494,14 +527,17 @@ if(isset($_POST["edit_btn"])) {
     }?>
      <input <?php echo $check_box_select2;?> type="checkbox" name="checkboxes" id="checkboxes-0" value="1">Bank Passbook</label>
 </div>
-<div class="col-md-3"> 
-     <?php echo $arr_search['response'][0]['pass_book_details'][0]['name']; ?>
-</div>
-<div class="col-md-3">
-    <input id="bank_pass_book" style="margin-top: -4px;margin-left: 53px;" name="bank_pass_book" class="input-file" type="file"> 
-</div>
+<div class="col-md-9"> 
+<input id="uploadFile" style="width:127%;" class="form-control input-md" value="
+     <?php echo $arr_search['response'][0]['pass_book_details'][0]['name']; ?>">
 
-<div class="col-md-4">
+
+
+     <div class="fileUpload btn btn-info" style="margin-left:135%;margin-top:-21%;">
+    <label style="font-weight:500;margin-bottom: 2px;">ATTACH</label>
+<input id="bank_pass_book" style="margin-top: -22px;margin-left: 129px;" name="bank_pass_book" class="upload" type="file" onchange="setfilename(this.value);" />
+ 
+
 <?php
   $url_img_download_4 = 'https://kyc-application.herokuapp.com/download/';
   $options_img_download_4 = array(
@@ -518,9 +554,9 @@ if(isset($_POST["edit_btn"])) {
   $arr_img_download_4 = json_decode($output_img_download_4,true);
   
 ?>
-
+</div>
 <br>
-<button style="background-color:#65AC4C;margin-left:238%;margin-top:-80%;" class="btn btn-success">
+<button style="background-color:#65AC4C;margin-left:238%;margin-top:-45%;margin-left:177%;" class="btn btn-success">
 <a target="_blank" style="color:white" href="view_image.php?name=pass_book_details&link=<?php echo $arr_img_download_4[0]['url']; ?>">View</a>
 </button>
 </div>
