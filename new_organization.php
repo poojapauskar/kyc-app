@@ -61,6 +61,18 @@
     var fileName = val.substr(val.lastIndexOf("\\")+1, val.length);
    document.getElementById("upload1").value = fileName;
   }
+
+  function setfilenameee(val)
+  {
+    var fileName = val.substr(val.lastIndexOf("\\")+1, val.length);
+   document.getElementById("uploaddd").value = fileName;
+  }
+
+  function setfilenamee(val)
+  {
+    var fileName = val.substr(val.lastIndexOf("\\")+1, val.length);
+   document.getElementById("uploadd").value = fileName;
+  }
   </script>
 </head>
 <body  style="overflow-y: scroll;" >
@@ -395,10 +407,10 @@ if(isset($_POST["save_btn"])) {
  <div class="col-md-4">
    <label class="checkbox-inline" for="checkboxes-0">
     <input type="checkbox" name="checkboxes" id="checkboxes-0" value="1">Telephone</label>
-     <input id="upload2" placeholder="Choose File" class="form-control input-md" style="width:68%;margin-left:32%;margin-top:-5%"/>
+     <input id="uploaddd" placeholder="Choose File" class="form-control input-md" style="width:68%;margin-left:32%;margin-top:-5%"/>
     <div class="fileUpload btn btn-info" style="margin-left:105%;margin-top:-12%;">
     <label style="font-weight:500;margin-bottom: 2px;">ATTACH</label>
-    <input id="telephone_bill" name="telephone_bill" type="file" class="upload" onchange="filename(this.value);" /> 
+    <input id="telephone_bill" name="telephone_bill" type="file" class="upload" onchange="setfilenameee(this.value);" /> 
  </div>
 </div>
 </div>
@@ -409,10 +421,14 @@ if(isset($_POST["save_btn"])) {
  <div class="col-md-4">
    <label class="checkbox-inline" for="checkboxes-0">
      <input type="checkbox" name="checkboxes" id="checkboxes-0" value="1">Bank Passbook:</label>
-     <input id="upload3" placeholder="Choose File" class="form-control input-md" style="width:68%;margin-left:32%;margin-top:-5%"/>
+     <input id="uploadd" placeholder="Choose File" class="form-control input-md" style="width:68%;margin-left:32%;margin-top:-5%"/>
+    <div class="fileUpload btn btn-info" style="margin-left:105%;margin-top:-12%;">
+    <label style="font-weight:500;margin-bottom: 2px;">ATTACH</label>
+    <input id="bank_pass_book" name="bank_pass_book" type="file" class="upload" onchange="setfilenamee(this.value);" /> 
+     <!-- <input id="uploadd" placeholder="Choose File" class="form-control input-md" style="width:68%;margin-left:32%;margin-top:-5%"/>
      <div class="fileUpload btn btn-info" style="margin-left:105%;margin-top:-12%;">
     <label style="font-weight:500;margin-bottom: 2px;">ATTACH</label>
-<input id="bank_pass_book" name="bank_pass_book" class="upload" type="file" onchange="setfilename(this.value);"  style="margin-top: -22px;margin-left: 129px;"/>     
+<input id="bank_pass_book" name="bank_pass_book" class="upload" type="file" onchange="setfilenamee(this.value);"  style="margin-top: -22px;margin-left: 129px;"/>  -->    
  </div>
 </div>
 </div>
@@ -434,7 +450,7 @@ if(isset($_POST["save_btn"])) {
 
 
 <!-- Added Partner 1 -->
-<label for="comment" id="number" style="margin-left: 334px;font-size: 18px;"> Partners : </label>
+<label for="comment" id="number" style="margin-left: 307px;font-size: 16px;font-weight:600;"> PARTNERS : </label>
 
 <!-- Text input-->
 <div class="form-group">
@@ -467,7 +483,7 @@ if(isset($_POST["save_btn"])) {
 <div class="form-group">
 <center>
 <div class="col-md-2 col-sm-2 col-2">
-    <div class="input_fields_wrap">
+    <div class="input_fields_wrap" style="color:black">
          <button class="add_field_button btn " onclick="incrementValue()" style="margin-left: 443px;">Add New Partners</button>
          <div>
          <input type="text" name="mytext[]" hidden="" ></div>
@@ -504,7 +520,7 @@ if(isset($_POST["save_btn"])) {
         e.preventDefault();
         if(x < max_fields){ //max input box allowed
             x++; //text box increment
-            $(wrapper).prepend('<br><div style="margin-left:50px;"><center><div class="form-group"> <label class=" control-label" for="textinput" style="margin-left:327px;">Name: </label> <div > <input id="partner_names[]" name="partner_names[]" type="text" placeholder="Enter Full Name" class="form-control input-md" style="margin-top: -25px;margin-left: 403px;">  </div>  <div class="col-md-6" > <button id="singlebutton" name="singlebutton" class="btn btn-info " style="margin-left: 613px;margin-top: -62px;"><a href="new_user.php" style="color:white" target="_blank">New Entry</a></button>  </div></div> <div class="form-group">  <label class="control-label" for="selectbasic" style="margin-left:293px;">Designation: </label>  <div> <select id="partner_designations[]" name="partner_designations[]" class="form-control" style="margin-left: 405px;margin-top: -34px;">      <option value="Managing Partner">Managing Partner</option>      <option value="Manager">Manager</option>      <option value="Other">Other</option>    </select>  </div>  <div>  <input style="margin-left: 629px;margin-top: -35px;" id="textinput" name="textinput" type="text" placeholder="Specify if Other" class="form-control input-md"></div></div></center><a href="#" class="remove_field"><img src="images/del24.png" style="margin-left: 810px; margin-top: -81px;"></a></a></div>'); //add input box\
+            $(wrapper).prepend('<br><div style="margin-left:50px;"><center><div class="form-group"> <label class=" control-label" for="textinput" style="margin-left:327px;">Name: </label> <div > <input id="partner_names[]" name="partner_names[]" type="text" placeholder="Enter Full Name" class="form-control input-md" style="margin-top: -25px;margin-left: 403px;width: 241%;">  </div>  <div class="col-md-6" > <button id="singlebutton" name="singlebutton" class="btn btn-info" style="margin-left: 809px;margin-top: -61px;"><a href="new_user.php" style="color:white" target="_blank">New Entry</a></button>  </div></div> <div class="form-group">  <label class="control-label" for="selectbasic" style="margin-left:293px;">Designation: </label>  <div> <select id="partner_designations[]" name="partner_designations[]" class="form-control" style="margin-left: 405px;margin-top: -34px;width:118%;">      <option value="Managing Partner">Managing Partner</option>      <option value="Manager">Manager</option>      <option value="Other">Other</option>    </select>  </div>  <div>  <input style="margin-left: 617px;margin-top: -35px;width:114%" id="textinput" name="textinput" type="text" placeholder="Specify if Other" class="form-control input-md"></div></div></center><a href="#" class="remove_field"><img src="images/del24.png" style="margin-left: 810px; margin-top: -81px;"></a></a></div>'); //add input box\
         }
     });
     
