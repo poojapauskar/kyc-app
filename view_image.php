@@ -59,14 +59,21 @@ if($_GET['name'] == 'pan_card_details'){
   <button class="btn btn-success" style="color:white;width:150px;height:50px" onclick="print()">Print</button>
  </div>
  <div class="col-sm-2">
-  <button class="btn btn-success" style="color:white;width:150px;height:50px" ><a href="mailto:test@gmail.com?subject=KYC Application
-&body=Thank You!" style="color:white">Email</a></button>
+ 
+ <a href="mailto:test@gmail.com?subject=KYC Application
+&body=Thank You!" style="color:white"> 
+  <button class="btn btn-success" style="color:white;width:150px;height:50px" >Email
+  </button>
+</a>
+
  </div>
  <div class="col-sm-2">
-  <button class="btn btn-success" style="color:white;width:150px;height:50px">
-	  <a  style="color:white" download="<?php echo $certificate_name."jpg"; ?>" href="<?php echo $url; ?>" title="Save">Save
-	  </a>
-  </button>
+  
+  <a  style="color:white" download="<?php echo $certificate_name."jpg"; ?>" href="<?php echo $url; ?>" title="Save">
+    <button class="btn btn-success" style="color:white;width:150px;height:50px">Save
+     </button>
+  </a>
+ 
  </div>
  <div class="col-sm-3">
  </div>
