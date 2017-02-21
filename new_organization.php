@@ -43,8 +43,9 @@
       border: 2px solid #74b25e;
     border-radius: 4px;
       }
-    
+
   </style>
+
   <script type="text/javascript">
    function setfilename(val)
   {
@@ -448,6 +449,7 @@ if(isset($_POST["save_btn"])) {
   <div class="col-md-4 col-sm-2 col-2">
   <input id="partner_names[]" name="partner_names[]" type="text" placeholder="Enter Full Name" class="form-control input-md" style="width: 100%;">
   </div>
+
   <div class="col-md-2 col-sm-2 col-2">
     <button id="singlebutton" name="singlebutton" class="btn btn-info " style="margin-left:-6%"><a href="new_user.php" style="color:white" target="_blank">New Entry</a></button>
   </div>
@@ -468,18 +470,16 @@ if(isset($_POST["save_btn"])) {
   <div class="col-md-2">
      <input id="textinput" name="textinput" type="text" placeholder="Specify if Other" class="form-control input-md"  style="margin-left:-221px;width:103%;">
 </div>
-
 </div> 
 
 <div class="form-group">
 <div class="col-md-2 col-sm-2 col-2">
     <div class="input_fields_wrap" style="color:black">
          <button class="add_field_button btn " onclick="incrementValue()" style="margin-left: 443px;">Add New Partners</button>
-         <div>
          <input type="text" name="mytext[]" hidden="" ></div>
 </div>
-</div>
-</div>
+  </div>
+
 
 <!-- Select Basic -->
 <div class="form-group">
@@ -561,8 +561,9 @@ if(isset($_POST["save_btn"])) {
     $(add_button).click(function(e){ //on add input button click
         e.preventDefault();
         if(x < max_fields){ //max input box allowed
-            x++; //text box increment
+            x++; //text box increme
             $(wrapper).prepend('<br><div style="margin-left:50px;"><center><div class="form-group"> <label class=" control-label" for="textinput" style="margin-left:327px;">Name: </label> <div > <input id="partner_names[]" name="partner_names[]" type="text" placeholder="Enter Full Name" class="form-control input-md" style="margin-top: -25px;margin-left: 403px;width: 241%;">  </div>  <div class="col-md-6" > <button id="singlebutton" name="singlebutton" class="btn btn-info" style="margin-left: 809px;margin-top: -61px;"><a href="new_user.php" style="color:white" target="_blank">New Entry</a></button>  </div></div> <div class="form-group">  <label class="control-label" for="selectbasic" style="margin-left:293px;">Designation: </label>  <div> <select id="partner_designations[]" name="partner_designations[]" class="form-control" style="margin-left: 405px;margin-top: -34px;width:118%;">      <option value="Managing Partner">Managing Partner</option>      <option value="Manager">Manager</option>      <option value="Other">Other</option>    </select>  </div>  <div>  <input style="margin-left: 617px;margin-top: -35px;width:114%" id="textinput" name="textinput" type="text" placeholder="Specify if Other" class="form-control input-md"></div></div></center><a href="#" class="remove_field"><img src="images/del24.png" style="margin-left: 810px; margin-top: -81px;"></a></a></div>'); //add input box\
+
         }
     });
     
@@ -591,7 +592,10 @@ if(isset($_POST["save_btn"])) {
         e.preventDefault(); $(this).parent('div').remove(); x--;
     })
 });
+
     </script>
+
+
 </body>
 </html>
 
