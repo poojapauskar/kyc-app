@@ -48,7 +48,33 @@
     border-radius: 6px;
       }
     </style>
-  </style>
+  <script type="text/javascript">
+    <script type="text/javascript">
+   function setfilename(val)
+  {
+    var fileName = val.substr(val.lastIndexOf("\\")+1, val.length);
+   document.getElementById("uploadFile").value = fileName;
+  }
+
+   function filename(val)
+  {
+    var fileName = val.substr(val.lastIndexOf("\\")+1, val.length);
+   document.getElementById("upload1").value = fileName;
+  }
+
+  function setfilenameee(val)
+  {
+    var fileName = val.substr(val.lastIndexOf("\\")+1, val.length);
+   document.getElementById("uploaddd").value = fileName;
+  }
+
+  function setfilenamee(val)
+  {
+    var fileName = val.substr(val.lastIndexOf("\\")+1, val.length);
+   document.getElementById("uploadd").value = fileName;
+  }
+  </script>
+  </script>
 </head>
 <!-- <body  style="overflow-y:scroll;background-color:#E8E8E8" >
  --><body style="background-color:#E8E8E8;overflow-x:hidden;">
@@ -423,11 +449,11 @@ if(isset($_POST["edit_btn"])) {
 <div class="form-group">
   <label class="col-md-4 control-label" for="filebutton">PAN Card</label>
 <div class="col-md-4">
-    <input id="uploadFile" class="form-control input-md" value="
+    <input id="upload1" class="form-control input-md" value="
  <?php echo $arr_search['response'][0]['pan_card_details'][0]['name']; ?>"/>
    <div class="fileUpload btn btn-info" style="margin-left:105%;margin-top:-12%;">
     <label style="font-weight:500;margin-bottom: 2px;">ATTACH</label>
-    <input id="pan_card" name="pan_card" type="file" class="upload" onchange="setfilename(this.value);" />
+    <input id="pan_card" name="pan_card" type="file" class="upload" onchange="filename(this.value);" />
   
   
 <?php
@@ -476,11 +502,11 @@ if(isset($_POST["edit_btn"])) {
      <input <?php echo $check_box_select1;?> type="checkbox" name="checkboxes" id="checkboxes-0" value="1">Telephone</label>
   </div>
 <div class="col-md-9">
-    <input id="uploadFile" style="width:146%;" class="form-control input-md" value="
+    <input id="uploaddd" style="width:146%;" class="form-control input-md" value="
      <?php echo $arr_search['response'][0]['telephone_bill_details'][0]['name']; ?>">
      <div class="fileUpload btn btn-info" style="margin-left:155%;margin-top:-21%;">
     <label style="font-weight:500;margin-bottom: 2px;">ATTACH</label>
-    <input id="telephone_bill" name="telephone_bill"  value="<?php echo $arr_search['response'][0]['organization_details']['telephone'] ?>" style="margin-top: -20px;margin-left: 146px;" type="file" class="upload" onchange="setfilename(this.value);" /> 
+    <input id="telephone_bill" name="telephone_bill"  value="<?php echo $arr_search['response'][0]['organization_details']['telephone'] ?>" style="margin-top: -20px;margin-left: 146px;" type="file" class="upload" onchange="setfilenameee(this.value);" /> 
  
 
 <?php
@@ -528,14 +554,14 @@ if(isset($_POST["edit_btn"])) {
      <input <?php echo $check_box_select2;?> type="checkbox" name="checkboxes" id="checkboxes-0" value="1">Bank Passbook</label>
 </div>
 <div class="col-md-9"> 
-<input id="uploadFile" style="width:127%;" class="form-control input-md" value="
+<input id="uploadd" style="width:127%;" class="form-control input-md" value="
      <?php echo $arr_search['response'][0]['pass_book_details'][0]['name']; ?>">
 
 
 
      <div class="fileUpload btn btn-info" style="margin-left:135%;margin-top:-21%;">
     <label style="font-weight:500;margin-bottom: 2px;">ATTACH</label>
-<input id="bank_pass_book" style="margin-top: -22px;margin-left: 129px;" name="bank_pass_book" class="upload" type="file" onchange="setfilename(this.value);" />
+<input id="bank_pass_book" style="margin-top: -22px;margin-left: 129px;" name="bank_pass_book" class="upload" type="file" onchange="setfilenamee(this.value);" />
  
 
 <?php
@@ -648,6 +674,40 @@ if(isset($_POST["edit_btn"])) {
   
   </div>
 </div>
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="textinput">Comment</label>  
+  <div class="col-md-4">
+  <input id="textinput" name="textinput" type="text" placeholder="" class="form-control input-md">
+    
+  </div>
+</div>
+
+<!-- Select Basic -->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="selectbasic">Type of work</label>
+  <div class="col-md-4">
+    <select id="selectbasic" name="selectbasic" class="form-control">
+      <option value="1">Option one</option>
+      <option value="2">Option two</option>
+      <option value="3">Option three</option>
+    </select>
+  </div>
+</div>
+
+<!-- Select Basic -->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="selectbasic">Status</label>
+  <div class="col-md-4">
+    <select id="selectbasic" name="selectbasic" class="form-control">
+      <option value="PR">Pending Request</option>
+      <option value="WP">Work in Process</option>
+      <option value="CR">Completed Request</option>
+    </select>
+  </div>
+</div>
+
 </fieldset>
 </form>
 

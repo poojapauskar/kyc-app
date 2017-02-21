@@ -445,10 +445,6 @@ if(isset($_POST["save_btn"])) {
   <label class="col-md-4 control-label"><b> <font size="4">Partner1</font></b></label>
 
 </div> -->
-
-
-
-
 <!-- Added Partner 1 -->
 <label for="comment" id="number" style="margin-left: 307px;font-size: 16px;font-weight:600;"> PARTNERS : </label>
 
@@ -490,7 +486,58 @@ if(isset($_POST["save_btn"])) {
 </div>
 </div>
 </div>
-<br
+
+<!-- Select Basic -->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="selectbasic">Type of work</label>
+  <div class="col-md-4">
+    <select id="selectbasic" name="selectbasic" class="form-control">
+      <option value="1">Option one</option>
+      <option value="2">Option two</option>
+      <option value="3">Option three</option>
+    </select>
+  </div>
+</div>
+
+<!-- Select Basic -->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="selectbasic">Status</label>
+  <div class="col-md-4">
+    <select id="selectbasic" name="selectbasic" class="form-control">
+      <option value="PR">Pending Request</option>
+      <option value="WP">Work in Process</option>
+      <option value="CR">Completed Request</option>
+    </select>
+  </div>
+</div>
+<!--date-->
+<div class="form-group row">
+  <label for="example-date-input" class="col-2 col-form-label" style="margin-left:29.5%;">Date:</label>
+  <div class="col-10">
+    <input class="form-control" id="date" name="date" value="<?php echo $_POST['date'] ?>" style="width:31%;margin-left:34.6%;margin-top:-2%;" type="date" value="" id="example-date-input">
+  </div>
+</div>
+
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="textinput">Comment</label>  
+  <div class="col-md-4">
+  <input id="textinput" name="textinput" type="text" placeholder="" class="form-control input-md">
+    
+  </div>
+</div>
+
+<div class="form-group">
+<center>
+<div class="col-md-2 col-sm-2 col-2">
+    <div class="input_fields" style="color:black">
+         <button class="add_field btn " onclick="incrementValue()" style="margin-left: 443px;">Add</button>
+         <div>
+         <input type="text" name="mytextt[]" hidden="" ></div>
+</div>
+</div>
+</div>
 
 <!-- Buttons SAve and Cancel -->
 <div class="form-group">
@@ -501,6 +548,7 @@ if(isset($_POST["save_btn"])) {
   
   </div>
 </div>
+
 </fieldset>
 </form>
 <script
@@ -521,6 +569,27 @@ if(isset($_POST["save_btn"])) {
         if(x < max_fields){ //max input box allowed
             x++; //text box increment
             $(wrapper).prepend('<br><div style="margin-left:50px;"><center><div class="form-group"> <label class=" control-label" for="textinput" style="margin-left:327px;">Name: </label> <div > <input id="partner_names[]" name="partner_names[]" type="text" placeholder="Enter Full Name" class="form-control input-md" style="margin-top: -25px;margin-left: 403px;width: 241%;">  </div>  <div class="col-md-6" > <button id="singlebutton" name="singlebutton" class="btn btn-info" style="margin-left: 809px;margin-top: -61px;"><a href="new_user.php" style="color:white" target="_blank">New Entry</a></button>  </div></div> <div class="form-group">  <label class="control-label" for="selectbasic" style="margin-left:293px;">Designation: </label>  <div> <select id="partner_designations[]" name="partner_designations[]" class="form-control" style="margin-left: 405px;margin-top: -34px;width:118%;">      <option value="Managing Partner">Managing Partner</option>      <option value="Manager">Manager</option>      <option value="Other">Other</option>    </select>  </div>  <div>  <input style="margin-left: 617px;margin-top: -35px;width:114%" id="textinput" name="textinput" type="text" placeholder="Specify if Other" class="form-control input-md"></div></div></center><a href="#" class="remove_field"><img src="images/del24.png" style="margin-left: 810px; margin-top: -81px;"></a></a></div>'); //add input box\
+        }
+    });
+    
+    $(wrapper).on("click",".remove_field", function(e){ //user click on remove text
+        e.preventDefault(); $(this).parent('div').remove(); x--;
+    })
+});
+    </script><script type="text/javascript">
+
+
+     $(document).ready(function() {
+    var max_fields      = 10; //maximum input boxes allowed
+    var wrapper         = $(".input_fields"); //Fields wrapper
+    var add_button      = $(".add_field"); //Add button ID
+    
+    var x = 1; //initlal text box count
+    $(add_button).click(function(e){ //on add input button click
+        e.preventDefault();
+        if(x < max_fields){ //max input box allowed
+            x++; //text box increment
+            $(wrapper).prepend('<br><div style="margin-left:50px;"><center><div class="form-group"><label class="col-md-4 control-label" for="selectbasic">Type of work</label><div class="col-md-4"><select id="selectbasic" name="selectbasic" class="form-control"><option value="1">Option one</option><option value="2">Option two</option><option value="3">Option three</option></select></div></div></div><div class="form-group"> <label class="col-md-4 control-label" for="selectbasic">Status</label><div class="col-md-4"><select id="selectbasic" name="selectbasic" class="form-control"><option value="PR">Pending Request</option><option value="WP">Work in Process</option><option value="CR">Completed Request</option></select></div></center><a href="#" class="remove_field"><img src="images/del24.png" style="margin-left: 810px; margin-top: -81px;"></a></a></div>'); //add input box\
         }
     });
     

@@ -118,7 +118,7 @@ if(isset($_POST['submit'])){
     </div>
 
     <div class="col-sm-2">
-      <a href="new_organization.php">
+      <a href="pending_req.php">
       <button style="background-color:#74b25e;color:white;width:200px;height:60px;margin-top:12%;margin-left:76%;" class="mdl-button mdl-js-button mdl-button--raised">
       <p style="margin-top:7px;">Pending<br>Request</p>
       </button>
@@ -128,7 +128,7 @@ if(isset($_POST['submit'])){
     <div class="col-sm-2" style="width:11.66667%;">
     </div>
     <div class="col-sm-2">
-      <a href="new_user.php">
+      <a href=".php">
       <button style="background-color:#74b25e;color:white;width:200px;height:60px;margin-top:12%;margin-left:76%;" class="mdl-button mdl-js-button mdl-button--raised">
       <p style="margin-top:7px;">Work In<br>Process</p>
       </button>
@@ -138,7 +138,7 @@ if(isset($_POST['submit'])){
     </div>
     <div class="col-sm-2">
 
-       <a href="missing_reports.php">
+       <a href=".php">
        <button style="background-color:#74b25e;color:white;width:200px;height:60px;margin-top:12%;margin-left:76%;" class="mdl-button mdl-js-button mdl-button--raised">
        <p style="margin-top:7px;">Completed<br></p>
        </button>

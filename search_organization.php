@@ -22,6 +22,26 @@
     display:inline-block; 
     width:32px;
 }
+.alert {
+    padding: 20px;
+    background-color: #f44336;
+    color: white;
+}
+
+.closebtn {
+    margin-left: 15px;
+    color: white;
+    font-weight: bold;
+    float: right;
+    font-size: 22px;
+    line-height: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.closebtn:hover {
+    color: black;
+}
 
   </style>
 </head>
@@ -80,6 +100,14 @@ $arr_search = json_decode($output_search,true);
       </div>
         </div>
       </header>
+
+      <h2>Alert Messages</h2>
+
+<p>Click on the "x" symbol to close the alert message.</p>
+<div class="alert">
+  <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+  <strong>Danger!</strong> Indicates a dangerous or potentially negative action.
+</div>
 
 <form class="form-horizontal" method="post" action="edit_organization.php" enctype="multipart/form-data">
 
