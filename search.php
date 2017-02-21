@@ -117,6 +117,34 @@ if(isset($_POST['submit'])){
        </a>
     </div>
 
+    <div class="col-sm-2">
+      <a href="pending_req.php">
+      <button style="background-color:#74b25e;color:white;width:200px;height:60px;margin-top:12%;margin-left:76%;" class="mdl-button mdl-js-button mdl-button--raised">
+      <p style="margin-top:7px;">Pending<br>Request</p>
+      </button>
+      </a>
+    </div>
+
+    <div class="col-sm-2" style="width:11.66667%;">
+    </div>
+    <div class="col-sm-2">
+      <a href=".php">
+      <button style="background-color:#74b25e;color:white;width:200px;height:60px;margin-top:12%;margin-left:76%;" class="mdl-button mdl-js-button mdl-button--raised">
+      <p style="margin-top:7px;">Work In<br>Process</p>
+      </button>
+      </a>
+    </div>
+    <div class="col-sm-2" style="width:11.66667%;">
+    </div>
+    <div class="col-sm-2">
+
+       <a href=".php">
+       <button style="background-color:#74b25e;color:white;width:200px;height:60px;margin-top:12%;margin-left:76%;" class="mdl-button mdl-js-button mdl-button--raised">
+       <p style="margin-top:7px;">Completed<br></p>
+       </button>
+       </a>
+    </div>
+
     <!-- AutoSearch Script -->
  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
         <script type="text/javascript"
