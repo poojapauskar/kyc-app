@@ -463,6 +463,7 @@ if(isset($_POST["save_btn"])) {
       <option value="3">Other</option>
     </select>
   </div>
+  
   <div class="col-md-2">
      <input id="textinput" name="textinput" type="text" placeholder="Specify if Other" class="form-control input-md"  style="margin-left:-221px;width:103%;">
 </div>
