@@ -2,24 +2,17 @@
 <html>
 <head>
   <title>CA DATA BASE</title>
-
-  <style type="text/css">
-.mdl-layout {
-  align-items: center;
-  justify-content: center;
-}
-.mdl-layout__content {
-  padding: 24px;
-  flex: none;
-}
   </style>
-
-  <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
-  <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+    <!-- Material Design Lite -->
+    <script src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+    <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
+    <!-- Material Design icon font -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <!-- Always shows a header, even in smaller screens. -->
+    <link rel="stylesheet" href="css/material.css">
+    <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
 </head>
-
-
-<body>
+<body style="background-color:#E8E8E8;overflow-x:hidden;">
 
 <?php
 if(isset($_POST['login_btn'])){
@@ -48,32 +41,45 @@ if($arr2['status']==200){
 }
 ?>
 
-<div class="mdl-layout mdl-js-layout mdl-color--grey-100">
-  <main class="mdl-layout__content" style="margin-left: 808px; margin-top: 113px;">
-    <div class="mdl-card mdl-shadow--6dp">
-      <div class="mdl-card__title mdl-color--primary mdl-color-text--white">
-        <h2 class="mdl-card__title-text">CA DATA BASE</h2>
-      </div>
-      <div class="mdl-card__supporting-text">
-        <form action="index.php" method="post">
-          <div class="mdl-textfield mdl-js-textfield">
-            <input class="mdl-textfield__input" type="text" id="username" name="username" required/>
-            <label class="mdl-textfield__label" for="username">Username</label>
+
+    <div class="demo-layout-transparent mdl-layout mdl-js-layout">
+       <header style="background-color:#08426a;height:110px;-webkit-box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23) !important;  /* Chrome and Safari         */
+     -moz-box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23) !important;  /* Firefox 3.6               */
+     box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23) !important;" class="mdl-layout__header mdl-layout__header--transparent">
+        <div class="mdl-layout__header-row" >
+        <img style="margin-top:5%;width:50px;height:50px" src="images/green.png"></img>
+         <span class="mdl-layout-title" style="margin-left:80%;margin-top:7%;">KYChome</span>
+        </div>
+      </header>
+      <main class="mdl-layout__content" style="margin-left:75%;">
+        <div class="page-content"><!-- Your content goes here -->
+      <div class="row">
+    <div class="col-sm-9">
+    </div>
+    <div class="col-sm-3" style="margin-top:15%;width:230px;">
+    <form name="myForm" method="post" action=""  style="background-color:white !important;padding:12px 0px 15px 18px">
+
+      <p style="color:rgba(0,0,0,.87);font-size:18px;font-weight:500;" id="admin_console">Admin Console</p>
+      <p style="color:red"><?php echo $error_message ?></p>
+        <div style="width:190px;" class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+        <input class="mdl-textfield__input" type="text" id="username" name="username" required/>
+        <label style="font-size:14px;" class="mdl-textfield__label" for="sample3">Username</label>
+        </div>
+        </p>
+      
+          <div style="width:190px;margin-top:-24px;"  class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+          <input class="mdl-textfield__input" type="password" id="password" name="password" required/>
+           <label style="font-size:14px;" class="mdl-textfield__label" for="sample3">Password</label>
           </div>
-          <div class="mdl-textfield mdl-js-textfield">
-            <input class="mdl-textfield__input" type="password" id="password" name="password" required/>
-            <label class="mdl-textfield__label" for="password">Password</label>
-          </div>
-          <div class="mdl-card__actions ">
-            <button type="submit" name="login_btn" id="login_btn" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">Log in</button>
+          </p>
+          <br>
+         <button type="submit" name="login_btn" id="login_btn" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" style="margin-top:-31px;">Log in</button>
           </div>
         </form>
       </div>
-    </div>
+      </div>
   </main>
 </div>
-
-
 
 </body>
 </html>

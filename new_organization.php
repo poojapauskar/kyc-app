@@ -4,17 +4,75 @@
   <title></title>
 
   <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-<link rel="stylesheet" type="text/css" href="css/material.indigo-pink.min.css">
+<!-- <link rel="stylesheet" type="text/css" href="css/material.indigo-pink.min.css"> -->
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/bootstrap.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <!-- Material Design Lite -->
+    <script src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+    <link rel="stylesheet" href="css/material.css">
+    <!-- Material Design icon font -->
+
+    <!-- <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"> -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+   
   <style type="text/css">
     span:before{
     content:" "; 
     display:inline-block; 
-    width:32px;
+    width:32px;}
+
+    .fileUpload {
+    position: relative;
+    overflow: hidden;
+    margin: 10px;
 }
+.fileUpload input.upload {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 0;
+    padding: 0;
+    font-size: 20px;
+    cursor: pointer;
+    opacity: 0;
+    filter: alpha(opacity=0);
+}
+      .form-control{
+      border: 2px solid #74b25e;
+    border-radius: 4px;
+      }
+    </style>
 
   </style>
+  <script type="text/javascript">
+   function setfilename(val)
+  {
+    var fileName = val.substr(val.lastIndexOf("\\")+1, val.length);
+   document.getElementById("uploadFile").value = fileName;
+  }
+
+   function filename(val)
+  {
+    var fileName = val.substr(val.lastIndexOf("\\")+1, val.length);
+   document.getElementById("upload1").value = fileName;
+  }
+
+  function setfilenameee(val)
+  {
+    var fileName = val.substr(val.lastIndexOf("\\")+1, val.length);
+   document.getElementById("uploaddd").value = fileName;
+  }
+
+  function setfilenamee(val)
+  {
+    var fileName = val.substr(val.lastIndexOf("\\")+1, val.length);
+   document.getElementById("uploadd").value = fileName;
+  }
+  </script>
 </head>
-<body  style="overflow-y: scroll;" >
+<body style="background-color:#E8E8E8;overflow-x:hidden;">
 
 <?php
 
@@ -226,17 +284,45 @@ if(isset($_POST["save_btn"])) {
 }
 ?>
 
+
+
+<div class="demo-layout-transparent mdl-layout mdl-js-layout">
+      <header style="background-color:#08426a;height:110px;-webkit-box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23) !important;
+     -moz-box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23) !important;
+     box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23) !important;" class="mdl-layout__header mdl-layout__header--transparent">
+        <div class="mdl-layout__header-row" >
+
+        <img style="margin-top:5%;margin-left:28px;width:50px;height:50px" src="images/green.png"></img>
+<h5 style="margin-left:35%;margin-top:9%;">New Entry Organization</h5>
+         <span class="mdl-layout-title" style="margin-left:26%;margin-top:7%;">KYChome</span>
+          <!-- Add spacer, to align navigation to the right -->
+
+      <div class="mdl-layout__drawer">
+        <span class="mdl-layout-title">Title</span>
+        <nav class="mdl-navigation">
+          <a class="mdl-navigation__link" href="search.php">Home</a>
+          <a class="mdl-navigation__link" href="new_organization.php">New Entry Organization</a>
+          <a class="mdl-navigation__link" href="new_user.php">New Entry Individual</a>
+          <a class="mdl-navigation__link" href="missing_reports.php">Missing Reports</a>
+          <a class="mdl-navigation__link" href="search.php">Admin</a>
+          <a class="mdl-navigation__link" href="">Help</a>
+          <a class="mdl-navigation__link" href="">About Us</a>
+          <a class="mdl-navigation__link" href="">Contact</a>
+        </nav>
+      </div>
+        </div>
+      </header>
 <form class="form-horizontal" method="post" action="new_organization.php" enctype="multipart/form-data">
 
 <fieldset>
 
 <!-- Form Name -->
 <!-- <legend>CA Database</legend>
- --><h4><center> New Entry Organization</center></h4>
+ -->
 
 <!-- Select Basic -->
-<div class="form-group">
-  <label class="col-md-4 control-label" for="type_of_org">Type of Organization</label>
+<div class="form-group" style="margin-top:12%;">
+  <label class="col-md-4 control-label" for="type_of_org">Type of Organization:</label>
   <div class="col-md-4">
     <select id="type_of_org" name="type_of_org" class="form-control">
       <option value="Partnership">Partnership</option>
@@ -249,16 +335,16 @@ if(isset($_POST["save_btn"])) {
 
 <!-- Text input-->
 <div class="form-group">
-  <label class="col-md-4 control-label" for="textname">Name</label>  
+  <label class="col-md-4 control-label" for="textname">Name:</label>  
   <div class="col-md-4">
-  <input id="name" name="name" type="text" placeholder="Enter Name" class="form-control input-md">
+  <input id="name" name="name" type="text" placeholder="Enter Name" class="form-control input-md" required/>
     
   </div>
 </div>
 
 <!-- Multiple Radios (inline) -->
 <div class="form-group">
-  <label class="col-md-4 control-label" for="registration">Registration</label>
+  <label class="col-md-4 control-label" for="registration">Registration:</label>
   <div class="col-md-4"> 
     <label class="radio-inline" for="radios-0">
       <input type="radio" name="registration" id="radios-0" value="1" checked="checked">
@@ -273,15 +359,18 @@ if(isset($_POST["save_btn"])) {
 
 <!-- File Button --> 
 <div class="form-group">
-  <label class="col-md-4 control-label" for="reg_certificate">Registration Certificate</label>
+<label class="col-md-4 control-label" for="reg_certificate">Registration Certificate:</label>
   <div class="col-md-4">
-    <input id="reg_certificate" name="reg_certificate" type="file">
-  </div>
+    <input id="uploadFile" placeholder="Choose File" class="form-control input-md"/>
+    <div class="fileUpload btn btn-info" style="margin-left:105%;margin-top:-12%;">
+    <label style="font-weight:500;margin-bottom: 2px;">ATTACH</label>
+    <input id="reg_certificate" name="reg_certificate" type="file" class="upload" onchange="setfilename(this.value);" />
 </div>
-
+</div>
+</div>
 <!-- Text input-->
 <div class="form-group">
-  <label class="col-md-4 control-label" for="textinput">PAN </label>  
+  <label class="col-md-4 control-label" for="textinput">PAN: </label>  
   <div class="col-md-4">
   <input id="pan" name="pan" type="text" placeholder="PAN Card Number" class="form-control input-md">
     
@@ -290,15 +379,19 @@ if(isset($_POST["save_btn"])) {
 
 <!-- File Button --> 
 <div class="form-group">
-  <label class="col-md-4 control-label" for="filebutton">PAN Card</label>
+  <label class="col-md-4 control-label" for="filebutton">PAN Card:</label>
   <div class="col-md-4">
-    <input id="pan_card" name="pan_card" type="file">
+    <input id="upload1" placeholder="Choose File" class="form-control input-md"/>
+    <div class="fileUpload btn btn-info" style="margin-left:105%;margin-top:-12%;">
+    <label style="font-weight:500;margin-bottom: 2px;">ATTACH</label>
+    <input id="pan_card" name="pan_card" type="file" class="upload" onchange="filename(this.value);" />
   </div>
+</div>
 </div>
 
 <!-- Textarea -->
 <div class="form-group">
-  <label class="col-md-4 control-label" for="textarea">Address</label>
+  <label class="col-md-4 control-label" for="textarea">Address:</label>
   <div class="col-md-4">                     
     <textarea class="form-control" id="address" name="address">Enter Address</textarea>
   </div>
@@ -307,23 +400,30 @@ if(isset($_POST["save_btn"])) {
 <!-- Multiple Checkboxes  and File upload Button -->   
 
     <div class="form-group">
- <label class="col-md-4 control-label" for="checkboxes"></label>
+ <label class="col-md-4 control-label" for="checkboxes">Address Proof:</label>
  <div class="col-md-4">
    <label class="checkbox-inline" for="checkboxes-0">
-     <input type="checkbox" name="checkboxes" id="checkboxes-0" value="1">Telephone</label>
-<input id="telephone_bill" style="margin-top: -20px;margin-left: 129px;" name="telephone_bill" class="input-file" type="file">     
+    <input type="checkbox" name="checkboxes" id="checkboxes-0" value="1">Telephone</label>
+     <input id="uploaddd" placeholder="Choose File" class="form-control input-md" style="width:68%;margin-left:32%;margin-top:-5%"/>
+    <div class="fileUpload btn btn-info" style="margin-left:105%;margin-top:-12%;">
+    <label style="font-weight:500;margin-bottom: 2px;">ATTACH</label>
+    <input id="telephone_bill" name="telephone_bill" type="file" class="upload" onchange="setfilenameee(this.value);" /> 
  </div>
+</div>
 </div>
 
 
-
-    <div class="form-group">
+<div class="form-group">
  <label class="col-md-4 control-label" for="checkboxes"></label>
  <div class="col-md-4">
    <label class="checkbox-inline" for="checkboxes-0">
-     <input type="checkbox" name="checkboxes" id="checkboxes-0" value="1">Bank Passbook</label>
-<input id="bank_pass_book" style="margin-top: -22px;margin-left: 129px;" name="bank_pass_book" class="input-file" type="file">     
+     <input type="checkbox" name="checkboxes" id="checkboxes-0" value="1">Bank Passbook:</label>
+     <input id="uploadd" placeholder="Choose File" class="form-control input-md" style="width:68%;margin-left:32%;margin-top:-5%"/>
+    <div class="fileUpload btn btn-info" style="margin-left:105%;margin-top:-12%;">
+    <label style="font-weight:500;margin-bottom: 2px;">ATTACH</label>
+    <input id="bank_pass_book" name="bank_pass_book" type="file" class="upload" onchange="setfilenamee(this.value);" />     
  </div>
+</div>
 </div>
 
 <!-- Input Type : Number -->
@@ -338,21 +438,17 @@ if(isset($_POST["save_btn"])) {
   <label class="col-md-4 control-label"><b> <font size="4">Partner1</font></b></label>
 
 </div> -->
-
-
-
-
 <!-- Added Partner 1 -->
-<label for="comment" id="number" style="margin-left: 334px;font-size: 18px;"> Partners : </label>
+<label for="comment" id="number" style="margin-left: 307px;font-size: 16px;font-weight:600;"> PARTNERS : </label>
 
 <!-- Text input-->
 <div class="form-group">
   <label class="col-md-4 control-label" for="textinput">Name: </label>  
-  <div class="col-md-2 col-sm-2 col-2">
-  <input id="partner_names[]" name="partner_names[]" type="text" placeholder="Enter Full Name" class="form-control input-md" style="width: 167px;">
+  <div class="col-md-4 col-sm-2 col-2">
+  <input id="partner_names[]" name="partner_names[]" type="text" placeholder="Enter Full Name" class="form-control input-md" style="width: 100%;">
   </div>
   <div class="col-md-2 col-sm-2 col-2">
-    <button id="singlebutton" name="singlebutton" class="btn btn-info "><a href="new_user.php" style="color:white" target="_blank">New Entry</a></button>
+    <button id="singlebutton" name="singlebutton" class="btn btn-info " style="margin-left:-6%"><a href="new_user.php" style="color:white" target="_blank">New Entry</a></button>
   </div>
 </div>
 
@@ -361,14 +457,15 @@ if(isset($_POST["save_btn"])) {
 <div class="form-group">
   <label class="col-md-4 control-label" for="selectbasic">Designation: </label>
   <div class="col-md-4">
-    <select id="partner_designations[]" name="partner_designations[]" class="form-control" style="width: 166px;">
+    <select id="partner_designations[]" name="partner_designations[]" class="form-control" style="width: 49%;">
       <option value="1">Managing Partner</option>
       <option value="2">Manager</option>
       <option value="3">Other</option>
     </select>
   </div>
+  
   <div class="col-md-2">
-     <input id="textinput" name="textinput" type="text" placeholder="Specify if Other" class="form-control input-md"  style="margin-left:-221px;">
+     <input id="textinput" name="textinput" type="text" placeholder="Specify if Other" class="form-control input-md"  style="margin-left:-221px;width:103%;">
 </div>
 
 </div> 
@@ -376,24 +473,76 @@ if(isset($_POST["save_btn"])) {
 <div class="form-group">
 <center>
 <div class="col-md-2 col-sm-2 col-2">
-    <div class="input_fields_wrap">
+    <div class="input_fields_wrap" style="color:black">
          <button class="add_field_button btn " onclick="incrementValue()" style="margin-left: 443px;">Add New Partners</button>
          <div>
          <input type="text" name="mytext[]" hidden="" ></div>
 </div>
 </div>
 </div>
-<br
+
+<!-- Select Basic -->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="selectbasic">Type of work</label>
+  <div class="col-md-4">
+    <select id="selectbasic" name="selectbasic" class="form-control">
+      <option value="1">Option one</option>
+      <option value="2">Option two</option>
+      <option value="3">Option three</option>
+    </select>
+  </div>
+</div>
+
+<!-- Select Basic -->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="selectbasic">Status</label>
+  <div class="col-md-4">
+    <select id="selectbasic" name="selectbasic" class="form-control">
+      <option value="PR">Pending Request</option>
+      <option value="WP">Work in Process</option>
+      <option value="CR">Completed Request</option>
+    </select>
+  </div>
+</div>
+<!--date-->
+<div class="form-group row">
+  <label for="example-date-input" class="col-2 col-form-label" style="margin-left:29.5%;">Date:</label>
+  <div class="col-10">
+    <input class="form-control" id="date" name="date" value="<?php echo $_POST['date'] ?>" style="width:31%;margin-left:34.6%;margin-top:-2%;" type="date" value="" id="example-date-input">
+  </div>
+</div>
+
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="textinput">Comment</label>  
+  <div class="col-md-4">
+  <input id="textinput" name="textinput" type="text" placeholder="" class="form-control input-md">
+    
+  </div>
+</div>
+
+<div class="form-group">
+<center>
+<div class="col-md-2 col-sm-2 col-2">
+    <div class="input_fields" style="color:black">
+         <button class="add_field btn " onclick="incrementValue()" style="margin-left: 443px;">Add</button>
+         <div>
+         <input type="text" name="mytextt[]" hidden="" ></div>
+</div>
+</div>
+</div>
 
 <!-- Buttons SAve and Cancel -->
 <div class="form-group">
   <label class="col-md-4 control-label" for="save_btn"></label>
   <div class="col-md-8">
-    <button id="save_btn" name="save_btn" type="submit" class="btn btn-success" style="width: 10em;">Save</button><span><span></span></span>
-    <button onclick="ClickEvent()" class="btn btn-warning"><a style="color:white" href="search.php">Cancel</a></button>
+    <button id="save_btn" name="save_btn" type="submit" class="btn btn-success" style="width: 10em;margin-left:10px">Save</button><span><span></span></span>
+    <button onclick="ClickEvent()" class="btn btn-warning" style="width: 10em;"><a style="color:white" href="search.php">Cancel</a></button>
   
   </div>
 </div>
+
 </fieldset>
 </form>
 <script
@@ -413,7 +562,28 @@ if(isset($_POST["save_btn"])) {
         e.preventDefault();
         if(x < max_fields){ //max input box allowed
             x++; //text box increment
-            $(wrapper).append('<br><div style="margin-left:50px;"><center><div class="form-group"> <label class=" control-label" for="textinput" style="margin-left:327px;">Name: </label> <div > <input id="partner_names[]" name="partner_names[]" type="text" placeholder="Enter Full Name" class="form-control input-md" style="margin-top: -25px;margin-left: 403px;">  </div>  <div class="col-md-6" > <button id="singlebutton" name="singlebutton" class="btn btn-info " style="margin-left: 613px;margin-top: -62px;"><a href="new_user.php" style="color:white" target="_blank">New Entry</a></button>  </div></div> <div class="form-group">  <label class="control-label" for="selectbasic" style="margin-left:293px;">Designation: </label>  <div> <select id="partner_designations[]" name="partner_designations[]" class="form-control" style="margin-left: 405px;margin-top: -34px;">      <option value="Managing Partner">Managing Partner</option>      <option value="Manager">Manager</option>      <option value="Other">Other</option>    </select>  </div>  <div>  <input style="margin-left: 629px;margin-top: -35px;" id="textinput" name="textinput" type="text" placeholder="Specify if Other" class="form-control input-md"></div></div></center><a href="#" class="remove_field"><img src="images/del24.png" style="margin-left: 810px; margin-top: -81px;"></a></a></div>'); //add input box\
+            $(wrapper).prepend('<br><div style="margin-left:50px;"><center><div class="form-group"> <label class=" control-label" for="textinput" style="margin-left:327px;">Name: </label> <div > <input id="partner_names[]" name="partner_names[]" type="text" placeholder="Enter Full Name" class="form-control input-md" style="margin-top: -25px;margin-left: 403px;width: 241%;">  </div>  <div class="col-md-6" > <button id="singlebutton" name="singlebutton" class="btn btn-info" style="margin-left: 809px;margin-top: -61px;"><a href="new_user.php" style="color:white" target="_blank">New Entry</a></button>  </div></div> <div class="form-group">  <label class="control-label" for="selectbasic" style="margin-left:293px;">Designation: </label>  <div> <select id="partner_designations[]" name="partner_designations[]" class="form-control" style="margin-left: 405px;margin-top: -34px;width:118%;">      <option value="Managing Partner">Managing Partner</option>      <option value="Manager">Manager</option>      <option value="Other">Other</option>    </select>  </div>  <div>  <input style="margin-left: 617px;margin-top: -35px;width:114%" id="textinput" name="textinput" type="text" placeholder="Specify if Other" class="form-control input-md"></div></div></center><a href="#" class="remove_field"><img src="images/del24.png" style="margin-left: 810px; margin-top: -81px;"></a></a></div>'); //add input box\
+        }
+    });
+    
+    $(wrapper).on("click",".remove_field", function(e){ //user click on remove text
+        e.preventDefault(); $(this).parent('div').remove(); x--;
+    })
+});
+    </script><script type="text/javascript">
+
+
+     $(document).ready(function() {
+    var max_fields      = 10; //maximum input boxes allowed
+    var wrapper         = $(".input_fields"); //Fields wrapper
+    var add_button      = $(".add_field"); //Add button ID
+    
+    var x = 1; //initlal text box count
+    $(add_button).click(function(e){ //on add input button click
+        e.preventDefault();
+        if(x < max_fields){ //max input box allowed
+            x++; //text box increment
+            $(wrapper).prepend('<br><div style="margin-left:50%;"><center><div class="form-group"><label class="col-md-4 control-label" for="selectbasic">Type of work</label><div class="col-md-4"><select id="selectbasic" name="selectbasic" class="form-control"><option value="1">Option one</option><option value="2">Option two</option><option value="3">Option three</option></select></div></div></div><div class="form-group"> <label class="col-md-4 control-label" for="selectbasic">Status</label><div class="col-md-4"><select id="selectbasic" name="selectbasic" class="form-control"><option value="PR">Pending Request</option><option value="WP">Work in Process</option><option value="CR">Completed Request</option></select></div></center><a href="#" class="remove_field"><img src="images/del24.png" style="margin-left: 810px; margin-top: -81px;"></a></a></div>'); //add input box\
         }
     });
     
@@ -422,28 +592,6 @@ if(isset($_POST["save_btn"])) {
     })
 });
     </script>
-<!-- <script type="text/javascript">
-  
-  $(document).ready(function() {
-    var max_fields      = 10; //maximum input boxes allowed
-    var wrapper         = $(".form-group"); //Fields wrapper
-    var add_partner     = $(".add_new_partner"); //Add button ID
-    
-    var x = 1; //initlal text box count
-    $(add_partner).click(function(e){ //on add input button click
-        e.preventDefault();
-        if(x < max_fields){ //max input box allowed
-            x++; //text box increment
-            $(wrapper).append('<div><input type="text" name="mytext[]"/><a href="#" class="remove_field">Remove</a></div>'); //add input box
-        }
-    });
-    
-    $(wrapper).on("click",".remove_field", function(e){ //user click on remove text
-        e.preventDefault(); $(this).parent('div').remove(); x--;
-    })
-});
-</script>
- -->
 </body>
 </html>
 

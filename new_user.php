@@ -1,16 +1,18 @@
 <html>
   <head>
     <!---bootstrap-->
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <script
-  src="https://code.jquery.com/jquery-2.0.2.js"
-  integrity="sha256-0u0HIBCKddsNUySLqONjMmWAZMQYlxTRbA8RfvtCAW0="
-  crossorigin="anonymous"></script>
- 
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<link rel="stylesheet" type="text/css" href="css/material.indigo-pink.min.css">
 
+<link rel="stylesheet" href="css/bootstrap.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <!-- Material Design Lite -->
+    <script src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+    <link rel="stylesheet" href="css/material.css">
+
+
+ <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
   <script type="text/javascript">
     $(document).ready(function() {
 
@@ -78,7 +80,7 @@ if(a==null || a==''){
 }
 </script>
 <head>
-<body>
+<body style="background-color:#E8E8E8;">
 
 <?php
 
@@ -375,12 +377,40 @@ if(isset($_POST["generate_btn"]) and ($_POST['uid'] != '' || $_POST['uid'] != nu
 ?>
 
 
+<div class="demo-layout-transparent mdl-layout mdl-js-layout">
+      <header style="background-color:#08426a;height:110px;-webkit-box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23) !important;
+     -moz-box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23) !important;
+     box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23) !important;" class="mdl-layout__header mdl-layout__header--transparent">
+        <div class="mdl-layout__header-row" >
+
+        <img style="margin-top:5%;margin-left:28px;width:50px;height:50px" src="images/green.png"></img>
+<h5 style="margin-left:35%;margin-top:9%;">New Entry Individual</h5>
+         <span class="mdl-layout-title" style="margin-left:26%;margin-top:7%;">KYChome</span>
+          <!-- Add spacer, to align navigation to the right -->
+      </header>
+      <div class="mdl-layout__drawer">
+        <span class="mdl-layout-title">Title</span>
+        <nav class="mdl-navigation">
+          <a class="mdl-navigation__link" href="search.php">Home</a>
+          <a class="mdl-navigation__link" href="new_organization.php">New Entry Organization</a>
+          <a class="mdl-navigation__link" href="new_user.php">New Entry Individual</a>
+          <a class="mdl-navigation__link" href="missing_reports.php">Missing Reports</a>
+          <a class="mdl-navigation__link" href="search.php">Admin</a>
+          <a class="mdl-navigation__link" href="">Help</a>
+          <a class="mdl-navigation__link" href="">About Us</a>
+          <a class="mdl-navigation__link" href="">Contact</a>
+        </nav>
+      </div>
+        </div>
+      </header>
 <form onsubmit="return proceed();" name="Form" id="Form" class="form-horizontal" method="post" action="new_user.php" enctype="multipart/form-data">
 <fieldset>
 
 <!-- Form Name -->
 <legend><center>New Individual Entry</center></legend>
 <!--avatar upload-->
+
+<div style="margin-top:7%">
 <img class="profile-pic" style="margin-left:77%;position:absolute;z-index:2;" src="images/boy-512.png" />
 <div class="upload-button" style="position:absolute;z-index:2;margin-left:79%;margin-top:13%;">Upload Image</div>
 <input name="image" id="image" class="file-upload1" style="position:absolute;z-index:-2;margin-left:46%;margin-top:16%;" type="file">
