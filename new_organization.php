@@ -16,10 +16,7 @@
 
     <!-- <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"> -->
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-    </style>
-  </head>
-
-<body style="background-color:#E8E8E8;overflow-x:hidden;">
+   
   <style type="text/css">
     span:before{
     content:" "; 
@@ -75,7 +72,7 @@
   }
   </script>
 </head>
-<body  style="overflow-y: scroll;" >
+<body style="background-color:#E8E8E8;overflow-x:hidden;">
 
 <?php
 
@@ -299,7 +296,7 @@ if(isset($_POST["save_btn"])) {
 <h5 style="margin-left:35%;margin-top:9%;">New Entry Organization</h5>
          <span class="mdl-layout-title" style="margin-left:26%;margin-top:7%;">KYChome</span>
           <!-- Add spacer, to align navigation to the right -->
-      </header>
+
       <div class="mdl-layout__drawer">
         <span class="mdl-layout-title">Title</span>
         <nav class="mdl-navigation">
@@ -424,11 +421,7 @@ if(isset($_POST["save_btn"])) {
      <input id="uploadd" placeholder="Choose File" class="form-control input-md" style="width:68%;margin-left:32%;margin-top:-5%"/>
     <div class="fileUpload btn btn-info" style="margin-left:105%;margin-top:-12%;">
     <label style="font-weight:500;margin-bottom: 2px;">ATTACH</label>
-    <input id="bank_pass_book" name="bank_pass_book" type="file" class="upload" onchange="setfilenamee(this.value);" /> 
-     <!-- <input id="uploadd" placeholder="Choose File" class="form-control input-md" style="width:68%;margin-left:32%;margin-top:-5%"/>
-     <div class="fileUpload btn btn-info" style="margin-left:105%;margin-top:-12%;">
-    <label style="font-weight:500;margin-bottom: 2px;">ATTACH</label>
-<input id="bank_pass_book" name="bank_pass_book" class="upload" type="file" onchange="setfilenamee(this.value);"  style="margin-top: -22px;margin-left: 129px;"/>  -->    
+    <input id="bank_pass_book" name="bank_pass_book" type="file" class="upload" onchange="setfilenamee(this.value);" />     
  </div>
 </div>
 </div>
@@ -589,7 +582,7 @@ if(isset($_POST["save_btn"])) {
         e.preventDefault();
         if(x < max_fields){ //max input box allowed
             x++; //text box increment
-            $(wrapper).prepend('<br><div style="margin-left:50px;"><center><div class="form-group"><label class="col-md-4 control-label" for="selectbasic">Type of work</label><div class="col-md-4"><select id="selectbasic" name="selectbasic" class="form-control"><option value="1">Option one</option><option value="2">Option two</option><option value="3">Option three</option></select></div></div></div><div class="form-group"> <label class="col-md-4 control-label" for="selectbasic">Status</label><div class="col-md-4"><select id="selectbasic" name="selectbasic" class="form-control"><option value="PR">Pending Request</option><option value="WP">Work in Process</option><option value="CR">Completed Request</option></select></div></center><a href="#" class="remove_field"><img src="images/del24.png" style="margin-left: 810px; margin-top: -81px;"></a></a></div>'); //add input box\
+            $(wrapper).prepend('<br><div style="margin-left:50%;"><center><div class="form-group"><label class="col-md-4 control-label" for="selectbasic">Type of work</label><div class="col-md-4"><select id="selectbasic" name="selectbasic" class="form-control"><option value="1">Option one</option><option value="2">Option two</option><option value="3">Option three</option></select></div></div></div><div class="form-group"> <label class="col-md-4 control-label" for="selectbasic">Status</label><div class="col-md-4"><select id="selectbasic" name="selectbasic" class="form-control"><option value="PR">Pending Request</option><option value="WP">Work in Process</option><option value="CR">Completed Request</option></select></div></center><a href="#" class="remove_field"><img src="images/del24.png" style="margin-left: 810px; margin-top: -81px;"></a></a></div>'); //add input box\
         }
     });
     
@@ -598,28 +591,6 @@ if(isset($_POST["save_btn"])) {
     })
 });
     </script>
-<!-- <script type="text/javascript">
-  
-  $(document).ready(function() {
-    var max_fields      = 10; //maximum input boxes allowed
-    var wrapper         = $(".form-group"); //Fields wrapper
-    var add_partner     = $(".add_new_partner"); //Add button ID
-    
-    var x = 1; //initlal text box count
-    $(add_partner).click(function(e){ //on add input button click
-        e.preventDefault();
-        if(x < max_fields){ //max input box allowed
-            x++; //text box increment
-            $(wrapper).append('<div><input type="text" name="mytext[]"/><a href="#" class="remove_field">Remove</a></div>'); //add input box
-        }
-    });
-    
-    $(wrapper).on("click",".remove_field", function(e){ //user click on remove text
-        e.preventDefault(); $(this).parent('div').remove(); x--;
-    })
-});
-</script>
- -->
 </body>
 </html>
 
