@@ -4,12 +4,15 @@ $db = pg_connect("host=ec2-107-20-191-76.compute-1.amazonaws.com port=5432 dbnam
  	
  $term=$_GET["term"];
  
- $query=pg_query("SELECT name FROM organization_organization where name like '%".$term."%' order by name ");
+ $query=pg_query("SELECT name FROM organization_organization 
+ 	UNION 
+ 	SELECT name FROM users_users where name like '%".$term."%' order by name ");
  $json=array();
  
     while($student=pg_fetch_array($query)){
          $json[]=array(
-                    'value'=> $student["name"]);
+                    'value'=> $student["name"],
+                    'label'=>$student["name"]);
     }
  
  echo json_encode($json);

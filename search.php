@@ -3,8 +3,8 @@
     <!---bootstrap-->
     <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<!--   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+ -->  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <!-- Material Design Lite -->
     <script src="https://code.getmdl.io/1.3.0/material.min.js"></script>
     <link rel="stylesheet" href="css/material.css">
@@ -57,7 +57,7 @@ if(isset($_POST['submit'])){
         <img style="margin-top:5%;margin-left:28px;width:50px;height:50px" src="images/green.png"></img>
 <h5 style="margin-left:35%;margin-top:9%;">Admin Panel</h5>
          <span class="mdl-layout-title" style="margin-left:26%;margin-top:7%;">KYChome</span>
-         <img style="margin-top:5%;margin-left:28px;width:50px;height:50px" src="images/logout1.png"></img>
+         <a href="index.php"><img style="margin-top:100%;margin-left:28px;width:40px;height:40px" src="images/logout1.png"></img></a>
           <!-- Add spacer, to align navigation to the right -->
       </header>
       <div class="mdl-layout__drawer">
