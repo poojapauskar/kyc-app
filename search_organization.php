@@ -103,6 +103,7 @@ $arr_search = json_decode($output_search,true);
 </div>
 
 <div class="container" style="">
+<<<<<<< HEAD
 
 <div class="mdl-grid" style="margin-left:80%;margin-top:18%">
   <div class="mdl-card mdl-cell mdl-cell--12-col mdl-cell--10-col-tablet mdl-shadow--2dp">
@@ -118,6 +119,23 @@ $arr_search = json_decode($output_search,true);
 
 <form class="form-horizontal" method="post" action="edit_organization.php" enctype="multipart/form-data" style="margin-top:-34%">
 
+=======
+
+<div class="mdl-grid" style="margin-left:80%;margin-top:18%">
+  <div class="mdl-card mdl-cell mdl-cell--12-col mdl-cell--10-col-tablet mdl-shadow--2dp">
+    <div class="mdl-card__title">
+      <h1 class="mdl-card__title-text">Learning Web Design</h1>
+    </div>
+    <div class="mdl-card__supporting-text">
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam accusamus, consectetur.</p>
+    </div>
+  </div>
+</div>
+
+
+<form class="form-horizontal" method="post" action="edit_organization.php" enctype="multipart/form-data" style="margin-top:-34%">
+
+>>>>>>> 296a2151c034cc52fefea6297e1fdb3d35b0403c
 <fieldset>
  <input type="hidden" value="<?php echo $arr_search['response'][0]['organization_details']['pk'] ?>" name="org_id" id="org_id"></input>
 
@@ -200,6 +218,7 @@ $arr_search = json_decode($output_search,true);
 </div>
 </div>
 
+
 <!-- Text input-->
 <div class="form-group">
   <label class="col-md-4 control-label" for="textinput">PAN </label>  
@@ -268,6 +287,10 @@ $arr_search = json_decode($output_search,true);
      <?php echo $arr_search['response'][0]['telephone_bill_details'][0]['name']; ?>
 </div>
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 296a2151c034cc52fefea6297e1fdb3d35b0403c
 <div class="col-md-3">
 <input id="telephone_bill" value="<?php echo $arr_search['response'][0]['organization_details']['telephone'] ?>" style="margin-top: -20px;margin-left: 129px;" name="telephone_bill" class="input-file" type="file"  disabled="true">  
 </div> 
