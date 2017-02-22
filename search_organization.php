@@ -271,7 +271,6 @@ $arr_search = json_decode($output_search,true);
 </div>
 
 
-
 <div class="col-md-3">
 <input id="telephone_bill" value="<?php echo $arr_search['response'][0]['organization_details']['telephone'] ?>" style="margin-top: -20px;margin-left: 129px;" name="telephone_bill" class="input-file" type="file"  disabled="true">  
 </div> 
