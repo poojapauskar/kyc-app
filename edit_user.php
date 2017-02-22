@@ -819,6 +819,53 @@ if(isset($_POST["edit_btn"])) {
 
 </div>
 
+<?php for($q=0;$q<count($arr_search['response'][0]['add_info']);$q++){?>
+
+<!-- Select Basic -->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="selectbasic">Type of work</label>
+  <div class="col-md-4">
+    <select id="type_of_work[]" name="type_of_work[]" class="form-control">
+      <option value="<?php echo $arr_search['response'][0]['add_info'][$q]['type_of_work']; ?>"><?php echo $arr_search['response'][0]['add_info'][$q]['type_of_work']; ?></option>
+      <option value="Option one">Option one</option>
+      <option value="Option two">Option two</option>
+      <option value="Option three">Option three</option>
+    </select>
+  </div>
+</div>
+
+<!-- Select Basic -->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="selectbasic">Status</label>
+  <div class="col-md-4">
+    <select id="status[]" name="status[]" class="form-control">
+      <option value="<?php echo $arr_search['response'][0]['add_info'][$q]['status']; ?>"><?php echo $arr_search['response'][0]['add_info'][$q]['status']; ?></option>
+      <option value="Pending">Pending</option>
+      <option value="Work in process">Work in process</option>
+      <option value="Completed">Completed</option>
+    </select>
+  </div>
+</div>
+<!--date-->
+<div class="form-group row">
+  <label for="example-date-input" class="col-2 col-form-label" style="margin-left:29.5%;">Date:</label>
+  <div class="col-10">
+    <input class="form-control" id="date[]" name="date[]" value="<?php echo $arr_search['response'][0]['add_info'][$q]['date']; ?>" style="width:31%;margin-left:34.6%;margin-top:-2%;" type="text">
+  </div>
+</div>
+
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="textinput">Comment</label>  
+  <div class="col-md-4">
+  <input id="comment[]" name="comment[]" value="<?php echo $arr_search['response'][0]['add_info'][$q]['comment']; ?>" type="text" placeholder="" class="form-control input-md">
+    
+  </div>
+</div>
+
+<?php  }?>
+
 <!-- Button -->
 <div class="form-group">
   <label class="col-md-4 control-label" for="singlebutton"></label>
