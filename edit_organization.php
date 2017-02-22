@@ -12,6 +12,7 @@
     <!-- Material Design Lite -->
     <script src="https://code.getmdl.io/1.3.0/material.min.js"></script>
     <link rel="stylesheet" href="css/material.css">
+    <link rel="stylesheet" href="css/fileupload.css">
 
 
  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
@@ -22,31 +23,6 @@
     width:32px;
 }
 
-    .fileUpload {
-    position: relative;
-    overflow: hidden;
-    margin: 10px;
-}
-.fileUpload input.upload {
-    position: absolute;
-    top: 0;
-    right: 0;
-    margin: 0;
-    padding: 0;
-    font-size: 20px;
-    cursor: pointer;
-    opacity: 0;
-    filter: alpha(opacity=0);
-}
-      .form-control{
-      border: 2px solid #74b25e;
-    border-radius: 4px;
-      }
-
-      .form-control{
-      border: 2px solid #74b25e;
-    border-radius: 6px;
-      }
     </style>
   <script type="text/javascript">
     <script type="text/javascript">
@@ -533,12 +509,13 @@ if(isset($_POST["edit_btn"])) {
     }?>
      <input <?php echo $check_box_select1;?> type="checkbox" name="checkboxes" id="checkboxes-0" value="1">Telephone</label>
   </div>
+
 <div class="col-md-9">
     <input id="uploaddd" style="width:146%;" class="form-control input-md" value="
      <?php echo $arr_search['response'][0]['telephone_bill_details'][0]['name']; ?>">
      <div class="fileUpload btn btn-info" style="margin-left:155%;margin-top:-21%;">
     <label style="font-weight:500;margin-bottom: 2px;">ATTACH</label>
-    <input id="telephone_bill" name="telephone_bill"  value="<?php echo $arr_search['response'][0]['organization_details']['telephone'] ?>" style="margin-top: -20px;margin-left: 146px;" type="file" class="upload" onchange="setfilenameee(this.value);" /> 
+    <input id="telephone_bill" name="telephone_bill" style="margin-top: -20px;margin-left: 146px;" type="file" class="upload" onchange="setfilenameee(this.value);" /> 
  
 
 <?php
@@ -767,8 +744,6 @@ if(isset($_POST["edit_btn"])) {
   
   </div>
 </div>
-
-
 
 </fieldset>
 </form>
