@@ -43,14 +43,11 @@
       border: 2px solid #74b25e;
     border-radius: 4px;
       }
-<<<<<<< HEAD
+
     </style>
 
-=======
-    
-  </style>
->>>>>>> add btn is added-organ
   <script type="text/javascript">
+
    function setfilename(val)
   {
     var fileName = val.substr(val.lastIndexOf("\\")+1, val.length);
@@ -74,8 +71,9 @@
     var fileName = val.substr(val.lastIndexOf("\\")+1, val.length);
    document.getElementById("uploadd").value = fileName;
   }
-  </script>
+</script>
 </head>
+
 <body style="background-color:#E8E8E8;overflow-x:hidden;">
 
 <?php
