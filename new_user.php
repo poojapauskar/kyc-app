@@ -343,6 +343,30 @@ if(isset($_POST["generate_btn"]) and ($_POST['uid'] != '' || $_POST['uid'] != nu
         $image_id="";
     }
 
+  $type_of_work='';
+  for($j=0;$j<count($_POST['type_of_work']);$j++){
+    $type_of_work=$type_of_work.",".$_POST['type_of_work'][$j];
+  }
+  $type_of_work = ltrim($type_of_work, ',');
+
+  $status='';
+  for($j=0;$j<count($_POST['status']);$j++){
+    $status=$status.",".$_POST['status'][$j];
+  }
+  $status = ltrim($status, ',');
+
+  $date='';
+  for($j=0;$j<count($_POST['date']);$j++){
+    $date=$date.",".$_POST['date'][$j];
+  }
+  $date = ltrim($date, ',');
+
+  $comment='';
+  for($j=0;$j<count($_POST['comment']);$j++){
+    $comment=$comment.",".$_POST['comment'][$j];
+  }
+  $comment = ltrim($comment, ',');
+
   $url_org = 'https://kyc-application.herokuapp.com/add_new_individual/';
   $options_org = array(
     'http' => array(
@@ -361,6 +385,10 @@ if(isset($_POST["generate_btn"]) and ($_POST['uid'] != '' || $_POST['uid'] != nu
                           'AADHAR-NO: '.$aadhar_no,
                           'AADHAR-CARD: '.$aadhar_card_id,
                           'IMAGE: '.$image_id,
+                          'TYPE-OF-WORK: '.$type_of_work,
+                          'STATUS: '.$status,
+                          'DATE: '.$date,
+                          'COMMENT: '.$comment,
                           ),
       'method'  => 'GET',
     ),

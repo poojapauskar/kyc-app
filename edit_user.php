@@ -3,7 +3,8 @@ $url_search = 'https://kyc-application.herokuapp.com/search/';
 $options_search = array(
   'http' => array(
     'header'  => array(
-                  'TEXT: '.$_POST['name'],
+                  'IS-USER: 1',
+                  'PK: '.$_POST['user_id'],
                 ),
     'method'  => 'GET',
   ),
@@ -348,6 +349,30 @@ if(isset($_POST["edit_btn"])) {
         $image_id=$arr_search['response'][0]['image_details'][0]['pk'];
     }
 
+  $type_of_work='';
+  for($j=0;$j<count($_POST['type_of_work']);$j++){
+    $type_of_work=$type_of_work.",".$_POST['type_of_work'][$j];
+  }
+  $type_of_work = ltrim($type_of_work, ',');
+
+  $status='';
+  for($j=0;$j<count($_POST['status']);$j++){
+    $status=$status.",".$_POST['status'][$j];
+  }
+  $status = ltrim($status, ',');
+
+  $date='';
+  for($j=0;$j<count($_POST['date']);$j++){
+    $date=$date.",".$_POST['date'][$j];
+  }
+  $date = ltrim($date, ',');
+
+  $comment='';
+  for($j=0;$j<count($_POST['comment']);$j++){
+    $comment=$comment.",".$_POST['comment'][$j];
+  }
+  $comment = ltrim($comment, ',');
+
   $url_org = 'https://kyc-application.herokuapp.com/edit_user/';
   $options_org = array(
     'http' => array(
@@ -366,6 +391,10 @@ if(isset($_POST["edit_btn"])) {
                           'AADHAR-NO: '.$_POST['aadhar_no'],
                           'AADHAR-CARD: '.$aadhar_card_id,
                           'IMAGE: '.$image_id,
+                          'TYPE-OF-WORK: '.$type_of_work,
+                          'STATUS: '.$status,
+                          'DATE: '.$date,
+                          'COMMENT: '.$comment,
                           ),
       'method'  => 'GET',
     ),
@@ -377,7 +406,7 @@ if(isset($_POST["edit_btn"])) {
   if($arr_org['status']==200){
     /*echo "<script>alert('IndividualUpdated')</script>";*/
 
-    $string1="<script>window.location.href='search_user.php?text=".$arr_org['name']."'</script>";
+    $string1="<script>window.location.href='search_user.php?id=".$arr_org['pk']."'</script>";
     echo $string1;
 
     /*echo $output_org;*/
