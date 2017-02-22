@@ -719,9 +719,9 @@ if(isset($_POST["edit_btn"])) {
   <div class="col-md-4">
     <select id="status[]" name="status[]" class="form-control">
       <option value="<?php echo $arr_search['response'][0]['add_info'][$q]['status']; ?>"><?php echo $arr_search['response'][0]['add_info'][$q]['status']; ?></option>
-      <option value="Pending Request">Pending Request</option>
-      <option value="Work in Process">Work in Process</option>
-      <option value="Completed Request">Completed Request</option>
+      <option value="Pending">Pending</option>
+      <option value="Work in process">Work in process</option>
+      <option value="Completed">Completed</option>
     </select>
   </div>
 </div>

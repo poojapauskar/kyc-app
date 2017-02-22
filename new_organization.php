@@ -524,9 +524,9 @@ if(isset($_POST["save_btn"])) {
   <label class="col-md-4 control-label" for="selectbasic">Status</label>
   <div class="col-md-4">
     <select id="status[]" name="status[]" class="form-control">
-      <option value="Pending Request">Pending Request</option>
-      <option value="Work in Process">Work in Process</option>
-      <option value="Completed Request">Completed Request</option>
+      <option value="Pending">Pending</option>
+      <option value="Work in process">Work in process</option>
+      <option value="Completed">Completed</option>
     </select>
   </div>
 </div>

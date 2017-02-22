@@ -58,6 +58,29 @@ td, th {
 </style>
 </head>
 <body style="background-color:#E8E8E8;overflow-x:hidden;">
+
+<?php
+
+  $url_status = 'https://kyc-application.herokuapp.com/search_on_status/';
+  $options_status = array(
+    'http' => array(
+      'header'  => array(
+                          'STATUS: '.$_GET['status'],
+                         ),
+      'method'  => 'GET',
+    ),
+  );
+  $context_status = stream_context_create($options_status);
+  $output_status = file_get_contents($url_status, false,$context_status);
+  /*echo $output_status;*/
+  $arr_status = json_decode($output_status,true);
+  /*echo $arr_status[0]['additional_info']['status'];
+  echo $arr_status[0]['details']['name'];
+  echo $arr_status[0]['is_user'];*/
+  
+
+?>
+
 <div class="demo-layout-transparent mdl-layout mdl-js-layout">
       <header style="background-color:#08426a;height:110px;-webkit-box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23) !important;
      -moz-box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23) !important;
@@ -65,7 +88,7 @@ td, th {
         <div class="mdl-layout__header-row" >
 
         <img style="margin-top:5%;margin-left:28px;width:50px;height:50px" src="images/green.png"></img>
-<h5 style="margin-left:35%;margin-top:9%;">Pending Request</h5>
+<h5 style="margin-left:35%;margin-top:9%;"><?php echo $_GET['status'] ?></h5>
          <span class="mdl-layout-title" style="margin-left:26%;margin-top:7%;">KYChome</span>
           <!-- Add spacer, to align navigation to the right -->
       </header>
@@ -91,19 +114,38 @@ td, th {
 <table id="example" class="mdl-data-table" cellspacing="0" style="margin-left:12%;width:75%;margin-top:12%;">
         <thead>
             <th>Name</th>
-        <th>UID</th>
-          <th>Missing File</th>
-            <th>Action</th>
+            <th>User/Organization</th>
+            <th>Type of work</th>
+            <th>Status</th>
+            <th>Date</th>
+            <th>Comment</th>
+            <th>Details</th>
         </thead>
         
         
            </tr>
-  <?php for($i=0;$i<count($arr_missing_report);$i++){?>
+  <?php for($i=0;$i<count($arr_status);$i++){
+     if($arr_status[0]['is_user']=="0"){
+      $field="User";
+      $field2="search_organization.php?id=".$arr_status[$i]['additional_info']['user_org_id'];
+     }else{
+      $field="Organization";
+      $field2="search_user.php?id=".$arr_status[$i]['additional_info']['user_org_id'];
+     }
+  ?>
   <tr>
-    <td><?php echo $arr_missing_report[$i]['name'] ?></td>
-    <td><?php echo $arr_missing_report[$i]['uid'] ?></td>
-    <td><?php echo $arr_missing_report[$i]['missing_file'] ?></td>
-    <td><button class="btn btn-success" style="color:white">Generate Link</button></td>
+    <td><?php echo $arr_status[$i]['details']['name'] ?></td>
+    <td><?php echo $arr_status[$i]['additional_info']['type_of_work'] ?></td>
+    <td><?php echo $field ?></td>
+    <td><?php echo $arr_status[$i]['additional_info']['status'] ?></td>
+    <td><?php echo $arr_status[$i]['additional_info']['date'] ?></td>
+    <td><?php echo $arr_status[$i]['additional_info']['comment'] ?></td>
+    <td>
+    <form method="post" action="<?php echo $field2; ?>">
+      <button type="submit" class="btn btn-success" style="color:white">Details</button>
+    </form>
+
+    </td>
   </tr>
   <?php }?>
   
