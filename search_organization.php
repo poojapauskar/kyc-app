@@ -10,18 +10,11 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <!-- Material Design Lite -->
-<<<<<<< HEAD
     <script src="https://code.getmdl.io/1.3.0/material.min.js"></script>
     <link rel="stylesheet" href="css/material.css">
     <link rel="stylesheet" href="css/fileupload.css">
 
  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-=======
-  <script src="https://code.getmdl.io/1.3.0/material.min.js"></script>
-  <link rel="stylesheet" href="css/material.css">
-  <link rel="stylesheet" href="css/fileupload.css">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
->>>>>>> notification and card is added
 
   <style type="text/css">
     span:before{
@@ -141,7 +134,7 @@ $arr_search = json_decode($output_search,true);
   </div>
 </div> 
 
-<form class="form-horizontal" method="post" action="edit_organization.php" enctype="multipart/form-data" style="margin-top:-34%">
+<form class="form-horizontal" method="post" action="edit_organization.php" enctype="multipart/form-data" style="margin-top:-30%">
 
 <fieldset>
  <input type="hidden" value="<?php echo $arr_search['response'][0]['organization_details']['pk'] ?>" name="org_id" id="org_id"></input>
