@@ -53,13 +53,14 @@
 /*echo $_POST['search'];*/
 // if its cumin from edit org to search org then query based on edit org name
 
-$text=$_GET['text'];
+$text=$_GET['id'];
 
 $url_search = 'https://kyc-application.herokuapp.com/search/';
 $options_search = array(
   'http' => array(
     'header'  => array(
-                  'TEXT: '.$text,
+                  'IS-USER: 0',
+                  'PK: '.$text,
                 ),
     'method'  => 'GET',
   ),
@@ -106,6 +107,13 @@ $arr_search = json_decode($output_search,true);
 <p>Click on the "x" symbol to close the alert message.</p>
 <div class="alert">
   <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+
+  <?php for($q=0;$q<count($arr_search['response'][0]['add_info']);$q++){
+   echo $arr_search['response'][0]['add_info'][$q]['type_of_work'];
+   echo $arr_search['response'][0]['add_info'][$q]['status'];
+   echo $arr_search['response'][0]['add_info'][$q]['date']; 
+   echo $arr_search['response'][0]['add_info'][$q]['comment']; 
+  }?>
   <strong>Danger!</strong> Indicates a dangerous or potentially negative action.
 </div>
 

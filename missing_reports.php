@@ -52,6 +52,16 @@ td, th {
     padding: 8px;
 }
 
+@font-face {
+  font-family: Roboto-Regular;
+  src: url(Roboto-Regular.ttf);
+}
+
+table{
+  font-size:14px !important;
+  font-family: Roboto-Regular;
+}
+
 /*tr:nth-child(even) {
     background-color: #dddddd;
 }*/

@@ -252,6 +252,30 @@ if(isset($_POST["save_btn"])) {
   $partner_designations = ltrim($partner_designations, ',');
   /*echo $partner_designations;*/
 
+  $type_of_work='';
+  for($j=0;$j<count($_POST['type_of_work']);$j++){
+    $type_of_work=$type_of_work.",".$_POST['type_of_work'][$j];
+  }
+  $type_of_work = ltrim($type_of_work, ',');
+
+  $status='';
+  for($j=0;$j<count($_POST['status']);$j++){
+    $status=$status.",".$_POST['status'][$j];
+  }
+  $status = ltrim($status, ',');
+
+  $date='';
+  for($j=0;$j<count($_POST['date']);$j++){
+    $date=$date.",".$_POST['date'][$j];
+  }
+  $date = ltrim($date, ',');
+
+  $comment='';
+  for($j=0;$j<count($_POST['comment']);$j++){
+    $comment=$comment.",".$_POST['comment'][$j];
+  }
+  $comment = ltrim($comment, ',');
+
   $url_org = 'https://kyc-application.herokuapp.com/add_new_organization/';
   $options_org = array(
     'http' => array(
@@ -268,6 +292,10 @@ if(isset($_POST["save_btn"])) {
                           'NO-OF-PARTNERS: '.$_POST['no_of_partners'],
                           'PARTNER-NAMES: '.$partner_names,
                           'PARTNER-DESIGNATIONS: '.$partner_designations,
+                          'TYPE-OF-WORK: '.$type_of_work,
+                          'STATUS: '.$status,
+                          'DATE: '.$date,
+                          'COMMENT: '.$comment,
                           ),
       'method'  => 'GET',
     ),
@@ -483,10 +511,10 @@ if(isset($_POST["save_btn"])) {
 <div class="form-group">
   <label class="col-md-4 control-label" for="selectbasic">Type of work</label>
   <div class="col-md-4">
-    <select id="selectbasic" name="selectbasic" class="form-control">
-      <option value="1">Option one</option>
-      <option value="2">Option two</option>
-      <option value="3">Option three</option>
+    <select id="type_of_work[]" name="type_of_work[]" class="form-control">
+      <option value="Option one">Option one</option>
+      <option value="Option two">Option two</option>
+      <option value="Option three">Option three</option>
     </select>
   </div>
 </div>
@@ -495,10 +523,10 @@ if(isset($_POST["save_btn"])) {
 <div class="form-group">
   <label class="col-md-4 control-label" for="selectbasic">Status</label>
   <div class="col-md-4">
-    <select id="selectbasic" name="selectbasic" class="form-control">
-      <option value="PR">Pending Request</option>
-      <option value="WP">Work in Process</option>
-      <option value="CR">Completed Request</option>
+    <select id="status[]" name="status[]" class="form-control">
+      <option value="Pending Request">Pending Request</option>
+      <option value="Work in Process">Work in Process</option>
+      <option value="Completed Request">Completed Request</option>
     </select>
   </div>
 </div>
@@ -506,7 +534,7 @@ if(isset($_POST["save_btn"])) {
 <div class="form-group row">
   <label for="example-date-input" class="col-2 col-form-label" style="margin-left:29.5%;">Date:</label>
   <div class="col-10">
-    <input class="form-control" id="date" name="date" value="<?php echo $_POST['date'] ?>" style="width:31%;margin-left:34.6%;margin-top:-2%;" type="date" value="" id="example-date-input">
+    <input class="form-control" id="date[]" name="date[]" value="<?php echo $_POST['date'] ?>" style="width:31%;margin-left:34.6%;margin-top:-2%;" type="date" value="" id="example-date-input">
   </div>
 </div>
 
@@ -515,7 +543,7 @@ if(isset($_POST["save_btn"])) {
 <div class="form-group">
   <label class="col-md-4 control-label" for="textinput">Comment</label>  
   <div class="col-md-4">
-  <input id="textinput" name="textinput" type="text" placeholder="" class="form-control input-md">
+  <input id="comment[]" name="comment[]" type="text" placeholder="" class="form-control input-md">
     
   </div>
 </div>
