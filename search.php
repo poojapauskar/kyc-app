@@ -120,7 +120,7 @@ if(isset($_POST['submit'])){
     <div class="col-sm-2">
       <a href="search_on_status.php?status=Pending">
       <button style="background-color:#74b25e;color:white;width:200px;height:60px;margin-top:12%;margin-left:76%;" class="mdl-button mdl-js-button mdl-button--raised">
-      <p style="margin-top:7px;">Pending<br>Request</p>
+      <p style="margin-top:7px;">Pending</p>
       </button>
       </a>
     </div>
@@ -128,9 +128,9 @@ if(isset($_POST['submit'])){
     <div class="col-sm-2" style="width:11.66667%;">
     </div>
     <div class="col-sm-2">
-      <a href="search_on_status.php?status=Work In Process">
+      <a href="search_on_status.php?status=Work in process">
       <button style="background-color:#74b25e;color:white;width:200px;height:60px;margin-top:12%;margin-left:76%;" class="mdl-button mdl-js-button mdl-button--raised">
-      <p style="margin-top:7px;">Work In<br>Process</p>
+      <p style="margin-top:7px;">Work in process</p>
       </button>
       </a>
     </div>

@@ -126,17 +126,17 @@ td, th {
            </tr>
   <?php for($i=0;$i<count($arr_status);$i++){
      if($arr_status[0]['is_user']=="0"){
-      $field="User";
+      $field="Organization";
       $field2="search_organization.php?id=".$arr_status[$i]['additional_info']['user_org_id'];
      }else{
-      $field="Organization";
+      $field="User";
       $field2="search_user.php?id=".$arr_status[$i]['additional_info']['user_org_id'];
      }
   ?>
   <tr>
     <td><?php echo $arr_status[$i]['details']['name'] ?></td>
-    <td><?php echo $arr_status[$i]['additional_info']['type_of_work'] ?></td>
     <td><?php echo $field ?></td>
+    <td><?php echo $arr_status[$i]['additional_info']['type_of_work'] ?></td>
     <td><?php echo $arr_status[$i]['additional_info']['status'] ?></td>
     <td><?php echo $arr_status[$i]['additional_info']['date'] ?></td>
     <td><?php echo $arr_status[$i]['additional_info']['comment'] ?></td>
