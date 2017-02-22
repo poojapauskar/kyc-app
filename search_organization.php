@@ -197,10 +197,8 @@ $arr_search = json_decode($output_search,true);
 <button style="background-color:#65AC4C;margin-top:-24%;margin-left:129%;" class="btn btn-success">
 <a target="_blank" style="color:white" href="view_image.php?name=reg_certificate_details&link=<?php echo $arr_img_download[0]['url']; ?>">View</a>
 </button>
-
 </div>
 </div>
-
 
 <!-- Text input-->
 <div class="form-group">
@@ -270,8 +268,6 @@ $arr_search = json_decode($output_search,true);
      <?php echo $arr_search['response'][0]['telephone_bill_details'][0]['name']; ?>
 </div>
 
-
-
 <div class="col-md-3">
 <input id="telephone_bill" value="<?php echo $arr_search['response'][0]['organization_details']['telephone'] ?>" style="margin-top: -20px;margin-left: 129px;" name="telephone_bill" class="input-file" type="file"  disabled="true">  
 </div> 
@@ -297,12 +293,8 @@ $arr_search = json_decode($output_search,true);
 <a target="_blank" href="view_image.php?name=telephone_bill_details&link=<?php echo $arr_img_download_3[0]['url']; ?>">View</a>
 </button>
 </div> 
-
-
 </div>
 </div>
-
-
 
 <div class="form-group">
  <label class="col-md-4 control-label" for="checkboxes"></label>
@@ -375,9 +367,6 @@ $arr_search = json_decode($output_search,true);
 </div>
 
 <?php }?>
-
-
-
 
 <!-- Buttons SAve and Cancel -->
 <div class="form-group">
