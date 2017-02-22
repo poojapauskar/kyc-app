@@ -11,6 +11,7 @@
     <!-- Material Design Lite -->
     <script src="https://code.getmdl.io/1.3.0/material.min.js"></script>
     <link rel="stylesheet" href="css/material.css">
+    <link rel="stylesheet" href="css/fileupload.css">
 
 
  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
@@ -148,25 +149,41 @@ echo $arr_search['response'][0]['user_details']['aadhar_no'];*/
           <a class="mdl-navigation__link" href="">Contact</a>
         </nav>
       </div>
-        </div>
-      </header>
-
-      <h2>Alert Messages</h2>
-
-<p>Click on the "x" symbol to close the alert message.</p>
-<div class="alert">
+      <div class="alert" style="margin-top:1%">
   <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+  <strong>
 
   <?php for($q=0;$q<count($arr_search['response'][0]['add_info']);$q++){
-   echo $arr_search['response'][0]['add_info'][$q]['type_of_work'];
-   echo $arr_search['response'][0]['add_info'][$q]['status'];
-   echo $arr_search['response'][0]['add_info'][$q]['date']; 
-   echo $arr_search['response'][0]['add_info'][$q]['comment']; 
+   echo "Status: ".$arr_search['response'][0]['add_info'][$q]['status'];
+   echo "&nbsp;&nbsp;&nbsp;&nbsp;Date: ".$arr_search['response'][0]['add_info'][$q]['date'];
+   echo "<br>";
   }?>
-  <strong>Danger!</strong> Indicates a dangerous or potentially negative action.
+
+  </strong>
+</div>
 </div>
 
-<form onsubmit="return proceed();" name="Form" id="Form" class="form-horizontal" method="post" action="edit_user.php" enctype="multipart/form-data">
+<div class="container" style="">
+
+<div class="mdl-grid" style="margin-left:80%;margin-top:18%">
+  <div class="mdl-card mdl-cell mdl-cell--12-col mdl-cell--10-col-tablet mdl-shadow--2dp">
+    <div class="mdl-card__title">
+      <h1 class="mdl-card__title-text">Description and Status of Work</h1>
+    </div>
+    <div class="mdl-card__supporting-text">
+      <?php for($q=0;$q<count($arr_search['response'][0]['add_info']);$q++){?>
+   <strong>Type of work: </strong><?php echo $arr_search['response'][0]['add_info'][$q]['type_of_work'];echo "<br>";?>
+   <strong>Status: </strong><?php echo $arr_search['response'][0]['add_info'][$q]['status'];echo "<br>";?>
+   <strong>Date: </strong><?php echo $arr_search['response'][0]['add_info'][$q]['date'];echo "<br>";?>
+   <strong>Comment: </strong><?php echo $arr_search['response'][0]['add_info'][$q]['comment'];echo "<br>";?>
+   <br>
+   <br>
+ <?php }?>
+    </div>
+  </div>
+</div> 
+
+<form style="margin-top:-34%" onsubmit="return proceed();" name="Form" id="Form" class="form-horizontal" method="post" action="edit_user.php" enctype="multipart/form-data">
 <fieldset>
 
 <!-- Form Name -->
@@ -196,8 +213,8 @@ echo $arr_search['response'][0]['user_details']['aadhar_no'];*/
 <div style="margin-top:10%">
  <input type="hidden" value="<?php echo $arr_search['response'][0]['user_details']['pk'] ?>" name="user_id" id="user_id"></input>
 
-<img class="profile-pic" style="margin-left:77%;position:absolute;z-index:2;" src="<?php echo $arr_img[0]['url']; ?>" />
-<div class="upload-button" style="position:absolute;z-index:2;margin-left:79%;margin-top:13%;"><button disabled>Upload Image</button></div>
+<img class="profile-pic" style="margin-left:77%;margin-top:25%;position:absolute;z-index:2;" src="<?php echo $arr_img[0]['url']; ?>" />
+<div class="upload-button" style="position:absolute;z-index:2;margin-left:79%;margin-top:40%;"><button disabled>Upload Image</button></div>
 
 
 <input name="image" id="image" class="file-upload1" style="position:absolute;z-index:-2;margin-left:46%;margin-top:16%;" type="file">
