@@ -24,37 +24,11 @@
     display:inline-block; 
     width:32px;}
 
-<<<<<<< HEAD
-    .fileUpload {
-    position: relative;
-    overflow: hidden;
-    margin: 10px;
-}
-.fileUpload input.upload {
-    position: absolute;
-    top: 0;
-    right: 0;
-    margin: 0;
-    padding: 0;
-    font-size: 20px;
-    cursor: pointer;
-    opacity: 0;
-    filter: alpha(opacity=0);
-}
-      .form-control{
-      border: 2px solid #74b25e;
-    border-radius: 4px;
-      }
 
-    </style>
-
-  <script type="text/javascript">
-
-=======
     
 </style>
 <script type="text/javascript">
->>>>>>> notification and card is added
+
    function setfilename(val)
   {
     var fileName = val.substr(val.lastIndexOf("\\")+1, val.length);
@@ -347,6 +321,7 @@ if(isset($_POST["save_btn"])) {
           <a class="mdl-navigation__link" href="">Contact</a>
         </nav>
       </div>
+
       </div>
       
 
