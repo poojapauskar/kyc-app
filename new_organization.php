@@ -23,10 +23,10 @@
     content:" "; 
     display:inline-block; 
     width:32px;}
-
     
 </style>
 <script type="text/javascript">
+
    function setfilename(val)
   {
     var fileName = val.substr(val.lastIndexOf("\\")+1, val.length);
