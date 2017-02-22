@@ -4,31 +4,31 @@
   <title></title>
 
   <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-<link rel="stylesheet" type="text/css" href="css/material.indigo-pink.min.css">
+  <link rel="stylesheet" type="text/css" href="css/material.indigo-pink.min.css">
 
-<link rel="stylesheet" href="css/bootstrap.css">
+  <link rel="stylesheet" href="css/bootstrap.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <!-- Material Design Lite -->
-    <script src="https://code.getmdl.io/1.3.0/material.min.js"></script>
-    <link rel="stylesheet" href="css/material.css">
-
-
- <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <script src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+  <link rel="stylesheet" href="css/material.css">
+  <link rel="stylesheet" href="css/fileupload.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 
   <style type="text/css">
     span:before{
     content:" "; 
     display:inline-block; 
     width:32px;
-}
-.alert {
+    }
+
+    .alert {
     padding: 20px;
     background-color: #f44336;
     color: white;
-}
+    }
 
-.closebtn {
+  .closebtn {
     margin-left: 15px;
     color: white;
     font-weight: bold;
@@ -37,15 +37,14 @@
     line-height: 20px;
     cursor: pointer;
     transition: 0.3s;
-}
+    }
 
-.closebtn:hover {
+    .closebtn:hover {
     color: black;
-}
+    }
 
   </style>
 </head>
-<body  style="overflow-y: scroll;background-color:#E8E8E8" >
 
 <?php
 
@@ -75,13 +74,12 @@ $arr_search = json_decode($output_search,true);
 ?>
 
 <div class="demo-layout-transparent mdl-layout mdl-js-layout">
-      <header style="background-color:#08426a;height:110px;-webkit-box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23) !important;
+  <header style="background-color:#08426a;height:110px;-webkit-box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23) !important;
      -moz-box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23) !important;
      box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23) !important;" class="mdl-layout__header mdl-layout__header--transparent">
-        <div class="mdl-layout__header-row" >
+    <div class="mdl-layout__header-row" >
 
-        <img style="margin-top:5%;margin-left:28px;width:50px;height:50px" src="images/green.png"></img>
-<h5 style="margin-left:35%;margin-top:9%;"><?php echo $arr_search['response'][0]['organization_details']['name'] ?></h5>
+    <img style="margin-top:5%;margin-left:28px;width:50px;height:50px" src="images/green.png"></img><h5 style="margin-left:35%;margin-top:9%;"><?php echo $arr_search['response'][0]['organization_details']['name'] ?></h5>
          <span class="mdl-layout-title" style="margin-left:26%;margin-top:7%;">KYChome</span>
           <!-- Add spacer, to align navigation to the right -->
       </header>
@@ -98,25 +96,29 @@ $arr_search = json_decode($output_search,true);
           <a class="mdl-navigation__link" href="">Contact</a>
         </nav>
       </div>
-        </div>
-      </header>
-
-      <h2>Alert Messages</h2>
-
-<p>Click on the "x" symbol to close the alert message.</p>
-<div class="alert">
+      <div class="alert" style="margin-top:1%">
   <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
   <strong>Danger!</strong> Indicates a dangerous or potentially negative action.
 </div>
+</div>
 
-<form class="form-horizontal" method="post" action="edit_organization.php" enctype="multipart/form-data">
+<div class="container" style="">
+
+<div class="mdl-grid" style="margin-left:80%;margin-top:18%">
+  <div class="mdl-card mdl-cell mdl-cell--12-col mdl-cell--10-col-tablet mdl-shadow--2dp">
+    <div class="mdl-card__title">
+      <h1 class="mdl-card__title-text">Learning Web Design</h1>
+    </div>
+    <div class="mdl-card__supporting-text">
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam accusamus, consectetur.</p>
+    </div>
+  </div>
+</div>
+
+
+<form class="form-horizontal" method="post" action="edit_organization.php" enctype="multipart/form-data" style="margin-top:-34%">
 
 <fieldset>
-
-<!-- Form Name -->
-<!-- <legend>CA Database</legend>
- --><!-- <h4><center><?php echo $arr_search['response'][0]['organization_details']['name'] ?></center></h4> -->
-
  <input type="hidden" value="<?php echo $arr_search['response'][0]['organization_details']['pk'] ?>" name="org_id" id="org_id"></input>
 
 <!-- Select Basic -->
@@ -125,8 +127,6 @@ $arr_search = json_decode($output_search,true);
   <div class="col-md-4">
     <select id="type_of_org" name="type_of_org" class="form-control"  readonly>
       <option value="<?php echo $arr_search['response'][0]['organization_details']['type_of_org'];?>"><?php echo $arr_search['response'][0]['organization_details']['type_of_org'];?></option>
-      <!-- <option value="Partnership">Partnership</option>
-      <option value="Individual">Individual</option> -->
     </select>
   </div>
 </div>
@@ -172,13 +172,11 @@ $arr_search = json_decode($output_search,true);
   <label class="col-md-4 control-label" for="reg_certificate">Registration Certificate</label>
 
 <div class="col-md-4">
-<?php echo $arr_search['response'][0]['reg_certificate_details'][0]['name']; ?>
-</div>
-  <div class="col-md-4">
-    <input id="reg_certificate" name="reg_certificate" type="file"  disabled="true">
-  </div>
-
-<div class="col-md-4">
+<input id="uploadFile" class="form-control input-md" value="<?php echo $arr_search['response'][0]['reg_certificate_details'][0]['name']; ?>">
+  <div class="fileUpload btn btn-info" style="margin-left:105%;margin-top:-12%;">
+    <label style="font-weight:500;margin-bottom: 2px;">ATTACH</label>
+    <input id="reg_certificate" name="reg_certificate" type="file" class="upload" disabled="true">
+  
 <?php
   $url_img_download = 'https://kyc-application.herokuapp.com/download/';
   $options_img_download = array(
@@ -195,13 +193,14 @@ $arr_search = json_decode($output_search,true);
   $arr_img_download = json_decode($output_img_download,true);
   
 ?>
-<button style="background-color:#65AC4C" class="btn btn-success">
+</div>
+<button style="background-color:#65AC4C;margin-top:-24%;margin-left:129%;" class="btn btn-success">
 <a target="_blank" style="color:white" href="view_image.php?name=reg_certificate_details&link=<?php echo $arr_img_download[0]['url']; ?>">View</a>
 </button>
 
 </div>
-
 </div>
+
 
 <!-- Text input-->
 <div class="form-group">
@@ -215,14 +214,12 @@ $arr_search = json_decode($output_search,true);
 <!-- File Button --> 
 <div class="form-group">
   <label class="col-md-4 control-label" for="filebutton">PAN Card</label>
-<div class="col-md-4">
- <?php echo $arr_search['response'][0]['pan_card_details'][0]['name']; ?>
-</div>
   <div class="col-md-4">
-    <input id="pan_card" name="pan_card" type="file"  disabled="true">
-  </div>
+  <input id="upload1" class="form-control input-md" value="<?php echo $arr_search['response'][0]['pan_card_details'][0]['name']; ?>" readonly>
+  <div class="fileUpload btn btn-info" style="margin-left:105%;margin-top:-12%;">
+  <label style="font-weight:500;margin-bottom: 2px;">ATTACH</label>
+  <input id="pan_card" name="pan_card" type="file" class="upload" disabled="true">
 
-<div class="col-md-4">
 <?php
   $url_img_download_2 = 'https://kyc-application.herokuapp.com/download/';
   $options_img_download_2 = array(
@@ -239,11 +236,11 @@ $arr_search = json_decode($output_search,true);
   $arr_img_download_2 = json_decode($output_img_download_2,true);
   
 ?>
-<button style="background-color:#65AC4C" class="btn btn-success">
+</div>
+<button style="background-color:#65AC4C;margin-top:-24%;margin-left:129%;" class="btn btn-success">
 <a target="_blank" style="color:white" href="view_image.php?name=pan_card_details&link=<?php echo $arr_img_download_2[0]['url']; ?>">View</a>
 </button>
 </div>
-
 </div>
 
 <!-- Textarea -->
@@ -257,14 +254,14 @@ $arr_search = json_decode($output_search,true);
 <!-- Multiple Checkboxes  and File upload Button -->   
 
 <div class="form-group">
- <label class="col-md-4 control-label" for="checkboxes"></label>
+ <label class="col-md-4 control-label" for="checkboxes">address Proof</label>
  <div class="col-md-4">
    <label class="checkbox-inline" for="checkboxes-0">
   <div class="col-md-3">
     <?php if($arr_search['response'][0]['telephone_bill_details'][0]['name'] != ''){
-   		$check_box_select1="checked";
+      $check_box_select1="checked";
     }else{
-    	$check_box_select1="";
+      $check_box_select1="";
     }?>
      <input <?php echo $check_box_select1;?> type="checkbox" name="checkboxes" id="checkboxes-0" value="1"  readonly>Telephone</label>
     
@@ -296,10 +293,8 @@ $arr_search = json_decode($output_search,true);
   $arr_img_download_3 = json_decode($output_img_download_3,true);
   
 ?>
-
-<br>
-<button style="background-color:#65AC4C;margin-left:-97%" class="btn btn-success">
-<a target="_blank" style="color:white" href="view_image.php?name=telephone_bill_details&link=<?php echo $arr_img_download_3[0]['url']; ?>">View</a>
+<button>
+<a target="_blank" href="view_image.php?name=telephone_bill_details&link=<?php echo $arr_img_download_3[0]['url']; ?>">View</a>
 </button>
 </div> 
 
@@ -316,10 +311,10 @@ $arr_search = json_decode($output_search,true);
 
 <div class="col-md-3">
      <?php if($arr_search['response'][0]['pass_book_details'][0]['name'] != ''){
-   		$check_box_select2="checked";
-   		
+      $check_box_select2="checked";
+      
      }else{
-    	$check_box_select2="";
+      $check_box_select2="";
     }?>
      <input <?php echo $check_box_select2;?> type="checkbox" name="checkboxes" id="checkboxes-0" value="1"  readonly>Bank Passbook</label>
 </div>
@@ -347,38 +342,16 @@ $arr_search = json_decode($output_search,true);
   $arr_img_download_4 = json_decode($output_img_download_4,true);
   
 ?>
-<br>
-<button style="background-color:#65AC4C;margin-left:-97%" class="btn btn-success">
-<a target="_blank" style="color:white" href="view_image.php?name=pass_book_details&link=<?php echo $arr_img_download_4[0]['url']; ?>">View</a>
+<button>
+<a target="_blank" href="view_image.php?name=pass_book_details&link=<?php echo $arr_img_download_4[0]['url']; ?>">View</a>
 </button>
 </div>
 
  </div>
 </div>
-
-<!-- Input Type : Number -->
-<!-- <div class="form-group">
-  <label class="col-md-4 control-label" for="typenumber">No of Partners: </label>
-  <div class="col-md-4">                     
-     <input value="<?php echo $arr_search['response'][0]['organization_details']['no_of_partners'] ?>"  type="number" name="no_of_partners" min="1" max="5" value="2" id="no_of_partners">
-  </div>
-</div> -->
-
-<!-- <div class="form-group col-md-4 ">
-  <label class="col-md-4 control-label"><b> <font size="4">Partner1</font></b></label>
-
-</div> -->
-
-
-
-
 <!-- Added Partner 1 -->
 <label for="comment" style="margin-left: 334px;font-size: 17px;"> Partner 1: </label>
-
-
-
 <?php for($x=0;$x < count($arr_search['response'][0]['partner_details']); $x++){?>
-
 <!-- Text input-->
 <div class="form-group">
   <label class="col-md-4 control-label" for="textinput">Name</label>  
@@ -387,17 +360,12 @@ $arr_search = json_decode($output_search,true);
   </div>
 </div>
 
-
-
 <!-- Select Basic -->
 <div class="form-group">
   <label class="col-md-4 control-label" for="designation">Designation: </label>
   <div class="col-md-4">
     <select id="partner_designations[]" name="partner_designations[]" class="form-control"  readonly>
  <option value="<?php echo $arr_search['response'][0]['partner_details'][$x]['detail'][0]['designation'] ?>"><?php echo $arr_search['response'][0]['partner_details'][$x]['detail'][0]['designation'] ?></option>
-      <!-- <option value="Managing Partner">Managing Partner</option>
-      <option value="Manager">Manager</option>
-      <option value="Other">Other</option> -->
     </select>
   </div>
   <div class="col-md-2">
