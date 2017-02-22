@@ -84,8 +84,7 @@ $url_search = 'https://kyc-application.herokuapp.com/search/';
 $options_search = array(
   'http' => array(
     'header'  => array(
-                  'IS-USER: 0',
-                  'PK: '.$_POST['org_id'],
+                  'TEXT: '.$_POST['name'],
                 ),
     'method'  => 'GET',
   ),
@@ -280,31 +279,6 @@ if(isset($_POST["edit_btn"])) {
   $partner_designations = ltrim($partner_designations, ',');
   /*echo $partner_designations;*/
 
-  $type_of_work='';
-  for($j=0;$j<count($_POST['type_of_work']);$j++){
-    $type_of_work=$type_of_work.",".$_POST['type_of_work'][$j];
-  }
-  $type_of_work = ltrim($type_of_work, ',');
-
-  $status='';
-  for($j=0;$j<count($_POST['status']);$j++){
-    $status=$status.",".$_POST['status'][$j];
-  }
-  $status = ltrim($status, ',');
-
-  $date='';
-  for($j=0;$j<count($_POST['date']);$j++){
-    $date=$date.",".$_POST['date'][$j];
-  }
-  $date = ltrim($date, ',');
-
-  $comment='';
-  for($j=0;$j<count($_POST['comment']);$j++){
-    $comment=$comment.",".$_POST['comment'][$j];
-  }
-  $comment = ltrim($comment, ',');
-
-
   $url_org = 'https://kyc-application.herokuapp.com/edit_organization/';
   $options_org = array(
     'http' => array(
@@ -322,10 +296,6 @@ if(isset($_POST["edit_btn"])) {
                           'NO-OF-PARTNERS: '.$_POST['no_of_partners'],
                           'PARTNER-NAMES: '.$partner_names,
                           'PARTNER-DESIGNATIONS: '.$partner_designations,
-                          'TYPE-OF-WORK: '.$type_of_work,
-                          'STATUS: '.$status,
-                          'DATE: '.$date,
-                          'COMMENT: '.$comment,
                           ),
       'method'  => 'GET',
     ),
@@ -334,12 +304,10 @@ if(isset($_POST["edit_btn"])) {
   $output_org = file_get_contents($url_org, false,$context_org);
   $arr_org = json_decode($output_org,true);
 
-/*  echo $arr_org['pk'];*/
-
   if($arr_org['status']==200){
     /*echo "<script>alert('Organization Updated')</script>";*/
     
-    $string1="<script>window.location.href='search_organization.php?id=".$arr_org['pk']."'</script>";
+    $string1="<script>window.location.href='search_organization.php?text=".$arr_org['name']."'</script>";
     echo $string1;
   }
 }
@@ -372,7 +340,7 @@ if(isset($_POST["edit_btn"])) {
       </div>
       </header>
 
-<form class="form-horizontal" method="post" action="" enctype="multipart/form-data">
+<form class="form-horizontal" method="post" action="edit_organization.php" enctype="multipart/form-data">
 
 <fieldset>
 
@@ -413,11 +381,11 @@ if(isset($_POST["edit_btn"])) {
     
 
 <?php if($arr_search['response'][0]['organization_details']['registration'] == 1 ){
-	$checked1="checked";
-	$checked2="";
+  $checked1="checked";
+  $checked2="";
 }if($arr_search['response'][0]['organization_details']['registration'] == 0 ){
-	$checked1="";
-	$checked2="checked";
+  $checked1="";
+  $checked2="checked";
 }
 ?>
     <label class="radio-inline" for="radios-0"> 
@@ -527,9 +495,9 @@ if(isset($_POST["edit_btn"])) {
    <label class="checkbox-inline" for="checkboxes-0">
   <div class="col-md-3">
     <?php if($arr_search['response'][0]['telephone_bill_details'][0]['name'] != ''){
-   		$check_box_select1="checked";
+      $check_box_select1="checked";
     }else{
-    	$check_box_select1="";
+      $check_box_select1="";
     }?>
      <input <?php echo $check_box_select1;?> type="checkbox" name="checkboxes" id="checkboxes-0" value="1">Telephone</label>
   </div>
@@ -578,10 +546,10 @@ if(isset($_POST["edit_btn"])) {
 
 <div class="col-md-3">
      <?php if($arr_search['response'][0]['pass_book_details'][0]['name'] != ''){
-   		$check_box_select2="checked";
-   		
+      $check_box_select2="checked";
+      
      }else{
-    	$check_box_select2="";
+      $check_box_select2="";
     }?>
      <input <?php echo $check_box_select2;?> type="checkbox" name="checkboxes" id="checkboxes-0" value="1">Bank Passbook</label>
 </div>
@@ -695,59 +663,7 @@ if(isset($_POST["edit_btn"])) {
 </div>
 </div>
 </div>
-<br>
-
-
-<?php for($q=0;$q<count($arr_search['response'][0]['add_info']);$q++){?>
-
-<!-- Select Basic -->
-<div class="form-group">
-  <label class="col-md-4 control-label" for="selectbasic">Type of work</label>
-  <div class="col-md-4">
-    <select id="type_of_work[]" name="type_of_work[]" class="form-control">
-      <option value="<?php echo $arr_search['response'][0]['add_info'][$q]['type_of_work']; ?>"><?php echo $arr_search['response'][0]['add_info'][$q]['type_of_work']; ?></option>
-      <option value="Option one">Option one</option>
-      <option value="Option two">Option two</option>
-      <option value="Option three">Option three</option>
-    </select>
-  </div>
-</div>
-
-<!-- Select Basic -->
-<div class="form-group">
-  <label class="col-md-4 control-label" for="selectbasic">Status</label>
-  <div class="col-md-4">
-    <select id="status[]" name="status[]" class="form-control">
-      <option value="<?php echo $arr_search['response'][0]['add_info'][$q]['status']; ?>"><?php echo $arr_search['response'][0]['add_info'][$q]['status']; ?></option>
-      <option value="Pending Request">Pending Request</option>
-      <option value="Work in Process">Work in Process</option>
-      <option value="Completed Request">Completed Request</option>
-    </select>
-  </div>
-</div>
-<!--date-->
-<div class="form-group row">
-  <label for="example-date-input" class="col-2 col-form-label" style="margin-left:29.5%;">Date:</label>
-  <div class="col-10">
-    <input class="form-control" id="date[]" name="date[]" value="<?php echo $arr_search['response'][0]['add_info'][$q]['date']; ?>" style="width:31%;margin-left:34.6%;margin-top:-2%;" type="text">
-  </div>
-</div>
-
-
-<!-- Text input-->
-<div class="form-group">
-  <label class="col-md-4 control-label" for="textinput">Comment</label>  
-  <div class="col-md-4">
-  <input id="comment[]" name="comment[]" value="<?php echo $arr_search['response'][0]['add_info'][$q]['comment']; ?>" type="text" placeholder="" class="form-control input-md">
-    
-  </div>
-</div>
-
-<?php  }?>
-
-
-
-
+<br
 
 <!-- Buttons SAve and Cancel -->
 <div class="form-group">
@@ -758,8 +674,6 @@ if(isset($_POST["edit_btn"])) {
   
   </div>
 </div>
-
-
 
 </fieldset>
 </form>
@@ -805,6 +719,5 @@ function goBack() {
 
 </body>
 </html>
-
 
 
