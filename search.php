@@ -156,8 +156,7 @@ if(isset($_POST['submit'])){
                 $(document).ready(function(){
                     $("#search").autocomplete({
                         source:'getautocomplete.php',
-                        minLength:1,
-                        delay:0
+                        minLength:1
                     });
                 });
         </script>
