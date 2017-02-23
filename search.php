@@ -25,7 +25,7 @@
 
 <?php
 if(isset($_POST['submit'])){
-  $url_org = 'https://kyc-application.herokuapp.com/search/';
+  $url_org = 'https://kyc-application.herokuapp.com/get_id_from_text/';
   $options_org = array(
     'http' => array(
       'header'  => array(
