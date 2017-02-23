@@ -431,6 +431,7 @@ if(isset($_POST["generate_btn"]) and ($_POST['uid'] != '' || $_POST['uid'] != nu
       </div>
         </div>
       </header>
+
 <form onsubmit="return proceed();" name="Form" id="Form" class="form-horizontal" method="post" action="new_user.php" enctype="multipart/form-data">
 <fieldset>
 
@@ -599,7 +600,7 @@ if(isset($_POST["generate_btn"]) and ($_POST['uid'] != '' || $_POST['uid'] != nu
 </div>
 <!--date-->
 <div class="form-group row">
-  <label for="example-date-input" class="col-2 col-form-label" style="margin-left:29.5%;">Date:</label>
+  <label for="example-date-input" class="col-2 col-form-label" style="margin-left:29.5%;">DATE</label>
   <div class="col-10">
     <input class="form-control" id="date[]" name="date[]" value="<?php echo $_POST['date'] ?>" style="width:31%;margin-left:34.6%;margin-top:-2%;" type="date" value="" id="example-date-input">
   </div>
@@ -613,17 +614,6 @@ if(isset($_POST["generate_btn"]) and ($_POST['uid'] != '' || $_POST['uid'] != nu
   <input id="comment[]" name="comment[]" type="text" placeholder="" class="form-control input-md">
     
   </div>
-</div>
-
-<div class="form-group">
-<center>
-<div class="col-md-2 col-sm-2 col-2">
-    <div class="input_fields" style="color:black">
-         <button class="add_field btn " onclick="incrementValue()" style="margin-left: 443px;">Add</button>
-         <div>
-         <input type="text" name="mytextt[]" hidden="" ></div>
-</div>
-</div>
 </div>
 
 <div class="form-group">
