@@ -93,6 +93,10 @@ $arr_search = json_decode($output_search,true);
 ?>
  <div class="container">
   <div class="row" style="margin-top:33%;"> 
+
+
+
+
   <!-- AutoSearch TEXT field -->
     <div class="col-md-12" style="margin-left:11%;">
     <form class="form-group" method="post" action="" style="padding-bottom:7%">
@@ -170,7 +174,7 @@ $arr_search = json_decode($output_search,true);
 <script type="text/javascript">
                 $(document).ready(function(){
                     $("#search").autocomplete({
-                        source:'getautocomplete.php',
+                        source:'<?php echo $arr_search[$i]['details'][0]['name'] ?>',
                         minLength:1
                     });
                 });
