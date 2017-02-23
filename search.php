@@ -75,10 +75,25 @@ if(isset($_POST['submit'])){
       </div>
         </div>
       </header>
-     
+     <?php
+$url_search = 'https://kyc-application.herokuapp.com/autocomplete/';
+$options_search = array(
+  'http' => array(
+    'method'  => 'GET',
+  ),
+);
+$context_search= stream_context_create($options_search);
+$output_search = file_get_contents($url_search, false,$context_missing_report);
+// echo $output_missing_report[0];
+$arr_search = json_decode($output_search,true);
+// echo count($arr_missing_report);
+ //echo $arr_missing_report[0]['details'][0]['name'];
+// echo $arr_missing_report[0]['details'][0]['name'];
+
+?>
  <div class="container">
   <div class="row" style="margin-top:33%;"> 
-  
+  <!-- AutoSearch TEXT field -->
     <div class="col-md-12" style="margin-left:11%;">
     <form class="form-group" method="post" action="" style="padding-bottom:7%">
     <input id="search" name="search" type="text" placeholder="Search firm,Individual" class="form-control input-md" style="width:55%;margin-top:-8%;height:39px" required>
