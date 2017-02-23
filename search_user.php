@@ -183,7 +183,7 @@ echo $arr_search['response'][0]['user_details']['aadhar_no'];*/
   </div>
 </div> 
 
-<form style="margin-top:-34%" onsubmit="return proceed();" name="Form" id="Form" class="form-horizontal" method="post" action="edit_user.php" enctype="multipart/form-data">
+<form style="margin-top:-30%" onsubmit="return proceed();" name="Form" id="Form" class="form-horizontal" method="post" action="edit_user.php" enctype="multipart/form-data">
 <fieldset>
 
 <!-- Form Name -->

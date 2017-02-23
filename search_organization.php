@@ -11,11 +11,11 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <!-- Material Design Lite -->
 
+
   <script src="https://code.getmdl.io/1.3.0/material.min.js"></script>
   <link rel="stylesheet" href="css/material.css">
   <link rel="stylesheet" href="css/fileupload.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-
 
   <style type="text/css">
     span:before{
@@ -54,14 +54,13 @@
 /*echo $_POST['search'];*/
 // if its cumin from edit org to search org then query based on edit org name
 
-$text=$_GET['id'];
+$text=$_GET['text'];
 
 $url_search = 'https://kyc-application.herokuapp.com/search/';
 $options_search = array(
   'http' => array(
     'header'  => array(
-                  'IS-USER: 0',
-                  'PK: '.$text,
+                  'ID: '.$id,
                 ),
     'method'  => 'GET',
   ),
@@ -135,7 +134,8 @@ $arr_search = json_decode($output_search,true);
   </div>
 </div> 
 
-<form class="form-horizontal" method="post" action="edit_organization.php" enctype="multipart/form-data" style="margin-top:-30%;">
+
+<form class="form-horizontal" method="post" action="edit_organization.php" enctype="multipart/form-data" style="margin-top:-30%">
 
 <fieldset>
  <input type="hidden" value="<?php echo $arr_search['response'][0]['organization_details']['pk'] ?>" name="org_id" id="org_id"></input>
@@ -213,10 +213,10 @@ $arr_search = json_decode($output_search,true);
   
 ?>
 </div>
+
 <button style="background-color:#65AC4C;margin-top:-25%;margin-left:129%;" class="btn btn-success">
 <a target="_blank" style="color:white" href="view_image.php?name=reg_certificate_details&link=<?php echo $arr_img_download[0]['url']; ?>">View</a>
 </button>
-
 </div>
 </div>
 
@@ -256,7 +256,8 @@ $arr_search = json_decode($output_search,true);
   
 ?>
 </div>
-<button style="background-color:#65AC4C;margin-top:-25%;margin-left:129%;" class="btn btn-success">
+
+<button style="background-color:#65AC4C;margin-top:-24%;margin-left:129%;" class="btn btn-success">
 <a target="_blank" style="color:white" href="view_image.php?name=pan_card_details&link=<?php echo $arr_img_download_2[0]['url']; ?>">View</a>
 </button>
 </div>
@@ -289,8 +290,6 @@ $arr_search = json_decode($output_search,true);
     <?php echo $arr_search['response'][0]['telephone_bill_details'][0]['name']; ?>
 </div>
 
-
-
 <div class="col-md-3">
 <div class="fileUpload btn btn-info" style="margin-left:312%;margin-top:-21%;">
     <label style="font-weight:500;margin-bottom: 2px;">ATTACH</label>
@@ -313,13 +312,13 @@ $arr_search = json_decode($output_search,true);
   $arr_img_download_3 = json_decode($output_img_download_3,true);
   
 ?>
+
 <button style="background-color:#65AC4C;margin-top:-160%;margin-left:575%;" class="btn btn-success">
 <a target="_blank" style="color:white" href="view_image.php?name=telephone_bill_details&link=<?php echo $arr_img_download_3[0]['url']; ?>">View</a>
 </button>
 </div> 
 </div>
 </div>
-
 
 <div class="form-group">
  <label class="col-md-4 control-label" for="checkboxes"></label>
@@ -395,9 +394,6 @@ $arr_search = json_decode($output_search,true);
 </div>
 
 <?php }?>
-
-
-
 
 <!-- Buttons SAve and Cancel -->
 <div class="form-group">

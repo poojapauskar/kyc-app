@@ -74,7 +74,7 @@ if(isset($_POST['submit'])){
         </nav>
       </div>
         </div>
-      </header>
+    
      
  <div class="container">
   <div class="row" style="margin-top:33%;"> 
