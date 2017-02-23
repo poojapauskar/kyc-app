@@ -436,13 +436,13 @@ if(isset($_POST["edit_btn"])) {
   <label class="col-md-4 control-label" for="reg_certificate">Registration Certificate</label>
 
 <div class="col-md-4">
+<?php echo $arr_search['response'][0]['reg_certificate_details'][0]['name']; ?>
+</div>
+  <div class="col-md-4">
+    <input id="reg_certificate" name="reg_certificate" type="file">
+  </div>
 
-    <input id="uploadFile" class="form-control input-md" value="<?php echo $arr_search['response'][0]['reg_certificate_details'][0]['name']; ?>">
-    <div class="fileUpload btn btn-info" style="margin-left:105%;margin-top:-12%;">
-    <label style="font-weight:500;margin-bottom: 2px;">ATTACH</label>
-    <input id="reg_certificate" name="reg_certificate" type="file" class="upload" onchange="setfilename(this.value);" />
-  
-
+<div class="col-md-4">
 <?php
   $url_img_download = 'https://kyc-application.herokuapp.com/download/';
   $options_img_download = array(
@@ -458,8 +458,7 @@ if(isset($_POST["edit_btn"])) {
   /*echo $output_img_download;*/
   $arr_img_download = json_decode($output_img_download,true);
   
-?></div>
-
+?>
 <button style="background-color:#65AC4C;margin-top:-24%;margin-left:129%;" class="btn btn-success">
 <a target="_blank" style="color:white" href="view_image.php?name=reg_certificate_details&link=<?php echo $arr_img_download[0]['url']; ?>">View</a>
 </button>
