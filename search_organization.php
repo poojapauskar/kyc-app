@@ -214,8 +214,8 @@ $arr_search = json_decode($output_search,true);
 ?>
 </div>
 
-<button style="background-color:#65AC4C;margin-top:-25%;margin-left:129%;" class="btn btn-success">
-<a target="_blank" style="color:white" href="view_image.php?name=reg_certificate_details&link=<?php echo $arr_img_download[0]['url']; ?>">View</a>
+<button style="background-color:#176fac;margin-top:-25%;margin-left:129%;" class="btn btn-success">
+<a target="_blank" style="color:white" href="view_image.php?name=reg_certificate_details&link=<?php echo $arr_img_download[0]['url']; ?>">VIEW</a>
 </button>
 </div>
 </div>
@@ -234,7 +234,7 @@ $arr_search = json_decode($output_search,true);
 <div class="form-group">
   <label class="col-md-4 control-label" for="filebutton">PAN Card</label>
   <div class="col-md-4">
-  <input id="upload1" class="form-control input-md" value="<?php echo $arr_search['response'][0]['pan_card_details'][0]['name']; ?>" readonly>
+  <input id="pan_upload" class="form-control input-md" value="<?php echo $arr_search['response'][0]['pan_card_details'][0]['name']; ?>" readonly>
   <div class="fileUpload btn btn-info" style="margin-left:105%;margin-top:-12%;">
   <label style="font-weight:500;margin-bottom: 2px;">ATTACH</label>
   <input id="pan_card" name="pan_card" type="file" class="upload" disabled="true">
@@ -257,8 +257,8 @@ $arr_search = json_decode($output_search,true);
 ?>
 </div>
 
-<button style="background-color:#65AC4C;margin-top:-24%;margin-left:129%;" class="btn btn-success">
-<a target="_blank" style="color:white" href="view_image.php?name=pan_card_details&link=<?php echo $arr_img_download_2[0]['url']; ?>">View</a>
+<button style="background-color:#176fac;margin-top:-24%;margin-left:129%;" class="btn btn-success">
+<a target="_blank" style="color:white" href="view_image.php?name=pan_card_details&link=<?php echo $arr_img_download_2[0]['url']; ?>">VIEW</a>
 </button>
 </div>
 </div>
@@ -313,8 +313,8 @@ $arr_search = json_decode($output_search,true);
   
 ?>
 
-<button style="background-color:#65AC4C;margin-top:-160%;margin-left:575%;" class="btn btn-success">
-<a target="_blank" style="color:white" href="view_image.php?name=telephone_bill_details&link=<?php echo $arr_img_download_3[0]['url']; ?>">View</a>
+<button style="background-color:#176fac;margin-top:-160%;margin-left:575%;" class="btn btn-success">
+<a target="_blank" style="color:white" href="view_image.php?name=telephone_bill_details&link=<?php echo $arr_img_download_3[0]['url']; ?>">VIEW</a>
 </button>
 </div> 
 </div>
@@ -360,8 +360,8 @@ $arr_search = json_decode($output_search,true);
   
 ?>
 
-<button style="background-color:#65AC4C;margin-top:-144%;margin-left:481%;" class="btn btn-success">
-<a target="_blank" style="color:white" href="view_image.php?name=pass_book_details&link=<?php echo $arr_img_download_4[0]['url']; ?>">View</a>
+<button style="background-color:#176fac;margin-top:-144%;margin-left:481%;" class="btn btn-success">
+<a target="_blank" style="color:white" href="view_image.php?name=pass_book_details&link=<?php echo $arr_img_download_4[0]['url']; ?>">VIEW</a>
 </button>
 </div>
 
