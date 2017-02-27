@@ -17,13 +17,27 @@
     <!-- Material Design icon font -->
 
     <!-- <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"> -->
+
+     <script src="https://storage.googleapis.com/code.getmdl.io/1.0.6/material.min.js"></script>
+   <link rel="stylesheet" href="https://storage.googleapis.com/code.getmdl.io/1.0.6/material.indigo-pink.min.css">
+   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"> 
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-   
   <style type="text/css">
     span:before{
     content:" "; 
     display:inline-block; 
     width:32px;}
+
+    .mdl-radio {
+    position: relative;
+    font-size: 14px;
+    line-height: 24px;
+    display: inline-block;
+    box-sizing: border-box;
+    font-weight: 500;
+    margin: 0;
+    padding-left: 0;
+}
 </style>
 <script type="text/javascript">
 
@@ -50,6 +64,16 @@
     var fileName = val.substr(val.lastIndexOf("\\")+1, val.length);
    document.getElementById("bank_upload").value = fileName;
   }
+</script>
+<script type="text/javascript"> 
+function disablefield(){ 
+if (document.getElementById('radios-1').checked == 1){ 
+document.getElementById('uploadFile').disabled='disabled'; 
+document.getElementById('uploadFile').value='disabled';
+}else { 
+document.getElementById('uploadFile').disabled=''; 
+document.getElementById('uploadFile').value='Attach'; } 
+} 
 </script>
 </head>
 
@@ -355,12 +379,12 @@ if(isset($_POST["save_btn"])) {
 <div class="form-group">
   <label class="col-md-4 control-label" for="registration">Registration:</label>
   <div class="col-md-4"> 
-    <label class="radio-inline" for="radios-0">
-      <input type="radio" name="registration" id="radios-0" value="1" checked="checked">
+    <label class="mdl-radio mdl-js-radio" for="radios-0">
+      <input type="radio" name="registration" id="radios-0" value="1" class="mdl-radio__button" checked="checked" onChange="disablefield();">
       Registered
     </label> 
-    <label class="radio-inline" for="radios-1">
-      <input type="radio" name="registration" id="radios-1" value="0">
+    <label class="mdl-radio mdl-js-radio" for="radios-1">
+      <input type="radio" name="registration" id="radios-1" value="0" class="mdl-radio__button" onChange="disablefield();">
       Un-Registered
     </label>
   </div>
@@ -382,7 +406,7 @@ if(isset($_POST["save_btn"])) {
 <div class="form-group">
   <label class="col-md-4 control-label" for="textinput">PAN: </label>  
   <div class="col-md-4">
-  <input id="pan" name="pan" type="text" placeholder="PAN Card Number" class="form-control input-md">
+  <input id="pan" pattern="-?[a-zA-Z]{5}[0-9]{4}[a-zA-Z]{1}?" name="pan" type="text" placeholder="PAN Card Number" class="form-control input-md">
     
   </div>
 </div>

@@ -423,10 +423,9 @@ if(isset($_POST["edit_btn"])) {
 
 <!-- Text input-->
 <div class="form-group" style="margin-top:-3%">
-  <label class="col-md-4 control-label" for="textinput">PAN </label>  
+  <label class="col-md-4 control-label" for="textinput" style="margin-left:-67%">PAN </label>  
   <div class="col-md-4">
-  <input id="pan" name="pan" value="<?php echo $arr_search['response'][0]['organization_details']['pan'] ?>" type="text" placeholder="PAN Card Number" class="form-control input-md">
-    
+  <input id="pan" name="pan" style="margin-left:-107%" pattern="-?[a-zA-Z]{5}[0-9]{4}[a-zA-Z]{1}?" value="<?php echo $arr_search['response'][0]['organization_details']['pan'] ?>" type="text" placeholder="PAN Card Number" class="form-control input-md"/>
   </div>
 </div>
 
@@ -465,10 +464,10 @@ if(isset($_POST["edit_btn"])) {
 </div>
 
 <!-- Textarea -->
-<div class="form-group">
-  <label class="col-md-4 control-label" for="textarea">Address</label>
+<div class="form-group" style="margin-top:-3%">
+  <label class="col-md-4 control-label" for="textarea" style="margin-left:-67%">Address</label>
   <div class="col-md-4">                     
-    <textarea class="form-control" id="address" name="address"><?php echo $arr_search['response'][0]['organization_details']['address'] ?></textarea>
+    <textarea class="form-control" id="address" name="address" style="margin-left:-107%"><?php echo $arr_search['response'][0]['organization_details']['address'] ?></textarea>
   </div>
 </div>
 
