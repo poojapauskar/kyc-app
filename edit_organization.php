@@ -13,16 +13,27 @@
     <script src="https://code.getmdl.io/1.3.0/material.min.js"></script>
     <link rel="stylesheet" href="css/material.css">
     <link rel="stylesheet" href="css/fileupload.css">
-
-
  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+ <script src="https://storage.googleapis.com/code.getmdl.io/1.0.6/material.min.js"></script>
+   <link rel="stylesheet" href="https://storage.googleapis.com/code.getmdl.io/1.0.6/material.indigo-pink.min.css">
+   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">   
   <style type="text/css">
     span:before{
     content:" "; 
     display:inline-block; 
     width:32px;
 }
-
+.mdl-radio {
+    position: relative;
+    font-size: 14px;
+    line-height: 24px;
+    display: inline-block;
+    box-sizing: border-box;
+    font-weight: 500;
+    margin: 0;
+    padding-left: 0;
+}
     </style>
    <script type="text/javascript">
 
@@ -363,12 +374,13 @@ if(isset($_POST["edit_btn"])) {
   $checked2="checked";
 }
 ?>
-    <label class="radio-inline" for="radios-0"> 
-      <input type="radio" name="registration" id="radios-0" value="1" checked="<?php echo $checked1; ?>">
+    <label class="mdl-radio mdl-js-radio" for="radios-0">
+      <input type="radio" name="registration" id="radios-0" value="1" class="mdl-radio__button" checked="<?php echo $checked1; ?>">
       Registered
     </label> 
-    <label class="radio-inline" for="radios-1">
-      <input type="radio" name="registration" id="radios-1" value="0" checked="<?php echo $checked2; ?>">
+     
+    <label class="mdl-radio mdl-js-radio" for="radios-1">
+      <input type="radio" name="registration" id="radios-1" value="0" class="mdl-radio__button" checked="<?php echo $checked2; ?>">
       Un-Registered
     </label>
   </div>
@@ -410,7 +422,7 @@ if(isset($_POST["edit_btn"])) {
 
 
 <!-- Text input-->
-<div class="form-group">
+<div class="form-group" style="margin-top:-3%">
   <label class="col-md-4 control-label" for="textinput">PAN </label>  
   <div class="col-md-4">
   <input id="pan" name="pan" value="<?php echo $arr_search['response'][0]['organization_details']['pan'] ?>" type="text" placeholder="PAN Card Number" class="form-control input-md">
