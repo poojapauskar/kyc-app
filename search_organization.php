@@ -17,6 +17,9 @@
   <link rel="stylesheet" href="css/fileupload.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 
+  <script src="https://storage.googleapis.com/code.getmdl.io/1.0.6/material.min.js"></script>
+   <link rel="stylesheet" href="https://storage.googleapis.com/code.getmdl.io/1.0.6/material.indigo-pink.min.css">
+
   <style type="text/css">
     span:before{
     content:" "; 
@@ -44,6 +47,16 @@
     .closebtn:hover {
     color: black;
     }
+    .mdl-radio {
+    position: relative;
+    font-size: 14px;
+    line-height: 24px;
+    display: inline-block;
+    box-sizing: border-box;
+    font-weight: 500;
+    margin: 0;
+    padding-left: 0;
+}
 
   </style>
 </head>
@@ -176,14 +189,14 @@ $arr_search = json_decode($output_search,true);
 	$checked2="checked";
 }
 ?>
-    <label class="radio-inline" for="radios-0"> 
-      <input type="radio" name="registration" id="radios-0" value="1" checked="<?php echo $checked1; ?>"  readonly>
+    <label class="mdl-radio mdl-js-radio" for="radios-0">
+      <input type="radio" name="registration" id="radios-0" value="1" class="mdl-radio__button" checked="<?php echo $checked1; ?>" readonly>
       Registered
-    </label> 
-    <label class="radio-inline" for="radios-1">
-      <input type="radio" name="registration" id="radios-1" value="0" checked="<?php echo $checked2; ?>"  readonly>
-      Un-Registered
     </label>
+    <label class="mdl-radio mdl-js-radio" for="radios-1">
+      <input type="radio" name="registration" id="radios-1" value="0" class="mdl-radio__button" checked="<?php echo $checked2; ?>" readonly>
+      Un-Registered
+    </label> 
   </div>
 </div>
 
