@@ -411,7 +411,7 @@ if(isset($_POST["save_btn"])) {
 <div class="form-group">
   <label class="col-md-4 control-label" for="textinput">PAN: </label>  
   <div class="col-md-4">
-  <input id="pan" pattern="-?[a-zA-Z]{5}[0-9]{4}[a-zA-Z]{1}?" name="pan" type="text" placeholder="PAN Card Number" class="form-control input-md">
+  <input id="pan" pattern="-?[a-zA-Z]{5}[0-9]{4}[a-zA-Z]{1}?" title="Must be of the form ARLPA0061H" name="pan" type="text" placeholder="PAN Card Number" class="form-control input-md">
     
   </div>
 </div>

@@ -424,7 +424,7 @@ if(isset($_POST["edit_btn"])) {
 <div class="form-group" style="margin-top:-3%">
   <label class="col-md-4 control-label" for="textinput" style="margin-left:-67%">PAN </label>  
   <div class="col-md-4">
-  <input id="pan" name="pan" style="margin-left:-107%" pattern="-?[a-zA-Z]{5}[0-9]{4}[a-zA-Z]{1}?" value="<?php echo $arr_search['response'][0]['organization_details']['pan'] ?>" type="text" placeholder="PAN Card Number" class="form-control input-md"/>
+  <input id="pan" name="pan" style="margin-left:-107%" pattern="-?[a-zA-Z]{5}[0-9]{4}[a-zA-Z]{1}?" title="Must be of the form ARLPA0061H" value="<?php echo $arr_search['response'][0]['organization_details']['pan'] ?>" type="text" placeholder="PAN Card Number" class="form-control input-md"/>
   </div>
 </div>
 
