@@ -35,33 +35,27 @@ $(document).ready(function() {
 } );
 </script>
 <style>
-
 .mdl-data-table td:last-of-type {
     padding-right: 45px;
 }
-
 table {
     font-family: arial, sans-serif;
     border-collapse: collapse;
     width: 60%;
 }
-
 td, th {
     border: 1px solid #dddddd;
     text-align: left;
     padding: 8px;
 }
-
 @font-face {
   font-family: Roboto-Regular;
   src: url(Roboto-Regular.ttf);
 }
-
 table{
   font-size:14px !important;
   font-family: Roboto-Regular;
 }
-
 /*tr:nth-child(even) {
     background-color: #dddddd;
 }*/
@@ -81,7 +75,6 @@ $output_missing_report = file_get_contents($url_missing_report, false,$context_m
 /*echo count($output_missing_report);*/
 $arr_missing_report = json_decode($output_missing_report,true);
 /*echo count($arr_missing_report);*/
-
 ?>
 
 <div class="demo-layout-transparent mdl-layout mdl-js-layout">
@@ -120,6 +113,7 @@ $arr_missing_report = json_decode($output_missing_report,true);
         <th>UID</th>
           <th>Missing File</th>
             <th>Action</th>
+            <th>upload</th>
         </thead>
         
         
@@ -130,6 +124,7 @@ $arr_missing_report = json_decode($output_missing_report,true);
     <td><?php echo $arr_missing_report[$i]['uid'] ?></td>
     <td><?php echo $arr_missing_report[$i]['missing_file'] ?></td>
     <td><button class="btn btn-success" style="color:white">Generate Link</button></td>
+    <td><button class="btn btn-success">upload</button></td>
   </tr>
   <?php }?>
   

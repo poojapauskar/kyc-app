@@ -17,6 +17,9 @@
   <link rel="stylesheet" href="css/fileupload.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 
+  <script src="https://storage.googleapis.com/code.getmdl.io/1.0.6/material.min.js"></script>
+   <link rel="stylesheet" href="https://storage.googleapis.com/code.getmdl.io/1.0.6/material.indigo-pink.min.css">
+
   <style type="text/css">
     span:before{
     content:" "; 
@@ -44,6 +47,16 @@
     .closebtn:hover {
     color: black;
     }
+    .mdl-radio {
+    position: relative;
+    font-size: 14px;
+    line-height: 24px;
+    display: inline-block;
+    box-sizing: border-box;
+    font-weight: 500;
+    margin: 0;
+    padding-left: 0;
+}
 
   </style>
 </head>
@@ -54,13 +67,14 @@
 /*echo $_POST['search'];*/
 // if its cumin from edit org to search org then query based on edit org name
 
-$text=$_GET['text'];
+$text=$_GET['id'];
 
 $url_search = 'https://kyc-application.herokuapp.com/search/';
 $options_search = array(
   'http' => array(
     'header'  => array(
-                  'ID: '.$id,
+                  'IS-USER: 0',
+                  'PK: '.$text,
                 ),
     'method'  => 'GET',
   ),
@@ -135,7 +149,7 @@ $arr_search = json_decode($output_search,true);
 </div> 
 
 
-<form class="form-horizontal" method="post" action="edit_organization.php" enctype="multipart/form-data" style="margin-top:-30%">
+<form class="form-horizontal" method="post" action="edit_organization.php" enctype="multipart/form-data" style="margin-top:-34%">
 
 <fieldset>
  <input type="hidden" value="<?php echo $arr_search['response'][0]['organization_details']['pk'] ?>" name="org_id" id="org_id"></input>
@@ -175,14 +189,14 @@ $arr_search = json_decode($output_search,true);
 	$checked2="checked";
 }
 ?>
-    <label class="radio-inline" for="radios-0"> 
-      <input type="radio" name="registration" id="radios-0" value="1" checked="<?php echo $checked1; ?>"  readonly>
+    <label class="mdl-radio mdl-js-radio" for="radios-0">
+      <input type="radio" name="registration" id="radios-0" value="1" class="mdl-radio__button" checked="<?php echo $checked1; ?>" readonly>
       Registered
-    </label> 
-    <label class="radio-inline" for="radios-1">
-      <input type="radio" name="registration" id="radios-1" value="0" checked="<?php echo $checked2; ?>"  readonly>
-      Un-Registered
     </label>
+    <label class="mdl-radio mdl-js-radio" for="radios-1">
+      <input type="radio" name="registration" id="radios-1" value="0" class="mdl-radio__button" checked="<?php echo $checked2; ?>" readonly>
+      Un-Registered
+    </label> 
   </div>
 </div>
 
@@ -222,11 +236,10 @@ $arr_search = json_decode($output_search,true);
 
 
 <!-- Text input-->
-<div class="form-group">
-  <label class="col-md-4 control-label" for="textinput">PAN </label>  
+<div class="form-group" style="margin-top:-3%">
+  <label class="col-md-4 control-label" for="textinput" style="margin-left:-67%">PAN </label>  
   <div class="col-md-4">
-  <input id="pan" name="pan" value="<?php echo $arr_search['response'][0]['organization_details']['pan'] ?>" type="text" placeholder="PAN Card Number" class="form-control input-md"  readonly>
-    
+  <input id="pan" name="pan" style="margin-left:-107%" pattern="-?[a-zA-Z]{5}[0-9]{4}[a-zA-Z]{1}?" value="<?php echo $arr_search['response'][0]['organization_details']['pan'] ?>" type="text" placeholder="PAN Card Number" class="form-control input-md" readonly/>
   </div>
 </div>
 
@@ -264,10 +277,11 @@ $arr_search = json_decode($output_search,true);
 </div>
 
 <!-- Textarea -->
-<div class="form-group">
-  <label class="col-md-4 control-label" for="textarea">Address</label>
+
+<div class="form-group" style="margin-top:-3%">
+  <label class="col-md-4 control-label" for="textarea" style="margin-left:-67%">Address</label>
   <div class="col-md-4">                     
-    <textarea class="form-control" id="address" name="address"  readonly><?php echo $arr_search['response'][0]['organization_details']['address'] ?></textarea>
+    <textarea class="form-control" id="address" name="address" style="margin-left:-107%"><?php echo $arr_search['response'][0]['organization_details']['address'] ?></textarea>
   </div>
 </div>
 
@@ -407,7 +421,7 @@ $arr_search = json_decode($output_search,true);
 </fieldset>
 </form>
 
-
+</main>
 </body>
 </html>
 
