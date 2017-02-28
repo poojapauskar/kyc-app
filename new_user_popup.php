@@ -438,10 +438,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
   $output_org = file_get_contents($url_org, false,$context_org);
   $arr_org = json_decode($output_org,true);
 
-  if($arr_org['status']==200){
-    echo "<script>alert('New Individual Created')</script>";
-    $_POST = array();
-  }
+  /*return false;*/
+  echo "<script>
+             window.history.go(-1);
+     </script>";
 }
 ?>
 
@@ -473,7 +473,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
         </div>
       </header>
 
-<form onsubmit="return proceed();" name="Form" id="Form" class="form-horizontal" method="post" action="new_user.php" enctype="multipart/form-data">
+<form onsubmit="return proceed();" name="Form" id="Form" class="form-horizontal" method="post" action="new_user_popup.php" enctype="multipart/form-data">
 <fieldset>
 
 <!-- Form Name -->
