@@ -113,19 +113,31 @@ if(a==null || a==''){
   }
 </script>
 
+<script type="text/javascript">
+    function make_uid_null(){
+    
+    $('#uid').val("");
+    document.getElementById("popup1").style.display='none';
+    /*alert("helo");*/
+  }
+</script>
+
 <!-- <p>Click on the "x" symbol to close the alert message.</p> -->
-<div class="alert" id="popup1" class="popup1" style="display:none;text-align:center;position:relative">
-  <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+<div class="alert" id="popup1" class="popup1" style="display:none;text-align:center;position:relative;
+    width:800px;
+    top: 70%;
+    left: 20%;z-index:2">
+ <!--  <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> -->
  <!--  <form method="post" action="new_user.php">  -->
   <input type="text" id="uid_in_popup" name="uid_in_popup" style="background-color:transparent;color:black;border:none"></input><br><br>
   <button id="done" class="btn btn-success" name="done" onclick="submit_form()">Done</button>
-  <button id="cancel1" class="btn btn-warning" name="cancel1">Cancel</button>
+  <button onclick="make_uid_null()" id="cancel1" class="btn btn-warning" name="cancel1">Cancel</button>
   <!-- </form> -->
 </div>
 
 <?php
 
-if ($_SERVER['REQUEST_METHOD'] == 'POST'){
+if ($_POST['uid'] != ''){
 
         $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
         $charactersLength = strlen($characters);
