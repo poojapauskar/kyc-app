@@ -224,7 +224,7 @@ $arr_missing_report = json_decode($output_missing_report,true);
     <td><?php echo $arr_missing_report[$i]['name'] ?></td>
     <td><?php echo $arr_missing_report[$i]['uid'] ?></td>
     <td><?php echo $arr_missing_report[$i]['missing_file'] ?></td>
-    <td><button class="btn btn-success" style="color:white">Generate Link</button></td>
+    <td><button class="btn btn-success" style="color:white;opacity: 0.5;" disabled>Generate Link</button></td>
 
     <form method="post" action="missing_reports.php" enctype="multipart/form-data">
         <td><input name="file1" id="file1" class="file-upload" type="file"></td>
