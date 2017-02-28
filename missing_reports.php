@@ -141,7 +141,7 @@ if (isset($_POST['upload_btn'])){
         /*var_dump($arr_upload);*/
 
         $file_id=$arr[0]['id'];
-        echo $file_id;
+        /*echo $file_id;*/
 
     }
 
