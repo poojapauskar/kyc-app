@@ -21,7 +21,6 @@
  <link rel="stylesheet" href="https://html.nkdev.info/_con/assets/_con/css/con-base.min.css"> -->
 <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 <script src="https://cdn.datatables.net/1.10.13/js/dataTables.material.min.js"></script>
-<script src="https://cdn.datatables.net/1.10.13/js/jquery.dataTables.min.js"></script>
 <script>
 $(document).ready(function() {
     $('#example').DataTable( {
@@ -208,7 +207,7 @@ $arr_missing_report = json_decode($output_missing_report,true);
  <div class="container">
   <div class="row" style="margin-top:4%;"> 
 
-<table id="example" class="mdl-data-table" cellspacing="0" style="margin-left:12%;width:75%;margin-top:12%;">
+<table id="example" class="mdl-data-table" cellspacing="0" style="margin-left:3%;width:75%;margin-top:12%;">
         <thead>
             <th>Name</th>
         <th>UID</th>
