@@ -123,12 +123,13 @@ if(a==null || a==''){
 </script>
 
 <!-- <p>Click on the "x" symbol to close the alert message.</p> -->
-<div class="alert" id="popup1" class="popup1" style="display:none;text-align:center;position:relative;
+<div class="alert" id="popup1" class="popup1" style="display:none;text-align:center;position:absolute;
     width:800px;
     top: 70%;
     left: 20%;z-index:2">
  <!--  <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> -->
  <!--  <form method="post" action="new_user.php">  -->
+  <label>UID Generated</label><br>
   <input type="text" id="uid_in_popup" name="uid_in_popup" style="background-color:transparent;color:black;border:none"></input><br><br>
   <button id="done" class="btn btn-success" name="done" onclick="submit_form()">Done</button>
   <button onclick="make_uid_null()" id="cancel1" class="btn btn-warning" name="cancel1">Cancel</button>
