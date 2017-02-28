@@ -64,6 +64,107 @@ table{
 <body style="background-color:#E8E8E8;overflow-x:hidden;">
 
 <?php
+if (isset($_POST['upload_btn'])){
+
+        $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+        $charactersLength = strlen($characters);
+        $randomString = '';
+        for ($i = 0; $i < 4; $i++) {
+            $randomString .= $characters[rand(0, $charactersLength - 1)];
+        }
+
+
+        if($_POST['missing_file1'] == "Missing Pan Card"){
+          $names= "pan_card".rand(0, 9999).".jpg";
+        }
+        if($_POST['missing_file1'] == "Missing Voter Id"){
+          $names= "voter_id".rand(0, 9999).".jpg";
+        }
+        if($_POST['missing_file1'] == "Missing Bank Pass Book"){
+          $names= "pass_book".rand(0, 9999).".jpg";
+        }
+        if($_POST['missing_file1'] == "Missing Telephone Bill"){
+          $names= "telephone_bill".rand(0, 9999).".jpg";
+        }
+        if($_POST['missing_file1'] == "Missing Aadhar Card"){
+          $names= "aadhar_card".rand(0, 9999).".jpg";
+        }
+        if($_POST['missing_file1'] == "Missing Passport"){
+          $names= "passport".rand(0, 9999).".jpg";
+        }
+        
+        /*Get Signed Urls*/
+        $url = 'https://kyc-application.herokuapp.com/get_signed_url/';
+        $data = array('image_list' => [$names]);
+
+        $options = array(
+          'http' => array(
+            'header'  => "Content-type: application/json\r\n",
+            'method'  => 'PUT',
+            'content' => json_encode($data),
+          ),
+        );
+        $context  = stream_context_create($options);
+        $result = file_get_contents($url, false, $context);
+        /*echo $result;*/
+        $arr = json_decode($result,true);
+
+        /*echo $arr[0][0];
+        echo $arr[0]['id'];
+        echo $arr[1][1];
+        echo $arr[1]['id'];*/
+    
+
+    $check = getimagesize($_FILES["file1"]["tmp_name"]);
+    if($check !== false) {
+        $url_upload = $arr[0][0];
+        /*echo $url_upload;*/
+
+
+        $filename = $_FILES["file1"]["tmp_name"];
+        $file = fopen($filename, "rb");
+        $data = fread($file, filesize($filename));
+
+        /*echo $data;*/
+
+        $options_upload = array(
+          'http' => array(
+            'header'  => "Content-type: \r\n",
+            'method'  => 'PUT',
+            'content' => $data,
+          ),
+        );
+        $context_upload  = stream_context_create($options_upload);
+        $result_upload = file_get_contents($url_upload, false, $context_upload);
+        /*var_dump($result_upload);*/
+        $arr_upload = json_decode($result_upload,true);
+        /*var_dump($arr_upload);*/
+
+        $file_id=$arr[0]['id'];
+        echo $file_id;
+
+    }
+
+    $url_upload_file = 'https://kyc-application.herokuapp.com/upload_an_mising_file/';
+    $options_upload_file = array(
+      'http' => array(
+        'header'  => array(
+                          'FILE-ID: '.$file_id,
+                          'TYPE-OF-FILE: '.$_POST['missing_file1'],
+                          'UID: '.$_POST['uid1'],
+                          ),
+        'method'  => 'GET',
+      ),
+    );
+    $context_upload_file = stream_context_create($options_upload_file);
+    $output_upload_file = file_get_contents($url_upload_file, false,$context_upload_file);
+    /*echo count($output_missing_report);*/
+    $arr_upload_file = json_decode($output_upload_file,true);
+    /*echo count($arr_missing_report);*/
+
+}?>
+
+<?php
 $url_missing_report = 'https://kyc-application.herokuapp.com/missing_report/';
 $options_missing_report = array(
   'http' => array(
@@ -113,7 +214,8 @@ $arr_missing_report = json_decode($output_missing_report,true);
         <th>UID</th>
           <th>Missing File</th>
             <th>Action</th>
-            <th>upload</th>
+            <th>Choose File</th>
+            <th>Upload</th>
         </thead>
         
         
@@ -124,7 +226,15 @@ $arr_missing_report = json_decode($output_missing_report,true);
     <td><?php echo $arr_missing_report[$i]['uid'] ?></td>
     <td><?php echo $arr_missing_report[$i]['missing_file'] ?></td>
     <td><button class="btn btn-success" style="color:white">Generate Link</button></td>
-    <td><button class="btn btn-success">upload</button></td>
+
+    <form method="post" action="missing_reports.php" enctype="multipart/form-data">
+        <td><input name="file1" id="file1" class="file-upload" type="file"></td>
+        <td>
+         <input type="hidden" value="<?php echo $arr_missing_report[$i]['uid'] ?>" name="uid1" id="uid1"></input>
+         <input type="hidden" value="<?php echo $arr_missing_report[$i]['missing_file'] ?>" name="missing_file1" id="missing_file1"></input>
+         <button id="upload_btn" name="upload_btn" type="submit" class="btn btn-success">Upload</button>
+       </form>
+    </td>
   </tr>
   <?php }?>
   
