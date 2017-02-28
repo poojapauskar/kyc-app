@@ -1,29 +1,3 @@
-<?php
-$url_search = 'https://kyc-application.herokuapp.com/search/';
-$options_search = array(
-  'http' => array(
-    'header'  => array(
-                  'IS-USER: 1',
-                  'PK: '.$_POST['user_id'],
-                ),
-    'method'  => 'GET',
-  ),
-);
-$context_search = stream_context_create($options_search);
-$output_search = file_get_contents($url_search, false,$context_search);
-/*echo $output_search;*/
-$arr_search = json_decode($output_search,true);
-/*echo $arr_search['response'][0]['voter_id_details'][0]['name'];
-echo $arr_search['response'][0]['voter_id_details'][0]['link'];
-echo $arr_search['response'][0]['user_details']['uid'];
-echo $arr_search['response'][0]['user_details']['address'];
-echo $arr_search['response'][0]['user_details']['name'];
-echo $arr_search['response'][0]['user_details']['designation'];
-echo $arr_search['response'][0]['user_details']['pan'];
-echo $arr_search['response'][0]['user_details']['aadhar_no'];*/
-
-?>
-
 <html>
   <head>
     <!---bootstrap-->
@@ -68,7 +42,7 @@ echo $arr_search['response'][0]['user_details']['aadhar_no'];*/
   <style type="text/css">
     .upload-button {
     padding: 4px;
-   /* border: 1px solid black;*/
+    border: 1px solid black;
     border-radius: 5px;
     display: block;
     float: left;
@@ -83,14 +57,88 @@ echo $arr_search['response'][0]['user_details']['aadhar_no'];*/
 .file-upload1 {
     display: none;
 }
+.alert {
+    padding: 20px;
+    background-color: #f44336;
+    color: white;
+    /*position: relative;*/
+}
+
+.closebtn {
+    margin-left: 15px;
+    color: white;
+    font-weight: bold;
+    float: right;
+    font-size: 22px;
+    line-height: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.closebtn:hover {
+    color: black;
+}
   </style>
 
+<script>
+
+function proceed(){
+
+var a=document.forms["Form"]["uid"].value;
+if(a==null || a==''){
+        var text = "";
+        var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+
+        for( var i=0; i < 7; i++ )
+            text += possible.charAt(Math.floor(Math.random() * possible.length));
+
+        var mystring= (document.getElementById('name').value).substring(0, 3);
+        var uid_gen=mystring+text;
+        document.getElementById('uid').value = uid_gen;
+        document.getElementById('uid_in_popup').value = uid_gen;
+
+        /*alert("UID generated: "+uid_gen);*/
+        var yourUl = document.getElementById("popup1");
+        yourUl.style.display = yourUl.style.display === 'none' ? '' : 'none';
+        return false;
+}
+}
+</script>
 <head>
 <body style="background-color:#E8E8E8;">
 
+<script type="text/javascript">
+  function submit_form(){
+    $('#Form').submit();
+  }
+</script>
+
+<script type="text/javascript">
+    function make_uid_null(){
+    
+    $('#uid').val("");
+    document.getElementById("popup1").style.display='none';
+    /*alert("helo");*/
+  }
+</script>
+
+<!-- <p>Click on the "x" symbol to close the alert message.</p> -->
+<div class="alert" id="popup1" class="popup1" style="display:none;text-align:center;position:absolute;
+    width:800px;
+    top: 70%;
+    left: 20%;z-index:2">
+ <!--  <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> -->
+ <!--  <form method="post" action="new_user.php">  -->
+  <label>UID Generated</label><br>
+  <input type="text" id="uid_in_popup" name="uid_in_popup" style="background-color:transparent;color:black;border:none"></input><br><br>
+  <button id="done" class="btn btn-success" name="done" onclick="submit_form()">Done</button>
+  <button onclick="make_uid_null()" id="cancel1" class="btn btn-warning" name="cancel1">Cancel</button>
+  <!-- </form> -->
+</div>
+
 <?php
 
-if(isset($_POST["edit_btn"])) {
+if ($_SERVER['REQUEST_METHOD'] == 'POST'){
 
         $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
         $charactersLength = strlen($characters);
@@ -159,7 +207,7 @@ if(isset($_POST["edit_btn"])) {
         $pan_card_id=$arr[0]['id'];
 
     } else {
-        $pan_card_id=$arr_search['response'][0]['pan_card_details'][0]['pk'];
+        $pan_card_id="";
     }
 
 
@@ -191,7 +239,7 @@ if(isset($_POST["edit_btn"])) {
         $voter_card_id=$arr[1]['id'];
 
     } else {
-        $voter_card_id=$arr_search['response'][0]['voter_id_details'][0]['pk'];
+        $voter_card_id="";
     }
 
     $check_pass_book = getimagesize($_FILES["bank_pass_book"]["tmp_name"]);
@@ -222,7 +270,7 @@ if(isset($_POST["edit_btn"])) {
         $pass_book_id=$arr[2]['id'];
 
     } else {
-        $pass_book_id=$arr_search['response'][0]['bank_pass_book_details'][0]['pk'];
+        $pass_book_id="";
     }
 
     $check_telephone_bill = getimagesize($_FILES["telephone_bill"]["tmp_name"]);
@@ -253,7 +301,7 @@ if(isset($_POST["edit_btn"])) {
         $telephone_bill_id=$arr[3]['id'];
 
     } else {
-        $telephone_bill_id=$arr_search['response'][0]['telephone_bill_details'][0]['pk'];
+        $telephone_bill_id="";
     }
 
     $check_aadhar_card = getimagesize($_FILES["aadhar_card"]["tmp_name"]);
@@ -284,7 +332,7 @@ if(isset($_POST["edit_btn"])) {
         $aadhar_card_id=$arr[4]['id'];
 
     } else {
-        $aadhar_card_id=$arr_search['response'][0]['aadhar_card_details'][0]['pk'];
+        $aadhar_card_id="";
     }
 
     $check_passport = getimagesize($_FILES["passport"]["tmp_name"]);
@@ -315,7 +363,7 @@ if(isset($_POST["edit_btn"])) {
         $passport_id=$arr[5]['id'];
 
     } else {
-        $passport_id=$arr_search['response'][0]['passport_details'][0]['pk'];
+        $passport_id="";
     }
 
     $check_image = getimagesize($_FILES["image"]["tmp_name"]);
@@ -346,7 +394,7 @@ if(isset($_POST["edit_btn"])) {
         $image_id=$arr[6]['id'];
 
     } else {
-        $image_id=$arr_search['response'][0]['image_details'][0]['pk'];
+        $image_id="";
     }
 
   $type_of_work='';
@@ -373,7 +421,7 @@ if(isset($_POST["edit_btn"])) {
   }
   $comment = ltrim($comment, ',');
 
-  $url_org = 'https://kyc-application.herokuapp.com/edit_user/';
+  $url_org = 'https://kyc-application.herokuapp.com/add_new_individual/';
   $options_org = array(
     'http' => array(
       'header'  => array(
@@ -388,7 +436,7 @@ if(isset($_POST["edit_btn"])) {
                           'BANK-PASS-BOOK: '.$pass_book_id,
                           'VOTER-ID: '.$voter_card_id,
                           'PASSPORT: '.$passport_id,
-                          'AADHAR-NO: '.$_POST['aadhar_no'],
+                          'AADHAR-NO: '.$aadhar_no,
                           'AADHAR-CARD: '.$aadhar_card_id,
                           'IMAGE: '.$image_id,
                           'TYPE-OF-WORK: '.$type_of_work,
@@ -403,15 +451,10 @@ if(isset($_POST["edit_btn"])) {
   $output_org = file_get_contents($url_org, false,$context_org);
   $arr_org = json_decode($output_org,true);
 
-  if($arr_org['status']==200){
-    /*echo "<script>alert('IndividualUpdated')</script>";*/
-
-    $string1="<script>window.location.href='search_user.php?id=".$arr_org['pk']."'</script>";
-    echo $string1;
-
-    /*echo $output_org;*/
-
-  }
+  /*return false;*/
+  echo "<script>
+             window.history.go(-1);
+     </script>";
 }
 ?>
 
@@ -423,7 +466,7 @@ if(isset($_POST["edit_btn"])) {
         <div class="mdl-layout__header-row" >
 
         <img style="margin-top:5%;margin-left:28px;width:50px;height:50px" src="images/green.png"></img>
-<h5 style="margin-left:35%;margin-top:9%;"><?php echo $arr_search['response'][0]['user_details']['name'] ?></h5>
+<h5 style="margin-left:35%;margin-top:9%;">New Entry Individual</h5>
          <span class="mdl-layout-title" style="margin-left:26%;margin-top:7%;">KYChome</span>
           <!-- Add spacer, to align navigation to the right -->
       </header>
@@ -442,48 +485,23 @@ if(isset($_POST["edit_btn"])) {
       </div>
         </div>
       </header>
-<form class="form-horizontal" method="post" action="edit_user.php" enctype="multipart/form-data">
+
+<form onsubmit="return proceed();" name="Form" id="Form" class="form-horizontal" method="post" action="new_user_popup.php" enctype="multipart/form-data">
 <fieldset>
 
 <!-- Form Name -->
-<!-- <legend><center><?php echo $arr_search['response'][0]['user_details']['name'] ?></center></legend> -->
+<legend><center>New Individual Entry</center></legend>
 <!--avatar upload-->
 
-
-<?php
-  $url_img = 'https://kyc-application.herokuapp.com/download/';
-  $options_img= array(
-    'http' => array(
-      'header'  => array(
-                          'IMAGE-NAME: '.$arr_search['response'][0]['image_details'][0]['name'],
-                         ),
-      'method'  => 'GET',
-    ),
-  );
-  $context_img = stream_context_create($options_img);
-  $output_img = file_get_contents($url_img, false,$context_img);
-  /*echo $output_img_download;*/
-  $arr_img = json_decode($output_img,true);
-  /*echo $arr_img[0]['url'];*/
-  
-  
-?>
-
-<div style="margin-top:10%">
- <input type="hidden" value="<?php echo $arr_search['response'][0]['user_details']['pk'] ?>" name="org_id" id="org_id"></input>
-
-<img class="profile-pic" style="margin-left:77%;position:absolute;z-index:2;" src="<?php echo $arr_img[0]['url']; ?>" />
-<div class="upload-button" style="position:absolute;z-index:2;margin-left:79%;margin-top:13%;">
-<input id="profile_pic"  name="profile_pic" class="input-file" type="file">Upload Image</input>
-</div>
-
-
+<div style="margin-top:7%">
+<img class="profile-pic" style="margin-left:77%;position:absolute;z-index:2;" src="images/boy-512.png" />
+<div class="upload-button" style="position:absolute;z-index:2;margin-left:79%;margin-top:13%;">Upload Image</div>
 <input name="image" id="image" class="file-upload1" style="position:absolute;z-index:-2;margin-left:46%;margin-top:16%;" type="file">
 <!-- Text input-->
 <div class="form-group">
   <label class="col-md-4 control-label" for="textinput">UID:</label>  
   <div class="col-md-4">
-  <input id="uid" name="uid" type="text" value="<?php echo $arr_search['response'][0]['user_details']['uid'] ?>" placeholder="" class="form-control input-md">
+  <input id="uid" name="uid" type="text" value="<?php echo $_POST['uid'] ?>" placeholder="" class="form-control input-md">
     
   </div>
 </div>
@@ -492,16 +510,15 @@ if(isset($_POST["edit_btn"])) {
 <div class="form-group">
   <label class="col-md-4 control-label" for="textinput">Name:</label>  
   <div class="col-md-4">
-  <input id="name" name="name" value="<?php echo $arr_search['response'][0]['user_details']['name'] ?>" type="text" placeholder="" class="form-control input-md">
+  <input id="name" name="name" value="<?php echo $_POST['name'] ?>" type="text" placeholder="" class="form-control input-md">
     
   </div>
 </div>
-
 <!--date-->
 <div class="form-group row">
   <label for="example-date-input" class="col-2 col-form-label" style="margin-left:29.5%;">Date:</label>
   <div class="col-10">
-    <input class="form-control" id="date" name="date" value="<?php echo $arr_search['response'][0]['user_details']['date'] ?>" style="width:31%;margin-left:34.6%;margin-top:-2%;" type="date" value="" id="example-date-input">
+    <input class="form-control" id="date" name="date" value="<?php echo $_POST['date'] ?>" style="width:31%;margin-left:34.6%;margin-top:-2%;" type="text">
   </div>
 </div>
 
@@ -510,7 +527,7 @@ if(isset($_POST["edit_btn"])) {
   <label class="col-md-4 control-label" for="selectbasic">Profession:</label>
   <div class="col-md-4">
     <select id="profession" name="profession" class="form-control">
-      <option value="<?php echo $arr_search['response'][0]['user_details']['proffesion'] ?>"><?php echo $arr_search['response'][0]['user_details']['proffesion'] ?></option>
+      <option value="Option one"><?php echo $_POST['profession'] ?></option>
       <option value="Option one">Option one</option>
       <option value="Option two">Option two</option>
       <option value="Option three">Option three</option>
@@ -520,19 +537,19 @@ if(isset($_POST["edit_btn"])) {
 </div>
 
 <!-- Text input-->
-<!-- <div class="form-group">
+<div class="form-group">
   <label class="col-md-4 control-label" for="textinput"></label>  
   <div class="col-md-4">
-  <input id="textinput" name="textinput" type="text" placeholder="specify " class="form-control input-md">
+  <input id="textinput" name="textinput" type="text" placeholder="specify " class="form-control input-md" >
     
   </div>
-</div> -->
+</div>
 
 <!-- Textarea -->
 <div class="form-group">
   <label class="col-md-4 control-label" for="textarea">Address:</label>
   <div class="col-md-4">                     
-    <textarea class="form-control" id="address" name="address" value="<?php echo $arr_search['response'][0]['user_details']['address'] ?>"><?php echo $arr_search['response'][0]['user_details']['address'] ?></textarea>
+    <textarea class="form-control" id="address" name="address" value="<?php echo $_POST['address'] ?>">default text</textarea>
   </div>
 </div>
 
@@ -540,7 +557,7 @@ if(isset($_POST["edit_btn"])) {
 <div class="form-group">
   <label class="col-md-4 control-label" for="textinput">PAN:</label>  
   <div class="col-md-4">
-  <input id="pan" name="pan" value="<?php echo $arr_search['response'][0]['user_details']['pan'] ?>" type="text" placeholder="" class="form-control input-md">
+  <input id="pan" name="pan" value="<?php echo $_POST['pan'] ?>" type="text" placeholder="" class="form-control input-md">
     
   </div>
 </div>
@@ -548,134 +565,29 @@ if(isset($_POST["edit_btn"])) {
 <!-- File Button --> 
 <div class="form-group">
   <label class="col-md-4 control-label" for="filebutton">PAN card:</label>
-
-<div class="col-md-4">
-<?php echo $arr_search['response'][0]['pan_card_details'][0]['name']; ?>
-</div>
-
-
-<div class="col-md-4">
-<input id="pan_card" name="pan_card" value="<?php echo $_POST['pan_card'] ?>" class="input-file" type="file">
-</div>
-
-<div class="col-md-4">
-<?php
-  $url_img_download = 'https://kyc-application.herokuapp.com/download/';
-  $options_img_download = array(
-    'http' => array(
-      'header'  => array(
-                          'IMAGE-NAME: '.$arr_search['response'][0]['pan_card_details'][0]['name'],
-                         ),
-      'method'  => 'GET',
-    ),
-  );
-  $context_img_download = stream_context_create($options_img_download);
-  $output_img_download = file_get_contents($url_img_download, false,$context_img_download);
-  /*echo $output_img_download;*/
-  $arr_img_download = json_decode($output_img_download,true);
-  
-?>
-<button style="background-color:#65AC4C" class="btn btn-success">
-<a target="_blank" style="color:white" href="view_image.php?name=pan_card_details&link=<?php echo $arr_img_download[0]['url']; ?>">View</a>
-</button>
-
-</div>
-
+  <div class="col-md-4">
+    <input id="pan_card" name="pan_card" value="<?php echo $_POST['pan_card'] ?>" class="input-file" type="file">
+  </div>
 </div>
 
 <!--address proof-->
 <div class="form-group">
   <label class="col-md-4 control-label" for="checkboxes">Address Proof</label>
-
-<div class="col-md-1">
-<label class="checkbox-inline" for="checkboxes-0">
-
-<?php if($arr_search['response'][0]['telephone_bill_details'][0]['name'] != ''){
-   		$check_box_select1="checked";
-    }else{
-    	$check_box_select1="";
-    }?>
-
- <input <?php echo $check_box_select1 ?> type="checkbox" name="checkboxes" id="checkboxes-0" value="1">Telephone</label>
-</div>
-
-<div class="col-md-4">
-<?php echo $arr_search['response'][0]['telephone_bill_details'][0]['name']; ?>
-</div>
-
-
-<div class="col-md-4">
+  <div class="col-md-4">
+   <label class="checkbox-inline" for="checkboxes-0">
+     <input type="checkbox" name="checkboxes" id="checkboxes-0" value="1">Telephone</label>
 <input id="telephone_bill"  value="<?php echo $_POST['telephone_bill'] ?>" style="margin-top: -20px;margin-left: 129px;" name="telephone_bill" class="input-file" type="file">     
  </div>
-
-<div class="col-md-4">
-<?php
-  $url_img_download_2 = 'https://kyc-application.herokuapp.com/download/';
-  $options_img_download_2 = array(
-    'http' => array(
-      'header'  => array(
-                          'IMAGE-NAME: '.$arr_search['response'][0]['telephone_bill_details'][0]['name'],
-                         ),
-      'method'  => 'GET',
-    ),
-  );
-  $context_img_download_2 = stream_context_create($options_img_download_2);
-  $output_img_download_2 = file_get_contents($url_img_download_2, false,$context_img_download_2);
-  /*echo $output_img_download;*/
-  $arr_img_download_2 = json_decode($output_img_download_2,true);
-  
-?>
-<button style="background-color:#65AC4C" class="btn btn-success">
-<a target="_blank" style="color:white" href="view_image.php?name=telephone_bill_details&link=<?php echo $arr_img_download_2[0]['url']; ?>">View</a>
-</button>
-
 </div>
 
 
     <div class="form-group">
  <label class="col-md-4 control-label" for="checkboxes"></label>
- <div class="col-md-1">
-   <label class="checkbox-inline" for="checkboxes-0">
-   <?php if($arr_search['response'][0]['bank_pass_book_details'][0]['name'] != ''){
-   		$check_box_select2="checked";
-    }else{
-    	$check_box_select2="";
-    }?>
-     <input <?php echo $check_box_select2 ?> type="checkbox" name="checkboxes" id="checkboxes-0" value="1">Bank Passbook</label>
-
- </div>
-
  <div class="col-md-4">
-<?php echo $arr_search['response'][0]['bank_pass_book_details'][0]['name']; ?>
-</div>
-
-<div class="col-md-4">
+   <label class="checkbox-inline" for="checkboxes-0">
+     <input type="checkbox" name="checkboxes" id="checkboxes-0" value="1">Bank Passbook</label>
 <input id="bank_pass_book"  value="<?php echo $_POST['bank_pass_book'] ?>" style="margin-top: -22px;margin-left: 129px;" name="bank_pass_book" class="input-file" type="file">     
  </div>
-
-<div class="col-md-4">
-<?php
-  $url_img_download_3 = 'https://kyc-application.herokuapp.com/download/';
-  $options_img_download_3= array(
-    'http' => array(
-      'header'  => array(
-                          'IMAGE-NAME: '.$arr_search['response'][0]['bank_pass_book_details'][0]['name'],
-                         ),
-      'method'  => 'GET',
-    ),
-  );
-  $context_img_download_3 = stream_context_create($options_img_download_3);
-  $output_img_download_3 = file_get_contents($url_img_download_3, false,$context_img_download_3);
-  /*echo $output_img_download;*/
-  $arr_img_download_3 = json_decode($output_img_download_3,true);
-  
-?>
-<button style="background-color:#65AC4C" class="btn btn-success">
-<a target="_blank" style="color:white" href="view_image.php?name=bank_pass_book_details&link=<?php echo $arr_img_download_3[0]['url']; ?>">View</a>
-</button>
-
-</div>
-
 </div>
 
 <!--ID pROOF-->
@@ -683,101 +595,28 @@ if(isset($_POST["edit_btn"])) {
 <!--address proof-->
 <div class="form-group">
   <label class="col-md-4 control-label" for="checkboxes">ID Proof</label>
-  <div class="col-md-1">
+  <div class="col-md-4">
    <label class="checkbox-inline" for="checkboxes-0">
-
-   <?php if($arr_search['response'][0]['voter_id_details'][0]['name'] != ''){
-   		$check_box_select3="checked";
-    }else{
-    	$check_box_select3="";
-    }?>
-
-     <input <?php echo $check_box_select3; ?> type="checkbox" name="checkboxes" id="checkboxes-0" value="1">voter ID</label>
-   </div>
-
-    <div class="col-md-4">
-		<?php echo $arr_search['response'][0]['voter_id_details'][0]['name']; ?>
-    </div>
-
-	<div class="col-sm-4">
-	<input id="voter_id" value="<?php echo $_POST['voter_id'] ?>" style="margin-top: -20px;margin-left: 129px;" name="voter_id" class="input-file" type="file">     
-	 </div>
-
-	 <div class="col-md-4">
-	<?php
-	  $url_img_download_4 = 'https://kyc-application.herokuapp.com/download/';
-	  $options_img_download_4= array(
-	    'http' => array(
-	      'header'  => array(
-	                          'IMAGE-NAME: '.$arr_search['response'][0]['voter_id_details'][0]['name'],
-	                         ),
-	      'method'  => 'GET',
-	    ),
-	  );
-	  $context_img_download_4 = stream_context_create($options_img_download_4);
-	  $output_img_download_4= file_get_contents($url_img_download_4, false,$context_img_download_4);
-	  /*echo $output_img_download;*/
-	  $arr_img_download_4 = json_decode($output_img_download_4,true);
-	  
-	?>
-<button style="background-color:#65AC4C" class="btn btn-success">
-<a target="_blank" style="color:white" href="view_image.php?name=voter_id_details&link=<?php echo $arr_img_download_4[0]['url']; ?>">View</a>
-</button>
-
-	</div>
-
+     <input type="checkbox" name="checkboxes" id="checkboxes-0" value="1">voter ID</label>
+<input id="voter_id" value="<?php echo $_POST['voter_id'] ?>" style="margin-top: -20px;margin-left: 129px;" name="voter_id" class="input-file" type="file">     
+ </div>
 </div>
 
 
     <div class="form-group">
  <label class="col-md-4 control-label" for="checkboxes"></label>
- <div class="col-md-1">
+ <div class="col-md-4">
    <label class="checkbox-inline" for="checkboxes-0">
-   <?php if($arr_search['response'][0]['passport_details'][0]['name'] != ''){
-   		$check_box_select4="checked";
-    }else{
-    	$check_box_select4="";
-    }?>
-     <input <?php echo $check_box_select4; ?> type="checkbox" name="checkboxes" id="checkboxes-0" value="1">Passport</label>
-  </div>
-
-   <div class="col-md-4">
-	<?php echo $arr_search['response'][0]['passport_details'][0]['name']; ?>
-	</div>
-
-	<div class="col-sm-4">
-	<input id="passport" value="<?php echo $_POST['passport'] ?>" style="margin-top: -22px;margin-left: 129px;" name="passport" class="input-file" type="file">     
-	 </div>
-
-	<div class="col-md-4">
-	<?php
-	  $url_img_download_5 = 'https://kyc-application.herokuapp.com/download/';
-	  $options_img_download_5= array(
-	    'http' => array(
-	      'header'  => array(
-	                          'IMAGE-NAME: '.$arr_search['response'][0]['passport_details'][0]['name'],
-	                         ),
-	      'method'  => 'GET',
-	    ),
-	  );
-	  $context_img_download_5 = stream_context_create($options_img_download_5);
-	  $output_img_download_5= file_get_contents($url_img_download_5, false,$context_img_download_5);
-	  /*echo $output_img_download;*/
-	  $arr_img_download_5 = json_decode($output_img_download_5,true);
-	  
-	?>
-<button style="background-color:#65AC4C" class="btn btn-success">
-<a target="_blank" style="color:white" href="view_image.php?name=passport_details&link=<?php echo $arr_img_download_5[0]['url']; ?>">View</a>
-</button>
-
-	</div>
+     <input type="checkbox" name="checkboxes" id="checkboxes-0" value="1">Passport</label>
+<input id="passport" value="<?php echo $_POST['passport'] ?>" style="margin-top: -22px;margin-left: 129px;" name="passport" class="input-file" type="file">     
+ </div>
 </div>
 
 <!-- Text input-->
 <div class="form-group">
   <label class="col-md-4 control-label" for="textinput">Adhar card No.</label>  
   <div class="col-md-4">
-  <input id="aadhar_no" name="aadhar_no" value="<?php echo $arr_search['response'][0]['user_details']['aadhar_no'] ?>" type="text" placeholder="" class="form-control input-md">
+  <input id="aadhar_no" name="aadhar_no" value="<?php echo $_POST['aadhar_no'] ?>" type="text" placeholder="" class="form-control input-md" >
     
   </div>
 </div>
@@ -785,48 +624,16 @@ if(isset($_POST["edit_btn"])) {
 <!-- File Button --> 
 <div class="form-group">
   <label class="col-md-4 control-label" for="filebutton">Adhar card:</label>
-
-  <div class="col-md-4">
-	<?php echo $arr_search['response'][0]['aadhar_card_details'][0]['name']; ?>
-  </div>
-
   <div class="col-md-4">
     <input id="aadhar_card" name="aadhar_card" value="<?php echo $_POST['aadhar_card'] ?>" class="input-file" type="file">
   </div>
-  
-  <div class="col-md-4">
-	<?php
-	  $url_img_download_6 = 'https://kyc-application.herokuapp.com/download/';
-	  $options_img_download_6= array(
-	    'http' => array(
-	      'header'  => array(
-	                          'IMAGE-NAME: '.$arr_search['response'][0]['aadhar_card_details'][0]['name'],
-	                         ),
-	      'method'  => 'GET',
-	    ),
-	  );
-	  $context_img_download_6 = stream_context_create($options_img_download_6);
-	  $output_img_download_6= file_get_contents($url_img_download_6, false,$context_img_download_6);
-	  /*echo $output_img_download;*/
-	  $arr_img_download_6 = json_decode($output_img_download_6,true);
-	  
-	?>
-<button style="background-color:#65AC4C" class="btn btn-success">
-<a target="_blank" style="color:white" href="view_image.php?name=aadhar_card_details&link=<?php echo $arr_img_download_6[0]['url']; ?>">View</a>
-</button>
-
-	</div>
-
 </div>
-
-<?php for($q=0;$q<count($arr_search['response'][0]['add_info']);$q++){?>
 
 <!-- Select Basic -->
 <div class="form-group">
   <label class="col-md-4 control-label" for="selectbasic">Type of work</label>
   <div class="col-md-4">
     <select id="type_of_work[]" name="type_of_work[]" class="form-control">
-      <option value="<?php echo $arr_search['response'][0]['add_info'][$q]['type_of_work']; ?>"><?php echo $arr_search['response'][0]['add_info'][$q]['type_of_work']; ?></option>
       <option value="Option one">Option one</option>
       <option value="Option two">Option two</option>
       <option value="Option three">Option three</option>
@@ -839,7 +646,6 @@ if(isset($_POST["edit_btn"])) {
   <label class="col-md-4 control-label" for="selectbasic">Status</label>
   <div class="col-md-4">
     <select id="status[]" name="status[]" class="form-control">
-      <option value="<?php echo $arr_search['response'][0]['add_info'][$q]['status']; ?>"><?php echo $arr_search['response'][0]['add_info'][$q]['status']; ?></option>
       <option value="Pending">Pending</option>
       <option value="Work in process">Work in process</option>
       <option value="Completed">Completed</option>
@@ -848,9 +654,9 @@ if(isset($_POST["edit_btn"])) {
 </div>
 <!--date-->
 <div class="form-group row">
-  <label for="example-date-input" class="col-2 col-form-label" style="margin-left:29.5%;">Date:</label>
+  <label for="example-date-input" class="col-2 col-form-label" style="margin-left:29.5%;">DATE</label>
   <div class="col-10">
-    <input class="form-control" id="date[]" name="date[]" value="<?php echo $arr_search['response'][0]['add_info'][$q]['date']; ?>" style="width:31%;margin-left:34.6%;margin-top:-2%;" type="text">
+    <input class="form-control" id="date[]" name="date[]" value="<?php echo $_POST['date'] ?>" style="width:31%;margin-left:34.6%;margin-top:-2%;" type="date" value="" id="example-date-input">
   </div>
 </div>
 
@@ -859,12 +665,10 @@ if(isset($_POST["edit_btn"])) {
 <div class="form-group">
   <label class="col-md-4 control-label" for="textinput">Comment</label>  
   <div class="col-md-4">
-  <input id="comment[]" name="comment[]" value="<?php echo $arr_search['response'][0]['add_info'][$q]['comment']; ?>" type="text" placeholder="" class="form-control input-md">
+  <input id="comment[]" name="comment[]" type="text" placeholder="" class="form-control input-md">
     
   </div>
 </div>
-
-<?php  }?>
 
 <div class="form-group">
 
@@ -880,21 +684,23 @@ if(isset($_POST["edit_btn"])) {
 <!-- Button -->
 <div class="form-group">
   <label class="col-md-4 control-label" for="singlebutton"></label>
-  <div class="col-md-4">
-    <button id="edit_btn" name="edit_btn" type="submit" class="btn btn-success" style="width: 10em;">Save</button><span><span></span></span>
-    <button onclick="goBack()" class="btn btn-warning"><a style="color:white" href="">Cancel</a></button>
+
+  <div class="col-md-4" style="text-align:center">
+    <button id="generate_btn" name="generate_btn" type="submit">Generate</button>
+    <!-- <button id="singlebutton" style="margin-left:13%;" name="singlebutton" class="btn btn-primary"><a style="color:white" onclick="goBack()">Discard</a></button> -->
+
   </div>
 </div>
 
 </fieldset>
 </form>
 
+
 <script>
 function goBack() {
     window.history.back();
 }
 </script>
-
 <script type="text/javascript">
 
 
@@ -918,5 +724,6 @@ function goBack() {
 });
 
     </script>
+
 </body>
 </html>

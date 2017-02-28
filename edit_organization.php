@@ -12,69 +12,55 @@
     <!-- Material Design Lite -->
     <script src="https://code.getmdl.io/1.3.0/material.min.js"></script>
     <link rel="stylesheet" href="css/material.css">
-
-
+    <link rel="stylesheet" href="css/fileupload.css">
  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+ <script src="https://storage.googleapis.com/code.getmdl.io/1.0.6/material.min.js"></script>
+   <link rel="stylesheet" href="https://storage.googleapis.com/code.getmdl.io/1.0.6/material.indigo-pink.min.css">
+   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">   
   <style type="text/css">
     span:before{
     content:" "; 
     display:inline-block; 
     width:32px;
 }
-
-    .fileUpload {
+.mdl-radio {
     position: relative;
-    overflow: hidden;
-    margin: 10px;
-}
-.fileUpload input.upload {
-    position: absolute;
-    top: 0;
-    right: 0;
+    font-size: 14px;
+    line-height: 24px;
+    display: inline-block;
+    box-sizing: border-box;
+    font-weight: 500;
     margin: 0;
-    padding: 0;
-    font-size: 20px;
-    cursor: pointer;
-    opacity: 0;
-    filter: alpha(opacity=0);
+    padding-left: 0;
 }
-      .form-control{
-      border: 2px solid #74b25e;
-    border-radius: 4px;
-      }
-
-      .form-control{
-      border: 2px solid #74b25e;
-    border-radius: 6px;
-      }
     </style>
-  <script type="text/javascript">
-    <script type="text/javascript">
+   <script type="text/javascript">
+
    function setfilename(val)
   {
     var fileName = val.substr(val.lastIndexOf("\\")+1, val.length);
    document.getElementById("uploadFile").value = fileName;
   }
 
-   function filename(val)
+   function panfilename(val)
   {
     var fileName = val.substr(val.lastIndexOf("\\")+1, val.length);
-   document.getElementById("upload1").value = fileName;
+   document.getElementById("pan_upload").value = fileName;
   }
 
-  function setfilenameee(val)
+  function telefilename(val)
   {
     var fileName = val.substr(val.lastIndexOf("\\")+1, val.length);
-   document.getElementById("uploaddd").value = fileName;
+   document.getElementById("telephoneupload").value = fileName;
   }
 
-  function setfilenamee(val)
+  function bankfilename(val)
   {
     var fileName = val.substr(val.lastIndexOf("\\")+1, val.length);
-   document.getElementById("uploadd").value = fileName;
+   document.getElementById("bankupload").value = fileName;
   }
-  </script>
-  </script>
+</script>
 </head>
 <!-- <body  style="overflow-y:scroll;background-color:#E8E8E8" >
  --><body style="background-color:#E8E8E8;overflow-x:hidden;">
@@ -84,8 +70,7 @@ $url_search = 'https://kyc-application.herokuapp.com/search/';
 $options_search = array(
   'http' => array(
     'header'  => array(
-                  'IS-USER: 0',
-                  'PK: '.$_POST['org_id'],
+                  'TEXT: '.$_POST['name'],
                 ),
     'method'  => 'GET',
   ),
@@ -280,31 +265,6 @@ if(isset($_POST["edit_btn"])) {
   $partner_designations = ltrim($partner_designations, ',');
   /*echo $partner_designations;*/
 
-  $type_of_work='';
-  for($j=0;$j<count($_POST['type_of_work']);$j++){
-    $type_of_work=$type_of_work.",".$_POST['type_of_work'][$j];
-  }
-  $type_of_work = ltrim($type_of_work, ',');
-
-  $status='';
-  for($j=0;$j<count($_POST['status']);$j++){
-    $status=$status.",".$_POST['status'][$j];
-  }
-  $status = ltrim($status, ',');
-
-  $date='';
-  for($j=0;$j<count($_POST['date']);$j++){
-    $date=$date.",".$_POST['date'][$j];
-  }
-  $date = ltrim($date, ',');
-
-  $comment='';
-  for($j=0;$j<count($_POST['comment']);$j++){
-    $comment=$comment.",".$_POST['comment'][$j];
-  }
-  $comment = ltrim($comment, ',');
-
-
   $url_org = 'https://kyc-application.herokuapp.com/edit_organization/';
   $options_org = array(
     'http' => array(
@@ -322,10 +282,6 @@ if(isset($_POST["edit_btn"])) {
                           'NO-OF-PARTNERS: '.$_POST['no_of_partners'],
                           'PARTNER-NAMES: '.$partner_names,
                           'PARTNER-DESIGNATIONS: '.$partner_designations,
-                          'TYPE-OF-WORK: '.$type_of_work,
-                          'STATUS: '.$status,
-                          'DATE: '.$date,
-                          'COMMENT: '.$comment,
                           ),
       'method'  => 'GET',
     ),
@@ -334,12 +290,10 @@ if(isset($_POST["edit_btn"])) {
   $output_org = file_get_contents($url_org, false,$context_org);
   $arr_org = json_decode($output_org,true);
 
-/*  echo $arr_org['pk'];*/
-
   if($arr_org['status']==200){
     /*echo "<script>alert('Organization Updated')</script>";*/
     
-    $string1="<script>window.location.href='search_organization.php?id=".$arr_org['pk']."'</script>";
+    $string1="<script>window.location.href='search_organization.php?text=".$arr_org['name']."'</script>";
     echo $string1;
   }
 }
@@ -370,9 +324,8 @@ if(isset($_POST["edit_btn"])) {
         </nav>
       </div>
       </div>
-      </header>
 
-<form class="form-horizontal" method="post" action="" enctype="multipart/form-data">
+<form class="form-horizontal" method="post" action="edit_organization.php" enctype="multipart/form-data">
 
 <fieldset>
 
@@ -413,19 +366,20 @@ if(isset($_POST["edit_btn"])) {
     
 
 <?php if($arr_search['response'][0]['organization_details']['registration'] == 1 ){
-	$checked1="checked";
-	$checked2="";
+  $checked1="checked";
+  $checked2="";
 }if($arr_search['response'][0]['organization_details']['registration'] == 0 ){
-	$checked1="";
-	$checked2="checked";
+  $checked1="";
+  $checked2="checked";
 }
 ?>
-    <label class="radio-inline" for="radios-0"> 
-      <input type="radio" name="registration" id="radios-0" value="1" checked="<?php echo $checked1; ?>">
+    <label class="mdl-radio mdl-js-radio" for="radios-0">
+      <input type="radio" name="registration" id="radios-0" value="1" class="mdl-radio__button" checked="<?php echo $checked1; ?>">
       Registered
     </label> 
-    <label class="radio-inline" for="radios-1">
-      <input type="radio" name="registration" id="radios-1" value="0" checked="<?php echo $checked2; ?>">
+     
+    <label class="mdl-radio mdl-js-radio" for="radios-1">
+      <input type="radio" name="registration" id="radios-1" value="0" class="mdl-radio__button" checked="<?php echo $checked2; ?>">
       Un-Registered
     </label>
   </div>
@@ -436,12 +390,11 @@ if(isset($_POST["edit_btn"])) {
   <label class="col-md-4 control-label" for="reg_certificate">Registration Certificate</label>
 
 <div class="col-md-4">
-
-    <input id="uploadFile" class="form-control input-md" value="<?php echo $arr_search['response'][0]['reg_certificate_details'][0]['name']; ?>">
-    <div class="fileUpload btn btn-info" style="margin-left:105%;margin-top:-12%;">
+<input id="uploadFile" class="form-control input-md" value="<?php echo $arr_search['response'][0]['reg_certificate_details'][0]['name']; ?>">
+  <div class="fileUpload btn btn-info" style="margin-left:105%;margin-top:-12%;">
     <label style="font-weight:500;margin-bottom: 2px;">ATTACH</label>
-    <input id="reg_certificate" name="reg_certificate" type="file" class="upload" onchange="setfilename(this.value);" />
-  
+    <input id="reg_certificate" name="reg_certificate" type="file" class="upload" onchange="setfilename(this.value);"/>
+  </div>
 
 <?php
   $url_img_download = 'https://kyc-application.herokuapp.com/download/';
@@ -458,22 +411,20 @@ if(isset($_POST["edit_btn"])) {
   /*echo $output_img_download;*/
   $arr_img_download = json_decode($output_img_download,true);
   
-?></div>
-
-<button style="background-color:#65AC4C;margin-top:-24%;margin-left:129%;" class="btn btn-success">
-<a target="_blank" style="color:white" href="view_image.php?name=reg_certificate_details&link=<?php echo $arr_img_download[0]['url']; ?>">View</a>
+?>
+<button style="background-color:#176fac;margin-top:-24%;margin-left:129%;" class="btn btn-success">
+<a target="_blank" style="color:white" href="view_image.php?name=reg_certificate_details&link=<?php echo $arr_img_download[0]['url']; ?>">VIEW</a>
 </button>
-
+</div>
 </div>
 
-</div>
+
 
 <!-- Text input-->
-<div class="form-group">
-  <label class="col-md-4 control-label" for="textinput">PAN </label>  
+<div class="form-group" style="margin-top:-3%">
+  <label class="col-md-4 control-label" for="textinput" style="margin-left:-67%">PAN </label>  
   <div class="col-md-4">
-  <input id="pan" name="pan" value="<?php echo $arr_search['response'][0]['organization_details']['pan'] ?>" type="text" placeholder="PAN Card Number" class="form-control input-md">
-    
+  <input id="pan" name="pan" style="margin-left:-107%" pattern="-?[a-zA-Z]{5}[0-9]{4}[a-zA-Z]{1}?" value="<?php echo $arr_search['response'][0]['organization_details']['pan'] ?>" type="text" placeholder="PAN Card Number" class="form-control input-md"/>
   </div>
 </div>
 
@@ -481,11 +432,11 @@ if(isset($_POST["edit_btn"])) {
 <div class="form-group">
   <label class="col-md-4 control-label" for="filebutton">PAN Card</label>
 <div class="col-md-4">
-    <input id="upload1" class="form-control input-md" value="
+    <input id="pan_upload" class="form-control input-md" value="
  <?php echo $arr_search['response'][0]['pan_card_details'][0]['name']; ?>"/>
    <div class="fileUpload btn btn-info" style="margin-left:105%;margin-top:-12%;">
     <label style="font-weight:500;margin-bottom: 2px;">ATTACH</label>
-    <input id="pan_card" name="pan_card" type="file" class="upload" onchange="filename(this.value);" />
+    <input id="pan_card" name="pan_card" type="file" class="upload" onchange="panfilename(this.value);" />
   
   
 <?php
@@ -505,17 +456,17 @@ if(isset($_POST["edit_btn"])) {
   
 ?>
 </div>
-<button style="background-color:#65AC4C;margin-top:-24%;margin-left:129%;" class="btn btn-success">
-<a target="_blank" style="color:white" href="view_image.php?name=pan_card_details&link=<?php echo $arr_img_download_2[0]['url']; ?>">View</a>
+<button style="background-color:#176fac;margin-top:-24%;margin-left:129%;" class="btn btn-success">
+<a target="_blank" style="color:white" href="view_image.php?name=pan_card_details&link=<?php echo $arr_img_download_2[0]['url']; ?>">VIEW</a>
 </button>
 </div>
 </div>
 
 <!-- Textarea -->
-<div class="form-group">
-  <label class="col-md-4 control-label" for="textarea">Address</label>
+<div class="form-group" style="margin-top:-3%">
+  <label class="col-md-4 control-label" for="textarea" style="margin-left:-67%">Address</label>
   <div class="col-md-4">                     
-    <textarea class="form-control" id="address" name="address"><?php echo $arr_search['response'][0]['organization_details']['address'] ?></textarea>
+    <textarea class="form-control" id="address" name="address" style="margin-left:-107%"><?php echo $arr_search['response'][0]['organization_details']['address'] ?></textarea>
   </div>
 </div>
 
@@ -523,23 +474,23 @@ if(isset($_POST["edit_btn"])) {
 
 <div class="form-group">
  <label class="col-md-4 control-label" for="checkboxes">Address Proof</label>
- <div class="col-md-4">
+ <div class="col-md-1">
    <label class="checkbox-inline" for="checkboxes-0">
-  <div class="col-md-3">
+  <!-- <div class="col-md-3"> -->
     <?php if($arr_search['response'][0]['telephone_bill_details'][0]['name'] != ''){
-   		$check_box_select1="checked";
+      $check_box_select1="checked";
     }else{
-    	$check_box_select1="";
+      $check_box_select1="";
     }?>
      <input <?php echo $check_box_select1;?> type="checkbox" name="checkboxes" id="checkboxes-0" value="1">Telephone</label>
   </div>
-<div class="col-md-9">
-    <input id="uploaddd" style="width:146%;" class="form-control input-md" value="
-     <?php echo $arr_search['response'][0]['telephone_bill_details'][0]['name']; ?>">
-     <div class="fileUpload btn btn-info" style="margin-left:155%;margin-top:-21%;">
+
+ <div class="col-md-3">
+  <input id="telephoneupload" style="margin-left:6%;width:93%" class="form-control input-md" value="
+ <?php echo $arr_search['response'][0]['telephone_bill_details'][0]['name'];?>"/>
+   <div class="fileUpload btn btn-info" style="margin-left:105%;margin-top:-12%;">
     <label style="font-weight:500;margin-bottom: 2px;">ATTACH</label>
-    <input id="telephone_bill" name="telephone_bill"  value="<?php echo $arr_search['response'][0]['organization_details']['telephone'] ?>" style="margin-top: -20px;margin-left: 146px;" type="file" class="upload" onchange="setfilenameee(this.value);" /> 
- 
+    <input id="telephone_bill" name="telephone_bill" type="file" class="upload" onchange="telefilename(this.value);" />
 
 <?php
   $url_img_download_3 = 'https://kyc-application.herokuapp.com/download/';
@@ -557,45 +508,34 @@ if(isset($_POST["edit_btn"])) {
   $arr_img_download_3 = json_decode($output_img_download_3,true);
   
 ?>
-</div>
 
 <br>
-<button style="background-color:#65AC4C;margin-top:-48%;margin-left:203%;" class="btn btn-success">
-<a target="_blank" style="color:white" href="view_image.php?name=telephone_bill_details&link=<?php echo $arr_img_download_3[0]['url']; ?>">View</a>
+</div>
+<button style="background-color:#176fac;margin-top:-29%;margin-left:140%;" class="btn btn-success">
+<a target="_blank" style="color:white" href="view_image.php?name=telephone_bill_details&link=<?php echo $arr_img_download_3[0]['url']; ?>">VIEW</a>
 </button>
 </div> 
-
-
 </div>
-</div>
-
-
 
 <div class="form-group">
  <label class="col-md-4 control-label" for="checkboxes"></label>
- <div class="col-md-4">
+ <div class="col-md-3">
    <label class="checkbox-inline" for="checkboxes-0">
-
-<div class="col-md-3">
+  <!-- <div class="col-md-3"> -->
      <?php if($arr_search['response'][0]['pass_book_details'][0]['name'] != ''){
-   		$check_box_select2="checked";
-   		
+      $check_box_select2="checked";
+      
      }else{
-    	$check_box_select2="";
+      $check_box_select2="";
     }?>
      <input <?php echo $check_box_select2;?> type="checkbox" name="checkboxes" id="checkboxes-0" value="1">Bank Passbook</label>
 </div>
-<div class="col-md-9"> 
-<input id="uploadd" style="width:127%;" class="form-control input-md" value="
-     <?php echo $arr_search['response'][0]['pass_book_details'][0]['name']; ?>">
-
-
-
-     <div class="fileUpload btn btn-info" style="margin-left:135%;margin-top:-21%;">
+<div class="col-md-3"> 
+  <input id="bankupload" style="margin-left:-68%;width:93%" class="form-control input-md" value="
+ <?php echo $arr_search['response'][0]['pass_book_details'][0]['name']; ?>"/>
+   <div class="fileUpload btn btn-info" style="margin-left:33%;margin-top:-17%;">
     <label style="font-weight:500;margin-bottom: 2px;">ATTACH</label>
-<input id="bank_pass_book" style="margin-top: -22px;margin-left: 129px;" name="bank_pass_book" class="upload" type="file" onchange="setfilenamee(this.value);" />
- 
-
+    <input id="bank_pass_book" name="bank_pass_book" type="file" class="upload" onchange="bankfilename(this.value);" />
 <?php
   $url_img_download_4 = 'https://kyc-application.herokuapp.com/download/';
   $options_img_download_4 = array(
@@ -614,13 +554,11 @@ if(isset($_POST["edit_btn"])) {
 ?>
 </div>
 <br>
-<button style="background-color:#65AC4C;margin-left:238%;margin-top:-45%;margin-left:177%;" class="btn btn-success">
-<a target="_blank" style="color:white" href="view_image.php?name=pass_book_details&link=<?php echo $arr_img_download_4[0]['url']; ?>">View</a>
+<button style="background-color:#176fac;margin-top:-36%;margin-left:66%;" class="btn btn-success">
+<a target="_blank" style="color:white" href="view_image.php?name=pass_book_details&link=<?php echo $arr_img_download_4[0]['url']; ?>">VIEW</a>
 </button>
 </div>
-
  </div>
-</div>
 
 <!-- Input Type : Number -->
 <!-- <div class="form-group">
@@ -654,9 +592,15 @@ if(isset($_POST["edit_btn"])) {
   <input style="width:170px" id="partner_names[]" value="<?php echo $arr_search['response'][0]['partner_details'][$x]['detail'][0]['name'] ?>" name="partner_names[]" type="text" placeholder="Enter Full Name" class="form-control input-md">
   </div>
 
-  <!-- <div class="col-md-2 col-sm-2 col-2">
-    <button id="singlebutton" name="singlebutton" class="btn btn-info "><a href="new_user.php" style="color:white" target="_blank">New Entry</a></button>
-  </div> -->
+  <div class="col-md-2 col-sm-2 col-2">
+
+    <a href="new_user_popup.php" style="color:white" target="_blank" data-toggle="modal" data-target="#myModal">
+
+     <button type="button" class="btn btn-info " style="margin-left:-6%">
+       New Entry
+     </button>
+    </a>
+  </div>
 </div>
 
 
@@ -746,6 +690,16 @@ if(isset($_POST["edit_btn"])) {
 <?php  }?>
 
 
+<div class="form-group">
+
+<div class="col-md-8 col-sm-12 col-24">
+    <div class="input_fields" style="color:black">
+         <button class="add_field btn " onclick="incrementValue()" style="margin-left: 443px;">Add</button>
+         <div>
+         <input type="text" name="mytextt[]" hidden="" ></div>
+</div>
+</div>
+</div>
 
 
 
@@ -758,11 +712,32 @@ if(isset($_POST["edit_btn"])) {
   
   </div>
 </div>
-
-
-
 </fieldset>
 </form>
+
+<script type="text/javascript">
+$(function(){
+
+$('#trigger').click(function(){
+  $('#myModal').modal('show');
+  return false;
+})
+
+});
+</script>
+
+<div class="container">
+ 
+    
+    <!-- Modal HTML -->
+    <div id="myModal" class="modal fade">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <!-- Content will be loaded here from "remote.php" file -->
+            </div>
+        </div>
+    </div>
+</div>
 
 <script
   src="https://code.jquery.com/jquery-2.2.4.js"
@@ -783,7 +758,9 @@ if(isset($_POST["edit_btn"])) {
         e.preventDefault();
         if(x < max_fields){ //max input box allowed
             x++; //text box increment
-            $(wrapper).append('<br><div style="margin-left:50px;"><center><div class="form-group"> <label class=" control-label" for="textinput" style="margin-left:327px;">Name: </label> <div > <input id="partner_names[]" name="partner_names[]" type="text" placeholder="Enter Full Name" class="form-control input-md" style="margin-top: -25px;margin-left: 403px;">  </div>  <div class="col-md-6" ></div></div> <div class="form-group">  <label class="control-label" for="selectbasic" style="margin-left:293px;">Designation: </label>  <div> <select id="partner_designations[]" name="partner_designations[]" class="form-control" style="margin-left: 405px;margin-top: -34px;">      <option value="Managing Partner">Managing Partner</option>      <option value="Manager">Manager</option>      <option value="Other">Other</option>    </select>  </div>  <div>  <input style="margin-left: 629px;margin-top: -35px;" id="textinput" name="textinput" type="text" placeholder="Specify if Other" class="form-control input-md"></div></div></center><a href="#" class="remove_field"><img src="images/del24.png" style="margin-left: 840px; margin-top: -195px;"></a></a></div>'); //add input box\
+
+            $(wrapper).prepend('<br><div style="margin-left:50px;"><center><div class="form-group"> <label class=" control-label" for="textinput" style="margin-left:327px;">Name: </label> <div > <input id="partner_names[]" name="partner_names[]" type="text" placeholder="Enter Full Name" class="form-control input-md" style="margin-top: -25px;margin-left: 403px;width: 241%;">  </div>  <div class="col-md-6" > <a href="new_user_popup.php" style="color:white" target="_blank" data-toggle="modal" data-target="#myModal"><button  type="button" class="btn btn-info" style="margin-left: 809px;margin-top: -61px;">New Entry</button> </a> </div></div> <div class="form-group">  <label class="control-label" for="selectbasic" style="margin-left:293px;">Designation: </label>  <div> <select id="partner_designations[]" name="partner_designations[]" class="form-control" style="margin-left: 405px;margin-top: -34px;width:118%;">      <option value="Managing Partner">Managing Partner</option>      <option value="Manager">Manager</option>      <option value="Other">Other</option>    </select>  </div>  <div>  <input style="margin-left: 617px;margin-top: -35px;width:114%" id="textinput" name="textinput" type="text" placeholder="Specify if Other" class="form-control input-md"></div></div></center><a href="#" class="remove_field"><img src="images/del24.png" style="margin-left: 810px; margin-top: -81px;"></a></a></div>'); //add input box\
+
         }
     });
     
@@ -803,8 +780,31 @@ function goBack() {
 }
 </script>
 
+<script type="text/javascript">
+
+
+     $(document).ready(function() {
+    var max_fields      = 10; //maximum input boxes allowed
+    var wrapper         = $(".input_fields"); //Fields wrapper
+    var add_button      = $(".add_field"); //Add button ID
+    
+    var x = 1; //initlal text box count
+    $(add_button).click(function(e){ //on add input button click
+        e.preventDefault();
+        if(x < max_fields){ //max input box allowed
+            x++; //text box increment
+            $(wrapper).prepend('<br><div style="margin-left:50%;"><div class="form-group"><label class="control-label" for="selectbasic" style="margin-left:-325px;">Type of work</label><div class="col-md-6"><select id="type_of_work[]" name="type_of_work[]" class="form-control" style="margin-left:9%;width:208%"><option value="Option one">Option one</option><option value="Option two">Option two</option><option value="Option three">Option three</option></select></div></div><div class="form-group"> <label class="col-md-4 control-label" for="selectbasic" style="margin-left:-29%">Status</label><div class="col-md-6"><select id="status[]" name="status[]" style="width:210%;margin-left:-1%;" class="form-control"><option value="Pending">Pending</option><option value="Work in process">Work in process</option><option value="Completed">Completed</option></select></div></div><div class="form-group row"><label for="example-date-input" class="col-2 col-form-label" style="margin-left:-8.5%;";">DATE</label><div class="col-10"><input class="form-control" id="date[]" name="date[]" style="width:91%;margin-left:6.6%;margin-top:-6%;" type="text"></div></div><div class="form-group"><label class="col-md-4 control-label" for="textinput" style="margin-left:-29%">Comment</label><div class="col-md-4"><input id="comment[]" name="comment[]" type="text" placeholder="" class="form-control input-md" style="width:342%"></div></div></center><a href="#" class="remove_field"><img src="images/del24.png" style="margin-left: 443px; margin-top: -81px;"></a></a></div>'); //add input box\
+        }
+    });
+    
+    $(wrapper).on("click",".remove_field", function(e){ //user click on remove text
+        e.preventDefault(); $(this).parent('div').remove(); x--;
+    })
+});
+
+    </script>
+
 </body>
 </html>
-
 
 

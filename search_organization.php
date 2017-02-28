@@ -4,31 +4,36 @@
   <title></title>
 
   <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-<link rel="stylesheet" type="text/css" href="css/material.indigo-pink.min.css">
+  <link rel="stylesheet" type="text/css" href="css/material.indigo-pink.min.css">
 
-<link rel="stylesheet" href="css/bootstrap.css">
+  <link rel="stylesheet" href="css/bootstrap.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <!-- Material Design Lite -->
-    <script src="https://code.getmdl.io/1.3.0/material.min.js"></script>
-    <link rel="stylesheet" href="css/material.css">
 
 
- <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <script src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+  <link rel="stylesheet" href="css/material.css">
+  <link rel="stylesheet" href="css/fileupload.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+  <script src="https://storage.googleapis.com/code.getmdl.io/1.0.6/material.min.js"></script>
+   <link rel="stylesheet" href="https://storage.googleapis.com/code.getmdl.io/1.0.6/material.indigo-pink.min.css">
 
   <style type="text/css">
     span:before{
     content:" "; 
     display:inline-block; 
     width:32px;
-}
-.alert {
+    }
+
+    .alert {
     padding: 20px;
     background-color: #f44336;
     color: white;
-}
+    }
 
-.closebtn {
+  .closebtn {
     margin-left: 15px;
     color: white;
     font-weight: bold;
@@ -37,15 +42,24 @@
     line-height: 20px;
     cursor: pointer;
     transition: 0.3s;
-}
+    }
 
-.closebtn:hover {
+    .closebtn:hover {
     color: black;
+    }
+    .mdl-radio {
+    position: relative;
+    font-size: 14px;
+    line-height: 24px;
+    display: inline-block;
+    box-sizing: border-box;
+    font-weight: 500;
+    margin: 0;
+    padding-left: 0;
 }
 
   </style>
 </head>
-<body  style="overflow-y: scroll;background-color:#E8E8E8" >
 
 <?php
 
@@ -76,13 +90,12 @@ $arr_search = json_decode($output_search,true);
 ?>
 
 <div class="demo-layout-transparent mdl-layout mdl-js-layout">
-      <header style="background-color:#08426a;height:110px;-webkit-box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23) !important;
+  <header style="background-color:#08426a;height:110px;-webkit-box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23) !important;
      -moz-box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23) !important;
      box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23) !important;" class="mdl-layout__header mdl-layout__header--transparent">
-        <div class="mdl-layout__header-row" >
+    <div class="mdl-layout__header-row" >
 
-        <img style="margin-top:5%;margin-left:28px;width:50px;height:50px" src="images/green.png"></img>
-<h5 style="margin-left:35%;margin-top:9%;"><?php echo $arr_search['response'][0]['organization_details']['name'] ?></h5>
+    <img style="margin-top:5%;margin-left:28px;width:50px;height:50px" src="images/green.png"></img><h5 style="margin-left:35%;margin-top:9%;"><?php echo $arr_search['response'][0]['organization_details']['name'] ?></h5>
          <span class="mdl-layout-title" style="margin-left:26%;margin-top:7%;">KYChome</span>
           <!-- Add spacer, to align navigation to the right -->
       </header>
@@ -99,32 +112,46 @@ $arr_search = json_decode($output_search,true);
           <a class="mdl-navigation__link" href="">Contact</a>
         </nav>
       </div>
-        </div>
-      </header>
-
-      <h2>Alert Messages</h2>
-
-<p>Click on the "x" symbol to close the alert message.</p>
-<div class="alert">
+      <div class="alert" style="margin-top:1%">
   <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+  <strong>
 
   <?php for($q=0;$q<count($arr_search['response'][0]['add_info']);$q++){
-   echo $arr_search['response'][0]['add_info'][$q]['type_of_work'];
-   echo $arr_search['response'][0]['add_info'][$q]['status'];
-   echo $arr_search['response'][0]['add_info'][$q]['date']; 
-   echo $arr_search['response'][0]['add_info'][$q]['comment']; 
+   echo "Status: ".$arr_search['response'][0]['add_info'][$q]['status'];
+   echo "&nbsp;&nbsp;&nbsp;&nbsp;Date: ".$arr_search['response'][0]['add_info'][$q]['date'];
+   echo "<br>";
   }?>
-  <strong>Danger!</strong> Indicates a dangerous or potentially negative action.
-</div>
 
-<form class="form-horizontal" method="post" action="edit_organization.php" enctype="multipart/form-data">
+  </strong>
+</div>
+</div>
+  
+
+
+<div class="container">
+
+<div class="mdl-grid" style="margin-left:80%;margin-top:18%">
+  <div class="mdl-card mdl-cell mdl-cell--12-col mdl-cell--10-col-tablet mdl-shadow--2dp">
+    <div class="mdl-card__title">
+      <h1 class="mdl-card__title-text">Description and Status of Work</h1>
+    </div>
+    <div class="mdl-card__supporting-text">
+      <?php for($q=0;$q<count($arr_search['response'][0]['add_info']);$q++){?>
+   <strong>Type of work: </strong><?php echo $arr_search['response'][0]['add_info'][$q]['type_of_work'];echo "<br>";?>
+   <strong>Status: </strong><?php echo $arr_search['response'][0]['add_info'][$q]['status'];echo "<br>";?>
+   <strong>Date: </strong><?php echo $arr_search['response'][0]['add_info'][$q]['date'];echo "<br>";?>
+   <strong>Comment: </strong><?php echo $arr_search['response'][0]['add_info'][$q]['comment'];echo "<br>";?>
+   <br>
+   <br>
+ <?php }?>
+    </div>
+  </div>
+</div> 
+
+
+<form class="form-horizontal" method="post" action="edit_organization.php" enctype="multipart/form-data" style="margin-top:-34%">
 
 <fieldset>
-
-<!-- Form Name -->
-<!-- <legend>CA Database</legend>
- --><!-- <h4><center><?php echo $arr_search['response'][0]['organization_details']['name'] ?></center></h4> -->
-
  <input type="hidden" value="<?php echo $arr_search['response'][0]['organization_details']['pk'] ?>" name="org_id" id="org_id"></input>
 
 <!-- Select Basic -->
@@ -133,8 +160,6 @@ $arr_search = json_decode($output_search,true);
   <div class="col-md-4">
     <select id="type_of_org" name="type_of_org" class="form-control"  readonly>
       <option value="<?php echo $arr_search['response'][0]['organization_details']['type_of_org'];?>"><?php echo $arr_search['response'][0]['organization_details']['type_of_org'];?></option>
-      <!-- <option value="Partnership">Partnership</option>
-      <option value="Individual">Individual</option> -->
     </select>
   </div>
 </div>
@@ -164,14 +189,14 @@ $arr_search = json_decode($output_search,true);
 	$checked2="checked";
 }
 ?>
-    <label class="radio-inline" for="radios-0"> 
-      <input type="radio" name="registration" id="radios-0" value="1" checked="<?php echo $checked1; ?>"  readonly>
+    <label class="mdl-radio mdl-js-radio" for="radios-0">
+      <input type="radio" name="registration" id="radios-0" value="1" class="mdl-radio__button" checked="<?php echo $checked1; ?>" readonly>
       Registered
-    </label> 
-    <label class="radio-inline" for="radios-1">
-      <input type="radio" name="registration" id="radios-1" value="0" checked="<?php echo $checked2; ?>"  readonly>
-      Un-Registered
     </label>
+    <label class="mdl-radio mdl-js-radio" for="radios-1">
+      <input type="radio" name="registration" id="radios-1" value="0" class="mdl-radio__button" checked="<?php echo $checked2; ?>" readonly>
+      Un-Registered
+    </label> 
   </div>
 </div>
 
@@ -180,13 +205,11 @@ $arr_search = json_decode($output_search,true);
   <label class="col-md-4 control-label" for="reg_certificate">Registration Certificate</label>
 
 <div class="col-md-4">
-<?php echo $arr_search['response'][0]['reg_certificate_details'][0]['name']; ?>
-</div>
-  <div class="col-md-4">
-    <input id="reg_certificate" name="reg_certificate" type="file"  disabled="true">
-  </div>
-
-<div class="col-md-4">
+<input id="uploadFile" class="form-control input-md" value="<?php echo $arr_search['response'][0]['reg_certificate_details'][0]['name']; ?>">
+  <div class="fileUpload btn btn-info" style="margin-left:105%;margin-top:-12%;">
+    <label style="font-weight:500;margin-bottom: 2px;">ATTACH</label>
+    <input id="reg_certificate" name="reg_certificate" type="file" class="upload" disabled="true">
+  
 <?php
   $url_img_download = 'https://kyc-application.herokuapp.com/download/';
   $options_img_download = array(
@@ -203,34 +226,32 @@ $arr_search = json_decode($output_search,true);
   $arr_img_download = json_decode($output_img_download,true);
   
 ?>
-<button style="background-color:#65AC4C" class="btn btn-success">
-<a target="_blank" style="color:white" href="view_image.php?name=reg_certificate_details&link=<?php echo $arr_img_download[0]['url']; ?>">View</a>
+</div>
+
+<button style="background-color:#176fac;margin-top:-25%;margin-left:129%;" class="btn btn-success">
+<a target="_blank" style="color:white" href="view_image.php?name=reg_certificate_details&link=<?php echo $arr_img_download[0]['url']; ?>">VIEW</a>
 </button>
-
+</div>
 </div>
 
-</div>
 
 <!-- Text input-->
-<div class="form-group">
-  <label class="col-md-4 control-label" for="textinput">PAN </label>  
+<div class="form-group" style="margin-top:-3%">
+  <label class="col-md-4 control-label" for="textinput" style="margin-left:-67%">PAN </label>  
   <div class="col-md-4">
-  <input id="pan" name="pan" value="<?php echo $arr_search['response'][0]['organization_details']['pan'] ?>" type="text" placeholder="PAN Card Number" class="form-control input-md"  readonly>
-    
+  <input id="pan" name="pan" style="margin-left:-107%" pattern="-?[a-zA-Z]{5}[0-9]{4}[a-zA-Z]{1}?" value="<?php echo $arr_search['response'][0]['organization_details']['pan'] ?>" type="text" placeholder="PAN Card Number" class="form-control input-md" readonly/>
   </div>
 </div>
 
 <!-- File Button --> 
 <div class="form-group">
   <label class="col-md-4 control-label" for="filebutton">PAN Card</label>
-<div class="col-md-4">
- <?php echo $arr_search['response'][0]['pan_card_details'][0]['name']; ?>
-</div>
   <div class="col-md-4">
-    <input id="pan_card" name="pan_card" type="file"  disabled="true">
-  </div>
+  <input id="pan_upload" class="form-control input-md" value="<?php echo $arr_search['response'][0]['pan_card_details'][0]['name']; ?>" readonly>
+  <div class="fileUpload btn btn-info" style="margin-left:105%;margin-top:-12%;">
+  <label style="font-weight:500;margin-bottom: 2px;">ATTACH</label>
+  <input id="pan_card" name="pan_card" type="file" class="upload" disabled="true">
 
-<div class="col-md-4">
 <?php
   $url_img_download_2 = 'https://kyc-application.herokuapp.com/download/';
   $options_img_download_2 = array(
@@ -247,47 +268,48 @@ $arr_search = json_decode($output_search,true);
   $arr_img_download_2 = json_decode($output_img_download_2,true);
   
 ?>
-<button style="background-color:#65AC4C" class="btn btn-success">
-<a target="_blank" style="color:white" href="view_image.php?name=pan_card_details&link=<?php echo $arr_img_download_2[0]['url']; ?>">View</a>
-</button>
 </div>
 
+<button style="background-color:#176fac;margin-top:-24%;margin-left:129%;" class="btn btn-success">
+<a target="_blank" style="color:white" href="view_image.php?name=pan_card_details&link=<?php echo $arr_img_download_2[0]['url']; ?>">VIEW</a>
+</button>
+</div>
 </div>
 
 <!-- Textarea -->
-<div class="form-group">
-  <label class="col-md-4 control-label" for="textarea">Address</label>
+
+<div class="form-group" style="margin-top:-3%">
+  <label class="col-md-4 control-label" for="textarea" style="margin-left:-67%">Address</label>
   <div class="col-md-4">                     
-    <textarea class="form-control" id="address" name="address"  readonly><?php echo $arr_search['response'][0]['organization_details']['address'] ?></textarea>
+    <textarea class="form-control" id="address" name="address" style="margin-left:-107%"><?php echo $arr_search['response'][0]['organization_details']['address'] ?></textarea>
   </div>
 </div>
 
 <!-- Multiple Checkboxes  and File upload Button -->   
 
 <div class="form-group">
- <label class="col-md-4 control-label" for="checkboxes"></label>
+ <label class="col-md-4 control-label" for="checkboxes">address Proof</label>
  <div class="col-md-4">
    <label class="checkbox-inline" for="checkboxes-0">
   <div class="col-md-3">
     <?php if($arr_search['response'][0]['telephone_bill_details'][0]['name'] != ''){
-   		$check_box_select1="checked";
+      $check_box_select1="checked";
     }else{
-    	$check_box_select1="";
+      $check_box_select1="";
     }?>
      <input <?php echo $check_box_select1;?> type="checkbox" name="checkboxes" id="checkboxes-0" value="1"  readonly>Telephone</label>
     
   </div>
 <div class="col-md-3">
-     <?php echo $arr_search['response'][0]['telephone_bill_details'][0]['name']; ?>
+    <?php echo $arr_search['response'][0]['telephone_bill_details'][0]['name']; ?>
 </div>
 
-
-
 <div class="col-md-3">
-<input id="telephone_bill" value="<?php echo $arr_search['response'][0]['organization_details']['telephone'] ?>" style="margin-top: -20px;margin-left: 129px;" name="telephone_bill" class="input-file" type="file"  disabled="true">  
+<div class="fileUpload btn btn-info" style="margin-left:312%;margin-top:-21%;">
+    <label style="font-weight:500;margin-bottom: 2px;">ATTACH</label>
+<input id="telephone_bill" value="<?php echo $arr_search['response'][0]['organization_details']['telephone'] ?>" style="margin-top: -20px;margin-left: 129px;" name="telephone_bill" class="upload" type="file"  disabled="true">  
 </div> 
 
-<div class="col-md-4">
 <?php
   $url_img_download_3 = 'https://kyc-application.herokuapp.com/download/';
   $options_img_download_3 = array(
@@ -305,17 +327,12 @@ $arr_search = json_decode($output_search,true);
   
 ?>
 
-<br>
-<button style="background-color:#65AC4C;margin-left:-97%" class="btn btn-success">
-<a target="_blank" style="color:white" href="view_image.php?name=telephone_bill_details&link=<?php echo $arr_img_download_3[0]['url']; ?>">View</a>
+<button style="background-color:#176fac;margin-top:-160%;margin-left:575%;" class="btn btn-success">
+<a target="_blank" style="color:white" href="view_image.php?name=telephone_bill_details&link=<?php echo $arr_img_download_3[0]['url']; ?>">VIEW</a>
 </button>
 </div> 
-
-
 </div>
 </div>
-
-
 
 <div class="form-group">
  <label class="col-md-4 control-label" for="checkboxes"></label>
@@ -324,10 +341,10 @@ $arr_search = json_decode($output_search,true);
 
 <div class="col-md-3">
      <?php if($arr_search['response'][0]['pass_book_details'][0]['name'] != ''){
-   		$check_box_select2="checked";
-   		
+      $check_box_select2="checked";
+      
      }else{
-    	$check_box_select2="";
+      $check_box_select2="";
     }?>
      <input <?php echo $check_box_select2;?> type="checkbox" name="checkboxes" id="checkboxes-0" value="1"  readonly>Bank Passbook</label>
 </div>
@@ -335,10 +352,11 @@ $arr_search = json_decode($output_search,true);
      <?php echo $arr_search['response'][0]['pass_book_details'][0]['name']; ?>
 </div>
 <div class="col-md-3">
-    <input id="bank_pass_book" style="margin-top: -22px;margin-left: 129px;" name="bank_pass_book" class="input-file" type="file"  disabled="true"> 
+<div class="fileUpload btn btn-info" style="margin-left:312%;margin-top:-21%;">
+    <label style="font-weight:500;margin-bottom: 2px;">ATTACH</label>
+    <input id="bank_pass_book" style="margin-top: -22px;margin-left: 129px;" name="bank_pass_book" class="upload" type="file"  disabled="true"> 
 </div>
 
-<div class="col-md-4">
 <?php
   $url_img_download_4 = 'https://kyc-application.herokuapp.com/download/';
   $options_img_download_4 = array(
@@ -355,38 +373,18 @@ $arr_search = json_decode($output_search,true);
   $arr_img_download_4 = json_decode($output_img_download_4,true);
   
 ?>
-<br>
-<button style="background-color:#65AC4C;margin-left:-97%" class="btn btn-success">
-<a target="_blank" style="color:white" href="view_image.php?name=pass_book_details&link=<?php echo $arr_img_download_4[0]['url']; ?>">View</a>
+
+<button style="background-color:#176fac;margin-top:-144%;margin-left:481%;" class="btn btn-success">
+<a target="_blank" style="color:white" href="view_image.php?name=pass_book_details&link=<?php echo $arr_img_download_4[0]['url']; ?>">VIEW</a>
 </button>
 </div>
 
  </div>
 </div>
-
-<!-- Input Type : Number -->
-<!-- <div class="form-group">
-  <label class="col-md-4 control-label" for="typenumber">No of Partners: </label>
-  <div class="col-md-4">                     
-     <input value="<?php echo $arr_search['response'][0]['organization_details']['no_of_partners'] ?>"  type="number" name="no_of_partners" min="1" max="5" value="2" id="no_of_partners">
-  </div>
-</div> -->
-
-<!-- <div class="form-group col-md-4 ">
-  <label class="col-md-4 control-label"><b> <font size="4">Partner1</font></b></label>
-
-</div> -->
-
-
-
-
+<br><br><br>
 <!-- Added Partner 1 -->
 <label for="comment" style="margin-left: 334px;font-size: 17px;"> Partner 1: </label>
-
-
-
 <?php for($x=0;$x < count($arr_search['response'][0]['partner_details']); $x++){?>
-
 <!-- Text input-->
 <div class="form-group">
   <label class="col-md-4 control-label" for="textinput">Name</label>  
@@ -395,17 +393,12 @@ $arr_search = json_decode($output_search,true);
   </div>
 </div>
 
-
-
 <!-- Select Basic -->
 <div class="form-group">
   <label class="col-md-4 control-label" for="designation">Designation: </label>
   <div class="col-md-4">
     <select id="partner_designations[]" name="partner_designations[]" class="form-control"  readonly>
  <option value="<?php echo $arr_search['response'][0]['partner_details'][$x]['detail'][0]['designation'] ?>"><?php echo $arr_search['response'][0]['partner_details'][$x]['detail'][0]['designation'] ?></option>
-      <!-- <option value="Managing Partner">Managing Partner</option>
-      <option value="Manager">Manager</option>
-      <option value="Other">Other</option> -->
     </select>
   </div>
   <div class="col-md-2">
@@ -415,9 +408,6 @@ $arr_search = json_decode($output_search,true);
 </div>
 
 <?php }?>
-
-
-
 
 <!-- Buttons SAve and Cancel -->
 <div class="form-group">
@@ -431,7 +421,7 @@ $arr_search = json_decode($output_search,true);
 </fieldset>
 </form>
 
-
+</main>
 </body>
 </html>
 

@@ -57,6 +57,27 @@
 .file-upload1 {
     display: none;
 }
+.alert {
+    padding: 20px;
+    background-color: #f44336;
+    color: white;
+    /*position: relative;*/
+}
+
+.closebtn {
+    margin-left: 15px;
+    color: white;
+    font-weight: bold;
+    float: right;
+    font-size: 22px;
+    line-height: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.closebtn:hover {
+    color: black;
+}
   </style>
 
 <script>
@@ -74,17 +95,50 @@ if(a==null || a==''){
         var mystring= (document.getElementById('name').value).substring(0, 3);
         var uid_gen=mystring+text;
         document.getElementById('uid').value = uid_gen;
+        document.getElementById('uid_in_popup').value = uid_gen;
 
-        alert("UID generated: "+uid_gen);
+        /*alert("UID generated: "+uid_gen);*/
+        var yourUl = document.getElementById("popup1");
+        yourUl.style.display = yourUl.style.display === 'none' ? '' : 'none';
+        return false;
 }
 }
 </script>
 <head>
 <body style="background-color:#E8E8E8;">
 
+<script type="text/javascript">
+  function submit_form(){
+    $('#Form').submit();
+  }
+</script>
+
+<script type="text/javascript">
+    function make_uid_null(){
+    
+    $('#uid').val("");
+    document.getElementById("popup1").style.display='none';
+    /*alert("helo");*/
+  }
+</script>
+
+<!-- <p>Click on the "x" symbol to close the alert message.</p> -->
+<div class="alert" id="popup1" class="popup1" style="display:none;text-align:center;position:absolute;
+    width:800px;
+    top: 70%;
+    left: 20%;z-index:2">
+ <!--  <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> -->
+ <!--  <form method="post" action="new_user.php">  -->
+  <label>UID Generated</label><br>
+  <input type="text" id="uid_in_popup" name="uid_in_popup" style="background-color:transparent;color:black;border:none"></input><br><br>
+  <button id="done" class="btn btn-success" name="done" onclick="submit_form()">Done</button>
+  <button onclick="make_uid_null()" id="cancel1" class="btn btn-warning" name="cancel1">Cancel</button>
+  <!-- </form> -->
+</div>
+
 <?php
 
-if(isset($_POST["generate_btn"]) and ($_POST['uid'] != '' || $_POST['uid'] != null)) {
+if ($_POST['uid'] != ''){
 
         $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
         $charactersLength = strlen($characters);
@@ -431,6 +485,7 @@ if(isset($_POST["generate_btn"]) and ($_POST['uid'] != '' || $_POST['uid'] != nu
       </div>
         </div>
       </header>
+
 <form onsubmit="return proceed();" name="Form" id="Form" class="form-horizontal" method="post" action="new_user.php" enctype="multipart/form-data">
 <fieldset>
 
@@ -599,7 +654,7 @@ if(isset($_POST["generate_btn"]) and ($_POST['uid'] != '' || $_POST['uid'] != nu
 </div>
 <!--date-->
 <div class="form-group row">
-  <label for="example-date-input" class="col-2 col-form-label" style="margin-left:29.5%;">Date:</label>
+  <label for="example-date-input" class="col-2 col-form-label" style="margin-left:29.5%;">DATE</label>
   <div class="col-10">
     <input class="form-control" id="date[]" name="date[]" value="<?php echo $_POST['date'] ?>" style="width:31%;margin-left:34.6%;margin-top:-2%;" type="date" value="" id="example-date-input">
   </div>
@@ -616,8 +671,8 @@ if(isset($_POST["generate_btn"]) and ($_POST['uid'] != '' || $_POST['uid'] != nu
 </div>
 
 <div class="form-group">
-<center>
-<div class="col-md-2 col-sm-2 col-2">
+
+<div class="col-md-8 col-sm-12 col-24">
     <div class="input_fields" style="color:black">
          <button class="add_field btn " onclick="incrementValue()" style="margin-left: 443px;">Add</button>
          <div>
@@ -638,7 +693,29 @@ if(isset($_POST["generate_btn"]) and ($_POST['uid'] != '' || $_POST['uid'] != nu
 </fieldset>
 </form>
 
+<script type="text/javascript">
 
+
+     $(document).ready(function() {
+    var max_fields      = 10; //maximum input boxes allowed
+    var wrapper         = $(".input_fields"); //Fields wrapper
+    var add_button      = $(".add_field"); //Add button ID
+    
+    var x = 1; //initlal text box count
+    $(add_button).click(function(e){ //on add input button click
+        e.preventDefault();
+        if(x < max_fields){ //max input box allowed
+            x++; //text box increment
+            $(wrapper).prepend('<br><div style="margin-left:50%;"><div class="form-group"><label class="control-label" for="selectbasic" style="margin-left:-325px;">Type of work</label><div class="col-md-6"><select id="type_of_work[]" name="type_of_work[]" class="form-control" style="margin-left:9%;width:208%"><option value="Option one">Option one</option><option value="Option two">Option two</option><option value="Option three">Option three</option></select></div></div><div class="form-group"> <label class="col-md-4 control-label" for="selectbasic" style="margin-left:-29%">Status</label><div class="col-md-6"><select id="status[]" name="status[]" style="width:210%;margin-left:-1%;" class="form-control"><option value="Pending">Pending</option><option value="Work in process">Work in process</option><option value="Completed">Completed</option></select></div></div><div class="form-group row"><label for="example-date-input" class="col-2 col-form-label" style="margin-left:-8.5%;";">DATE</label><div class="col-10"><input class="form-control" id="date[]" name="date[]" style="width:91%;margin-left:6.6%;margin-top:-6%;" type="text"></div></div><div class="form-group"><label class="col-md-4 control-label" for="textinput" style="margin-left:-29%">Comment</label><div class="col-md-4"><input id="comment[]" name="comment[]" type="text" placeholder="" class="form-control input-md" style="width:342%"></div></div></center><a href="#" class="remove_field"><img src="images/del24.png" style="margin-left: 443px; margin-top: -81px;"></a></a></div>'); //add input box\
+        }
+    });
+    
+    $(wrapper).on("click",".remove_field", function(e){ //user click on remove text
+        e.preventDefault(); $(this).parent('div').remove(); x--;
+    })
+});
+
+    </script>
 
 </body>
 </html>
