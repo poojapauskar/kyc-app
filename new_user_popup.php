@@ -684,14 +684,20 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
 <!-- Button -->
 <div class="form-group">
   <label class="col-md-4 control-label" for="singlebutton"></label>
-  <div class="col-md-4">
+  <div class="col-md-4" style="text-align:center">
     <button id="generate_btn" name="generate_btn" type="submit">Generate</button>
-    <button id="singlebutton" style="margin-left:13%;" name="singlebutton" class="btn btn-primary"><a style="color:white" href="search.php">Discard</a></button>
+    <!-- <button id="singlebutton" style="margin-left:13%;" name="singlebutton" class="btn btn-primary"><a style="color:white" onclick="goBack()">Discard</a></button> -->
   </div>
 </div>
 
 </fieldset>
 </form>
+
+<script>
+function goBack() {
+    window.history.back();
+}
+</script>
 
 <script type="text/javascript">
 
