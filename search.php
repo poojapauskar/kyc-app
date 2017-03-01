@@ -76,6 +76,7 @@ if(isset($_POST['submit'])){
         </div>
 
       </header>
+
      
 
 <?php
@@ -111,7 +112,11 @@ file_put_contents('autocomplete-Files/textvalues.js', $foo);
 ?>
  <div class="container">
   <div class="row" style="margin-top:33%;"> 
-  
+
+
+
+
+  <!-- AutoSearch TEXT field -->
     <div class="col-md-12" style="margin-left:11%;">
     <form class="form-group" method="post" action="" style="padding-bottom:7%">
     <input id="search" name="search" type="text" placeholder="Search firm,Individual" class="form-control input-md" style="width:55%;margin-top:-8%;height:39px" required>
@@ -196,7 +201,11 @@ file_put_contents('autocomplete-Files/textvalues.js', $foo);
 <script type="text/javascript">
                 $(document).ready(function(){
                     $("#search").autocomplete({
+<<<<<<< HEAD
                         source:'textvalues.js',
+=======
+                        source:'<?php echo $arr_search[$i]['details'][0]['name'] ?>',
+>>>>>>> e8e8419b4320305f42b00485328fc3f930ef95e8
                         minLength:1
                     });
                 });
