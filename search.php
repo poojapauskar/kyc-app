@@ -4,7 +4,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <!--   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
- -->  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+ -->  
     <!-- Material Design Lite -->
     <script src="https://code.getmdl.io/1.3.0/material.min.js"></script>
     <link rel="stylesheet" href="css/material.css">
@@ -74,14 +74,53 @@ if(isset($_POST['submit'])){
         </nav>
       </div>
         </div>
-    
+
+      </header>
+
      
+
+<?php
+
+ $db = pg_connect("host=ec2-107-20-191-76.compute-1.amazonaws.com port=5432 dbname=deu9vahl80fvjn user=vdvqpruzihrics password=17b3e7a56da97ca021e3da54bb1694bb799849a2b5911014ed6caa05e1e4e02d");
+ pg_select($db, 'post_log', $_POST);
+ 
+
+ $query=pg_query("SELECT id,name FROM organization_organization 
+  UNION 
+ SELECT id,name FROM users_users");
+
+ $json=array();
+ // $json= array_values($json);
+//  while ($student = pg_fetch_array($query)) {
+//     $json["name"] = $student["name"];
+//     $json["id"] = $student["id"];
+// }
+  // while($student=pg_fetch_array($query)){
+  //        $json[]=array(
+  //                   'value'=> $student["name"],
+  //                   'id'=>$student["id"]);
+  //   }
+while ($student = pg_fetch_array($query)) {
+    $json[$student["id"]] = $student["name"];
+}
+
+$textval = json_encode($json);
+$foo = "var peoplenames=" . $textval;
+file_put_contents('autocomplete-Files/textvalues.js', $foo);
+ 
+
+?>
  <div class="container">
   <div class="row" style="margin-top:33%;"> 
-  
+
+
+
+
+  <!-- AutoSearch TEXT field -->
     <div class="col-md-12" style="margin-left:11%;">
     <form class="form-group" method="post" action="" style="padding-bottom:7%">
     <input id="search" name="search" type="text" placeholder="Search firm,Individual" class="form-control input-md" style="width:55%;margin-top:-8%;height:39px" required>
+
     <button style="background-color:#74b25e;margin-left:58%;margin-top:-3.5%;color:white;width:200px;height:37px" class="mdl-button mdl-js-button mdl-button--raised" type="submit" value="Search" id="submit" name="submit">
    <p style="margin-top:7px;"> Search </p>
    </button>
@@ -145,8 +184,15 @@ if(isset($_POST['submit'])){
        </a>
     </div>
 
-    <!-- AutoSearch Script -->
- <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+    <!-- AutoSearch Script files don't move -->
+     <script type="text/javascript" src="autocomplete-Files/jquery-1.8.2.min.js"></script>
+        <script type="text/javascript" src="autocomplete-Files/jquery.mockjax.js"></script>
+        <script type="text/javascript" src="autocomplete-Files/jquery.autocomplete.js"></script>
+        <script type="text/javascript" src="autocomplete-Files/textvalues.js"></script>
+        <script type="text/javascript" src="autocomplete-Files/demo.js"></script>
+        <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> -->
+<!--         <script type="text/javascript" src="autocomplete-Files/styles.css"></script>
+ --><!--  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
         <script type="text/javascript"
         src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.18/jquery-ui.min.js"></script>
         <link rel="stylesheet" type="text/css"
@@ -155,11 +201,15 @@ if(isset($_POST['submit'])){
 <script type="text/javascript">
                 $(document).ready(function(){
                     $("#search").autocomplete({
-                        source:'getautocomplete.php',
+<<<<<<< HEAD
+                        source:'textvalues.js',
+=======
+                        source:'<?php echo $arr_search[$i]['details'][0]['name'] ?>',
+>>>>>>> e8e8419b4320305f42b00485328fc3f930ef95e8
                         minLength:1
                     });
                 });
-        </script>
+        </script> -->
         
 </div>
 </div>
