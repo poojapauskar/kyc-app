@@ -18,7 +18,7 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 
   <script src="https://storage.googleapis.com/code.getmdl.io/1.0.6/material.min.js"></script>
-   <link rel="stylesheet" href="https://storage.googleapis.com/code.getmdl.io/1.0.6/material.indigo-pink.min.css">
+  <!--  <link rel="stylesheet" href="https://storage.googleapis.com/code.getmdl.io/1.0.6/material.indigo-pink.min.css"> -->
 
   <style type="text/css">
     span:before{
@@ -327,7 +327,7 @@ $arr_search = json_decode($output_search,true);
   
 ?>
 
-<button style="background-color:#176fac;margin-top:-160%;margin-left:575%;" class="btn btn-success">
+<button style="background-color:#176fac;margin-top:-147%;margin-left:484%;" class="btn btn-success">
 <a target="_blank" style="color:white" href="view_image.php?name=telephone_bill_details&link=<?php echo $arr_img_download_3[0]['url']; ?>">VIEW</a>
 </button>
 </div> 

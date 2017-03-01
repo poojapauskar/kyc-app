@@ -12,7 +12,7 @@
     <!-- Material Design Lite -->
     <script src="https://code.getmdl.io/1.3.0/material.min.js"></script>
     <link rel="stylesheet" href="css/material.css">
-
+    <link rel="stylesheet" href="css/fileupload.css">
 
  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
   <style type="text/css">
@@ -22,31 +22,16 @@
     width:32px;
 }
 
-    .fileUpload {
+.mdl-radio {
     position: relative;
-    overflow: hidden;
-    margin: 10px;
-}
-.fileUpload input.upload {
-    position: absolute;
-    top: 0;
-    right: 0;
+    font-size: 14px;
+    line-height: 24px;
+    display: inline-block;
+    box-sizing: border-box;
+    font-weight: 500;
     margin: 0;
-    padding: 0;
-    font-size: 20px;
-    cursor: pointer;
-    opacity: 0;
-    filter: alpha(opacity=0);
+    padding-left: 0;
 }
-      .form-control{
-      border: 2px solid #74b25e;
-    border-radius: 4px;
-      }
-
-      .form-control{
-      border: 2px solid #74b25e;
-    border-radius: 6px;
-      }
     </style>
     <script type="text/javascript">
 
@@ -73,6 +58,18 @@
     var fileName = val.substr(val.lastIndexOf("\\")+1, val.length);
    document.getElementById("bank_upload").value = fileName;
   }
+</script>
+<script type="text/javascript"> 
+function disablefield(){ 
+if (document.getElementById('radios-1').checked == 1){ 
+document.getElementById('uploadFile').disabled='disabled'; 
+document.getElementById('reg_certificate').disabled='disabled'; 
+document.getElementById('uploadFile').value='Choose File';
+}else { 
+document.getElementById('uploadFile').disabled='';
+document.getElementById('reg_certificate').disabled='';  
+document.getElementById('uploadFile').value='Choose File'; } 
+} 
 </script>
    
 </head>
@@ -420,12 +417,14 @@ if(isset($_POST["edit_btn"])) {
   $checked2="checked";
 }
 ?>
-    <label class="radio-inline" for="radios-0"> 
-      <input type="radio" name="registration" id="radios-0" value="1" checked="<?php echo $checked1; ?>">
+
+<label class="mdl-radio mdl-js-radio" for="radios-0">
+      <input type="radio" name="registration" id="radios-0" value="1" class="mdl-radio__button" checked="checked"  checked="<?php echo $checked1; ?>" onChange="disablefield();">
       Registered
     </label> 
-    <label class="radio-inline" for="radios-1">
-      <input type="radio" name="registration" id="radios-1" value="0" checked="<?php echo $checked2; ?>">
+     
+     <label class="mdl-radio mdl-js-radio" for="radios-1">
+      <input type="radio" name="registration" id="radios-1" value="0" class="mdl-radio__button" checked="<?php echo $checked2; ?>" onChange="disablefield();" >
       Un-Registered
     </label>
   </div>
@@ -437,10 +436,10 @@ if(isset($_POST["edit_btn"])) {
 
 <div class="col-md-4">
 
-    <!-- <input id="uploadFile" class="form-control input-md" value="<?php echo $arr_search['response'][0]['reg_certificate_details'][0]['name']; ?>">
+    <input id="uploadFile" class="form-control input-md" value="<?php echo $arr_search['response'][0]['reg_certificate_details'][0]['name']; ?>">
     <div class="fileUpload btn btn-info" style="margin-left:105%;margin-top:-12%;">
     <label style="font-weight:500;margin-bottom: 2px;">ATTACH</label>
-    <input id="reg_certificate" name="reg_certificate" type="file" class="upload" onchange="setfilename(this.value);" /> -->
+    <input id="reg_certificate" name="reg_certificate" type="file" class="upload" onchange="setfilename(this.value);" /> 
   
 
 <?php
@@ -460,7 +459,7 @@ if(isset($_POST["edit_btn"])) {
   
 ?></div>
 
-<button style="background-color:#65AC4C;margin-top:-24%;margin-left:129%;" class="btn btn-success">
+<button style="margin-top:-24%;margin-left:129%;" class="btn btn-success">
 <a target="_blank" style="color:white" href="view_image.php?name=reg_certificate_details&link=<?php echo $arr_img_download[0]['url']; ?>">View</a>
 </button>
 
@@ -505,7 +504,7 @@ if(isset($_POST["edit_btn"])) {
   
 ?>
 </div>
-<button style="background-color:#65AC4C;margin-top:-24%;margin-left:129%;" class="btn btn-success">
+<button style="margin-top:-24%;margin-left:129%;" class="btn btn-success">
 <a target="_blank" style="color:white" href="view_image.php?name=pan_card_details&link=<?php echo $arr_img_download_2[0]['url']; ?>">View</a>
 </button>
 </div>
@@ -564,7 +563,7 @@ if(isset($_POST["edit_btn"])) {
 </div>
 
 <br>
-<button style="background-color:#65AC4C;margin-left:238%;margin-top:-33%;margin-left:31%;" class="btn btn-success">
+<button style="margin-left:238%;margin-top:-33%;margin-left:31%;" class="btn btn-success">
 <a target="_blank" style="color:white" href="view_image.php?name=telephone_bill_details&link=<?php echo $arr_img_download_3[0]['url']; ?>">View</a>
 </button>
 </div> 
@@ -618,7 +617,7 @@ if(isset($_POST["edit_btn"])) {
 ?>
 </div>
 <br>
-<button style="background-color:#65AC4C;margin-left:238%;margin-top:-33%;margin-left:31%;" class="btn btn-success">
+<button style="margin-left:238%;margin-top:-33%;margin-left:31%;" class="btn btn-success">
 <a target="_blank" style="color:white" href="view_image.php?name=pass_book_details&link=<?php echo $arr_img_download_4[0]['url']; ?>">View</a>
 </button>
 </div>
