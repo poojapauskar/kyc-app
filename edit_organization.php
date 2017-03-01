@@ -775,15 +775,12 @@ if(isset($_POST["edit_btn"])) {
 
 </fieldset>
 </form>
-
 <script type="text/javascript">
 $(function(){
-
 $('#trigger').click(function(){
   $('#myModal').modal('show');
   return false;
 })
-
 });
 </script>
 
@@ -811,7 +808,6 @@ $('#trigger').click(function(){
     var max_fields      = 10; //maximum input boxes allowed
     var wrapper         = $(".input_fields_wrap"); //Fields wrapper
     var add_button      = $(".add_field_button"); //Add button ID
-
     var wrapper_present         = $(".present_fields"); //Fields wrapper
     
     var x = 1; //initlal text box count
@@ -826,7 +822,6 @@ $('#trigger').click(function(){
     $(wrapper).on("click",".remove_field", function(e){ //user click on remove text
         e.preventDefault(); $(this).parent('div').remove(); x--;
     })
-
     $(wrapper_present).on("click",".remove_field_present", function(e){ //user click on remove text
         e.preventDefault(); $(this).parent('div').remove(); x--;
     })
@@ -840,8 +835,6 @@ function goBack() {
 </script>
 
 <script type="text/javascript">
-
-
      $(document).ready(function() {
     var max_fields      = 10; //maximum input boxes allowed
     var wrapper         = $(".input_fields"); //Fields wrapper
@@ -860,11 +853,9 @@ function goBack() {
         e.preventDefault(); $(this).parent('div').remove(); x--;
     })
 });
-
     </script>
 
 </body>
 </html>
-
 
 
