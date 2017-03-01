@@ -70,7 +70,8 @@ $url_search = 'https://kyc-application.herokuapp.com/search/';
 $options_search = array(
   'http' => array(
     'header'  => array(
-                  'TEXT: '.$_POST['name'],
+                  'IS-USER: 1',
+                  'PK: '.$_POST['user_id'],
                 ),
     'method'  => 'GET',
   ),
