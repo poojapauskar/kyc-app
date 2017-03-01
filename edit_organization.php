@@ -12,7 +12,7 @@
     <!-- Material Design Lite -->
     <script src="https://code.getmdl.io/1.3.0/material.min.js"></script>
     <link rel="stylesheet" href="css/material.css">
-
+    <link rel="stylesheet" href="css/fileupload.css">
 
  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
   <style type="text/css">
@@ -22,59 +22,56 @@
     width:32px;
 }
 
-    .fileUpload {
+.mdl-radio {
     position: relative;
-    overflow: hidden;
-    margin: 10px;
-}
-.fileUpload input.upload {
-    position: absolute;
-    top: 0;
-    right: 0;
+    font-size: 14px;
+    line-height: 24px;
+    display: inline-block;
+    box-sizing: border-box;
+    font-weight: 500;
     margin: 0;
-    padding: 0;
-    font-size: 20px;
-    cursor: pointer;
-    opacity: 0;
-    filter: alpha(opacity=0);
+    padding-left: 0;
 }
-      .form-control{
-      border: 2px solid #74b25e;
-    border-radius: 4px;
-      }
-
-      .form-control{
-      border: 2px solid #74b25e;
-    border-radius: 6px;
-      }
     </style>
-  <script type="text/javascript">
     <script type="text/javascript">
+
    function setfilename(val)
   {
     var fileName = val.substr(val.lastIndexOf("\\")+1, val.length);
    document.getElementById("uploadFile").value = fileName;
   }
 
-   function filename(val)
+   function panfilename(val)
   {
     var fileName = val.substr(val.lastIndexOf("\\")+1, val.length);
-   document.getElementById("upload1").value = fileName;
+   document.getElementById("pan_upload").value = fileName;
   }
 
-  function setfilenameee(val)
+  function telefilename(val)
   {
     var fileName = val.substr(val.lastIndexOf("\\")+1, val.length);
-   document.getElementById("uploaddd").value = fileName;
+   document.getElementById("telephone_upload").value = fileName;
   }
 
-  function setfilenamee(val)
+  function bankfilename(val)
   {
     var fileName = val.substr(val.lastIndexOf("\\")+1, val.length);
-   document.getElementById("uploadd").value = fileName;
+   document.getElementById("bank_upload").value = fileName;
   }
-  </script>
-  </script>
+</script>
+<script type="text/javascript"> 
+function disablefield(){ 
+if (document.getElementById('radios-1').checked == 1){ 
+document.getElementById('uploadFile').disabled='disabled'; 
+document.getElementById('reg_certificate').disabled='disabled'; 
+document.getElementById('uploadFile').value='Choose File';
+}else { 
+document.getElementById('uploadFile').disabled='';
+document.getElementById('reg_certificate').disabled='';  
+document.getElementById('uploadFile').value='Choose File'; } 
+} 
+</script>
+   
 </head>
 <!-- <body  style="overflow-y:scroll;background-color:#E8E8E8" >
  --><body style="background-color:#E8E8E8;overflow-x:hidden;">
@@ -386,7 +383,7 @@ if(isset($_POST["edit_btn"])) {
 
 <!-- Select Basic -->
 <div class="form-group" style="margin-top:10%">
-  <label class="col-md-4 control-label" for="type_of_org">Type of Organization</label>
+  <label class="col-md-4 control-label" for="type_of_org">Type of Organization:</label>
   <div class="col-md-4">
     <select id="type_of_org" name="type_of_org" class="form-control">
       <option value="<?php echo $arr_search['response'][0]['organization_details']['type_of_org'];?>"><?php echo $arr_search['response'][0]['organization_details']['type_of_org'];?></option>
@@ -400,7 +397,7 @@ if(isset($_POST["edit_btn"])) {
 
 <!-- Text input-->
 <div class="form-group">
-  <label class="col-md-4 control-label" for="textname">Name</label>  
+  <label class="col-md-4 control-label" for="textname">Name:</label>  
   <div class="col-md-4">
   <input value="<?php echo $arr_search['response'][0]['organization_details']['name'];?>" id="name" name="name" type="text" placeholder="Enter Name" class="form-control input-md">
   </div>
@@ -408,7 +405,7 @@ if(isset($_POST["edit_btn"])) {
 
 <!-- Multiple Radios (inline) -->
 <div class="form-group">
-  <label class="col-md-4 control-label" for="registration">Registration</label>
+  <label class="col-md-4 control-label" for="registration">Registration:</label>
   <div class="col-md-4"> 
     
 
@@ -420,12 +417,14 @@ if(isset($_POST["edit_btn"])) {
   $checked2="checked";
 }
 ?>
-    <label class="radio-inline" for="radios-0"> 
-      <input type="radio" name="registration" id="radios-0" value="1" checked="<?php echo $checked1; ?>">
+
+<label class="mdl-radio mdl-js-radio" for="radios-0">
+      <input type="radio" name="registration" id="radios-0" value="1" class="mdl-radio__button" checked="checked"  checked="<?php echo $checked1; ?>" onChange="disablefield();">
       Registered
     </label> 
-    <label class="radio-inline" for="radios-1">
-      <input type="radio" name="registration" id="radios-1" value="0" checked="<?php echo $checked2; ?>">
+     
+     <label class="mdl-radio mdl-js-radio" for="radios-1">
+      <input type="radio" name="registration" id="radios-1" value="0" class="mdl-radio__button" checked="<?php echo $checked2; ?>" onChange="disablefield();" >
       Un-Registered
     </label>
   </div>
@@ -433,14 +432,14 @@ if(isset($_POST["edit_btn"])) {
 
 <!-- File Button --> 
 <div class="form-group">
-  <label class="col-md-4 control-label" for="reg_certificate">Registration Certificate</label>
+  <label class="col-md-4 control-label" for="reg_certificate">Registration Certificate:</label>
 
 <div class="col-md-4">
 
     <input id="uploadFile" class="form-control input-md" value="<?php echo $arr_search['response'][0]['reg_certificate_details'][0]['name']; ?>">
     <div class="fileUpload btn btn-info" style="margin-left:105%;margin-top:-12%;">
     <label style="font-weight:500;margin-bottom: 2px;">ATTACH</label>
-    <input id="reg_certificate" name="reg_certificate" type="file" class="upload" onchange="setfilename(this.value);" />
+    <input id="reg_certificate" name="reg_certificate" type="file" class="upload" onchange="setfilename(this.value);" /> 
   
 
 <?php
@@ -460,7 +459,7 @@ if(isset($_POST["edit_btn"])) {
   
 ?></div>
 
-<button style="background-color:#65AC4C;margin-top:-24%;margin-left:129%;" class="btn btn-success">
+<button style="margin-top:-24%;margin-left:129%;" class="btn btn-success">
 <a target="_blank" style="color:white" href="view_image.php?name=reg_certificate_details&link=<?php echo $arr_img_download[0]['url']; ?>">View</a>
 </button>
 
@@ -470,22 +469,22 @@ if(isset($_POST["edit_btn"])) {
 
 <!-- Text input-->
 <div class="form-group" style="margin-top:-3%">
-  <label class="col-md-4 control-label" for="textinput" style="margin-left:-67%">PAN </label>
+  <label class="col-md-4 control-label" for="textinput" style="margin-left:-67%">PAN:</label>
   <div class="col-md-4">
-  <input id="pan" name="pan" style="margin-left:-107%" value="<?php echo $arr_search['response'][0]['organization_details']['pan'] ?>" type="text" placeholder="PAN Card Number" class="form-control input-md">
+  <input id="pan" name="pan" style="margin-left:-107%" pattern="-?[a-zA-Z]{5}[0-9]{4}[a-zA-Z]{1}?" title="Must be of the form ARLPA0061H"  value="<?php echo $arr_search['response'][0]['organization_details']['pan'] ?>" type="text" placeholder="PAN Card Number" class="form-control input-md">
     
   </div>
 </div>
 
 <!-- File Button --> 
 <div class="form-group">
-  <label class="col-md-4 control-label" for="filebutton">PAN Card</label>
+  <label class="col-md-4 control-label" for="filebutton">PAN Card:</label>
 <div class="col-md-4">
-    <input id="upload1" class="form-control input-md" value="
+    <input id="pan_upload" class="form-control input-md" value="
  <?php echo $arr_search['response'][0]['pan_card_details'][0]['name']; ?>"/>
    <div class="fileUpload btn btn-info" style="margin-left:105%;margin-top:-12%;">
     <label style="font-weight:500;margin-bottom: 2px;">ATTACH</label>
-    <input id="pan_card" name="pan_card" type="file" class="upload" onchange="filename(this.value);" />
+    <input id="pan_card" name="pan_card" type="file" class="upload" onchange="panfilename(this.value);" />
   
   
 <?php
@@ -505,7 +504,7 @@ if(isset($_POST["edit_btn"])) {
   
 ?>
 </div>
-<button style="background-color:#65AC4C;margin-top:-24%;margin-left:129%;" class="btn btn-success">
+<button style="margin-top:-24%;margin-left:129%;" class="btn btn-success">
 <a target="_blank" style="color:white" href="view_image.php?name=pan_card_details&link=<?php echo $arr_img_download_2[0]['url']; ?>">View</a>
 </button>
 </div>
@@ -513,7 +512,7 @@ if(isset($_POST["edit_btn"])) {
 
 <!-- Textarea -->
 <div class="form-group">
-  <label class="col-md-4 control-label" for="textarea">Address</label>
+  <label class="col-md-4 control-label" for="textarea">Address:</label>
   <div class="col-md-4">                     
     <textarea class="form-control" id="address" name="address"><?php echo $arr_search['response'][0]['organization_details']['address'] ?></textarea>
   </div>
@@ -522,10 +521,9 @@ if(isset($_POST["edit_btn"])) {
 <!-- Multiple Checkboxes  and File upload Button -->   
 
 <div class="form-group">
- <label class="col-md-4 control-label" for="checkboxes">Address Proof</label>
+ <label class="col-md-4 control-label" for="checkboxes">Address Proof:</label>
  <div class="col-md-4">
    <label class="checkbox-inline" for="checkboxes-0">
-  <div class="col-md-3">
     <?php if($arr_search['response'][0]['telephone_bill_details'][0]['name'] != ''){
       $check_box_select1="checked";
     }else{
@@ -533,14 +531,20 @@ if(isset($_POST["edit_btn"])) {
     }?>
      <input <?php echo $check_box_select1;?> type="checkbox" name="checkboxes" id="checkboxes-0" value="1">Telephone</label>
   </div>
-<div class="col-md-9">
-    <input id="uploaddd" style="width:146%;" class="form-control input-md" value="
+
+<!-- <div class="col-md-1">
+    <input id="telephone_upload" class="form-control input-md" value="
      <?php echo $arr_search['response'][0]['telephone_bill_details'][0]['name']; ?>">
      <div class="fileUpload btn btn-info" style="margin-left:155%;margin-top:-21%;">
     <label style="font-weight:500;margin-bottom: 2px;">ATTACH</label>
-    <input id="telephone_bill" name="telephone_bill"  value="<?php echo $arr_search['response'][0]['organization_details']['telephone'] ?>" style="margin-top: -20px;margin-left: 146px;" type="file" class="upload" onchange="setfilenameee(this.value);" /> 
+    <input id="telephone_bill" name="telephone_bill"  value="<?php echo $arr_search['response'][0]['organization_details']['telephone'] ?>" style="margin-top: -20px;margin-left: 146px;" type="file" class="upload" onchange="telefilename(this.value);" />  -->
+    <div class="col-md-3" style="margin-left:43%;margin-top:-2%"> 
+<?php echo $arr_search['response'][0]['telephone_bill_details'][0]['name']; ?>
+</div>
+    <div class="fileUpload btn btn-info" style="margin-left:-1%;margin-top:-1%;">
+    <label style="font-weight:500;margin-bottom: 2px;">ATTACH</label>
+    <input id="telephone_bill" name="telephone_bill" type="file" class="upload"  value="<?php echo $arr_search['response'][0]['organization_details']['telephone'] ?>" onchange="telefilename(this.value);" />
  
-
 <?php
   $url_img_download_3 = 'https://kyc-application.herokuapp.com/download/';
   $options_img_download_3 = array(
@@ -560,40 +564,36 @@ if(isset($_POST["edit_btn"])) {
 </div>
 
 <br>
-<button style="background-color:#65AC4C;margin-top:-48%;margin-left:203%;" class="btn btn-success">
+<button style="margin-left:75%;margin-top:-6%;" class="btn btn-success">
 <a target="_blank" style="color:white" href="view_image.php?name=telephone_bill_details&link=<?php echo $arr_img_download_3[0]['url']; ?>">View</a>
 </button>
 </div> 
 
 
-</div>
-</div>
-
-
-
 <div class="form-group">
  <label class="col-md-4 control-label" for="checkboxes"></label>
- <div class="col-md-4">
+ <div class="col-md-4"> 
    <label class="checkbox-inline" for="checkboxes-0">
-
-<div class="col-md-3">
      <?php if($arr_search['response'][0]['pass_book_details'][0]['name'] != ''){
       $check_box_select2="checked";
       
      }else{
       $check_box_select2="";
     }?>
-     <input <?php echo $check_box_select2;?> type="checkbox" name="checkboxes" id="checkboxes-0" value="1">Bank Passbook</label>
+     <input <?php echo $check_box_select2;?> type="checkbox" name="checkboxes" id="checkboxes-0" value="1"/>Bank Passbook</label>
+  
+  </div>
+<div class="col-md-3" style="margin-left:43%;margin-top:-2%"> 
+<?php echo $arr_search['response'][0]['pass_book_details'][0]['name']; ?>
 </div>
-<div class="col-md-9"> 
-<input id="uploadd" style="width:127%;" class="form-control input-md" value="
-     <?php echo $arr_search['response'][0]['pass_book_details'][0]['name']; ?>">
-
-
-
-     <div class="fileUpload btn btn-info" style="margin-left:135%;margin-top:-21%;">
+    <div class="fileUpload btn btn-info" style="margin-left:-1%;margin-top:-1%;">
     <label style="font-weight:500;margin-bottom: 2px;">ATTACH</label>
-<input id="bank_pass_book" style="margin-top: -22px;margin-left: 129px;" name="bank_pass_book" class="upload" type="file" onchange="setfilenamee(this.value);" />
+    <input id="bank_pass_book" name="bank_pass_book" type="file" class="upload" onchange="bankfilename(this.value);" />
+<!-- <input id="bank_upload" style="width:127%;" class="form-control input-md" value="
+     <?php echo $arr_search['response'][0]['pass_book_details'][0]['name']; ?>">
+    <div class="fileUpload btn btn-info" style="margin-left:135%;margin-top:-21%;">
+    <label style="font-weight:500;margin-bottom: 2px;">ATTACH</label>
+    <input id="bank_pass_book" name="bank_pass_book" style="margin-top: -22px;margin-left: 129px;" type="file" class="upload" onchange="bankfilename(this.value);" />  -->
  
 
 <?php
@@ -614,13 +614,11 @@ if(isset($_POST["edit_btn"])) {
 ?>
 </div>
 <br>
-<button style="background-color:#65AC4C;margin-left:238%;margin-top:-45%;margin-left:177%;" class="btn btn-success">
+<button style="margin-left:75%;margin-top:-6%;" class="btn btn-success">
 <a target="_blank" style="color:white" href="view_image.php?name=pass_book_details&link=<?php echo $arr_img_download_4[0]['url']; ?>">View</a>
 </button>
 </div>
 
- </div>
-</div>
 
 <!-- Input Type : Number -->
 <!-- <div class="form-group">
@@ -649,7 +647,7 @@ if(isset($_POST["edit_btn"])) {
 <div class="present_fields">
 <!-- Text input-->
 <div class="form-group">
-  <label class="col-md-4 control-label" for="textinput">Name</label>  
+  <label class="col-md-4 control-label" for="textinput">Name:</label>  
   <div class="col-md-2 col-sm-2 col-2">
   <input style="width:170px" id="partner_names[]" value="<?php echo $arr_search['response'][0]['partner_details'][$x]['detail'][0]['name'] ?>" name="partner_names[]" type="text" placeholder="Enter Full Name" class="form-control input-md">
   </div>
@@ -706,7 +704,7 @@ if(isset($_POST["edit_btn"])) {
 
 <!-- Select Basic -->
 <div class="form-group">
-  <label class="col-md-4 control-label" for="selectbasic">Type of work</label>
+  <label class="col-md-4 control-label" for="selectbasic">Type of work:</label>
   <div class="col-md-4">
     <select id="type_of_work[]" name="type_of_work[]" class="form-control">
       <option value="<?php echo $arr_search['response'][0]['add_info'][$q]['type_of_work']; ?>"><?php echo $arr_search['response'][0]['add_info'][$q]['type_of_work']; ?></option>
@@ -719,7 +717,7 @@ if(isset($_POST["edit_btn"])) {
 
 <!-- Select Basic -->
 <div class="form-group">
-  <label class="col-md-4 control-label" for="selectbasic">Status</label>
+  <label class="col-md-4 control-label" for="selectbasic">Status:</label>
   <div class="col-md-4">
     <select id="status[]" name="status[]" class="form-control">
       <option value="<?php echo $arr_search['response'][0]['add_info'][$q]['status']; ?>"><?php echo $arr_search['response'][0]['add_info'][$q]['status']; ?></option>
@@ -740,9 +738,9 @@ if(isset($_POST["edit_btn"])) {
 
 <!-- Text input-->
 <div class="form-group">
-  <label class="col-md-4 control-label" for="textinput">Comment</label>  
+  <label class="col-md-4 control-label" for="textinput">Comment:</label>  
   <div class="col-md-4">
-  <input id="comment[]" name="comment[]" value="<?php echo $arr_search['response'][0]['add_info'][$q]['comment']; ?>" type="text" placeholder="" class="form-control input-md">
+  <input id="comment[]" name="comment[]" value="<?php echo $arr_search['response'][0]['add_info'][$q]['comment']; ?>" pattern="[a-zA-Z]{1,15}" maxlength="50" title="Maximum length is 50 characters" type="text" placeholder="" class="form-control input-md">
     
   </div>
 </div>

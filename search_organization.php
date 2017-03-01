@@ -18,7 +18,7 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 
   <script src="https://storage.googleapis.com/code.getmdl.io/1.0.6/material.min.js"></script>
-   <link rel="stylesheet" href="https://storage.googleapis.com/code.getmdl.io/1.0.6/material.indigo-pink.min.css">
+  <!--  <link rel="stylesheet" href="https://storage.googleapis.com/code.getmdl.io/1.0.6/material.indigo-pink.min.css"> -->
 
   <style type="text/css">
     span:before{
@@ -156,7 +156,7 @@ $arr_search = json_decode($output_search,true);
 
 <!-- Select Basic -->
 <div class="form-group" style="margin-top:10%">
-  <label class="col-md-4 control-label" for="type_of_org">Type of Organization</label>
+  <label class="col-md-4 control-label" for="type_of_org">Type of Organization:</label>
   <div class="col-md-4">
     <select id="type_of_org" name="type_of_org" class="form-control"  readonly>
       <option value="<?php echo $arr_search['response'][0]['organization_details']['type_of_org'];?>"><?php echo $arr_search['response'][0]['organization_details']['type_of_org'];?></option>
@@ -168,7 +168,7 @@ $arr_search = json_decode($output_search,true);
 
 <!-- Text input-->
 <div class="form-group">
-  <label class="col-md-4 control-label" for="textname">Name</label>  
+  <label class="col-md-4 control-label" for="textname">Name:</label>  
   <div class="col-md-4">
   <input value="<?php echo $arr_search['response'][0]['organization_details']['name'];?>" id="name" name="name" type="text" placeholder="Enter Name" class="form-control input-md" readonly>
     
@@ -177,7 +177,7 @@ $arr_search = json_decode($output_search,true);
 
 <!-- Multiple Radios (inline) -->
 <div class="form-group">
-  <label class="col-md-4 control-label" for="registration">Registration</label>
+  <label class="col-md-4 control-label" for="registration">Registration:</label>
   <div class="col-md-4"> 
     
 
@@ -202,10 +202,10 @@ $arr_search = json_decode($output_search,true);
 
 <!-- File Button --> 
 <div class="form-group">
-  <label class="col-md-4 control-label" for="reg_certificate">Registration Certificate</label>
+  <label class="col-md-4 control-label" for="reg_certificate">Registration Certificate:</label>
 
 <div class="col-md-4">
-<input id="uploadFile" class="form-control input-md" value="<?php echo $arr_search['response'][0]['reg_certificate_details'][0]['name']; ?>">
+<input id="uploadFile" class="form-control input-md" value="<?php echo $arr_search['response'][0]['reg_certificate_details'][0]['name']; ?>" readonly/>
   <div class="fileUpload btn btn-info" style="margin-left:105%;margin-top:-12%;">
     <label style="font-weight:500;margin-bottom: 2px;">ATTACH</label>
     <input id="reg_certificate" name="reg_certificate" type="file" class="upload" disabled="true">
@@ -237,7 +237,7 @@ $arr_search = json_decode($output_search,true);
 
 <!-- Text input-->
 <div class="form-group" style="margin-top:-3%">
-  <label class="col-md-4 control-label" for="textinput" style="margin-left:-67%">PAN </label>  
+  <label class="col-md-4 control-label" for="textinput" style="margin-left:-67%">PAN: </label>  
   <div class="col-md-4">
   <input id="pan" name="pan" style="margin-left:-107%" pattern="-?[a-zA-Z]{5}[0-9]{4}[a-zA-Z]{1}?" value="<?php echo $arr_search['response'][0]['organization_details']['pan'] ?>" type="text" placeholder="PAN Card Number" class="form-control input-md" readonly/>
   </div>
@@ -245,9 +245,9 @@ $arr_search = json_decode($output_search,true);
 
 <!-- File Button --> 
 <div class="form-group">
-  <label class="col-md-4 control-label" for="filebutton">PAN Card</label>
+  <label class="col-md-4 control-label" for="filebutton">PAN Card:</label>
   <div class="col-md-4">
-  <input id="pan_upload" class="form-control input-md" value="<?php echo $arr_search['response'][0]['pan_card_details'][0]['name']; ?>" readonly>
+  <input id="pan_upload" class="form-control input-md" value="<?php echo $arr_search['response'][0]['pan_card_details'][0]['name']; ?>" readonly/>
   <div class="fileUpload btn btn-info" style="margin-left:105%;margin-top:-12%;">
   <label style="font-weight:500;margin-bottom: 2px;">ATTACH</label>
   <input id="pan_card" name="pan_card" type="file" class="upload" disabled="true">
@@ -279,16 +279,16 @@ $arr_search = json_decode($output_search,true);
 <!-- Textarea -->
 
 <div class="form-group" style="margin-top:-3%">
-  <label class="col-md-4 control-label" for="textarea" style="margin-left:-67%">Address</label>
+  <label class="col-md-4 control-label" for="textarea" style="margin-left:-67%">Address:</label>
   <div class="col-md-4">                     
-    <textarea class="form-control" id="address" name="address" style="margin-left:-107%"><?php echo $arr_search['response'][0]['organization_details']['address'] ?></textarea>
+    <textarea class="form-control" id="address" name="address" style="margin-left:-107%" readonly><?php echo $arr_search['response'][0]['organization_details']['address'] ?></textarea>
   </div>
 </div>
 
 <!-- Multiple Checkboxes  and File upload Button -->   
 
 <div class="form-group">
- <label class="col-md-4 control-label" for="checkboxes">address Proof</label>
+ <label class="col-md-4 control-label" for="checkboxes">address Proof:</label>
  <div class="col-md-4">
    <label class="checkbox-inline" for="checkboxes-0">
   <div class="col-md-3">
@@ -327,7 +327,7 @@ $arr_search = json_decode($output_search,true);
   
 ?>
 
-<button style="background-color:#176fac;margin-top:-160%;margin-left:575%;" class="btn btn-success">
+<button style="background-color:#176fac;margin-top:-147%;margin-left:484%;" class="btn btn-success">
 <a target="_blank" style="color:white" href="view_image.php?name=telephone_bill_details&link=<?php echo $arr_img_download_3[0]['url']; ?>">VIEW</a>
 </button>
 </div> 
@@ -387,7 +387,7 @@ $arr_search = json_decode($output_search,true);
 <?php for($x=0;$x < count($arr_search['response'][0]['partner_details']); $x++){?>
 <!-- Text input-->
 <div class="form-group">
-  <label class="col-md-4 control-label" for="textinput">Name</label>  
+  <label class="col-md-4 control-label" for="textinput">Name:</label>  
   <div class="col-md-2 col-sm-2 col-2">
   <input id="partner_names[]" value="<?php echo $arr_search['response'][0]['partner_details'][$x]['detail'][0]['name'] ?>" name="partner_names[]" type="text" placeholder="Enter Full Name" class="form-control input-md"  readonly>
   </div>

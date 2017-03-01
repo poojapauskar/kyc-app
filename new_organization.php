@@ -12,14 +12,12 @@
     <!-- Material Design Lite -->
     <script src="https://code.getmdl.io/1.3.0/material.min.js"></script>
     <link rel="stylesheet" href="css/material.css">
-        <link rel="stylesheet" href="css/fileupload.css">
     <link rel="stylesheet" href="css/fileupload.css">
     <!-- Material Design icon font -->
 
     <!-- <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"> -->
 
      <script src="https://storage.googleapis.com/code.getmdl.io/1.0.6/material.min.js"></script>
-   <link rel="stylesheet" href="https://storage.googleapis.com/code.getmdl.io/1.0.6/material.indigo-pink.min.css">
    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"> 
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
   <style type="text/css">
@@ -478,12 +476,12 @@ if(isset($_POST["save_btn"])) {
 </div> -->
 <!-- Added Partner 1 -->
 
-<label for="comment" id="number" style="margin-left:25%;margin-top:0%;font-size: 16px;font-weight:600;"> PARTNERS : </label>
+<label for="comment" id="number" style="margin-left:25%;margin-top:0%;font-size: 16px;font-weight:600;"> PARTNERSHIP : </label>
 
 
 <!-- Text input-->
 <div class="form-group">
-  <label class="col-md-4 control-label" for="textinput">Name: </label>  
+  <label class="col-md-4 control-label" for="textinput">NAME: </label>  
   <div class="col-md-4 col-sm-2 col-2">
   <input id="partner_names[]" name="partner_names[]" type="text" placeholder="Enter Full Name" class="form-control input-md" style="width: 100%;">
   </div>
@@ -525,7 +523,7 @@ if(isset($_POST["save_btn"])) {
 
 <!-- Select Basic -->
 <div class="form-group">
-  <label class="col-md-4 control-label" for="selectbasic">Type of work</label>
+  <label class="col-md-4 control-label" for="selectbasic">TYPE OF WORK:</label>
   <div class="col-md-4">
     <select id="type_of_work[]" name="type_of_work[]" class="form-control">
       <option value="Option one">Option one</option>
@@ -537,7 +535,7 @@ if(isset($_POST["save_btn"])) {
 
 <!-- Select Basic -->
 <div class="form-group">
-  <label class="col-md-4 control-label" for="selectbasic">Status</label>
+  <label class="col-md-4 control-label" for="selectbasic">STATUS:</label>
   <div class="col-md-4">
     <select id="status[]" name="status[]" class="form-control">
       <option value="Pending">Pending</option>
@@ -548,7 +546,7 @@ if(isset($_POST["save_btn"])) {
 </div>
 <!--date-->
   <div class="form-group">
-  <label class="col-md-4 control-label" for="textinput">DATE</label>  
+  <label class="col-md-4 control-label" for="textinput">DATE:</label>  
   <div class="col-md-4">
   <input id="date[]" name="date[]" value="<?php echo $_POST['date'] ?>" style="width:100%;margin-left:-0.4%;margin-top:0%;" type="Text" value="" id="example-date-input" type="text" class="form-control input-md">
     
@@ -557,9 +555,9 @@ if(isset($_POST["save_btn"])) {
 
 <!-- Text input-->
 <div class="form-group">
-  <label class="col-md-4 control-label" for="textinput">Comment</label>  
+  <label class="col-md-4 control-label" for="textinput">COMMENT:</label>  
   <div class="col-md-4">
-  <input id="comment[]" name="comment[]" type="text" placeholder="" class="form-control input-md">
+  <input id="comment[]" name="comment[]" type="text" pattern="[a-zA-Z]{1,15}" maxlength="50" title="Maximum length is 50 characters" class="form-control input-md">
     
   </div>
 </div>
