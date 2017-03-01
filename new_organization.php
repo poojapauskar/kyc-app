@@ -77,9 +77,6 @@ document.getElementById('reg_certificate').disabled='';
 document.getElementById('uploadFile').value='Choose File'; } 
 } 
 </script>
-<script type="text/javascript">
-  
-</script>
 </head>
 
 <body style="background-color:#E8E8E8;overflow-x:hidden;">
@@ -442,13 +439,13 @@ if(isset($_POST["save_btn"])) {
  <label class="col-md-4 control-label" for="checkboxes">Address Proof:</label>
  <div class="col-md-4">
    <label class="checkbox-inline" for="checkboxes-0">
-
     <input type="checkbox" name="checkboxes" id="checkboxes-0" value="1" onchange="document.getElementById('telephone_bill').disabled = !this.checked;" >Telephone</label>
      <div id="telephone_upload" style="width:68%;margin-left:32%;margin-top:-5%"/>
     <div class="fileUpload btn btn-info" style="margin-left:107%;margin-top:-6%;">
     <label style="font-weight:500;margin-bottom: 2px;">ATTACH</label>
     <input id="telephone_bill" name="telephone_bill" type="file" class="upload" onchange="telefilename(this.value);" /> 
  </div>
+</div>
 </div>
 </div>
 
