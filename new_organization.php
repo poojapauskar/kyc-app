@@ -453,8 +453,8 @@ if(isset($_POST["save_btn"])) {
 <div class="form-group">
  <label class="col-md-4 control-label" for="checkboxes"></label>
  <div class="col-md-4" style="margin-left:33.5%;margin-top:1%">
-   <label class="checkbox-inline" for="checkboxes-1" >
-     <input type="checkbox" name="checkboxes" id="checkboxes-1" value="1" onchange="document.getElementById('bank_pass_book').disabled = !this.checked;">Bank Passbook</label>
+   <label class="checkbox-inline" for="checkboxes-0" >
+     <input type="checkbox" name="checkboxes" id="checkboxes-0" value="1" onchange="document.getElementById('bank_pass_book').disabled = !this.checked;">Bank Passbook</label>
      <div id="bank_upload" style="width:68%;margin-left:32%;margin-top:0%"/>
     <div class="fileUpload btn btn-info" style="margin-left:105%;margin-top:-12%;">
     <label style="font-weight:500;margin-bottom: 2px;">ATTACH</label>
