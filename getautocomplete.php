@@ -15,6 +15,9 @@ $db = pg_pconnect("host=ec2-107-20-191-76.compute-1.amazonaws.com port=5432 dbna
                     'label'=>$student["name"]);
     }
  
- echo json_encode($json);
+
+$textval = json_encode($json);
+file_put_contents('textvalues.txt', $textval);
+ // echo json_encode($json);
  
 ?>
