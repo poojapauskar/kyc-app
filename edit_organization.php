@@ -538,9 +538,10 @@ if(isset($_POST["edit_btn"])) {
      <div class="fileUpload btn btn-info" style="margin-left:155%;margin-top:-21%;">
     <label style="font-weight:500;margin-bottom: 2px;">ATTACH</label>
     <input id="telephone_bill" name="telephone_bill"  value="<?php echo $arr_search['response'][0]['organization_details']['telephone'] ?>" style="margin-top: -20px;margin-left: 146px;" type="file" class="upload" onchange="telefilename(this.value);" />  -->
-    <div class="col-md-3"> 
-<input id="telephone_upload" class="form-control input-md" value="<?php echo $arr_search['response'][0]['telephone_bill_details'][0]['name']; ?>" style="margin-left:-105%">
-    <div class="fileUpload btn btn-info" style="margin-left:-1%;margin-top:-16%;">
+    <div class="col-md-3" style="margin-left:43%;margin-top:-2%"> 
+<?php echo $arr_search['response'][0]['telephone_bill_details'][0]['name']; ?>
+</div>
+    <div class="fileUpload btn btn-info" style="margin-left:-1%;margin-top:-1%;">
     <label style="font-weight:500;margin-bottom: 2px;">ATTACH</label>
     <input id="telephone_bill" name="telephone_bill" type="file" class="upload"  value="<?php echo $arr_search['response'][0]['organization_details']['telephone'] ?>" onchange="telefilename(this.value);" />
  
@@ -563,15 +564,10 @@ if(isset($_POST["edit_btn"])) {
 </div>
 
 <br>
-<button style="margin-left:238%;margin-top:-33%;margin-left:31%;" class="btn btn-success">
+<button style="margin-left:75%;margin-top:-6%;" class="btn btn-success">
 <a target="_blank" style="color:white" href="view_image.php?name=telephone_bill_details&link=<?php echo $arr_img_download_3[0]['url']; ?>">View</a>
 </button>
 </div> 
-
-
-</div>
-</div>
-
 
 
 <div class="form-group">
@@ -587,9 +583,10 @@ if(isset($_POST["edit_btn"])) {
      <input <?php echo $check_box_select2;?> type="checkbox" name="checkboxes" id="checkboxes-0" value="1"/>Bank Passbook</label>
   
   </div>
-<div class="col-md-3"> 
-<input id="bank_upload" class="form-control input-md" value="<?php echo $arr_search['response'][0]['pass_book_details'][0]['name']; ?>" style="margin-left:-105%">
-    <div class="fileUpload btn btn-info" style="margin-left:-1%;margin-top:-16%;">
+<div class="col-md-3" style="margin-left:43%;margin-top:-2%"> 
+<?php echo $arr_search['response'][0]['pass_book_details'][0]['name']; ?>
+</div>
+    <div class="fileUpload btn btn-info" style="margin-left:-1%;margin-top:-1%;">
     <label style="font-weight:500;margin-bottom: 2px;">ATTACH</label>
     <input id="bank_pass_book" name="bank_pass_book" type="file" class="upload" onchange="bankfilename(this.value);" />
 <!-- <input id="bank_upload" style="width:127%;" class="form-control input-md" value="
@@ -617,13 +614,11 @@ if(isset($_POST["edit_btn"])) {
 ?>
 </div>
 <br>
-<button style="margin-left:238%;margin-top:-33%;margin-left:31%;" class="btn btn-success">
+<button style="margin-left:75%;margin-top:-6%;" class="btn btn-success">
 <a target="_blank" style="color:white" href="view_image.php?name=pass_book_details&link=<?php echo $arr_img_download_4[0]['url']; ?>">View</a>
 </button>
 </div>
 
- </div>
-</div>
 
 <!-- Input Type : Number -->
 <!-- <div class="form-group">
