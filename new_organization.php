@@ -12,12 +12,14 @@
     <!-- Material Design Lite -->
     <script src="https://code.getmdl.io/1.3.0/material.min.js"></script>
     <link rel="stylesheet" href="css/material.css">
+        <link rel="stylesheet" href="css/fileupload.css">
     <link rel="stylesheet" href="css/fileupload.css">
     <!-- Material Design icon font -->
 
     <!-- <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"> -->
 
      <script src="https://storage.googleapis.com/code.getmdl.io/1.0.6/material.min.js"></script>
+   <link rel="stylesheet" href="https://storage.googleapis.com/code.getmdl.io/1.0.6/material.indigo-pink.min.css">
    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"> 
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
   <style type="text/css">
@@ -74,6 +76,9 @@ document.getElementById('uploadFile').disabled='';
 document.getElementById('reg_certificate').disabled='';  
 document.getElementById('uploadFile').value='Choose File'; } 
 } 
+</script>
+<script type="text/javascript">
+  
 </script>
 </head>
 
@@ -437,13 +442,13 @@ if(isset($_POST["save_btn"])) {
  <label class="col-md-4 control-label" for="checkboxes">Address Proof:</label>
  <div class="col-md-4">
    <label class="checkbox-inline" for="checkboxes-0">
+
     <input type="checkbox" name="checkboxes" id="checkboxes-0" value="1" onchange="document.getElementById('telephone_bill').disabled = !this.checked;" >Telephone</label>
      <div id="telephone_upload" style="width:68%;margin-left:32%;margin-top:-5%"/>
     <div class="fileUpload btn btn-info" style="margin-left:107%;margin-top:-6%;">
     <label style="font-weight:500;margin-bottom: 2px;">ATTACH</label>
     <input id="telephone_bill" name="telephone_bill" type="file" class="upload" onchange="telefilename(this.value);" /> 
  </div>
-</div>
 </div>
 </div>
 
@@ -476,18 +481,20 @@ if(isset($_POST["save_btn"])) {
 </div> -->
 <!-- Added Partner 1 -->
 
-<label for="comment" id="number" style="margin-left:25%;margin-top:0%;font-size: 16px;font-weight:600;"> PARTNERSHIP : </label>
+<label for="comment" id="number" style="margin-left:25%;margin-top:0%;font-size: 16px;font-weight:600;"> PARTNERS : </label>
 
 
 <!-- Text input-->
 <div class="form-group">
-  <label class="col-md-4 control-label" for="textinput">NAME: </label>  
+  <label class="col-md-4 control-label" for="textinput">Name: </label>  
   <div class="col-md-4 col-sm-2 col-2">
   <input id="partner_names[]" name="partner_names[]" type="text" placeholder="Enter Full Name" class="form-control input-md" style="width: 100%;">
   </div>
 
   <div class="col-md-2 col-sm-2 col-2">
-    <a href="new_user.php" style="color:white" target="_blank">
+
+    <a href="new_user_popup.php" style="color:white" target="_blank" data-toggle="modal" data-target="#myModal">
+
      <button type="button" class="btn btn-info " style="margin-left:-6%">
        New Entry
      </button>
@@ -523,7 +530,7 @@ if(isset($_POST["save_btn"])) {
 
 <!-- Select Basic -->
 <div class="form-group">
-  <label class="col-md-4 control-label" for="selectbasic">TYPE OF WORK:</label>
+  <label class="col-md-4 control-label" for="selectbasic">Type of work</label>
   <div class="col-md-4">
     <select id="type_of_work[]" name="type_of_work[]" class="form-control">
       <option value="Option one">Option one</option>
@@ -535,7 +542,7 @@ if(isset($_POST["save_btn"])) {
 
 <!-- Select Basic -->
 <div class="form-group">
-  <label class="col-md-4 control-label" for="selectbasic">STATUS:</label>
+  <label class="col-md-4 control-label" for="selectbasic">Status</label>
   <div class="col-md-4">
     <select id="status[]" name="status[]" class="form-control">
       <option value="Pending">Pending</option>
@@ -546,7 +553,7 @@ if(isset($_POST["save_btn"])) {
 </div>
 <!--date-->
   <div class="form-group">
-  <label class="col-md-4 control-label" for="textinput">DATE:</label>  
+  <label class="col-md-4 control-label" for="textinput">DATE</label>  
   <div class="col-md-4">
   <input id="date[]" name="date[]" value="<?php echo $_POST['date'] ?>" style="width:100%;margin-left:-0.4%;margin-top:0%;" type="Text" value="" id="example-date-input" type="text" class="form-control input-md">
     
@@ -555,9 +562,9 @@ if(isset($_POST["save_btn"])) {
 
 <!-- Text input-->
 <div class="form-group">
-  <label class="col-md-4 control-label" for="textinput">COMMENT:</label>  
+  <label class="col-md-4 control-label" for="textinput">Comment</label>  
   <div class="col-md-4">
-  <input id="comment[]" name="comment[]" type="text" pattern="[a-zA-Z]{1,15}" maxlength="50" title="Maximum length is 50 characters" class="form-control input-md">
+  <input id="comment[]" name="comment[]" type="text" placeholder="" class="form-control input-md">
     
   </div>
 </div>
@@ -599,7 +606,7 @@ $('#trigger').click(function(){
 </script>
 
 <div class="container">
- <a href="new_user_popup.php" class="btn btn-lg btn-primary" data-toggle="modal" data-target="#myModal">Launch Demo Modal</a>
+
     
     <!-- Modal HTML -->
     <div id="myModal" class="modal fade">
@@ -629,7 +636,9 @@ $('#trigger').click(function(){
         e.preventDefault();
         if(x < max_fields){ //max input box allowed
             x++; //text box increme
-            $(wrapper).prepend('<br><div style="margin-left:50px;"><center><div class="form-group"> <label class=" control-label" for="textinput" style="margin-left:327px;">Name: </label> <div > <input id="partner_names[]" name="partner_names[]" type="text" placeholder="Enter Full Name" class="form-control input-md" style="margin-top: -25px;margin-left: 403px;width: 241%;">  </div>  <div class="col-md-6" > <a href="new_user.php" style="color:white" target="_blank"><button  type="button" class="btn btn-info" style="margin-left: 809px;margin-top: -61px;">New Entry</button> </a> </div></div> <div class="form-group">  <label class="control-label" for="selectbasic" style="margin-left:293px;">Designation: </label>  <div> <select id="partner_designations[]" name="partner_designations[]" class="form-control" style="margin-left: 405px;margin-top: -34px;width:118%;">      <option value="Managing Partner">Managing Partner</option>      <option value="Manager">Manager</option>      <option value="Other">Other</option>    </select>  </div>  <div>  <input style="margin-left: 617px;margin-top: -35px;width:114%" id="textinput" name="textinput" type="text" placeholder="Specify if Other" class="form-control input-md"></div></div></center><a href="#" class="remove_field"><img src="images/del24.png" style="margin-left: 810px; margin-top: -81px;"></a></a></div>'); //add input box\
+
+            $(wrapper).prepend('<br><div style="margin-left:50px;"><center><div class="form-group"> <label class=" control-label" for="textinput" style="margin-left:327px;">Name: </label> <div > <input id="partner_names[]" name="partner_names[]" type="text" placeholder="Enter Full Name" class="form-control input-md" style="margin-top: -25px;margin-left: 403px;width: 241%;">  </div>  <div class="col-md-6" > <a href="new_user_popup.php" style="color:white" target="_blank" data-toggle="modal" data-target="#myModal"><button  type="button" class="btn btn-info" style="margin-left: 809px;margin-top: -61px;">New Entry</button> </a> </div></div> <div class="form-group">  <label class="control-label" for="selectbasic" style="margin-left:293px;">Designation: </label>  <div> <select id="partner_designations[]" name="partner_designations[]" class="form-control" style="margin-left: 405px;margin-top: -34px;width:118%;">      <option value="Managing Partner">Managing Partner</option>      <option value="Manager">Manager</option>      <option value="Other">Other</option>    </select>  </div>  <div>  <input style="margin-left: 617px;margin-top: -35px;width:114%" id="textinput" name="textinput" type="text" placeholder="Specify if Other" class="form-control input-md"></div></div></center><a href="#" class="remove_field"><img src="images/del24.png" style="margin-left: 810px; margin-top: -81px;"></a></a></div>'); //add input box\
+
 
         }
     });
