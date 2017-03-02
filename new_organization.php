@@ -325,7 +325,7 @@ if(isset($_POST["save_btn"])) {
  pg_select($db, 'post_log', $_POST);
  
 
- $query=pg_query("SELECT id,name FROM organization_organization ");
+ $query=pg_query("SELECT id,name FROM users_users");
 
  $json=array();
 
@@ -334,11 +334,12 @@ while ($student = pg_fetch_array($query)) {
 }
 
 $textval = json_encode($json);
-$foo = "var organizationnames=" . $textval;
-file_put_contents('autocomplete-Files/OrganizationValues.js', $foo);
+$foo = "var usersnames=" . $textval;
+file_put_contents('autocomplete-Files/UserValues.js', $foo);
  
 
 ?>
+
 
 
 <div class="demo-layout-transparent mdl-layout mdl-js-layout">
@@ -505,7 +506,7 @@ file_put_contents('autocomplete-Files/OrganizationValues.js', $foo);
 <div class="form-group">
   <label class="col-md-4 control-label" for="textinput">NAME: </label>  
   <div class="col-md-4 col-sm-2 col-2">
-  <input id="partner_names[]" name="partner_names[]" type="text" placeholder="Enter Full Name" class="form-control input-md" style="width: 100%;">
+  <input id="partner_names[]" name="partner_names[]" type="text" placeholder="Enter Full Name" class="form-control input-md fetchpartner" style="width: 100%;">
   </div>
 
   <div class="col-md-2 col-sm-2 col-2">
@@ -690,8 +691,8 @@ $('#trigger').click(function(){
      <script type="text/javascript" src="autocomplete-Files/jquery-1.8.2.min.js"></script>
         <script type="text/javascript" src="autocomplete-Files/jquery.mockjax.js"></script>
         <script type="text/javascript" src="autocomplete-Files/jquery.autocomplete.js"></script>
-        <script type="text/javascript" src="autocomplete-Files/OrganizationValues.js"></script>
-        <script type="text/javascript" src="autocomplete-Files/Logic_Organization.js"></script>
+        <script type="text/javascript" src="autocomplete-Files/UserValues.js"></script>
+        <script type="text/javascript" src="autocomplete-Files/Logic_User.js"></script>
 
 </body>
 </html>

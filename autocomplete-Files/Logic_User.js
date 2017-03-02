@@ -37,7 +37,7 @@ var peopleArray = $.map(usersnames, function (value, key) {
 
 
     // Initialize autocomplete with custom appendTo:
-    $('#name').autocomplete({
+    $('.fetchpartner').autocomplete({
         lookup: peopleArray
     });
 });

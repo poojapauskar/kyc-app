@@ -26,7 +26,7 @@
 <body style="background-color:#E8E8E8;overflow-x:hidden;">
 
 <?php
-if(isset($_POST['submit'])){
+/*if(isset($_POST['submit'])){
   $url_org = 'https://kyc-application.herokuapp.com/get_id_from_text/';
   $options_org = array(
     'http' => array(
@@ -38,7 +38,7 @@ if(isset($_POST['submit'])){
   );
   $context_org = stream_context_create($options_org);
   $output_org = file_get_contents($url_org, false,$context_org);
-  /*echo $output_org;*/
+
   $arr_org = json_decode($output_org,true);
   if($arr_org['response'][0]['message'] == 'organization'){
     $string1="<script>window.location.href='search_organization.php?id=".$arr_org['response'][0]['pk']."'</script>";
@@ -47,8 +47,14 @@ if(isset($_POST['submit'])){
     $string2="<script>window.location.href='search_user.php?id=".$arr_org['response'][0]['pk']."'</script>";
     echo $string2;
   }
-}
+}*/
 ?>
+
+
+<?php if($_POST['submit']){
+  $string_new="<script>window.location.href='search_result.php?is_user=".$_POST['is_user_field']."&id=".$_POST['id_field']."'</script>";
+  echo $string_new;
+}?>
 
 <div class="demo-layout-transparent mdl-layout mdl-js-layout">
       <header style="background-color:#08426a;height:110px;-webkit-box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23) !important;
@@ -87,9 +93,9 @@ if(isset($_POST['submit'])){
  pg_select($db, 'post_log', $_POST);
  
 
- $query=pg_query("SELECT id,name FROM organization_organization 
+ $query=pg_query("SELECT id,name,is_user FROM organization_organization 
   UNION 
- SELECT id,name FROM users_users");
+ SELECT id,name,is_user FROM users_users");
 
  $json=array();
  // $json= array_values($json);
@@ -103,7 +109,7 @@ if(isset($_POST['submit'])){
   //                   'id'=>$student["id"]);
   //   }
 while ($student = pg_fetch_array($query)) {
-    $json[$student["id"]] = $student["name"];
+    $json[$student["is_user"]."-".$student["id"]] = $student["name"];
 }
 
 $textval = json_encode($json);
@@ -122,13 +128,16 @@ file_put_contents('autocomplete-Files/SearchValues.js', $foo);
     <div class="col-md-12" style="margin-left:11%;">
     <form class="form-group" method="post" action="" style="padding-bottom:7%">
     <input id="search" name="search" type="text" placeholder="Search firm,Individual" class="form-control input-md" style="width:55%;margin-top:-8%;height:39px" required onchange="this.form.submit()">
-
+  <input id="is_user_field" name="is_user_field" type="hidden"></input>
+  <input id="id_field" name="id_field" type="hidden"></input>
     <button style="background-color:#74b25e;margin-left:58%;margin-top:-3.5%;color:white;width:200px;height:37px" class="mdl-button mdl-js-button mdl-button--raised" type="submit" value="Search" id="submit" name="submit">
    <p style="margin-top:7px;"> Search </p>
    </button>
     </form>
     </div>
-
+       <!--  <div id="tagname" style="height:100px; width:300px; border:1px solid #000;"></div>
+ -->
+      
     <div class="col-sm-1" style="width:10.66667%;">
     </div> 
     <div class="col-sm-2">
@@ -203,11 +212,7 @@ file_put_contents('autocomplete-Files/SearchValues.js', $foo);
 <script type="text/javascript">
                 $(document).ready(function(){
                     $("#search").autocomplete({
-<<<<<<< HEAD
-                        source:'textvalues.js',
-=======
-                        source:'<?php echo $arr_search[$i]['details'][0]['name'] ?>',
->>>>>>> e8e8419b4320305f42b00485328fc3f930ef95e8
+
                         minLength:1
                     });
                 });

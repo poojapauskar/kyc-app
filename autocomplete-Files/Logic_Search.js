@@ -38,6 +38,17 @@ var peopleArray = $.map(peoplenames, function (value, key) {
 
     // Initialize autocomplete with custom appendTo:
     $('#search').autocomplete({
-        lookup: peopleArray
+        lookup: peopleArray,
+         onSelect: function(suggestion)
+         {
+
+         /*  var wrapper= $("#tagname");
+          $(wrapper).append(''+suggestion.data+'');    
+*/      var value1= suggestion.data.substr(0, suggestion.data.indexOf('-')); 
+        var value2= suggestion.data.substr(suggestion.data.indexOf("-") + 1);
+
+        document.getElementById("is_user_field").value = value1;
+        document.getElementById("id_field").value = value2;
+        }
     });
 });
