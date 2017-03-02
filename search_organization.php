@@ -148,6 +148,9 @@ $arr_search = json_decode($output_search,true);
 
 <form class="form-horizontal" method="post" action="edit_organization.php" enctype="multipart/form-data" style="margin-top:-40%">
 
+<!-- <div class="col-md-30" style="margin-top:-29%;position:static"> -->
+
+
 <fieldset>
  <input type="hidden" value="<?php echo $arr_search['response'][0]['organization_details']['pk'] ?>" name="org_id" id="org_id"></input>
 
