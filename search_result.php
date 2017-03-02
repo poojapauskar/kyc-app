@@ -189,7 +189,7 @@ $arr_search = json_decode($output_search,true);
           <a class="mdl-navigation__link" href="">Contact</a>
         </nav>
       </div>
-      <div class="alert" style="margin-top:1%">
+      <div class="alert" style="margin-top:0%">
   <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
   <strong>
 
@@ -226,7 +226,7 @@ $arr_search = json_decode($output_search,true);
 </div> 
 
 <?php if ($_GET['is_user']==0) { ?>
-<form class="form-horizontal" method="post" action="edit.php?is_user=0" enctype="multipart/form-data" style="margin-top:-34%">
+<form class="form-horizontal" method="post" action="edit.php?is_user=0" enctype="multipart/form-data" style="margin-top:-43%">
 
 <fieldset>
  <input type="hidden" value="<?php echo $arr_search['response'][0]['organization_details']['pk'] ?>" name="org_id" id="org_id"></input>
@@ -316,7 +316,7 @@ $arr_search = json_decode($output_search,true);
 <div class="form-group" style="margin-top:-3%">
   <label class="col-md-4 control-label" for="textinput" style="margin-left:-67%">PAN: </label>  
   <div class="col-md-4">
-  <input id="pan" name="pan" style="margin-left:-107%" pattern="-?[a-zA-Z]{5}[0-9]{4}[a-zA-Z]{1}?" value="<?php echo $arr_search['response'][0]['organization_details']['pan'] ?>" type="text" placeholder="PAN Card Number" class="form-control input-md" readonly/>
+  <input id="pan" name="pan" style="margin-left:-108%" pattern="-?[a-zA-Z]{5}[0-9]{4}[a-zA-Z]{1}?" value="<?php echo $arr_search['response'][0]['organization_details']['pan'] ?>" type="text" placeholder="PAN Card Number" class="form-control input-md" readonly/>
   </div>
 </div>
 
@@ -347,7 +347,7 @@ $arr_search = json_decode($output_search,true);
 ?>
 </div>
 
-<button style="background-color:#176fac;margin-top:-24%;margin-left:129%;" class="btn btn-success">
+<button style="background-color:#176fac;margin-top:-26%;margin-left:129%;" class="btn btn-success">
 <a target="_blank" style="color:white" href="view_image.php?name=pan_card_details&link=<?php echo $arr_img_download_2[0]['url']; ?>">VIEW</a>
 </button>
 </div>
@@ -404,7 +404,7 @@ $arr_search = json_decode($output_search,true);
   
 ?>
 
-<button style="background-color:#176fac;margin-top:-147%;margin-left:484%;" class="btn btn-success">
+<button style="background-color:#176fac;margin-top:-147%;margin-left:473%;" class="btn btn-success">
 <a target="_blank" style="color:white" href="view_image.php?name=telephone_bill_details&link=<?php echo $arr_img_download_3[0]['url']; ?>">VIEW</a>
 </button>
 </div> 
@@ -451,21 +451,20 @@ $arr_search = json_decode($output_search,true);
   
 ?>
 
-<button style="background-color:#176fac;margin-top:-144%;margin-left:481%;" class="btn btn-success">
+<button style="background-color:#176fac;margin-top:-144%;margin-left:476%;" class="btn btn-success">
 <a target="_blank" style="color:white" href="view_image.php?name=pass_book_details&link=<?php echo $arr_img_download_4[0]['url']; ?>">VIEW</a>
 </button>
 </div>
 
  </div>
 </div>
-<br><br><br>
 <!-- Added Partner 1 -->
-<label for="comment" style="margin-left: 334px;font-size: 17px;"> Partner 1: </label>
+<label for="comment" style="margin-left: 279px;margin-top:-27%;font-size: 17px;"> Partner 1: </label>
 <?php for($x=0;$x < count($arr_search['response'][0]['partner_details']); $x++){?>
 <!-- Text input-->
 <div class="form-group">
   <label class="col-md-4 control-label" for="textinput">Name:</label>  
-  <div class="col-md-2 col-sm-2 col-2">
+  <div class="col-md-4 col-sm-2 col-2">
   <input id="partner_names[]" value="<?php echo $arr_search['response'][0]['partner_details'][$x]['detail'][0]['name'] ?>" name="partner_names[]" type="text" placeholder="Enter Full Name" class="form-control input-md"  readonly>
   </div>
 </div>
@@ -490,8 +489,8 @@ $arr_search = json_decode($output_search,true);
 <div class="form-group">
   <label class="col-md-4 control-label" for="save_btn"></label>
   <div class="col-md-8">
-    <button id="save_btn" name="save_btn" type="submit" class="btn btn-success" style="width: 10em;">Edit</button><span><span></span></span>
-    <button onclick="ClickEvent()" class="btn btn-warning"><a style="color:white" href="search.php">Cancel</a></button>
+    <button id="save_btn" name="save_btn" type="submit" class="btn btn-success" style="width: 10em;margin-left:2%;">Edit</button><span><span></span></span>
+    <button onclick="ClickEvent()" style="width: 10em;margin-left:2%;" class="btn btn-warning"><a style="color:white" href="search.php">Cancel</a></button>
   
   </div>
 </div>
