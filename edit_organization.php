@@ -637,7 +637,7 @@ if(isset($_POST["edit_btn"])) {
 
 
 <!-- Added Partner 1 -->
-<label for="comment" style="margin-left: 334px;font-size: 17px;"> Partner 1: </label>
+<label for="comment" style="margin-left: 282px;margin-top:-1%;font-size: 17px;"> Partner 1: </label>
 
 
 
