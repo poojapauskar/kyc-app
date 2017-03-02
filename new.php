@@ -772,8 +772,8 @@ if ($_POST['uid'] != '' and $_GET["is_user"]==1){
         <span class="mdl-layout-title">Title</span>
         <nav class="mdl-navigation">
           <a class="mdl-navigation__link" href="search.php">Home</a>
-          <a class="mdl-navigation__link" href="new.php">New Entry Organization</a>
-          <a class="mdl-navigation__link" href="new.php">New Entry Individual</a>
+          <a class="mdl-navigation__link" href="new.php?is_user=0">New Entry Organization</a>
+          <a class="mdl-navigation__link" href="new.php?is_user=1">New Entry Individual</a>
           <a class="mdl-navigation__link" href="missing_reports.php">Missing Reports</a>
           <a class="mdl-navigation__link" href="search.php">Admin</a>
           <a class="mdl-navigation__link" href="">Help</a>
