@@ -5,6 +5,8 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <!--   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
  -->  
+
+ <link rel="stylesheet" type="text/css" href="autocomplete-Files/styles.css">
     <!-- Material Design Lite -->
     <script src="https://code.getmdl.io/1.3.0/material.min.js"></script>
     <link rel="stylesheet" href="css/material.css">
@@ -106,7 +108,7 @@ while ($student = pg_fetch_array($query)) {
 
 $textval = json_encode($json);
 $foo = "var peoplenames=" . $textval;
-file_put_contents('autocomplete-Files/textvalues.js', $foo);
+file_put_contents('autocomplete-Files/SearchValues.js', $foo);
  
 
 ?>
@@ -119,7 +121,7 @@ file_put_contents('autocomplete-Files/textvalues.js', $foo);
   <!-- AutoSearch TEXT field -->
     <div class="col-md-12" style="margin-left:11%;">
     <form class="form-group" method="post" action="" style="padding-bottom:7%">
-    <input id="search" name="search" type="text" placeholder="Search firm,Individual" class="form-control input-md" style="width:55%;margin-top:-8%;height:39px" required>
+    <input id="search" name="search" type="text" placeholder="Search firm,Individual" class="form-control input-md" style="width:55%;margin-top:-8%;height:39px" required onchange="this.form.submit()">
 
     <button style="background-color:#74b25e;margin-left:58%;margin-top:-3.5%;color:white;width:200px;height:37px" class="mdl-button mdl-js-button mdl-button--raised" type="submit" value="Search" id="submit" name="submit">
    <p style="margin-top:7px;"> Search </p>
@@ -188,8 +190,8 @@ file_put_contents('autocomplete-Files/textvalues.js', $foo);
      <script type="text/javascript" src="autocomplete-Files/jquery-1.8.2.min.js"></script>
         <script type="text/javascript" src="autocomplete-Files/jquery.mockjax.js"></script>
         <script type="text/javascript" src="autocomplete-Files/jquery.autocomplete.js"></script>
-        <script type="text/javascript" src="autocomplete-Files/textvalues.js"></script>
-        <script type="text/javascript" src="autocomplete-Files/demo.js"></script>
+        <script type="text/javascript" src="autocomplete-Files/SearchValues.js"></script>
+        <script type="text/javascript" src="autocomplete-Files/Logic_Search.js"></script>
         <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> -->
 <!--         <script type="text/javascript" src="autocomplete-Files/styles.css"></script>
  --><!--  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>

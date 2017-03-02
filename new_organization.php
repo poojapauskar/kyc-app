@@ -7,6 +7,8 @@
 <!-- <link rel="stylesheet" type="text/css" href="css/material.indigo-pink.min.css"> -->
  <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="css/bootstrap.css">
+   <link rel="stylesheet" type="text/css" href="autocomplete-Files/styles.css">
+
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <!-- Material Design Lite -->
@@ -317,6 +319,26 @@ if(isset($_POST["save_btn"])) {
 }
 ?>
 
+<?php
+
+ $db = pg_connect("host=ec2-107-20-191-76.compute-1.amazonaws.com port=5432 dbname=deu9vahl80fvjn user=vdvqpruzihrics password=17b3e7a56da97ca021e3da54bb1694bb799849a2b5911014ed6caa05e1e4e02d");
+ pg_select($db, 'post_log', $_POST);
+ 
+
+ $query=pg_query("SELECT id,name FROM organization_organization ");
+
+ $json=array();
+
+while ($student = pg_fetch_array($query)) {
+    $json[$student["id"]] = $student["name"];
+}
+
+$textval = json_encode($json);
+$foo = "var organizationnames=" . $textval;
+file_put_contents('autocomplete-Files/OrganizationValues.js', $foo);
+ 
+
+?>
 
 
 <div class="demo-layout-transparent mdl-layout mdl-js-layout">
@@ -664,7 +686,12 @@ $('#trigger').click(function(){
 });
 
     </script>
-
+ <!-- AutoSearch Script files don't move -->
+     <script type="text/javascript" src="autocomplete-Files/jquery-1.8.2.min.js"></script>
+        <script type="text/javascript" src="autocomplete-Files/jquery.mockjax.js"></script>
+        <script type="text/javascript" src="autocomplete-Files/jquery.autocomplete.js"></script>
+        <script type="text/javascript" src="autocomplete-Files/OrganizationValues.js"></script>
+        <script type="text/javascript" src="autocomplete-Files/Logic_Organization.js"></script>
 
 </body>
 </html>
