@@ -530,7 +530,13 @@ $arr_search = json_decode($output_search,true);
 <div style="margin-top:10%">
  <input type="hidden" value="<?php echo $arr_search['response'][0]['user_details']['pk'] ?>" name="user_id" id="user_id"></input>
 
-<img class="profile-pic" style="margin-left:77%;margin-top:25%;position:absolute;z-index:2;" src="<?php echo $arr_img[0]['url']; ?>" />
+<?php if($url=="" || (strpos($url, 'https://kyc-app-bucket.s3.amazonaws.com/?Signature') !== false)){
+  $img_lnk="images/no_image.jpg";
+}else{
+    $img_lnk=$arr_img[0]['url'];
+}?>
+
+<img class="profile-pic" style="margin-left:77%;margin-top:25%;position:absolute;z-index:2;" src="<?php echo $img_lnk; ?>" />
 <div class="upload-button" style="position:absolute;z-index:2;margin-left:79%;margin-top:40%;"><button disabled>Upload Image</button></div>
 
 
