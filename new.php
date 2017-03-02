@@ -422,7 +422,7 @@ if(isset($_POST["save_btn"]) and $_GET["is_user"]==0) {
   $arr_org = json_decode($output_org,true);
 
   if($arr_org['status']==200){
-    echo "<script>alert('New Organization Created')</script>";
+    /*echo "<script>alert('New Organization Created')</script>";*/
     $_POST = array();
   }
 }
@@ -744,7 +744,7 @@ if ($_POST['uid'] != '' and $_GET["is_user"]==1){
   $arr_org = json_decode($output_org,true);
 
   if($arr_org['status']==200){
-    echo "<script>alert('New Individual Created')</script>";
+    /*echo "<script>alert('New Individual Created')</script>";*/
     $_POST = array();
   }
 }
