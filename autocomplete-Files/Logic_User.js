@@ -5,7 +5,7 @@ $(function() {
     'use strict';
 // var countriesArray = $.map(kycc, function (value, key) { 
 //     return { value: value, data: key }; });
-var peopleArray = $.map(peoplenames, function (value, key) { 
+var peopleArray = $.map(usersnames, function (value, key) { 
     return { value: value, data: key }; });
 // var countriesArray = $.map(countries, function (value) { 
 //         return {"pooja":"pooja"}; });
@@ -37,7 +37,7 @@ var peopleArray = $.map(peoplenames, function (value, key) {
 
 
     // Initialize autocomplete with custom appendTo:
-    $('#search').autocomplete({
+    $('.fetchpartner').autocomplete({
         lookup: peopleArray
     });
 });
