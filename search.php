@@ -41,10 +41,10 @@
 
   $arr_org = json_decode($output_org,true);
   if($arr_org['response'][0]['message'] == 'organization'){
-    $string1="<script>window.location.href='search_organization.php?id=".$arr_org['response'][0]['pk']."'</script>";
+    $string1="<script>window.location.href='search_result.php?is_user=0&id=".$arr_org['response'][0]['pk']."'</script>";
     echo $string1;
   }else{
-    $string2="<script>window.location.href='search_user.php?id=".$arr_org['response'][0]['pk']."'</script>";
+    $string2="<script>window.location.href='search_result.php?is_user=1&id=".$arr_org['response'][0]['pk']."'</script>";
     echo $string2;
   }
 }*/
@@ -89,7 +89,7 @@
 
 <?php
 
- $db = pg_connect("host=ec2-107-20-191-76.compute-1.amazonaws.com port=5432 dbname=deu9vahl80fvjn user=vdvqpruzihrics password=17b3e7a56da97ca021e3da54bb1694bb799849a2b5911014ed6caa05e1e4e02d");
+/* $db = pg_connect("host=ec2-107-20-191-76.compute-1.amazonaws.com port=5432 dbname=deu9vahl80fvjn user=vdvqpruzihrics password=17b3e7a56da97ca021e3da54bb1694bb799849a2b5911014ed6caa05e1e4e02d");
  pg_select($db, 'post_log', $_POST);
  
 
@@ -114,7 +114,9 @@ while ($student = pg_fetch_array($query)) {
 
 $textval = json_encode($json);
 $foo = "var peoplenames=" . $textval;
+
 file_put_contents('autocomplete-Files/SearchValues.js', $foo);
+
  
 
 ?>
@@ -141,7 +143,7 @@ file_put_contents('autocomplete-Files/SearchValues.js', $foo);
     <div class="col-sm-1" style="width:10.66667%;">
     </div> 
     <div class="col-sm-2">
-      <a href="new_organization.php">
+      <a href="new.php?is_user=0">
       <button style="background-color:#74b25e;color:white;width:200px;height:60px" class="mdl-button mdl-js-button mdl-button--raised">
       <p style="margin-top:7px;">New Entry<br>Organization</p>
       </button>
@@ -150,7 +152,7 @@ file_put_contents('autocomplete-Files/SearchValues.js', $foo);
     <div class="col-sm-2" style="width:11.66667%;">
     </div>
     <div class="col-sm-2">
-      <a href="new_user.php">
+      <a href="new.php?is_user=1">
       <button style="background-color:#74b25e;color:white;width:200px;height:60px" class="mdl-button mdl-js-button mdl-button--raised">
       <p style="margin-top:7px;">New Entry<br>Individual</p>
       </button>
