@@ -1072,7 +1072,9 @@ file_put_contents('autocomplete-Files/NewEntryValues.js', $foo);
 
 <div style="margin-top:12%">
 <img class="profile-pic" style="margin-left:77%;position:absolute;z-index:2;" src="images/boy-512.png" />
+
 <div class="upload-button" style="position:absolute;z-index:2;margin-left:79%;cursor:pointer;margin-top:14%;">Upload Image</div>
+
 <input name="image" id="image" class="file-upload1" style="position:absolute;z-index:-2;margin-left:46%;margin-top:16%;" type="file">
 <!-- Text input-->
 <div class="form-group">
