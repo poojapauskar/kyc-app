@@ -635,7 +635,11 @@ $arr_search = json_decode($output_search,true);
   $arr_img_download = json_decode($output_img_download,true);
   
 ?>
+<<<<<<< HEAD
 <button style="margin-left:114%;margin-top:-13%" class="btn btn-success">
+=======
+<button style="background-color:#65AC4;margin-left:122%;margin-top:-13%" class="btn btn-success">
+>>>>>>> conflict resolved
 <a target="_blank" style="color:white" href="view_image.php?name=pan_card_details&link=<?php echo $arr_img_download[0]['url']; ?>">View</a>
 </button>
 
@@ -665,7 +669,10 @@ $arr_search = json_decode($output_search,true);
 
 
 <div class="col-md-4">
-<input id="telephone_bill"  value="<?php echo $_POST['telephone_bill'] ?>" style="margin-top: 6px;margin-left: 129px;position:absolute;" name="telephone_bill" class="input-file" type="file" disabled>     
+
+<input id="telephone_bill"  value="<?php echo $_POST['telephone_bill'] ?>" style="margin-top: 5px;margin-left: 126px;" name="telephone_bill" class="input-file" type="file" disabled>     
+ </div>
+
 
 <?php
   $url_img_download_2 = 'https://kyc-application.herokuapp.com/download/';
@@ -684,7 +691,11 @@ $arr_search = json_decode($output_search,true);
   
 ?>
 
+<<<<<<< HEAD
 <button style="margin-left:88%" class="btn btn-success">
+=======
+<button style="background-color:#65AC4C;margin-left:231%;margin-top:-12%" class="btn btn-success">
+>>>>>>> conflict resolved
 <a target="_blank" style="color:white" href="view_image.php?name=telephone_bill_details&link=<?php echo $arr_img_download_2[0]['url']; ?>">View</a>
 </button>
 </div>
@@ -692,8 +703,8 @@ $arr_search = json_decode($output_search,true);
 
 
     <div class="form-group">
- <label class="col-md-4 control-label" for="checkboxes"></label>
- <div class="col-md-1">
+ <label class="col-md-4 control-label" for="checkboxes">
+ <div class="col-md-1"></label>
    <label class="checkbox-inline" for="checkboxes-0">
    <?php if($arr_search['response'][0]['bank_pass_book_details'][0]['name'] != ''){
       $check_box_select2="checked";
