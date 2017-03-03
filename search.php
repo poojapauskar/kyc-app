@@ -110,11 +110,6 @@ file_put_contents('autocomplete-Files/SearchValues.js', $foo);
  
 
 ?>
-
-<script type="text/javascript">
-  $('input[name=search]').change(function() { $( "#target" ).submit(); });
-</script>
-
  <div class="container">
   <div class="row" style="margin-top:33%;"> 
 
@@ -123,7 +118,7 @@ file_put_contents('autocomplete-Files/SearchValues.js', $foo);
 
   <!-- AutoSearch TEXT field -->
     <div class="col-md-12" style="margin-left:11%;">
-    <form id="target" class="form-group" method="post" action="" style="padding-bottom:7%">
+    <form class="form-group" method="post" action="" style="padding-bottom:7%">
     <input id="search" name="search" type="text" placeholder="Search firm,Individual" class="form-control input-md" style="width:55%;margin-top:-8%;height:39px" required onchange="this.form.submit()">
   <input id="is_user_field" name="is_user_field" type="hidden"></input>
   <input id="id_field" name="id_field" type="hidden"></input>
