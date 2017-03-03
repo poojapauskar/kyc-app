@@ -1381,11 +1381,9 @@ file_put_contents('autocomplete-Files/EditEntryValues.js', $foo);
   $arr_img_download_2 = json_decode($output_img_download_2,true);
   
 ?>
-<<<<<<< HEAD
+
 <button style="margin-left:88%" class="btn btn-success">
-=======
-<button style="background-color:#65AC4C;margin-left:88%" class="btn btn-success">
->>>>>>> edit-user alignment in process
+
 <a target="_blank" style="color:white" href="view_image.php?name=telephone_bill_details&link=<?php echo $arr_img_download_2[0]['url']; ?>">View</a>
 </button>
 </div>
@@ -1432,11 +1430,8 @@ file_put_contents('autocomplete-Files/EditEntryValues.js', $foo);
   $arr_img_download_3 = json_decode($output_img_download_3,true);
   
 ?>
-<<<<<<< HEAD
+
 <button style="margin-left:88%" class="btn btn-success">
-=======
-<button style="background-color:#65AC4C;margin-left:88%" class="btn btn-success">
->>>>>>> edit-user alignment in process
 <a target="_blank" style="color:white" href="view_image.php?name=bank_pass_book_details&link=<?php echo $arr_img_download_3[0]['url']; ?>">View</a>
 </button>
 
@@ -1480,11 +1475,8 @@ file_put_contents('autocomplete-Files/EditEntryValues.js', $foo);
     $arr_img_download_4 = json_decode($output_img_download_4,true);
     
   ?>
-<<<<<<< HEAD
+
 <button style="margin-left:88%" class="btn btn-success">
-=======
-<button style="background-color:#65AC4C;margin-left:88%" class="btn btn-success">
->>>>>>> edit-user alignment in process
 <a target="_blank" style="color:white" href="view_image.php?name=voter_id_details&link=<?php echo $arr_img_download_4[0]['url']; ?>">View</a>
 </button>
 
@@ -1530,11 +1522,8 @@ file_put_contents('autocomplete-Files/EditEntryValues.js', $foo);
     $arr_img_download_5 = json_decode($output_img_download_5,true);
     
   ?>
-<<<<<<< HEAD
+
 <button style="margin-left:88%;" class="btn btn-success">
-=======
-<button style="background-color:#65AC4C;margin-left:88%;" class="btn btn-success">
->>>>>>> edit-user alignment in process
 <a target="_blank" style="color:white" href="view_image.php?name=passport_details&link=<?php echo $arr_img_download_5[0]['url']; ?>">View</a>
 </button>
 
