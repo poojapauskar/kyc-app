@@ -1054,9 +1054,9 @@ file_put_contents('autocomplete-Files/EditEntryValues.js', $foo);
 <div class="form-group">
   <label class="col-md-4 control-label" for="textinput">Name:</label>  
 
+
   <div class="col-md-4 col-sm-2 col-2">
   <input id="partner_names[]" value="<?php echo $arr_search['response'][0]['partner_details'][$x]['detail'][0]['name'] ?>" name="partner_names[]" type="text" placeholder="Enter Full Name" class="form-control input-md">
-
   </div>
 
   <div class="col-md-2 col-sm-2 col-2">
