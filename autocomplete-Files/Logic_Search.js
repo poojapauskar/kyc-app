@@ -49,6 +49,7 @@ var peopleArray = $.map(peoplenames, function (value, key) {
 
         document.getElementById("is_user_field").value = value1;
         document.getElementById("id_field").value = value2;
+        document.getElementById('submit').click();
         }
     });
 });
