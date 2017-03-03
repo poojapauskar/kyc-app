@@ -1325,8 +1325,23 @@ $('#trigger').click(function(){
     $(wrapper).on("click",".remove_field", function(e){ //user click on remove text
         e.preventDefault(); $(this).parent('div').remove(); x--;
     })
+
+    // $(wrapper).trigger("search",".form-control input-mdnewentry", function(){
+    //   getScript(".newentry","autocomplete-Files/Logic_NewEntry.js");})
+
+
+
 });
-    </script><script type="text/javascript">
+    </script>
+ <!-- AutoSearch Script files don't move -->
+     <script type="text/javascript" src="autocomplete-Files/jquery-1.8.2.min.js"></script>
+        <script type="text/javascript" src="autocomplete-Files/jquery.mockjax.js"></script>
+        <script type="text/javascript" src="autocomplete-Files/jquery.autocomplete.js"></script>
+        <script type="text/javascript" src="autocomplete-Files/NewEntryValues.js"></script>
+        <script type="text/javascript" src="autocomplete-Files/Logic_NewEntry.js"></script>
+
+
+    <script type="text/javascript">
 
 
      $(document).ready(function() {
