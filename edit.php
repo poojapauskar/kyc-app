@@ -1297,7 +1297,7 @@ file_put_contents('autocomplete-Files/EditEntryValues.js', $foo);
 
 
 <div class="col-md-4">
-<input id="pan_card" name="pan_card" value="<?php echo $_POST['pan_card'] ?>" class="input-file" type="file">
+<input id="pan_card" name="pan_card" style="margin-left:-47%" value="<?php echo $_POST['pan_card'] ?>" class="input-file" type="file">
 </div>
 
 <div class="col-md-4">
@@ -1317,7 +1317,7 @@ file_put_contents('autocomplete-Files/EditEntryValues.js', $foo);
   $arr_img_download = json_decode($output_img_download,true);
   
 ?>
-<button style="background-color:#65AC4C" class="btn btn-success">
+<button style="background-color:#65AC4;margin-left:122%;margin-top:-13%" class="btn btn-success">
 <a target="_blank" style="color:white" href="view_image.php?name=pan_card_details&link=<?php echo $arr_img_download[0]['url']; ?>">View</a>
 </button>
 
@@ -1524,7 +1524,7 @@ file_put_contents('autocomplete-Files/EditEntryValues.js', $foo);
   </div>
 
   <div class="col-md-4">
-    <input id="aadhar_card" name="aadhar_card" value="<?php echo $_POST['aadhar_card'] ?>" class="input-file" type="file">
+    <input id="aadhar_card" name="aadhar_card"  style="margin-left:-47%" value="<?php echo $_POST['aadhar_card'] ?>" class="input-file" type="file">
   </div>
   
   <div class="col-md-4">
@@ -1544,7 +1544,7 @@ file_put_contents('autocomplete-Files/EditEntryValues.js', $foo);
     $arr_img_download_6 = json_decode($output_img_download_6,true);
     
   ?>
-<button style="background-color:#65AC4C" class="btn btn-success">
+<button style="margin-left:117%;position:absoulte;margin-top:-12%" class="btn btn-success">
 <a target="_blank" style="color:white" href="view_image.php?name=aadhar_card_details&link=<?php echo $arr_img_download_6[0]['url']; ?>">View</a>
 </button>
 

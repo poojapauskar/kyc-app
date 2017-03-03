@@ -539,7 +539,7 @@ $arr_search = json_decode($output_search,true);
 <div class="upload-button" style="position:absolute;z-index:2;margin-left:79%;cursor:pointer;margin-top:40%;"><button disabled>Upload Image</button></div>
 
 
-<input name="image" id="image" class="file-upload1" style="position:absolute;z-index:-2;margin-left:46%;margin-top:16%;" type="file">
+<input name="image" id="image" class="file-upload1" style="position:absolute;z-index:-2;margin-left:44%;margin-top:16%;" type="file">
 <!-- Text input-->
 <div class="form-group">
   <label class="col-md-4 control-label" for="textinput">UID:</label>  
@@ -635,7 +635,7 @@ $arr_search = json_decode($output_search,true);
   $arr_img_download = json_decode($output_img_download,true);
   
 ?>
-<button style="background-color:#65AC4;margin-left:122%;margin-top:-13%" class="btn btn-success">
+<button style="margin-left:114%;margin-top:-13%" class="btn btn-success">
 <a target="_blank" style="color:white" href="view_image.php?name=pan_card_details&link=<?php echo $arr_img_download[0]['url']; ?>">View</a>
 </button>
 
@@ -665,10 +665,8 @@ $arr_search = json_decode($output_search,true);
 
 
 <div class="col-md-4">
-<input id="telephone_bill"  value="<?php echo $_POST['telephone_bill'] ?>" style="margin-top: 5px;margin-left: 126px;" name="telephone_bill" class="input-file" type="file" disabled>     
- </div>
+<input id="telephone_bill"  value="<?php echo $_POST['telephone_bill'] ?>" style="margin-top: 6px;margin-left: 129px;position:absolute;" name="telephone_bill" class="input-file" type="file" disabled>     
 
-<div class="col-md-4">
 <?php
   $url_img_download_2 = 'https://kyc-application.herokuapp.com/download/';
   $options_img_download_2 = array(
@@ -686,16 +684,16 @@ $arr_search = json_decode($output_search,true);
   
 ?>
 
-<button style="background-color:#65AC4C;margin-left:231%;margin-top:-12%" class="btn btn-success">
+<button style="margin-left:88%" class="btn btn-success">
 <a target="_blank" style="color:white" href="view_image.php?name=telephone_bill_details&link=<?php echo $arr_img_download_2[0]['url']; ?>">View</a>
 </button>
-
+</div>
 </div>
 
 
     <div class="form-group">
- <label class="col-md-4 control-label" for="checkboxes">
- <div class="col-md-1"></label>
+ <label class="col-md-4 control-label" for="checkboxes"></label>
+ <div class="col-md-1">
    <label class="checkbox-inline" for="checkboxes-0">
    <?php if($arr_search['response'][0]['bank_pass_book_details'][0]['name'] != ''){
       $check_box_select2="checked";
@@ -711,7 +709,7 @@ $arr_search = json_decode($output_search,true);
 </div>
 
 <div class="col-md-4">
-<input id="bank_pass_book"  value="<?php echo $_POST['bank_pass_book'] ?>" style="margin-top: -22px;margin-left: 129px;" name="bank_pass_book" class="input-file" type="file" disabled>     
+<input id="bank_pass_book"  value="<?php echo $_POST['bank_pass_book'] ?>" style="margin-top: 6px;margin-left: 129px;position:absolute;" name="bank_pass_book" class="input-file" type="file" disabled>     
  </div>
 
 <div class="col-md-4">
@@ -732,7 +730,7 @@ $arr_search = json_decode($output_search,true);
   
 ?>
 
-<button style="background-color:#65AC4C" class="btn btn-success">
+<button style="margin-left:88%" class="btn btn-success">
 <a target="_blank" style="color:white" href="view_image.php?name=bank_pass_book_details&link=<?php echo $arr_img_download_3[0]['url']; ?>">View</a>
 </button>
 
@@ -762,7 +760,7 @@ $arr_search = json_decode($output_search,true);
     </div>
 
   <div class="col-sm-4">
-  <input id="voter_id" value="<?php echo $_POST['voter_id'] ?>" style="margin-top: -20px;margin-left: 129px;" name="voter_id" class="input-file" type="file" disabled>     
+  <input id="voter_id" value="<?php echo $_POST['voter_id'] ?>" style="margin-top: 6px;margin-left: 129px;position:absolute;" name="voter_id" class="input-file" type="file" disabled>     
    </div>
 
    <div class="col-md-4">
@@ -784,7 +782,7 @@ $arr_search = json_decode($output_search,true);
   ?>
 
 
-<button style="background-color:#65AC4C" class="btn btn-success">
+<button style="margin-left:88%" class="btn btn-success">
 <a target="_blank" style="color:white" href="view_image.php?name=voter_id_details&link=<?php echo $arr_img_download_4[0]['url']; ?>">View</a>
 </button>
 
@@ -811,7 +809,7 @@ $arr_search = json_decode($output_search,true);
   </div>
 
   <div class="col-sm-4">
-  <input id="passport" value="<?php echo $_POST['passport'] ?>" style="margin-top: -22px;margin-left: 129px;" name="passport" class="input-file" type="file" disabled>     
+  <input id="passport" value="<?php echo $_POST['passport'] ?>" style="margin-top: 6px;margin-left: 129px;position:absolute;" name="passport" class="input-file" type="file" disabled>     
    </div>
 
   <div class="col-md-4">
@@ -833,7 +831,7 @@ $arr_search = json_decode($output_search,true);
   ?>
 
 
-<button style="background-color:#65AC4C" class="btn btn-success">
+<button style="margin-left:88%" class="btn btn-success">
 <a target="_blank" style="color:white" href="view_image.php?name=passport_details&link=<?php echo $arr_img_download_5[0]['url']; ?>">View</a>
 </button>
 
@@ -858,7 +856,7 @@ $arr_search = json_decode($output_search,true);
   </div>
 
   <div class="col-md-4">
-    <input id="aadhar_card" name="aadhar_card" value="<?php echo $_POST['aadhar_card'] ?>" class="input-file" type="file" disabled>
+    <input id="aadhar_card" style="margin-left:-47%" name="aadhar_card" value="<?php echo $_POST['aadhar_card'] ?>" class="input-file" type="file" disabled>
   </div>
   
   <div class="col-md-4">
@@ -880,7 +878,7 @@ $arr_search = json_decode($output_search,true);
   ?>
 
 
-<button style="background-color:#65AC4C" class="btn btn-success">
+<button style="margin-left:117%;position:absoulte;margin-top:-12%" class="btn btn-success">
 <a target="_blank" style="color:white" href="view_image.php?name=aadhar_card_details&link=<?php echo $arr_img_download_6[0]['url']; ?>">View</a>
 </button>
 
