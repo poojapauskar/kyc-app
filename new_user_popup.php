@@ -92,7 +92,7 @@ if(a==null || a==''){
         for( var i=0; i < 7; i++ )
             text += possible.charAt(Math.floor(Math.random() * possible.length));
 
-        var mystring= (document.getElementById('name').value).substring(0, 3);
+        var mystring= (document.getElementById('name1').value).substring(0, 3);
         var uid_gen=mystring+text;
         document.getElementById('uid').value = uid_gen;
         document.getElementById('uid_in_popup').value = uid_gen;
@@ -426,7 +426,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
     'http' => array(
       'header'  => array(
                           'UID: '.$_POST['uid'],
-                          'NAME: '.$_POST['name'],
+                          'NAME: '.$_POST['name1'],
                           'DOB: '.$_POST['date1'],
                           'PROFFESION: '.$_POST['profession'],
                           'PAN: '.$_POST['pan'],
