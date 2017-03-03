@@ -147,10 +147,8 @@ $arr_search = json_decode($output_search,true);
 </div> 
 
 
-
 <div class="col-md-30" style="margin-top:-29%;position:static">
 <form class="form-horizontal" method="post" action="edit_organization.php" >
-
 
 
 <fieldset>
