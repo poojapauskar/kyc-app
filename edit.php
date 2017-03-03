@@ -1343,14 +1343,9 @@ file_put_contents('autocomplete-Files/EditEntryValues.js', $foo);
 
 <div class="col-md-4">
 <?php echo $arr_search['response'][0]['telephone_bill_details'][0]['name']; ?>
-</div>
 
+<input id="telephone_bill"  value="<?php echo $_POST['telephone_bill'] ?>" style="margin-top: 3px;margin-left: 129px;position:absolute;" name="telephone_bill" class="input-file" type="file">     
 
-<div class="col-md-4">
-<input id="telephone_bill"  value="<?php echo $_POST['telephone_bill'] ?>" style="margin-top: -20px;margin-left: 129px;" name="telephone_bill" class="input-file" type="file">     
- </div>
-
-<div class="col-md-4">
 <?php
   $url_img_download_2 = 'https://kyc-application.herokuapp.com/download/';
   $options_img_download_2 = array(
@@ -1367,11 +1362,13 @@ file_put_contents('autocomplete-Files/EditEntryValues.js', $foo);
   $arr_img_download_2 = json_decode($output_img_download_2,true);
   
 ?>
-<button style="background-color:#65AC4C" class="btn btn-success">
+<button style="background-color:#65AC4C;margin-left:88%" class="btn btn-success">
 <a target="_blank" style="color:white" href="view_image.php?name=telephone_bill_details&link=<?php echo $arr_img_download_2[0]['url']; ?>">View</a>
 </button>
+</div>
 
 </div>
+
 
 
     <div class="form-group">
@@ -1392,7 +1389,7 @@ file_put_contents('autocomplete-Files/EditEntryValues.js', $foo);
 </div>
 
 <div class="col-md-4">
-<input id="bank_pass_book"  value="<?php echo $_POST['bank_pass_book'] ?>" style="margin-top: -22px;margin-left: 129px;" name="bank_pass_book" class="input-file" type="file">     
+<input id="bank_pass_book"  value="<?php echo $_POST['bank_pass_book'] ?>" style="margin-top: 6px;margin-left: 129px;position:absolute;" name="bank_pass_book" class="input-file" type="file">     
  </div>
 
 <div class="col-md-4">
@@ -1412,7 +1409,7 @@ file_put_contents('autocomplete-Files/EditEntryValues.js', $foo);
   $arr_img_download_3 = json_decode($output_img_download_3,true);
   
 ?>
-<button style="background-color:#65AC4C" class="btn btn-success">
+<button style="background-color:#65AC4C;margin-left:88%" class="btn btn-success">
 <a target="_blank" style="color:white" href="view_image.php?name=bank_pass_book_details&link=<?php echo $arr_img_download_3[0]['url']; ?>">View</a>
 </button>
 
@@ -1439,13 +1436,7 @@ file_put_contents('autocomplete-Files/EditEntryValues.js', $foo);
 
     <div class="col-md-4">
     <?php echo $arr_search['response'][0]['voter_id_details'][0]['name']; ?>
-    </div>
-
-  <div class="col-sm-4">
-  <input id="voter_id" value="<?php echo $_POST['voter_id'] ?>" style="margin-top: -20px;margin-left: 129px;" name="voter_id" class="input-file" type="file">     
-   </div>
-
-   <div class="col-md-4">
+  <input id="voter_id" value="<?php echo $_POST['voter_id'] ?>" style="margin-top:6px;margin-left: 129px;position: absolute;" name="voter_id" class="input-file" type="file">     
   <?php
     $url_img_download_4 = 'https://kyc-application.herokuapp.com/download/';
     $options_img_download_4= array(
@@ -1462,7 +1453,7 @@ file_put_contents('autocomplete-Files/EditEntryValues.js', $foo);
     $arr_img_download_4 = json_decode($output_img_download_4,true);
     
   ?>
-<button style="background-color:#65AC4C" class="btn btn-success">
+<button style="background-color:#65AC4C;margin-left:88%" class="btn btn-success">
 <a target="_blank" style="color:white" href="view_image.php?name=voter_id_details&link=<?php echo $arr_img_download_4[0]['url']; ?>">View</a>
 </button>
 
@@ -1488,7 +1479,7 @@ file_put_contents('autocomplete-Files/EditEntryValues.js', $foo);
   </div>
 
   <div class="col-sm-4">
-  <input id="passport" value="<?php echo $_POST['passport'] ?>" style="margin-top: -22px;margin-left: 129px;" name="passport" class="input-file" type="file">     
+  <input id="passport" value="<?php echo $_POST['passport'] ?>" style="margin-top:6px;margin-left: 129px;position:absolute" name="passport" class="input-file" type="file">     
    </div>
 
   <div class="col-md-4">
@@ -1508,7 +1499,7 @@ file_put_contents('autocomplete-Files/EditEntryValues.js', $foo);
     $arr_img_download_5 = json_decode($output_img_download_5,true);
     
   ?>
-<button style="background-color:#65AC4C" class="btn btn-success">
+<button style="background-color:#65AC4C;margin-left:88%;" class="btn btn-success">
 <a target="_blank" style="color:white" href="view_image.php?name=passport_details&link=<?php echo $arr_img_download_5[0]['url']; ?>">View</a>
 </button>
 
