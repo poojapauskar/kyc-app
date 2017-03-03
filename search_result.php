@@ -559,7 +559,7 @@ $arr_search = json_decode($output_search,true);
 </div>
 <!--date-->
 <div class="form-group">
-  <label for="textinput" class="col-md-4 control-label">Date:</label>
+  <label for="textinput" class="col-md-4 control-label">Dob:</label>
   <div class="col-md-4">
     <input style="wisth:100% !important" class="form-control input-md" id="date" name="date" value="<?php echo $arr_search['response'][0]['user_details']['dob'] ?>" style="width:31%;margin-left:34.6%;margin-top:-2%;" type="text" readonly>
   </div>
@@ -690,7 +690,7 @@ $arr_search = json_decode($output_search,true);
 ?>
 
 
-<button style="margin-left:88%" class="btn btn-success">
+<button style="margin-left:70%;margin-top:-6%" class="btn btn-success">
 <a target="_blank" style="color:white" href="view_image.php?name=telephone_bill_details&link=<?php echo $arr_img_download_2[0]['url']; ?>">View</a>
 </button>
 </div>
@@ -698,8 +698,8 @@ $arr_search = json_decode($output_search,true);
 
 
     <div class="form-group">
- <label class="col-md-4 control-label" for="checkboxes">
- <div class="col-md-1"></label>
+ <label class="col-md-4 control-label" for="checkboxes"></label>
+ <div class="col-md-1">
    <label class="checkbox-inline" for="checkboxes-0">
    <?php if($arr_search['response'][0]['bank_pass_book_details'][0]['name'] != ''){
       $check_box_select2="checked";

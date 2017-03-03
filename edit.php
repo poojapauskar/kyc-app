@@ -989,7 +989,7 @@ file_put_contents('autocomplete-Files/EditEntryValues.js', $foo);
 </div>
 
 <br>
-<button style="margin-left:75%;margin-top:-6%;" class="btn btn-success">
+<button style="margin-left:73%;margin-top:-6%;" class="btn btn-success">
 <a target="_blank" style="color:white" href="view_image.php?name=telephone_bill_details&link=<?php echo $arr_img_download_3[0]['url']; ?>">View</a>
 </button>
 </div> 
@@ -1260,7 +1260,7 @@ file_put_contents('autocomplete-Files/EditEntryValues.js', $foo);
 
 <!--date-->
 <div class="form-group row">
-  <label for="example-date-input" class="col-2 col-form-label" style="margin-left:29.5%;">Date:</label>
+  <label for="example-date-input" class="col-2 col-form-label" style="margin-left:29.5%;">DOB:</label>
   <div class="col-10">
     <input class="form-control" id="date" name="date" value="<?php echo $arr_search['response'][0]['user_details']['date'] ?>" style="width:31%;margin-left:34.6%;margin-top:-2%;" type="date" value="" id="example-date-input">
   </div>
