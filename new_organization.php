@@ -21,7 +21,7 @@
     <!-- <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"> -->
 
      <script src="https://storage.googleapis.com/code.getmdl.io/1.0.6/material.min.js"></script>
-   <link rel="stylesheet" href="https://storage.googleapis.com/code.getmdl.io/1.0.6/material.indigo-pink.min.css">
+  <!--  <link rel="stylesheet" href="https://storage.googleapis.com/code.getmdl.io/1.0.6/material.indigo-pink.min.css"> -->
    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"> 
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
   <style type="text/css">
