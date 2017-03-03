@@ -1053,8 +1053,10 @@ file_put_contents('autocomplete-Files/EditEntryValues.js', $foo);
 <!-- Text input-->
 <div class="form-group">
   <label class="col-md-4 control-label" for="textinput">Name:</label>  
-  <div class="col-md-2 col-sm-2 col-2">
-  <input style="width:170px" id="partner_names[]" value="<?php echo $arr_search['response'][0]['partner_details'][$x]['detail'][0]['name'] ?>" name="partner_names[]" type="text" placeholder="Enter Full Name" class="form-control input-md editentry">
+
+  <div class="col-md-4 col-sm-2 col-2">
+  <input id="partner_names[]" value="<?php echo $arr_search['response'][0]['partner_details'][$x]['detail'][0]['name'] ?>" name="partner_names[]" type="text" placeholder="Enter Full Name" class="form-control input-md">
+
   </div>
 
   <div class="col-md-2 col-sm-2 col-2">
@@ -1135,7 +1137,7 @@ file_put_contents('autocomplete-Files/EditEntryValues.js', $foo);
 </div>
 <!--date-->
 <div class="form-group row">
-  <label for="example-date-input" class="col-2 col-form-label" style="margin-left:29.5%;">Date:</label>
+  <label for="example-date-input" class="col-2 col-form-label" style="margin-left:29.5%;">DATE:</label>
   <div class="col-10">
     <input class="form-control" id="date[]" name="date[]" value="<?php echo $arr_search['response'][0]['add_info'][$q]['date']; ?>" style="width:31%;margin-left:34.6%;margin-top:-2%;" type="text">
   </div>
@@ -1588,7 +1590,7 @@ file_put_contents('autocomplete-Files/EditEntryValues.js', $foo);
 </div>
 <!--date-->
 <div class="form-group row">
-  <label for="example-date-input" class="col-2 col-form-label" style="margin-left:29.5%;">Date:</label>
+  <label for="example-date-input" class="col-2 col-form-label" style="margin-left:29.5%;">D:</label>
   <div class="col-10">
     <input class="form-control" id="date[]" name="date[]" value="<?php echo $arr_search['response'][0]['add_info'][$q]['date']; ?>" style="width:31%;margin-left:34.6%;margin-top:-2%;" type="text">
   </div>
