@@ -92,7 +92,7 @@ if(a==null || a==''){
         for( var i=0; i < 7; i++ )
             text += possible.charAt(Math.floor(Math.random() * possible.length));
 
-        var mystring= (document.getElementById('name').value).substring(0, 3);
+        var mystring= (document.getElementById('name1').value).substring(0, 3);
         var uid_gen=mystring+text;
         document.getElementById('uid').value = uid_gen;
         document.getElementById('uid_in_popup').value = uid_gen;
@@ -426,8 +426,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
     'http' => array(
       'header'  => array(
                           'UID: '.$_POST['uid'],
-                          'NAME: '.$_POST['name'],
-                          'DOB: '.$_POST['date'],
+                          'NAME: '.$_POST['name1'],
+                          'DOB: '.$_POST['date1'],
                           'PROFFESION: '.$_POST['profession'],
                           'PAN: '.$_POST['pan'],
                           'PAN-CARD: '.$pan_card_id,
@@ -450,7 +450,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
   $context_org = stream_context_create($options_org);
   $output_org = file_get_contents($url_org, false,$context_org);
   $arr_org = json_decode($output_org,true);
-
 
 
 /*update list */
@@ -476,6 +475,7 @@ echo '  <script type="text/javascript" src="autocomplete-Files/jquery-1.8.2.min.
         <script type="text/javascript" src="autocomplete-Files/jquery.autocomplete.js"></script>
         <script type="text/javascript" src="autocomplete-Files/NewEntryValues.js"></script>
         <script type="text/javascript" src="autocomplete-Files/Logic_NewEntry.js"></script>';
+
 
 
 
@@ -538,15 +538,17 @@ echo '  <script type="text/javascript" src="autocomplete-Files/jquery-1.8.2.min.
 <div class="form-group">
   <label class="col-md-4 control-label" for="textinput">Name:</label>  
   <div class="col-md-4">
-  <input id="name" name="name" value="<?php echo $_POST['name'] ?>" type="text" placeholder="" class="form-control input-md">
+  <input id="name1" name="name1" value="<?php echo $_POST['name'] ?>" type="text" placeholder="" class="form-control input-md">
     
   </div>
 </div>
 <!--date-->
 <div class="form-group row">
+
   <label for="example-date-input" class="col-2 col-form-label" style="margin-left:24.5%;">DATE:</label>
   <div class="col-4">
     <input class="form-control" id="date" name="date" value="<?php echo $_POST['date'] ?>" style="width:28.9%;margin-left:35.6%;margin-top:-4%;" type="text">
+
   </div>
 </div>
 

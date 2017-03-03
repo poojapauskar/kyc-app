@@ -720,7 +720,7 @@ if ($_POST['uid'] != '' and $_GET["is_user"]==1){
       'header'  => array(
                           'UID: '.$_POST['uid'],
                           'NAME: '.$_POST['name'],
-                          'DOB: '.$_POST['date'],
+                          'DOB: '.$_POST['date1'],
                           'PROFFESION: '.$_POST['profession'],
                           'PAN: '.$_POST['pan'],
                           'PAN-CARD: '.$pan_card_id,
@@ -1097,7 +1097,7 @@ file_put_contents('autocomplete-Files/NewEntryValues.js', $foo);
 <div class="form-group row">
   <label for="example-date-input" class="col-2 col-form-label" style="margin-left:29.5%;">DOB:</label>
   <div class="col-10">
-    <input class="form-control" id="date" name="date" value="<?php echo $_POST['date'] ?>" style="width:31%;margin-left:34.6%;margin-top:-2%;" type="text">
+    <input class="form-control" id="date1" name="date1" value="<?php echo $_POST['date'] ?>" style="width:31%;margin-left:34.6%;margin-top:-2%;" type="text">
   </div>
 </div>
 
