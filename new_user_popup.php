@@ -468,6 +468,7 @@ while ($student = pg_fetch_array($query)) {
 $textval = json_encode($json);
 $foo = "var partnames=" . $textval;
 file_put_contents('autocomplete-Files/NewEntryValues.js', $foo);
+file_put_contents('autocomplete-Files/EditEntryValues.js', $foo);
 
 
 echo '  <script type="text/javascript" src="autocomplete-Files/jquery-1.8.2.min.js"></script>
