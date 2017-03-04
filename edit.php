@@ -722,6 +722,26 @@ if(isset($_POST["edit_btn"]) and $_GET["is_user"]==1) {
 
   }
 }
+
+
+
+
+
+$db = pg_connect("host=ec2-107-20-191-76.compute-1.amazonaws.com port=5432 dbname=deu9vahl80fvjn user=vdvqpruzihrics password=17b3e7a56da97ca021e3da54bb1694bb799849a2b5911014ed6caa05e1e4e02d");
+ pg_select($db, 'post_log', $_POST);
+ 
+
+ $query=pg_query("SELECT id,name FROM users_users");
+
+ $json=array();
+
+while ($student = pg_fetch_array($query)) {
+    $json[$student["id"]] = $student["name"];
+}
+
+$textval = json_encode($json);
+$foo = "var partnames=" . $textval;
+file_put_contents('autocomplete-Files/EditEntryValues.js', $foo);
 ?>
 
 <div class="demo-layout-transparent mdl-layout mdl-js-layout">
@@ -841,7 +861,7 @@ if(isset($_POST["edit_btn"]) and $_GET["is_user"]==1) {
   $arr_img_download = json_decode($output_img_download,true);
   
 ?>
-<?php
+<!-- <?php
 
  $db = pg_connect("host=ec2-107-20-191-76.compute-1.amazonaws.com port=5432 dbname=deu9vahl80fvjn user=vdvqpruzihrics password=17b3e7a56da97ca021e3da54bb1694bb799849a2b5911014ed6caa05e1e4e02d");
  pg_select($db, 'post_log', $_POST);
@@ -860,7 +880,7 @@ $foo = "var partnames=" . $textval;
 file_put_contents('autocomplete-Files/EditEntryValues.js', $foo);
  
 
-?>
+?> -->
 
 </div>
 
@@ -969,7 +989,7 @@ file_put_contents('autocomplete-Files/EditEntryValues.js', $foo);
 </div>
 
 <br>
-<button style="margin-left:75%;margin-top:-6%;" class="btn btn-success">
+<button style="margin-left:73%;margin-top:-6%;" class="btn btn-success">
 <a target="_blank" style="color:white" href="view_image.php?name=telephone_bill_details&link=<?php echo $arr_img_download_3[0]['url']; ?>">View</a>
 </button>
 </div> 
@@ -1053,8 +1073,9 @@ file_put_contents('autocomplete-Files/EditEntryValues.js', $foo);
 <!-- Text input-->
 <div class="form-group">
   <label class="col-md-4 control-label" for="textinput">Name:</label>  
-  <div class="col-md-2 col-sm-2 col-2">
-  <input style="width:170px" id="partner_names[]" value="<?php echo $arr_search['response'][0]['partner_details'][$x]['detail'][0]['name'] ?>" name="partner_names[]" type="text" placeholder="Enter Full Name" class="form-control input-md editentry">
+
+  <div class="col-md-4 col-sm-2 col-2">
+  <input id="partner_names[]" value="<?php echo $arr_search['response'][0]['partner_details'][$x]['detail'][0]['name'] ?>" name="partner_names[]" type="text" placeholder="Enter Full Name" class="form-control input-md">
   </div>
 
   <div class="col-md-2 col-sm-2 col-2">
@@ -1135,7 +1156,7 @@ file_put_contents('autocomplete-Files/EditEntryValues.js', $foo);
 </div>
 <!--date-->
 <div class="form-group row">
-  <label for="example-date-input" class="col-2 col-form-label" style="margin-left:29.5%;">Date:</label>
+  <label for="example-date-input" class="col-2 col-form-label" style="margin-left:29.5%;">DATE:</label>
   <div class="col-10">
     <input class="form-control" id="date[]" name="date[]" value="<?php echo $arr_search['response'][0]['add_info'][$q]['date']; ?>" style="width:31%;margin-left:34.6%;margin-top:-2%;" type="text">
   </div>
@@ -1239,7 +1260,7 @@ file_put_contents('autocomplete-Files/EditEntryValues.js', $foo);
 
 <!--date-->
 <div class="form-group row">
-  <label for="example-date-input" class="col-2 col-form-label" style="margin-left:29.5%;">Date:</label>
+  <label for="example-date-input" class="col-2 col-form-label" style="margin-left:29.5%;">DOB:</label>
   <div class="col-10">
     <input class="form-control" id="date" name="date" value="<?php echo $arr_search['response'][0]['user_details']['date'] ?>" style="width:31%;margin-left:34.6%;margin-top:-2%;" type="date" value="" id="example-date-input">
   </div>
@@ -1295,7 +1316,7 @@ file_put_contents('autocomplete-Files/EditEntryValues.js', $foo);
 
 
 <div class="col-md-4">
-<input id="pan_card" name="pan_card" value="<?php echo $_POST['pan_card'] ?>" class="input-file" type="file">
+<input id="pan_card" name="pan_card" style="margin-left:-47%" value="<?php echo $_POST['pan_card'] ?>" class="input-file" type="file">
 </div>
 
 <div class="col-md-4">
@@ -1315,7 +1336,7 @@ file_put_contents('autocomplete-Files/EditEntryValues.js', $foo);
   $arr_img_download = json_decode($output_img_download,true);
   
 ?>
-<button style="background-color:#65AC4C" class="btn btn-success">
+<button style="background-color:#65AC4;margin-left:115%;margin-top:-13%" class="btn btn-success">
 <a target="_blank" style="color:white" href="view_image.php?name=pan_card_details&link=<?php echo $arr_img_download[0]['url']; ?>">View</a>
 </button>
 
@@ -1341,14 +1362,9 @@ file_put_contents('autocomplete-Files/EditEntryValues.js', $foo);
 
 <div class="col-md-4">
 <?php echo $arr_search['response'][0]['telephone_bill_details'][0]['name']; ?>
-</div>
 
+<input id="telephone_bill"  value="<?php echo $_POST['telephone_bill'] ?>" style="margin-top: 3px;margin-left: 129px;position:absolute;" name="telephone_bill" class="input-file" type="file">     
 
-<div class="col-md-4">
-<input id="telephone_bill"  value="<?php echo $_POST['telephone_bill'] ?>" style="margin-top: -20px;margin-left: 129px;" name="telephone_bill" class="input-file" type="file">     
- </div>
-
-<div class="col-md-4">
 <?php
   $url_img_download_2 = 'https://kyc-application.herokuapp.com/download/';
   $options_img_download_2 = array(
@@ -1365,11 +1381,15 @@ file_put_contents('autocomplete-Files/EditEntryValues.js', $foo);
   $arr_img_download_2 = json_decode($output_img_download_2,true);
   
 ?>
-<button style="background-color:#65AC4C" class="btn btn-success">
+
+<button style="margin-left:88%" class="btn btn-success">
+
 <a target="_blank" style="color:white" href="view_image.php?name=telephone_bill_details&link=<?php echo $arr_img_download_2[0]['url']; ?>">View</a>
 </button>
+</div>
 
 </div>
+
 
 
     <div class="form-group">
@@ -1390,7 +1410,7 @@ file_put_contents('autocomplete-Files/EditEntryValues.js', $foo);
 </div>
 
 <div class="col-md-4">
-<input id="bank_pass_book"  value="<?php echo $_POST['bank_pass_book'] ?>" style="margin-top: -22px;margin-left: 129px;" name="bank_pass_book" class="input-file" type="file">     
+<input id="bank_pass_book"  value="<?php echo $_POST['bank_pass_book'] ?>" style="margin-top: 6px;margin-left: 129px;position:absolute;" name="bank_pass_book" class="input-file" type="file">     
  </div>
 
 <div class="col-md-4">
@@ -1410,7 +1430,8 @@ file_put_contents('autocomplete-Files/EditEntryValues.js', $foo);
   $arr_img_download_3 = json_decode($output_img_download_3,true);
   
 ?>
-<button style="background-color:#65AC4C" class="btn btn-success">
+
+<button style="margin-left:88%" class="btn btn-success">
 <a target="_blank" style="color:white" href="view_image.php?name=bank_pass_book_details&link=<?php echo $arr_img_download_3[0]['url']; ?>">View</a>
 </button>
 
@@ -1437,13 +1458,7 @@ file_put_contents('autocomplete-Files/EditEntryValues.js', $foo);
 
     <div class="col-md-4">
     <?php echo $arr_search['response'][0]['voter_id_details'][0]['name']; ?>
-    </div>
-
-  <div class="col-sm-4">
-  <input id="voter_id" value="<?php echo $_POST['voter_id'] ?>" style="margin-top: -20px;margin-left: 129px;" name="voter_id" class="input-file" type="file">     
-   </div>
-
-   <div class="col-md-4">
+  <input id="voter_id" value="<?php echo $_POST['voter_id'] ?>" style="margin-top:6px;margin-left: 129px;position: absolute;" name="voter_id" class="input-file" type="file">     
   <?php
     $url_img_download_4 = 'https://kyc-application.herokuapp.com/download/';
     $options_img_download_4= array(
@@ -1460,7 +1475,8 @@ file_put_contents('autocomplete-Files/EditEntryValues.js', $foo);
     $arr_img_download_4 = json_decode($output_img_download_4,true);
     
   ?>
-<button style="background-color:#65AC4C" class="btn btn-success">
+
+<button style="margin-left:88%" class="btn btn-success">
 <a target="_blank" style="color:white" href="view_image.php?name=voter_id_details&link=<?php echo $arr_img_download_4[0]['url']; ?>">View</a>
 </button>
 
@@ -1486,7 +1502,7 @@ file_put_contents('autocomplete-Files/EditEntryValues.js', $foo);
   </div>
 
   <div class="col-sm-4">
-  <input id="passport" value="<?php echo $_POST['passport'] ?>" style="margin-top: -22px;margin-left: 129px;" name="passport" class="input-file" type="file">     
+  <input id="passport" value="<?php echo $_POST['passport'] ?>" style="margin-top:6px;margin-left: 129px;position:absolute" name="passport" class="input-file" type="file">     
    </div>
 
   <div class="col-md-4">
@@ -1506,7 +1522,8 @@ file_put_contents('autocomplete-Files/EditEntryValues.js', $foo);
     $arr_img_download_5 = json_decode($output_img_download_5,true);
     
   ?>
-<button style="background-color:#65AC4C" class="btn btn-success">
+
+<button style="margin-left:88%;" class="btn btn-success">
 <a target="_blank" style="color:white" href="view_image.php?name=passport_details&link=<?php echo $arr_img_download_5[0]['url']; ?>">View</a>
 </button>
 
@@ -1531,7 +1548,7 @@ file_put_contents('autocomplete-Files/EditEntryValues.js', $foo);
   </div>
 
   <div class="col-md-4">
-    <input id="aadhar_card" name="aadhar_card" value="<?php echo $_POST['aadhar_card'] ?>" class="input-file" type="file">
+    <input id="aadhar_card" name="aadhar_card"  style="margin-left:-47%" value="<?php echo $_POST['aadhar_card'] ?>" class="input-file" type="file">
   </div>
   
   <div class="col-md-4">
@@ -1551,7 +1568,7 @@ file_put_contents('autocomplete-Files/EditEntryValues.js', $foo);
     $arr_img_download_6 = json_decode($output_img_download_6,true);
     
   ?>
-<button style="background-color:#65AC4C" class="btn btn-success">
+<button style="margin-left:117%;position:absoulte;margin-top:-12%" class="btn btn-success">
 <a target="_blank" style="color:white" href="view_image.php?name=aadhar_card_details&link=<?php echo $arr_img_download_6[0]['url']; ?>">View</a>
 </button>
 
@@ -1588,7 +1605,7 @@ file_put_contents('autocomplete-Files/EditEntryValues.js', $foo);
 </div>
 <!--date-->
 <div class="form-group row">
-  <label for="example-date-input" class="col-2 col-form-label" style="margin-left:29.5%;">Date:</label>
+  <label for="example-date-input" class="col-2 col-form-label" style="margin-left:29.5%;">D:</label>
   <div class="col-10">
     <input class="form-control" id="date[]" name="date[]" value="<?php echo $arr_search['response'][0]['add_info'][$q]['date']; ?>" style="width:31%;margin-left:34.6%;margin-top:-2%;" type="text">
   </div>

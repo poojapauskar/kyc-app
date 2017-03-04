@@ -112,7 +112,7 @@ $arr_search = json_decode($output_search,true);
           <a class="mdl-navigation__link" href="">Contact</a>
         </nav>
       </div>
-      <div class="alert" style="margin-top:1%">
+  <div class="alert" style="margin-top:0%">
   <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
   <strong>
 
@@ -126,8 +126,6 @@ $arr_search = json_decode($output_search,true);
 </div>
 </div>
   
-
-
 <div class="container">
 
 <div class="mdl-grid" style="margin-left:80%;margin-top:18%">
@@ -149,7 +147,7 @@ $arr_search = json_decode($output_search,true);
 </div> 
 
 
-<form class="form-horizontal" method="post" action="edit_organization.php" enctype="multipart/form-data" style="margin-top:-34%">
+<form class="form-horizontal" method="post" action="edit_organization.php" enctype="multipart/form-data" style="margin-top:-40%">
 
 <fieldset>
  <input type="hidden" value="<?php echo $arr_search['response'][0]['organization_details']['pk'] ?>" name="org_id" id="org_id"></input>
@@ -239,7 +237,7 @@ $arr_search = json_decode($output_search,true);
 <div class="form-group" style="margin-top:-3%">
   <label class="col-md-4 control-label" for="textinput" style="margin-left:-67%">PAN: </label>  
   <div class="col-md-4">
-  <input id="pan" name="pan" style="margin-left:-107%" pattern="-?[a-zA-Z]{5}[0-9]{4}[a-zA-Z]{1}?" value="<?php echo $arr_search['response'][0]['organization_details']['pan'] ?>" type="text" placeholder="PAN Card Number" class="form-control input-md" readonly/>
+  <input id="pan" name="pan" style="margin-left:-108%" pattern="-?[a-zA-Z]{5}[0-9]{4}[a-zA-Z]{1}?" value="<?php echo $arr_search['response'][0]['organization_details']['pan'] ?>" type="text" placeholder="PAN Card Number" class="form-control input-md" readonly/>
   </div>
 </div>
 
@@ -381,7 +379,6 @@ $arr_search = json_decode($output_search,true);
 
  </div>
 </div>
-<br><br><br>
 <!-- Added Partner 1 -->
 <label for="comment" style="margin-left: 334px;font-size: 17px;"> Partner 1: </label>
 <?php for($x=0;$x < count($arr_search['response'][0]['partner_details']); $x++){?>
@@ -420,7 +417,7 @@ $arr_search = json_decode($output_search,true);
 </div>
 </fieldset>
 </form>
-
+</div>
 </main>
 </body>
 </html>
