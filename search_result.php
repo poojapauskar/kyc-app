@@ -208,7 +208,7 @@ $arr_search = json_decode($output_search,true);
 
 <div class="container">
 
-<div class="mdl-grid" style="margin-left:80%;margin-top:2%">
+<div class="mdl-grid" style="margin-left:80%;margin-top:19%">
   <div class="mdl-card mdl-cell mdl-cell--12-col mdl-cell--10-col-tablet mdl-shadow--2dp">
     <div class="mdl-card__title">
       <h1 class="mdl-card__title-text">Description and Status of Work</h1>
