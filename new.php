@@ -21,7 +21,6 @@
     <!-- <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"> -->
 
      <script src="https://storage.googleapis.com/code.getmdl.io/1.0.6/material.min.js"></script>
-   <link rel="stylesheet" href="https://storage.googleapis.com/code.getmdl.io/1.0.6/material.indigo-pink.min.css">
    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"> 
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
   <style type="text/css">
@@ -1073,11 +1072,13 @@ file_put_contents('autocomplete-Files/NewEntryValues.js', $foo);
 
 <div style="margin-top:12%">
 <img class="profile-pic" style="margin-left:77%;position:absolute;z-index:2;" src="images/boy-512.png" />
-<div class="upload-button" style="position:absolute;z-index:2;margin-left:79%;margin-top:13%;">Upload Image</div>
+
+<div class="upload-button" style="position:absolute;z-index:2;margin-left:79%;cursor:pointer;margin-top:14%;">Upload Image</div>
+
 <input name="image" id="image" class="file-upload1" style="position:absolute;z-index:-2;margin-left:46%;margin-top:16%;" type="file">
 <!-- Text input-->
 <div class="form-group">
-  <label class="col-md-4 control-label" for="textinput">UID:</label>  
+  <label class="col-md-4 control-label" for="textinput" >UID:</label>  
   <div class="col-md-4">
   <input id="uid" name="uid" type="text" value="<?php echo $_POST['uid'] ?>" placeholder="" class="form-control input-md">
     
@@ -1094,7 +1095,7 @@ file_put_contents('autocomplete-Files/NewEntryValues.js', $foo);
 </div>
 <!--date-->
 <div class="form-group row">
-  <label for="example-date-input" class="col-2 col-form-label" style="margin-left:29.5%;">Date:</label>
+  <label for="example-date-input" class="col-2 col-form-label" style="margin-left:29.5%;">DOB:</label>
   <div class="col-10">
     <input class="form-control" id="date1" name="date1" value="<?php echo $_POST['date'] ?>" style="width:31%;margin-left:34.6%;margin-top:-2%;" type="text">
   </div>
@@ -1298,34 +1299,8 @@ $('#trigger').click(function(){
 </div>
 
 
-<script
-  src="https://code.jquery.com/jquery-2.2.4.js"
-  integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI="
-  crossorigin="anonymous"></script>
-  
-<script type="text/javascript">
-      
-      $(document).ready(function() {
-    var max_fields      = 10; //maximum input boxes allowed
-    var wrapper         = $(".input_fields_wrap"); //Fields wrapper
-    var add_button      = $(".add_field_button"); //Add button ID
-    
-    var x = 1; //initlal text box count
-    $(add_button).click(function(e){ //on add input button click
-        e.preventDefault();
-        if(x < max_fields){ //max input box allowed
-            x++; //text box increme
-
-            $(wrapper).prepend('<br><div style="margin-left:50px;"><center><div class="form-group"> <label class=" control-label" for="textinput" style="margin-left:327px;">Name: </label> <div > <input id="partner_names[]" name="partner_names[]" type="text" placeholder="Enter Full Name" class="form-control input-md newentry" style="margin-top: -25px;margin-left: 403px;width: 241%;">  </div>  <div class="col-md-6" > <a href="new_user_popup.php" style="color:white" target="_blank" data-toggle="modal" data-target="#myModal"><button  type="button" class="btn btn-info" style="margin-left: 809px;margin-top: -61px;">New Entry</button> </a> </div></div> <div class="form-group">  <label class="control-label" for="selectbasic" style="margin-left:293px;">Designation: </label>  <div> <select id="partner_designations[]" name="partner_designations[]" class="form-control" style="margin-left: 405px;margin-top: -34px;width:118%;">      <option value="Managing Partner">Managing Partner</option>      <option value="Manager">Manager</option>      <option value="Other">Other</option>    </select>  </div>  <div>  <input style="margin-left: 617px;margin-top: -35px;width:114%" id="textinput" name="textinput" type="text" placeholder="Specify if Other" class="form-control input-md"></div></div></center><a href="#" class="remove_field"><img src="images/del24.png" style="margin-left: 810px; margin-top: -81px;"></a></a></div>'); //add input box\
 
 
-        }
-    });
-    
-    $(wrapper).on("click",".remove_field", function(e){ //user click on remove text
-        e.preventDefault(); $(this).parent('div').remove(); x--;
-    })
-});
     </script><script type="text/javascript">
 
 
@@ -1341,7 +1316,7 @@ $('#trigger').click(function(){
             x++; //text box increment
 
 
-            $(wrapper).prepend('<br><div style="margin-left:50%;"><div class="form-group"><label class="control-label" for="selectbasic" style="margin-left:-325px;">Type of work</label><div class="col-md-6"><select id="selectbasic" name="selectbasic" class="form-control" style="margin-left:9%;width:208%"><option value="1">Option one</option><option value="2">Option two</option><option value="3">Option three</option></select></div></div><div class="form-group"> <label class="col-md-4 control-label" for="selectbasic" style="margin-left:-29%">Status</label><div class="col-md-6"><select id="selectbasic" name="selectbasic" style="width:210%;margin-left:-1%;" class="form-control"><option value="PR">Pending Request</option><option value="WP">Work in Process</option><option value="CR">Completed Request</option></select></div></div><div class="form-group row"><label for="example-date-input" class="col-2 col-form-label" style="margin-left:-8.5%;";">DATE</label><div class="col-10"><input class="form-control" id="date" name="date" value="<?php echo $_POST['date'] ?>" style="width:91%;margin-left:6.6%;margin-top:-6%;" type="date" value="" id="example-date-input"></div></div><div class="form-group"><label class="col-md-4 control-label" for="textinput" style="margin-left:-29%">Comment</label><div class="col-md-4"><input id="textinput" name="textinput" type="text" placeholder="" class="form-control input-md" style="width:342%"></div></div></center><a href="#" class="remove_field"><img src="images/del24.png" style="margin-left: 443px; margin-top: -81px;"></a></a></div>'); //add input box\
+            $(wrapper).prepend('<br><div style="margin-left:50%;"><div class="form-group"><label class="control-label" for="selectbasic" style="margin-left:-325px;">Type of work</label><div class="col-md-6"><select id="selectbasic" name="selectbasic" class="form-control" style="margin-left:9%;width:208%"><option value="1">Option one</option><option value="2">Option two</option><option value="3">Option three</option></select></div></div><div class="form-group"> <label class="col-md-4 control-label" for="selectbasic" style="margin-left:-29%">Status</label><div class="col-md-6"><select id="selectbasic" name="selectbasic" style="width:210%;margin-left:-1%;" class="form-control"><option value="PR">Pending Request</option><option value="WP">Work in Process</option><option value="CR">Completed Request</option></select></div></div><div class="form-group row"><label for="example-date-input" class="col-2 col-form-label" style="margin-left:-8.5%;";">DATE</label><div class="col-10"><input class="form-control" id="date" name="date" value="<?php echo $_POST['date'] ?>" style="width:91%;margin-left:7.6%;margin-top:-6%;" type="text" value="" id="example-date-input"></div></div><div class="form-group"><label class="col-md-4 control-label" for="textinput" style="margin-left:-29%">Comment</label><div class="col-md-4"><input id="textinput" name="textinput" type="text" placeholder="" class="form-control input-md" style="width:342%"></div></div></center><a href="#" class="remove_field"><img src="images/del24.png" style="margin-left: 443px; margin-top: -81px;"></a></a></div>'); //add input box\
 
         }
     });
