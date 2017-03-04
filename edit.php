@@ -15,6 +15,7 @@
     <script src="https://code.getmdl.io/1.3.0/material.min.js"></script>
     <link rel="stylesheet" href="css/material.css">
     <link rel="stylesheet" href="css/fileupload.css">
+     <link rel="stylesheet" href="autocomplete-Files/styles.css">
 
  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
   <style type="text/css">
@@ -951,7 +952,7 @@ if(isset($_POST["edit_btn"]) and $_GET["is_user"]==1) {
 </div>
 
 <br>
-<button style="margin-left:73%;margin-top:-6%;" class="btn btn-success">
+<button style="margin-left:75%;margin-top:-6%;" class="btn btn-success">
 <a target="_blank" style="color:white" href="view_image.php?name=telephone_bill_details&link=<?php echo $arr_img_download_3[0]['url']; ?>">View</a>
 </button>
 </div> 
