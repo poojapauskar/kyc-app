@@ -989,7 +989,7 @@ file_put_contents('autocomplete-Files/EditEntryValues.js', $foo);
 </div>
 
 <br>
-<button style="margin-left:73%;margin-top:-6%;" class="btn btn-success">
+<button style="margin-left:75%;margin-top:-6%;" class="btn btn-success">
 <a target="_blank" style="color:white" href="view_image.php?name=telephone_bill_details&link=<?php echo $arr_img_download_3[0]['url']; ?>">View</a>
 </button>
 </div> 
