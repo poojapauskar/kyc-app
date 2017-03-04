@@ -85,31 +85,7 @@
 
       </header>
 
-     
 
-<?php
-
-$db = pg_connect("host=ec2-107-20-191-76.compute-1.amazonaws.com port=5432 dbname=deu9vahl80fvjn user=vdvqpruzihrics password=17b3e7a56da97ca021e3da54bb1694bb799849a2b5911014ed6caa05e1e4e02d");
- pg_select($db, 'post_log', $_POST);
- 
-
- $query=pg_query("SELECT id,name,is_user FROM organization_organization 
-  UNION 
- SELECT id,name,is_user FROM users_users");
-
- $json=array();
-while ($student = pg_fetch_array($query)) {
-    $json[$student["is_user"]."-".$student["id"]] = $student["name"];
-}
-
-$textval = json_encode($json);
-$foo = "var peoplenames=" . $textval;
-
-file_put_contents('autocomplete-Files/SearchValues.js', $foo);
-
- 
-
-?>
  <div class="container">
   <div class="row" style="margin-top:33%;"> 
 
@@ -216,3 +192,29 @@ file_put_contents('autocomplete-Files/SearchValues.js', $foo);
 </div>
 </body>
 </html>
+
+     
+
+<?php
+
+$db = pg_connect("host=ec2-107-20-191-76.compute-1.amazonaws.com port=5432 dbname=deu9vahl80fvjn user=vdvqpruzihrics password=17b3e7a56da97ca021e3da54bb1694bb799849a2b5911014ed6caa05e1e4e02d");
+ pg_select($db, 'post_log', $_POST);
+ 
+
+ $query=pg_query("SELECT id,name,is_user FROM organization_organization 
+  UNION 
+ SELECT id,name,is_user FROM users_users");
+
+ $json=array();
+while ($student = pg_fetch_array($query)) {
+    $json[$student["is_user"]."-".$student["id"]] = $student["name"];
+}
+
+$textval = json_encode($json);
+$foo = "var peoplenames=" . $textval;
+
+file_put_contents('autocomplete-Files/SearchValues.js', $foo);
+
+ 
+
+?>
