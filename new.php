@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="css/material.css">
         <link rel="stylesheet" href="css/fileupload.css">
     <link rel="stylesheet" href="css/fileupload.css">
+     <link rel="stylesheet" href="autocomplete-Files/styles.css">
     <!-- Material Design icon font -->
 
     <!-- <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"> -->
