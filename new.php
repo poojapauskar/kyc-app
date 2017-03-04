@@ -1309,6 +1309,7 @@ $('#trigger').click(function(){
     $(wrapper_present).on("click",".remove_field_present", function(e){ //user click on remove text
         e.preventDefault(); $(this).parent('div').remove(); x--;
     })
+
 });
     </script>
 
@@ -1335,6 +1336,7 @@ $('#trigger').click(function(){
     $(wrapper).on("click",".remove_field", function(e){ //user click on remove text
         e.preventDefault(); $(this).parent('div').remove(); x--;
     })
+
 });
 
     </script>
