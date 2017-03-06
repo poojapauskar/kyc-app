@@ -1224,7 +1224,7 @@ if ($_POST['uid'] != '' and $_GET["is_user"]==1){
 <div class="form-group">
   <label class="col-md-4 control-label" for="textinput">Comment</label>  
   <div class="col-md-4">
-  <input id="comment[]" name="comment[]" type="text" placeholder="" class="form-control input-md">
+  <input id="comment[]" name="comment[]" type="text" placeholder="Comments 50 characters Only" class="form-control input-md" maxlength="50">
     
   </div>
 </div>
