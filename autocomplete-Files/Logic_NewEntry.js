@@ -40,11 +40,4 @@ var peopleArray = $.map(partnames, function (value, key) {
     $('.newentry').autocomplete({
         lookup: peopleArray
     });
-
-
-    function enable_autocomplete(InputField) {
-    $(InputField).autocomplete({
-        lookup: peopleArray
-    });
-}
 });

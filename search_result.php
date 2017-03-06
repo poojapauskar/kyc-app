@@ -172,7 +172,7 @@ $arr_search = json_decode($output_search,true);
      box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23) !important;" class="mdl-layout__header mdl-layout__header--transparent">
     <div class="mdl-layout__header-row" >
 
-    <img style="margin-top:5%;margin-left:28px;width:50px;height:50px" src="images/green.png"></img><h5 style="margin-left:35%;margin-top:9%;"><?php echo $arr_search['response'][0]['organization_details']['name'] ?></h5>
+    <img style="margin-top:5%;margin-left:28px;width:50px;height:50px" src="images/green.png"></img><h5 style="margin-left:35%;margin-top:9%;"><?php echo $arr_search['response'][0]['organization_details']['name'] ?><?php echo $arr_search['response'][0]['user_details']['name'] ?></h5>
          <span class="mdl-layout-title" style="margin-left:26%;margin-top:7%;">KYChome</span>
           <!-- Add spacer, to align navigation to the right -->
       </header>
@@ -225,8 +225,16 @@ $arr_search = json_decode($output_search,true);
   </div>
 </div> 
 
+
+<?php if(count($arr_search['response'][0]['add_info']) == 0){
+  $margin="margin-top:-32%";
+  }else{
+    $margin="margin-top:-32%";
+  }?>
+
 <?php if ($_GET['is_user']==0) { ?>
-<form class="form-horizontal" method="post" action="edit.php?is_user=0" enctype="multipart/form-data" style="margin-top:-43%">
+
+<form class="form-horizontal" method="post" action="edit.php?is_user=0" enctype="multipart/form-data" style="<?php echo $margin; ?>">
 
 <fieldset>
  <input type="hidden" value="<?php echo $arr_search['response'][0]['organization_details']['pk'] ?>" name="org_id" id="org_id"></input>
@@ -499,7 +507,7 @@ $arr_search = json_decode($output_search,true);
 
 <?php } else { ?>
 
-<form style="margin-top:-30%" onsubmit="return proceed();" name="Form" id="Form" class="form-horizontal" method="post" action="edit.php?is_user=1" enctype="multipart/form-data">
+<form style="<?php echo $margin; ?>" onsubmit="return proceed();" name="Form" id="Form" class="form-horizontal" method="post" action="edit.php?is_user=1" enctype="multipart/form-data">
 <fieldset>
 
 <!-- Form Name -->

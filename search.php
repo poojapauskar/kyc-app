@@ -54,6 +54,8 @@
 <?php if($_POST['submit']){
   $string_new="<script>window.location.href='search_result.php?is_user=".$_POST['is_user_field']."&id=".$_POST['id_field']."'</script>";
   echo $string_new;
+  /*echo $_POST["is_user_field"];
+  echo $_POST["id_field"];*/
 }?>
 
 <div class="demo-layout-transparent mdl-layout mdl-js-layout">
