@@ -1205,7 +1205,7 @@ if(isset($_POST["edit_btn"]) and $_GET["is_user"]==1) {
 
 <img class="profile-pic" style="margin-left:77%;position:absolute;z-index:2;" src="<?php echo $img_lnk; ?>" />
 <div class="upload-button" style="position:absolute;z-index:2;margin-left:79%;margin-top:13%;">
-<input id="profile_pic"  name="profile_pic" class="input-file" type="file">Upload Image</input>
+<input id="profile_pic"  name="profile_pic" class="file-upload1" style="position:absolute;z-index:-2;margin-left:46%;margin-top:16%;" type="file">Upload Image</input>
 </div>
 
 
