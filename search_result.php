@@ -234,7 +234,7 @@ $arr_search = json_decode($output_search,true);
 
 <?php if ($_GET['is_user']==0) { ?>
 
-<form class="form-horizontal" method="post" action="edit.php?is_user=0" enctype="multipart/form-data" style="<?php echo $margin; ?>">
+<form class="form-horizontal" method="post" action="edit.php?is_user=0&id=<?php echo $_GET['id'] ?>" enctype="multipart/form-data" style="<?php echo $margin; ?>">
 
 <fieldset>
  <input type="hidden" value="<?php echo $arr_search['response'][0]['organization_details']['pk'] ?>" name="org_id" id="org_id"></input>
@@ -507,7 +507,7 @@ $arr_search = json_decode($output_search,true);
 
 <?php } else { ?>
 
-<form style="<?php echo $margin; ?>" onsubmit="return proceed();" name="Form" id="Form" class="form-horizontal" method="post" action="edit.php?is_user=1" enctype="multipart/form-data">
+<form style="<?php echo $margin; ?>" onsubmit="return proceed();" name="Form" id="Form" class="form-horizontal" method="post" action="edit.php?is_user=1&id=<?php echo $_GET['id'] ?>" enctype="multipart/form-data">
 <fieldset>
 
 <!-- Form Name -->
@@ -536,7 +536,6 @@ $arr_search = json_decode($output_search,true);
 
 <div style="margin-top:10%">
  <input type="hidden" value="<?php echo $arr_search['response'][0]['user_details']['pk'] ?>" name="user_id" id="user_id"></input>
-
 
 <?php if($arr_img[0]['url']=="" || (strpos($arr_img[0]['url'], 'https://kyc-app-bucket.s3.amazonaws.com/?Signature') !== false)){
   $img_lnk="images/no_image.jpg";

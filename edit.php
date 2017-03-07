@@ -126,10 +126,10 @@ document.getElementById('uploadFile').value='Choose File'; }
 
 if ($_GET['is_user']==0) { 
   $is_user="0";
-  $pk_value=$_POST['org_id'];
+  $pk_value=$_GET['id'];
 }else{
   $is_user="1";
-  $pk_value=$_POST['user_id'];
+  $pk_value=$_GET['id'];
 }
 
 $url_search = 'https://kyc-application.herokuapp.com/search/';
@@ -627,13 +627,13 @@ if(isset($_POST["edit_btn"]) and $_GET["is_user"]==1) {
         $passport_id=$arr_search['response'][0]['passport_details'][0]['pk'];
     }
 
-    $check_image = getimagesize($_FILES["image"]["tmp_name"]);
+    $check_image = getimagesize($_FILES["profile_pic"]["tmp_name"]);
     if($check_image !== false) {
         $url_upload_image = $arr[6][6];
         /*echo $url_upload;*/
 
 
-        $filename_image = $_FILES["image"]["tmp_name"];
+        $filename_image = $_FILES["profile_pic"]["tmp_name"];
         $file_image = fopen($filename_image, "rb");
         $data_image = fread($file_image, filesize($filename_image));
 
@@ -1185,7 +1185,7 @@ if(isset($_POST["edit_btn"]) and $_GET["is_user"]==1) {
   );
   $context_img = stream_context_create($options_img);
   $output_img = file_get_contents($url_img, false,$context_img);
-  /*echo $output_img_download;*/
+  echo $output_img_download;
   $arr_img = json_decode($output_img,true);
   /*echo $arr_img[0]['url'];*/
   
@@ -1193,15 +1193,23 @@ if(isset($_POST["edit_btn"]) and $_GET["is_user"]==1) {
 ?>
 
 <div style="margin-top:10%">
+
+
+
+<?php if($arr_img[0]['url']=="" || (strpos($arr_img[0]['url'], 'https://kyc-app-bucket.s3.amazonaws.com/?Signature') !== false)){
+  $img_lnk="images/no_image.jpg";
+}else{
+    $img_lnk=$arr_img[0]['url'];
+}?>
  <input type="hidden" value="<?php echo $arr_search['response'][0]['user_details']['pk'] ?>" name="org_id" id="org_id"></input>
 
-<img class="profile-pic" style="margin-left:77%;position:absolute;z-index:2;" src="<?php echo $arr_img[0]['url']; ?>" />
+<img class="profile-pic" style="margin-left:77%;position:absolute;z-index:2;" src="<?php echo $img_lnk; ?>" />
 <div class="upload-button" style="position:absolute;z-index:2;margin-left:79%;margin-top:13%;">
 <input id="profile_pic"  name="profile_pic" class="input-file" type="file">Upload Image</input>
 </div>
 
 
-<input name="image" id="image" class="file-upload1" style="position:absolute;z-index:-2;margin-left:46%;margin-top:16%;" type="file">
+<!-- <input name="image" id="image" class="file-upload1" style="position:absolute;z-index:-2;margin-left:46%;margin-top:16%;" type="file"> -->
 <!-- Text input-->
 <div class="form-group">
   <label class="col-md-4 control-label" for="textinput">UID:</label>  
