@@ -1069,7 +1069,7 @@ if ($_POST['uid'] != '' and $_GET["is_user"]==1){
 <div class="form-group">
   <label class="col-md-4 control-label" for="textinput">Name:</label>  
   <div class="col-md-4">
-  <input id="name" name="name" value="<?php echo $_POST['name'] ?>" type="text" placeholder="" class="form-control input-md">
+  <input id="name" name="name" value="<?php echo $_POST['name'] ?>" type="text" placeholder="" class="form-control input-md" required>
     
   </div>
 </div>

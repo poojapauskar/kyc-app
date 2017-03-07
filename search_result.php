@@ -162,7 +162,6 @@ $output_search = file_get_contents($url_search, false,$context_search);
 $arr_search = json_decode($output_search,true);
 /*echo $arr_search;*/
 
-
 /*echo count($arr_search['response'][0]['partner_details'])*/
 ?>
 
