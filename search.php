@@ -50,16 +50,20 @@
 }*/
 ?>
 
+<script type="text/javascript">
+function make_null(){
+ document.getElementById("is_user_field").value = "";
+ document.getElementById("mytext").value = "";
+}
+</script>
 
 <?php if($_POST['submit']){
 
 
 if($_POST['is_user_field'] == "" || $_POST['id_field'] ==""){
-  $_POST = array();
   echo "<script>alert('Entry not found')</script>";
 }else{
   $string_new="<script>window.location.href='search_result.php?is_user=".$_POST['is_user_field']."&id=".$_POST['id_field']."'</script>";
-  $_POST = array();
   echo $string_new;
 }
   /*echo $_POST["is_user_field"];
@@ -109,7 +113,7 @@ if($_POST['is_user_field'] == "" || $_POST['id_field'] ==""){
     <input id="search" name="search" type="text" placeholder="Search firms or individuals" class="form-control input-md" style="width:55%;margin-top:-8%;height:39px" required onchange="this.form.submit()">
   <input id="is_user_field" name="is_user_field" type="hidden"></input>
   <input id="id_field" name="id_field" type="hidden"></input>
-    <button style="background-color:#74b25e;margin-left:58%;margin-top:-3.5%;color:white;width:200px;height:37px" class="mdl-button mdl-js-button mdl-button--raised" type="submit" value="Search" id="submit" name="submit">
+    <button onclick="make_null()" style="background-color:#74b25e;margin-left:58%;margin-top:-3.5%;color:white;width:200px;height:37px" class="mdl-button mdl-js-button mdl-button--raised" type="submit" value="Search" id="submit" name="submit">
    <p style="margin-top:7px;"> Search </p>
    </button>
     </form>
