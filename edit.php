@@ -1091,6 +1091,7 @@ if(isset($_POST["edit_btn"]) and $_GET["is_user"]==1) {
 
 <?php for($q=0;$q<count($arr_search['response'][0]['add_info']);$q++){?>
 
+<div class="present_fields_1">
 <!-- Select Basic -->
 <div class="form-group">
   <label class="col-md-4 control-label" for="selectbasic">Type of work:</label>
@@ -1134,6 +1135,12 @@ if(isset($_POST["edit_btn"]) and $_GET["is_user"]==1) {
   </div>
 </div>
 
+<a href="#" class="remove_field_pre1">
+ <img src="images/del24.png" style="margin-left: 900px; margin-top: -81px;">
+</a>
+
+</div>
+
 <?php  }?>
 
 
@@ -1141,7 +1148,7 @@ if(isset($_POST["edit_btn"]) and $_GET["is_user"]==1) {
 
 <div class="col-md-8 col-sm-12 col-24">
     <div class="input_fields" style="color:black">
-         <button class="add_field btn " onclick="incrementValue()" style="margin-left: 443px;">Add</button>
+         <button class="add_field btn " onclick="incrementValue()" style="margin-left: 443px;">Add More</button>
          <div>
          <input type="text" name="mytextt[]" hidden="" ></div>
 </div>
@@ -1547,7 +1554,7 @@ if(isset($_POST["edit_btn"]) and $_GET["is_user"]==1) {
 </div>
 
 <?php for($q=0;$q<count($arr_search['response'][0]['add_info']);$q++){?>
-
+<div class="present_fields_1">
 <!-- Select Basic -->
 <div class="form-group">
   <label class="col-md-4 control-label" for="selectbasic">Type of work</label>
@@ -1591,13 +1598,19 @@ if(isset($_POST["edit_btn"]) and $_GET["is_user"]==1) {
   </div>
 </div>
 
+<a href="#" class="remove_field_pre1">
+ <img src="images/del24.png" style="margin-left: 900px; margin-top: -81px;">
+</a>
+
+</div>
+
 <?php  }?>
 
 <div class="form-group">
 
 <div class="col-md-8 col-sm-12 col-24">
     <div class="input_fields" style="color:black">
-         <button class="add_field btn " onclick="incrementValue()" style="margin-left: 443px;">Add</button>
+         <button class="add_field btn " onclick="incrementValue()" style="margin-left: 443px;">Add More</button>
          <div>
          <input type="text" name="mytextt[]" hidden="" ></div>
 </div>
@@ -1688,6 +1701,8 @@ function goBack() {
     var max_fields      = 10; //maximum input boxes allowed
     var wrapper         = $(".input_fields"); //Fields wrapper
     var add_button      = $(".add_field"); //Add button ID
+
+    var wrapper_pre1         = $(".present_fields_1"); //Fields wrapper
     
     var x = 1; //initlal text box count
     $(add_button).click(function(e){ //on add input button click
@@ -1699,6 +1714,10 @@ function goBack() {
     });
     
     $(wrapper).on("click",".remove_field", function(e){ //user click on remove text
+        e.preventDefault(); $(this).parent('div').remove(); x--;
+    })
+
+    $(wrapper_pre1).on("click",".remove_field_pre1", function(e){ //user click on remove text
         e.preventDefault(); $(this).parent('div').remove(); x--;
     })
 });

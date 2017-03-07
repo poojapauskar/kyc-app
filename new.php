@@ -964,7 +964,7 @@ if ($_POST['uid'] != '' and $_GET["is_user"]==1){
 </div>
   </div>
 
-
+<div class="present_fields_1">
 <!-- Select Basic -->
 <div class="form-group">
   <label class="col-md-4 control-label" for="selectbasic">Type of work</label>
@@ -1006,11 +1006,17 @@ if ($_POST['uid'] != '' and $_GET["is_user"]==1){
   </div>
 </div>
 
+<a href="#" class="remove_field_pre1">
+ <img src="images/del24.png" style="margin-left: 900px; margin-top: -81px;">
+</a>
+
+</div>
+
 <div class="form-group">
 
 <div class="col-md-8 col-sm-12 col-24">
     <div class="input_fields" style="color:black">
-         <button class="add_field btn " onclick="incrementValue()" style="margin-left: 443px;">Add</button>
+         <button class="add_field btn " onclick="incrementValue()" style="margin-left: 443px;">Add More</button>
          <div>
          <input type="text" name="mytextt[]" hidden="" ></div>
 </div>
@@ -1034,9 +1040,8 @@ if ($_POST['uid'] != '' and $_GET["is_user"]==1){
 
 <!-- <p>Click on the "x" symbol to close the alert message.</p> -->
 <div class="alert" id="popup1" class="popup1" style="display:none;text-align:center;position:absolute;
-    width:800px;
-    top: 70%;
-    left: 20%;z-index:2">
+    width:100%;
+    top: 70%;z-index:2">
  <!--  <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> -->
  <!--  <form method="post" action="new.php">  -->
   <label>UID Generated</label><br>
@@ -1188,6 +1193,7 @@ if ($_POST['uid'] != '' and $_GET["is_user"]==1){
   </div>
 </div>
 
+<div class="present_fields_1">
 <!-- Select Basic -->
 <div class="form-group">
   <label class="col-md-4 control-label" for="selectbasic">Type of work</label>
@@ -1229,11 +1235,17 @@ if ($_POST['uid'] != '' and $_GET["is_user"]==1){
   </div>
 </div>
 
+<a href="#" class="remove_field_pre1">
+ <img src="images/del24.png" style="margin-left: 900px; margin-top: -81px;">
+</a>
+
+</div>
+
 <div class="form-group">
 
 <div class="col-md-8 col-sm-12 col-24">
     <div class="input_fields" style="color:black">
-         <button class="add_field btn " onclick="incrementValue()" style="margin-left: 443px;">Add</button>
+         <button class="add_field btn " onclick="incrementValue()" style="margin-left: 443px;">Add More</button>
          <div>
          <input type="text" name="mytextt[]" hidden="" ></div>
 </div>
@@ -1319,6 +1331,8 @@ $('#trigger').click(function(){
     var max_fields      = 10; //maximum input boxes allowed
     var wrapper         = $(".input_fields"); //Fields wrapper
     var add_button      = $(".add_field"); //Add button ID
+
+    var wrapper_pre1         = $(".present_fields_1"); //Fields wrapper
     
     var x = 1; //initlal text box count
     $(add_button).click(function(e){ //on add input button click
@@ -1330,6 +1344,10 @@ $('#trigger').click(function(){
     });
     
     $(wrapper).on("click",".remove_field", function(e){ //user click on remove text
+        e.preventDefault(); $(this).parent('div').remove(); x--;
+    })
+
+    $(wrapper_pre1).on("click",".remove_field_pre1", function(e){ //user click on remove text
         e.preventDefault(); $(this).parent('div').remove(); x--;
     })
 });
