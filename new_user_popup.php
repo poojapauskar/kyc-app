@@ -124,9 +124,8 @@ if(a==null || a==''){
 
 <!-- <p>Click on the "x" symbol to close the alert message.</p> -->
 <div class="alert" id="popup1" class="popup1" style="display:none;text-align:center;position:absolute;
-    width:800px;
-    top: 70%;
-    left: 20%;z-index:2">
+    width:100%;
+    top: 60%;z-index:2">
  <!--  <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> -->
  <!--  <form method="post" action="new_user.php">  -->
   <label>UID Generated</label><br>
