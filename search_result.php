@@ -131,7 +131,6 @@
 
   </style>
 </head>
-
 <body style="background-color:#E8E8E8;overflow-x:hidden;>
 
 <?php
