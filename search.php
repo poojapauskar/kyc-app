@@ -103,9 +103,10 @@
     <input id="search" name="search" type="text" placeholder="Search firms or individuals" class="form-control input-md" style="width:55%;margin-top:-8%;height:39px" required onchange="this.form.submit()">
   <input id="is_user_field" name="is_user_field" type="hidden"></input>
   <input id="id_field" name="id_field" type="hidden"></input>
-    <button style="background-color:#74b25e;margin-left:58%;margin-top:-3.5%;color:white;width:200px;height:37px" class="mdl-button mdl-js-button mdl-button--raised" type="submit" value="Search" id="submit" name="submit">
-   <p style="margin-top:7px;"> Search </p>
-   </button>
+    <!-- <button style="background-color:#74b25e;margin-left:58%;margin-top:-3.5%;color:white;width:200px;height:37px" class="mdl-button mdl-js-button mdl-button--raised" type="submit" value="Search" id="submit" name="submit">
+    </button> -->
+    <button style="visibility:hidden;display:none;margin-left:58%;margin-top:-3.5%;width:200px;height:37px" class="mdl-button mdl-js-button mdl-button--raised" type="submit" value="Search" id="submit" name="submit">
+    </button>
     </form>
     </div>
        <!--  <div id="tagname" style="height:100px; width:300px; border:1px solid #000;"></div>
