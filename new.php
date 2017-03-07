@@ -1298,7 +1298,7 @@ $('#trigger').click(function(){
         e.preventDefault();
         if(x < max_fields){ //max input box allowed
             x++; //text box increment
-            $(wrapper).prepend('<br><div style="margin-left:50px;"><center><div class="form-group"> <label class=" control-label" for="textinput" style="margin-left:327px;">Name: </label> <div > <input id="partner_names[]" name="partner_names[]" type="text" placeholder="Enter Full Name" class="form-control input-md newentry" style="margin-top: -25px;margin-left: 403px;width: 241%;">  </div>  <div class="col-md-6" > <a href="new_user_popup.php" style="color:white" target="_blank" data-toggle="modal" data-target="#myModal"><button  type="button" class="btn btn-info" style="margin-left: 809px;margin-top: -61px;">New Entry</button> </a> </div></div> <div class="form-group">  <label class="control-label" for="selectbasic" style="margin-left:293px;">Designation: </label>  <div> <select id="partner_designations[]" name="partner_designations[]" class="form-control" style="margin-left: 405px;margin-top: -34px;width:118%;">      <option value="Managing Partner">Managing Partner</option>      <option value="Manager">Manager</option>      <option value="Other">Other</option>    </select>  </div>  <div>  <input style="margin-left: 617px;margin-top: -35px;width:114%" id="textinput" name="textinput" type="text" placeholder="Specify if Other" class="form-control input-md"></div></div></center><a href="#" class="remove_field"><img src="images/del24.png" style="margin-left: 810px; margin-top: -81px;"></a></a></div>'); //add input box\
+            $(wrapper).prepend('<br><div style="margin-left:50px;"><center><div class="form-group"> <label class=" control-label" for="textinput" style="margin-left:327px;">Name: </label> <div > <input id="partner_names[]" name="partner_names[]" type="text" placeholder="Enter Full Name" class="form-control input-md editentry" style="margin-top: -25px;margin-left: 403px;width: 241%;">  </div>  <div class="col-md-6" > <a href="new_user_popup.php" style="color:white" target="_blank" data-toggle="modal" data-target="#myModal"><button  type="button" class="btn btn-info" style="margin-left: 809px;margin-top: -61px;">New Entry</button> </a> </div></div> <div class="form-group">  <label class="control-label" for="selectbasic" style="margin-left:293px;">Designation: </label>  <div> <select id="partner_designations[]" name="partner_designations[]" class="form-control" style="margin-left: 405px;margin-top: -34px;width:118%;">      <option value="Managing Partner">Managing Partner</option>      <option value="Manager">Manager</option>      <option value="Other">Other</option>    </select>  </div>  <div>  <input style="margin-left: 617px;margin-top: -35px;width:114%" id="textinput" name="textinput" type="text" placeholder="Specify if Other" class="form-control input-md"></div></div></center><a href="#" class="remove_field"><img src="images/del24.png" style="margin-left: 810px; margin-top: -81px;"></a></a></div>'); //add input box\
         }
     });
     
@@ -1309,11 +1309,10 @@ $('#trigger').click(function(){
     $(wrapper_present).on("click",".remove_field_present", function(e){ //user click on remove text
         e.preventDefault(); $(this).parent('div').remove(); x--;
     })
-
 });
     </script>
 
-    </script><script type="text/javascript">
+  <script type="text/javascript">
 
 
      $(document).ready(function() {
@@ -1326,20 +1325,15 @@ $('#trigger').click(function(){
         e.preventDefault();
         if(x < max_fields){ //max input box allowed
             x++; //text box increment
-
-
-            $(wrapper).prepend('<br><div style="margin-left:50%;"><div class="form-group"><label class="control-label" for="selectbasic" style="margin-left:-325px;">Type of work</label><div class="col-md-6"><select id="selectbasic" name="selectbasic" class="form-control" style="margin-left:9%;width:208%"><option value="1">Option one</option><option value="2">Option two</option><option value="3">Option three</option></select></div></div><div class="form-group"> <label class="col-md-4 control-label" for="selectbasic" style="margin-left:-29%">Status</label><div class="col-md-6"><select id="selectbasic" name="selectbasic" style="width:210%;margin-left:-1%;" class="form-control"><option value="PR">Pending Request</option><option value="WP">Work in Process</option><option value="CR">Completed Request</option></select></div></div><div class="form-group row"><label for="example-date-input" class="col-2 col-form-label" style="margin-left:-8.5%;";">DATE</label><div class="col-10"><input class="form-control" id="date" name="date" value="<?php echo $_POST['date'] ?>" style="width:91%;margin-left:7.6%;margin-top:-6%;" type="text" value="" id="example-date-input"></div></div><div class="form-group"><label class="col-md-4 control-label" for="textinput" style="margin-left:-29%">Comment</label><div class="col-md-4"><input id="textinput" name="textinput" type="text" placeholder="" class="form-control input-md" style="width:342%"></div></div></center><a href="#" class="remove_field"><img src="images/del24.png" style="margin-left: 443px; margin-top: -81px;"></a></a></div>'); //add input box\
-
+            $(wrapper).prepend('<br><div style="margin-left:50%;"><div class="form-group"><label class="control-label" for="selectbasic" style="margin-left:-325px;">Type of work</label><div class="col-md-6"><select id="type_of_work[]" name="type_of_work[]" class="form-control" style="margin-left:9%;width:208%"><option value="Option one">Option one</option><option value="Option two">Option two</option><option value="Option three">Option three</option></select></div></div><div class="form-group"> <label class="col-md-4 control-label" for="selectbasic" style="margin-left:-29%">Status</label><div class="col-md-6"><select id="status[]" name="status[]" style="width:210%;margin-left:-1%;" class="form-control"><option value="Pending">Pending</option><option value="Work in process">Work in process</option><option value="Completed">Completed</option></select></div></div><div class="form-group row"><label for="example-date-input" class="col-2 col-form-label" style="margin-left:-8.5%;";">DATE</label><div class="col-10"><input class="form-control" id="date[]" name="date[]" style="width:91%;margin-left:6.6%;margin-top:-6%;" type="text"></div></div><div class="form-group"><label class="col-md-4 control-label" for="textinput" style="margin-left:-29%">Comment</label><div class="col-md-4"><input id="comment[]" name="comment[]" type="text" placeholder="" class="form-control input-md" style="width:342%"></div></div></center><a href="#" class="remove_field"><img src="images/del24.png" style="margin-left: 443px; margin-top: -81px;"></a></a></div>'); //add input box\
         }
     });
     
     $(wrapper).on("click",".remove_field", function(e){ //user click on remove text
         e.preventDefault(); $(this).parent('div').remove(); x--;
     })
-
 });
-
-    </script>
+</script>
 
  <!-- AutoSearch Script files don't move -->
      <script type="text/javascript" src="autocomplete-Files/jquery-1.8.2.min.js"></script>
