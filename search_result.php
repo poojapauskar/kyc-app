@@ -171,7 +171,7 @@ $arr_search = json_decode($output_search,true);
     <div class="mdl-layout__header-row" >
 
     <img style="margin-top:5%;margin-left:28px;width:50px;height:50px" src="images/green.png"></img><h5 style="margin-left:35%;margin-top:9%;"><?php echo $arr_search['response'][0]['organization_details']['name'] ?><?php echo $arr_search['response'][0]['user_details']['name'] ?></h5>
-         <span class="mdl-layout-title" style="margin-left:26%;margin-top:7%;">KYChome</span>
+         <span class="mdl-layout-title" style="margin-left:26%;margin-top:7%;">KYCApp</span>
           <!-- Add spacer, to align navigation to the right -->
       </header>
       <div class="mdl-layout__drawer">

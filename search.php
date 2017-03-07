@@ -92,7 +92,7 @@ if($_POST['is_user_delete'] != "" && $_POST['pk_delete'] != ""){
 
         <img style="margin-top:5%;margin-left:28px;width:50px;height:50px" src="images/green.png"></img>
       <h5 style="margin-left:35%;margin-top:9%;">Admin Panel</h5>
-         <span class="mdl-layout-title" style="margin-left:26%;margin-top:7%;">KYChome</span>
+         <span class="mdl-layout-title" style="margin-left:26%;margin-top:7%;">KYCApp</span>
          <a href="index.php"><img style="margin-top:100%;margin-left:28px;width:40px;height:40px" src="images/logout1.png"></img></a>
           <!-- Add spacer, to align navigation to the right -->
       </header>
