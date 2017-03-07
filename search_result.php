@@ -133,8 +133,6 @@
 </head>
 <body style="background-color:#E8E8E8;overflow-x:hidden;>
 <?php
-
-
 /*echo $_POST['search'];*/
 // if its cumin from edit org to search org then query based on edit org name
 
