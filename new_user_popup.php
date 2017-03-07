@@ -540,7 +540,7 @@ echo '  <script type="text/javascript" src="autocomplete-Files/jquery-1.8.2.min.
 <div class="form-group">
   <label class="col-md-4 control-label" for="textinput">Name:</label>  
   <div class="col-md-4">
-  <input id="name1" name="name1" value="<?php echo $_POST['name'] ?>" type="text" placeholder="" class="form-control input-md">
+  <input id="name1" name="name1" value="<?php echo $_POST['name'] ?>" type="text" placeholder="" class="form-control input-md" required>
     
   </div>
 </div>
