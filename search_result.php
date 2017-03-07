@@ -537,7 +537,8 @@ $arr_search = json_decode($output_search,true);
 <div style="margin-top:10%">
  <input type="hidden" value="<?php echo $arr_search['response'][0]['user_details']['pk'] ?>" name="user_id" id="user_id"></input>
 
-<?php if($url=="" || (strpos($url, 'https://kyc-app-bucket.s3.amazonaws.com/?Signature') !== false)){
+
+<?php if($arr_img[0]['url']=="" || (strpos($arr_img[0]['url'], 'https://kyc-app-bucket.s3.amazonaws.com/?Signature') !== false)){
   $img_lnk="images/no_image.jpg";
 }else{
     $img_lnk=$arr_img[0]['url'];
