@@ -131,7 +131,12 @@
 
   </style>
 </head>
+<<<<<<< HEAD
 <body style="background-color:#E8E8E8;overflow-x:hidden;>
+=======
+<body style="background-color:#E8E8E8;overflow-x:hidden;">
+
+>>>>>>> drop-down and alignment of btn in edit page
 <?php
 
 
