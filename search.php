@@ -51,16 +51,11 @@
 ?>
 
 
-
 <?php if($_POST['submit']){
 
-
-if($_POST['is_user_field'] == "" || $_POST['id_field'] ==""){
-  echo "<script>alert('Entry not found')</script>";
-}else{
   $string_new="<script>window.location.href='search_result.php?is_user=".$_POST['is_user_field']."&id=".$_POST['id_field']."'</script>";
   echo $string_new;
-}
+
   /*echo $_POST["is_user_field"];
   echo $_POST["id_field"];*/
 }?>

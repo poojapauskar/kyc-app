@@ -135,6 +135,9 @@
 <?php
 
 
+if($_GET['id'] == ""){
+  echo "<script>location.href='entry_not_found.php'</script>";
+}
 /*echo $_POST['search'];*/
 // if its cumin from edit org to search org then query based on edit org name
 
