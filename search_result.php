@@ -131,10 +131,11 @@
 
   </style>
 </head>
+<body style="background-color:#E8E8E8;overflow-x:hidden;>
+
+<body style="background-color:#E8E8E8;overflow-x:hidden;>
 
 <?php
-
-
 /*echo $_POST['search'];*/
 // if its cumin from edit org to search org then query based on edit org name
 
@@ -165,6 +166,7 @@ $arr_search = json_decode($output_search,true);
 /*echo count($arr_search['response'][0]['partner_details'])*/
 ?>
 
+
 <div class="demo-layout-transparent mdl-layout mdl-js-layout">
   <header style="background-color:#08426a;height:110px;-webkit-box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23) !important;
      -moz-box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23) !important;
@@ -172,7 +174,7 @@ $arr_search = json_decode($output_search,true);
     <div class="mdl-layout__header-row" >
 
     <img style="margin-top:5%;margin-left:28px;width:50px;height:50px" src="images/green.png"></img><h5 style="margin-left:35%;margin-top:9%;"><?php echo $arr_search['response'][0]['organization_details']['name'] ?><?php echo $arr_search['response'][0]['user_details']['name'] ?></h5>
-         <span class="mdl-layout-title" style="margin-left:26%;margin-top:7%;">KYChome</span>
+         <span class="mdl-layout-title" style="margin-left:26%;margin-top:7%;">KYCApp</span>
           <!-- Add spacer, to align navigation to the right -->
       </header>
       <div class="mdl-layout__drawer">
@@ -188,7 +190,7 @@ $arr_search = json_decode($output_search,true);
           <a class="mdl-navigation__link" href="">Contact</a>
         </nav>
       </div>
-      <div class="alert" style="margin-top:0%">
+      <div class="alert" style="margin-top:0%;">
   <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
   <strong>
 
@@ -203,10 +205,9 @@ $arr_search = json_decode($output_search,true);
 </div>
   
 
-
 <div class="container">
 
-<div class="mdl-grid" style="margin-left:80%;margin-top:19%">
+<div class="mdl-grid" style="margin-left:80%;margin-top:6%">
   <div class="mdl-card mdl-cell mdl-cell--12-col mdl-cell--10-col-tablet mdl-shadow--2dp">
     <div class="mdl-card__title">
       <h1 class="mdl-card__title-text">Description and Status of Work</h1>
@@ -274,11 +275,11 @@ $arr_search = json_decode($output_search,true);
 }
 ?>
     <label class="mdl-radio mdl-js-radio" for="radios-0">
-      <input type="radio" name="registration" id="radios-0" value="1" class="mdl-radio__button" checked="<?php echo $checked1; ?>" readonly>
+      <input type="radio" name="registration" id="radios-0" value="1" class="mdl-radio__button" checked="<?php echo $checked1; ?>" disabled>
       Registered
     </label>
     <label class="mdl-radio mdl-js-radio" for="radios-1">
-      <input type="radio" name="registration" id="radios-1" value="0" class="mdl-radio__button" checked="<?php echo $checked2; ?>" readonly>
+      <input type="radio" name="registration" id="radios-1" value="0" class="mdl-radio__button" checked="<?php echo $checked2; ?>" disabled>
       Un-Registered
     </label> 
   </div>
@@ -375,24 +376,22 @@ $arr_search = json_decode($output_search,true);
  <label class="col-md-4 control-label" for="checkboxes">address Proof:</label>
  <div class="col-md-4">
    <label class="checkbox-inline" for="checkboxes-0">
-  <div class="col-md-3">
+ <!--  <div class="col-md-3"> -->
     <?php if($arr_search['response'][0]['telephone_bill_details'][0]['name'] != ''){
       $check_box_select1="checked";
     }else{
       $check_box_select1="";
     }?>
-     <input <?php echo $check_box_select1;?> type="checkbox" name="checkboxes" id="checkboxes-0" value="1"  readonly>Telephone</label>
+     <input <?php echo $check_box_select1;?> type="checkbox" name="checkboxes" id="checkboxes-0" value="1"  disabled>Telephone</label>
     
   </div>
-<div class="col-md-3">
+<div class="col-md-3" style="margin-left:43%;margin-top:-2%">
     <?php echo $arr_search['response'][0]['telephone_bill_details'][0]['name']; ?>
 </div>
 
-<div class="col-md-3">
-<div class="fileUpload btn btn-info" style="margin-left:312%;margin-top:-21%;">
+<div class="fileUpload btn btn-info" style="margin-left:-1%;margin-top:-1%;">
     <label style="font-weight:500;margin-bottom: 2px;">ATTACH</label>
 <input id="telephone_bill" value="<?php echo $arr_search['response'][0]['organization_details']['telephone'] ?>" style="margin-top: -20px;margin-left: 129px;" name="telephone_bill" class="upload" type="file"  disabled="true">  
-</div> 
 
 <?php
   $url_img_download_3 = 'https://kyc-application.herokuapp.com/download/';
@@ -410,13 +409,12 @@ $arr_search = json_decode($output_search,true);
   $arr_img_download_3 = json_decode($output_img_download_3,true);
   
 ?>
-
-<button style="background-color:#176fac;margin-top:-147%;margin-left:473%;" class="btn btn-success">
+</div> 
+<br>
+<button style="margin-left:75%;margin-top:-7%;" class="btn btn-success">
 <a target="_blank" style="color:white" href="view_image.php?name=telephone_bill_details&link=<?php echo $arr_img_download_3[0]['url']; ?>">VIEW</a>
 </button>
 </div> 
-</div>
-</div>
 
 <div class="form-group">
  <label class="col-md-4 control-label" for="checkboxes"></label>
@@ -430,7 +428,7 @@ $arr_search = json_decode($output_search,true);
      }else{
       $check_box_select2="";
     }?>
-     <input <?php echo $check_box_select2;?> type="checkbox" name="checkboxes" id="checkboxes-0" value="1"  readonly>Bank Passbook</label>
+     <input <?php echo $check_box_select2;?> type="checkbox" name="checkboxes" id="checkboxes-0" value="1" disabled>Bank Passbook</label>
 </div>
 <div class="col-md-3"> 
      <?php echo $arr_search['response'][0]['pass_book_details'][0]['name']; ?>

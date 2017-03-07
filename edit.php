@@ -15,6 +15,7 @@
     <script src="https://code.getmdl.io/1.3.0/material.min.js"></script>
     <link rel="stylesheet" href="css/material.css">
     <link rel="stylesheet" href="css/fileupload.css">
+     <link rel="stylesheet" href="autocomplete-Files/styles.css">
 
  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
   <style type="text/css">
@@ -733,7 +734,7 @@ if(isset($_POST["edit_btn"]) and $_GET["is_user"]==1) {
 
     <img style="margin-top:5%;margin-left:28px;width:50px;height:50px" src="images/green.png"></img>
     <h5 style="margin-left:35%;margin-top:9%;"><?php echo $arr_search['response'][0]['organization_details']['name'] ?><?php echo $arr_search['response'][0]['user_details']['name'] ?></h5>
-    <span class="mdl-layout-title" style="margin-left:26%;margin-top:7%;">KYChome</span>
+    <span class="mdl-layout-title" style="margin-left:26%;margin-top:7%;">KYCApp</span>
           <!-- Add spacer, to align navigation to the right -->
     </header>
     <div class="mdl-layout__drawer">
@@ -951,7 +952,7 @@ if(isset($_POST["edit_btn"]) and $_GET["is_user"]==1) {
 </div>
 
 <br>
-<button style="margin-left:73%;margin-top:-6%;" class="btn btn-success">
+<button style="margin-left:75%;margin-top:-6%;" class="btn btn-success">
 <a target="_blank" style="color:white" href="view_image.php?name=telephone_bill_details&link=<?php echo $arr_img_download_3[0]['url']; ?>">View</a>
 </button>
 </div> 
