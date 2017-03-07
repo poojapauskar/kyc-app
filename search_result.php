@@ -141,6 +141,9 @@ if($_GET['id'] == ""){
 /*echo $_POST['search'];*/
 // if its cumin from edit org to search org then query based on edit org name
 
+$_POST['is_user_field']="";
+$_POST['id_field']="";
+
 $text=$_GET['id'];
 
 if($_GET["is_user"]==0){

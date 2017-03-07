@@ -54,7 +54,6 @@
 <?php if($_POST['submit']){
 
   $string_new="<script>window.location.href='search_result.php?is_user=".$_POST['is_user_field']."&id=".$_POST['id_field']."'</script>";
-  $_POST=array();
   echo $string_new;
 
   /*echo $_POST["is_user_field"];
