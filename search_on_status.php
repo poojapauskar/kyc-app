@@ -127,10 +127,10 @@ td, th {
   <?php for($i=0;$i<count($arr_status);$i++){
      if($arr_status[0]['is_user']=="0"){
       $field="Organization";
-      $field2="search_organization.php?id=".$arr_status[$i]['additional_info']['user_org_id'];
+      $field2="search_result.php?is_user=0&id=".$arr_status[$i]['additional_info']['user_org_id'];
      }else{
       $field="User";
-      $field2="search_user.php?id=".$arr_status[$i]['additional_info']['user_org_id'];
+      $field2="search_result.php?is_user=1&id=".$arr_status[$i]['additional_info']['user_org_id'];
      }
   ?>
   <tr>
