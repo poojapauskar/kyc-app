@@ -45,7 +45,7 @@ if($_POST['is_user_delete'] != "" && $_POST['pk_delete'] != ""){
     $arr_delete_entry = json_decode($output_delete_entry,true);
     /*echo $arr_can_be_deleted_or_no['status'];*/
 }else{
-  echo "hi";
+  /*echo "hi";*/
 }
 ?>
 
