@@ -25,6 +25,30 @@
 
 <body style="background-color:#E8E8E8;overflow-x:hidden;">
 
+
+<?php
+
+if($_POST['is_user_delete'] != "" && $_POST['pk_delete'] != ""){
+    $url_delete_entry = 'https://kyc-application.herokuapp.com/delete_entry/';
+    $options_delete_entry = array(
+      'http' => array(
+        'header'  => array(
+                      'IS-USER: '.$_POST['is_user_delete'],
+                      'PK: '.$_POST['pk_delete'],
+                    ),
+        'method'  => 'GET',
+      ),
+    );
+    $context_delete_entry = stream_context_create($options_delete_entry);
+    $output_delete_entry = file_get_contents($url_delete_entry, false,$context_delete_entry);
+    /*echo $output_can_be_deleted_or_no;*/
+    $arr_delete_entry = json_decode($output_delete_entry,true);
+    /*echo $arr_can_be_deleted_or_no['status'];*/
+}else{
+  echo "hi";
+}
+?>
+
 <?php
 /*if(isset($_POST['submit'])){
   $url_org = 'https://kyc-application.herokuapp.com/get_id_from_text/';

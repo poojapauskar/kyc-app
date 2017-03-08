@@ -1162,7 +1162,10 @@ if(isset($_POST["edit_btn"]) and $_GET["is_user"]==1) {
   <div class="col-md-8">
     <button id="edit_btn" name="edit_btn" type="submit" class="btn btn-success" style="width: 10em;">Save</button><span><span></span></span>
     <button onclick="goBack()" class="btn btn-warning" style="width: 10em;"><a style="color:white" href="">Cancel</a></button>
-  
+    
+
+
+
   </div>
 </div>
 
@@ -1170,6 +1173,26 @@ if(isset($_POST["edit_btn"]) and $_GET["is_user"]==1) {
 
 </fieldset>
 </form>
+
+
+<form method="post" id="deleteForm" action="search.php" style="text-align:center">
+<input type="hidden" name="pk_delete" id="pk_delete" value="<?php echo $_GET['id'] ?>"></input>  
+<input type="hidden" name="is_user_delete" id="is_user_delete" value="<?php echo $_GET['is_user'] ?>"></input>  
+<button type="submit" onclick="return ConfirmDelete()" style="width: 10em;" class="btn btn-warning">
+  Delete
+</button>
+</form>
+
+<script type="text/javascript">
+  function ConfirmDelete()
+  {
+    var x = confirm("Are you sure you want to delete?");
+    if (x)
+      return true;
+    else
+      return false;
+   }
+</script>  
 
 <?php } else { ?>
 <form class="form-horizontal" method="post" action="" enctype="multipart/form-data">
@@ -1628,6 +1651,62 @@ if(isset($_POST["edit_btn"]) and $_GET["is_user"]==1) {
 
 </fieldset>
 </form>
+
+
+<?php
+$url_can_be_deleted_or_no = 'https://kyc-application.herokuapp.com/can_be_deleted_or_no/';
+$options_can_be_deleted_or_no = array(
+  'http' => array(
+    'header'  => array(
+                  'IS-USER: 1',
+                  'PK: '.$_GET['id'],
+                ),
+    'method'  => 'GET',
+  ),
+);
+$context_can_be_deleted_or_no = stream_context_create($options_can_be_deleted_or_no);
+$output_can_be_deleted_or_no = file_get_contents($url_can_be_deleted_or_no, false,$context_can_be_deleted_or_no);
+/*echo $output_can_be_deleted_or_no;*/
+$arr_can_be_deleted_or_no = json_decode($output_can_be_deleted_or_no,true);
+/*echo $arr_can_be_deleted_or_no['status'];*/
+
+?>
+
+
+<?php if ($arr_can_be_deleted_or_no['status']==200) { ?>
+
+    <form method="post" id="deleteForm" action="search.php" style="text-align:center">
+    <input type="hidden" name="pk_delete" id="pk_delete" value="<?php echo $_GET['id'] ?>"></input>  
+    <input type="hidden" name="is_user_delete" id="is_user_delete" value="<?php echo $_GET['is_user'] ?>"></input>  
+    <button type="submit" onclick="return ConfirmDelete()" style="width: 10em;" class="btn btn-warning">
+      Delete
+    </button>
+    </form>
+
+<?php } else { ?>
+    <div style="text-align:center">
+    <button onclick="return CannotDelete()" style="width: 10em;" class="btn btn-warning">
+      Delete
+    </button>
+    </div>
+<?php } ?>
+
+
+<script type="text/javascript">
+  function ConfirmDelete()
+  {
+    var x = confirm("Are you sure you want to delete?");
+    if (x)
+      return true;
+    else
+      return false;
+   }
+
+   function CannotDelete()
+  {
+    alert("This entry cannot be deleted");
+   }
+</script>
 
 <?php } ?>
 
