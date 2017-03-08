@@ -132,7 +132,6 @@
   </style>
 </head>
 <body style="background-color:#E8E8E8;overflow-x:hidden;>
-
 <?php
 /*echo $_POST['search'];*/
 // if its cumin from edit org to search org then query based on edit org name
@@ -201,7 +200,7 @@ $arr_search = json_decode($output_search,true);
   </strong>
 </div>
 </div>
-  
+
 <div class="container">
 <div class="mdl-grid" style="margin-left:80%;margin-top:19%">
   <div class="mdl-card mdl-cell mdl-cell--12-col mdl-cell--10-col-tablet mdl-shadow--2dp">
