@@ -1,19 +1,17 @@
 <html lang="en">
 <head>
   <title></title>
-   <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-<link rel="stylesheet" type="text/css" href="css/material.indigo-pink.min.css">
-
-<link rel="stylesheet" href="css/bootstrap.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <!-- Material Design Lite -->
     <script src="https://code.getmdl.io/1.3.0/material.min.js"></script>
     <link rel="stylesheet" href="css/material.css">
-
-
- <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-
+    <link rel="stylesheet" href="css/fileupload.css">
+     <script src="https://storage.googleapis.com/code.getmdl.io/1.0.6/material.min.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"> 
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 </head>
 
 <body style="background-color:#E8E8E8;overflow-x:hidden;">
@@ -58,32 +56,32 @@ if($_GET['name'] == 'pan_card_details'){
     $img_lnk=$url;
 }?>
 
-<img id="img1" src="<?php echo $img_lnk; ?>"></img>
+<img id="img1" width="200" height="300" src="<?php echo $img_lnk; ?>"></img>
 
-<div style="margin-top:5%;" class="row">
+<div style="margin-top:5%;margin-left:-22%" class="row">
  <div class="col-sm-3">
  </div>
- <div class="col-sm-2">
-  <button class="btn btn-success" style="color:white;width:150px;height:50px" onclick="print()">Print</button>
+ <div class="col-sm-3">
+  <button class="btn btn-success" style="color:white;width:100px;height:50px" onclick="print()">Print</button>
  </div>
- <div class="col-sm-2">
+ <div class="col-sm-3">
  
  <a href="mailto:test@gmail.com?subject=KYC Application
 &body=Thank You!" style="color:white"> 
-  <button class="btn btn-success" style="color:white;width:150px;height:50px" >Email
+  <button class="btn btn-success" style="color:white;width:100px;height:50px" >Email
   </button>
 </a>
 
  </div>
- <div class="col-sm-2">
+ <div class="col-sm-3">
   
   <a  style="color:white" download="<?php echo $certificate_name."jpg"; ?>" href="<?php echo $url; ?>" title="Save">
-    <button class="btn btn-success" style="color:white;width:150px;height:50px">Save
+    <button class="btn btn-success" style="color:white;width:100px;height:50px">Save
      </button>
   </a>
  
  </div>
- <div class="col-sm-3">
+ <div class="col-sm-3"><br><br>
  </div>
 </div>
 

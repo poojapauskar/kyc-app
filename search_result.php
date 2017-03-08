@@ -3,7 +3,7 @@
 <head>
   <title></title>
 
-  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<!--   <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"> -->
   <link rel="stylesheet" type="text/css" href="css/material.indigo-pink.min.css">
 
   <link rel="stylesheet" href="css/bootstrap.css">
@@ -131,10 +131,11 @@
 
   </style>
 </head>
+<body style="background-color:#E8E8E8;overflow-x:hidden;>
+
+<body style="background-color:#E8E8E8;overflow-x:hidden;>
 
 <?php
-
-
 /*echo $_POST['search'];*/
 // if its cumin from edit org to search org then query based on edit org name
 
@@ -165,14 +166,15 @@ $arr_search = json_decode($output_search,true);
 /*echo count($arr_search['response'][0]['partner_details'])*/
 ?>
 
+
 <div class="demo-layout-transparent mdl-layout mdl-js-layout">
   <header style="background-color:#08426a;height:110px;-webkit-box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23) !important;
      -moz-box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23) !important;
      box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23) !important;" class="mdl-layout__header mdl-layout__header--transparent">
     <div class="mdl-layout__header-row" >
 
-    <img style="margin-top:5%;margin-left:28px;width:50px;height:50px" src="images/green.png"></img><h5 style="margin-left:35%;margin-top:9%;"><?php echo $arr_search['response'][0]['organization_details']['name'] ?><?php echo $arr_search['response'][0]['user_details']['name'] ?></h5>
-         <span class="mdl-layout-title" style="margin-left:26%;margin-top:7%;">KYChome</span>
+    <a href="search.php"><img style="margin-top:36%;margin-left:28px;width:50px;height:50px" src="images/green.png"></img></a><h5 style="margin-left:35%;margin-top:9%;"><?php echo $arr_search['response'][0]['organization_details']['name'] ?><?php echo $arr_search['response'][0]['user_details']['name'] ?></h5>
+         <span class="mdl-layout-title" style="margin-left:26%;margin-top:7%;">KYCApp</span>
           <!-- Add spacer, to align navigation to the right -->
       </header>
       <div class="mdl-layout__drawer">
@@ -188,7 +190,7 @@ $arr_search = json_decode($output_search,true);
           <a class="mdl-navigation__link" href="">Contact</a>
         </nav>
       </div>
-      <div class="alert" style="margin-top:0%">
+      <div class="alert" style="margin-top:0%;">
   <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
   <strong>
 
@@ -201,12 +203,10 @@ $arr_search = json_decode($output_search,true);
   </strong>
 </div>
 </div>
-  
-
 
 <div class="container">
 
-<div class="mdl-grid" style="margin-left:80%;margin-top:19%">
+<div class="mdl-grid" style="margin-left:80%;margin-top:20%">
   <div class="mdl-card mdl-cell mdl-cell--12-col mdl-cell--10-col-tablet mdl-shadow--2dp">
     <div class="mdl-card__title">
       <h1 class="mdl-card__title-text">Description and Status of Work</h1>
@@ -274,11 +274,11 @@ $arr_search = json_decode($output_search,true);
 }
 ?>
     <label class="mdl-radio mdl-js-radio" for="radios-0">
-      <input type="radio" name="registration" id="radios-0" value="1" class="mdl-radio__button" checked="<?php echo $checked1; ?>" readonly>
+      <input type="radio" name="registration" id="radios-0" value="1" class="mdl-radio__button" checked="<?php echo $checked1; ?>" disabled>
       Registered
     </label>
     <label class="mdl-radio mdl-js-radio" for="radios-1">
-      <input type="radio" name="registration" id="radios-1" value="0" class="mdl-radio__button" checked="<?php echo $checked2; ?>" readonly>
+      <input type="radio" name="registration" id="radios-1" value="0" class="mdl-radio__button" checked="<?php echo $checked2; ?>" disabled>
       Un-Registered
     </label> 
   </div>
@@ -313,11 +313,10 @@ $arr_search = json_decode($output_search,true);
 </div>
 
 <button style="background-color:#176fac;margin-top:-25%;margin-left:129%;" class="btn btn-success">
-<a target="_blank" style="color:white" href="view_image.php?name=reg_certificate_details&link=<?php echo $arr_img_download[0]['url']; ?>">VIEW</a>
+<a target="_blank" data-toggle="modal" data-target="#myModal" style="color:white" href="view_popup.php?name=reg_certificate_details&link=<?php echo $arr_img_download[0]['url']; ?>">VIEW</a>
 </button>
 </div>
 </div>
-
 
 <!-- Text input-->
 <div class="form-group" style="margin-top:-3%">
@@ -355,7 +354,7 @@ $arr_search = json_decode($output_search,true);
 </div>
 
 <button style="background-color:#176fac;margin-top:-26%;margin-left:129%;" class="btn btn-success">
-<a target="_blank" style="color:white" href="view_image.php?name=pan_card_details&link=<?php echo $arr_img_download_2[0]['url']; ?>">VIEW</a>
+<a target="_blank" data-toggle="modal" data-target="#myModal" style="color:white" href="view_popup.php?name=pan_card_details&link=<?php echo $arr_img_download_2[0]['url']; ?>">VIEW</a>
 </button>
 </div>
 </div>
@@ -375,24 +374,22 @@ $arr_search = json_decode($output_search,true);
  <label class="col-md-4 control-label" for="checkboxes">address Proof:</label>
  <div class="col-md-4">
    <label class="checkbox-inline" for="checkboxes-0">
-  <div class="col-md-3">
+ <!--  <div class="col-md-3"> -->
     <?php if($arr_search['response'][0]['telephone_bill_details'][0]['name'] != ''){
       $check_box_select1="checked";
     }else{
       $check_box_select1="";
     }?>
-     <input <?php echo $check_box_select1;?> type="checkbox" name="checkboxes" id="checkboxes-0" value="1"  readonly>Telephone</label>
+     <input <?php echo $check_box_select1;?> type="checkbox" name="checkboxes" id="checkboxes-0" value="1"  disabled>Telephone</label>
     
   </div>
-<div class="col-md-3">
+<div class="col-md-3" style="margin-left:43%;margin-top:-2%">
     <?php echo $arr_search['response'][0]['telephone_bill_details'][0]['name']; ?>
 </div>
 
-<div class="col-md-3">
-<div class="fileUpload btn btn-info" style="margin-left:312%;margin-top:-21%;">
+<div class="fileUpload btn btn-info" style="margin-left:-1%;margin-top:-1%;">
     <label style="font-weight:500;margin-bottom: 2px;">ATTACH</label>
 <input id="telephone_bill" value="<?php echo $arr_search['response'][0]['organization_details']['telephone'] ?>" style="margin-top: -20px;margin-left: 129px;" name="telephone_bill" class="upload" type="file"  disabled="true">  
-</div> 
 
 <?php
   $url_img_download_3 = 'https://kyc-application.herokuapp.com/download/';
@@ -410,27 +407,25 @@ $arr_search = json_decode($output_search,true);
   $arr_img_download_3 = json_decode($output_img_download_3,true);
   
 ?>
-
-<button style="background-color:#176fac;margin-top:-147%;margin-left:473%;" class="btn btn-success">
-<a target="_blank" style="color:white" href="view_image.php?name=telephone_bill_details&link=<?php echo $arr_img_download_3[0]['url']; ?>">VIEW</a>
+</div> 
+<br>
+<button style="margin-left:75%;margin-top:-7%;" class="btn btn-success">
+<a target="_blank" data-toggle="modal" data-target="#myModal" style="color:white" href="view_popup.php?name=telephone_bill_details&link=<?php echo $arr_img_download_3[0]['url']; ?>">VIEW</a>
 </button>
 </div> 
-</div>
-</div>
 
 <div class="form-group">
  <label class="col-md-4 control-label" for="checkboxes"></label>
  <div class="col-md-4">
    <label class="checkbox-inline" for="checkboxes-0">
-
-<div class="col-md-3">
+   <div class="col-md-3">
      <?php if($arr_search['response'][0]['pass_book_details'][0]['name'] != ''){
       $check_box_select2="checked";
       
      }else{
       $check_box_select2="";
     }?>
-     <input <?php echo $check_box_select2;?> type="checkbox" name="checkboxes" id="checkboxes-0" value="1"  readonly>Bank Passbook</label>
+     <input <?php echo $check_box_select2;?> type="checkbox" name="checkboxes" id="checkboxes-0" value="1" disabled>Bank Passbook</label>
 </div>
 <div class="col-md-3"> 
      <?php echo $arr_search['response'][0]['pass_book_details'][0]['name']; ?>
@@ -459,12 +454,12 @@ $arr_search = json_decode($output_search,true);
 ?>
 
 <button style="background-color:#176fac;margin-top:-144%;margin-left:476%;" class="btn btn-success">
-<a target="_blank" style="color:white" href="view_image.php?name=pass_book_details&link=<?php echo $arr_img_download_4[0]['url']; ?>">VIEW</a>
+<a target="_blank" data-toggle="modal" data-target="#myModal" style="color:white" href="view_popup.php?name=pass_book_details&link=<?php echo $arr_img_download_4[0]['url']; ?>">VIEW</a>
 </button>
 </div>
-
- </div>
 </div>
+ </div>
+
 <!-- Added Partner 1 -->
 <label for="comment" style="margin-left: 279px;margin-top:-27%;font-size: 17px;"> Partner 1: </label>
 <?php for($x=0;$x < count($arr_search['response'][0]['partner_details']); $x++){?>
@@ -645,7 +640,7 @@ $arr_search = json_decode($output_search,true);
 
 <button style="margin-left:114%;margin-top:-13%" class="btn btn-success">
 
-<a target="_blank" style="color:white" href="view_image.php?name=pan_card_details&link=<?php echo $arr_img_download[0]['url']; ?>">View</a>
+<a target="_blank" data-toggle="modal" data-target="#myModal" style="color:white" href="view_popup.php?name=pan_card_details&link=<?php echo $arr_img_download[0]['url']; ?>">View</a>
 </button>
 
 </div>
@@ -665,7 +660,7 @@ $arr_search = json_decode($output_search,true);
       $check_box_select1="";
     }?>
 
- <input <?php echo $check_box_select1 ?> type="checkbox" name="checkboxes" id="checkboxes-0" value="1">Telephone</label>
+ <input <?php echo $check_box_select1 ?> type="checkbox" name="checkboxes" id="checkboxes-0" value="1" disabled>Telephone</label>
 </div>
 
 <div class="col-md-4">
@@ -698,7 +693,7 @@ $arr_search = json_decode($output_search,true);
 
 
 <button style="margin-left:70%;margin-top:-6%" class="btn btn-success">
-<a target="_blank" style="color:white" href="view_image.php?name=telephone_bill_details&link=<?php echo $arr_img_download_2[0]['url']; ?>">View</a>
+<a target="_blank" data-toggle="modal" data-target="#myModal" style="color:white" href="view_popup.php?name=telephone_bill_details&link=<?php echo $arr_img_download_2[0]['url']; ?>">View</a>
 </button>
 </div>
 </div>
@@ -713,7 +708,7 @@ $arr_search = json_decode($output_search,true);
     }else{
       $check_box_select2="";
     }?>
-     <input <?php echo $check_box_select2 ?> type="checkbox" name="checkboxes" id="checkboxes-0" value="1">Bank Passbook</label>
+     <input <?php echo $check_box_select2 ?> type="checkbox" name="checkboxes" id="checkboxes-0" value="1" disabled>Bank Passbook</label>
 
  </div>
 
@@ -744,7 +739,7 @@ $arr_search = json_decode($output_search,true);
 ?>
 
 <button style="margin-left:88%" class="btn btn-success">
-<a target="_blank" style="color:white" href="view_image.php?name=bank_pass_book_details&link=<?php echo $arr_img_download_3[0]['url']; ?>">View</a>
+<a target="_blank" data-toggle="modal" data-target="#myModal" style="color:white" href="view_popup.php?name=bank_pass_book_details&link=<?php echo $arr_img_download_3[0]['url']; ?>">View</a>
 </button>
 
 </div>
@@ -765,7 +760,7 @@ $arr_search = json_decode($output_search,true);
       $check_box_select3="";
     }?>
 
-     <input <?php echo $check_box_select3; ?> type="checkbox" name="checkboxes" id="checkboxes-0" value="1">voter ID</label>
+     <input <?php echo $check_box_select3; ?> type="checkbox" name="checkboxes" id="checkboxes-0" value="1" disabled>voter ID</label>
    </div>
 
     <div class="col-md-4">
@@ -796,7 +791,7 @@ $arr_search = json_decode($output_search,true);
 
 
 <button style="margin-left:88%" class="btn btn-success">
-<a target="_blank" style="color:white" href="view_image.php?name=voter_id_details&link=<?php echo $arr_img_download_4[0]['url']; ?>">View</a>
+<a target="_blank" data-toggle="modal" data-target="#myModal" style="color:white" href="view_popup.php?name=voter_id_details&link=<?php echo $arr_img_download_4[0]['url']; ?>">View</a>
 </button>
 
 
@@ -814,7 +809,7 @@ $arr_search = json_decode($output_search,true);
     }else{
       $check_box_select4="";
     }?>
-     <input <?php echo $check_box_select4; ?> type="checkbox" name="checkboxes" id="checkboxes-0" value="1">Passport</label>
+     <input <?php echo $check_box_select4; ?> type="checkbox" name="checkboxes" id="checkboxes-0" value="1" disabled>Passport</label>
   </div>
 
    <div class="col-md-4">
@@ -845,7 +840,7 @@ $arr_search = json_decode($output_search,true);
 
 
 <button style="margin-left:88%" class="btn btn-success">
-<a target="_blank" style="color:white" href="view_image.php?name=passport_details&link=<?php echo $arr_img_download_5[0]['url']; ?>">View</a>
+<a target="_blank" data-toggle="modal" data-target="#myModal" style="color:white" href="view_popup.php?name=passport_details&link=<?php echo $arr_img_download_5[0]['url']; ?>">View</a>
 </button>
 
   </div>
@@ -892,7 +887,7 @@ $arr_search = json_decode($output_search,true);
 
 
 <button style="margin-left:117%;position:absoulte;margin-top:-12%" class="btn btn-success">
-<a target="_blank" style="color:white" href="view_image.php?name=aadhar_card_details&link=<?php echo $arr_img_download_6[0]['url']; ?>">View</a>
+<a target="_blank" data-toggle="modal" data-target="#myModal" style="color:white" href="view_popup.php?name=aadhar_card_details&link=<?php echo $arr_img_download_6[0]['url']; ?>">View</a>
 </button>
 
   </div>
@@ -912,6 +907,30 @@ $arr_search = json_decode($output_search,true);
 </form>
 
 <?php } ?>
+
+<script type="text/javascript">
+$(function(){
+
+$('#trigger').click(function(){
+  $('#myModal').modal('show');
+  return false;
+})
+
+});
+</script>
+
+<div class="container">
+
+    
+    <!-- Modal HTML -->
+    <div id="myModal" class="modal fade">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <!-- Content will be loaded here from "remote.php" file -->
+            </div>
+        </div>
+    </div>
+</div>
 
 </main>
 </body>
