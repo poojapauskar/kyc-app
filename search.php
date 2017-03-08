@@ -70,7 +70,7 @@ if($_POST['is_user_field'] == "" || $_POST['id_field'] ==""){
      box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23) !important;" class="mdl-layout__header mdl-layout__header--transparent">
         <div class="mdl-layout__header-row" >
 
-        <img style="margin-top:5%;margin-left:28px;width:50px;height:50px" src="images/green.png"></img>
+       <a href="search.php"> <img style="margin-top:36%;margin-left:28px;width:50px;height:50px" src="images/green.png"></img></a>
       <h5 style="margin-left:35%;margin-top:9%;">Admin Panel</h5>
          <span class="mdl-layout-title" style="margin-left:26%;margin-top:7%;">KYCApp</span>
          <a href="index.php"><img style="margin-top:100%;margin-left:28px;width:40px;height:40px" src="images/logout1.png"></img></a>

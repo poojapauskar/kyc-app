@@ -173,7 +173,7 @@ $arr_search = json_decode($output_search,true);
      box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23) !important;" class="mdl-layout__header mdl-layout__header--transparent">
     <div class="mdl-layout__header-row" >
 
-    <img style="margin-top:5%;margin-left:28px;width:50px;height:50px" src="images/green.png"></img><h5 style="margin-left:35%;margin-top:9%;"><?php echo $arr_search['response'][0]['organization_details']['name'] ?><?php echo $arr_search['response'][0]['user_details']['name'] ?></h5>
+    <a href="search.php"><img style="margin-top:36%;margin-left:28px;width:50px;height:50px" src="images/green.png"></img></a><h5 style="margin-left:35%;margin-top:9%;"><?php echo $arr_search['response'][0]['organization_details']['name'] ?><?php echo $arr_search['response'][0]['user_details']['name'] ?></h5>
          <span class="mdl-layout-title" style="margin-left:26%;margin-top:7%;">KYCApp</span>
           <!-- Add spacer, to align navigation to the right -->
       </header>
@@ -207,7 +207,7 @@ $arr_search = json_decode($output_search,true);
 
 <div class="container">
 
-<div class="mdl-grid" style="margin-left:80%;margin-top:6%">
+<div class="mdl-grid" style="margin-left:80%;margin-top:20%">
   <div class="mdl-card mdl-cell mdl-cell--12-col mdl-cell--10-col-tablet mdl-shadow--2dp">
     <div class="mdl-card__title">
       <h1 class="mdl-card__title-text">Description and Status of Work</h1>
