@@ -658,7 +658,7 @@ $arr_search = json_decode($output_search,true);
       $check_box_select1="";
     }?>
 
- <input <?php echo $check_box_select1 ?> type="checkbox" name="checkboxes" id="checkboxes-0" value="1">Telephone</label>
+ <input <?php echo $check_box_select1 ?> type="checkbox" name="checkboxes" id="checkboxes-0" value="1" disabled>Telephone</label>
 </div>
 
 <div class="col-md-4">
@@ -706,7 +706,7 @@ $arr_search = json_decode($output_search,true);
     }else{
       $check_box_select2="";
     }?>
-     <input <?php echo $check_box_select2 ?> type="checkbox" name="checkboxes" id="checkboxes-0" value="1">Bank Passbook</label>
+     <input <?php echo $check_box_select2 ?> type="checkbox" name="checkboxes" id="checkboxes-0" value="1" disabled>Bank Passbook</label>
 
  </div>
 
@@ -758,7 +758,7 @@ $arr_search = json_decode($output_search,true);
       $check_box_select3="";
     }?>
 
-     <input <?php echo $check_box_select3; ?> type="checkbox" name="checkboxes" id="checkboxes-0" value="1">voter ID</label>
+     <input <?php echo $check_box_select3; ?> type="checkbox" name="checkboxes" id="checkboxes-0" value="1" disabled>voter ID</label>
    </div>
 
     <div class="col-md-4">
@@ -807,7 +807,7 @@ $arr_search = json_decode($output_search,true);
     }else{
       $check_box_select4="";
     }?>
-     <input <?php echo $check_box_select4; ?> type="checkbox" name="checkboxes" id="checkboxes-0" value="1">Passport</label>
+     <input <?php echo $check_box_select4; ?> type="checkbox" name="checkboxes" id="checkboxes-0" value="1" disabled>Passport</label>
   </div>
 
    <div class="col-md-4">
