@@ -131,7 +131,7 @@
 
   </style>
 </head>
-
+<body style="background-color:#E8E8E8;overflow-x:hidden;>
 <?php
 
 
@@ -165,6 +165,7 @@ $arr_search = json_decode($output_search,true);
 /*echo count($arr_search['response'][0]['partner_details'])*/
 ?>
 
+
 <div class="demo-layout-transparent mdl-layout mdl-js-layout">
   <header style="background-color:#08426a;height:110px;-webkit-box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23) !important;
      -moz-box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23) !important;
@@ -188,7 +189,7 @@ $arr_search = json_decode($output_search,true);
           <a class="mdl-navigation__link" href="">Contact</a>
         </nav>
       </div>
-      <div class="alert" style="margin-top:0%">
+      <div class="alert" style="margin-top:0%;">
   <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
   <strong>
 
@@ -202,10 +203,7 @@ $arr_search = json_decode($output_search,true);
 </div>
 </div>
   
-
-
 <div class="container">
-
 <div class="mdl-grid" style="margin-left:80%;margin-top:19%">
   <div class="mdl-card mdl-cell mdl-cell--12-col mdl-cell--10-col-tablet mdl-shadow--2dp">
     <div class="mdl-card__title">
