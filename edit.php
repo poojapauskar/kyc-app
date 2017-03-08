@@ -1186,7 +1186,7 @@ if(isset($_POST["edit_btn"]) and $_GET["is_user"]==1) {
 <script type="text/javascript">
   function ConfirmDelete()
   {
-    var x = confirm("Are you sure you want to delete?");
+    var x = confirm("Are you sure you wish to delete this entry?");
     if (x)
       return true;
     else
@@ -1695,7 +1695,7 @@ $arr_can_be_deleted_or_no = json_decode($output_can_be_deleted_or_no,true);
 <script type="text/javascript">
   function ConfirmDelete()
   {
-    var x = confirm("Are you sure you want to delete?");
+    var x = confirm("Are you sure you wish to delete this entry?");
     if (x)
       return true;
     else
