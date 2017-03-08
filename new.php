@@ -758,7 +758,7 @@ if ($_POST['uid'] != '' and $_GET["is_user"]==1){
      box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23) !important;" class="mdl-layout__header mdl-layout__header--transparent">
         <div class="mdl-layout__header-row" >
 
-    <img style="margin-top:5%;margin-left:28px;width:50px;height:50px" src="images/green.png"></img>
+    <a href="search.php"><img style="margin-top:36%;margin-left:28px;width:50px;height:50px" src="images/green.png"></img></a>
 
     <?php if ($_GET['is_user']==0) { 
            $title="New Entry Organization";
