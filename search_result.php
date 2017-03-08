@@ -131,7 +131,12 @@
 
   </style>
 </head>
+<<<<<<< HEAD
 <body style="background-color:#E8E8E8;overflow-x:hidden;>
+=======
+<body style="background-color:#E8E8E8;overflow-x:hidden;">
+
+>>>>>>> drop-down and alignment of btn in edit page
 <?php
 /*echo $_POST['search'];*/
 // if its cumin from edit org to search org then query based on edit org name
