@@ -1,1 +1,1 @@
-var partnames={"148":"kuntusagar","142":"Admin","143":"Pooja SP","145":"Spoorti","144":"John","146":"Veena","147":"Uzma"}
+var partnames={"148":"kuntusagar","150":"Girish","143":"Pooja SP","142":"Admin","145":"Spoorti","144":"John","146":"Veena","147":"Uzma"}

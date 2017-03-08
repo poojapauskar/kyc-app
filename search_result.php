@@ -3,7 +3,7 @@
 <head>
   <title></title>
 
-  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<!--   <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"> -->
   <link rel="stylesheet" type="text/css" href="css/material.indigo-pink.min.css">
 
   <link rel="stylesheet" href="css/bootstrap.css">
@@ -314,11 +314,10 @@ $arr_search = json_decode($output_search,true);
 </div>
 
 <button style="background-color:#176fac;margin-top:-25%;margin-left:129%;" class="btn btn-success">
-<a target="_blank" style="color:white" href="view_image.php?name=reg_certificate_details&link=<?php echo $arr_img_download[0]['url']; ?>">VIEW</a>
+<a target="_blank" data-toggle="modal" data-target="#myModal" style="color:white" href="view_popup.php?name=reg_certificate_details&link=<?php echo $arr_img_download[0]['url']; ?>">VIEW</a>
 </button>
 </div>
 </div>
-
 
 <!-- Text input-->
 <div class="form-group" style="margin-top:-3%">
@@ -356,7 +355,7 @@ $arr_search = json_decode($output_search,true);
 </div>
 
 <button style="background-color:#176fac;margin-top:-26%;margin-left:129%;" class="btn btn-success">
-<a target="_blank" style="color:white" href="view_image.php?name=pan_card_details&link=<?php echo $arr_img_download_2[0]['url']; ?>">VIEW</a>
+<a target="_blank" data-toggle="modal" data-target="#myModal" style="color:white" href="view_popup.php?name=pan_card_details&link=<?php echo $arr_img_download_2[0]['url']; ?>">VIEW</a>
 </button>
 </div>
 </div>
@@ -412,7 +411,7 @@ $arr_search = json_decode($output_search,true);
 </div> 
 <br>
 <button style="margin-left:75%;margin-top:-7%;" class="btn btn-success">
-<a target="_blank" style="color:white" href="view_image.php?name=telephone_bill_details&link=<?php echo $arr_img_download_3[0]['url']; ?>">VIEW</a>
+<a target="_blank" data-toggle="modal" data-target="#myModal" style="color:white" href="view_popup.php?name=telephone_bill_details&link=<?php echo $arr_img_download_3[0]['url']; ?>">VIEW</a>
 </button>
 </div> 
 
@@ -420,8 +419,7 @@ $arr_search = json_decode($output_search,true);
  <label class="col-md-4 control-label" for="checkboxes"></label>
  <div class="col-md-4">
    <label class="checkbox-inline" for="checkboxes-0">
-
-<div class="col-md-3">
+   <div class="col-md-3">
      <?php if($arr_search['response'][0]['pass_book_details'][0]['name'] != ''){
       $check_box_select2="checked";
       
@@ -457,12 +455,12 @@ $arr_search = json_decode($output_search,true);
 ?>
 
 <button style="background-color:#176fac;margin-top:-144%;margin-left:476%;" class="btn btn-success">
-<a target="_blank" style="color:white" href="view_image.php?name=pass_book_details&link=<?php echo $arr_img_download_4[0]['url']; ?>">VIEW</a>
+<a target="_blank" data-toggle="modal" data-target="#myModal" style="color:white" href="view_popup.php?name=pass_book_details&link=<?php echo $arr_img_download_4[0]['url']; ?>">VIEW</a>
 </button>
 </div>
-
- </div>
 </div>
+ </div>
+
 <!-- Added Partner 1 -->
 <label for="comment" style="margin-left: 279px;margin-top:-27%;font-size: 17px;"> Partner 1: </label>
 <?php for($x=0;$x < count($arr_search['response'][0]['partner_details']); $x++){?>
@@ -643,7 +641,7 @@ $arr_search = json_decode($output_search,true);
 
 <button style="margin-left:114%;margin-top:-13%" class="btn btn-success">
 
-<a target="_blank" style="color:white" href="view_image.php?name=pan_card_details&link=<?php echo $arr_img_download[0]['url']; ?>">View</a>
+<a target="_blank" data-toggle="modal" data-target="#myModal" style="color:white" href="view_popup.php?name=pan_card_details&link=<?php echo $arr_img_download[0]['url']; ?>">View</a>
 </button>
 
 </div>
@@ -696,7 +694,7 @@ $arr_search = json_decode($output_search,true);
 
 
 <button style="margin-left:70%;margin-top:-6%" class="btn btn-success">
-<a target="_blank" style="color:white" href="view_image.php?name=telephone_bill_details&link=<?php echo $arr_img_download_2[0]['url']; ?>">View</a>
+<a target="_blank" data-toggle="modal" data-target="#myModal" style="color:white" href="view_popup.php?name=telephone_bill_details&link=<?php echo $arr_img_download_2[0]['url']; ?>">View</a>
 </button>
 </div>
 </div>
@@ -742,7 +740,7 @@ $arr_search = json_decode($output_search,true);
 ?>
 
 <button style="margin-left:88%" class="btn btn-success">
-<a target="_blank" style="color:white" href="view_image.php?name=bank_pass_book_details&link=<?php echo $arr_img_download_3[0]['url']; ?>">View</a>
+<a target="_blank" data-toggle="modal" data-target="#myModal" style="color:white" href="view_popup.php?name=bank_pass_book_details&link=<?php echo $arr_img_download_3[0]['url']; ?>">View</a>
 </button>
 
 </div>
@@ -794,7 +792,7 @@ $arr_search = json_decode($output_search,true);
 
 
 <button style="margin-left:88%" class="btn btn-success">
-<a target="_blank" style="color:white" href="view_image.php?name=voter_id_details&link=<?php echo $arr_img_download_4[0]['url']; ?>">View</a>
+<a target="_blank" data-toggle="modal" data-target="#myModal" style="color:white" href="view_popup.php?name=voter_id_details&link=<?php echo $arr_img_download_4[0]['url']; ?>">View</a>
 </button>
 
 
@@ -843,7 +841,7 @@ $arr_search = json_decode($output_search,true);
 
 
 <button style="margin-left:88%" class="btn btn-success">
-<a target="_blank" style="color:white" href="view_image.php?name=passport_details&link=<?php echo $arr_img_download_5[0]['url']; ?>">View</a>
+<a target="_blank" data-toggle="modal" data-target="#myModal" style="color:white" href="view_popup.php?name=passport_details&link=<?php echo $arr_img_download_5[0]['url']; ?>">View</a>
 </button>
 
   </div>
@@ -890,7 +888,7 @@ $arr_search = json_decode($output_search,true);
 
 
 <button style="margin-left:117%;position:absoulte;margin-top:-12%" class="btn btn-success">
-<a target="_blank" style="color:white" href="view_image.php?name=aadhar_card_details&link=<?php echo $arr_img_download_6[0]['url']; ?>">View</a>
+<a target="_blank" data-toggle="modal" data-target="#myModal" style="color:white" href="view_popup.php?name=aadhar_card_details&link=<?php echo $arr_img_download_6[0]['url']; ?>">View</a>
 </button>
 
   </div>
@@ -910,6 +908,30 @@ $arr_search = json_decode($output_search,true);
 </form>
 
 <?php } ?>
+
+<script type="text/javascript">
+$(function(){
+
+$('#trigger').click(function(){
+  $('#myModal').modal('show');
+  return false;
+})
+
+});
+</script>
+
+<div class="container">
+
+    
+    <!-- Modal HTML -->
+    <div id="myModal" class="modal fade">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <!-- Content will be loaded here from "remote.php" file -->
+            </div>
+        </div>
+    </div>
+</div>
 
 </main>
 </body>
