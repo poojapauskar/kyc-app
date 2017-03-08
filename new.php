@@ -993,7 +993,7 @@ if ($_POST['uid'] != '' and $_GET["is_user"]==1){
   <div class="form-group">
   <label class="col-md-4 control-label" for="textinput">DATE</label>  
   <div class="col-md-4">
-  <input id="date[]" name="date[]" value="<?php echo $_POST['date'] ?>" style="width:100%;margin-left:-0.4%;margin-top:0%;" type="Text" value="" id="example-date-input" type="text" class="form-control input-md">
+  <input id="date[]" name="date[]" value="<?php echo $_POST['date'] ?>" style="width:100%;margin-left:-0.4%;margin-top:0%;" type="date" value="" id="example-date-input" class="form-control input-md">
     
   </div>
 </div>
@@ -1080,10 +1080,12 @@ if ($_POST['uid'] != '' and $_GET["is_user"]==1){
   </div>
 </div>
 <!--date-->
-<div class="form-group row">
-  <label for="example-date-input" class="col-2 col-form-label" style="margin-left:29.5%;">DOB:</label>
-  <div class="col-10">
-    <input class="form-control" id="date1" name="date1" value="<?php echo $_POST['date'] ?>" style="width:31%;margin-left:34.6%;margin-top:-2%;" type="text">
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="textinput">DOB:</label>  
+  <div class="col-md-4">
+  <input id="date1" name="date1" value="<?php echo $_POST['date'] ?>" type="date" placeholder="" class="form-control input-md">
+    
   </div>
 </div>
 
