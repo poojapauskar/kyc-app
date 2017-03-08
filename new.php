@@ -1045,9 +1045,9 @@ if ($_POST['uid'] != '' and $_GET["is_user"]==1){
  <!--  <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> -->
  <!--  <form method="post" action="new.php">  -->
   <label>UID Generated</label><br>
-  <input type="text" id="uid_in_popup" name="uid_in_popup" style="background-color:transparent;color:black;border:none"></input><br><br>
-  <button id="done" class="btn btn-success" name="done" onclick="submit_form()">Done</button>
-  <button onclick="make_uid_null()" id="cancel1" class="btn btn-warning" name="cancel1">Cancel</button>
+  <input type="text" id="uid_in_popup" name="uid_in_popup" style="text-align:center;background-color:transparent;color:black;border:none"></input><br><br>
+  <button style="margin-left:1%;" id="done" class="btn btn-success" name="done" onclick="submit_form()">Done</button>
+  <button style="margin-top:-1%;" onclick="make_uid_null()" id="cancel1" class="btn btn-warning" name="cancel1">Cancel</button>
   <!-- </form> -->
 </div>
 
