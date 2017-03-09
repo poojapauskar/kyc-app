@@ -153,7 +153,115 @@ $arr_search = json_decode($output_search,true);
 /*echo count($arr_search['response'][0]['partner_details'])*/
 ?>
 
+<script type="text/javascript">
+  function check_file_type_org(){
 
+    reg_certificate_org = document.getElementById('reg_certificate');
+    if(reg_certificate_org.files.length != 0){
+        var isValid = /\.(jpg|jpeg|png|gif|pdf)$/.test(reg_certificate_org.value);
+        if (!isValid) {
+          alert('Registration Certificate: Only image or pdf files allowed!');
+          return false;
+        }
+    }
+
+    pan_card_org = document.getElementById('pan_card');
+    if(pan_card_org.files.length != 0){
+        var isValid = /\.(jpg|jpeg|png|gif|pdf)$/.test(pan_card_org.value);
+        if (!isValid) {
+          alert('Pan Card: Only image and pdf files allowed!');
+          return false;
+        }
+    }
+
+    telephone_bill_org = document.getElementById('telephone_bill');
+    if(telephone_bill_org.files.length != 0){
+        var isValid = /\.(jpg|jpeg|png|gif|pdf)$/.test(telephone_bill_org.value);
+        if (!isValid) {
+          alert('Telephone Bill: Only image and pdf files allowed!');
+          return false;
+        }
+    }
+
+    bank_pass_book_org = document.getElementById('bank_pass_book');
+    if(bank_pass_book_org.files.length != 0){
+        var isValid = /\.(jpg|jpeg|png|gif|pdf)$/.test(bank_pass_book_org.value);
+        if (!isValid) {
+          alert('Bank Pass Book: Only image and pdf files allowed!');
+          return false;
+        }
+    }
+
+  }
+</script>
+<script type="text/javascript">
+  function check_file_type_user(){
+
+    pan_card_user = document.getElementById('pan_card');
+    if(pan_card_user.files.length != 0){
+        var isValid = /\.(jpg|jpeg|png|gif|pdf)$/.test(pan_card_user.value);
+        if (!isValid) {
+          alert('Pan Card: Only image or pdf files allowed!');
+          return false;
+        }
+    }
+
+    telephone_bill_user = document.getElementById('telephone_bill');
+    if(telephone_bill_user.files.length != 0){
+        var isValid = /\.(jpg|jpeg|png|gif|pdf)$/.test(telephone_bill_user.value);
+        if (!isValid) {
+          alert('Telephone Bill: Only image and pdf files allowed!');
+          return false;
+        }
+    }
+
+    bank_pass_book_user = document.getElementById('bank_pass_book');
+    if(bank_pass_book_user.files.length != 0){
+        var isValid = /\.(jpg|jpeg|png|gif|pdf)$/.test(bank_pass_book_user.value);
+        if (!isValid) {
+          alert('Bank Pass Book: Only image and pdf files allowed!');
+          return false;
+        }
+    }
+
+    voter_id_user = document.getElementById('voter_id');
+    if(voter_id_user.files.length != 0){
+        var isValid = /\.(jpg|jpeg|png|gif|pdf)$/.test(voter_id_user.value);
+        if (!isValid) {
+          alert('Voter Id: Only image and pdf files allowed!');
+          return false;
+        }
+    }
+
+    passport_user = document.getElementById('passport');
+    if(passport_user.files.length != 0){
+        var isValid = /\.(jpg|jpeg|png|gif|pdf)$/.test(passport_user.value);
+        if (!isValid) {
+          alert('Passport: Only image and pdf files allowed!');
+          return false;
+        }
+    }
+
+    aadhar_card_user = document.getElementById('aadhar_card');
+    if(aadhar_card_user.files.length != 0){
+        var isValid = /\.(jpg|jpeg|png|gif|pdf)$/.test(aadhar_card_user.value);
+        if (!isValid) {
+          alert('Aadhar Card: Only image and pdf files allowed!');
+          return false;
+        }
+    }
+
+    image_user = document.getElementById('image');
+    if(image_user.files.length != 0){
+        var isValid = /\.(jpg|jpeg|png|gif|pdf)$/.test(image_user.value);
+        if (!isValid) {
+          alert('Profile Pic: Only image and pdf files allowed!');
+          return false;
+        }
+    }
+
+  }
+</script>
 <?php
 
 if(isset($_POST["edit_btn"]) and $_GET["is_user"]==0) {
@@ -638,13 +746,13 @@ if(isset($_POST["edit_btn"]) and $_GET["is_user"]==1) {
         $passport_id=$arr_search['response'][0]['passport_details'][0]['pk'];
     }
 
-    $check_image = getimagesize($_FILES["profile_pic"]["tmp_name"]);
+    $check_image = getimagesize($_FILES["image"]["tmp_name"]);
     if($check_image !== false) {
         $url_upload_image = $arr[6][6];
         /*echo $url_upload;*/
 
 
-        $filename_image = $_FILES["profile_pic"]["tmp_name"];
+        $filename_image = $_FILES["image"]["tmp_name"];
         $file_image = fopen($filename_image, "rb");
         $data_image = fread($file_image, filesize($filename_image));
 
@@ -1181,7 +1289,7 @@ if(isset($_POST["edit_btn"]) and $_GET["is_user"]==1) {
 <div class="form-group">
   <label class="col-md-4 control-label" for="save_btn"></label>
   <div class="col-md-8">
-    <button id="edit_btn" name="edit_btn" type="submit" class="btn btn-success" style="width: 10em;">Save</button><span><span></span></span>
+    <button  onclick="return check_file_type_org()" id="edit_btn" name="edit_btn" type="submit" class="btn btn-success" style="width: 10em;">Save</button><span><span></span></span>
     <button onclick="goBack()" class="btn btn-warning" style="width: 10em;"><a style="color:white" href="">Cancel</a></button>
     
 
@@ -1256,7 +1364,7 @@ if(isset($_POST["edit_btn"]) and $_GET["is_user"]==1) {
 
 <img class="profile-pic" style="margin-left:77%;position:absolute;z-index:2;" src="<?php echo $img_lnk; ?>" />
 <div class="upload-button" style="position:absolute;z-index:2;margin-left:79%;margin-top:13%;">
-<input id="profile_pic"  name="profile_pic" class="file-upload1" style="position:absolute;z-index:-2;margin-left:46%;margin-top:16%;" type="file">Upload Image</input>
+<input id="image"  name="image" class="file-upload1" style="position:absolute;z-index:-2;margin-left:46%;margin-top:16%;" type="file">Upload Image</input>
 </div>
 
 
@@ -1668,7 +1776,7 @@ if(isset($_POST["edit_btn"]) and $_GET["is_user"]==1) {
 <div class="form-group">
   <label class="col-md-4 control-label" for="singlebutton"></label>
   <div class="col-md-4">
-    <button id="edit_btn" name="edit_btn" type="submit" class="btn btn-success" style="width: 10em;">Save</button><span><span></span></span>
+    <button  onclick="return check_file_type_user()" id="edit_btn" name="edit_btn" type="submit" class="btn btn-success" style="width: 10em;">Save</button><span><span></span></span>
     <button onclick="goBack()" class="btn btn-warning"><a style="color:white" href="">Cancel</a></button>
   </div>
 </div>

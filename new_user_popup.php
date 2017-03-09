@@ -134,7 +134,74 @@ if(a==null || a==''){
   <button onclick="make_uid_null()" id="cancel1" class="btn btn-warning" name="cancel1">Cancel</button>
   <!-- </form> -->
 </div>
+<script type="text/javascript">
+  function check_file_type_user(){
 
+    pan_card_user = document.getElementById('pan_card');
+    if(pan_card_user.files.length != 0){
+        var isValid = /\.(jpg|jpeg|png|gif|pdf)$/.test(pan_card_user.value);
+        if (!isValid) {
+          alert('Pan Card: Only image or pdf files allowed!');
+          return false;
+        }
+    }
+
+    telephone_bill_user = document.getElementById('telephone_bill');
+    if(telephone_bill_user.files.length != 0){
+        var isValid = /\.(jpg|jpeg|png|gif|pdf)$/.test(telephone_bill_user.value);
+        if (!isValid) {
+          alert('Telephone Bill: Only image and pdf files allowed!');
+          return false;
+        }
+    }
+
+    bank_pass_book_user = document.getElementById('bank_pass_book');
+    if(bank_pass_book_user.files.length != 0){
+        var isValid = /\.(jpg|jpeg|png|gif|pdf)$/.test(bank_pass_book_user.value);
+        if (!isValid) {
+          alert('Bank Pass Book: Only image and pdf files allowed!');
+          return false;
+        }
+    }
+
+    voter_id_user = document.getElementById('voter_id');
+    if(voter_id_user.files.length != 0){
+        var isValid = /\.(jpg|jpeg|png|gif|pdf)$/.test(voter_id_user.value);
+        if (!isValid) {
+          alert('Voter Id: Only image and pdf files allowed!');
+          return false;
+        }
+    }
+
+    passport_user = document.getElementById('passport');
+    if(passport_user.files.length != 0){
+        var isValid = /\.(jpg|jpeg|png|gif|pdf)$/.test(passport_user.value);
+        if (!isValid) {
+          alert('Passport: Only image and pdf files allowed!');
+          return false;
+        }
+    }
+
+    aadhar_card_user = document.getElementById('aadhar_card');
+    if(aadhar_card_user.files.length != 0){
+        var isValid = /\.(jpg|jpeg|png|gif|pdf)$/.test(aadhar_card_user.value);
+        if (!isValid) {
+          alert('Aadhar Card: Only image and pdf files allowed!');
+          return false;
+        }
+    }
+
+    image_user = document.getElementById('image');
+    if(image_user.files.length != 0){
+        var isValid = /\.(jpg|jpeg|png|gif|pdf)$/.test(image_user.value);
+        if (!isValid) {
+          alert('Profile Pic: Only image and pdf files allowed!');
+          return false;
+        }
+    }
+
+  }
+</script>
 <?php
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST'){
@@ -718,7 +785,7 @@ echo '  <script type="text/javascript" src="autocomplete-Files/jquery-1.8.2.min.
   <label class="col-md-4 control-label" for="singlebutton"></label>
 
   <div class="col-md-4" style="text-align:center">
-    <button id="generate_btn" name="generate_btn" type="submit">Generate</button>
+    <button onclick="return check_file_type_user()" id="generate_btn" name="generate_btn" type="submit">Generate</button>
     <!-- <button id="singlebutton" style="margin-left:13%;" name="singlebutton" class="btn btn-primary"><a style="color:white" onclick="goBack()">Discard</a></button> -->
 
   </div>

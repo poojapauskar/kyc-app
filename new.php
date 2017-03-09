@@ -192,6 +192,115 @@ if(a==null || a==''){
 </script>
 
 
+<script type="text/javascript">
+  function check_file_type_org(){
+
+    reg_certificate_org = document.getElementById('reg_certificate');
+    if(reg_certificate_org.files.length != 0){
+        var isValid = /\.(jpg|jpeg|png|gif|pdf)$/.test(reg_certificate_org.value);
+        if (!isValid) {
+          alert('Registration Certificate: Only image or pdf files allowed!');
+          return false;
+        }
+    }
+
+    pan_card_org = document.getElementById('pan_card');
+    if(pan_card_org.files.length != 0){
+        var isValid = /\.(jpg|jpeg|png|gif|pdf)$/.test(pan_card_org.value);
+        if (!isValid) {
+          alert('Pan Card: Only image and pdf files allowed!');
+          return false;
+        }
+    }
+
+    telephone_bill_org = document.getElementById('telephone_bill');
+    if(telephone_bill_org.files.length != 0){
+        var isValid = /\.(jpg|jpeg|png|gif|pdf)$/.test(telephone_bill_org.value);
+        if (!isValid) {
+          alert('Telephone Bill: Only image and pdf files allowed!');
+          return false;
+        }
+    }
+
+    bank_pass_book_org = document.getElementById('bank_pass_book');
+    if(bank_pass_book_org.files.length != 0){
+        var isValid = /\.(jpg|jpeg|png|gif|pdf)$/.test(bank_pass_book_org.value);
+        if (!isValid) {
+          alert('Bank Pass Book: Only image and pdf files allowed!');
+          return false;
+        }
+    }
+
+  }
+</script>
+<script type="text/javascript">
+  function check_file_type_user(){
+
+    pan_card_user = document.getElementById('pan_card');
+    if(pan_card_user.files.length != 0){
+        var isValid = /\.(jpg|jpeg|png|gif|pdf)$/.test(pan_card_user.value);
+        if (!isValid) {
+          alert('Pan Card: Only image or pdf files allowed!');
+          return false;
+        }
+    }
+
+    telephone_bill_user = document.getElementById('telephone_bill');
+    if(telephone_bill_user.files.length != 0){
+        var isValid = /\.(jpg|jpeg|png|gif|pdf)$/.test(telephone_bill_user.value);
+        if (!isValid) {
+          alert('Telephone Bill: Only image and pdf files allowed!');
+          return false;
+        }
+    }
+
+    bank_pass_book_user = document.getElementById('bank_pass_book');
+    if(bank_pass_book_user.files.length != 0){
+        var isValid = /\.(jpg|jpeg|png|gif|pdf)$/.test(bank_pass_book_user.value);
+        if (!isValid) {
+          alert('Bank Pass Book: Only image and pdf files allowed!');
+          return false;
+        }
+    }
+
+    voter_id_user = document.getElementById('voter_id');
+    if(voter_id_user.files.length != 0){
+        var isValid = /\.(jpg|jpeg|png|gif|pdf)$/.test(voter_id_user.value);
+        if (!isValid) {
+          alert('Voter Id: Only image and pdf files allowed!');
+          return false;
+        }
+    }
+
+    passport_user = document.getElementById('passport');
+    if(passport_user.files.length != 0){
+        var isValid = /\.(jpg|jpeg|png|gif|pdf)$/.test(passport_user.value);
+        if (!isValid) {
+          alert('Passport: Only image and pdf files allowed!');
+          return false;
+        }
+    }
+
+    aadhar_card_user = document.getElementById('aadhar_card');
+    if(aadhar_card_user.files.length != 0){
+        var isValid = /\.(jpg|jpeg|png|gif|pdf)$/.test(aadhar_card_user.value);
+        if (!isValid) {
+          alert('Aadhar Card: Only image and pdf files allowed!');
+          return false;
+        }
+    }
+
+    image_user = document.getElementById('image');
+    if(image_user.files.length != 0){
+        var isValid = /\.(jpg|jpeg|png|gif|pdf)$/.test(image_user.value);
+        if (!isValid) {
+          alert('Profile Pic: Only image and pdf files allowed!');
+          return false;
+        }
+    }
+
+  }
+</script>
 <?php
 
 if(isset($_POST["save_btn"]) and $_GET["is_user"]==0) {
@@ -1028,7 +1137,7 @@ if ($_POST['uid'] != '' and $_GET["is_user"]==1){
 <div class="form-group">
   <label class="col-md-4 control-label" for="save_btn"></label>
   <div class="col-md-8">
-    <button id="save_btn" name="save_btn" type="submit" class="btn btn-success" style="width: 10em;margin-left:10px">Save</button><span><span></span></span>
+    <button onclick="return check_file_type_org()" id="save_btn" name="save_btn" type="submit" class="btn btn-success" style="width: 10em;margin-left:10px">Save</button><span><span></span></span>
     <button onclick="ClickEvent()" class="btn btn-warning" style="width: 10em;"><a style="color:white" href="search.php">Cancel</a></button>
   
   </div>
@@ -1259,7 +1368,7 @@ if ($_POST['uid'] != '' and $_GET["is_user"]==1){
 <div class="form-group">
   <label class="col-md-4 control-label" for="singlebutton"></label>
   <div class="col-md-4">
-    <button id="generate_btn" name="generate_btn" type="submit">Generate</button>
+    <button onclick="return check_file_type_user()" id="generate_btn" name="generate_btn" type="submit">Generate</button>
     <button id="singlebutton" style="margin-left:13%;" name="singlebutton" class="btn btn-primary"><a style="color:white" href="search.php">Discard</a></button>
   </div>
 </div>
