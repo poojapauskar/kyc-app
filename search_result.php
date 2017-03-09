@@ -190,43 +190,63 @@ $arr_search = json_decode($output_search,true);
           <a class="mdl-navigation__link" href="">Contact</a>
         </nav>
       </div>
+
+<?php if (count($arr_search['response'][0]['add_info']) !== 0) { ?>
+    
       <div class="alert" style="margin-top:0%;">
-  <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
-  <strong>
+        <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+        <strong>
 
-  <?php for($q=0;$q<count($arr_search['response'][0]['add_info']);$q++){
-   echo "Status: ".$arr_search['response'][0]['add_info'][$q]['status'];
-   echo "&nbsp;&nbsp;&nbsp;&nbsp;Date: ".$arr_search['response'][0]['add_info'][$q]['date'];
-   echo "<br>";
-  }?>
+        <?php for($q=0;$q<count($arr_search['response'][0]['add_info']);$q++){
+         echo "Status: ".$arr_search['response'][0]['add_info'][$q]['status'];
+         echo "&nbsp;&nbsp;&nbsp;&nbsp;Date: ".$arr_search['response'][0]['add_info'][$q]['date'];
+         echo "<br>";
+        }?>
 
-  </strong>
+        </strong>
+      </div>
+
+<?php } ?>
+      
 </div>
-</div>
-
 <div class="container">
 
-<div class="mdl-grid" style="margin-left:80%;margin-top:20%">
-  <div class="mdl-card mdl-cell mdl-cell--12-col mdl-cell--10-col-tablet mdl-shadow--2dp">
-    <div class="mdl-card__title">
-      <h1 class="mdl-card__title-text">Description and Status of Work</h1>
-    </div>
-    <div class="mdl-card__supporting-text">
-      <?php for($q=0;$q<count($arr_search['response'][0]['add_info']);$q++){?>
-   <strong>Type of work: </strong><?php echo $arr_search['response'][0]['add_info'][$q]['type_of_work'];echo "<br>";?>
-   <strong>Status: </strong><?php echo $arr_search['response'][0]['add_info'][$q]['status'];echo "<br>";?>
-   <strong>Date: </strong><?php echo $arr_search['response'][0]['add_info'][$q]['date'];echo "<br>";?>
-   <strong>Comment: </strong><?php echo $arr_search['response'][0]['add_info'][$q]['comment'];echo "<br>";?>
-   <br>
-   <br>
- <?php }?>
-    </div>
-  </div>
-</div> 
+<?php if(count($arr_search['response'][0]['add_info']) == 0){
+  $margin1="margin-top:35%";
+  }else{
+    $margin1="margin-top:20%";
+  }?>
+
+      <div class="mdl-grid" style="margin-left:80%;<?php echo $margin1; ?>">
+
+      <?php if (count($arr_search['response'][0]['add_info']) !== 0) { ?>
+        <div class="mdl-card mdl-cell mdl-cell--12-col mdl-cell--10-col-tablet mdl-shadow--2dp">
+          <div class="mdl-card__title">
+            <h1 class="mdl-card__title-text">Description and Status of Work</h1>
+          </div>
+          <div class="mdl-card__supporting-text">
+            <?php for($q=0;$q<count($arr_search['response'][0]['add_info']);$q++){?>
+                   <strong>Type of work: </strong><?php echo $arr_search['response'][0]['add_info'][$q]['type_of_work'];echo "<br>";?>
+                   <strong>Status: </strong><?php echo $arr_search['response'][0]['add_info'][$q]['status'];echo "<br>";?>
+                   <strong>Date: </strong><?php echo $arr_search['response'][0]['add_info'][$q]['date'];echo "<br>";?>
+                   <strong>Comment: </strong><?php echo $arr_search['response'][0]['add_info'][$q]['comment'];echo "<br>";?>
+                   <br>
+                   <br>
+             <?php }?>
+          </div>
+        </div>
+        <?php } ?>
+
+      </div>
+
+
+
+
+
 
 
 <?php if(count($arr_search['response'][0]['add_info']) == 0){
-  $margin="margin-top:-32%";
+  /*$margin="margin-top:-32%";*/
   }else{
     $margin="margin-top:-32%";
   }?>
