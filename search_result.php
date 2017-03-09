@@ -429,7 +429,7 @@ $arr_search = json_decode($output_search,true);
 ?>
 </div> 
 <br>
-<button style="margin-left:75%;margin-top:-7%;" class="btn btn-success">
+<button style="margin-left:75%;margin-top:-7%;position: relative;" class="btn btn-success">
 <a target="_blank" data-toggle="modal" data-target="#myModal" style="color:white" href="view_popup.php?name=telephone_bill_details&link=<?php echo $arr_img_download_3[0]['url']; ?>">VIEW</a>
 </button>
 </div> 
@@ -712,7 +712,7 @@ $arr_search = json_decode($output_search,true);
 ?>
 
 
-<button style="margin-left:70%;margin-top:-6%" class="btn btn-success">
+<button style="margin-left:70%;margin-top:-6%;position: relative;" class="btn btn-success">
 <a target="_blank" data-toggle="modal" data-target="#myModal" style="color:white" href="view_popup.php?name=telephone_bill_details&link=<?php echo $arr_img_download_2[0]['url']; ?>">View</a>
 </button>
 </div>
