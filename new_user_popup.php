@@ -135,56 +135,56 @@ if(a==null || a==''){
   <!-- </form> -->
 </div>
 <script type="text/javascript">
-  function check_file_type_user(){
+  function check_file_type_user_1(){
 
-    pan_card_user = document.getElementById('pan_card');
-    if(pan_card_user.files.length != 0){
-        var isValid = /\.(jpg|jpeg|png|gif|pdf)$/.test(pan_card_user.value);
+    pan_card_1_user = document.getElementById('pan_card_1');
+    if(pan_card_1_user.files.length != 0){
+        var isValid = /\.(jpg|jpeg|png|gif|pdf)$/.test(pan_card_1_user.value);
         if (!isValid) {
           alert('Pan Card: Only image or pdf files allowed!');
           return false;
         }
     }
 
-    telephone_bill_user = document.getElementById('telephone_bill');
-    if(telephone_bill_user.files.length != 0){
-        var isValid = /\.(jpg|jpeg|png|gif|pdf)$/.test(telephone_bill_user.value);
+    telephone_bill_1_user = document.getElementById('telephone_bill_1');
+    if(telephone_bill_1_user.files.length != 0){
+        var isValid = /\.(jpg|jpeg|png|gif|pdf)$/.test(telephone_bill_1_user.value);
         if (!isValid) {
           alert('Telephone Bill: Only image and pdf files allowed!');
           return false;
         }
     }
 
-    bank_pass_book_user = document.getElementById('bank_pass_book');
-    if(bank_pass_book_user.files.length != 0){
-        var isValid = /\.(jpg|jpeg|png|gif|pdf)$/.test(bank_pass_book_user.value);
+    bank_pass_book_1_user = document.getElementById('bank_pass_book_1');
+    if(bank_pass_book_1_user.files.length != 0){
+        var isValid = /\.(jpg|jpeg|png|gif|pdf)$/.test(bank_pass_book_1_user.value);
         if (!isValid) {
           alert('Bank Pass Book: Only image and pdf files allowed!');
           return false;
         }
     }
 
-    voter_id_user = document.getElementById('voter_id');
-    if(voter_id_user.files.length != 0){
-        var isValid = /\.(jpg|jpeg|png|gif|pdf)$/.test(voter_id_user.value);
+    voter_id_1_user = document.getElementById('voter_id_1');
+    if(voter_id_1_user.files.length != 0){
+        var isValid = /\.(jpg|jpeg|png|gif|pdf)$/.test(voter_id_1_user.value);
         if (!isValid) {
           alert('Voter Id: Only image and pdf files allowed!');
           return false;
         }
     }
 
-    passport_user = document.getElementById('passport');
-    if(passport_user.files.length != 0){
-        var isValid = /\.(jpg|jpeg|png|gif|pdf)$/.test(passport_user.value);
+    passport_1_user = document.getElementById('passport_1');
+    if(passport_1_user.files.length != 0){
+        var isValid = /\.(jpg|jpeg|png|gif|pdf)$/.test(passport_1_user.value);
         if (!isValid) {
           alert('Passport: Only image and pdf files allowed!');
           return false;
         }
     }
 
-    aadhar_card_user = document.getElementById('aadhar_card');
-    if(aadhar_card_user.files.length != 0){
-        var isValid = /\.(jpg|jpeg|png|gif|pdf)$/.test(aadhar_card_user.value);
+    aadhar_card_1_user = document.getElementById('aadhar_card_1');
+    if(aadhar_card_1_user.files.length != 0){
+        var isValid = /\.(jpg|jpeg|png|gif|pdf)$/.test(aadhar_card_1_user.value);
         if (!isValid) {
           alert('Aadhar Card: Only image and pdf files allowed!');
           return false;
@@ -214,12 +214,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
         }
 
         $names=array();
-        $names[0]= "pan_card".rand(0, 9999).".jpg";
-        $names[1]= "voter_id".rand(0, 9999).".jpg";
+        $names[0]= "pan_card_1".rand(0, 9999).".jpg";
+        $names[1]= "voter_id_1".rand(0, 9999).".jpg";
         $names[2]= "pass_book".rand(0, 9999).".jpg";
-        $names[3]= "telephone_bill".rand(0, 9999).".jpg";
-        $names[4]= "aadhar_card".rand(0, 9999).".jpg";
-        $names[5]= "passport".rand(0, 9999).".jpg";
+        $names[3]= "telephone_bill_1".rand(0, 9999).".jpg";
+        $names[4]= "aadhar_card_1".rand(0, 9999).".jpg";
+        $names[5]= "passport_1".rand(0, 9999).".jpg";
         $names[6]= "profile".rand(0, 9999).".jpg";
 
 
@@ -245,13 +245,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
         echo $arr[1]['id'];*/
     
 
-    $check = getimagesize($_FILES["pan_card"]["tmp_name"]);
+    $check = getimagesize($_FILES["pan_card_1"]["tmp_name"]);
     if($check !== false) {
         $url_upload = $arr[0][0];
         /*echo $url_upload;*/
 
 
-        $filename = $_FILES["pan_card"]["tmp_name"];
+        $filename = $_FILES["pan_card_1"]["tmp_name"];
         $file = fopen($filename, "rb");
         $data = fread($file, filesize($filename));
 
@@ -270,37 +270,37 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
         $arr_upload = json_decode($result_upload,true);
         /*var_dump($arr_upload);*/
 
-        $pan_card_id=$arr[0]['id'];
+        $pan_card_1_id=$arr[0]['id'];
 
     } else {
-        $pan_card_id="";
+        $pan_card_1_id="";
     }
 
 
-    $check_voter_id = getimagesize($_FILES["voter_id"]["tmp_name"]);
-    if($check_voter_id !== false) {
-        $url_upload_voter_id = $arr[1][1];
+    $check_voter_id_1 = getimagesize($_FILES["voter_id_1"]["tmp_name"]);
+    if($check_voter_id_1 !== false) {
+        $url_upload_voter_id_1 = $arr[1][1];
         /*echo $url_upload;*/
 
 
-        $filename_voter_id = $_FILES["voter_id"]["tmp_name"];
-        $file_voter_id = fopen($filename_voter_id, "rb");
-        $data_voter_id = fread($file_voter_id, filesize($filename_voter_id));
+        $filename_voter_id_1 = $_FILES["voter_id_1"]["tmp_name"];
+        $file_voter_id_1 = fopen($filename_voter_id_1, "rb");
+        $data_voter_id_1 = fread($file_voter_id_1, filesize($filename_voter_id_1));
 
         /*echo $data;*/
 
-        $options_upload_voter_id = array(
+        $options_upload_voter_id_1 = array(
           'http' => array(
             'header'  => "Content-type: \r\n",
             'method'  => 'PUT',
-            'content' => $data_voter_id,
+            'content' => $data_voter_id_1,
           ),
         );
-        $context_upload_voter_id  = stream_context_create($options_upload_voter_id);
-        $result_upload_voter_id = file_get_contents($url_upload_voter_id, false, $context_upload_voter_id);
-        /*var_dump($result_upload_voter_id);*/
-        $arr_upload_voter_id = json_decode($result_upload_voter_id,true);
-        /*var_dump($arr_upload_voter_id);*/
+        $context_upload_voter_id_1  = stream_context_create($options_upload_voter_id_1);
+        $result_upload_voter_id_1 = file_get_contents($url_upload_voter_id_1, false, $context_upload_voter_id_1);
+        /*var_dump($result_upload_voter_id_1);*/
+        $arr_upload_voter_id_1 = json_decode($result_upload_voter_id_1,true);
+        /*var_dump($arr_upload_voter_id_1);*/
 
         $voter_card_id=$arr[1]['id'];
 
@@ -308,13 +308,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
         $voter_card_id="";
     }
 
-    $check_pass_book = getimagesize($_FILES["bank_pass_book"]["tmp_name"]);
+    $check_pass_book = getimagesize($_FILES["bank_pass_book_1"]["tmp_name"]);
     if($check_pass_book !== false) {
         $url_upload_pass_book = $arr[2][2];
         /*echo $url_upload;*/
 
 
-        $filename_pass_book = $_FILES["bank_pass_book"]["tmp_name"];
+        $filename_pass_book = $_FILES["bank_pass_book_1"]["tmp_name"];
         $file_pass_book = fopen($filename_pass_book, "rb");
         $data_pass_book = fread($file_pass_book, filesize($filename_pass_book));
 
@@ -339,97 +339,97 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
         $pass_book_id="";
     }
 
-    $check_telephone_bill = getimagesize($_FILES["telephone_bill"]["tmp_name"]);
-    if($check_telephone_bill !== false) {
-        $url_upload_telephone_bill = $arr[3][3];
+    $check_telephone_bill_1 = getimagesize($_FILES["telephone_bill_1"]["tmp_name"]);
+    if($check_telephone_bill_1 !== false) {
+        $url_upload_telephone_bill_1 = $arr[3][3];
         /*echo $url_upload;*/
 
 
-        $filename_telephone_bill = $_FILES["telephone_bill"]["tmp_name"];
-        $file_telephone_bill = fopen($filename_telephone_bill, "rb");
-        $data_telephone_bill = fread($file_telephone_bill, filesize($filename_telephone_bill));
+        $filename_telephone_bill_1 = $_FILES["telephone_bill_1"]["tmp_name"];
+        $file_telephone_bill_1 = fopen($filename_telephone_bill_1, "rb");
+        $data_telephone_bill_1 = fread($file_telephone_bill_1, filesize($filename_telephone_bill_1));
 
         /*echo $data;*/
 
-        $options_upload_telephone_bill = array(
+        $options_upload_telephone_bill_1 = array(
           'http' => array(
             'header'  => "Content-type: \r\n",
             'method'  => 'PUT',
-            'content' => $data_telephone_bill,
+            'content' => $data_telephone_bill_1,
           ),
         );
-        $context_upload_telephone_bill  = stream_context_create($options_upload_telephone_bill);
-        $result_upload_telephone_bill = file_get_contents($url_upload_telephone_bill, false, $context_upload_telephone_bill);
-        /*var_dump($result_upload_telephone_bill);*/
-        $arr_upload_telephone_bill = json_decode($result_upload_telephone_bill,true);
-        /*var_dump($arr_upload_telephone_bill);*/
+        $context_upload_telephone_bill_1  = stream_context_create($options_upload_telephone_bill_1);
+        $result_upload_telephone_bill_1 = file_get_contents($url_upload_telephone_bill_1, false, $context_upload_telephone_bill_1);
+        /*var_dump($result_upload_telephone_bill_1);*/
+        $arr_upload_telephone_bill_1 = json_decode($result_upload_telephone_bill_1,true);
+        /*var_dump($arr_upload_telephone_bill_1);*/
 
-        $telephone_bill_id=$arr[3]['id'];
+        $telephone_bill_1_id=$arr[3]['id'];
 
     } else {
-        $telephone_bill_id="";
+        $telephone_bill_1_id="";
     }
 
-    $check_aadhar_card = getimagesize($_FILES["aadhar_card"]["tmp_name"]);
-    if($check_aadhar_card !== false) {
-        $url_upload_aadhar_card = $arr[4][4];
+    $check_aadhar_card_1 = getimagesize($_FILES["aadhar_card_1"]["tmp_name"]);
+    if($check_aadhar_card_1 !== false) {
+        $url_upload_aadhar_card_1 = $arr[4][4];
         /*echo $url_upload;*/
 
 
-        $filename_aadhar_card = $_FILES["aadhar_card"]["tmp_name"];
-        $file_aadhar_card = fopen($filename_aadhar_card, "rb");
-        $data_aadhar_card = fread($file_aadhar_card, filesize($filename_aadhar_card));
+        $filename_aadhar_card_1 = $_FILES["aadhar_card_1"]["tmp_name"];
+        $file_aadhar_card_1 = fopen($filename_aadhar_card_1, "rb");
+        $data_aadhar_card_1 = fread($file_aadhar_card_1, filesize($filename_aadhar_card_1));
 
         /*echo $data;*/
 
-        $options_upload_aadhar_card = array(
+        $options_upload_aadhar_card_1 = array(
           'http' => array(
             'header'  => "Content-type: \r\n",
             'method'  => 'PUT',
-            'content' => $data_aadhar_card,
+            'content' => $data_aadhar_card_1,
           ),
         );
-        $context_upload_aadhar_card  = stream_context_create($options_upload_aadhar_card);
-        $result_upload_aadhar_card = file_get_contents($url_upload_aadhar_card, false, $context_upload_aadhar_card);
-        /*var_dump($result_upload_aadhar_card);*/
-        $arr_upload_aadhar_card = json_decode($result_upload_aadhar_card,true);
-        /*var_dump($arr_upload_aadhar_card);*/
+        $context_upload_aadhar_card_1  = stream_context_create($options_upload_aadhar_card_1);
+        $result_upload_aadhar_card_1 = file_get_contents($url_upload_aadhar_card_1, false, $context_upload_aadhar_card_1);
+        /*var_dump($result_upload_aadhar_card_1);*/
+        $arr_upload_aadhar_card_1 = json_decode($result_upload_aadhar_card_1,true);
+        /*var_dump($arr_upload_aadhar_card_1);*/
 
-        $aadhar_card_id=$arr[4]['id'];
+        $aadhar_card_1_id=$arr[4]['id'];
 
     } else {
-        $aadhar_card_id="";
+        $aadhar_card_1_id="";
     }
 
-    $check_passport = getimagesize($_FILES["passport"]["tmp_name"]);
-    if($check_passport !== false) {
-        $url_upload_passport = $arr[5][5];
+    $check_passport_1 = getimagesize($_FILES["passport_1"]["tmp_name"]);
+    if($check_passport_1 !== false) {
+        $url_upload_passport_1 = $arr[5][5];
         /*echo $url_upload;*/
 
 
-        $filename_passport = $_FILES["passport"]["tmp_name"];
-        $file_passport = fopen($filename_passport, "rb");
-        $data_passport = fread($file_passport, filesize($filename_passport));
+        $filename_passport_1 = $_FILES["passport_1"]["tmp_name"];
+        $file_passport_1 = fopen($filename_passport_1, "rb");
+        $data_passport_1 = fread($file_passport_1, filesize($filename_passport_1));
 
         /*echo $data;*/
 
-        $options_upload_passport = array(
+        $options_upload_passport_1 = array(
           'http' => array(
             'header'  => "Content-type: \r\n",
             'method'  => 'PUT',
-            'content' => $data_passport,
+            'content' => $data_passport_1,
           ),
         );
-        $context_upload_passport  = stream_context_create($options_upload_passport);
-        $result_upload_passport = file_get_contents($url_upload_passport, false, $context_upload_passport);
-        /*var_dump($result_upload_passport);*/
-        $arr_upload_passport = json_decode($result_upload_passport,true);
-        /*var_dump($arr_upload_passport);*/
+        $context_upload_passport_1  = stream_context_create($options_upload_passport_1);
+        $result_upload_passport_1 = file_get_contents($url_upload_passport_1, false, $context_upload_passport_1);
+        /*var_dump($result_upload_passport_1);*/
+        $arr_upload_passport_1 = json_decode($result_upload_passport_1,true);
+        /*var_dump($arr_upload_passport_1);*/
 
-        $passport_id=$arr[5]['id'];
+        $passport_1_id=$arr[5]['id'];
 
     } else {
-        $passport_id="";
+        $passport_1_id="";
     }
 
     $check_image = getimagesize($_FILES["image"]["tmp_name"]);
@@ -496,14 +496,14 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
                           'DOB: '.$_POST['date1'],
                           'PROFFESION: '.$_POST['profession'],
                           'PAN: '.$_POST['pan'],
-                          'PAN-CARD: '.$pan_card_id,
+                          'PAN-CARD: '.$pan_card_1_id,
                           'ADDRESS: '.$_POST['address'],
-                          'TELEPHONE-BILL: '.$telephone_bill_id,
+                          'TELEPHONE-BILL: '.$telephone_bill_1_id,
                           'BANK-PASS-BOOK: '.$pass_book_id,
                           'VOTER-ID: '.$voter_card_id,
-                          'PASSPORT: '.$passport_id,
+                          'PASSPORT: '.$passport_1_id,
                           'AADHAR-NO: '.$aadhar_no,
-                          'AADHAR-CARD: '.$aadhar_card_id,
+                          'AADHAR-CARD: '.$aadhar_card_1_id,
                           'IMAGE: '.$image_id,
                           'TYPE-OF-WORK: '.$type_of_work,
                           'STATUS: '.$status,
@@ -665,7 +665,7 @@ echo '  <script type="text/javascript" src="autocomplete-Files/jquery-1.8.2.min.
 <div class="form-group">
   <label class="col-md-4 control-label" for="filebutton">PAN card:</label>
   <div class="col-md-4">
-    <input id="pan_card" name="pan_card" value="<?php echo $_POST['pan_card'] ?>" class="input-file" type="file">
+    <input id="pan_card_1" name="pan_card_1" value="<?php echo $_POST['pan_card_1'] ?>" class="input-file" type="file">
   </div>
 </div>
 
@@ -675,7 +675,7 @@ echo '  <script type="text/javascript" src="autocomplete-Files/jquery-1.8.2.min.
   <div class="col-md-4">
    <label class="checkbox-inline" for="checkboxes-0">
      <input type="checkbox" name="checkboxes" id="checkboxes-0" value="1">Telephone</label>
-<input id="telephone_bill"  value="<?php echo $_POST['telephone_bill'] ?>" style="margin-top: -20px;margin-left: 129px;" name="telephone_bill" class="input-file" type="file">     
+<input id="telephone_bill_1"  value="<?php echo $_POST['telephone_bill_1'] ?>" style="margin-top: -20px;margin-left: 129px;" name="telephone_bill_1" class="input-file" type="file">     
  </div>
 </div>
 
@@ -685,7 +685,7 @@ echo '  <script type="text/javascript" src="autocomplete-Files/jquery-1.8.2.min.
  <div class="col-md-4">
    <label class="checkbox-inline" for="checkboxes-0">
      <input type="checkbox" name="checkboxes" id="checkboxes-0" value="1">Bank Passbook</label>
-<input id="bank_pass_book"  value="<?php echo $_POST['bank_pass_book'] ?>" style="margin-top: -22px;margin-left: 129px;" name="bank_pass_book" class="input-file" type="file">     
+<input id="bank_pass_book_1"  value="<?php echo $_POST['bank_pass_book_1'] ?>" style="margin-top: -22px;margin-left: 129px;" name="bank_pass_book_1" class="input-file" type="file">     
  </div>
 </div>
 
@@ -697,7 +697,7 @@ echo '  <script type="text/javascript" src="autocomplete-Files/jquery-1.8.2.min.
   <div class="col-md-4">
    <label class="checkbox-inline" for="checkboxes-0">
      <input type="checkbox" name="checkboxes" id="checkboxes-0" value="1">voter ID</label>
-<input id="voter_id" value="<?php echo $_POST['voter_id'] ?>" style="margin-top: -20px;margin-left: 129px;" name="voter_id" class="input-file" type="file">     
+<input id="voter_id_1" value="<?php echo $_POST['voter_id_1'] ?>" style="margin-top: -20px;margin-left: 129px;" name="voter_id_1" class="input-file" type="file">     
  </div>
 </div>
 
@@ -707,7 +707,7 @@ echo '  <script type="text/javascript" src="autocomplete-Files/jquery-1.8.2.min.
  <div class="col-md-4">
    <label class="checkbox-inline" for="checkboxes-0">
      <input type="checkbox" name="checkboxes" id="checkboxes-0" value="1">Passport:</label>
-<input id="passport" value="<?php echo $_POST['passport'] ?>" style="margin-top: -22px;margin-left: 129px;" name="passport" class="input-file" type="file">     
+<input id="passport_1" value="<?php echo $_POST['passport_1'] ?>" style="margin-top: -22px;margin-left: 129px;" name="passport_1" class="input-file" type="file">     
  </div>
 </div>
 
@@ -724,7 +724,7 @@ echo '  <script type="text/javascript" src="autocomplete-Files/jquery-1.8.2.min.
 <div class="form-group">
   <label class="col-md-4 control-label" for="filebutton">Adhar card:</label>
   <div class="col-md-4">
-    <input id="aadhar_card" name="aadhar_card" value="<?php echo $_POST['aadhar_card'] ?>" class="input-file" type="file">
+    <input id="aadhar_card_1" name="aadhar_card_1" value="<?php echo $_POST['aadhar_card_1'] ?>" class="input-file" type="file">
   </div>
 </div>
 
@@ -785,7 +785,7 @@ echo '  <script type="text/javascript" src="autocomplete-Files/jquery-1.8.2.min.
   <label class="col-md-4 control-label" for="singlebutton"></label>
 
   <div class="col-md-4" style="text-align:center">
-    <button onclick="return check_file_type_user()" id="generate_btn" name="generate_btn" type="submit">Generate</button>
+    <button onclick="return check_file_type_user_1()" id="generate_btn" name="generate_btn" type="submit">Generate</button>
     <!-- <button id="singlebutton" style="margin-left:13%;" name="singlebutton" class="btn btn-primary"><a style="color:white" onclick="goBack()">Discard</a></button> -->
 
   </div>
