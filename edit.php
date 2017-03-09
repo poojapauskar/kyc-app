@@ -347,13 +347,23 @@ if(isset($_POST["edit_btn"]) and $_GET["is_user"]==0) {
 
   $date='';
   for($j=0;$j<count($_POST['date']);$j++){
-    $date=$date.",".$_POST['date'][$j];
+    if($_POST['date'][$j] == ""){
+      $date_field=" ";
+    }else{
+      $date_field=$_POST['date'][$j];
+    }
+    $date=$date.",".$date_field;
   }
   $date = ltrim($date, ',');
 
   $comment='';
   for($j=0;$j<count($_POST['comment']);$j++){
-    $comment=$comment.",".$_POST['comment'][$j];
+    if($_POST['comment'][$j] == ""){
+      $comment_field=" ";
+    }else{
+      $comment_field=$_POST['comment'][$j];
+    }
+    $comment=$comment.",".$comment_field;
   }
   $comment = ltrim($comment, ',');
 
@@ -673,13 +683,23 @@ if(isset($_POST["edit_btn"]) and $_GET["is_user"]==1) {
 
   $date='';
   for($j=0;$j<count($_POST['date']);$j++){
-    $date=$date.",".$_POST['date'][$j];
+    if($_POST['date'][$j] == ""){
+      $date_field=" ";
+    }else{
+      $date_field=$_POST['date'][$j];
+    }
+    $date=$date.",".$date_field;
   }
   $date = ltrim($date, ',');
 
   $comment='';
   for($j=0;$j<count($_POST['comment']);$j++){
-    $comment=$comment.",".$_POST['comment'][$j];
+    if($_POST['comment'][$j] == ""){
+      $comment_field=" ";
+    }else{
+      $comment_field=$_POST['comment'][$j];
+    }
+    $comment=$comment.",".$comment_field;
   }
   $comment = ltrim($comment, ',');
 
@@ -1264,7 +1284,7 @@ if(isset($_POST["edit_btn"]) and $_GET["is_user"]==1) {
 <div class="form-group">
   <label class="col-md-4 control-label" for="textinput">DOB:</label>  
   <div class="col-md-4">
-  <input id="date" name="date" value="<?php echo $arr_search['response'][0]['user_details']['date'] ?>" type="date" placeholder="" class="form-control input-md">
+  <input id="date" name="date" value="<?php echo $arr_search['response'][0]['user_details']['dob'] ?>" type="date" placeholder="" class="form-control input-md">
     
   </div>
 </div>
