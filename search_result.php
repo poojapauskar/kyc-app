@@ -246,7 +246,7 @@ $arr_search = json_decode($output_search,true);
 
 
 <?php if(count($arr_search['response'][0]['add_info']) == 0){
-  /*$margin="margin-top:-32%";*/
+  $margin="margin-top:-32%";
   }else{
     $margin="margin-top:-32%";
   }?>
