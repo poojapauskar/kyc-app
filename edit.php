@@ -987,7 +987,7 @@ if(isset($_POST["edit_btn"]) and $_GET["is_user"]==1) {
 </div>
 
 <button style="margin-top:-24%;margin-left:129%;" class="btn btn-success">
-<a target="_blank" style="color:white" href="view_image.php?name=reg_certificate_details&link=<?php echo $arr_img_download[0]['url']; ?>">View</a>
+<a target="_blank" data-toggle="modal" data-target="#myModal" style="color:white" href="view_popup.php?name=reg_certificate_details&link=<?php echo $arr_img_download[0]['url']; ?>">View</a>
 </button>
 
 </div>
@@ -1032,7 +1032,7 @@ if(isset($_POST["edit_btn"]) and $_GET["is_user"]==1) {
 ?>
 </div>
 <button style="margin-top:-24%;margin-left:129%;" class="btn btn-success">
-<a target="_blank" style="color:white" href="view_image.php?name=pan_card_details&link=<?php echo $arr_img_download_2[0]['url']; ?>">View</a>
+<a target="_blank" data-toggle="modal" data-target="#myModal" style="color:white" href="view_popup.php?name=pan_card_details&link=<?php echo $arr_img_download_2[0]['url']; ?>">View</a>
 </button>
 </div>
 </div>
@@ -1092,7 +1092,7 @@ if(isset($_POST["edit_btn"]) and $_GET["is_user"]==1) {
 
 <br>
 <button style="margin-left:75%;margin-top:-6%;" class="btn btn-success">
-<a target="_blank" style="color:white" href="view_image.php?name=telephone_bill_details&link=<?php echo $arr_img_download_3[0]['url']; ?>">View</a>
+<a target="_blank" data-toggle="modal" data-target="#myModal" style="color:white" href="view_popup.php?name=telephone_bill_details&link=<?php echo $arr_img_download_3[0]['url']; ?>">View</a>
 </button>
 </div> 
 
@@ -1142,7 +1142,7 @@ if(isset($_POST["edit_btn"]) and $_GET["is_user"]==1) {
 </div>
 <br>
 <button style="margin-left:75%;margin-top:-6%;" class="btn btn-success">
-<a target="_blank" style="color:white" href="view_image.php?name=pass_book_details&link=<?php echo $arr_img_download_4[0]['url']; ?>">View</a>
+<a target="_blank" data-toggle="modal" data-target="#myModal" style="color:white" href="view_popup.php?name=pass_book_details&link=<?php echo $arr_img_download_4[0]['url']; ?>">View</a>
 </button>
 </div>
 
@@ -1181,7 +1181,7 @@ if(isset($_POST["edit_btn"]) and $_GET["is_user"]==1) {
   </div>
 
   <div class="col-md-2 col-sm-2 col-2">
-    <a href="new_user_popup.php" style="color:white" target="_blank" data-toggle="modal" data-target="#myModal">
+    <a href="new_user_popup.php" style="color:white" target="_blank" data-target="#exampleModal" data-whatever="@mdo">
 
      <button type="button" class="btn btn-info " style="margin-left:-6%">
        New Entry
@@ -1876,7 +1876,6 @@ $('#trigger').click(function(){
         </div>
     </div>
 </div>
-
 <!--<script
   src="https://code.jquery.com/jquery-2.2.4.js"
   integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI="
@@ -1945,6 +1944,7 @@ function goBack() {
 });
 
     </script>
+
 
     <!-- AutoSearch Script files don't move -->
    <!--  <script type="text/javascript" src="autocomplete-Files/jquery-1.8.2.min.js"></script> -->

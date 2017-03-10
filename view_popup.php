@@ -56,7 +56,7 @@ if($_GET['name'] == 'pan_card_details'){
     $img_lnk=$url;
 }?>
 
-<img id="img1" width="200" height="300" src="<?php echo $img_lnk; ?>"></img>
+<img id="img1" src="<?php echo $img_lnk; ?>"></img>
 
 <div style="margin-top:5%;margin-left:-22%" class="row">
  <div class="col-sm-3">
