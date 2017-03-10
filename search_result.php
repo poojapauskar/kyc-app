@@ -9,6 +9,7 @@
   <link rel="stylesheet" href="css/bootstrap.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
 <!-- Material Design Lite -->
   <script src="https://code.getmdl.io/1.3.0/material.min.js"></script>
   <link rel="stylesheet" href="css/material.css">
@@ -372,7 +373,9 @@ $arr_search = json_decode($output_search,true);
 </div>
 
 <button style="background-color:#176fac;margin-top:-26%;margin-left:129%;" class="btn btn-success">
+
 <a data-toggle="modal" data-target="#myModal" style="color:white" href="view_popup.php?name=pan_card_details&link=<?php echo $arr_img_download_2[0]['url']; ?>">VIEW</a>
+
 </button>
 </div>
 </div>
@@ -949,6 +952,28 @@ $('#trigger').click(function(){
     </div>
 </div>
 
+
+<script type="text/javascript">
+$(function(){
+
+$('#trigger').click(function(){
+  $('#myModall').modal('show');
+  return false;
+})
+
+});
+</script>
+
+<div class="container">
+<!-- Modal HTML -->
+    <div id="myModall" class="modal fade">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <!-- Content will be loaded here from "remote.php" file -->
+            </div>
+        </div>
+    </div>
+</div>
 </main>
 </body>
 </html>
