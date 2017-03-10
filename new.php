@@ -167,6 +167,13 @@ if(a==null || a==''){
         var yourUl = document.getElementById("popup1");
         yourUl.style.display = yourUl.style.display === 'none' ? '' : 'none';
         return false;
+}else{
+        document.getElementById('uid_in_popup').value = document.getElementById('uid').value;
+
+        /*alert("UID generated: "+uid_gen);*/
+        var yourUl = document.getElementById("popup1");
+        yourUl.style.display = yourUl.style.display === 'none' ? '' : 'none';
+        return false;
 }
 }
 </script>
