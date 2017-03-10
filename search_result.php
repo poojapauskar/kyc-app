@@ -237,12 +237,6 @@ $arr_search = json_decode($output_search,true);
 
       </div>
 
-
-
-
-
-
-
 <?php if(count($arr_search['response'][0]['add_info']) == 0){
   $margin="margin-top:-32%";
   }else{
@@ -330,7 +324,7 @@ $arr_search = json_decode($output_search,true);
 ?>
 </div>
 
-<button style="background-color:#176fac;margin-top:-25%;margin-left:129%;" class="btn btn-success">
+<button style="background-color:#176fac;margin-top:-25%;margin-left:129%;" class="btn btn-info">
 <a target="_blank" data-toggle="modal" data-target="#myModal" style="color:white" href="view_popup.php?name=reg_certificate_details&link=<?php echo $arr_img_download[0]['url']; ?>">VIEW</a>
 </button>
 </div>
@@ -371,7 +365,7 @@ $arr_search = json_decode($output_search,true);
 ?>
 </div>
 
-<button style="background-color:#176fac;margin-top:-26%;margin-left:131%;" class="btn btn-success">
+<button style="background-color:#176fac;margin-top:-26%;margin-left:131%;" class="btn btn-info">
 
 <a data-toggle="modal" data-target="#myModal" style="color:white" href="view_popup.php?name=pan_card_details&link=<?php echo $arr_img_download_2[0]['url']; ?>">VIEW</a>
 
@@ -429,7 +423,7 @@ $arr_search = json_decode($output_search,true);
 ?>
 </div> 
 <br>
-<button style="margin-left:75%;margin-top:-7%;position: relative;" class="btn btn-success">
+<button style="margin-left:75%;margin-top:-7%;position: relative;" class="btn btn-info ">
 <a target="_blank" data-toggle="modal" data-target="#myModal" style="color:white" href="view_popup.php?name=telephone_bill_details&link=<?php echo $arr_img_download_3[0]['url']; ?>">VIEW</a>
 </button>
 </div> 
@@ -473,9 +467,10 @@ $arr_search = json_decode($output_search,true);
   
 ?>
 
-<button style="background-color:#176fac;margin-top:-144%;margin-left:476%;" class="btn btn-success">
-<a target="_blank" data-toggle="modal" data-target="#myModal" style="color:white" href="view_popup.php?name=pass_book_details&link=<?php echo $arr_img_download_4[0]['url']; ?>">VIEW</a>
-</button>
+<a target="_blank" data-toggle="modal" data-target="#myModal" style="color:white" href="view_popup.php?name=pass_book_details&link=<?php echo $arr_img_download_4[0]['url']; ?>">
+<button style="background-color:#176fac;margin-top:-144%;margin-left:476%;" class="btn btn-info ">
+VIEW
+</button></a>
 </div>
 </div>
  </div>
@@ -507,6 +502,7 @@ $arr_search = json_decode($output_search,true);
 
 <?php }?>
 
+
 <!-- Buttons SAve and Cancel -->
 <div class="form-group">
   <label class="col-md-4 control-label" for="save_btn"></label>
@@ -518,6 +514,28 @@ $arr_search = json_decode($output_search,true);
 </div>
 </fieldset>
 </form>
+<script type="text/javascript">
+$(function(){
+
+$('#trigger').click(function(){
+  $('#myModal').modal('show');
+  return false;
+})
+
+});
+</script>
+
+
+<div class="container">
+<!-- Modal HTML -->
+    <div id="myModal" class="modal fade">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <!-- Content will be loaded here from "remote.php" file -->
+            </div>
+        </div>
+    </div>
+</div>
 
 <?php } else { ?>
 
@@ -555,7 +573,7 @@ $arr_search = json_decode($output_search,true);
 <div class="upload-button" style="position:absolute;z-index:2;margin-left:79%;cursor:pointer;margin-top:40%;"><button disabled>Upload Image</button></div>
 
 
-<input name="image" id="image" class="file-upload1" style="position:absolute;z-index:-2;margin-left:44%;margin-top:-44%;" type="file">
+<input name="image" id="image" class="file-upload1" style="display:none;position:absolute;z-index:-2;margin-left:44%;margin-top:16%;" type="file">
 <!-- Text input-->
 <div class="form-group">
   <label class="col-md-4 control-label" for="textinput">UID:</label>  
@@ -636,15 +654,13 @@ $arr_search = json_decode($output_search,true);
   
 ?>
 
-<button style="background-color:#176fac;margin-top:-26%;margin-left:129%;" class="btn btn-success">
-
-<a target="_blank" data-toggle="modal" data-target="#myModal" style="color:white" href="view_popup.php?name=pan_card_details&link=<?php echo $arr_img_download[0]['url']; ?>">View</a>
+<a target="_blank" data-toggle="modal" data-target="#myModal" style="color:white" href="view_popup.php?name=pan_card_details&link=<?php echo $arr_img_download[0]['url']; ?>">
+<button style="background-color:#176fac;margin-top:-26%;margin-left:129%;" class="btn btn-info ">
+VIEW
 </button>
-
+</a>
 </div>
 </div>
-
-
 
 <!--address proof-->
 <div class="form-group">
@@ -690,10 +706,11 @@ $arr_search = json_decode($output_search,true);
   
 ?>
 
-
-<button style="margin-left:75%;margin-top:-7%;position: relative;" class="btn btn-success">
-<a target="_blank" data-toggle="modal" data-target="#myModal" style="color:white" href="view_popup.php?name=telephone_bill_details&link=<?php echo $arr_img_download_2[0]['url']; ?>">View</a>
+<a target="_blank" data-toggle="modal" data-target="#myModal" style="color:white" href="view_popup.php?name=telephone_bill_details&link=<?php echo $arr_img_download_2[0]['url']; ?>">
+<button style="margin-left:75%;margin-top:-7%;position: relative;" class="btn btn-info">
+VIEW
 </button>
+</a>
 </div>
 </div>
 
@@ -737,10 +754,11 @@ $arr_search = json_decode($output_search,true);
   
 ?>
 
-<button style="margin-left:75%;margin-top:-9%;position: relative;" class="btn btn-success">
-<a target="_blank" data-toggle="modal" data-target="#myModal" style="color:white" href="view_popup.php?name=bank_pass_book_details&link=<?php echo $arr_img_download_3[0]['url']; ?>">View</a>
+<a target="_blank" data-toggle="modal" data-target="#myModal" style="color:white" href="view_popup.php?name=bank_pass_book_details&link=<?php echo $arr_img_download_3[0]['url']; ?>">
+<button style="margin-left:75%;margin-top:-9%;position:relative;" class="btn btn-info">
+VIEW
 </button>
-
+</a>
 </div>
 
 
@@ -785,10 +803,10 @@ $arr_search = json_decode($output_search,true);
     
   ?>
 
-
-<button style="margin-left:75%;margin-top:-9%;position: relative;" class="btn btn-success">
-<a target="_blank" data-toggle="modal" data-target="#myModal" style="color:white" href="view_popup.php?name=voter_id_details&link=<?php echo $arr_img_download_4[0]['url']; ?>">View</a>
-</button>
+<a target="_blank" data-toggle="modal" data-target="#myModal" style="color:white;position:relative" href="view_popup.php?name=voter_id_details&link=<?php echo $arr_img_download_4[0]['url']; ?>">
+<button style="margin-left:75%;margin-top:-9%;position: relative;" class="btn btn-info">
+VIEW
+</button></a>
   </div>
 
     <div class="form-group">
@@ -828,11 +846,11 @@ $arr_search = json_decode($output_search,true);
     
   ?>
 
-
-<button style="margin-left:75%;margin-top:-7%;position: relative;" class="btn btn-success">
-<a target="_blank" data-toggle="modal" data-target="#myModal" style="color:white" href="view_popup.php?name=passport_details&link=<?php echo $arr_img_download_5[0]['url']; ?>">View</a>
+<a target="_blank" data-toggle="modal" data-target="#myModal" style="color:white" href="view_popup.php?name=passport_details&link=<?php echo $arr_img_download_5[0]['url']; ?>">
+<button style="margin-left:75%;margin-top:-7%;position: relative;" class="btn btn-info">
+VIEW
 </button>
-
+</a>
   </div>
 
 
@@ -877,7 +895,7 @@ $arr_search = json_decode($output_search,true);
 
 </div>
   </div>
-<button style="margin-left:75%;margin-top:-7%;position: relative;" class="btn btn-success">
+<button style="margin-left:75%;margin-top:-7%;position: relative;" class="btn btn-info">
 <a target="_blank" data-toggle="modal" data-target="#myModal" style="color:white" href="view_popup.php?name=aadhar_card_details&link=<?php echo $arr_img_download_6[0]['url']; ?>">View</a>
 </button>
   </div>
