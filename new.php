@@ -918,7 +918,7 @@ if ($_POST['uid'] != '' and $_GET["is_user"]==1){
 <div class="form-group" style="margin-top:12%;">
   <label class="col-md-4 control-label" for="type_of_org">Type of Organization:</label>
   <div class="col-md-4">
-    <select id="type_of_org" name="type_of_org" class="form-control">
+    <select id="type_of_org" name="type_of_org" class="form-control" ONCHANGE="enable_disable(this);" >
       <option value="Partnership">Partnership</option>
       <option value="Individual">Individual</option>
     </select>
@@ -1037,33 +1037,33 @@ if ($_POST['uid'] != '' and $_GET["is_user"]==1){
 </div> -->
 <!-- Added Partner 1 -->
 
+
 <label for="comment" id="number" style="margin-left:25%;margin-top:0%;font-size: 16px;font-weight:600;"> PARTNERS : </label>
 
-
+<div class="present_fields">
 <!-- Text input-->
 <div class="form-group">
   <label class="col-md-4 control-label" for="textinput">Name: </label>  
   <div class="col-md-4 col-sm-2 col-2">
-  <input id="partner_names[]" name="partner_names[]" type="text" placeholder="Enter Full Name" class="form-control input-md newentry" style="width: 100%;">
+  <input id="partner_names[]" name="partner_names[]" type="text" placeholder="Enter Full Name" class="form-control input-md partner_names newentry" style="width: 100%;">
   </div>
 
   <div class="col-md-2 col-sm-2 col-2">
 
     <a href="new_user_popup.php" style="color:white" target="_blank" data-toggle="modal" data-target="#myModal">
 
-     <button type="button" class="btn btn-info " style="margin-left:-6%">
+     <button type="button" class="btn btn-info new_entry_btn" style="margin-left:-6%">
        New Entry
      </button>
     </a>
   </div>
 </div>
 
-
 <!-- Select Basic-->
 <div class="form-group">
   <label class="col-md-4 control-label" for="selectbasic">Designation: </label>
   <div class="col-md-4">
-    <select id="partner_designations[]" name="partner_designations[]" class="form-control" style="width: 49%;">
+    <select id="partner_designations[]" name="partner_designations[]" class="form-control partner_designations" style="width: 49%;">
       <option value="1">Managing Partner</option>
       <option value="2">Manager</option>
       <option value="3">Other</option>
@@ -1071,17 +1071,24 @@ if ($_POST['uid'] != '' and $_GET["is_user"]==1){
   </div>
 
   <div class="col-md-2">
-     <input id="textinput" name="textinput" type="text" placeholder="Specify if Other" class="form-control input-md"  style="margin-left:-221px;width:103%;">
+     <input id="textinput" name="textinput" type="text" placeholder="Specify if Other" class="form-control input-md partner_others"  style="margin-left:-221px;width:103%;">
 </div>
 </div> 
+
+<a href="" style="" class="remove_field_present"><img src="images/del24.png" style="margin-left:900px;margin-top:-40px"></a>
+</div>
 
 <div class="form-group">
 <div class="col-md-2 col-sm-2 col-2">
     <div class="input_fields_wrap" style="color:black">
-         <button class="add_field_button btn " onclick="incrementValue()" style="margin-left: 443px;">Add New Partners</button>
+         <button class="add_field_button btn partner_btn" onclick="incrementValue()" style="margin-left: 443px;">Add New Partners</button>
          <input type="text" name="mytext[]" hidden="" ></div>
 </div>
   </div>
+
+
+</div>
+
 
 <div class="present_fields_1">
 <!-- Select Basic -->
@@ -1154,6 +1161,25 @@ if ($_POST['uid'] != '' and $_GET["is_user"]==1){
 </fieldset>
 </form>
 
+
+<script type="text/javascript">
+
+function enable_disable(that){
+
+  /*alert(that.value);*/
+  if(that.value == "Individual"){
+      $('.partner_names').attr('disabled', true);
+      $('.partner_designations').attr('disabled', true);
+      $('.partner_others').attr('disabled', true);
+      $('.partner_btn').attr('disabled', true);
+      $('.new_entry_btn').attr('disabled', true);
+  }else{
+      $('.partner_names').attr('disabled', false);
+      $('.partner_designations').attr('disabled', false);
+      $('.partner_others').attr('disabled', false);
+  }
+}
+</script>
 <?php } else { ?>
 
 
@@ -1431,7 +1457,7 @@ $('#trigger').click(function(){
         e.preventDefault();
         if(x < max_fields){ //max input box allowed
             x++; //text box increment
-            $(wrapper).prepend('<br><div style="margin-left:50px;"><center><div class="form-group"> <label class=" control-label" for="textinput" style="margin-left:327px;">Name: </label> <div > <input id="partner_names[]" name="partner_names[]" type="text" placeholder="Enter Full Name" class="form-control input-md editentry" style="margin-top: -25px;margin-left: 403px;width: 241%;">  </div>  <div class="col-md-6" > <a href="new_user_popup.php" style="color:white" target="_blank" data-toggle="modal" data-target="#myModal"><button  type="button" class="btn btn-info" style="margin-left: 809px;margin-top: -61px;">New Entry</button> </a> </div></div> <div class="form-group">  <label class="control-label" for="selectbasic" style="margin-left:293px;">Designation: </label>  <div> <select id="partner_designations[]" name="partner_designations[]" class="form-control" style="margin-left: 405px;margin-top: -34px;width:118%;">      <option value="Managing Partner">Managing Partner</option>      <option value="Manager">Manager</option>      <option value="Other">Other</option>    </select>  </div>  <div>  <input style="margin-left: 617px;margin-top: -35px;width:114%" id="textinput" name="textinput" type="text" placeholder="Specify if Other" class="form-control input-md"></div></div></center><a href="#" class="remove_field"><img src="images/del24.png" style="margin-left: 810px; margin-top: -81px;"></a></a></div>'); //add input box\
+            $(wrapper).prepend('<br><div style="margin-left:50px;"><center><div class="form-group"> <label class=" control-label" for="textinput" style="margin-left:327px;">Name: </label> <div > <input id="partner_names[]" name="partner_names[]" type="text" placeholder="Enter Full Name" class="form-control input-md editentry partner_names" style="margin-top: -25px;margin-left: 403px;width: 241%;">  </div>  <div class="col-md-6" > <a href="new_user_popup.php" style="color:white" target="_blank" data-toggle="modal" data-target="#myModal"><button  type="button" class="btn btn-info new_entry_btn" style="margin-left: 809px;margin-top: -61px;">New Entry</button> </a> </div></div> <div class="form-group">  <label class="control-label" for="selectbasic" style="margin-left:293px;">Designation: </label>  <div> <select id="partner_designations[]" name="partner_designations[]" class="form-control partner_designations" style="margin-left: 405px;margin-top: -34px;width:118%;">      <option value="Managing Partner">Managing Partner</option>      <option value="Manager">Manager</option>      <option value="Other">Other</option>    </select>  </div>  <div>  <input style="margin-left: 617px;margin-top: -35px;width:114%" id="textinput" name="textinput" type="text" placeholder="Specify if Other" class="form-control input-md partner_others"></div></div></center><a href="#" class="remove_field"><img src="images/del24.png" style="margin-left: 810px; margin-top: -81px;"></a></a></div>'); //add input box\
         }
     });
     
