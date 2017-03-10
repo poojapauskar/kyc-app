@@ -952,28 +952,6 @@ $('#trigger').click(function(){
     </div>
 </div>
 
-
-<script type="text/javascript">
-$(function(){
-
-$('#trigger').click(function(){
-  $('#myModall').modal('show');
-  return false;
-})
-
-});
-</script>
-
-<div class="container">
-<!-- Modal HTML -->
-    <div id="myModall" class="modal fade">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <!-- Content will be loaded here from "remote.php" file -->
-            </div>
-        </div>
-    </div>
-</div>
 </main>
 </body>
 </html>
