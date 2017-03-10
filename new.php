@@ -173,7 +173,7 @@ if(a==null || a==''){
         /*alert("UID generated: "+uid_gen);*/
         var yourUl = document.getElementById("popup1");
         yourUl.style.display = yourUl.style.display === 'none' ? '' : 'none';
-        return false;
+        event.preventDefault();
 }
 }
 </script>
