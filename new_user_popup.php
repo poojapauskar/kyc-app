@@ -1,5 +1,16 @@
 <html>
   <head>
+
+  
+<!-- Datepicker -->
+<link rel="stylesheet" href="css/jquery-ui.css">
+  <script src="js/jquery-1.js"></script>
+  <script src="js/jquery-ui.js"></script>
+  <script>
+  $(function() {
+    $( ".datepicker" ).datepicker();
+  });
+  </script>
     <!---bootstrap-->
   <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 <link rel="stylesheet" type="text/css" href="css/material.indigo-pink.min.css">
@@ -107,15 +118,6 @@ if(a==null || a==''){
 }
 </script>
 
-<!-- Datepicker -->
-<link rel="stylesheet" href="css/jquery-ui.css">
-  <script src="js/jquery-1.js"></script>
-  <script src="js/jquery-ui.js"></script>
-  <script>
-  $(function() {
-    $( ".datepicker" ).datepicker();
-  });
-  </script>
   
 <head>
 <body style="background-color:#E8E8E8;">
@@ -550,8 +552,7 @@ file_put_contents('autocomplete-Files/NewEntryValues.js', $foo);
 file_put_contents('autocomplete-Files/EditEntryValues.js', $foo);
 
 
-echo '  <script type="text/javascript" src="autocomplete-Files/jquery-1.8.2.min.js"></script>
-        <script type="text/javascript" src="autocomplete-Files/jquery.mockjax.js"></script>
+echo '  <script type="text/javascript" src="autocomplete-Files/jquery.mockjax.js"></script>
         <script type="text/javascript" src="autocomplete-Files/jquery.autocomplete.js"></script>
         <script type="text/javascript" src="autocomplete-Files/NewEntryValues.js"></script>
         <script type="text/javascript" src="autocomplete-Files/Logic_NewEntry.js"></script>

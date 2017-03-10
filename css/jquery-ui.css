@@ -16,7 +16,8 @@
    float:top;
 }
 #ui-datepicker-div{
-	height:250px !important;
+	height:270px !important;
+	width:300px !important;
 }
 .ui-helper-hidden {
 	display: none;
