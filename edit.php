@@ -1141,7 +1141,7 @@ if(isset($_POST["edit_btn"]) and $_GET["is_user"]==1) {
 ?>
 </div>
 <br>
-<button style="margin-left:75%;margin-top:-6%;" class="btn btn-success">
+<button style="margin-left:75%;margin-top:-6%;" class="btn btn-info">
 <a target="_blank" data-toggle="modal" data-target="#myModal" style="color:white" href="view_popup.php?name=pass_book_details&link=<?php echo $arr_img_download_4[0]['url']; ?>">View</a>
 </button>
 </div>
@@ -1358,11 +1358,6 @@ function enable_disable(that){
 <form class="form-horizontal" method="post" action="" enctype="multipart/form-data">
 <fieldset>
 
-<!-- Form Name -->
-<!-- <legend><center><?php echo $arr_search['response'][0]['user_details']['name'] ?></center></legend> -->
-<!--avatar upload-->
-
-
 <?php
   $url_img = 'https://kyc-application.herokuapp.com/download/';
   $options_img= array(
@@ -1443,15 +1438,6 @@ function enable_disable(that){
   </div>
 </div>
 
-<!-- Text input-->
-<!-- <div class="form-group">
-  <label class="col-md-4 control-label" for="textinput"></label>  
-  <div class="col-md-4">
-  <input id="textinput" name="textinput" type="text" placeholder="specify " class="form-control input-md">
-    
-  </div>
-</div> -->
-
 <!-- Textarea -->
 <div class="form-group">
   <label class="col-md-4 control-label" for="textarea">Address:</label>
@@ -1494,7 +1480,7 @@ function enable_disable(that){
   
 ?>
 <button style="background-color:#65AC4;margin-left:152%;margin-top:-13%" class="btn btn-success">
-<a target="_blank" style="color:white" href="view_image.php?name=pan_card_details&link=<?php echo $arr_img_download[0]['url']; ?>">View</a>
+<a target="_blank" style="color:white" data-toggle="modal" data-target="#myModal" href="view_image.php?name=pan_card_details&link=<?php echo $arr_img_download[0]['url']; ?>">View</a>
 </button>
 
 </div>
@@ -1539,9 +1525,9 @@ function enable_disable(that){
   
 ?>
 
-<button style="margin-left:88%" class="btn btn-success">
+<button style="margin-left:88%;position:relative;" class="btn btn-success">
 
-<a target="_blank" style="color:white" href="view_image.php?name=telephone_bill_details&link=<?php echo $arr_img_download_2[0]['url']; ?>">View</a>
+<a target="_blank" style="color:white" data-toggle="modal" data-target="#myModal" href="view_image.php?name=telephone_bill_details&link=<?php echo $arr_img_download_2[0]['url']; ?>">View</a>
 </button>
 </div>
 
@@ -1588,8 +1574,8 @@ function enable_disable(that){
   
 ?>
 
-<button style="margin-left:88%" class="btn btn-success">
-<a target="_blank" style="color:white" href="view_image.php?name=bank_pass_book_details&link=<?php echo $arr_img_download_3[0]['url']; ?>">View</a>
+<button style="margin-left:88%" class="btn btn-info">
+<a target="_blank" style="color:white" data-toggle="modal" data-target="#myModal" href="view_image.php?name=bank_pass_book_details&link=<?php echo $arr_img_download_3[0]['url']; ?>">View</a>
 </button>
 
 </div>
@@ -1633,8 +1619,8 @@ function enable_disable(that){
     
   ?>
 
-<button style="margin-left:88%" class="btn btn-success">
-<a target="_blank" style="color:white" href="view_image.php?name=voter_id_details&link=<?php echo $arr_img_download_4[0]['url']; ?>">View</a>
+<button style="margin-left:88%;position:relative;" class="btn btn-info">
+<a target="_blank" style="color:white" data-toggle="modal" data-target="#myModal" href="view_image.php?name=voter_id_details&link=<?php echo $arr_img_download_4[0]['url']; ?>">View</a>
 </button>
 
   </div>
@@ -1680,8 +1666,8 @@ function enable_disable(that){
     
   ?>
 
-<button style="margin-left:88%;" class="btn btn-success">
-<a target="_blank" style="color:white" href="view_image.php?name=passport_details&link=<?php echo $arr_img_download_5[0]['url']; ?>">View</a>
+<button style="margin-left:88%;" class="btn btn-info">
+<a target="_blank" style="color:white" data-toggle="modal" data-target="#myModal" href="view_image.php?name=passport_details&link=<?php echo $arr_img_download_5[0]['url']; ?>">View</a>
 </button>
 
   </div>
@@ -1720,8 +1706,8 @@ function enable_disable(that){
     $arr_img_download_6 = json_decode($output_img_download_6,true);
     
   ?>
-<button style="background-color:#65AC4;margin-left:152%;margin-top:-13%" class="btn btn-success">
-<a target="_blank" style="color:white" href="view_image.php?name=aadhar_card_details&link=<?php echo $arr_img_download_6[0]['url']; ?>">View</a>
+<button style="background-color:#65AC4;margin-left:152%;margin-top:-13%" class="btn btn-info">
+<a target="_blank" style="color:white" data-toggle="modal" data-target="#myModal" href="view_image.php?name=aadhar_card_details&link=<?php echo $arr_img_download_6[0]['url']; ?>">View</a>
 </button>
 
   </div>
