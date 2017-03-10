@@ -3,7 +3,6 @@
 <head>
   <title></title>
 
-<!--   <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"> -->
   <link rel="stylesheet" type="text/css" href="css/material.indigo-pink.min.css">
 
   <link rel="stylesheet" href="css/bootstrap.css">
@@ -372,7 +371,7 @@ $arr_search = json_decode($output_search,true);
 ?>
 </div>
 
-<button style="background-color:#176fac;margin-top:-26%;margin-left:129%;" class="btn btn-success">
+<button style="background-color:#176fac;margin-top:-26%;margin-left:131%;" class="btn btn-success">
 
 <a data-toggle="modal" data-target="#myModal" style="color:white" href="view_popup.php?name=pan_card_details&link=<?php echo $arr_img_download_2[0]['url']; ?>">VIEW</a>
 
@@ -524,12 +523,6 @@ $arr_search = json_decode($output_search,true);
 
 <form style="<?php echo $margin; ?>" onsubmit="return proceed();" name="Form" id="Form" class="form-horizontal" method="post" action="edit.php?is_user=1&id=<?php echo $_GET['id'] ?>" enctype="multipart/form-data">
 <fieldset>
-
-<!-- Form Name -->
-<!-- <legend><center><?php echo $arr_search['response'][0]['user_details']['name'] ?></center></legend> -->
-<!--avatar upload-->
-
-
 <?php
   $url_img = 'https://kyc-application.herokuapp.com/download/';
   $options_img= array(
@@ -562,7 +555,7 @@ $arr_search = json_decode($output_search,true);
 <div class="upload-button" style="position:absolute;z-index:2;margin-left:79%;cursor:pointer;margin-top:40%;"><button disabled>Upload Image</button></div>
 
 
-<input name="image" id="image" class="file-upload1" style="position:absolute;z-index:-2;margin-left:44%;margin-top:16%;" type="file">
+<input name="image" id="image" class="file-upload1" style="position:absolute;z-index:-2;margin-left:44%;margin-top:-44%;" type="file">
 <!-- Text input-->
 <div class="form-group">
   <label class="col-md-4 control-label" for="textinput">UID:</label>  
@@ -594,22 +587,9 @@ $arr_search = json_decode($output_search,true);
   <div class="col-md-4">
     <select id="profession" name="profession" class="form-control" readonly>
       <option value="<?php echo $arr_search['response'][0]['user_details']['proffesion'] ?>"><?php echo $arr_search['response'][0]['user_details']['proffesion'] ?></option>
-      <!-- <option value="Option one">Option one</option>
-      <option value="Option two">Option two</option>
-      <option value="Option three">Option three</option>
-      <option value="Option four">Option four</option> -->
     </select>
   </div>
 </div>
-
-<!-- Text input-->
-<!-- <div class="form-group">
-  <label class="col-md-4 control-label" for="textinput"></label>  
-  <div class="col-md-4">
-  <input id="textinput" name="textinput" type="text" placeholder="specify " class="form-control input-md" readonly>
-    
-  </div>
-</div> -->
 
 <!-- Textarea -->
 <div class="form-group">
@@ -633,15 +613,12 @@ $arr_search = json_decode($output_search,true);
   <label class="col-md-4 control-label" for="filebutton" >PAN card:</label>
 
 <div class="col-md-4">
-<?php echo $arr_search['response'][0]['pan_card_details'][0]['name']; ?>
+  <input id="pan_upload" class="form-control input-md" value="<?php echo $arr_search['response'][0]['pan_card_details'][0]['name']; ?>" readonly/>
+<div class="fileUpload btn btn-info" style="margin-left:105%;margin-top:-12%;">
+  <label style="font-weight:500;margin-bottom: 2px;">ATTACH</label>
+<input id="pan_card" name="pan_card" style="margin-left:-47%" value="<?php echo $_POST['pan_card'] ?>" class="upload" type="file" disabled="true">
 </div>
 
-
-<div class="col-md-4">
-<input id="pan_card" name="pan_card" style="margin-left:-47%" value="<?php echo $_POST['pan_card'] ?>" class="input-file" type="file" disabled>
-</div>
-
-<div class="col-md-4">
 <?php
   $url_img_download = 'https://kyc-application.herokuapp.com/download/';
   $options_img_download = array(
@@ -659,14 +636,15 @@ $arr_search = json_decode($output_search,true);
   
 ?>
 
-<button style="margin-left:114%;margin-top:-13%" class="btn btn-success">
+<button style="background-color:#176fac;margin-top:-26%;margin-left:129%;" class="btn btn-success">
 
 <a target="_blank" data-toggle="modal" data-target="#myModal" style="color:white" href="view_popup.php?name=pan_card_details&link=<?php echo $arr_img_download[0]['url']; ?>">View</a>
 </button>
 
 </div>
-
 </div>
+
+
 
 <!--address proof-->
 <div class="form-group">
@@ -689,9 +667,9 @@ $arr_search = json_decode($output_search,true);
 </div>
 
 
-<div class="col-md-4">
-
-<input id="telephone_bill"  value="<?php echo $_POST['telephone_bill'] ?>" style="margin-top: 5px;margin-left: 126px;" name="telephone_bill" class="input-file" type="file" disabled>     
+<div class="fileUpload btn btn-info" style="margin-left:-8%;margin-top:-1%;">
+    <label style="font-weight:500;margin-bottom: 2px;">ATTACH</label>
+<input id="telephone_bill"  value="<?php echo $_POST['telephone_bill'] ?>" style="margin-top: 5px;margin-left: 126px;" name="telephone_bill" class="upload" type="file"  disabled="true">     
  </div>
 
 
@@ -713,7 +691,7 @@ $arr_search = json_decode($output_search,true);
 ?>
 
 
-<button style="margin-left:70%;margin-top:-6%;position: relative;" class="btn btn-success">
+<button style="margin-left:75%;margin-top:-7%;position: relative;" class="btn btn-success">
 <a target="_blank" data-toggle="modal" data-target="#myModal" style="color:white" href="view_popup.php?name=telephone_bill_details&link=<?php echo $arr_img_download_2[0]['url']; ?>">View</a>
 </button>
 </div>
@@ -737,11 +715,11 @@ $arr_search = json_decode($output_search,true);
 <?php echo $arr_search['response'][0]['bank_pass_book_details'][0]['name']; ?>
 </div>
 
-<div class="col-md-4">
-<input id="bank_pass_book"  value="<?php echo $_POST['bank_pass_book'] ?>" style="margin-top: 6px;margin-left: 129px;position:absolute;" name="bank_pass_book" class="input-file" type="file" disabled>     
+<div class="fileUpload btn btn-info" style="margin-left:-8%;margin-top:-1%;">
+    <label style="font-weight:500;margin-bottom: 2px;">ATTACH</label>
+<input id="bank_pass_book"  value="<?php echo $_POST['bank_pass_book'] ?>" style="margin-top: 6px;margin-left: 129px;position:absolute;" name="bank_pass_book" class="upload" type="file" disabled>     
  </div>
 
-<div class="col-md-4">
 <?php
   $url_img_download_3 = 'https://kyc-application.herokuapp.com/download/';
   $options_img_download_3= array(
@@ -759,13 +737,12 @@ $arr_search = json_decode($output_search,true);
   
 ?>
 
-<button style="margin-left:88%" class="btn btn-success">
+<button style="margin-left:75%;margin-top:-9%;position: relative;" class="btn btn-success">
 <a target="_blank" data-toggle="modal" data-target="#myModal" style="color:white" href="view_popup.php?name=bank_pass_book_details&link=<?php echo $arr_img_download_3[0]['url']; ?>">View</a>
 </button>
 
 </div>
 
-</div>
 
 <!--ID pROOF-->
 
@@ -787,12 +764,10 @@ $arr_search = json_decode($output_search,true);
     <div class="col-md-4">
     <?php echo $arr_search['response'][0]['voter_id_details'][0]['name']; ?>
     </div>
-
-  <div class="col-sm-4">
-  <input id="voter_id" value="<?php echo $_POST['voter_id'] ?>" style="margin-top: 6px;margin-left: 129px;position:absolute;" name="voter_id" class="input-file" type="file" disabled>     
+    <div class="fileUpload btn btn-info" style="margin-left:-8%;margin-top:-1%;">
+    <label style="font-weight:500;margin-bottom: 2px;">ATTACH</label>
+    <input id="voter_id" value="<?php echo $_POST['voter_id'] ?>" style="margin-top: 6px;margin-left: 129px;position:absolute;" name="voter_id" class="input-file" type="file" disabled>     
    </div>
-
-   <div class="col-md-4">
   <?php
     $url_img_download_4 = 'https://kyc-application.herokuapp.com/download/';
     $options_img_download_4= array(
@@ -811,15 +786,10 @@ $arr_search = json_decode($output_search,true);
   ?>
 
 
-<button style="margin-left:88%" class="btn btn-success">
+<button style="margin-left:75%;margin-top:-9%;position: relative;" class="btn btn-success">
 <a target="_blank" data-toggle="modal" data-target="#myModal" style="color:white" href="view_popup.php?name=voter_id_details&link=<?php echo $arr_img_download_4[0]['url']; ?>">View</a>
 </button>
-
-
   </div>
-
-</div>
-
 
     <div class="form-group">
  <label class="col-md-4 control-label" for="checkboxes"></label>
@@ -836,12 +806,11 @@ $arr_search = json_decode($output_search,true);
    <div class="col-md-4">
   <?php echo $arr_search['response'][0]['passport_details'][0]['name']; ?>
   </div>
-
-  <div class="col-sm-4">
+   <div class="fileUpload btn btn-info" style="margin-left:-8%;margin-top:-1%;">
+    <label style="font-weight:500;margin-bottom: 2px;">ATTACH</label>
   <input id="passport" value="<?php echo $_POST['passport'] ?>" style="margin-top: 6px;margin-left: 129px;position:absolute;" name="passport" class="input-file" type="file" disabled>     
    </div>
 
-  <div class="col-md-4">
   <?php
     $url_img_download_5 = 'https://kyc-application.herokuapp.com/download/';
     $options_img_download_5= array(
@@ -860,12 +829,12 @@ $arr_search = json_decode($output_search,true);
   ?>
 
 
-<button style="margin-left:88%" class="btn btn-success">
+<button style="margin-left:75%;margin-top:-7%;position: relative;" class="btn btn-success">
 <a target="_blank" data-toggle="modal" data-target="#myModal" style="color:white" href="view_popup.php?name=passport_details&link=<?php echo $arr_img_download_5[0]['url']; ?>">View</a>
 </button>
 
   </div>
-</div>
+
 
 <!-- Text input-->
 <div class="form-group">
@@ -885,10 +854,10 @@ $arr_search = json_decode($output_search,true);
   </div>
 
   <div class="col-md-4">
-    <input id="aadhar_card" style="margin-left:-47%" name="aadhar_card" value="<?php echo $_POST['aadhar_card'] ?>" class="input-file" type="file" disabled>
-  </div>
+   <div class="fileUpload btn btn-info" style="margin-left:-4%;margin-top:-1%;">
+    <label style="font-weight:500;margin-bottom: 2px;">ATTACH</label>
+    <input id="aadhar_card" style="margin-left:-47%" name="aadhar_card" value="<?php echo $_POST['aadhar_card'] ?>" class="upload" type="file" disabled>
   
-  <div class="col-md-4">
   <?php
     $url_img_download_6 = 'https://kyc-application.herokuapp.com/download/';
     $options_img_download_6= array(
@@ -906,15 +875,12 @@ $arr_search = json_decode($output_search,true);
     
   ?>
 
-
-<button style="margin-left:117%;position:absoulte;margin-top:-12%" class="btn btn-success">
+</div>
+  </div>
+<button style="margin-left:75%;margin-top:-7%;position: relative;" class="btn btn-success">
 <a target="_blank" data-toggle="modal" data-target="#myModal" style="color:white" href="view_popup.php?name=aadhar_card_details&link=<?php echo $arr_img_download_6[0]['url']; ?>">View</a>
 </button>
-
   </div>
-
-</div>
-
 <!-- Button -->
 <div class="form-group">
   <label class="col-md-4 control-label" for="singlebutton"></label>
