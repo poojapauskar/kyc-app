@@ -80,6 +80,8 @@
 }
   </style>
 
+
+
 <script>
 
 function proceed(){
@@ -104,6 +106,17 @@ if(a==null || a==''){
 }
 }
 </script>
+
+<!-- Datepicker -->
+<link rel="stylesheet" href="css/jquery-ui.css">
+  <script src="js/jquery-1.js"></script>
+  <script src="js/jquery-ui.js"></script>
+  <script>
+  $(function() {
+    $( ".datepicker" ).datepicker();
+  });
+  </script>
+  
 <head>
 <body style="background-color:#E8E8E8;">
 
@@ -614,9 +627,9 @@ echo '  <script type="text/javascript" src="autocomplete-Files/jquery-1.8.2.min.
 <!--date-->
 <div class="form-group row">
 
-  <label for="example-date-input" class="col-2 col-form-label" style="margin-left:24.5%;">DATE:</label>
+  <label for="example-date-input" class="col-2 col-form-label" style="margin-left:24.5%;">DOB:</label>
   <div class="col-4">
-    <input class="form-control" id="date" name="date" value="<?php echo $_POST['date'] ?>" style="width:28.9%;margin-left:35.6%;margin-top:-4%;" type="text">
+    <input class="form-control datepicker" id="date1" name="date1" value="<?php echo $_POST['date1'] ?>" style="width:28.9%;margin-left:35.6%;margin-top:-4%;" type="text">
 
   </div>
 </div>
@@ -755,7 +768,7 @@ echo '  <script type="text/javascript" src="autocomplete-Files/jquery-1.8.2.min.
 <div class="form-group row">
   <label for="example-date-input" class="col-2 col-form-label" style="margin-left:24.5%;">DATE:</label>
   <div class="col-4">
-    <input class="form-control" id="date[]" name="date[]" value="<?php echo $_POST['date'] ?>" style="width:28.9%;margin-left:35.6%;margin-top:-4%;" type="text" value="" id="example-date-input">
+    <input class="form-control datepicker" id="date[]" name="date[]" value="<?php echo $_POST['date'] ?>" style="width:28.9%;margin-left:35.6%;margin-top:-4%;" type="text">
   </div>
 </div>
 
@@ -813,7 +826,7 @@ function goBack() {
         e.preventDefault();
         if(x < max_fields){ //max input box allowed
             x++; //text box increment
-              $(wrapper).prepend('<br><div style="margin-left:50%;"><div class="form-group"><label class="control-label" for="selectbasic" style="margin-left:-220px;">Type of work</label><div class="col-md-6"><select id="selectbasic" name="selectbasic" class="form-control" style="margin-left:17%;width:222%"><option value="1">Option one</option><option value="2">Option two</option><option value="3">Option three</option></select></div></div><div class="form-group"> <label class="col-md-4 control-label" for="selectbasic" style="margin-left:-29%">Status</label><div class="col-md-6"><select id="selectbasic" name="selectbasic" style="width:210%;margin-left:-1%;" class="form-control"><option value="PR">Pending Request</option><option value="WP">Work in Process</option><option value="CR">Completed Request</option></select></div></div><div class="form-group row"><label for="example-date-input" class="col-2 col-form-label" style="margin-left:-15.5%;";">DATE</label><div class="col-8"><input class="form-control" id="date" name="date" value="<?php echo $_POST['date'] ?>" style="width:86%;margin-left:10.6%;margin-top:-10%;" type="text" value="" id="example-date-input"></div></div><div class="form-group"><label class="col-md-4 control-label" for="textinput" style="margin-left:-36%">Comment</label><div class="col-md-4"><input id="textinput" name="textinput" type="text" placeholder="" class="form-control input-md" style="width:342%;margin-left:20%"></div></div></center><a href="#" class="remove_field"><img src="images/del24.png" style="margin-left: 443px; margin-top: -81px;"></a></a></div>'); //add input box\
+              $(wrapper).prepend('<br><div style="margin-left:50%;"><div class="form-group"><label class="control-label" for="selectbasic" style="margin-left:-220px;">Type of work</label><div class="col-md-6"><select id="selectbasic" name="selectbasic" class="form-control" style="margin-left:17%;width:222%"><option value="1">Option one</option><option value="2">Option two</option><option value="3">Option three</option></select></div></div><div class="form-group"> <label class="col-md-4 control-label" for="selectbasic" style="margin-left:-29%">Status</label><div class="col-md-6"><select id="selectbasic" name="selectbasic" style="width:210%;margin-left:-1%;" class="form-control"><option value="PR">Pending Request</option><option value="WP">Work in Process</option><option value="CR">Completed Request</option></select></div></div><div class="form-group row"><label for="example-date-input" class="col-2 col-form-label" style="margin-left:-15.5%;";">DATE</label><div class="col-8"><input class="form-control datepicker" id="date" name="date" value="<?php echo $_POST['date'] ?>" style="width:86%;margin-left:10.6%;margin-top:-10%;" type="text"></div></div><div class="form-group"><label class="col-md-4 control-label" for="textinput" style="margin-left:-36%">Comment</label><div class="col-md-4"><input id="textinput" name="textinput" type="text" placeholder="" class="form-control input-md" style="width:342%;margin-left:20%"></div></div></center><a href="#" class="remove_field"><img src="images/del24.png" style="margin-left: 443px; margin-top: -81px;"></a></a></div>'); //add input box\
 
         }
     });
