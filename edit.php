@@ -909,7 +909,7 @@ if(isset($_POST["edit_btn"]) and $_GET["is_user"]==1) {
 <div class="form-group" style="margin-top:10%">
   <label class="col-md-4 control-label" for="type_of_org">Type of Organization:</label>
   <div class="col-md-4">
-    <select id="type_of_org" name="type_of_org" class="form-control">
+    <select id="type_of_org" name="type_of_org" class="form-control"  ONCHANGE="enable_disable(this);" >
       <option value="<?php echo $arr_search['response'][0]['organization_details']['type_of_org'];?>"><?php echo $arr_search['response'][0]['organization_details']['type_of_org'];?></option>
       <option value="Partnership">Partnership</option>
       <option value="Individual">Individual</option>
@@ -1177,13 +1177,13 @@ if(isset($_POST["edit_btn"]) and $_GET["is_user"]==1) {
   <label class="col-md-4 control-label" for="textinput">Name:</label>  
 
   <div class="col-md-4 col-sm-2 col-2">
-  <input id="partner_names[]" value="<?php echo $arr_search['response'][0]['partner_details'][$x]['detail'][0]['name'] ?>" name="partner_names[]" type="text" placeholder="Enter Full Name" class="form-control input-md editentry">
+  <input id="partner_names[]" value="<?php echo $arr_search['response'][0]['partner_details'][$x]['detail'][0]['name'] ?>" name="partner_names[]" type="text" placeholder="Enter Full Name" class="form-control input-md editentry partner_names">
   </div>
 
   <div class="col-md-2 col-sm-2 col-2">
     <a href="new_user_popup.php" style="color:white" target="_blank" data-target="#exampleModal" data-whatever="@mdo">
 
-     <button type="button" class="btn btn-info " style="margin-left:-6%">
+     <button type="button" class="btn btn-info new_entry_btn" style="margin-left:-6%">
        New Entry
      </button>
     </a>
@@ -1196,7 +1196,7 @@ if(isset($_POST["edit_btn"]) and $_GET["is_user"]==1) {
 <div class="form-group">
   <label class="col-md-4 control-label" for="designation">Designation: </label>
   <div class="col-md-4">
-    <select style="width:170px" id="partner_designations[]" name="partner_designations[]" class="form-control">
+    <select style="width:170px" id="partner_designations[]" name="partner_designations[]" class="form-control partner_designations">
       <option value="<?php echo $arr_search['response'][0]['partner_details'][$x]['detail'][0]['designation'] ?>"><?php echo $arr_search['response'][0]['partner_details'][$x]['detail'][0]['designation'] ?></option>
       <option value="Managing Partner">Managing Partner</option>
       <option value="Manager">Manager</option>
@@ -1204,12 +1204,12 @@ if(isset($_POST["edit_btn"]) and $_GET["is_user"]==1) {
     </select>
   </div>
   <div class="col-md-2">
-     <input id="textinput" style="margin-left:-220px;width:165px" name="textinput" type="text" placeholder="Specify if Other" class="form-control input-md">
+     <input id="textinput" style="margin-left:-220px;width:165px" name="textinput" type="text" placeholder="Specify if Other" class="form-control input-md partner_others">
   </div>
 </div>
 
 
- <a href="" style="" class="remove_field_present"><img src="images/del24.png" style="margin-left:890px;margin-top:-175px"></a>
+ <a href="" style="" class="remove_field_present"><img src="images/del24.png" style="margin-left:890px;margin-top:-40px"></a>
 
 </div>
 
@@ -1220,7 +1220,7 @@ if(isset($_POST["edit_btn"]) and $_GET["is_user"]==1) {
 <center>
 <div class="col-md-2 col-sm-2 col-2">
     <div class="input_fields_wrap">
-         <button class="add_field_button btn " onclick="incrementValue()" style="margin-left: 443px;">Add New Partners</button>
+         <button class="add_field_button btn partner_btn" onclick="incrementValue()" style="margin-left: 443px;">Add New Partners</button>
          <div>
          <input type="text" name="mytext[]" hidden="" ></div>
 </div>
@@ -1333,6 +1333,27 @@ if(isset($_POST["edit_btn"]) and $_GET["is_user"]==1) {
       return false;
    }
 </script>  
+
+<script type="text/javascript">
+
+function enable_disable(that){
+
+  /*alert(that.value);*/
+  if(that.value == "Individual"){
+      $('.partner_names').attr('disabled', true);
+      $('.partner_designations').attr('disabled', true);
+      $('.partner_others').attr('disabled', true);
+      $('.partner_btn').attr('disabled', true);
+      $('.new_entry_btn').attr('disabled', true);
+  }else{
+      $('.partner_names').attr('disabled', false);
+      $('.partner_designations').attr('disabled', false);
+      $('.partner_others').attr('disabled', false);
+      $('.partner_btn').attr('disabled', false);
+      $('.new_entry_btn').attr('disabled', false);
+  }
+}
+</script>
 
 <?php } else { ?>
 <form class="form-horizontal" method="post" action="" enctype="multipart/form-data">
@@ -1895,7 +1916,7 @@ $('#trigger').click(function(){
         e.preventDefault();
         if(x < max_fields){ //max input box allowed
             x++; //text box increment
-            $(wrapper).prepend('<br><div style="margin-left:50px;"><center><div class="form-group"> <label class=" control-label" for="textinput" style="margin-left:327px;">Name: </label> <div > <input id="partner_names[]" name="partner_names[]" type="text" placeholder="Enter Full Name" class="form-control input-md editentry" style="margin-top: -25px;margin-left: 403px;width: 241%;">  </div>  <div class="col-md-6" > <a href="new_user_popup.php" style="color:white" target="_blank" data-toggle="modal" data-target="#myModal"><button  type="button" class="btn btn-info" style="margin-left: 809px;margin-top: -61px;">New Entry</button> </a> </div></div> <div class="form-group">  <label class="control-label" for="selectbasic" style="margin-left:293px;">Designation: </label>  <div> <select id="partner_designations[]" name="partner_designations[]" class="form-control" style="margin-left: 405px;margin-top: -34px;width:118%;">      <option value="Managing Partner">Managing Partner</option>      <option value="Manager">Manager</option>      <option value="Other">Other</option>    </select>  </div>  <div>  <input style="margin-left: 617px;margin-top: -35px;width:114%" id="textinput" name="textinput" type="text" placeholder="Specify if Other" class="form-control input-md"></div></div></center><a href="#" class="remove_field"><img src="images/del24.png" style="margin-left: 810px; margin-top: -81px;"></a></a></div>'); //add input box\
+            $(wrapper).prepend('<br><div style="margin-left:50px;"><center><div class="form-group"> <label class=" control-label" for="textinput" style="margin-left:327px;">Name: </label> <div > <input id="partner_names[]" name="partner_names[]" type="text" placeholder="Enter Full Name" class="form-control input-md editentry partner_names" style="margin-top: -25px;margin-left: 403px;width: 241%;">  </div>  <div class="col-md-6" > <a href="new_user_popup.php" style="color:white" target="_blank" data-toggle="modal" data-target="#myModal"><button  type="button" class="btn btn-info new_entry_btn" style="margin-left: 809px;margin-top: -61px;">New Entry</button> </a> </div></div> <div class="form-group">  <label class="control-label" for="selectbasic" style="margin-left:293px;">Designation: </label>  <div> <select id="partner_designations[]" name="partner_designations[]" class="form-control partner_designations" style="margin-left: 405px;margin-top: -34px;width:118%;">      <option value="Managing Partner">Managing Partner</option>      <option value="Manager">Manager</option>      <option value="Other">Other</option>    </select>  </div>  <div>  <input style="margin-left: 617px;margin-top: -35px;width:114%" id="textinput" name="textinput" type="text" placeholder="Specify if Other" class="form-control input-md partner_others"></div></div></center><a href="#" class="remove_field"><img src="images/del24.png" style="margin-left: 810px; margin-top: -81px;"></a></a></div>'); //add input box\
         }
     });
     
