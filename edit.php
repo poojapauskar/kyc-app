@@ -1181,7 +1181,8 @@ if(isset($_POST["edit_btn"]) and $_GET["is_user"]==1) {
   </div>
 
   <div class="col-md-2 col-sm-2 col-2">
-    <a href="new_user_popup.php" style="color:white" target="_blank" data-target="#exampleModal" data-whatever="@mdo">
+
+    <a href="new_user_popup.php" style="color:white" target="_blank" data-toggle="modal" data-target="#myModal">
 
      <button type="button" class="btn btn-info new_entry_btn" style="margin-left:-6%">
        New Entry
@@ -1475,15 +1476,9 @@ function enable_disable(that){
   <label class="col-md-4 control-label" for="filebutton">PAN card:</label>
 
 <div class="col-md-4">
-<?php echo $arr_search['response'][0]['pan_card_details'][0]['name']; ?>
-</div>
+<input id="pan_upload" class="form-control input-md" value="<?php echo $arr_search['response'][0]['pan_card_details'][0]['name']; ?>">
+<input id="pan_card" name="pan_card" style="margin-left:104%;margin-top:-7%" value="<?php echo $_POST['pan_card'] ?>" class="input-file" type="file">
 
-
-<div class="col-md-4">
-<input id="pan_card" name="pan_card" style="margin-left:-47%" value="<?php echo $_POST['pan_card'] ?>" class="input-file" type="file">
-</div>
-
-<div class="col-md-4">
 <?php
   $url_img_download = 'https://kyc-application.herokuapp.com/download/';
   $options_img_download = array(
@@ -1500,7 +1495,7 @@ function enable_disable(that){
   $arr_img_download = json_decode($output_img_download,true);
   
 ?>
-<button style="background-color:#65AC4;margin-left:115%;margin-top:-13%" class="btn btn-success">
+<button style="background-color:#65AC4;margin-left:152%;margin-top:-13%" class="btn btn-success">
 <a target="_blank" style="color:white" href="view_image.php?name=pan_card_details&link=<?php echo $arr_img_download[0]['url']; ?>">View</a>
 </button>
 
@@ -1708,14 +1703,9 @@ function enable_disable(that){
   <label class="col-md-4 control-label" for="filebutton">Adhar card:</label>
 
   <div class="col-md-4">
-  <?php echo $arr_search['response'][0]['aadhar_card_details'][0]['name']; ?>
-  </div>
-
-  <div class="col-md-4">
-    <input id="aadhar_card" name="aadhar_card"  style="margin-left:-47%" value="<?php echo $_POST['aadhar_card'] ?>" class="input-file" type="file">
-  </div>
+  <input class="form-control input-md" value="<?php echo $arr_search['response'][0]['aadhar_card_details'][0]['name']; ?>">
+    <input id="aadhar_card" name="aadhar_card"  style="margin-left:104%;margin-top:-7%" value="<?php echo $_POST['aadhar_card'] ?>" class="input-file" type="file">
   
-  <div class="col-md-4">
   <?php
     $url_img_download_6 = 'https://kyc-application.herokuapp.com/download/';
     $options_img_download_6= array(
@@ -1732,7 +1722,7 @@ function enable_disable(that){
     $arr_img_download_6 = json_decode($output_img_download_6,true);
     
   ?>
-<button style="margin-left:117%;position:absoulte;margin-top:-12%" class="btn btn-success">
+<button style="background-color:#65AC4;margin-left:152%;margin-top:-13%" class="btn btn-success">
 <a target="_blank" style="color:white" href="view_image.php?name=aadhar_card_details&link=<?php echo $arr_img_download_6[0]['url']; ?>">View</a>
 </button>
 
