@@ -828,7 +828,7 @@ if(isset($_POST["edit_btn"]) and $_GET["is_user"]==1) {
       'header'  => array(
                           'UID: '.$_POST['uid'],
                           'NAME: '.$_POST['name'],
-                          'DOB: '.$_POST['date'],
+                          'DOB: '.$_POST['date2'],
                           'PROFFESION: '.$_POST['profession'],
                           'PAN: '.$_POST['pan'],
                           'PAN-CARD: '.$pan_card_id,
@@ -1403,7 +1403,7 @@ if(isset($_POST["edit_btn"]) and $_GET["is_user"]==1) {
 <div class="form-group">
   <label class="col-md-4 control-label" for="textinput">DOB:</label>  
   <div class="col-md-4">
-  <input id="date" name="date" value="<?php echo $arr_search['response'][0]['user_details']['dob'] ?>" type="text" placeholder="" class="form-control input-md datepicker">
+  <input id="date2" name="date2" value="<?php echo $arr_search['response'][0]['user_details']['dob'] ?>" type="text" placeholder="" class="form-control input-md datepicker">
     
   </div>
 </div>
