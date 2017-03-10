@@ -752,13 +752,12 @@ if ($_POST['uid'] != '' and $_GET["is_user"]==1){
 }
 ?>
 
-<div class="demo-layout-transparent mdl-layout mdl-js-layout">
+<div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
   <header style="background-color:#08426a;height:110px;-webkit-box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23) !important;
      -moz-box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23) !important;
      box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23) !important;" class="mdl-layout__header mdl-layout__header--transparent">
-        <div class="mdl-layout__header-row" >
-
-    <a href="search.php"><img style="margin-top:36%;margin-left:28px;width:50px;height:50px" src="images/green.png"></img></a>
+    <div class="mdl-layout__header-row" >
+  <a href="search.php"><img style="margin-top:36%;margin-left:28px;width:50px;height:50px" src="images/green.png"></img></a>
 
     <?php if ($_GET['is_user']==0) { 
            $title="New Entry Organization";
@@ -784,13 +783,6 @@ if ($_POST['uid'] != '' and $_GET["is_user"]==1){
       </div>
       </div>
 
-
-
-
-
-<!-- Form Name -->
-<!-- <legend>CA Database</legend>
- -->
 <?php if ($_GET['is_user']==0) { ?>
 
 <form class="form-horizontal" method="post" action="new.php?is_user=0" enctype="multipart/form-data">
@@ -882,7 +874,7 @@ if ($_POST['uid'] != '' and $_GET["is_user"]==1){
    <label class="checkbox-inline" for="checkboxes-0">
 
     <input type="checkbox" name="checkboxes" id="checkboxes-0" value="1" onchange="document.getElementById('telephone_bill').disabled = !this.checked;" >Telephone</label>
-     <div id="telephone_upload" style="width:68%;margin-left:32%;margin-top:-5%"/>
+     <input id="telephone_upload" style="width:68%;margin-left:32%;margin-top:-5%"/>
     <div class="fileUpload btn btn-info" style="margin-left:107%;margin-top:-6%;">
     <label style="font-weight:500;margin-bottom: 2px;">ATTACH</label>
     <input id="telephone_bill" name="telephone_bill" type="file" class="upload" onchange="telefilename(this.value);" /> 
@@ -896,7 +888,7 @@ if ($_POST['uid'] != '' and $_GET["is_user"]==1){
  <div class="col-md-4" style="margin-left:33.5%;margin-top:1%">
    <label class="checkbox-inline" for="checkboxes-0" >
      <input type="checkbox" name="checkboxes" id="checkboxes-0" value="1" onchange="document.getElementById('bank_pass_book').disabled = !this.checked;">Bank Passbook</label>
-     <div id="bank_upload" style="width:68%;margin-left:32%;margin-top:0%"/>
+     <input id="bank_upload" style="width:68%;margin-left:32%;margin-top:0%"/>
     <div class="fileUpload btn btn-info" style="margin-left:105%;margin-top:-12%;">
     <label style="font-weight:500;margin-bottom: 2px;">ATTACH</label>
     <input id="bank_pass_book" name="bank_pass_book" type="file" class="upload" onchange="bankfilename(this.value);" />     
