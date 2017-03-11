@@ -121,14 +121,15 @@ document.getElementById('uploadFile').value='Choose File'; }
   </style>  
 
 <!-- Datepicker -->
-<link rel="stylesheet" href="css/jquery-ui.css">
-  <script src="js/jquery-1.js"></script>
-  <script src="js/jquery-ui.js"></script>
-  <script>
-  $(function() {
-    $( ".datepicker" ).datepicker();
-  });
-  </script>
+<link rel="stylesheet" type="text/css" href="css/jquery.datepick.css"> 
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script type="text/javascript" src="js/jquery.plugin.js"></script> 
+<script type="text/javascript" src="js/jquery.datepick.js"></script>
+<script type="text/javascript">
+$(function() {
+ $( ".datepicker" ).datepick({dateFormat: 'dd/mm/yyyy'});
+});
+</script>
 
 </head>
 <!-- <body  style="overflow-y:scroll;background-color:#E8E8E8" >
