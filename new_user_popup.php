@@ -563,7 +563,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
 
 
 /*update list */
- $db = pg_connect("host=ec2-107-20-191-76.compute-1.amazonaws.com port=5432 dbname=deu9vahl80fvjn user=vdvqpruzihrics password=17b3e7a56da97ca021e3da54bb1694bb799849a2b5911014ed6caa05e1e4e02d");
+/* $db = pg_connect("host=ec2-107-20-191-76.compute-1.amazonaws.com port=5432 dbname=deu9vahl80fvjn user=vdvqpruzihrics password=17b3e7a56da97ca021e3da54bb1694bb799849a2b5911014ed6caa05e1e4e02d");
  pg_select($db, 'post_log', $_POST);
  
 
@@ -586,7 +586,7 @@ echo '  <script type="text/javascript" src="autocomplete-Files/jquery.mockjax.js
         <script type="text/javascript" src="autocomplete-Files/NewEntryValues.js"></script>
         <script type="text/javascript" src="autocomplete-Files/Logic_NewEntry.js"></script>
         <script type="text/javascript" src="autocomplete-Files/EditEntryValues.js"></script>
-        <script type="text/javascript" src="autocomplete-Files/Logic_EditEntry.js"></script>';
+        <script type="text/javascript" src="autocomplete-Files/Logic_EditEntry.js"></script>';*/
 
 
 
