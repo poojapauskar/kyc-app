@@ -1182,7 +1182,6 @@ if(isset($_POST["edit_btn"]) and $_GET["is_user"]==1) {
   </div>
 
   <div class="col-md-2 col-sm-2 col-2">
-
     <a href="new_user_popup.php" style="color:white" target="_blank" data-toggle="modal" data-target="#myModal">
 
      <button type="button" class="btn btn-info new_entry_btn" style="margin-left:-6%">
