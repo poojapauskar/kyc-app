@@ -1142,7 +1142,9 @@ if(isset($_POST["edit_btn"]) and $_GET["is_user"]==1) {
 ?>
 </div>
 <br>
-<button style="margin-left:75%;margin-top:-6%;position:relative;" class="btn btn-info view_btn1">
+
+<button style="margin-left:75%;margin-top:-6%;" class="btn btn-info">
+
 <a target="_blank" data-toggle="modal" data-target="#myModal" style="color:white" href="view_popup.php?name=pass_book_details&link=<?php echo $arr_img_download_4[0]['url']; ?>">View</a>
 </button>
 </div>
