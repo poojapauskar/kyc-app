@@ -8,6 +8,7 @@
     -webkit-border-radius: 0.25em;
 	font-family: Arial,Helvetica,Sans-serif;
 	font-size: 90%;
+	width:234px !important;
 }
 .datepick-rtl {
 	direction: rtl;
@@ -122,6 +123,7 @@ button.datepick-cmd {
 	width: 15em;
 	border: 1px solid #444;
 	text-align: center;
+	width:123% !important;
 }
 .datepick-month-header, .datepick-month-header select, .datepick-month-header input {
 	height: 1.5em;
