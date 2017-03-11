@@ -96,14 +96,14 @@ if(a==null || a==''){
 
 
         // new entry added should be displayed as partners name in organization page
-        /*for(var p=0; p<10; p++){
+        for(var p=0; p<10; p++){
             if(document.getElementsByClassName('partner_names')[p]){
                         if(document.getElementsByClassName('partner_names')[p].value==''){
                            document.getElementsByClassName('partner_names')[p].value=document.getElementById('name1').value;
                            break;
                         }
             }
-        }*/
+        }
 
         var mystring= (document.getElementById('name1').value).substring(0, 3);
         var uid_gen=mystring+text;
@@ -117,14 +117,14 @@ if(a==null || a==''){
 }else{   
 
         // new entry added should be displayed as partners name in organization page
-        /*for(var t=0; t<10; t++){
+        for(var t=0; t<10; t++){
             if(document.getElementsByClassName('partner_names')[t]){
                         if(document.getElementsByClassName('partner_names')[t].value==''){
                            document.getElementsByClassName('partner_names')[t].value=document.getElementById('name1').value;
                            break;
                         }
             }
-        }*/
+        }
 
         document.getElementById('uid_in_popup').value = document.getElementById('uid').value;
 
