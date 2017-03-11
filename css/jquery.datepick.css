@@ -122,7 +122,7 @@ button.datepick-cmd {
 	width: 15em;
 	border: 1px solid #444;
 	text-align: center;
-	width:100% !important;
+	width:50% !important;
 }
 .datepick-month-header, .datepick-month-header select, .datepick-month-header input {
 	height: 1.5em;
