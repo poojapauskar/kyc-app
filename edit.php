@@ -1067,7 +1067,7 @@ if(isset($_POST["edit_btn"]) and $_GET["is_user"]==1) {
     <label style="font-weight:500;margin-bottom: 2px;">ATTACH</label>
     <input id="telephone_bill" name="telephone_bill"  value="<?php echo $arr_search['response'][0]['organization_details']['telephone'] ?>" style="margin-top: -20px;margin-left: 146px;" type="file" class="upload" onchange="telefilename(this.value);" />  -->
     <div class="col-md-3" style="margin-left:43%;margin-top:-2%"> 
-<?php echo $arr_search['response'][0]['telephone_bill_details'][0]['name']; ?>
+    <input id="telephone_upload" style="width:68%;margin-left:23%;margin-top:-5%" value="<?php echo $arr_search['response'][0]['telephone_bill_details'][0]['name']; ?>">
 </div>
     <div class="fileUpload btn btn-info" style="margin-left:-1%;margin-top:-1%;">
     <label style="font-weight:500;margin-bottom: 2px;">ATTACH</label>
@@ -1092,7 +1092,7 @@ if(isset($_POST["edit_btn"]) and $_GET["is_user"]==1) {
 </div>
 
 <br>
-<button style="margin-left:75%;margin-top:-6%;" class="btn btn-success">
+<button style="margin-left:75%;margin-top:-6%;position:relative;" class="btn btn-info view_btn2">
 <a target="_blank" data-toggle="modal" data-target="#myModal" style="color:white" href="view_popup.php?name=telephone_bill_details&link=<?php echo $arr_img_download_3[0]['url']; ?>">View</a>
 </button>
 </div> 
@@ -1112,7 +1112,8 @@ if(isset($_POST["edit_btn"]) and $_GET["is_user"]==1) {
   
   </div>
 <div class="col-md-3" style="margin-left:43%;margin-top:-2%"> 
-<?php echo $arr_search['response'][0]['pass_book_details'][0]['name']; ?>
+<input id="bank_upload" style="width:68%;margin-left:23%;margin-top:-5%" value="
+<?php echo $arr_search['response'][0]['pass_book_details'][0]['name']; ?>">
 </div>
     <div class="fileUpload btn btn-info" style="margin-left:-1%;margin-top:-1%;">
     <label style="font-weight:500;margin-bottom: 2px;">ATTACH</label>
@@ -1142,7 +1143,7 @@ if(isset($_POST["edit_btn"]) and $_GET["is_user"]==1) {
 ?>
 </div>
 <br>
-<button style="margin-left:75%;margin-top:-6%;" class="btn btn-info">
+<button style="margin-left:75%;margin-top:-6%;position:relative;" class="btn btn-info view_btn1">
 <a target="_blank" data-toggle="modal" data-target="#myModal" style="color:white" href="view_popup.php?name=pass_book_details&link=<?php echo $arr_img_download_4[0]['url']; ?>">View</a>
 </button>
 </div>
@@ -1301,7 +1302,7 @@ if(isset($_POST["edit_btn"]) and $_GET["is_user"]==1) {
   <label class="col-md-4 control-label" for="save_btn"></label>
   <div class="col-md-8">
     <button  onclick="return check_file_type_org()" id="edit_btn" name="edit_btn" type="submit" class="btn btn-success" style="width: 10em;">Save</button><span><span></span></span>
-    <button onclick="goBack()" class="btn btn-warning" style="width: 10em;"><a style="color:white" href="">Cancel</a></button>
+    <button onclick="goBack()" class="btn btn-warning" style="width: 10em;"><a style="color:white" href="search.php">Cancel</a></button>
     
 
 
@@ -1481,7 +1482,7 @@ function enable_disable(that){
   
 ?>
 <button style="background-color:#65AC4;margin-left:152%;margin-top:-13%" class="btn btn-success">
-<a target="_blank" style="color:white" data-toggle="modal" data-target="#myModal" href="view_image.php?name=pan_card_details&link=<?php echo $arr_img_download[0]['url']; ?>">View</a>
+<a target="_blank" style="color:white" data-toggle="modal" data-target="#myModal" href="view_popup.php?name=pan_card_details&link=<?php echo $arr_img_download[0]['url']; ?>">View</a>
 </button>
 
 </div>
@@ -1528,7 +1529,7 @@ function enable_disable(that){
 
 <button style="margin-left:88%;position:relative;" class="btn btn-success">
 
-<a target="_blank" style="color:white" data-toggle="modal" data-target="#myModal" href="view_image.php?name=telephone_bill_details&link=<?php echo $arr_img_download_2[0]['url']; ?>">View</a>
+<a target="_blank" style="color:white" data-toggle="modal" data-target="#myModal" href="view_popup.php?name=telephone_bill_details&link=<?php echo $arr_img_download_2[0]['url']; ?>">View</a>
 </button>
 </div>
 
@@ -1576,11 +1577,10 @@ function enable_disable(that){
 ?>
 
 <button style="margin-left:88%" class="btn btn-info">
-<a target="_blank" style="color:white" data-toggle="modal" data-target="#myModal" href="view_image.php?name=bank_pass_book_details&link=<?php echo $arr_img_download_3[0]['url']; ?>">View</a>
+<a target="_blank" style="color:white" data-toggle="modal" data-target="#myModal" href="view_popup.php?name=bank_pass_book_details&link=<?php echo $arr_img_download_3[0]['url']; ?>">View</a>
 </button>
 
 </div>
-
 </div>
 
 <!--ID pROOF-->
@@ -1621,7 +1621,7 @@ function enable_disable(that){
   ?>
 
 <button style="margin-left:88%;position:relative;" class="btn btn-info">
-<a target="_blank" style="color:white" data-toggle="modal" data-target="#myModal" href="view_image.php?name=voter_id_details&link=<?php echo $arr_img_download_4[0]['url']; ?>">View</a>
+<a target="_blank" style="color:white" data-toggle="modal" data-target="#myModal" href="view_popup.php?name=voter_id_details&link=<?php echo $arr_img_download_4[0]['url']; ?>">View</a>
 </button>
 
   </div>
@@ -1668,7 +1668,7 @@ function enable_disable(that){
   ?>
 
 <button style="margin-left:88%;" class="btn btn-info">
-<a target="_blank" style="color:white" data-toggle="modal" data-target="#myModal" href="view_image.php?name=passport_details&link=<?php echo $arr_img_download_5[0]['url']; ?>">View</a>
+<a target="_blank" style="color:white" data-toggle="modal" data-target="#myModal" href="view_popup.php?name=passport_details&link=<?php echo $arr_img_download_5[0]['url']; ?>">View</a>
 </button>
 
   </div>
@@ -1708,7 +1708,7 @@ function enable_disable(that){
     
   ?>
 <button style="background-color:#65AC4;margin-left:152%;margin-top:-13%" class="btn btn-info">
-<a target="_blank" style="color:white" data-toggle="modal" data-target="#myModal" href="view_image.php?name=aadhar_card_details&link=<?php echo $arr_img_download_6[0]['url']; ?>">View</a>
+<a target="_blank" style="color:white" data-toggle="modal" data-target="#myModal" href="view_popup.php?name=aadhar_card_details&link=<?php echo $arr_img_download_6[0]['url']; ?>">View</a>
 </button>
 
   </div>
@@ -1784,7 +1784,7 @@ function enable_disable(that){
   <label class="col-md-4 control-label" for="singlebutton"></label>
   <div class="col-md-4">
     <button  onclick="return check_file_type_user()" id="edit_btn" name="edit_btn" type="submit" class="btn btn-success" style="width: 10em;">Save</button><span><span></span></span>
-    <button onclick="goBack()" class="btn btn-warning"><a style="color:white" href="">Cancel</a></button>
+    <button onclick="goBack()" class="btn btn-warning"><a style="color:white" href="search.php">Cancel</a></button>
   </div>
 </div>
 

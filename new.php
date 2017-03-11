@@ -885,17 +885,18 @@ if ($_POST['uid'] != '' and $_GET["is_user"]==1){
      -moz-box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23) !important;
      box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23) !important;" class="mdl-layout__header mdl-layout__header--transparent">
     <div class="mdl-layout__header-row" >
-  <a href="search.php"><img style="margin-top:36%;margin-left:28px;width:50px;height:50px" src="images/green.png"></img></a>
+    <a href="search.php"><img style="margin-top:36%;margin-left:28px;width:50px;height:50px" src="images/green.png"></img></a>
 
     <?php if ($_GET['is_user']==0) { 
            $title="New Entry Organization";
       }else {
            $title="New Entry Individual"; 
       }?>
+
     <h5 style="margin-left:35%;margin-top:9%;"><?php echo $title; ?></h5>
     <span class="mdl-layout-title" style="margin-left:26%;margin-top:7%;">KYCApp</span>
           <!-- Add spacer, to align navigation to the right -->
-</header>
+  </header>
       <div class="mdl-layout__drawer">
         <span class="mdl-layout-title">Title</span>
         <nav class="mdl-navigation">

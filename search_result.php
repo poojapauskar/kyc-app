@@ -244,6 +244,8 @@ $arr_search = json_decode($output_search,true);
   }?>
 
 <?php if ($_GET['is_user']==0) { ?>
+<div class="mdl-grid">
+  <div class="mdl-cell mdl-cell--12-col">
 
 <form class="form-horizontal" method="post" action="edit.php?is_user=0&id=<?php echo $_GET['id'] ?>" enctype="multipart/form-data" style="<?php echo $margin; ?>">
 
@@ -866,7 +868,7 @@ VIEW</a>
 
 </div>
   </div>
-<button style="margin-left:75%;margin-top:-7%;position: relative;" class="btn btn-info">
+<button style="margin-left:75%;margin-top:-7%;position: relative;" class="btn btn-info view_btnn">
 <a target="_blank" data-toggle="modal" data-target="#myModal" style="color:white" href="view_popup.php?name=aadhar_card_details&link=<?php echo $arr_img_download_6[0]['url']; ?>">View</a>
 </button>
   </div>
@@ -907,6 +909,8 @@ $('#trigger').click(function(){
     </div>
 </div>
 
+</div>
+</div>
 </main>
 </body>
 </html>
