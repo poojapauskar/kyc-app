@@ -150,6 +150,69 @@ document.getElementById('uploadFile').value='Choose File'; }
 
 function proceed(){
 
+    pan_card_user = document.getElementById('pan_card');
+    if(pan_card_user.files.length != 0){
+        var isValid = /\.(jpg|jpeg|png|gif|pdf)$/.test(pan_card_user.value);
+        if (!isValid) {
+          alert('Pan Card: Only image or pdf files allowed!');
+          return false;
+        }
+    }
+
+    telephone_bill_user = document.getElementById('telephone_bill');
+    if(telephone_bill_user.files.length != 0){
+        var isValid = /\.(jpg|jpeg|png|gif|pdf)$/.test(telephone_bill_user.value);
+        if (!isValid) {
+          alert('Telephone Bill: Only image and pdf files allowed!');
+          return false;
+        }
+    }
+
+    bank_pass_book_user = document.getElementById('bank_pass_book');
+    if(bank_pass_book_user.files.length != 0){
+        var isValid = /\.(jpg|jpeg|png|gif|pdf)$/.test(bank_pass_book_user.value);
+        if (!isValid) {
+          alert('Bank Pass Book: Only image and pdf files allowed!');
+          return false;
+        }
+    }
+
+    voter_id_user = document.getElementById('voter_id');
+    if(voter_id_user.files.length != 0){
+        var isValid = /\.(jpg|jpeg|png|gif|pdf)$/.test(voter_id_user.value);
+        if (!isValid) {
+          alert('Voter Id: Only image and pdf files allowed!');
+          return false;
+        }
+    }
+
+    passport_user = document.getElementById('passport');
+    if(passport_user.files.length != 0){
+        var isValid = /\.(jpg|jpeg|png|gif|pdf)$/.test(passport_user.value);
+        if (!isValid) {
+          alert('Passport: Only image and pdf files allowed!');
+          return false;
+        }
+    }
+
+    aadhar_card_user = document.getElementById('aadhar_card');
+    if(aadhar_card_user.files.length != 0){
+        var isValid = /\.(jpg|jpeg|png|gif|pdf)$/.test(aadhar_card_user.value);
+        if (!isValid) {
+          alert('Aadhar Card: Only image and pdf files allowed!');
+          return false;
+        }
+    }
+
+    image_user = document.getElementById('image');
+    if(image_user.files.length != 0){
+        var isValid = /\.(jpg|jpeg|png|gif|pdf)$/.test(image_user.value);
+        if (!isValid) {
+          alert('Profile Pic: Only image and pdf files allowed!');
+          return false;
+        }
+    }
+
 var a=document.forms["Form"]["uid"].value;
 if(a==null || a==''){
         var text = "";
@@ -173,7 +236,7 @@ if(a==null || a==''){
         /*alert("UID generated: "+uid_gen);*/
         var yourUl = document.getElementById("popup1");
         yourUl.style.display = yourUl.style.display === 'none' ? '' : 'none';
-        event.preventDefault();
+        return false;
 }
 }
 </script>
@@ -252,74 +315,7 @@ $(function() {
 
   }
 </script>
-<script type="text/javascript">
-  function check_file_type_user(){
 
-    pan_card_user = document.getElementById('pan_card');
-    if(pan_card_user.files.length != 0){
-        var isValid = /\.(jpg|jpeg|png|gif|pdf)$/.test(pan_card_user.value);
-        if (!isValid) {
-          alert('Pan Card: Only image or pdf files allowed!');
-          return false;
-        }
-    }
-
-    telephone_bill_user = document.getElementById('telephone_bill');
-    if(telephone_bill_user.files.length != 0){
-        var isValid = /\.(jpg|jpeg|png|gif|pdf)$/.test(telephone_bill_user.value);
-        if (!isValid) {
-          alert('Telephone Bill: Only image and pdf files allowed!');
-          return false;
-        }
-    }
-
-    bank_pass_book_user = document.getElementById('bank_pass_book');
-    if(bank_pass_book_user.files.length != 0){
-        var isValid = /\.(jpg|jpeg|png|gif|pdf)$/.test(bank_pass_book_user.value);
-        if (!isValid) {
-          alert('Bank Pass Book: Only image and pdf files allowed!');
-          return false;
-        }
-    }
-
-    voter_id_user = document.getElementById('voter_id');
-    if(voter_id_user.files.length != 0){
-        var isValid = /\.(jpg|jpeg|png|gif|pdf)$/.test(voter_id_user.value);
-        if (!isValid) {
-          alert('Voter Id: Only image and pdf files allowed!');
-          return false;
-        }
-    }
-
-    passport_user = document.getElementById('passport');
-    if(passport_user.files.length != 0){
-        var isValid = /\.(jpg|jpeg|png|gif|pdf)$/.test(passport_user.value);
-        if (!isValid) {
-          alert('Passport: Only image and pdf files allowed!');
-          return false;
-        }
-    }
-
-    aadhar_card_user = document.getElementById('aadhar_card');
-    if(aadhar_card_user.files.length != 0){
-        var isValid = /\.(jpg|jpeg|png|gif|pdf)$/.test(aadhar_card_user.value);
-        if (!isValid) {
-          alert('Aadhar Card: Only image and pdf files allowed!');
-          return false;
-        }
-    }
-
-    image_user = document.getElementById('image');
-    if(image_user.files.length != 0){
-        var isValid = /\.(jpg|jpeg|png|gif|pdf)$/.test(image_user.value);
-        if (!isValid) {
-          alert('Profile Pic: Only image and pdf files allowed!');
-          return false;
-        }
-    }
-
-  }
-</script>
 <?php
 
 if(isset($_POST["save_btn"]) and $_GET["is_user"]==0) {
@@ -1048,7 +1044,7 @@ if ($_POST['uid'] != '' and $_GET["is_user"]==1){
 <div class="form-group">
   <label class="col-md-4 control-label" for="textinput">Name: </label>  
   <div class="col-md-4 col-sm-2 col-2">
-  <input id="partner_names[]" name="partner_names[]" type="text" placeholder="Enter Full Name" class="form-control input-md partner_names newentry" style="width: 100%;">
+  <input id="partner_names[]" name="partner_names[]" type="text" placeholder="Enter Full Name" class="form-control input-md newentry partner_names" style="width: 100%;">
   </div>
 
   <div class="col-md-2 col-sm-2 col-2">
@@ -1200,7 +1196,7 @@ function enable_disable(that){
 </div>
 
 
-<form onsubmit="return proceed();" name="Form" id="Form" class="form-horizontal" method="post" action="new.php?is_user=1" enctype="multipart/form-data">
+<form name="Form" id="Form" class="form-horizontal" method="post" action="new.php?is_user=1" enctype="multipart/form-data">
 <fieldset>
 
 <div style="margin-top:12%">
@@ -1406,7 +1402,7 @@ function enable_disable(that){
 <div class="form-group">
   <label class="col-md-4 control-label" for="singlebutton"></label>
   <div class="col-md-4">
-    <button onclick="return check_file_type_user()" id="generate_btn" name="generate_btn" type="submit">Generate</button>
+    <button onclick="return proceed()" id="generate_btn" name="generate_btn">Generate</button>
     <button id="singlebutton" style="margin-left:13%;" name="singlebutton" class="btn btn-primary"><a style="color:white" href="search.php">Discard</a></button>
   </div>
 </div>
@@ -1460,7 +1456,7 @@ $('#trigger').click(function(){
         e.preventDefault();
         if(x < max_fields){ //max input box allowed
             x++; //text box increment
-            $(wrapper).prepend('<br><div style="margin-left:50px;"><center><div class="form-group"> <label class=" control-label" for="textinput" style="margin-left:327px;">Name: </label> <div > <input id="partner_names[]" name="partner_names[]" type="text" placeholder="Enter Full Name" class="form-control input-md editentry partner_names" style="margin-top: -25px;margin-left: 403px;width: 241%;">  </div>  <div class="col-md-6" > <a href="new_user_popup.php" style="color:white" target="_blank" data-toggle="modal" data-target="#myModal"><button  type="button" class="btn btn-info new_entry_btn" style="margin-left: 809px;margin-top: -61px;">New Entry</button> </a> </div></div> <div class="form-group">  <label class="control-label" for="selectbasic" style="margin-left:293px;">Designation: </label>  <div> <select id="partner_designations[]" name="partner_designations[]" class="form-control partner_designations" style="margin-left: 405px;margin-top: -34px;width:118%;">      <option value="Managing Partner">Managing Partner</option>      <option value="Manager">Manager</option>      <option value="Other">Other</option>    </select>  </div>  <div>  <input style="margin-left: 617px;margin-top: -35px;width:114%" id="textinput" name="textinput" type="text" placeholder="Specify if Other" class="form-control input-md partner_others"></div></div></center><a href="#" class="remove_field"><img src="images/del24.png" style="margin-left: 810px; margin-top: -81px;"></a></a></div>'); //add input box\
+            $(wrapper).prepend('<br><div style="margin-left:50px;"><center><div class="form-group"> <label class=" control-label" for="textinput" style="margin-left:327px;">Name: </label> <div > <input id="partner_names[]" name="partner_names[]" type="text" placeholder="Enter Full Name" class="form-control input-md newentry partner_names" style="margin-top: -25px;margin-left: 403px;width: 241%;">  </div>  <div class="col-md-6" > <a href="new_user_popup.php" style="color:white" target="_blank" data-toggle="modal" data-target="#myModal"><button  type="button" class="btn btn-info new_entry_btn" style="margin-left: 809px;margin-top: -61px;">New Entry</button> </a> </div></div> <div class="form-group">  <label class="control-label" for="selectbasic" style="margin-left:293px;">Designation: </label>  <div> <select id="partner_designations[]" name="partner_designations[]" class="form-control partner_designations" style="margin-left: 405px;margin-top: -34px;width:118%;">      <option value="Managing Partner">Managing Partner</option>      <option value="Manager">Manager</option>      <option value="Other">Other</option>    </select>  </div>  <div>  <input style="margin-left: 617px;margin-top: -35px;width:114%" id="textinput" name="textinput" type="text" placeholder="Specify if Other" class="form-control input-md partner_others"></div></div></center><a href="#" class="remove_field"><img src="images/del24.png" style="margin-left: 810px; margin-top: -81px;"></a></a></div>'); //add input box\
         }
     });
     

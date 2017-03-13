@@ -86,102 +86,7 @@
 
 function proceed(){
 
-var a=document.forms["Form"]["uid"].value;
-if(a==null || a==''){
-        var text = "";
-        var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
-
-        for( var i=0; i < 7; i++ )
-            text += possible.charAt(Math.floor(Math.random() * possible.length));
-
-
-        // new entry added should be displayed as partners name in organization page
-        for(var p=0; p<10; p++){
-            if(document.getElementsByClassName('partner_names')[p]){
-                        if(document.getElementsByClassName('partner_names')[p].value==''){
-                           document.getElementsByClassName('partner_names')[p].value=document.getElementById('name1').value;
-                           break;
-                        }
-            }
-        }
-
-        var mystring= (document.getElementById('name1').value).substring(0, 3);
-        var uid_gen=mystring+text;
-        document.getElementById('uid').value = uid_gen;
-        document.getElementById('uid_in_popup').value = uid_gen;
-
-        /*alert("UID generated: "+uid_gen);*/
-        var yourUl = document.getElementById("popup1");
-        yourUl.style.display = yourUl.style.display === 'none' ? '' : 'none';
-        return false;
-}else{   
-
-        // new entry added should be displayed as partners name in organization page
-        for(var t=0; t<10; t++){
-            if(document.getElementsByClassName('partner_names')[t]){
-                        if(document.getElementsByClassName('partner_names')[t].value==''){
-                           document.getElementsByClassName('partner_names')[t].value=document.getElementById('name1').value;
-                           break;
-                        }
-            }
-        }
-
-        document.getElementById('uid_in_popup').value = document.getElementById('uid').value;
-
-        /*alert("UID generated: "+uid_gen);*/
-        var yourUl = document.getElementById("popup1");
-        yourUl.style.display = yourUl.style.display === 'none' ? '' : 'none';
-        event.preventDefault();
-}
-}
-</script>
-
-
-<!-- Datepicker -->
-<link rel="stylesheet" type="text/css" href="css/jquery.datepick.css"> 
-<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-<script type="text/javascript" src="js/jquery.plugin.js"></script> 
-<script type="text/javascript" src="js/jquery.datepick.js"></script>
-<script type="text/javascript">
-$(function() {
- $( ".datepicker_popup" ).datepick({dateFormat: 'dd/mm/yyyy'});
-});
-</script>
-
-</head>
-<body style="background-color:#E8E8E8;">
-
-<script type="text/javascript">
-  function submit_form(){
-    $('#Form').submit();
-  }
-</script>
-
-<script type="text/javascript">
-    function make_uid_null(){
-    
-    $('#uid').val("");
-    document.getElementById("popup1").style.display='none';
-    /*alert("helo");*/
-  }
-</script>
-
-<!-- <p>Click on the "x" symbol to close the alert message.</p> -->
-<div class="alert" id="popup1" class="popup1" style="display:none;text-align:center;position:absolute;
-    width:100%;
-    top: 60%;z-index:2">
- <!--  <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> -->
- <!--  <form method="post" action="new_user.php">  -->
-  <label>UID Generated</label><br>
-  <input type="text" id="uid_in_popup" name="uid_in_popup" style="text-align:center;background-color:transparent;color:black;border:none"></input><br><br>
-  <button style="margin-left:1%" id="done" class="btn btn-success" name="done" onclick="submit_form()">Done</button>
-  <button onclick="make_uid_null()" id="cancel1" class="btn btn-warning" name="cancel1">Cancel</button>
-  <!-- </form> -->
-</div>
-<script type="text/javascript">
-  function check_file_type_user_1(){
-
-    pan_card_1_user = document.getElementById('pan_card_1');
+pan_card_1_user = document.getElementById('pan_card_1');
     if(pan_card_1_user.files.length != 0){
         var isValid = /\.(jpg|jpeg|png|gif|pdf)$/.test(pan_card_1_user.value);
         if (!isValid) {
@@ -244,8 +149,100 @@ $(function() {
         }
     }
 
+var a=document.forms["Form_popup"]["uid"].value;
+if(a==null || a==''){
+        var text = "";
+        var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+
+        for( var i=0; i < 7; i++ )
+            text += possible.charAt(Math.floor(Math.random() * possible.length));
+
+
+        
+
+        var mystring= (document.getElementById('name1').value).substring(0, 3);
+        var uid_gen=mystring+text;
+        document.getElementById('uid').value = uid_gen;
+        document.getElementById('uid_in_popup').value = uid_gen;
+
+        /*alert("UID generated: "+uid_gen);*/
+        var yourUl = document.getElementById("popup1");
+        yourUl.style.display = yourUl.style.display === 'none' ? '' : 'none';
+        return false;
+}else{   
+
+
+        document.getElementById('uid_in_popup').value = document.getElementById('uid').value;
+
+        /*alert("UID generated: "+uid_gen);*/
+        var yourUl = document.getElementById("popup1");
+        yourUl.style.display = yourUl.style.display === 'none' ? '' : 'none';
+        return false;
+}
+}
+</script>
+
+
+<!-- Datepicker -->
+<link rel="stylesheet" type="text/css" href="css/jquery.datepick.css"> 
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script type="text/javascript" src="js/jquery.plugin.js"></script> 
+<script type="text/javascript" src="js/jquery.datepick.js"></script>
+<script type="text/javascript">
+$(function() {
+ $( ".datepicker_popup" ).datepick({dateFormat: 'dd/mm/yyyy'});
+});
+</script>
+
+</head>
+<body style="background-color:#E8E8E8;">
+
+<script type="text/javascript">
+  function submit_form(){
+    // new entry added should be displayed as partners name in organization page
+
+        for(var p=0; p<10; p++){
+            if(document.getElementsByClassName('partner_names')[p]){
+                        if(document.getElementsByClassName('partner_names')[p].value==""){
+                           document.getElementsByClassName('partner_names')[p].value=document.getElementById('name1').value;
+                           break;
+                        }
+             /*alert(p);
+             alert(document.getElementsByClassName('partner_names')[p].value);
+             if(document.getElementsByClassName('partner_names')[p].value == ""){
+                alert("Null Value");
+             }else{
+                alert("Not Null Value");
+             }*/
+            
+            }
+        }
+    $('#Form_popup').submit();
   }
 </script>
+
+<script type="text/javascript">
+    function make_uid_null(){
+    
+    $('#uid').val("");
+    document.getElementById("popup1").style.display='none';
+    /*alert("helo");*/
+  }
+</script>
+
+<!-- <p>Click on the "x" symbol to close the alert message.</p> -->
+<div class="alert" id="popup1" class="popup1" style="display:none;text-align:center;position:absolute;
+    width:100%;
+    top: 60%;z-index:2">
+ <!--  <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> -->
+ <!--  <form method="post" action="new_user.php">  -->
+  <label>UID Generated</label><br>
+  <input type="text" id="uid_in_popup" name="uid_in_popup" style="text-align:center;background-color:transparent;color:black;border:none"></input><br><br>
+  <button style="margin-left:1%" id="done" class="btn btn-success" name="done" onclick="submit_form()">Done</button>
+  <button onclick="make_uid_null()" id="cancel1" class="btn btn-warning" name="cancel1">Cancel</button>
+  <!-- </form> -->
+</div>
+
 <?php
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST'){
@@ -563,7 +560,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
 
 
 /*update list */
- $db = pg_connect("host=ec2-107-20-191-76.compute-1.amazonaws.com port=5432 dbname=deu9vahl80fvjn user=vdvqpruzihrics password=17b3e7a56da97ca021e3da54bb1694bb799849a2b5911014ed6caa05e1e4e02d");
+ /*$db = pg_connect("host=ec2-107-20-191-76.compute-1.amazonaws.com port=5432 dbname=deu9vahl80fvjn user=vdvqpruzihrics password=17b3e7a56da97ca021e3da54bb1694bb799849a2b5911014ed6caa05e1e4e02d");
  pg_select($db, 'post_log', $_POST);
  
 
@@ -588,7 +585,7 @@ echo '  <script type="text/javascript" src="autocomplete-Files/jquery.mockjax.js
         <script type="text/javascript" src="autocomplete-Files/EditEntryValues.js"></script>
         <script type="text/javascript" src="autocomplete-Files/Logic_EditEntry.js"></script>';
 
-
+*/
 
 
   /*return false;*/
@@ -626,10 +623,10 @@ echo '  <script type="text/javascript" src="autocomplete-Files/jquery.mockjax.js
         </div>
       </header>
 
-<form onsubmit="return proceed();" name="Form" id="Form" class="form-horizontal" method="post" action="new_user_popup.php" enctype="multipart/form-data">
+<form name="Form_popup" id="Form_popup" class="form-horizontal" method="post" action="new_user_popup.php" enctype="multipart/form-data">
 <fieldset>
 
-<!-- Form Name -->
+<!-- Form_popup Name -->
 <!-- <legend><center>New Individual Entry</center></legend> -->
 <!--avatar upload-->
 
@@ -828,7 +825,7 @@ echo '  <script type="text/javascript" src="autocomplete-Files/jquery.mockjax.js
   <label class="col-md-4 control-label" for="singlebutton"></label>
 
   <div class="col-md-4" style="text-align:center">
-    <button onclick="return check_file_type_user_1()" id="generate_btn" name="generate_btn" type="submit">Generate</button>
+    <button onclick="return proceed()" id="generate_btn" name="generate_btn">Generate</button>
     <!-- <button id="singlebutton" style="margin-left:13%;" name="singlebutton" class="btn btn-primary"><a style="color:white" onclick="goBack()">Discard</a></button> -->
 
   </div>
