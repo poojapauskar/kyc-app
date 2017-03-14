@@ -11,8 +11,8 @@
 <script type="text/javascript" src="js/jquery.datepick.js"></script>
 <script type="text/javascript">
 $(function() {
- $( ".datepicker_popup" ).datepick({dateFormat: 'dd/mm/yyyy'});
- /*$( ".datepicker_popup" ).css('z-index', 99999);*/
+ $( ".datepicker" ).datepick({dateFormat: 'dd/mm/yyyy'});
+ /*$( ".datepicker" ).css('z-index', 99999);*/
 });
 </script> 
 
@@ -664,7 +664,7 @@ echo '  <script type="text/javascript" src="autocomplete-Files/jquery.mockjax.js
 
   <label for="example-date-input" class="col-2 col-form-label" style="margin-left:24.5%;">DOB:</label>
   <div class="col-4">
-    <input class="form-control datepicker_popup" id="date1" name="date1" value="<?php echo $_POST['date1'] ?>" style="width:28.9%;margin-left:35.6%;margin-top:-4%;" type="text">
+    <input class="form-control datepicker" id="date1" name="date1" value="<?php echo $_POST['date1'] ?>" style="width:28.9%;margin-left:35.6%;margin-top:-4%;" type="text">
 
   </div>
 </div>
@@ -803,7 +803,7 @@ echo '  <script type="text/javascript" src="autocomplete-Files/jquery.mockjax.js
 <div class="form-group row">
   <label for="example-date-input" class="col-2 col-form-label" style="margin-left:24.5%;">DATE:</label>
   <div class="col-4">
-    <input class="form-control datepicker_popup" id="date[]" name="date[]" value="<?php echo $_POST['date'] ?>" style="width:28.9%;margin-left:35.6%;margin-top:-4%;" type="text">
+    <input class="form-control datepicker" id="date[]" name="date[]" value="<?php echo $_POST['date'] ?>" style="width:28.9%;margin-left:35.6%;margin-top:-4%;" type="text">
   </div>
 </div>
 
