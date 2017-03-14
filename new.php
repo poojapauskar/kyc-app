@@ -999,10 +999,10 @@ if ($_POST['uid'] != '' and $_GET["is_user"]==1){
    <label class="checkbox-inline" for="checkboxes-0">
 
     <input type="checkbox" name="checkboxes" id="checkboxes-0" value="1" onchange="document.getElementById('telephone_bill').disabled = !this.checked;" >Telephone</label>
-     <input id="telephone_upload" style="width:68%;margin-left:32%;margin-top:-5%"/>
+     <input id="telephone_upload" style="width:68%;margin-left:32%;margin-top:-5%" readonly/>
     <div class="fileUpload btn btn-info" style="margin-left:107%;margin-top:-6%;">
     <label style="font-weight:500;margin-bottom: 2px;">ATTACH</label>
-    <input id="telephone_bill" name="telephone_bill" type="file" class="upload" onchange="telefilename(this.value);" /> 
+    <input id="telephone_bill" name="telephone_bill" type="file" class="upload" onchange="telefilename(this.value);"/> 
  </div>
 </div>
 </div>
@@ -1013,7 +1013,7 @@ if ($_POST['uid'] != '' and $_GET["is_user"]==1){
  <div class="col-md-4" style="margin-left:33.5%;margin-top:1%">
    <label class="checkbox-inline" for="checkboxes-0" >
      <input type="checkbox" name="checkboxes" id="checkboxes-0" value="1" onchange="document.getElementById('bank_pass_book').disabled = !this.checked;">Bank Passbook</label>
-     <input id="bank_upload" style="width:68%;margin-left:32%;margin-top:0%"/>
+     <input id="bank_upload" style="width:68%;margin-left:32%;margin-top:0%" readonly/>
     <div class="fileUpload btn btn-info" style="margin-left:105%;margin-top:-12%;">
     <label style="font-weight:500;margin-bottom: 2px;">ATTACH</label>
     <input id="bank_pass_book" name="bank_pass_book" type="file" class="upload" onchange="bankfilename(this.value);" />     
