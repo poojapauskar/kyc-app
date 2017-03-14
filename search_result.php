@@ -341,7 +341,6 @@ VIEW
     </div>
   </div>
 </div>
-
 </div>
 </div>
 
@@ -695,7 +694,6 @@ VIEW</a>
     </div>
   </div>
 </div>
-
 </div>
 </div>
 
@@ -816,6 +814,7 @@ VIEW</a>
 </div>
 
 </div>
+
 <!--ID pROOF-->
 
 <!--address proof-->
@@ -870,7 +869,6 @@ VIEW</a>
     </div>
   </div>
 </div>
-
   </div>
 
     <div class="form-group">
@@ -909,7 +907,6 @@ VIEW</a>
     $arr_img_download_5 = json_decode($output_img_download_5,true);
     
   ?>
-
 <a target="_blank" data-toggle="modal" data-target="#myModal9" class="btn btn-info" style="color:white;margin-left:75%;margin-top:-7%;position: relative;" href="view_popup.php?name=passport_details&link=<?php echo $arr_img_download_5[0]['url']; ?>">
 VIEW</a>
 <!-- Modal -->
@@ -925,7 +922,6 @@ VIEW</a>
     </div>
   </div>
 </div>
-
   </div>
 
 
@@ -984,7 +980,6 @@ VIEW</a>
     </div>
   </div>
 </div>
-
   </div>
 <!-- Button -->
 <div class="form-group">
