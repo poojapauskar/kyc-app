@@ -1124,7 +1124,6 @@ VIEW</a>
 </div>
 </div> 
 
-
 <div class="form-group">
  <label class="col-md-4 control-label" for="checkboxes"></label>
  <div class="col-md-4"> 
@@ -1586,7 +1585,6 @@ function enable_disable(that){
   $arr_img_download_2 = json_decode($output_img_download_2,true);
   
 ?>
-
 <a target="_blank" data-toggle="modal" data-target="#myModal6" class="btn btn-info" style="color:white;margin-left:88%;position:relative;" href="view_popup.php?name=telephone_bill_details&link=<?php echo $arr_img_download_2[0]['url']; ?>">VIEW</a>
 
 <!-- Modal -->
@@ -1602,7 +1600,6 @@ function enable_disable(that){
     </div>
   </div>
 </div>
-
 </div>
 
 </div>
@@ -1662,7 +1659,6 @@ function enable_disable(that){
     </div>
   </div>
 </div>
-
 </div>
 </div>
 
@@ -1773,7 +1769,6 @@ function enable_disable(that){
     </div>
   </div>
 </div>
-
   </div>
 </div>
 
@@ -1810,6 +1805,7 @@ function enable_disable(that){
     $arr_img_download_6 = json_decode($output_img_download_6,true);
     
   ?>
+
 <a target="_blank" style="color:white;background-color:#65AC4;margin-left:152%;margin-top:-13%" data-toggle="modal" data-target="#myModal10" class="btn btn-info" href="view_popup.php?name=aadhar_card_details&link=<?php echo $arr_img_download_6[0]['url']; ?>">VIEW</a>
 <!-- Modal -->
 <div class="modal fade" id="myModal10" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -1824,9 +1820,7 @@ function enable_disable(that){
     </div>
   </div>
 </div>
-
-  </div>
-
+ </div>
 </div>
 
 <?php for($q=0;$q<count($arr_search['response'][0]['add_info']);$q++){?>
