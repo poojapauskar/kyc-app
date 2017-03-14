@@ -145,6 +145,7 @@ if(a==null || a==''){
     if(pan_card_1_user.files.length != 0){
         var isValid = /\.(jpg|jpeg|png|gif|pdf)$/.test(pan_card_1_user.value);
         if (!isValid) {
+          document.getElementById('pan_card_1').value="";
           alert('Pan Card: Only image or pdf files allowed!');
           return false;
         }
@@ -156,6 +157,7 @@ if(a==null || a==''){
     if(telephone_bill_1_user.files.length != 0){
         var isValid = /\.(jpg|jpeg|png|gif|pdf)$/.test(telephone_bill_1_user.value);
         if (!isValid) {
+          document.getElementById('telephone_bill_1').value="";
           alert('Telephone Bill: Only image and pdf files allowed!');
           return false;
         }
@@ -167,6 +169,7 @@ if(a==null || a==''){
     if(bank_pass_book_1_user.files.length != 0){
         var isValid = /\.(jpg|jpeg|png|gif|pdf)$/.test(bank_pass_book_1_user.value);
         if (!isValid) {
+          document.getElementById('bank_pass_book_1').value="";
           alert('Bank Pass Book: Only image and pdf files allowed!');
           return false;
         }
@@ -178,6 +181,7 @@ if(a==null || a==''){
     if(voter_id_1_user.files.length != 0){
         var isValid = /\.(jpg|jpeg|png|gif|pdf)$/.test(voter_id_1_user.value);
         if (!isValid) {
+          document.getElementById('voter_id_1').value="";
           alert('Voter Id: Only image and pdf files allowed!');
           return false;
         }
@@ -190,6 +194,7 @@ if(a==null || a==''){
     if(passport_1_user.files.length != 0){
         var isValid = /\.(jpg|jpeg|png|gif|pdf)$/.test(passport_1_user.value);
         if (!isValid) {
+          document.getElementById('passport_1').value="";
           alert('Passport: Only image and pdf files allowed!');
           return false;
         }
@@ -201,6 +206,7 @@ if(a==null || a==''){
     if(aadhar_card_1_user.files.length != 0){
         var isValid = /\.(jpg|jpeg|png|gif|pdf)$/.test(aadhar_card_1_user.value);
         if (!isValid) {
+          document.getElementById('aadhar_card_1').value="";
           alert('Aadhar Card: Only image and pdf files allowed!');
           return false;
         }
@@ -213,6 +219,7 @@ if(a==null || a==''){
     if(image_user.files.length != 0){
         var isValid = /\.(jpg|jpeg|png|gif|pdf)$/.test(image_user.value);
         if (!isValid) {
+          document.getElementById('image').value="";
           alert('Profile Pic: Only image and pdf files allowed!');
           return false;
         }

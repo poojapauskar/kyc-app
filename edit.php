@@ -40,62 +40,71 @@
 
    function setfilename(val)
   {
-    var fileName = val.substr(val.lastIndexOf("\\")+1, val.length);
-   document.getElementById("uploadFile").value = fileName;
 
     reg_certificate_org = document.getElementById('reg_certificate');
     if(reg_certificate_org.files.length != 0){
         var isValid = /\.(jpg|jpeg|png|gif|pdf)$/.test(reg_certificate_org.value);
         if (!isValid) {
+          document.getElementById("uploadFile").value = "";
           alert('Registration Certificate: Only image or pdf files allowed!');
           return false;
         }
     }
+
+
+    var fileName = val.substr(val.lastIndexOf("\\")+1, val.length);
+   document.getElementById("uploadFile").value = fileName;
   }
 
    function panfilename(val)
   {
-    var fileName = val.substr(val.lastIndexOf("\\")+1, val.length);
-   document.getElementById("pan_upload").value = fileName;
+   
 
    pan_card_org = document.getElementById('pan_card');
     if(pan_card_org.files.length != 0){
         var isValid = /\.(jpg|jpeg|png|gif|pdf)$/.test(pan_card_org.value);
         if (!isValid) {
+          document.getElementById("pan_upload").value = "";
           alert('Pan Card: Only image and pdf files allowed!');
           return false;
         }
     }
+     var fileName = val.substr(val.lastIndexOf("\\")+1, val.length);
+   document.getElementById("pan_upload").value = fileName;
   }
 
   function telefilename(val)
   {
-    var fileName = val.substr(val.lastIndexOf("\\")+1, val.length);
-   document.getElementById("telephone_upload").value = fileName;
+    
 
    telephone_bill_org = document.getElementById('telephone_bill');
     if(telephone_bill_org.files.length != 0){
         var isValid = /\.(jpg|jpeg|png|gif|pdf)$/.test(telephone_bill_org.value);
         if (!isValid) {
+          document.getElementById("telephone_upload").value = "";
           alert('Telephone Bill: Only image and pdf files allowed!');
           return false;
         }
     }
+    var fileName = val.substr(val.lastIndexOf("\\")+1, val.length);
+   document.getElementById("telephone_upload").value = fileName;
   }
 
   function bankfilename(val)
   {
-    var fileName = val.substr(val.lastIndexOf("\\")+1, val.length);
-   document.getElementById("bank_upload").value = fileName;
+    
 
     bank_pass_book_org = document.getElementById('bank_pass_book');
     if(bank_pass_book_org.files.length != 0){
         var isValid = /\.(jpg|jpeg|png|gif|pdf)$/.test(bank_pass_book_org.value);
         if (!isValid) {
+          document.getElementById("bank_upload").value = "";
           alert('Bank Pass Book: Only image and pdf files allowed!');
           return false;
         }
     }
+    var fileName = val.substr(val.lastIndexOf("\\")+1, val.length);
+   document.getElementById("bank_upload").value = fileName;
   }
 </script>
 <script type="text/javascript"> 
@@ -208,6 +217,7 @@ $arr_search = json_decode($output_search,true);
     if(pan_card_user.files.length != 0){
         var isValid = /\.(jpg|jpeg|png|gif|pdf)$/.test(pan_card_user.value);
         if (!isValid) {
+          document.getElementById('pan_card').value="";
           alert('Pan Card: Only image or pdf files allowed!');
           return false;
         }
@@ -219,6 +229,7 @@ $arr_search = json_decode($output_search,true);
     if(telephone_bill_user.files.length != 0){
         var isValid = /\.(jpg|jpeg|png|gif|pdf)$/.test(telephone_bill_user.value);
         if (!isValid) {
+          document.getElementById('telephone_bill').value="";
           alert('Telephone Bill: Only image and pdf files allowed!');
           return false;
         }
@@ -230,6 +241,7 @@ $arr_search = json_decode($output_search,true);
     if(bank_pass_book_user.files.length != 0){
         var isValid = /\.(jpg|jpeg|png|gif|pdf)$/.test(bank_pass_book_user.value);
         if (!isValid) {
+          document.getElementById('bank_pass_book').value="";
           alert('Bank Pass Book: Only image and pdf files allowed!');
           return false;
         }
@@ -241,6 +253,7 @@ $arr_search = json_decode($output_search,true);
     if(voter_id_user.files.length != 0){
         var isValid = /\.(jpg|jpeg|png|gif|pdf)$/.test(voter_id_user.value);
         if (!isValid) {
+          document.getElementById('voter_id').value="";
           alert('Voter Id: Only image and pdf files allowed!');
           return false;
         }
@@ -252,6 +265,7 @@ $arr_search = json_decode($output_search,true);
     if(passport_user.files.length != 0){
         var isValid = /\.(jpg|jpeg|png|gif|pdf)$/.test(passport_user.value);
         if (!isValid) {
+          document.getElementById('passport').value="";
           alert('Passport: Only image and pdf files allowed!');
           return false;
         }
@@ -263,6 +277,7 @@ $arr_search = json_decode($output_search,true);
     if(aadhar_card_user.files.length != 0){
         var isValid = /\.(jpg|jpeg|png|gif|pdf)$/.test(aadhar_card_user.value);
         if (!isValid) {
+          document.getElementById('aadhar_card').value="";
           alert('Aadhar Card: Only image and pdf files allowed!');
           return false;
         }
@@ -274,6 +289,7 @@ $arr_search = json_decode($output_search,true);
     if(image_user.files.length != 0){
         var isValid = /\.(jpg|jpeg|png|gif|pdf)$/.test(image_user.value);
         if (!isValid) {
+          document.getElementById('image').value="";
           alert('Profile Pic: Only image and pdf files allowed!');
           return false;
         }
