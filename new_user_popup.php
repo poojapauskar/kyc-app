@@ -78,6 +78,8 @@
 .closebtn:hover {
     color: black;
 }
+
+
   </style>
 
 
@@ -193,7 +195,7 @@ $(function() {
  $( ".datepicker_popup" ).datepick({dateFormat: 'dd/mm/yyyy'});
  /*$( ".datepicker_popup" ).css('z-index', 99999);*/
 });
-</script>
+</script> 
 
 </head>
 <body style="background-color:#E8E8E8;">
