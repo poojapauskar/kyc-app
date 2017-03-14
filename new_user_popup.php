@@ -105,6 +105,12 @@ $(function() {
 
 function proceed(){
 
+var n1=document.forms["Form_popup"]["name1"].value;
+if(n1==null || n1==''){
+  alert("Name is required");
+  return false;
+}
+
 var a=document.forms["Form_popup"]["uid"].value;
 if(a==null || a==''){
         var text = "";
@@ -255,6 +261,8 @@ if(a==null || a==''){
 
     var myform = document.getElementById("Form_popup");
     var fd = new FormData(myform);
+
+    
     $.ajax({ url: 'submit_popup.php',
          data: fd,
          cache: false,
@@ -265,6 +273,7 @@ if(a==null || a==''){
                       /*return false;*/
                       /*alert("hi");*/
                       /*$find('body').click();*/
+                     
                       $('#popup1').hide();
                       $('#myModal').click();
                       /*$('#myModal').modal('hide');*/
@@ -275,7 +284,6 @@ if(a==null || a==''){
 
   }
 </script>
-
 <script type="text/javascript">
 /*function go_back_1(){
   window.history.go(-1);
