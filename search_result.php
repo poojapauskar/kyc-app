@@ -325,22 +325,11 @@ $arr_search = json_decode($output_search,true);
   
 ?>
 </div>
-<a target="_blank" data-toggle="modal" data-target="#myModal1" class="btn btn-info" style="color:white;background-color:#176fac;margin-top:-25%;margin-left:129%;" href="view_popup.php?name=reg_certificate_details&link=<?php echo $arr_img_download[0]['url']; ?>">
+<a target="_blank" data-toggle="modal" data-target="#myModal" style="color:white" href="view_popup.php?name=reg_certificate_details&link=<?php echo $arr_img_download[0]['url']; ?>">
+<button style="background-color:#176fac;margin-top:-25%;margin-left:129%;" class="btn btn-info">
 VIEW
+</button>
 </a>
-<!-- Modal -->
-<div class="modal fade" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-      </div>
-      <div class="modal-body">
-        ...
-      </div>
-    </div>
-  </div>
-</div>
 </div>
 </div>
 
@@ -378,22 +367,12 @@ VIEW
   
 ?>
 </div>
-<a style="color:white;background-color:#176fac;margin-top:-26%;margin-left:131%;" data-toggle="modal" data-target="#myModal2" class="btn btn-info" href="view_popup.php?name=pan_card_details&link=<?php echo $arr_img_download_2[0]['url']; ?>">VIEW</a>
 
-<!-- Modal -->
-<div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-      </div>
-      <div class="modal-body">
-        ...
-      </div>
-    </div>
-  </div>
-</div>
+<button style="background-color:#176fac;margin-top:-26%;margin-left:131%;" class="btn btn-info">
 
+<a data-toggle="modal" data-target="#myModal" style="color:white" href="view_popup.php?name=pan_card_details&link=<?php echo $arr_img_download_2[0]['url']; ?>">VIEW</a>
+
+</button>
 </div>
 </div>
 
@@ -447,21 +426,9 @@ VIEW
 ?>
 </div> 
 <br>
-<a target="_blank" data-toggle="modal" data-target="#myModal3" style="color:white;margin-left:75%;margin-top:-7%;position: relative;" class="btn btn-info" href="view_popup.php?name=telephone_bill_details&link=<?php echo $arr_img_download_3[0]['url']; ?>">VIEW</a>
-<!-- Modal -->
-<div class="modal fade" id="myModal3" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-      </div>
-      <div class="modal-body">
-        ...
-      </div>
-    </div>
-  </div>
-</div>
-
+<button style="margin-left:75%;margin-top:-7%;position: relative;" class="btn btn-info ">
+<a target="_blank" data-toggle="modal" data-target="#myModal" style="color:white" href="view_popup.php?name=telephone_bill_details&link=<?php echo $arr_img_download_3[0]['url']; ?>">VIEW</a>
+</button>
 </div> 
 
 <div class="form-group">
@@ -503,22 +470,10 @@ VIEW
   
 ?>
 
-<a target="_blank" data-toggle="modal" data-target="#myModal4" class="btn btn-info " style="color:white;background-color:#176fac;margin-top:-144%;margin-left:476%;" href="view_popup.php?name=pass_book_details&link=<?php echo $arr_img_download_4[0]['url']; ?>">
-VIEW</a>
-<!-- Modal -->
-<div class="modal fade" id="myModal4" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-      </div>
-      <div class="modal-body">
-        ...
-      </div>
-    </div>
-  </div>
-</div>
-
+<a target="_blank" data-toggle="modal" data-target="#myModal" style="color:white" href="view_popup.php?name=pass_book_details&link=<?php echo $arr_img_download_4[0]['url']; ?>">
+<button style="background-color:#176fac;margin-top:-144%;margin-left:476%;" class="btn btn-info ">
+VIEW
+</button></a>
 </div>
 </div>
  </div>
@@ -679,21 +634,11 @@ VIEW</a>
   $arr_img_download = json_decode($output_img_download,true);
   
 ?>
-<a target="_blank" class="btn btn-info" data-toggle="modal" data-target="#myModal5" style="background-color:#176fac;margin-top:-26%;margin-left:129%;color:white" href="view_popup.php?name=pan_card_details&link=<?php echo $arr_img_download[0]['url']; ?>">
+
+<button style="background-color:#176fac;margin-top:-26%;margin-left:129%;" class="btn btn-info ">
+<a target="_blank" data-toggle="modal" data-target="#myModal" style="color:white" href="view_popup.php?name=pan_card_details&link=<?php echo $arr_img_download[0]['url']; ?>">
 VIEW</a>
-<!-- Modal -->
-<div class="modal fade" id="myModal5" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-      </div>
-      <div class="modal-body">
-        ...
-      </div>
-    </div>
-  </div>
-</div>
+</button>
 </div>
 </div>
 
@@ -741,20 +686,10 @@ VIEW</a>
   
 ?>
 
-<a target="_blank" data-toggle="modal" data-target="#myModal6" class="btn btn-info" style="color:white;margin-left:75%;margin-top:-7%;position: relative;" href="view_popup.php?name=telephone_bill_details&link=<?php echo $arr_img_download_2[0]['url']; ?>">VIEW</a>
-<!-- Modal -->
-<div class="modal fade" id="myModal6" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-      </div>
-      <div class="modal-body">
-        ...
-      </div>
-    </div>
-  </div>
-</div>
+<button style="margin-left:75%;margin-top:-7%;position: relative;" class="btn btn-info">
+<a target="_blank" data-toggle="modal" data-target="#myModal" style="color:white" href="view_popup.php?name=telephone_bill_details&link=<?php echo $arr_img_download_2[0]['url']; ?>">VIEW</a>
+</button>
+
 </div>
 </div>
 
@@ -798,23 +733,10 @@ VIEW</a>
   
 ?>
 
-<a target="_blank" data-toggle="modal" data-target="#myModal7" style="color:white;margin-left:75%;margin-top:-9%;position:relative;" class="btn btn-info" href="view_popup.php?name=bank_pass_book_details&link=<?php echo $arr_img_download_3[0]['url']; ?>">VIEW</a>
-<!-- Modal -->
-<div class="modal fade" id="myModal7" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-      </div>
-      <div class="modal-body">
-        ...
-      </div>
-    </div>
-  </div>
+<button style="margin-left:75%;margin-top:-9%;position:relative;" class="btn btn-info">
+<a target="_blank" data-toggle="modal" data-target="#myModal" style="color:white" href="view_popup.php?name=bank_pass_book_details&link=<?php echo $arr_img_download_3[0]['url']; ?>">VIEW</a>
+</button>
 </div>
-
-</div>
-
 <!--ID pROOF-->
 
 <!--address proof-->
@@ -855,20 +777,10 @@ VIEW</a>
     $arr_img_download_4 = json_decode($output_img_download_4,true);
     
   ?>
-<a target="_blank" data-toggle="modal" data-target="#myModal8" class="btn btn-info" style="margin-left:75%;margin-top:-9%;position: relative;color:white;position:relative" href="view_popup.php?name=voter_id_details&link=<?php echo $arr_img_download_4[0]['url']; ?>">VIEW</a>
-<!-- Modal -->
-<div class="modal fade" id="myModal8" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-      </div>
-      <div class="modal-body">
-        ...
-      </div>
-    </div>
-  </div>
-</div>
+
+<button style="margin-left:75%;margin-top:-9%;position: relative;" class="btn btn-info">
+<a target="_blank" data-toggle="modal" data-target="#myModal" style="color:white;position:relative" href="view_popup.php?name=voter_id_details&link=<?php echo $arr_img_download_4[0]['url']; ?>">VIEW</a>
+</button>
   </div>
 
     <div class="form-group">
@@ -907,21 +819,11 @@ VIEW</a>
     $arr_img_download_5 = json_decode($output_img_download_5,true);
     
   ?>
-<a target="_blank" data-toggle="modal" data-target="#myModal9" class="btn btn-info" style="color:white;margin-left:75%;margin-top:-7%;position: relative;" href="view_popup.php?name=passport_details&link=<?php echo $arr_img_download_5[0]['url']; ?>">
+<button style="margin-left:75%;margin-top:-7%;position: relative;" class="btn btn-info">
+<a target="_blank" data-toggle="modal" data-target="#myModal" style="color:white" href="view_popup.php?name=passport_details&link=<?php echo $arr_img_download_5[0]['url']; ?>">
 VIEW</a>
-<!-- Modal -->
-<div class="modal fade" id="myModal9" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-      </div>
-      <div class="modal-body">
-        ...
-      </div>
-    </div>
-  </div>
-</div>
+</button>
+
   </div>
 
 
@@ -966,20 +868,9 @@ VIEW</a>
 
 </div>
   </div>
-<a target="_blank" data-toggle="modal" data-target="#myModal10" class="btn btn-info" style="color:white;margin-left:75%;margin-top:-7%;position: relative;" href="view_popup.php?name=aadhar_card_details&link=<?php echo $arr_img_download_6[0]['url']; ?>">VIEW</a>
-<!-- Modal -->
-<div class="modal fade" id="myModal10" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-      </div>
-      <div class="modal-body">
-        ...
-      </div>
-    </div>
-  </div>
-</div>
+<button style="margin-left:75%;margin-top:-7%;position: relative;" class="btn btn-info view_btnn">
+<a target="_blank" data-toggle="modal" data-target="#myModal" style="color:white" href="view_popup.php?name=aadhar_card_details&link=<?php echo $arr_img_download_6[0]['url']; ?>">View</a>
+</button>
   </div>
 <!-- Button -->
 <div class="form-group">
@@ -996,36 +887,27 @@ VIEW</a>
 <?php } ?>
 
 <script type="text/javascript">
-// $(function(){
+$(function(){
 
-// $('#trigger').click(function(){
-//   $('#myModal').modal('show');
-//   return false;
-// })
+$('#trigger').click(function(){
+  $('#myModal').modal('show');
+  return false;
+})
 
-// });
-
-<script type="text/javascript">
-$("div[id^='myModal']").each(function(){
-  
-  var currentModal = $(this);
-  
 });
-
-</script>
 </script>
 
 
-<!-- <div class="container">
+<div class="container">
 <!-- Modal HTML -->
-    <!-- <div id="myModal" class="modal fade">
+    <div id="myModal" class="modal fade">
         <div class="modal-dialog">
             <div class="modal-content">
                 <!-- Content will be loaded here from "remote.php" file -->
-            <!-- </div>
+            </div>
         </div>
-    </div> --> 
-<!-- </div> -->
+    </div>
+</div>
 
 </div>
 </div>
