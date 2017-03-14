@@ -954,7 +954,7 @@ if ($_POST['uid'] != '' and $_GET["is_user"]==1){
 <div class="form-group">
 <label class="col-md-4 control-label" for="reg_certificate">Registration Certificate:</label>
   <div class="col-md-4">
-    <input id="uploadFile" placeholder="Choose File" class="form-control input-md"/>
+    <input id="uploadFile" placeholder="Choose File" class="form-control input-md" readonly/>
     <div class="fileUpload btn btn-info" style="margin-left:105%;margin-top:-12%;">
     <label style="font-weight:500;margin-bottom: 2px;">ATTACH</label>
     <input id="reg_certificate" name="reg_certificate" type="file" class="upload" onchange="setfilename(this.value);" />
@@ -975,7 +975,7 @@ if ($_POST['uid'] != '' and $_GET["is_user"]==1){
 <div class="form-group">
   <label class="col-md-4 control-label" for="filebutton">PAN Card:</label>
   <div class="col-md-4">
-    <input id="pan_upload" placeholder="Choose File" class="form-control input-md"/>
+    <input id="pan_upload" placeholder="Choose File" class="form-control input-md" readonly/>
     <div class="fileUpload btn btn-info" style="margin-left:105%;margin-top:-12%;">
     <label style="font-weight:500;margin-bottom: 2px;">ATTACH</label>
     <input id="pan_card" name="pan_card" type="file" class="upload" onchange="panfilename(this.value);" />

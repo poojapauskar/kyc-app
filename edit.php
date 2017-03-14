@@ -961,7 +961,7 @@ if(isset($_POST["edit_btn"]) and $_GET["is_user"]==1) {
 
 <div class="col-md-4">
 
-    <input id="uploadFile" class="form-control input-md" value="<?php echo $arr_search['response'][0]['reg_certificate_details'][0]['name']; ?>">
+    <input id="uploadFile" class="form-control input-md" value="<?php echo $arr_search['response'][0]['reg_certificate_details'][0]['name']; ?>" readonly>
     <div class="fileUpload btn btn-info" style="margin-left:105%;margin-top:-12%;">
     <label style="font-weight:500;margin-bottom: 2px;">ATTACH</label>
     <input id="reg_certificate" name="reg_certificate" type="file" class="upload" onchange="setfilename(this.value);" /> 
@@ -1009,7 +1009,7 @@ if(isset($_POST["edit_btn"]) and $_GET["is_user"]==1) {
   <label class="col-md-4 control-label" for="filebutton">PAN Card:</label>
 <div class="col-md-4">
     <input id="pan_upload" class="form-control input-md" value="
- <?php echo $arr_search['response'][0]['pan_card_details'][0]['name']; ?>"/>
+ <?php echo $arr_search['response'][0]['pan_card_details'][0]['name']; ?>" readonly/>
    <div class="fileUpload btn btn-info" style="margin-left:105%;margin-top:-12%;">
     <label style="font-weight:500;margin-bottom: 2px;">ATTACH</label>
     <input id="pan_card" name="pan_card" type="file" class="upload" onchange="panfilename(this.value);" />
