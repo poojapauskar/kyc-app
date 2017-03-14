@@ -47,24 +47,60 @@
   {
     var fileName = val.substr(val.lastIndexOf("\\")+1, val.length);
    document.getElementById("uploadFile").value = fileName;
+
+       reg_certificate_org = document.getElementById('reg_certificate');
+        if(reg_certificate_org.files.length != 0){
+            var isValid = /\.(jpg|jpeg|png|gif|pdf)$/.test(reg_certificate_org.value);
+            if (!isValid) {
+              alert('Registration Certificate: Only image or pdf files allowed!');
+              return false;
+            }
+        }
   }
 
    function panfilename(val)
   {
     var fileName = val.substr(val.lastIndexOf("\\")+1, val.length);
    document.getElementById("pan_upload").value = fileName;
+
+     pan_card_org = document.getElementById('pan_card');
+    if(pan_card_org.files.length != 0){
+        var isValid = /\.(jpg|jpeg|png|gif|pdf)$/.test(pan_card_org.value);
+        if (!isValid) {
+          alert('Pan Card: Only image and pdf files allowed!');
+          return false;
+        }
+    }
   }
 
   function telefilename(val)
   {
     var fileName = val.substr(val.lastIndexOf("\\")+1, val.length);
    document.getElementById("telephone_upload").value = fileName;
+
+   telephone_bill_org = document.getElementById('telephone_bill');
+    if(telephone_bill_org.files.length != 0){
+        var isValid = /\.(jpg|jpeg|png|gif|pdf)$/.test(telephone_bill_org.value);
+        if (!isValid) {
+          alert('Telephone Bill: Only image and pdf files allowed!');
+          return false;
+        }
+    }
   }
 
   function bankfilename(val)
   {
     var fileName = val.substr(val.lastIndexOf("\\")+1, val.length);
    document.getElementById("bank_upload").value = fileName;
+
+   bank_pass_book_org = document.getElementById('bank_pass_book');
+    if(bank_pass_book_org.files.length != 0){
+        var isValid = /\.(jpg|jpeg|png|gif|pdf)$/.test(bank_pass_book_org.value);
+        if (!isValid) {
+          alert('Bank Pass Book: Only image and pdf files allowed!');
+          return false;
+        }
+    }
   }
 </script>
 <script type="text/javascript"> 
@@ -150,68 +186,6 @@ document.getElementById('uploadFile').value='Choose File'; }
 
 function proceed(){
 
-    pan_card_user = document.getElementById('pan_card');
-    if(pan_card_user.files.length != 0){
-        var isValid = /\.(jpg|jpeg|png|gif|pdf)$/.test(pan_card_user.value);
-        if (!isValid) {
-          alert('Pan Card: Only image or pdf files allowed!');
-          return false;
-        }
-    }
-
-    telephone_bill_user = document.getElementById('telephone_bill');
-    if(telephone_bill_user.files.length != 0){
-        var isValid = /\.(jpg|jpeg|png|gif|pdf)$/.test(telephone_bill_user.value);
-        if (!isValid) {
-          alert('Telephone Bill: Only image and pdf files allowed!');
-          return false;
-        }
-    }
-
-    bank_pass_book_user = document.getElementById('bank_pass_book');
-    if(bank_pass_book_user.files.length != 0){
-        var isValid = /\.(jpg|jpeg|png|gif|pdf)$/.test(bank_pass_book_user.value);
-        if (!isValid) {
-          alert('Bank Pass Book: Only image and pdf files allowed!');
-          return false;
-        }
-    }
-
-    voter_id_user = document.getElementById('voter_id');
-    if(voter_id_user.files.length != 0){
-        var isValid = /\.(jpg|jpeg|png|gif|pdf)$/.test(voter_id_user.value);
-        if (!isValid) {
-          alert('Voter Id: Only image and pdf files allowed!');
-          return false;
-        }
-    }
-
-    passport_user = document.getElementById('passport');
-    if(passport_user.files.length != 0){
-        var isValid = /\.(jpg|jpeg|png|gif|pdf)$/.test(passport_user.value);
-        if (!isValid) {
-          alert('Passport: Only image and pdf files allowed!');
-          return false;
-        }
-    }
-
-    aadhar_card_user = document.getElementById('aadhar_card');
-    if(aadhar_card_user.files.length != 0){
-        var isValid = /\.(jpg|jpeg|png|gif|pdf)$/.test(aadhar_card_user.value);
-        if (!isValid) {
-          alert('Aadhar Card: Only image and pdf files allowed!');
-          return false;
-        }
-    }
-
-    image_user = document.getElementById('image');
-    if(image_user.files.length != 0){
-        var isValid = /\.(jpg|jpeg|png|gif|pdf)$/.test(image_user.value);
-        if (!isValid) {
-          alert('Profile Pic: Only image and pdf files allowed!');
-          return false;
-        }
-    }
 
 var a=document.forms["Form"]["uid"].value;
 if(a==null || a==''){
@@ -274,46 +248,86 @@ $(function() {
 </script>
 
 
+
 <script type="text/javascript">
-  function check_file_type_org(){
 
-    reg_certificate_org = document.getElementById('reg_certificate');
-    if(reg_certificate_org.files.length != 0){
-        var isValid = /\.(jpg|jpeg|png|gif|pdf)$/.test(reg_certificate_org.value);
+  function check_pan_card_user(){
+    pan_card_user = document.getElementById('pan_card');
+    if(pan_card_user.files.length != 0){
+        var isValid = /\.(jpg|jpeg|png|gif|pdf)$/.test(pan_card_user.value);
         if (!isValid) {
-          alert('Registration Certificate: Only image or pdf files allowed!');
+          alert('Pan Card: Only image or pdf files allowed!');
           return false;
         }
     }
+  }
 
-    pan_card_org = document.getElementById('pan_card');
-    if(pan_card_org.files.length != 0){
-        var isValid = /\.(jpg|jpeg|png|gif|pdf)$/.test(pan_card_org.value);
-        if (!isValid) {
-          alert('Pan Card: Only image and pdf files allowed!');
-          return false;
-        }
-    }
-
-    telephone_bill_org = document.getElementById('telephone_bill');
-    if(telephone_bill_org.files.length != 0){
-        var isValid = /\.(jpg|jpeg|png|gif|pdf)$/.test(telephone_bill_org.value);
+  function check_telephone_bill_user(){
+    telephone_bill_user = document.getElementById('telephone_bill');
+    if(telephone_bill_user.files.length != 0){
+        var isValid = /\.(jpg|jpeg|png|gif|pdf)$/.test(telephone_bill_user.value);
         if (!isValid) {
           alert('Telephone Bill: Only image and pdf files allowed!');
           return false;
         }
     }
+  }
 
-    bank_pass_book_org = document.getElementById('bank_pass_book');
-    if(bank_pass_book_org.files.length != 0){
-        var isValid = /\.(jpg|jpeg|png|gif|pdf)$/.test(bank_pass_book_org.value);
+  function check_bank_pass_book_user(){
+    bank_pass_book_user = document.getElementById('bank_pass_book');
+    if(bank_pass_book_user.files.length != 0){
+        var isValid = /\.(jpg|jpeg|png|gif|pdf)$/.test(bank_pass_book_user.value);
         if (!isValid) {
           alert('Bank Pass Book: Only image and pdf files allowed!');
           return false;
         }
     }
-
   }
+
+  function check_voter_id_user(){
+    voter_id_user = document.getElementById('voter_id');
+    if(voter_id_user.files.length != 0){
+        var isValid = /\.(jpg|jpeg|png|gif|pdf)$/.test(voter_id_user.value);
+        if (!isValid) {
+          alert('Voter Id: Only image and pdf files allowed!');
+          return false;
+        }
+    }
+  }
+
+  function check_passport_user(){
+    passport_user = document.getElementById('passport');
+    if(passport_user.files.length != 0){
+        var isValid = /\.(jpg|jpeg|png|gif|pdf)$/.test(passport_user.value);
+        if (!isValid) {
+          alert('Passport: Only image and pdf files allowed!');
+          return false;
+        }
+    }
+  }
+
+  function check_aadhar_card_user(){
+    aadhar_card_user = document.getElementById('aadhar_card');
+    if(aadhar_card_user.files.length != 0){
+        var isValid = /\.(jpg|jpeg|png|gif|pdf)$/.test(aadhar_card_user.value);
+        if (!isValid) {
+          alert('Aadhar Card: Only image and pdf files allowed!');
+          return false;
+        }
+    }
+  }
+
+  function check_image_user(){
+    image_user = document.getElementById('image');
+    if(image_user.files.length != 0){
+        var isValid = /\.(jpg|jpeg|png|gif|pdf)$/.test(image_user.value);
+        if (!isValid) {
+          alert('Profile Pic: Only image and pdf files allowed!');
+          return false;
+        }
+    }
+  }
+
 </script>
 
 <?php
@@ -1152,7 +1166,7 @@ if ($_POST['uid'] != '' and $_GET["is_user"]==1){
 <div class="form-group">
   <label class="col-md-4 control-label" for="save_btn"></label>
   <div class="col-md-8">
-    <button onclick="return check_file_type_org()" id="save_btn" name="save_btn" type="submit" class="btn btn-success" style="width: 10em;margin-left:10px">Save</button><span><span></span></span>
+    <button id="save_btn" name="save_btn" type="submit" class="btn btn-success" style="width: 10em;margin-left:10px">Save</button><span><span></span></span>
     <button onclick="ClickEvent()" class="btn btn-warning" style="width: 10em;"><a style="color:white" href="search.php">Cancel</a></button>
   
   </div>
@@ -1204,7 +1218,7 @@ function enable_disable(that){
 
 <div class="upload-button" style="position:absolute;z-index:2;margin-left:79%;cursor:pointer;margin-top:14%;">Upload Image</div>
 
-<input name="image" id="image" class="file-upload1" style="position:absolute;z-index:-2;margin-left:46%;margin-top:16%;" type="file">
+<input onchange="check_image_user()" name="image" id="image" class="file-upload1" style="position:absolute;z-index:-2;margin-left:46%;margin-top:16%;" type="file">
 <!-- Text input-->
 <div class="form-group">
   <label class="col-md-4 control-label" for="textinput" >UID:</label>  
@@ -1276,7 +1290,7 @@ function enable_disable(that){
 <div class="form-group">
   <label class="col-md-4 control-label" for="filebutton">PAN card:</label>
   <div class="col-md-4">
-    <input id="pan_card" name="pan_card" value="<?php echo $_POST['pan_card'] ?>" class="input-file" type="file">
+    <input  onchange="check_pan_card_user()" id="pan_card" name="pan_card" value="<?php echo $_POST['pan_card'] ?>" class="input-file" type="file">
   </div>
 </div>
 
@@ -1286,7 +1300,7 @@ function enable_disable(that){
   <div class="col-md-4">
    <label class="checkbox-inline" for="checkboxes-0">
      <input type="checkbox" name="checkboxes" id="checkboxes-0" value="1">Telephone</label>
-<input id="telephone_bill"  value="<?php echo $_POST['telephone_bill'] ?>" style="margin-top: -20px;margin-left: 129px;" name="telephone_bill" class="input-file" type="file">     
+<input onchange="check_telephone_bill_user()" id="telephone_bill"  value="<?php echo $_POST['telephone_bill'] ?>" style="margin-top: -20px;margin-left: 129px;" name="telephone_bill" class="input-file" type="file">     
  </div>
 </div>
 
@@ -1296,7 +1310,7 @@ function enable_disable(that){
  <div class="col-md-4">
    <label class="checkbox-inline" for="checkboxes-0">
      <input type="checkbox" name="checkboxes" id="checkboxes-0" value="1">Bank Passbook</label>
-<input id="bank_pass_book"  value="<?php echo $_POST['bank_pass_book'] ?>" style="margin-top: -22px;margin-left: 129px;" name="bank_pass_book" class="input-file" type="file">     
+<input onchange="check_bank_pass_book_user()" id="bank_pass_book"  value="<?php echo $_POST['bank_pass_book'] ?>" style="margin-top: -22px;margin-left: 129px;" name="bank_pass_book" class="input-file" type="file">     
  </div>
 </div>
 
@@ -1308,7 +1322,7 @@ function enable_disable(that){
   <div class="col-md-4">
    <label class="checkbox-inline" for="checkboxes-0">
      <input type="checkbox" name="checkboxes" id="checkboxes-0" value="1">voter ID</label>
-<input id="voter_id" value="<?php echo $_POST['voter_id'] ?>" style="margin-top: -20px;margin-left: 129px;" name="voter_id" class="input-file" type="file">     
+<input onchange="check_voter_id_user()"  id="voter_id" value="<?php echo $_POST['voter_id'] ?>" style="margin-top: -20px;margin-left: 129px;" name="voter_id" class="input-file" type="file">     
  </div>
 </div>
 
@@ -1318,7 +1332,7 @@ function enable_disable(that){
  <div class="col-md-4">
    <label class="checkbox-inline" for="checkboxes-0">
      <input type="checkbox" name="checkboxes" id="checkboxes-0" value="1">Passport</label>
-<input id="passport" value="<?php echo $_POST['passport'] ?>" style="margin-top: -22px;margin-left: 129px;" name="passport" class="input-file" type="file">     
+<input onchange="check_passport_user()"  id="passport" value="<?php echo $_POST['passport'] ?>" style="margin-top: -22px;margin-left: 129px;" name="passport" class="input-file" type="file">     
  </div>
 </div>
 
@@ -1335,7 +1349,7 @@ function enable_disable(that){
 <div class="form-group">
   <label class="col-md-4 control-label" for="filebutton">Adhar card:</label>
   <div class="col-md-4">
-    <input id="aadhar_card" name="aadhar_card" value="<?php echo $_POST['aadhar_card'] ?>" class="input-file" type="file">
+    <input onchange="check_aadhar_card_user()" id="aadhar_card" name="aadhar_card" value="<?php echo $_POST['aadhar_card'] ?>" class="input-file" type="file">
   </div>
 </div>
 

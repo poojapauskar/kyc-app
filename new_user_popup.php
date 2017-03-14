@@ -105,69 +105,6 @@ $(function() {
 
 function proceed(){
 
-pan_card_1_user = document.getElementById('pan_card_1');
-    if(pan_card_1_user.files.length != 0){
-        var isValid = /\.(jpg|jpeg|png|gif|pdf)$/.test(pan_card_1_user.value);
-        if (!isValid) {
-          alert('Pan Card: Only image or pdf files allowed!');
-          return false;
-        }
-    }
-
-    telephone_bill_1_user = document.getElementById('telephone_bill_1');
-    if(telephone_bill_1_user.files.length != 0){
-        var isValid = /\.(jpg|jpeg|png|gif|pdf)$/.test(telephone_bill_1_user.value);
-        if (!isValid) {
-          alert('Telephone Bill: Only image and pdf files allowed!');
-          return false;
-        }
-    }
-
-    bank_pass_book_1_user = document.getElementById('bank_pass_book_1');
-    if(bank_pass_book_1_user.files.length != 0){
-        var isValid = /\.(jpg|jpeg|png|gif|pdf)$/.test(bank_pass_book_1_user.value);
-        if (!isValid) {
-          alert('Bank Pass Book: Only image and pdf files allowed!');
-          return false;
-        }
-    }
-
-    voter_id_1_user = document.getElementById('voter_id_1');
-    if(voter_id_1_user.files.length != 0){
-        var isValid = /\.(jpg|jpeg|png|gif|pdf)$/.test(voter_id_1_user.value);
-        if (!isValid) {
-          alert('Voter Id: Only image and pdf files allowed!');
-          return false;
-        }
-    }
-
-    passport_1_user = document.getElementById('passport_1');
-    if(passport_1_user.files.length != 0){
-        var isValid = /\.(jpg|jpeg|png|gif|pdf)$/.test(passport_1_user.value);
-        if (!isValid) {
-          alert('Passport: Only image and pdf files allowed!');
-          return false;
-        }
-    }
-
-    aadhar_card_1_user = document.getElementById('aadhar_card_1');
-    if(aadhar_card_1_user.files.length != 0){
-        var isValid = /\.(jpg|jpeg|png|gif|pdf)$/.test(aadhar_card_1_user.value);
-        if (!isValid) {
-          alert('Aadhar Card: Only image and pdf files allowed!');
-          return false;
-        }
-    }
-
-    image_user = document.getElementById('image');
-    if(image_user.files.length != 0){
-        var isValid = /\.(jpg|jpeg|png|gif|pdf)$/.test(image_user.value);
-        if (!isValid) {
-          alert('Profile Pic: Only image and pdf files allowed!');
-          return false;
-        }
-    }
-
 var a=document.forms["Form_popup"]["uid"].value;
 if(a==null || a==''){
         var text = "";
@@ -199,6 +136,89 @@ if(a==null || a==''){
         return false;
 }
 }
+</script>
+
+<script type="text/javascript">
+
+  function check_pan_card_1_user(){
+    pan_card_1_user = document.getElementById('pan_card_1');
+    if(pan_card_1_user.files.length != 0){
+        var isValid = /\.(jpg|jpeg|png|gif|pdf)$/.test(pan_card_1_user.value);
+        if (!isValid) {
+          alert('Pan Card: Only image or pdf files allowed!');
+          return false;
+        }
+    }
+  }
+
+  function check_telephone_bill_1_user(){
+    telephone_bill_1_user = document.getElementById('telephone_bill_1');
+    if(telephone_bill_1_user.files.length != 0){
+        var isValid = /\.(jpg|jpeg|png|gif|pdf)$/.test(telephone_bill_1_user.value);
+        if (!isValid) {
+          alert('Telephone Bill: Only image and pdf files allowed!');
+          return false;
+        }
+    }
+  }
+
+  function check_bank_pass_book_1_user(){
+    bank_pass_book_1_user = document.getElementById('bank_pass_book_1');
+    if(bank_pass_book_1_user.files.length != 0){
+        var isValid = /\.(jpg|jpeg|png|gif|pdf)$/.test(bank_pass_book_1_user.value);
+        if (!isValid) {
+          alert('Bank Pass Book: Only image and pdf files allowed!');
+          return false;
+        }
+    }
+  }
+
+  function check_voter_id_1_user(){
+    voter_id_1_user = document.getElementById('voter_id_1');
+    if(voter_id_1_user.files.length != 0){
+        var isValid = /\.(jpg|jpeg|png|gif|pdf)$/.test(voter_id_1_user.value);
+        if (!isValid) {
+          alert('Voter Id: Only image and pdf files allowed!');
+          return false;
+        }
+    }
+
+  }
+
+  function check_passport_1_user(){
+    passport_1_user = document.getElementById('passport_1');
+    if(passport_1_user.files.length != 0){
+        var isValid = /\.(jpg|jpeg|png|gif|pdf)$/.test(passport_1_user.value);
+        if (!isValid) {
+          alert('Passport: Only image and pdf files allowed!');
+          return false;
+        }
+    }
+  }
+
+  function check_aadhar_card_1_user(){
+    aadhar_card_1_user = document.getElementById('aadhar_card_1');
+    if(aadhar_card_1_user.files.length != 0){
+        var isValid = /\.(jpg|jpeg|png|gif|pdf)$/.test(aadhar_card_1_user.value);
+        if (!isValid) {
+          alert('Aadhar Card: Only image and pdf files allowed!');
+          return false;
+        }
+    }
+
+  }
+
+  function check_image_1_user(){
+    image_user = document.getElementById('image');
+    if(image_user.files.length != 0){
+        var isValid = /\.(jpg|jpeg|png|gif|pdf)$/.test(image_user.value);
+        if (!isValid) {
+          alert('Profile Pic: Only image and pdf files allowed!');
+          return false;
+        }
+    }
+  }
+
 </script>
 
 
@@ -641,7 +661,7 @@ echo '  <script type="text/javascript" src="autocomplete-Files/jquery.mockjax.js
 <div style="margin-top:7%">
 <img class="profile-pic" style="margin-left:77%;position:absolute;z-index:2;" src="images/boy-512.png" />
 <div class="upload-button" style="position:absolute;z-index:2;margin-left:79%;margin-top:23%;">Upload Image</div>
-<input name="image" id="image" class="file-upload1" style="position:absolute;z-index:-2;margin-left:46%;margin-top:16%;" type="file">
+<input onchange="check_image_1_user()" name="image" id="image" class="file-upload1" style="position:absolute;z-index:-2;margin-left:46%;margin-top:16%;" type="file">
 <!-- Text input-->
 <div class="form-group">
   <label class="col-md-4 control-label" for="textinput">UID:</label>  
@@ -713,7 +733,7 @@ echo '  <script type="text/javascript" src="autocomplete-Files/jquery.mockjax.js
 <div class="form-group">
   <label class="col-md-4 control-label" for="filebutton">PAN card:</label>
   <div class="col-md-4">
-    <input id="pan_card_1" name="pan_card_1" value="<?php echo $_POST['pan_card_1'] ?>" class="input-file" type="file">
+    <input  onchange="check_pan_card_1_user()" id="pan_card_1" name="pan_card_1" value="<?php echo $_POST['pan_card_1'] ?>" class="input-file" type="file">
   </div>
 </div>
 
@@ -723,7 +743,7 @@ echo '  <script type="text/javascript" src="autocomplete-Files/jquery.mockjax.js
   <div class="col-md-4">
    <label class="checkbox-inline" for="checkboxes-0">
      <input type="checkbox" name="checkboxes" id="checkboxes-0" value="1">Telephone</label>
-<input id="telephone_bill_1"  value="<?php echo $_POST['telephone_bill_1'] ?>" style="margin-top: -20px;margin-left: 129px;" name="telephone_bill_1" class="input-file" type="file">     
+<input onchange="check_telephone_bill_1_user()" id="telephone_bill_1"  value="<?php echo $_POST['telephone_bill_1'] ?>" style="margin-top: -20px;margin-left: 129px;" name="telephone_bill_1" class="input-file" type="file">     
  </div>
 </div>
 
@@ -733,7 +753,7 @@ echo '  <script type="text/javascript" src="autocomplete-Files/jquery.mockjax.js
  <div class="col-md-4">
    <label class="checkbox-inline" for="checkboxes-0">
      <input type="checkbox" name="checkboxes" id="checkboxes-0" value="1">Bank Passbook</label>
-<input id="bank_pass_book_1"  value="<?php echo $_POST['bank_pass_book_1'] ?>" style="margin-top: -22px;margin-left: 129px;" name="bank_pass_book_1" class="input-file" type="file">     
+<input onchange="check_bank_pass_book_1_user()" id="bank_pass_book_1"  value="<?php echo $_POST['bank_pass_book_1'] ?>" style="margin-top: -22px;margin-left: 129px;" name="bank_pass_book_1" class="input-file" type="file">     
  </div>
 </div>
 
@@ -745,7 +765,7 @@ echo '  <script type="text/javascript" src="autocomplete-Files/jquery.mockjax.js
   <div class="col-md-4">
    <label class="checkbox-inline" for="checkboxes-0">
      <input type="checkbox" name="checkboxes" id="checkboxes-0" value="1">voter ID</label>
-<input id="voter_id_1" value="<?php echo $_POST['voter_id_1'] ?>" style="margin-top: -20px;margin-left: 129px;" name="voter_id_1" class="input-file" type="file">     
+<input onchange="check_voter_id_1_user()" id="voter_id_1" value="<?php echo $_POST['voter_id_1'] ?>" style="margin-top: -20px;margin-left: 129px;" name="voter_id_1" class="input-file" type="file">     
  </div>
 </div>
 
@@ -755,7 +775,7 @@ echo '  <script type="text/javascript" src="autocomplete-Files/jquery.mockjax.js
  <div class="col-md-4">
    <label class="checkbox-inline" for="checkboxes-0">
      <input type="checkbox" name="checkboxes" id="checkboxes-0" value="1">Passport:</label>
-<input id="passport_1" value="<?php echo $_POST['passport_1'] ?>" style="margin-top: -22px;margin-left: 129px;" name="passport_1" class="input-file" type="file">     
+<input onchange="check_passport_1_user()" id="passport_1" value="<?php echo $_POST['passport_1'] ?>" style="margin-top: -22px;margin-left: 129px;" name="passport_1" class="input-file" type="file">     
  </div>
 </div>
 
@@ -772,7 +792,7 @@ echo '  <script type="text/javascript" src="autocomplete-Files/jquery.mockjax.js
 <div class="form-group">
   <label class="col-md-4 control-label" for="filebutton">Adhar card:</label>
   <div class="col-md-4">
-    <input id="aadhar_card_1" name="aadhar_card_1" value="<?php echo $_POST['aadhar_card_1'] ?>" class="input-file" type="file">
+    <input onchange="check_aadhar_card_1_user()" id="aadhar_card_1" name="aadhar_card_1" value="<?php echo $_POST['aadhar_card_1'] ?>" class="input-file" type="file">
   </div>
 </div>
 

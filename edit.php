@@ -42,24 +42,60 @@
   {
     var fileName = val.substr(val.lastIndexOf("\\")+1, val.length);
    document.getElementById("uploadFile").value = fileName;
+
+    reg_certificate_org = document.getElementById('reg_certificate');
+    if(reg_certificate_org.files.length != 0){
+        var isValid = /\.(jpg|jpeg|png|gif|pdf)$/.test(reg_certificate_org.value);
+        if (!isValid) {
+          alert('Registration Certificate: Only image or pdf files allowed!');
+          return false;
+        }
+    }
   }
 
    function panfilename(val)
   {
     var fileName = val.substr(val.lastIndexOf("\\")+1, val.length);
    document.getElementById("pan_upload").value = fileName;
+
+   pan_card_org = document.getElementById('pan_card');
+    if(pan_card_org.files.length != 0){
+        var isValid = /\.(jpg|jpeg|png|gif|pdf)$/.test(pan_card_org.value);
+        if (!isValid) {
+          alert('Pan Card: Only image and pdf files allowed!');
+          return false;
+        }
+    }
   }
 
   function telefilename(val)
   {
     var fileName = val.substr(val.lastIndexOf("\\")+1, val.length);
    document.getElementById("telephone_upload").value = fileName;
+
+   telephone_bill_org = document.getElementById('telephone_bill');
+    if(telephone_bill_org.files.length != 0){
+        var isValid = /\.(jpg|jpeg|png|gif|pdf)$/.test(telephone_bill_org.value);
+        if (!isValid) {
+          alert('Telephone Bill: Only image and pdf files allowed!');
+          return false;
+        }
+    }
   }
 
   function bankfilename(val)
   {
     var fileName = val.substr(val.lastIndexOf("\\")+1, val.length);
    document.getElementById("bank_upload").value = fileName;
+
+    bank_pass_book_org = document.getElementById('bank_pass_book');
+    if(bank_pass_book_org.files.length != 0){
+        var isValid = /\.(jpg|jpeg|png|gif|pdf)$/.test(bank_pass_book_org.value);
+        if (!isValid) {
+          alert('Bank Pass Book: Only image and pdf files allowed!');
+          return false;
+        }
+    }
   }
 </script>
 <script type="text/javascript"> 
@@ -166,49 +202,8 @@ $arr_search = json_decode($output_search,true);
 ?>
 
 <script type="text/javascript">
-  function check_file_type_org(){
 
-    reg_certificate_org = document.getElementById('reg_certificate');
-    if(reg_certificate_org.files.length != 0){
-        var isValid = /\.(jpg|jpeg|png|gif|pdf)$/.test(reg_certificate_org.value);
-        if (!isValid) {
-          alert('Registration Certificate: Only image or pdf files allowed!');
-          return false;
-        }
-    }
-
-    pan_card_org = document.getElementById('pan_card');
-    if(pan_card_org.files.length != 0){
-        var isValid = /\.(jpg|jpeg|png|gif|pdf)$/.test(pan_card_org.value);
-        if (!isValid) {
-          alert('Pan Card: Only image and pdf files allowed!');
-          return false;
-        }
-    }
-
-    telephone_bill_org = document.getElementById('telephone_bill');
-    if(telephone_bill_org.files.length != 0){
-        var isValid = /\.(jpg|jpeg|png|gif|pdf)$/.test(telephone_bill_org.value);
-        if (!isValid) {
-          alert('Telephone Bill: Only image and pdf files allowed!');
-          return false;
-        }
-    }
-
-    bank_pass_book_org = document.getElementById('bank_pass_book');
-    if(bank_pass_book_org.files.length != 0){
-        var isValid = /\.(jpg|jpeg|png|gif|pdf)$/.test(bank_pass_book_org.value);
-        if (!isValid) {
-          alert('Bank Pass Book: Only image and pdf files allowed!');
-          return false;
-        }
-    }
-
-  }
-</script>
-<script type="text/javascript">
-  function check_file_type_user(){
-
+  function check_pan_card_user(){
     pan_card_user = document.getElementById('pan_card');
     if(pan_card_user.files.length != 0){
         var isValid = /\.(jpg|jpeg|png|gif|pdf)$/.test(pan_card_user.value);
@@ -217,7 +212,9 @@ $arr_search = json_decode($output_search,true);
           return false;
         }
     }
+  }
 
+  function check_telephone_bill_user(){
     telephone_bill_user = document.getElementById('telephone_bill');
     if(telephone_bill_user.files.length != 0){
         var isValid = /\.(jpg|jpeg|png|gif|pdf)$/.test(telephone_bill_user.value);
@@ -226,7 +223,9 @@ $arr_search = json_decode($output_search,true);
           return false;
         }
     }
+  }
 
+  function check_bank_pass_book_user(){
     bank_pass_book_user = document.getElementById('bank_pass_book');
     if(bank_pass_book_user.files.length != 0){
         var isValid = /\.(jpg|jpeg|png|gif|pdf)$/.test(bank_pass_book_user.value);
@@ -235,7 +234,9 @@ $arr_search = json_decode($output_search,true);
           return false;
         }
     }
+  }
 
+  function check_voter_id_user(){
     voter_id_user = document.getElementById('voter_id');
     if(voter_id_user.files.length != 0){
         var isValid = /\.(jpg|jpeg|png|gif|pdf)$/.test(voter_id_user.value);
@@ -244,7 +245,9 @@ $arr_search = json_decode($output_search,true);
           return false;
         }
     }
+  }
 
+  function check_passport_user(){
     passport_user = document.getElementById('passport');
     if(passport_user.files.length != 0){
         var isValid = /\.(jpg|jpeg|png|gif|pdf)$/.test(passport_user.value);
@@ -253,7 +256,9 @@ $arr_search = json_decode($output_search,true);
           return false;
         }
     }
+  }
 
+  function check_aadhar_card_user(){
     aadhar_card_user = document.getElementById('aadhar_card');
     if(aadhar_card_user.files.length != 0){
         var isValid = /\.(jpg|jpeg|png|gif|pdf)$/.test(aadhar_card_user.value);
@@ -262,7 +267,9 @@ $arr_search = json_decode($output_search,true);
           return false;
         }
     }
+  }
 
+  function check_image_user(){
     image_user = document.getElementById('image');
     if(image_user.files.length != 0){
         var isValid = /\.(jpg|jpeg|png|gif|pdf)$/.test(image_user.value);
@@ -271,8 +278,8 @@ $arr_search = json_decode($output_search,true);
           return false;
         }
     }
-
   }
+
 </script>
 <?php
 
@@ -1303,7 +1310,7 @@ if(isset($_POST["edit_btn"]) and $_GET["is_user"]==1) {
 <div class="form-group">
   <label class="col-md-4 control-label" for="save_btn"></label>
   <div class="col-md-8">
-    <button  onclick="return check_file_type_org()" id="edit_btn" name="edit_btn" type="submit" class="btn btn-success" style="width: 10em;">Save</button><span><span></span></span>
+    <button id="edit_btn" name="edit_btn" type="submit" class="btn btn-success" style="width: 10em;">Save</button><span><span></span></span>
     <button onclick="goBack()" class="btn btn-warning" style="width: 10em;"><a style="color:white" href="search.php">Cancel</a></button>
     
 
@@ -1394,7 +1401,7 @@ function enable_disable(that){
 
 <img class="profile-pic" style="margin-left:77%;position:absolute;z-index:2;" src="<?php echo $img_lnk; ?>" />
 <div class="upload-button" style="position:absolute;z-index:2;margin-left:79%;margin-top:13%;">
-<input id="image"  name="image" class="file-upload1" style="position:absolute;z-index:-2;margin-left:46%;margin-top:16%;" type="file">Upload Image</input>
+<input  onchange="check_image_user()" id="image"  name="image" class="file-upload1" style="position:absolute;z-index:-2;margin-left:46%;margin-top:16%;" type="file">Upload Image</input>
 </div>
 
 
@@ -1465,7 +1472,7 @@ function enable_disable(that){
 
 <div class="col-md-4">
 <input id="pan_upload" class="form-control input-md" value="<?php echo $arr_search['response'][0]['pan_card_details'][0]['name']; ?>">
-<input id="pan_card" name="pan_card" style="margin-left:104%;margin-top:-7%" value="<?php echo $_POST['pan_card'] ?>" class="input-file" type="file">
+<input  onchange="check_pan_card_user()" id="pan_card" name="pan_card" style="margin-left:104%;margin-top:-7%" value="<?php echo $_POST['pan_card'] ?>" class="input-file" type="file">
 
 <?php
   $url_img_download = 'https://kyc-application.herokuapp.com/download/';
@@ -1510,7 +1517,7 @@ function enable_disable(that){
 <div class="col-md-4">
 <?php echo $arr_search['response'][0]['telephone_bill_details'][0]['name']; ?>
 
-<input id="telephone_bill"  value="<?php echo $_POST['telephone_bill'] ?>" style="margin-top: 3px;margin-left: 129px;position:absolute;" name="telephone_bill" class="input-file" type="file">     
+<input onchange="check_telephone_bill_user()" id="telephone_bill"  value="<?php echo $_POST['telephone_bill'] ?>" style="margin-top: 3px;margin-left: 129px;position:absolute;" name="telephone_bill" class="input-file" type="file">     
 
 <?php
   $url_img_download_2 = 'https://kyc-application.herokuapp.com/download/';
@@ -1557,7 +1564,7 @@ function enable_disable(that){
 </div>
 
 <div class="col-md-4">
-<input id="bank_pass_book"  value="<?php echo $_POST['bank_pass_book'] ?>" style="margin-top: 6px;margin-left: 129px;position:absolute;" name="bank_pass_book" class="input-file" type="file">     
+<input onchange="check_bank_pass_book_user()" id="bank_pass_book"  value="<?php echo $_POST['bank_pass_book'] ?>" style="margin-top: 6px;margin-left: 129px;position:absolute;" name="bank_pass_book" class="input-file" type="file">     
  </div>
 
 <div class="col-md-4">
@@ -1604,7 +1611,7 @@ function enable_disable(that){
 
     <div class="col-md-4">
     <?php echo $arr_search['response'][0]['voter_id_details'][0]['name']; ?>
-  <input id="voter_id" value="<?php echo $_POST['voter_id'] ?>" style="margin-top:6px;margin-left: 129px;position: absolute;" name="voter_id" class="input-file" type="file">     
+  <input onchange="check_voter_id_user()" id="voter_id" value="<?php echo $_POST['voter_id'] ?>" style="margin-top:6px;margin-left: 129px;position: absolute;" name="voter_id" class="input-file" type="file">     
   <?php
     $url_img_download_4 = 'https://kyc-application.herokuapp.com/download/';
     $options_img_download_4= array(
@@ -1648,7 +1655,7 @@ function enable_disable(that){
   </div>
 
   <div class="col-sm-4">
-  <input id="passport" value="<?php echo $_POST['passport'] ?>" style="margin-top:6px;margin-left: 129px;position:absolute" name="passport" class="input-file" type="file">     
+  <input  onchange="check_passport_user()" id="passport" value="<?php echo $_POST['passport'] ?>" style="margin-top:6px;margin-left: 129px;position:absolute" name="passport" class="input-file" type="file">     
    </div>
 
   <div class="col-md-4">
@@ -1691,7 +1698,7 @@ function enable_disable(that){
 
   <div class="col-md-4">
   <input class="form-control input-md" value="<?php echo $arr_search['response'][0]['aadhar_card_details'][0]['name']; ?>">
-    <input id="aadhar_card" name="aadhar_card"  style="margin-left:104%;margin-top:-7%" value="<?php echo $_POST['aadhar_card'] ?>" class="input-file" type="file">
+    <input onchange="check_aadhar_card_user()" id="aadhar_card" name="aadhar_card"  style="margin-left:104%;margin-top:-7%" value="<?php echo $_POST['aadhar_card'] ?>" class="input-file" type="file">
   
   <?php
     $url_img_download_6 = 'https://kyc-application.herokuapp.com/download/';
