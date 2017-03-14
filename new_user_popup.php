@@ -11,7 +11,7 @@
 <script type="text/javascript" src="js/jquery.datepick.js"></script>
 <script type="text/javascript">
 $(function() {
- $( ".datepicker" ).datepick({dateFormat: 'dd/mm/yyyy'});
+ $( ".datepicker" ).datepick({dateFormat: 'dd/mm/yyyy',maxDate: 0});
  /*$( ".datepicker" ).css('z-index', 99999);*/
 });
 </script> 
@@ -862,7 +862,7 @@ function goBack() {
         if(x < max_fields){ //max input box allowed
             x++; //text box increment
               $(wrapper).prepend('<br><div style="margin-left:50%;"><div class="form-group"><label class="control-label" for="selectbasic" style="margin-left:-220px;">Type of work</label><div class="col-md-6"><select id="type_of_work[]" name="type_of_work[]" class="form-control" style="margin-left:17%;width:222%"><option value="Option one">Option one</option><option value="Option two">Option two</option><option value="Option three">Option three</option></select></div></div><div class="form-group"> <label class="col-md-4 control-label" for="selectbasic" style="margin-left:-29%">Status</label><div class="col-md-6"><select id="status[]" name="status[]" style="width:210%;margin-left:-1%;" class="form-control"><option value="Pending">Pending</option><option value="Work in process">Work in process</option><option value="Completed">Completed</option></select></div></div><div class="form-group row"><label for="example-date-input" class="col-2 col-form-label" style="margin-left:-15.5%;";">DATE</label><div class="col-8"><input class="form-control datepicker" id="date[]" name="date[]" value="<?php echo $_POST['date'] ?>" style="width:86%;margin-left:10.6%;margin-top:-10%;" type="text" readonly></div></div><div class="form-group"><label class="col-md-4 control-label" for="textinput" style="margin-left:-36%">Comment</label><div class="col-md-4"><input id="comment[]" name="comment[]" type="text" placeholder="" class="form-control input-md" style="width:342%;margin-left:20%"></div></div></center><a href="#" class="remove_field"><img src="images/del24.png" style="margin-left: 443px; margin-top: -81px;"></a></a></div>'); //add input box\
-              $( ".datepicker" ).datepick({dateFormat: 'dd/mm/yyyy'});
+              $( ".datepicker" ).datepick({dateFormat: 'dd/mm/yyyy',maxDate: 0});
         }
     });
     
