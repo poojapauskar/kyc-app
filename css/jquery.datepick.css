@@ -162,7 +162,7 @@ button.datepick-cmd {
 	border: 1px solid #777;
 }
 .datepick-month th, .datepick-month th a {
-	background-color: #777;
+	background-color: #E8E8E8;
 	color: #fff;
 }
 .datepick-month td {
