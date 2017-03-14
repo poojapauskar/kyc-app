@@ -1067,7 +1067,7 @@ if(isset($_POST["edit_btn"]) and $_GET["is_user"]==1) {
     <label style="font-weight:500;margin-bottom: 2px;">ATTACH</label>
     <input id="telephone_bill" name="telephone_bill"  value="<?php echo $arr_search['response'][0]['organization_details']['telephone'] ?>" style="margin-top: -20px;margin-left: 146px;" type="file" class="upload" onchange="telefilename(this.value);" />  -->
     <div class="col-md-3" style="margin-left:43%;margin-top:-2%"> 
-    <input id="telephone_upload" style="width:68%;margin-left:23%;margin-top:-5%" value="<?php echo $arr_search['response'][0]['telephone_bill_details'][0]['name']; ?>" readonly>
+    <input id="telephone_upload" style="width:68%;margin-left:23%;margin-top:-5%" value="<?php echo $arr_search['response'][0]['telephone_bill_details'][0]['name']; ?>">
 </div>
     <div class="fileUpload btn btn-info" style="margin-left:-1%;margin-top:-1%;">
     <label style="font-weight:500;margin-bottom: 2px;">ATTACH</label>
@@ -1113,7 +1113,7 @@ if(isset($_POST["edit_btn"]) and $_GET["is_user"]==1) {
   </div>
 <div class="col-md-3" style="margin-left:43%;margin-top:-2%"> 
 <input id="bank_upload" style="width:68%;margin-left:23%;margin-top:-5%" value="
-<?php echo $arr_search['response'][0]['pass_book_details'][0]['name']; ?>" readonly>
+<?php echo $arr_search['response'][0]['pass_book_details'][0]['name']; ?>">
 </div>
     <div class="fileUpload btn btn-info" style="margin-left:-1%;margin-top:-1%;">
     <label style="font-weight:500;margin-bottom: 2px;">ATTACH</label>
@@ -1143,7 +1143,6 @@ if(isset($_POST["edit_btn"]) and $_GET["is_user"]==1) {
 ?>
 </div>
 <br>
-
 <button style="margin-left:75%;margin-top:-6%;" class="btn btn-info">
 <a target="_blank" data-toggle="modal" data-target="#myModal" style="color:white" href="view_popup.php?name=pass_book_details&link=<?php echo $arr_img_download_4[0]['url']; ?>">View</a>
 </button>
@@ -1483,7 +1482,6 @@ function enable_disable(that){
   
 ?>
 <button style="background-color:#65AC4;margin-left:152%;margin-top:-13%" class="btn btn-success">
-
 <a target="_blank" style="color:white" data-toggle="modal" data-target="#myModal" href="view_popup.php?name=pan_card_details&link=<?php echo $arr_img_download[0]['url']; ?>">View</a>
 </button>
 
