@@ -958,7 +958,6 @@ if ($_POST['uid'] != '' and $_GET["is_user"]==1){
 </div>
 
 
-
 <!-- Text input-->
 <div class="form-group">
   <label class="col-md-4 control-label" for="textname">Name:</label>  
