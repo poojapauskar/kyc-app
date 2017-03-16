@@ -1106,7 +1106,7 @@ if ($_POST['uid'] != '' and $_GET["is_user"]==1){
 </div>
 </div> 
 
-<a href="" style="" class="remove_field_present"><img src="images/del24.png" style="margin-left:900px;margin-top:-40px"></a>
+<a href="" class="remove_field_present" style="margin-left:900px;margin-top:-40px;position:absolute"><img src="images/del24.png" ></a>
 </div>
 
 <div class="form-group">
@@ -1158,12 +1158,12 @@ if ($_POST['uid'] != '' and $_GET["is_user"]==1){
 <div class="form-group">
   <label class="col-md-4 control-label" for="textinput">Comment</label>  
   <div class="col-md-4">
-  <input id="comment[]" name="comment[]" type="text" placeholder="" class="form-control input-md" required/> 
+  <input id="comment[]" name="comment[]" type="text" placeholder="" class="form-control input-md" /> 
   </div>
 </div>
 
-<a href="#" class="remove_field_pre1">
- <img src="images/del24.png" style="margin-left: 900px; margin-top: -81px;">
+<a href="#" class="remove_field_pre1" style="margin-left: 900px; margin-top: -46px;position:absolute">
+ <img src="images/del24.png" >
 </a>
 
 </div>
@@ -1207,8 +1207,6 @@ function enable_disable(that){
       $('.partner_names').attr('disabled', false);
       $('.partner_designations').attr('disabled', false);
       $('.partner_others').attr('disabled', false);
-      $('.partner_btn').attr('disabled', false);
-      $('.new_entry_btn').attr('disabled', false);
   }
 }
 </script>
@@ -1409,10 +1407,10 @@ function enable_disable(that){
 <div class="form-group">
   <label class="col-md-4 control-label" for="textinput">Comment</label>  
   <div class="col-md-4">
-  <input id="comment[]" name="comment[]" type="text" placeholder="" class="form-control input-md" required/>
+  <input id="comment[]" name="comment[]" type="text" placeholder="" class="form-control input-md"/>
   </div>
 </div>
-<a href="#" class="remove_field_pre1" style="margin-left: 900px; margin-top: -42px;position:absolute">
+<a href="#" class="remove_field_pre1" style="margin-left: 866px; margin-top: -42px;position:absolute">
  <img src="images/del24.png" >
 </a>
 </div>
