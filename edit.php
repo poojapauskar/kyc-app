@@ -921,11 +921,6 @@ if(isset($_POST["edit_btn"]) and $_GET["is_user"]==1) {
 
 <fieldset>
 
-<!-- Form Name -->
-<!-- <legend>CA Database</legend>
- --><!-- <h4><center><?php echo $arr_search['response'][0]['organization_details']['name'] ?></center></h4> -->
-
-
  <input type="hidden" value="<?php echo $arr_search['response'][0]['organization_details']['pk'] ?>" name="org_id" id="org_id"></input>
 
 
@@ -1009,11 +1004,21 @@ if(isset($_POST["edit_btn"]) and $_GET["is_user"]==1) {
 
 
 </div>
+<a target="_blank" style="margin-top:-24%;margin-left:129%;color:white;" data-toggle="modal" data-target="#myModal1" class="btn btn-info" href="view_popup.php?name=reg_certificate_details&link=<?php echo $arr_img_download[0]['url']; ?>">
+VIEW</a>
 
-<button style="margin-top:-24%;margin-left:129%;" class="btn btn-success">
-<a target="_blank" data-toggle="modal" data-target="#myModal" style="color:white" href="view_popup.php?name=reg_certificate_details&link=<?php echo $arr_img_download[0]['url']; ?>">View</a>
-</button>
-
+<!-- Modal -->
+<div class="modal fade" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      </div>
+      <div class="modal-body">
+      </div>
+    </div>
+  </div>
+</div>
 </div>
 
 </div>
@@ -1055,9 +1060,20 @@ if(isset($_POST["edit_btn"]) and $_GET["is_user"]==1) {
   
 ?>
 </div>
-<button style="margin-top:-24%;margin-left:129%;" class="btn btn-success">
-<a target="_blank" data-toggle="modal" data-target="#myModal" style="color:white" href="view_popup.php?name=pan_card_details&link=<?php echo $arr_img_download_2[0]['url']; ?>">View</a>
-</button>
+<a target="_blank" data-toggle="modal" data-target="#myModal2" class="btn btn-info" style="color:white;margin-top:-24%;margin-left:129%;" href="view_popup.php?name=pan_card_details&link=<?php echo $arr_img_download_2[0]['url']; ?>">VIEW</a>
+<!-- Modal -->
+<div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+    </div>
+  </div>
+</div>
 </div>
 </div>
 
@@ -1090,7 +1106,7 @@ if(isset($_POST["edit_btn"]) and $_GET["is_user"]==1) {
     <label style="font-weight:500;margin-bottom: 2px;">ATTACH</label>
     <input id="telephone_bill" name="telephone_bill"  value="<?php echo $arr_search['response'][0]['organization_details']['telephone'] ?>" style="margin-top: -20px;margin-left: 146px;" type="file" class="upload" onchange="telefilename(this.value);" />  -->
     <div class="col-md-3" style="margin-left:43%;margin-top:-2%"> 
-    <input id="telephone_upload" style="width:68%;margin-left:23%;margin-top:-5%" value="<?php echo $arr_search['response'][0]['telephone_bill_details'][0]['name']; ?>" readonly>
+    <input id="telephone_upload" style="width:68%;margin-left:23%;margin-top:-5%" value="<?php echo $arr_search['response'][0]['telephone_bill_details'][0]['name']; ?>">
 </div>
     <div class="fileUpload btn btn-info" style="margin-left:-1%;margin-top:-1%;">
     <label style="font-weight:500;margin-bottom: 2px;">ATTACH</label>
@@ -1115,11 +1131,21 @@ if(isset($_POST["edit_btn"]) and $_GET["is_user"]==1) {
 </div>
 
 <br>
-<button style="margin-left:75%;margin-top:-6%;position:relative;" class="btn btn-info view_btn2">
-<a target="_blank" data-toggle="modal" data-target="#myModal" style="color:white" href="view_popup.php?name=telephone_bill_details&link=<?php echo $arr_img_download_3[0]['url']; ?>">View</a>
-</button>
+<a target="_blank" data-toggle="modal" data-target="#myModal3" class="btn btn-info" style="color:white;margin-left:75%;margin-top:-6%;position:relative;" href="view_popup.php?name=telephone_bill_details&link=<?php echo $arr_img_download_3[0]['url']; ?>">VIEW</a>
+<!-- Modal -->
+<div class="modal fade" id="myModal3" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+    </div>
+  </div>
+</div>
 </div> 
-
 
 <div class="form-group">
  <label class="col-md-4 control-label" for="checkboxes"></label>
@@ -1136,7 +1162,7 @@ if(isset($_POST["edit_btn"]) and $_GET["is_user"]==1) {
   </div>
 <div class="col-md-3" style="margin-left:43%;margin-top:-2%"> 
 <input id="bank_upload" style="width:68%;margin-left:23%;margin-top:-5%" value="
-<?php echo $arr_search['response'][0]['pass_book_details'][0]['name']; ?>" readonly>
+<?php echo $arr_search['response'][0]['pass_book_details'][0]['name']; ?>">
 </div>
     <div class="fileUpload btn btn-info" style="margin-left:-1%;margin-top:-1%;">
     <label style="font-weight:500;margin-bottom: 2px;">ATTACH</label>
@@ -1166,11 +1192,20 @@ if(isset($_POST["edit_btn"]) and $_GET["is_user"]==1) {
 ?>
 </div>
 <br>
-
-<button style="margin-left:75%;margin-top:-6%;" class="btn btn-info">
-
-<a target="_blank" data-toggle="modal" data-target="#myModal" style="color:white" href="view_popup.php?name=pass_book_details&link=<?php echo $arr_img_download_4[0]['url']; ?>">View</a>
-</button>
+<a target="_blank" data-toggle="modal" data-target="#myModal4" class="btn btn-info" style="margin-left:75%;margin-top:-6%;position:relative;color:white" href="view_popup.php?name=pass_book_details&link=<?php echo $arr_img_download_4[0]['url']; ?>">VIEW</a>
+<!-- Modal -->
+<div class="modal fade" id="myModal4" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+    </div>
+  </div>
+</div>
 </div>
 
 
@@ -1208,11 +1243,22 @@ if(isset($_POST["edit_btn"]) and $_GET["is_user"]==1) {
   </div>
 
   <div class="col-md-2 col-sm-2 col-2">
-    <a href="new_user_popup.php" style="color:white" target="_blank" data-toggle="modal" data-target="#myModal">
-     <button type="button" class="btn btn-info new_entry_btn" style="margin-left:-6%">
+    <a href="new_user_popup.php" style="color:white" target="_blank" data-toggle="modal" data-target="#myModal11" class="btn btn-info new_entry_btn" >
        New Entry
-     </button>
     </a>
+    <!-- Modal -->
+<div class="modal fade" id="myModal11" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+    </div>
+  </div>
+</div>
   </div>
 </div>
 
@@ -1296,7 +1342,7 @@ if(isset($_POST["edit_btn"]) and $_GET["is_user"]==1) {
 <div class="form-group">
   <label class="col-md-4 control-label" for="textinput">Comment:</label>  
   <div class="col-md-4">
-  <input id="comment[]" name="comment[]" value="<?php echo $arr_search['response'][0]['add_info'][$q]['comment']; ?>" pattern="[a-zA-Z]{1,15}" maxlength="50" title="Maximum length is 50 characters" type="text" placeholder="" class="form-control input-md">
+  <input id="comment[]" name="comment[]" value="<?php echo $arr_search['response'][0]['add_info'][$q]['comment']; ?>"  pattern=".{50,}" required title="Minimum 50 characters" type="text" placeholder="" class="form-control input-md">
     
   </div>
 </div>
@@ -1326,17 +1372,10 @@ if(isset($_POST["edit_btn"]) and $_GET["is_user"]==1) {
 <div class="form-group">
   <label class="col-md-4 control-label" for="save_btn"></label>
   <div class="col-md-8">
-    <button id="edit_btn" name="edit_btn" type="submit" class="btn btn-success" style="width: 10em;">Save</button><span><span></span></span>
-    <button onclick="goBack()" class="btn btn-warning" style="width: 10em;"><a style="color:white" href="search.php">Cancel</a></button>
-    
-
-
-
+    <button  onclick="return check_file_type_org()" id="edit_btn" name="edit_btn" type="submit" class="btn btn-success" style="width: 10em;">Save</button><span><span></span></span>
+    <button onclick="goBack()" class="btn btn-warning" style="width: 10em;margin-top:0%;margin-left:-1%"><a style="color:white" href="search.php">Cancel</a></button>
   </div>
 </div>
-
-
-
 </fieldset>
 </form>
 
@@ -1344,7 +1383,7 @@ if(isset($_POST["edit_btn"]) and $_GET["is_user"]==1) {
 <form method="post" id="deleteForm" action="search.php" style="text-align:center">
 <input type="hidden" name="pk_delete" id="pk_delete" value="<?php echo $_GET['id'] ?>"></input>  
 <input type="hidden" name="is_user_delete" id="is_user_delete" value="<?php echo $_GET['is_user'] ?>"></input>  
-<button type="submit" onclick="return ConfirmDelete()" style="width: 10em;" class="btn btn-warning">
+<button type="submit" onclick="return ConfirmDelete()" style="width: 10em;margin-top:-7%;margin-left:30%" class="btn btn-warning">
   Delete
 </button>
 </form>
@@ -1506,10 +1545,35 @@ function enable_disable(that){
   $arr_img_download = json_decode($output_img_download,true);
   
 ?>
-<button style="background-color:#65AC4;margin-left:152%;margin-top:-13%" class="btn btn-success">
-<a target="_blank" style="color:white" data-toggle="modal" data-target="#myModal" href="view_popup.php?name=pan_card_details&link=<?php echo $arr_img_download[0]['url']; ?>">View</a>
-</button>
+<a target="_blank" data-toggle="modal" data-target="#myModal5" class="btn btn-info"  style="color:white;margin-left:152%;margin-top:-13%;" href="view_popup.php?name=pan_card_details&link=<?php echo $arr_img_download[0]['url']; ?>">VIEW</a>
+<!-- Modal -->
+<div class="modal fade" id="myModal5" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+    </div>
+  </div>
+</div>
 
+<a target="_blank" data-toggle="modal" data-target="#myModal5" class="btn btn-info"  style="color:white;margin-left:152%;margin-top:-13%;" href="view_popup.php?name=pan_card_details&link=<?php echo $arr_img_download[0]['url']; ?>">VIEW</a>
+<!-- Modal -->
+<div class="modal fade" id="myModal5" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+    </div>
+  </div>
+</div>
 </div>
 
 </div>
@@ -1551,17 +1615,23 @@ function enable_disable(that){
   $arr_img_download_2 = json_decode($output_img_download_2,true);
   
 ?>
+<a target="_blank" data-toggle="modal" data-target="#myModal6" class="btn btn-info" style="color:white;margin-left:88%;position:relative;" href="view_popup.php?name=telephone_bill_details&link=<?php echo $arr_img_download_2[0]['url']; ?>">VIEW</a>
 
-<button style="margin-left:88%;position:relative;" class="btn btn-success">
-
-<a target="_blank" style="color:white" data-toggle="modal" data-target="#myModal" href="view_popup.php?name=telephone_bill_details&link=<?php echo $arr_img_download_2[0]['url']; ?>">View</a>
-</button>
+<!-- Modal -->
+<div class="modal fade" id="myModal6" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+    </div>
+  </div>
 </div>
-
 </div>
-
-
-
+</div>
     <div class="form-group">
  <label class="col-md-4 control-label" for="checkboxes"></label>
  <div class="col-md-1">
@@ -1600,11 +1670,19 @@ function enable_disable(that){
   $arr_img_download_3 = json_decode($output_img_download_3,true);
   
 ?>
-
-<button style="margin-left:88%" class="btn btn-info">
-<a target="_blank" style="color:white" data-toggle="modal" data-target="#myModal" href="view_popup.php?name=bank_pass_book_details&link=<?php echo $arr_img_download_3[0]['url']; ?>">View</a>
-</button>
-
+<a target="_blank" data-toggle="modal" data-target="#myModal7" class="btn btn-info" style="color:white;margin-left:88%" href="view_popup.php?name=bank_pass_book_details&link=<?php echo $arr_img_download_3[0]['url']; ?>">VIEW</a>
+<!-- Modal -->
+<div class="modal fade" id="myModal7" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+    </div>
+  </div>
 </div>
 </div>
 
@@ -1645,11 +1723,21 @@ function enable_disable(that){
     
   ?>
 
-<button style="margin-left:88%;position:relative;" class="btn btn-info">
-<a target="_blank" style="color:white" data-toggle="modal" data-target="#myModal" href="view_popup.php?name=voter_id_details&link=<?php echo $arr_img_download_4[0]['url']; ?>">View</a>
-</button>
-
+<a target="_blank" style="color:white;margin-left:88%;position:relative;" data-toggle="modal" data-target="#myModal8" class="btn btn-info" href="view_popup.php?name=voter_id_details&link=<?php echo $arr_img_download_4[0]['url']; ?>">VIEW</a>
+<!-- Modal -->
+<div class="modal fade" id="myModal8" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+    </div>
   </div>
+</div>
+</div>
 
 </div>
 
@@ -1691,11 +1779,20 @@ function enable_disable(that){
     $arr_img_download_5 = json_decode($output_img_download_5,true);
     
   ?>
-
-<button style="margin-left:88%;" class="btn btn-info">
-<a target="_blank" style="color:white" data-toggle="modal" data-target="#myModal" href="view_popup.php?name=passport_details&link=<?php echo $arr_img_download_5[0]['url']; ?>">View</a>
-</button>
-
+<a target="_blank" style="color:white;margin-left:88%;" data-toggle="modal" data-target="#myModal9" class="btn btn-info" href="view_popup.php?name=passport_details&link=<?php echo $arr_img_download_5[0]['url']; ?>">VIEW</a>
+<!-- Modal -->
+<div class="modal fade" id="myModal9" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+    </div>
+  </div>
+</div>
   </div>
 </div>
 
@@ -1732,12 +1829,27 @@ function enable_disable(that){
     $arr_img_download_6 = json_decode($output_img_download_6,true);
     
   ?>
-<button style="background-color:#65AC4;margin-left:152%;margin-top:-13%" class="btn btn-info">
-<a target="_blank" style="color:white" data-toggle="modal" data-target="#myModal" href="view_popup.php?name=aadhar_card_details&link=<?php echo $arr_img_download_6[0]['url']; ?>">View</a>
-</button>
-
+<a target="_blank" style="color:white;background-color:#65AC4;margin-left:152%;margin-top:-13%" data-toggle="modal" data-target="#myModal10" class="btn btn-info" href="view_popup.php?name=aadhar_card_details&link=<?php echo $arr_img_download_6[0]['url']; ?>">VIEW</a>
+<!-- Modal -->
+<div class="modal fade" id="myModal10" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+    </div>
+<<<<<<< HEAD
   </div>
+</div>
 
+=======
+>>>>>>> c5376a06738c6baf4c054c0b9eb602b209a70164
+  </div>
+</div>
+ </div>
 </div>
 
 <?php for($q=0;$q<count($arr_search['response'][0]['add_info']);$q++){?>
@@ -1780,7 +1892,7 @@ function enable_disable(that){
 <div class="form-group">
   <label class="col-md-4 control-label" for="textinput">Comment</label>  
   <div class="col-md-4">
-  <input id="comment[]" name="comment[]" value="<?php echo $arr_search['response'][0]['add_info'][$q]['comment']; ?>" type="text" placeholder="" class="form-control input-md">
+  <input id="comment[]" name="comment[]" value="<?php echo $arr_search['response'][0]['add_info'][$q]['comment']; ?>" type="text" placeholder="" pattern=".{50,}" required title="Minimum 50 characters" class="form-control input-md">
     
   </div>
 </div>
@@ -1809,7 +1921,7 @@ function enable_disable(that){
   <label class="col-md-4 control-label" for="singlebutton"></label>
   <div class="col-md-4">
     <button  onclick="return check_file_type_user()" id="edit_btn" name="edit_btn" type="submit" class="btn btn-success" style="width: 10em;">Save</button><span><span></span></span>
-    <button onclick="goBack()" class="btn btn-warning"><a style="color:white" href="search.php">Cancel</a></button>
+    <button onclick="goBack()" class="btn btn-warning" style="width: 10em;margin-top:-13%;margin-left:30%"><a style="color:white" href="search.php">Cancel</a></button>
   </div>
 </div>
 
@@ -1842,7 +1954,7 @@ $arr_can_be_deleted_or_no = json_decode($output_can_be_deleted_or_no,true);
     <form method="post" id="deleteForm" action="search.php" style="text-align:center">
     <input type="hidden" name="pk_delete" id="pk_delete" value="<?php echo $_GET['id'] ?>"></input>  
     <input type="hidden" name="is_user_delete" id="is_user_delete" value="<?php echo $_GET['is_user'] ?>"></input>  
-    <button type="submit" onclick="return ConfirmDelete()" style="width: 10em;" class="btn btn-warning">
+    <button type="submit" onclick="return ConfirmDelete()" style="width: 10em;margin-top:-9%;margin-left:23%" class="btn btn-warning">
       Delete
     </button>
     </form>
@@ -1874,7 +1986,7 @@ $arr_can_be_deleted_or_no = json_decode($output_can_be_deleted_or_no,true);
 
 <?php } ?>
 
-<script type="text/javascript">
+<!-- <script type="text/javascript">
 $(function(){
 
 $('#trigger').click(function(){
@@ -1883,20 +1995,27 @@ $('#trigger').click(function(){
 })
 
 });
-</script>
+</script> -->
+<script type="text/javascript">
+$("div[id^='myModal']").each(function(){
+  
+  var currentModal = $(this);
+  
+});
 
-<div class="container">
+</script>
+<!-- <div class="container">
 
     
     <!-- Modal HTML -->
-    <div id="myModal" class="modal fade">
+    <!-- <div id="myModal" class="modal fade">
         <div class="modal-dialog">
             <div class="modal-content">
                 <!-- Content will be loaded here from "remote.php" file -->
-            </div>
+           <!--  </div>
         </div>
-    </div>
-</div>
+    </div> --> 
+<!-- </div>  -->
 <!--<script
   src="https://code.jquery.com/jquery-2.2.4.js"
   integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI="
@@ -1951,8 +2070,9 @@ function goBack() {
         e.preventDefault();
         if(x < max_fields){ //max input box allowed
             x++; //text box increment
-            $(wrapper).prepend('<br><div style="margin-left:50%;"><div class="form-group"><label class="control-label" for="selectbasic" style="margin-left:-325px;">Type of work</label><div class="col-md-6"><select id="type_of_work[]" name="type_of_work[]" class="form-control" style="margin-left:9%;width:208%"><option value="Option one">Option one</option><option value="Option two">Option two</option><option value="Option three">Option three</option></select></div></div><div class="form-group"> <label class="col-md-4 control-label" for="selectbasic" style="margin-left:-29%">Status</label><div class="col-md-6"><select id="status[]" name="status[]" style="width:210%;margin-left:-1%;" class="form-control"><option value="Pending">Pending</option><option value="Work in process">Work in process</option><option value="Completed">Completed</option></select></div></div><div class="form-group row"><label for="example-date-input" class="col-2 col-form-label" style="margin-left:-8.5%;";">DATE</label><div class="col-10"><input class="form-control datepicker" id="date[]" name="date[]" style="width:91%;margin-left:6.6%;margin-top:-6%;" type="text" readonly></div></div><div class="form-group"><label class="col-md-4 control-label" for="textinput" style="margin-left:-29%">Comment</label><div class="col-md-4"><input id="comment[]" name="comment[]" type="text" placeholder="" class="form-control input-md" style="width:342%"></div></div></center><a href="#" class="remove_field"><img src="images/del24.png" style="margin-left: 443px; margin-top: -81px;"></a></a></div>'); //add input box\
-            $( ".datepicker" ).datepick({dateFormat: 'dd/mm/yyyy',maxDate: 0});
+            $(wrapper).prepend('<br><div style="margin-left:50%;"><div class="form-group"><label class="control-label" for="selectbasic" style="margin-left:-325px;">Type of work</label><div class="col-md-6"><select id="type_of_work[]" name="type_of_work[]" class="form-control" style="margin-left:9%;width:208%"><option value="Option one">Option one</option><option value="Option two">Option two</option><option value="Option three">Option three</option></select></div></div><div class="form-group"> <label class="col-md-4 control-label" for="selectbasic" style="margin-left:-29%">Status</label><div class="col-md-6"><select id="status[]" name="status[]" style="width:210%;margin-left:-1%;" class="form-control"><option value="Pending">Pending</option><option value="Work in process">Work in process</option><option value="Completed">Completed</option></select></div></div><div class="form-group row"><label for="example-date-input" class="col-2 col-form-label" style="margin-left:-8.5%;";">DATE</label><div class="col-10"><input class="form-control datepicker" id="date[]" name="date[]" style="width:91%;margin-left:6.6%;margin-top:-6%;" type="text"></div></div><div class="form-group"><label class="col-md-4 control-label" for="textinput" style="margin-left:-29%">Comment</label><div class="col-md-4"><input id="comment[]" name="comment[]" pattern=".{50,}" required title="Minimum 50 characters" type="text" placeholder="" class="form-control input-md" style="width:342%" required/></div></div></center><a href="#" class="remove_field"><img src="images/del24.png" style="margin-left: 443px; margin-top: -81px;"></a></a></div>'); //add input box\
+            $( ".datepicker" ).datepick({dateFormat: 'dd/mm/yyyy'});
+>>>>>>> 21,19th and 4th issue compeleted
         }
     });
     
