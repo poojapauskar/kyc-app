@@ -1158,7 +1158,7 @@ if ($_POST['uid'] != '' and $_GET["is_user"]==1){
 <div class="form-group">
   <label class="col-md-4 control-label" for="textinput">Comment</label>  
   <div class="col-md-4">
-  <input id="comment[]" name="comment[]" pattern=".{50,}" required title="Minimum 50 characters" type="text" placeholder="" class="form-control input-md" required/>
+  <input id="comment[]" name="comment[]" pattern=".{50,}" title="Minimum 50 characters" type="text" placeholder="" class="form-control input-md" required/>
     
   </div>
 </div>
@@ -1250,7 +1250,7 @@ function enable_disable(that){
 <div class="form-group">
   <label class="col-md-4 control-label" for="textinput">Name:</label>  
   <div class="col-md-4">
-  <input id="name" name="name" value="<?php echo $_POST['name'] ?>" type="text" placeholder="" class="form-control input-md" required>
+  <input id="name" name="name" value="<?php echo $_POST['name'] ?>" type="text" placeholder="" class="form-control input-md" required/>
     
   </div>
 </div>
@@ -1299,7 +1299,7 @@ function enable_disable(that){
 <div class="form-group">
   <label class="col-md-4 control-label" for="textinput">PAN:</label>  
   <div class="col-md-4">
-  <input pattern="-?[a-zA-Z]{5}[0-9]{4}[a-zA-Z]{1}?" title="Must be of the form ARLPA0061H" id="pan" name="pan" value="<?php echo $_POST['pan'] ?>" type="text" placeholder="" class="form-control input-md">
+  <input pattern="-?[a-zA-Z]{5}[0-9]{4}[a-zA-Z]{1}?" title="Must be of the form ARLPA0061H" id="pan" name="pan" value="<?php echo $_POST['pan'] ?>" type="text" placeholder="" class="form-control input-md" required/>
     
   </div>
 </div>
@@ -1408,14 +1408,12 @@ function enable_disable(that){
 <div class="form-group">
   <label class="col-md-4 control-label" for="textinput">Comment</label>  
   <div class="col-md-4">
-  <input id="comment[]" name="comment[]" type="text" pattern=".{50,}" required title="Minimum 50 characters" placeholder="" class="form-control input-md" required/>
+  <input id="comment[]" name="comment[]" type="text" pattern=".{50,}" title="Minimum 50 characters" placeholder="" class="form-control input-md" required/>
   </div>
 </div>
-
-<a href="#" class="remove_field_pre1">
- <img src="images/del24.png" style="margin-left: 900px; margin-top: -81px;">
+<a href="#" class="remove_field_pre1" style="margin-left: 900px; margin-top: -42px;position:absolute">
+ <img src="images/del24.png" >
 </a>
-
 </div>
 
 <div class="form-group">
@@ -1516,6 +1514,7 @@ $('#trigger').click(function(){
         e.preventDefault();
         if(x < max_fields){ //max input box allowed
             x++; //text box increment
+
             $(wrapper).prepend('<br><div style="margin-left:50%;"><div class="form-group"><label class="control-label" for="selectbasic" style="margin-left:-325px;">Type of work</label><div class="col-md-6"><select id="type_of_work[]" name="type_of_work[]" class="form-control" style="margin-left:9%;width:208%"><option value="Option one">Option one</option><option value="Option two">Option two</option><option value="Option three">Option three</option></select></div></div><div class="form-group"> <label class="col-md-4 control-label" for="selectbasic" style="margin-left:-29%">Status</label><div class="col-md-6"><select id="status[]" name="status[]" style="width:210%;margin-left:-1%;" class="form-control"><option value="Pending">Pending</option><option value="Work in process">Work in process</option><option value="Completed">Completed</option></select></div></div><div class="form-group row"><label for="example-date-input" class="col-2 col-form-label" style="margin-left:-8.5%;";">DATE</label><div class="col-10"><input class="form-control datepicker" id="date[]" name="date[]" style="width:91%;margin-left:6.6%;margin-top:-6%;" type="text"></div></div><div class="form-group"><label class="col-md-4 control-label" for="textinput" style="margin-left:-29%">Comment</label><div class="col-md-4"><input id="comment[]" name="comment[]" pattern=".{50,}" required title="Minimum 50 characters" type="text" placeholder="" class="form-control input-md" style="width:342%"></div></div></center><a href="#" class="remove_field"><img src="images/del24.png" style="margin-left: 443px; margin-top: -81px;"></a></a></div>'); //add input box\
             $( ".datepicker" ).datepick({dateFormat: 'dd/mm/yyyy'});
         }
