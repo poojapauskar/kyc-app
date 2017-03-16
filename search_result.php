@@ -131,8 +131,6 @@
 </head>
 <body style="background-color:#E8E8E8;overflow-x:hidden;>
 
-<body style="background-color:#E8E8E8;overflow-x:hidden;>
-
 <?php
 /*echo $_POST['search'];*/
 // if its cumin from edit org to search org then query based on edit org name
@@ -163,8 +161,6 @@ $arr_search = json_decode($output_search,true);
 
 /*echo count($arr_search['response'][0]['partner_details'])*/
 ?>
-
-
 <div class="demo-layout-transparent mdl-layout mdl-js-layout">
   <header style="background-color:#08426a;height:110px;-webkit-box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23) !important;
      -moz-box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23) !important;
@@ -191,7 +187,7 @@ $arr_search = json_decode($output_search,true);
 
 <?php if (count($arr_search['response'][0]['add_info']) !== 0) { ?>
     
-      <div class="alert" style="margin-top:0%;">
+      <div class="alert" style="margin-top:0%;padding-bottom:2%;">
         <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
         <strong>
 
@@ -212,40 +208,18 @@ $arr_search = json_decode($output_search,true);
 <?php if(count($arr_search['response'][0]['add_info']) == 0){
   $margin1="margin-top:35%";
   }else{
-    $margin1="margin-top:20%";
+    $margin1="margin-top:0%";
   }?>
 
-      <div class="mdl-grid" style="margin-left:80%;<?php echo $margin1; ?>">
-
-      <?php if (count($arr_search['response'][0]['add_info']) !== 0) { ?>
-        <div class="mdl-card mdl-cell mdl-cell--12-col mdl-cell--10-col-tablet mdl-shadow--2dp">
-          <div class="mdl-card__title">
-            <h1 class="mdl-card__title-text">Description and Status of Work</h1>
-          </div>
-          <div class="mdl-card__supporting-text">
-            <?php for($q=0;$q<count($arr_search['response'][0]['add_info']);$q++){?>
-                   <strong>Type of work: </strong><?php echo $arr_search['response'][0]['add_info'][$q]['type_of_work'];echo "<br>";?>
-                   <strong>Status: </strong><?php echo $arr_search['response'][0]['add_info'][$q]['status'];echo "<br>";?>
-                   <strong>Date: </strong><?php echo $arr_search['response'][0]['add_info'][$q]['date'];echo "<br>";?>
-                   <strong>Comment: </strong><?php echo $arr_search['response'][0]['add_info'][$q]['comment'];echo "<br>";?>
-                   <br>
-                   <br>
-             <?php }?>
-          </div>
-        </div>
-        <?php } ?>
-
-      </div>
-
+      <div class="mdl-grid">
 <?php if(count($arr_search['response'][0]['add_info']) == 0){
-  $margin="margin-top:-32%";
+  $margin="margin-top:0%";
   }else{
-    $margin="margin-top:-32%";
+    $margin="margin-top:0%";
   }?>
 
 <?php if ($_GET['is_user']==0) { ?>
-<div class="mdl-grid">
-  <div class="mdl-cell mdl-cell--12-col">
+  <div class="mdl-cell mdl-cell--9-col">
 
 <form class="form-horizontal" method="post" action="edit.php?is_user=0&id=<?php echo $_GET['id'] ?>" enctype="multipart/form-data" style="<?php echo $margin; ?>">
 
@@ -253,7 +227,7 @@ $arr_search = json_decode($output_search,true);
  <input type="hidden" value="<?php echo $arr_search['response'][0]['organization_details']['pk'] ?>" name="org_id" id="org_id"></input>
 
 <!-- Select Basic -->
-<div class="form-group" style="margin-top:10%">
+<div class="form-group" style="margin-top:0%">
   <label class="col-md-4 control-label" for="type_of_org">Type of Organization:</label>
   <div class="col-md-4">
     <select id="type_of_org" name="type_of_org" class="form-control"  readonly>
@@ -325,18 +299,14 @@ $arr_search = json_decode($output_search,true);
   
 ?>
 </div>
-<a target="_blank" data-toggle="modal" data-target="#myModal1" class="btn btn-info" style="color:white;background-color:#176fac;margin-top:-25%;margin-left:129%;" href="view_popup.php?name=reg_certificate_details&link=<?php echo $arr_img_download[0]['url']; ?>">
+<a target="_blank" data-toggle="modal" data-target="#myModal1" class="btn btn-info" style="color:white;background-color:#176fac;margin-top:-30%;margin-left:139%;" href="view_popup.php?name=reg_certificate_details&link=<?php echo $arr_img_download[0]['url']; ?>">
 VIEW
 </a>
 <!-- Modal -->
 <div class="modal fade" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-      </div>
       <div class="modal-body">
-        ...
       </div>
     </div>
   </div>
@@ -348,7 +318,7 @@ VIEW
 <div class="form-group" style="margin-top:-3%">
   <label class="col-md-4 control-label" for="textinput" style="margin-left:-67%">PAN: </label>  
   <div class="col-md-4">
-  <input id="pan" name="pan" style="margin-left:-108%" pattern="-?[a-zA-Z]{5}[0-9]{4}[a-zA-Z]{1}?" value="<?php echo $arr_search['response'][0]['organization_details']['pan'] ?>" type="text" placeholder="PAN Card Number" class="form-control input-md" readonly/>
+  <input id="pan" name="pan" style="margin-left:-112%" pattern="-?[a-zA-Z]{5}[0-9]{4}[a-zA-Z]{1}?" value="<?php echo $arr_search['response'][0]['organization_details']['pan'] ?>" type="text" placeholder="PAN Card Number" class="form-control input-md" readonly/>
   </div>
 </div>
 
@@ -378,7 +348,7 @@ VIEW
   
 ?>
 </div>
-<a style="color:white;background-color:#176fac;margin-top:-26%;margin-left:131%;" data-toggle="modal" data-target="#myModal2" class="btn btn-info" href="view_popup.php?name=pan_card_details&link=<?php echo $arr_img_download_2[0]['url']; ?>">VIEW</a>
+<a style="color:white;background-color:#176fac;margin-top:-30%;margin-left:139%;" data-toggle="modal" data-target="#myModal2" class="btn btn-info" href="view_popup.php?name=pan_card_details&link=<?php echo $arr_img_download_2[0]['url']; ?>">VIEW</a>
 
 <!-- Modal -->
 <div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -402,7 +372,7 @@ VIEW
 <div class="form-group" style="margin-top:-3%">
   <label class="col-md-4 control-label" for="textarea" style="margin-left:-67%">Address:</label>
   <div class="col-md-4">                     
-    <textarea class="form-control" id="address" name="address" style="margin-left:-107%" readonly><?php echo $arr_search['response'][0]['organization_details']['address'] ?></textarea>
+    <textarea class="form-control" id="address" name="address" style="margin-left:-109%" readonly><?php echo $arr_search['response'][0]['organization_details']['address'] ?></textarea>
   </div>
 </div>
 
@@ -447,7 +417,7 @@ VIEW
 ?>
 </div> 
 <br>
-<a target="_blank" data-toggle="modal" data-target="#myModal3" style="color:white;margin-left:75%;margin-top:-7%;position: relative;" class="btn btn-info" href="view_popup.php?name=telephone_bill_details&link=<?php echo $arr_img_download_3[0]['url']; ?>">VIEW</a>
+<a target="_blank" data-toggle="modal" data-target="#myModal3" style="color:white;margin-left:77%;margin-top:-9%;position: relative;" class="btn btn-info" href="view_popup.php?name=telephone_bill_details&link=<?php echo $arr_img_download_3[0]['url']; ?>">VIEW</a>
 <!-- Modal -->
 <div class="modal fade" id="myModal3" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog">
@@ -503,7 +473,7 @@ VIEW
   
 ?>
 
-<a target="_blank" data-toggle="modal" data-target="#myModal4" class="btn btn-info " style="color:white;background-color:#176fac;margin-top:-144%;margin-left:476%;" href="view_popup.php?name=pass_book_details&link=<?php echo $arr_img_download_4[0]['url']; ?>">
+<a target="_blank" data-toggle="modal" data-target="#myModal4" class="btn btn-info " style="color:white;background-color:#176fac;position:absolute;margin-top:-80%;margin-left:310%;" href="view_popup.php?name=pass_book_details&link=<?php echo $arr_img_download_4[0]['url']; ?>">
 VIEW</a>
 <!-- Modal -->
 <div class="modal fade" id="myModal4" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -563,8 +533,10 @@ VIEW</a>
 </fieldset>
 </form>
 
-<?php } else { ?>
 
+
+<?php } else { ?>
+<div class="mdl-cell mdl-cell--9-col">
 <form style="<?php echo $margin; ?>" onsubmit="return proceed();" name="Form" id="Form" class="form-horizontal" method="post" action="edit.php?is_user=1&id=<?php echo $_GET['id'] ?>" enctype="multipart/form-data">
 <fieldset>
 <?php
@@ -586,7 +558,7 @@ VIEW</a>
   
 ?>
 
-<div style="margin-top:10%">
+<div style="margin-top:0%">
  <input type="hidden" value="<?php echo $arr_search['response'][0]['user_details']['pk'] ?>" name="user_id" id="user_id"></input>
 
 <?php if($arr_img[0]['url']=="" || (strpos($arr_img[0]['url'], 'https://kyc-app-bucket.s3.amazonaws.com/?Signature') !== false)){
@@ -595,15 +567,15 @@ VIEW</a>
     $img_lnk=$arr_img[0]['url'];
 }?>
 
-<img class="profile-pic" style="margin-left:77%;margin-top:25%;position:absolute;z-index:2;" src="<?php echo $img_lnk; ?>" />
-<div class="upload-button" style="position:absolute;z-index:2;margin-left:79%;cursor:pointer;margin-top:40%;"><button disabled>Upload Image</button></div>
+<img class="profile-pic" style="margin-left:0%;margin-top:0%;position:absolute;z-index:2;" src="<?php echo $img_lnk; ?>" />
+<div class="upload-button" style="position:absolute;z-index:2;margin-left:0%;cursor:pointer;margin-top:13%;"><button disabled>Upload Image</button></div>
 
 
 <input name="image" id="image" class="file-upload1" style="display:none;position:absolute;z-index:-2;margin-left:44%;margin-top:16%;" type="file">
 <!-- Text input-->
 <div class="form-group">
   <label class="col-md-4 control-label" for="textinput">UID:</label>  
-  <div class="col-md-4">
+  <div class="col-md-5">
   <input id="uid" name="uid" type="text" value="<?php echo $arr_search['response'][0]['user_details']['uid'] ?>" placeholder="" class="form-control input-md" readonly>
     
   </div>
@@ -612,7 +584,7 @@ VIEW</a>
 <!-- Text input-->
 <div class="form-group">
   <label class="col-md-4 control-label" for="textinput">Name:</label>  
-  <div class="col-md-4">
+  <div class="col-md-5">
   <input id="name" name="name" value="<?php echo $arr_search['response'][0]['user_details']['name'] ?>" type="text" placeholder="" class="form-control input-md" readonly>
     
   </div>
@@ -620,7 +592,7 @@ VIEW</a>
 <!--date-->
 <div class="form-group">
   <label for="textinput" class="col-md-4 control-label">Dob:</label>
-  <div class="col-md-4">
+  <div class="col-md-5">
     <input style="wisth:100% !important" class="form-control input-md" id="date" name="date" value="<?php echo $arr_search['response'][0]['user_details']['dob'] ?>" style="width:31%;margin-left:34.6%;margin-top:-2%;" type="text" readonly>
   </div>
 </div>
@@ -628,7 +600,7 @@ VIEW</a>
 <!-- Select Basic -->
 <div class="form-group">
   <label class="col-md-4 control-label" for="selectbasic">Profession:</label>
-  <div class="col-md-4">
+  <div class="col-md-5">
     <select id="profession" name="profession" class="form-control" readonly>
       <option value="<?php echo $arr_search['response'][0]['user_details']['proffesion'] ?>"><?php echo $arr_search['response'][0]['user_details']['proffesion'] ?></option>
     </select>
@@ -638,7 +610,7 @@ VIEW</a>
 <!-- Textarea -->
 <div class="form-group">
   <label class="col-md-4 control-label" for="textarea">Address:</label>
-  <div class="col-md-4">                     
+  <div class="col-md-5">                     
     <textarea class="form-control" id="address" name="address" value="<?php echo $arr_search['response'][0]['user_details']['address'] ?>" readonly><?php echo $arr_search['response'][0]['user_details']['address'] ?></textarea>
   </div>
 </div>
@@ -646,7 +618,7 @@ VIEW</a>
 <!-- Text input-->
 <div class="form-group">
   <label class="col-md-4 control-label" for="textinput">PAN:</label>  
-  <div class="col-md-4">
+  <div class="col-md-5">
   <input id="pan" name="pan" value="<?php echo $arr_search['response'][0]['user_details']['pan'] ?>" type="text" placeholder="" class="form-control input-md" readonly>
     
   </div>
@@ -656,7 +628,7 @@ VIEW</a>
 <div class="form-group">
   <label class="col-md-4 control-label" for="filebutton" >PAN card:</label>
 
-<div class="col-md-4">
+<div class="col-md-5">
   <input id="pan_upload" class="form-control input-md" value="<?php echo $arr_search['response'][0]['pan_card_details'][0]['name']; ?>" readonly/>
 <div class="fileUpload btn btn-info" style="margin-left:105%;margin-top:-12%;">
   <label style="font-weight:500;margin-bottom: 2px;">ATTACH</label>
@@ -679,7 +651,7 @@ VIEW</a>
   $arr_img_download = json_decode($output_img_download,true);
   
 ?>
-<a target="_blank" class="btn btn-info" data-toggle="modal" data-target="#myModal5" style="background-color:#176fac;margin-top:-26%;margin-left:129%;color:white" href="view_popup.php?name=pan_card_details&link=<?php echo $arr_img_download[0]['url']; ?>">
+<a target="_blank" class="btn btn-info" data-toggle="modal" data-target="#myModal5" style="background-color:#176fac;margin-top:-26%;margin-left:133%;color:white" href="view_popup.php?name=pan_card_details&link=<?php echo $arr_img_download[0]['url']; ?>">
 VIEW</a>
 <!-- Modal -->
 <div class="modal fade" id="myModal5" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -701,7 +673,7 @@ VIEW</a>
 <div class="form-group">
   <label class="col-md-4 control-label" for="checkboxes">Address Proof</label>
 
-<div class="col-md-1">
+<div class="col-md-2">
 <label class="checkbox-inline" for="checkboxes-0">
 
 <?php if($arr_search['response'][0]['telephone_bill_details'][0]['name'] != ''){
@@ -741,7 +713,7 @@ VIEW</a>
   
 ?>
 
-<a target="_blank" data-toggle="modal" data-target="#myModal6" class="btn btn-info" style="color:white;margin-left:75%;margin-top:-7%;position: relative;" href="view_popup.php?name=telephone_bill_details&link=<?php echo $arr_img_download_2[0]['url']; ?>">VIEW</a>
+<a target="_blank" data-toggle="modal" data-target="#myModal6" class="btn btn-info" style="color:white;margin-left:86%;margin-top:-9%;position: relative;" href="view_popup.php?name=telephone_bill_details&link=<?php echo $arr_img_download_2[0]['url']; ?>">VIEW</a>
 <!-- Modal -->
 <div class="modal fade" id="myModal6" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog">
@@ -761,7 +733,7 @@ VIEW</a>
 
     <div class="form-group">
  <label class="col-md-4 control-label" for="checkboxes"></label>
- <div class="col-md-1">
+ <div class="col-md-2">
    <label class="checkbox-inline" for="checkboxes-0">
    <?php if($arr_search['response'][0]['bank_pass_book_details'][0]['name'] != ''){
       $check_box_select2="checked";
@@ -798,7 +770,7 @@ VIEW</a>
   
 ?>
 
-<a target="_blank" data-toggle="modal" data-target="#myModal7" style="color:white;margin-left:75%;margin-top:-9%;position:relative;" class="btn btn-info" href="view_popup.php?name=bank_pass_book_details&link=<?php echo $arr_img_download_3[0]['url']; ?>">VIEW</a>
+<a target="_blank" data-toggle="modal" data-target="#myModal7" style="color:white;margin-left:86%;margin-top:-11%;position:relative;" class="btn btn-info" href="view_popup.php?name=bank_pass_book_details&link=<?php echo $arr_img_download_3[0]['url']; ?>">VIEW</a>
 <!-- Modal -->
 <div class="modal fade" id="myModal7" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog">
@@ -820,7 +792,7 @@ VIEW</a>
 <!--address proof-->
 <div class="form-group">
   <label class="col-md-4 control-label" for="checkboxes">ID Proof</label>
-  <div class="col-md-1">
+  <div class="col-md-2">
    <label class="checkbox-inline" for="checkboxes-0">
 
    <?php if($arr_search['response'][0]['voter_id_details'][0]['name'] != ''){
@@ -855,7 +827,7 @@ VIEW</a>
     $arr_img_download_4 = json_decode($output_img_download_4,true);
     
   ?>
-<a target="_blank" data-toggle="modal" data-target="#myModal8" class="btn btn-info" style="margin-left:75%;margin-top:-9%;position: relative;color:white;position:relative" href="view_popup.php?name=voter_id_details&link=<?php echo $arr_img_download_4[0]['url']; ?>">VIEW</a>
+<a target="_blank" data-toggle="modal" data-target="#myModal8" class="btn btn-info" style="margin-left:86%;margin-top:-9%;position: relative;color:white;position:relative" href="view_popup.php?name=voter_id_details&link=<?php echo $arr_img_download_4[0]['url']; ?>">VIEW</a>
 <!-- Modal -->
 <div class="modal fade" id="myModal8" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog">
@@ -873,7 +845,7 @@ VIEW</a>
 
     <div class="form-group">
  <label class="col-md-4 control-label" for="checkboxes"></label>
- <div class="col-md-1">
+ <div class="col-md-2">
    <label class="checkbox-inline" for="checkboxes-0">
    <?php if($arr_search['response'][0]['passport_details'][0]['name'] != ''){
       $check_box_select4="checked";
@@ -907,7 +879,7 @@ VIEW</a>
     $arr_img_download_5 = json_decode($output_img_download_5,true);
     
   ?>
-<a target="_blank" data-toggle="modal" data-target="#myModal9" class="btn btn-info" style="color:white;margin-left:75%;margin-top:-7%;position: relative;" href="view_popup.php?name=passport_details&link=<?php echo $arr_img_download_5[0]['url']; ?>">
+<a target="_blank" data-toggle="modal" data-target="#myModal9" class="btn btn-info" style="color:white;margin-left:86%;margin-top:-9%;position: relative;" href="view_popup.php?name=passport_details&link=<?php echo $arr_img_download_5[0]['url']; ?>">
 VIEW</a>
 <!-- Modal -->
 <div class="modal fade" id="myModal9" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -928,7 +900,7 @@ VIEW</a>
 <!-- Text input-->
 <div class="form-group">
   <label class="col-md-4 control-label" for="textinput">Adhar card No.</label>  
-  <div class="col-md-4">
+  <div class="col-md-5">
   <input id="aadhar_no" name="aadhar_no" value="<?php echo $arr_search['response'][0]['user_details']['aadhar_no'] ?>" type="text" placeholder="" class="form-control input-md" readonly>
     
   </div>
@@ -938,12 +910,12 @@ VIEW</a>
 <div class="form-group">
   <label class="col-md-4 control-label" for="filebutton">Adhar card:</label>
 
-  <div class="col-md-4">
-  <?php echo $arr_search['response'][0]['aadhar_card_details'][0]['name']; ?>
+  <div class="col-md-5">
+  <input id="pan_upload" class="form-control input-md" value="<?php echo $arr_search['response'][0]['aadhar_card_details'][0]['name']; ?>" disabled>
   </div>
 
   <div class="col-md-4">
-   <div class="fileUpload btn btn-info" style="margin-left:-4%;margin-top:-1%;">
+   <div class="fileUpload btn btn-info" style="margin-left:245%;margin-top:-17%;">
     <label style="font-weight:500;margin-bottom: 2px;">ATTACH</label>
     <input id="aadhar_card" style="margin-left:-47%" name="aadhar_card" value="<?php echo $_POST['aadhar_card'] ?>" class="upload" type="file" disabled>
   
@@ -966,14 +938,11 @@ VIEW</a>
 
 </div>
   </div>
-<a target="_blank" data-toggle="modal" data-target="#myModal10" class="btn btn-info" style="color:white;margin-left:75%;margin-top:-7%;position: relative;" href="view_popup.php?name=aadhar_card_details&link=<?php echo $arr_img_download_6[0]['url']; ?>">VIEW</a>
+<a target="_blank" data-toggle="modal" data-target="#myModal10" class="btn btn-info" style="color:white;margin-left:86%;margin-top:-11%;position: relative;" href="view_popup.php?name=aadhar_card_details&link=<?php echo $arr_img_download_6[0]['url']; ?>">VIEW</a>
 <!-- Modal -->
 <div class="modal fade" id="myModal10" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-      </div>
       <div class="modal-body">
         ...
       </div>
@@ -986,7 +955,7 @@ VIEW</a>
   <label class="col-md-4 control-label" for="singlebutton"></label>
   <div class="col-md-4">
     <button id="" name="" class="btn btn-success" style="width: 10em;">Edit</button><span><span></span></span>
-    <button onclick="ClickEvent()" class="btn btn-warning"><a style="color:white" href="search.php">Back</a></button>
+    <button onclick="ClickEvent()" style="width: 10em;margin-top:-19%;margin-left:52%" class="btn btn-warning"><a style="color:white" href="search.php">Back</a></button>
   </div>
 </div>
 
@@ -994,16 +963,27 @@ VIEW</a>
 </form>
 
 <?php } ?>
+</label>
+</div>
 
-<script type="text/javascript">
-// $(function(){
-
-// $('#trigger').click(function(){
-//   $('#myModal').modal('show');
-//   return false;
-// })
-
-// });
+      <?php if (count($arr_search['response'][0]['add_info']) !== 0) { ?>
+        <div class="mdl-card content-column mdl-cell mdl-cell--3-col mdl-cell--4-col-tablet mdl-cell--4-col-phone mdl-cell--top">
+          <div class="mdl-card__title">
+            <h1 class="mdl-card__title-text">Description and Status of Work</h1>
+          </div>
+          <div class="mdl-card__supporting-text">
+            <?php for($q=0;$q<count($arr_search['response'][0]['add_info']);$q++){?>
+                   <strong>Type of work: </strong><?php echo $arr_search['response'][0]['add_info'][$q]['type_of_work'];echo "<br>";?>
+                   <strong>Status: </strong><?php echo $arr_search['response'][0]['add_info'][$q]['status'];echo "<br>";?>
+                   <strong>Date: </strong><?php echo $arr_search['response'][0]['add_info'][$q]['date'];echo "<br>";?>
+                   <strong>Comment: </strong><?php echo $arr_search['response'][0]['add_info'][$q]['comment'];echo "<br>";?>
+                   <br>
+                   <br>
+             <?php }?>
+          </div>
+        </div>
+        <?php } ?>
+        </div>
 
 <script type="text/javascript">
 $("div[id^='myModal']").each(function(){
@@ -1013,9 +993,6 @@ $("div[id^='myModal']").each(function(){
 });
 
 </script>
-</script>
-
-
 <!-- <div class="container">
 <!-- Modal HTML -->
     <!-- <div id="myModal" class="modal fade">
@@ -1027,8 +1004,6 @@ $("div[id^='myModal']").each(function(){
     </div> --> 
 <!-- </div> -->
 
-</div>
-</div>
 </main>
 </body>
 </html>
