@@ -311,7 +311,6 @@ VIEW
     </div>
   </div>
 </div>
-
 </div>
 </div>
 
@@ -667,7 +666,6 @@ VIEW</a>
     </div>
   </div>
 </div>
-
 </div>
 </div>
 
@@ -788,6 +786,7 @@ VIEW</a>
 </div>
 
 </div>
+
 <!--ID pROOF-->
 
 <!--address proof-->
@@ -842,7 +841,6 @@ VIEW</a>
     </div>
   </div>
 </div>
-
   </div>
 
     <div class="form-group">
@@ -896,7 +894,6 @@ VIEW</a>
     </div>
   </div>
 </div>
-
   </div>
 
 
@@ -952,7 +949,6 @@ VIEW</a>
     </div>
   </div>
 </div>
-
   </div>
 <!-- Button -->
 <div class="form-group">

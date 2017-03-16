@@ -1147,7 +1147,6 @@ VIEW</a>
 </div>
 </div> 
 
-
 <div class="form-group">
  <label class="col-md-4 control-label" for="checkboxes"></label>
  <div class="col-md-4"> 
@@ -1560,7 +1559,6 @@ function enable_disable(that){
     </div>
   </div>
 </div>
->>>>>>> conflict resolved in 6th issue
 
 <a target="_blank" data-toggle="modal" data-target="#myModal5" class="btn btn-info"  style="color:white;margin-left:152%;margin-top:-13%;" href="view_popup.php?name=pan_card_details&link=<?php echo $arr_img_download[0]['url']; ?>">VIEW</a>
 <!-- Modal -->
@@ -1617,7 +1615,6 @@ function enable_disable(that){
   $arr_img_download_2 = json_decode($output_img_download_2,true);
   
 ?>
-
 <a target="_blank" data-toggle="modal" data-target="#myModal6" class="btn btn-info" style="color:white;margin-left:88%;position:relative;" href="view_popup.php?name=telephone_bill_details&link=<?php echo $arr_img_download_2[0]['url']; ?>">VIEW</a>
 
 <!-- Modal -->
@@ -1634,7 +1631,6 @@ function enable_disable(that){
   </div>
 </div>
 </div>
-
 </div>
     <div class="form-group">
  <label class="col-md-4 control-label" for="checkboxes"></label>
@@ -1687,6 +1683,7 @@ function enable_disable(that){
       </div>
     </div>
   </div>
+</div>
 </div>
 
 <!--ID pROOF-->
@@ -1796,7 +1793,6 @@ function enable_disable(that){
     </div>
   </div>
 </div>
-
   </div>
 </div>
 
@@ -1845,11 +1841,15 @@ function enable_disable(that){
         ...
       </div>
     </div>
+<<<<<<< HEAD
   </div>
 </div>
 
+=======
+>>>>>>> c5376a06738c6baf4c054c0b9eb602b209a70164
   </div>
-
+</div>
+ </div>
 </div>
 
 <?php for($q=0;$q<count($arr_search['response'][0]['add_info']);$q++){?>
