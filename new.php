@@ -1208,6 +1208,8 @@ function enable_disable(that){
       $('.partner_names').attr('disabled', false);
       $('.partner_designations').attr('disabled', false);
       $('.partner_others').attr('disabled', false);
+      $('.partner_btn').attr('disabled', false);
+      $('.new_entry_btn').attr('disabled', false);
   }
 }
 </script>
