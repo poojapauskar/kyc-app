@@ -1559,21 +1559,6 @@ function enable_disable(that){
     </div>
   </div>
 </div>
-
-<a target="_blank" data-toggle="modal" data-target="#myModal5" class="btn btn-info"  style="color:white;margin-left:152%;margin-top:-13%;" href="view_popup.php?name=pan_card_details&link=<?php echo $arr_img_download[0]['url']; ?>">VIEW</a>
-<!-- Modal -->
-<div class="modal fade" id="myModal5" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-      </div>
-      <div class="modal-body">
-        ...
-      </div>
-    </div>
-  </div>
-</div>
 </div>
 
 </div>
