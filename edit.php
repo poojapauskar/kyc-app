@@ -1879,8 +1879,8 @@ function enable_disable(that){
   </div>
 </div>
 
-<a href="#" class="remove_field_pre1">
- <img src="images/del24.png" style="margin-left: 900px; margin-top: -81px;">
+<a href="#" class="remove_field_pre1" style="margin-left: 900px; margin-top: -44px;position:absolute">
+ <img src="images/del24.png">
 </a>
 
 </div>
