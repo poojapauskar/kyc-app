@@ -4,7 +4,6 @@
   <title></title>
 
   <link rel="stylesheet" type="text/css" href="css/material.indigo-pink.min.css">
-
   <link rel="stylesheet" href="css/bootstrap.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
@@ -16,7 +15,6 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 
   <script src="https://storage.googleapis.com/code.getmdl.io/1.0.6/material.min.js"></script>
-  <!--  <link rel="stylesheet" href="https://storage.googleapis.com/code.getmdl.io/1.0.6/material.indigo-pink.min.css"> -->
   <script type="text/javascript">
     $(document).ready(function() {
 
@@ -129,7 +127,7 @@
 
   </style>
 </head>
-<body style="background-color:#E8E8E8;overflow-x:hidden;>
+<body style="background-color:#E8E8E8;overflow-x:hidden;">
 
 <?php
 /*echo $_POST['search'];*/
@@ -161,16 +159,17 @@ $arr_search = json_decode($output_search,true);
 
 /*echo count($arr_search['response'][0]['partner_details'])*/
 ?>
-<div class="demo-layout-transparent mdl-layout mdl-js-layout">
+
+   <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
   <header style="background-color:#08426a;height:110px;-webkit-box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23) !important;
      -moz-box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23) !important;
-     box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23) !important;" class="mdl-layout__header mdl-layout__header--transparent">
+     box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23) !important;" class="mdl-layout__header">
     <div class="mdl-layout__header-row" >
-
-    <a href="search.php"><img style="margin-top:36%;margin-left:28px;width:50px;height:50px" src="images/green.png"></img></a><h5 style="margin-left:35%;margin-top:9%;"><?php echo $arr_search['response'][0]['organization_details']['name'] ?><?php echo $arr_search['response'][0]['user_details']['name'] ?></h5>
+        <a href="search.php"><img style="margin-top:36%;margin-left:28px;width:50px;height:50px" src="images/green.png"></img></a><h5 style="margin-left:35%;margin-top:9%;"><?php echo $arr_search['response'][0]['organization_details']['name'] ?><?php echo $arr_search['response'][0]['user_details']['name'] ?></h5>
          <span class="mdl-layout-title" style="margin-left:26%;margin-top:7%;">KYCApp</span>
           <!-- Add spacer, to align navigation to the right -->
-      </header>
+    </div>
+  </header>
       <div class="mdl-layout__drawer">
         <span class="mdl-layout-title">Title</span>
         <nav class="mdl-navigation">
@@ -184,9 +183,8 @@ $arr_search = json_decode($output_search,true);
           <a class="mdl-navigation__link" href="">Contact</a>
         </nav>
       </div>
-
+<main class="mdl-layout__content">
 <?php if (count($arr_search['response'][0]['add_info']) !== 0) { ?>
-    
       <div class="alert" style="margin-top:0%;padding-bottom:2%;">
         <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
         <strong>
@@ -199,12 +197,8 @@ $arr_search = json_decode($output_search,true);
 
         </strong>
       </div>
-
 <?php } ?>
       
-</div>
-<div class="container">
-
 <?php if(count($arr_search['response'][0]['add_info']) == 0){
   $margin1="margin-top:35%";
   }else{
@@ -391,11 +385,11 @@ VIEW
      <input <?php echo $check_box_select1;?> type="checkbox" name="checkboxes" id="checkboxes-0" value="1"  disabled>Telephone</label>
     
   </div>
-<div class="col-md-3" style="margin-left:43%;margin-top:-2%">
+<div class="col-md-3" style="margin-left:44%;margin-top:-2%">
     <?php echo $arr_search['response'][0]['telephone_bill_details'][0]['name']; ?>
 </div>
 
-<div class="fileUpload btn btn-info" style="margin-left:-1%;margin-top:-1%;">
+<div class="fileUpload btn btn-info" style="margin-left:-2%;margin-top:-1%;">
     <label style="font-weight:500;margin-bottom: 2px;">ATTACH</label>
 <input id="telephone_bill" value="<?php echo $arr_search['response'][0]['organization_details']['telephone'] ?>" style="margin-top: -20px;margin-left: 129px;" name="telephone_bill" class="upload" type="file"  disabled="true">  
 
@@ -438,7 +432,7 @@ VIEW
  <label class="col-md-4 control-label" for="checkboxes"></label>
  <div class="col-md-4">
    <label class="checkbox-inline" for="checkboxes-0">
-   <div class="col-md-3">
+   <div class="col-md-3" style="margin-left:-8%">
      <?php if($arr_search['response'][0]['pass_book_details'][0]['name'] != ''){
       $check_box_select2="checked";
       
@@ -451,7 +445,7 @@ VIEW
      <?php echo $arr_search['response'][0]['pass_book_details'][0]['name']; ?>
 </div>
 <div class="col-md-3">
-<div class="fileUpload btn btn-info" style="margin-left:312%;margin-top:-21%;">
+<div class="fileUpload btn btn-info" style="margin-left:460%;margin-top:-21%;">
     <label style="font-weight:500;margin-bottom: 2px;">ATTACH</label>
     <input id="bank_pass_book" style="margin-top: -22px;margin-left: 129px;" name="bank_pass_book" class="upload" type="file"  disabled="true"> 
 </div>
@@ -473,7 +467,7 @@ VIEW
   
 ?>
 
-<a target="_blank" data-toggle="modal" data-target="#myModal4" class="btn btn-info " style="color:white;background-color:#176fac;position:absolute;margin-top:-80%;margin-left:310%;" href="view_popup.php?name=pass_book_details&link=<?php echo $arr_img_download_4[0]['url']; ?>">
+<a target="_blank" data-toggle="modal" data-target="#myModal4" class="btn btn-info " style="color:white;background-color:#176fac;position:absolute;margin-top:-80%;margin-left:382%;" href="view_popup.php?name=pass_book_details&link=<?php echo $arr_img_download_4[0]['url']; ?>">
 VIEW</a>
 <!-- Modal -->
 <div class="modal fade" id="myModal4" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
