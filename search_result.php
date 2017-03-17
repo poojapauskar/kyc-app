@@ -293,18 +293,18 @@ $arr_search = json_decode($output_search,true);
   
 ?>
 </div>
-<a target="_blank" data-toggle="modal" data-target="#myModal1" class="btn btn-info" style="color:white;background-color:#176fac;margin-top:-30%;margin-left:139%;" href="view_popup.php?name=reg_certificate_details&link=<?php echo $arr_img_download[0]['url']; ?>">
+<a target="_blank" data-toggle="modal" data-target="#myModal" class="btn btn-info" style="color:white;background-color:#176fac;margin-top:-30%;margin-left:139%;" href="view_popup.php?name=reg_certificate_details&link=<?php echo $arr_img_download[0]['url']; ?>">
 VIEW
 </a>
 <!-- Modal -->
-<div class="modal fade" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<!-- <div class="modal fade" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-body">
       </div>
     </div>
   </div>
-</div>
+</div> -->
 </div>
 </div>
 
@@ -980,25 +980,30 @@ VIEW</a>
         </div>
 
 <script type="text/javascript">
-$("div[id^='myModal']").each(function(){
-  
-  var currentModal = $(this);
-  
+$(function(){
+
+$('#trigger').click(function(){
+  $('#myModal').modal('show');
+  return false;
+})
+
 });
+</script>
 
 </script>
-<!-- <div class="container">
+<div class="container">
 <!-- Modal HTML -->
-    <!-- <div id="myModal" class="modal fade">
+    <div id="myModal" class="modal fade">
         <div class="modal-dialog">
             <div class="modal-content">
                 <!-- Content will be loaded here from "remote.php" file -->
-            <!-- </div>
+            </div>
         </div>
-    </div> --> 
-<!-- </div> -->
+    </div>  
+</div>
 
 </main>
+</div>
 </body>
 </html>
 
