@@ -46,6 +46,7 @@ if($_GET['name'] == 'pan_card_details'){
 ?>
 
 <div style="text-align:center;margin-top:12%">
+<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 <h3><?php echo $certificate_name; ?></h3>
 
 
