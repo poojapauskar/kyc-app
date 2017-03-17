@@ -1670,6 +1670,7 @@ function enable_disable(that){
   </div>
 </div>
 </div>
+</div>
 
 <!--ID pROOF-->
 
