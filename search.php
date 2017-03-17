@@ -88,7 +88,7 @@ if($_POST['is_user_delete'] != "" && $_POST['pk_delete'] != ""){
       <header style="background-color:#08426a;height:110px;-webkit-box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23) !important;
      -moz-box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23) !important;
      box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23) !important;" class="mdl-layout__header mdl-layout__header--transparent">
-        <div class="mdl-layout__header-row" >
+    <div class="mdl-layout__header-row" >
 
        <a href="search.php"> <img style="margin-top:36%;margin-left:28px;width:50px;height:50px" src="images/green.png"></img></a>
       <h5 style="margin-left:35%;margin-top:9%;">Admin Panel</h5>
@@ -109,9 +109,7 @@ if($_POST['is_user_delete'] != "" && $_POST['pk_delete'] != ""){
           <a class="mdl-navigation__link" href="">Contact</a>
         </nav>
       </div>
-        </div>
-
-      </header>
+    </div>
 
 
  <div class="container">
