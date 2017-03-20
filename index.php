@@ -42,15 +42,17 @@ if($arr2['status']==200){
 ?>
 
 
-    <div class="demo-layout-transparent mdl-layout mdl-js-layout">
-       <header style="background-color:#08426a;height:110px;-webkit-box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23) !important;  /* Chrome and Safari         */
-     -moz-box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23) !important;  /* Firefox 3.6               */
-     box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23) !important;" class="mdl-layout__header mdl-layout__header--transparent">
-        <div class="mdl-layout__header-row" >
+    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+  <header style="background-color:#08426a;height:110px;-webkit-box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23) !important;
+     -moz-box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23) !important;
+     box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23) !important;" class="mdl-layout__header">
+    <div class="mdl-layout__header-row" >
         <img style="margin-top:5%;width:50px;height:50px" src="images/green.png"></img>
-         <span class="mdl-layout-title" style="margin-left:80%;margin-top:7%;">KYCApp</span>
-        </div>
+         <span class="mdl-layout-title" style="margin-left:26%;margin-top:7%;">KYCApp</span>
+          <!-- Add spacer, to align navigation to the right -->
+    </div>
       </header>
+
       <main class="mdl-layout__content" style="margin-left:75%;">
         <div class="page-content"><!-- Your content goes here -->
       <div class="row">
