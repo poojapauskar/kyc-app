@@ -272,7 +272,7 @@ $arr_search = json_decode($output_search,true);
 
 <div class="col-md-4">
 <input id="uploadFile" class="form-control input-md" value="<?php echo $arr_search['response'][0]['reg_certificate_details'][0]['name']; ?>" readonly/>
-  <div class="fileUpload btn btn-info" style="margin-left:105%;margin-top:-12%;">
+  <div class="fileUpload btn btn-info" style="margin-left:105%;padding-left:10%;margin-top:-12%;padding-left:1em">
     <label style="font-weight:500;margin-bottom: 2px;">ATTACH</label>
     <input id="reg_certificate" name="reg_certificate" type="file" class="upload" disabled="true">
   
@@ -293,6 +293,7 @@ $arr_search = json_decode($output_search,true);
   
 ?>
 </div>
+
 <a target="_blank" data-toggle="modal" data-target="#myModal" class="btn btn-info" style="color:white;background-color:#176fac;margin-top:-30%;margin-left:139%;" href="view_popup.php?name=reg_certificate_details&link=<?php echo $arr_img_download[0]['url']; ?>">
 VIEW
 </a>
