@@ -7,23 +7,19 @@
 <!-- <link rel="stylesheet" type="text/css" href="css/material.indigo-pink.min.css"> -->
  <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="css/bootstrap.css">
-     <link rel="stylesheet" type="text/css" href="autocomplete-Files/styles.css">
-
+  <link rel="stylesheet" type="text/css" href="autocomplete-Files/styles.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <!-- Material Design Lite -->
-    <script src="https://code.getmdl.io/1.3.0/material.min.js"></script>
-    <link rel="stylesheet" href="css/material.css">
-        <link rel="stylesheet" href="css/fileupload.css">
-    <link rel="stylesheet" href="css/fileupload.css">
-     <link rel="stylesheet" href="autocomplete-Files/styles.css">
-    <!-- Material Design icon font -->
+  <script src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+  <link rel="stylesheet" href="css/material.css">
+  <link rel="stylesheet" href="css/fileupload.css">
+  <link rel="stylesheet" href="css/fileupload.css">
+  <link rel="stylesheet" href="autocomplete-Files/styles.css">
 
-    <!-- <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"> -->
-
-     <script src="https://storage.googleapis.com/code.getmdl.io/1.0.6/material.min.js"></script>
-   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"> 
-    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+  <script src="https://storage.googleapis.com/code.getmdl.io/1.0.6/material.min.js"></script>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"> 
+  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
   <style type="text/css">
     span:before{
     content:" "; 
@@ -922,8 +918,8 @@ if ($_POST['uid'] != '' and $_GET["is_user"]==1){
            $title="New Entry Individual"; 
       }?>
 
-    <h5 style="margin-left:35%;margin-top:9%;"><?php echo $title; ?></h5>
-    <span class="mdl-layout-title" style="margin-left:26%;margin-top:7%;">KYCApp</span>
+    <h5 style="margin-left:28%;margin-top:9%;"><?php echo $title; ?></h5>
+    <span class="mdl-layout-title" style="margin-left:24%;margin-top:7%;">KYCApp</span>
           <!-- Add spacer, to align navigation to the right -->
   </header>
       <div class="mdl-layout__drawer">
@@ -1093,8 +1089,8 @@ if ($_POST['uid'] != '' and $_GET["is_user"]==1){
 <!-- Select Basic-->
 <div class="form-group">
   <label class="col-md-4 control-label" for="selectbasic">Designation: </label>
-  <div class="col-md-4">
-    <select id="partner_designations[]" name="partner_designations[]" class="form-control partner_designations" style="width: 49%;">
+  <div class="col-md-2">
+    <select id="partner_designations[]" name="partner_designations[]" class="form-control partner_designations" style="">
       <option value="1">Managing Partner</option>
       <option value="2">Manager</option>
       <option value="3">Other</option>
@@ -1102,11 +1098,10 @@ if ($_POST['uid'] != '' and $_GET["is_user"]==1){
   </div>
 
   <div class="col-md-2">
-     <input id="textinput" name="textinput" type="text" placeholder="Specify if Other" class="form-control input-md partner_others"  style="margin-left:-221px;width:103%;">
+     <input id="textinput" name="textinput" type="text" placeholder="Specify if Other" class="form-control input-md partner_others"  style="width:103%;">
 </div>
-</div> 
-
-<a href="" class="remove_field_present" style="margin-left:863px;margin-top:-40px;position:absolute"><img src="images/del24.png" ></a>
+</div>
+<a href="" class="remove_field_present" style="margin-left:850px;margin-top:-40px;position:absolute"><img src="images/del24.png" ></a>
 </div>
 
 <div class="form-group">
