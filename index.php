@@ -2,15 +2,18 @@
 <html>
 <head>
   <title>CA DATA BASE</title>
-  </style>
-    <!-- Material Design Lite -->
-    <script src="https://code.getmdl.io/1.3.0/material.min.js"></script>
-    <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
-    <!-- Material Design icon font -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    <!-- Always shows a header, even in smaller screens. -->
-    <link rel="stylesheet" href="css/material.css">
-    <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/material.indigo-pink.min.css">
+  <link rel="stylesheet" href="css/bootstrap.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<!-- Material Design Lite -->
+  <script src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+  <link rel="stylesheet" href="css/material.css">
+  <link rel="stylesheet" href="css/fileupload.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+  <script src="https://storage.googleapis.com/code.getmdl.io/1.0.6/material.min.js"></script>
 </head>
 <body style="background-color:#E8E8E8;overflow-x:hidden;">
 
@@ -41,16 +44,17 @@ if($arr2['status']==200){
 }
 ?>
 
-
-    <div class="demo-layout-transparent mdl-layout mdl-js-layout">
-       <header style="background-color:#08426a;height:110px;-webkit-box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23) !important;  /* Chrome and Safari         */
-     -moz-box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23) !important;  /* Firefox 3.6               */
-     box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23) !important;" class="mdl-layout__header mdl-layout__header--transparent">
-        <div class="mdl-layout__header-row" >
+    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+  <header style="background-color:#08426a;height:110px;-webkit-box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23) !important;
+     -moz-box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23) !important;
+     box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23) !important;" class="mdl-layout__header">
+    <div class="mdl-layout__header-row" >
         <img style="margin-top:5%;width:50px;height:50px" src="images/green.png"></img>
-         <span class="mdl-layout-title" style="margin-left:80%;margin-top:7%;">KYCApp</span>
-        </div>
+         <span class="mdl-layout-title" style="margin-left:26%;margin-top:7%;">KYCApp</span>
+          <!-- Add spacer, to align navigation to the right -->
+    </div>
       </header>
+
       <main class="mdl-layout__content" style="margin-left:75%;">
         <div class="page-content"><!-- Your content goes here -->
       <div class="row">
