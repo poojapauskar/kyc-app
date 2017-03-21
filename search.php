@@ -1,20 +1,27 @@
 <html>
   <head>
     <!---bootstrap-->
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="css/material.indigo-pink.min.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-<!--   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
- -->  
-
- <link rel="stylesheet" type="text/css" href="autocomplete-Files/styles.css">
+  <link rel="stylesheet" type="text/css" href="autocomplete-Files/styles.css">
     <!-- Material Design Lite -->
-    <script src="https://code.getmdl.io/1.3.0/material.min.js"></script>
-    <link rel="stylesheet" href="css/material.css">
+  
+  <script src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+  <link rel="stylesheet" href="css/material.css">
     <!-- Material Design icon font -->
-    <link rel="stylesheet" href="autocomplete-Files/styles.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="css/bootstrap.css">
+  <link rel="stylesheet" href="autocomplete-Files/styles.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<!-- Material Design Lite -->
+  <script src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+  <link rel="stylesheet" href="css/fileupload.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <script src="https://storage.googleapis.com/code.getmdl.io/1.0.6/material.min.js"></script>
     
-    </style>
     <style type="text/css">
       .form-control{
       border: 2px solid #74b25e;
@@ -84,10 +91,10 @@ if($_POST['is_user_delete'] != "" && $_POST['pk_delete'] != ""){
   echo $_POST["id_field"];*/
 }?>
 
-<div class="demo-layout-transparent mdl-layout mdl-js-layout">
-      <header style="background-color:#08426a;height:110px;-webkit-box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23) !important;
+<div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+  <header style="background-color:#08426a;height:110px;-webkit-box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23) !important;
      -moz-box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23) !important;
-     box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23) !important;" class="mdl-layout__header mdl-layout__header--transparent">
+     box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23) !important;" class="mdl-layout__header">
     <div class="mdl-layout__header-row" >
 
        <a href="search.php"> <img style="margin-top:36%;margin-left:28px;width:50px;height:50px" src="images/green.png"></img></a>
@@ -95,6 +102,7 @@ if($_POST['is_user_delete'] != "" && $_POST['pk_delete'] != ""){
          <span class="mdl-layout-title" style="margin-left:26%;margin-top:7%;">KYCApp</span>
          <a href="index.php"><img style="margin-top:100%;margin-left:28px;width:40px;height:40px" src="images/logout1.png"></img></a>
           <!-- Add spacer, to align navigation to the right -->
+          
       </header>
       <div class="mdl-layout__drawer">
         <span class="mdl-layout-title">Title</span>
@@ -109,9 +117,7 @@ if($_POST['is_user_delete'] != "" && $_POST['pk_delete'] != ""){
           <a class="mdl-navigation__link" href="">Contact</a>
         </nav>
       </div>
-    </div>
-
-
+      </div>
  <div class="container">
   <div class="row" style="margin-top:33%;"> 
 
