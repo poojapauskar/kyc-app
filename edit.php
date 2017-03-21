@@ -2,12 +2,11 @@
 <html>
 <head>
   <title></title>
-
-<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 <link rel="stylesheet" type="text/css" href="css/material.indigo-pink.min.css">
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
-<link rel="stylesheet" href="css/bootstrap.css">
-   <link rel="stylesheet" type="text/css" href="autocomplete-Files/styles.css">
+  <link rel="stylesheet" href="css/bootstrap.css">
+  <link rel="stylesheet" type="text/css" href="autocomplete-Files/styles.css">
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
@@ -889,16 +888,16 @@ if(isset($_POST["edit_btn"]) and $_GET["is_user"]==1) {
 
 ?>
 
-<div class="demo-layout-transparent mdl-layout mdl-js-layout">
+<div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
   <header style="background-color:#08426a;height:110px;-webkit-box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23) !important;
      -moz-box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23) !important;
-     box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23) !important;" class="mdl-layout__header mdl-layout__header--transparent">
+     box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23) !important;" class="mdl-layout__header">
     <div class="mdl-layout__header-row" >
-
     <a href="search.php"><img style="margin-top:36%;margin-left:28px;width:50px;height:50px" src="images/green.png"></img></a>
     <h5 style="margin-left:35%;margin-top:9%;"><?php echo $arr_search['response'][0]['organization_details']['name'] ?><?php echo $arr_search['response'][0]['user_details']['name'] ?></h5>
     <span class="mdl-layout-title" style="margin-left:26%;margin-top:7%;">KYCApp</span>
           <!-- Add spacer, to align navigation to the right -->
+
     </header>
     <div class="mdl-layout__drawer">
         <span class="mdl-layout-title">Title</span>
@@ -1215,8 +1214,8 @@ VIEW</a>
 <!-- Select Basic -->
 <div class="form-group">
   <label class="col-md-4 control-label" for="designation">Designation: </label>
-  <div class="col-md-4">
-    <select style="width:202px" id="partner_designations[]" name="partner_designations[]" class="form-control partner_designations">
+  <div class="col-md-2">
+    <select style="" id="partner_designations[]" name="partner_designations[]" class="form-control partner_designations">
       <option value="<?php echo $arr_search['response'][0]['partner_details'][$x]['detail'][0]['designation'] ?>"><?php echo $arr_search['response'][0]['partner_details'][$x]['detail'][0]['designation'] ?></option>
       <option value="Managing Partner">Managing Partner</option>
       <option value="Manager">Manager</option>
@@ -1224,7 +1223,7 @@ VIEW</a>
     </select>
   </div>
   <div class="col-md-2">
-     <input id="textinput" style="margin-left:-224px;width:189px" name="textinput" type="text" placeholder="Specify if Other" class="form-control input-md partner_others">
+     <input id="textinput" style="" name="textinput" type="text" placeholder="Specify if Other" class="form-control input-md partner_others">
   </div>
 </div>
 
@@ -1321,7 +1320,7 @@ VIEW</a>
   <label class="col-md-4 control-label" for="save_btn"></label>
   <div class="col-md-8">
     <button  onclick="return check_file_type_org()" id="edit_btn" name="edit_btn" type="submit" class="btn btn-success" style="width: 10em;">Save</button><span><span></span></span>
-    <button onclick="goBack()" class="btn btn-warning" style="width: 10em;margin-top:0%;margin-left:-1%"><a style="color:white" href="search.php">Cancel</a></button>
+    <button onclick="goBack()" class="btn btn-warning" style="width:10em;margin-top:0%;padding:0.5em;margin-left:-1%"><a style="color:white" href="search.php">Cancel</a></button>
   </div>
 </div>
 </fieldset>
@@ -1331,7 +1330,7 @@ VIEW</a>
 <form method="post" id="deleteForm" action="search.php" style="text-align:center">
 <input type="hidden" name="pk_delete" id="pk_delete" value="<?php echo $_GET['id'] ?>"></input>  
 <input type="hidden" name="is_user_delete" id="is_user_delete" value="<?php echo $_GET['is_user'] ?>"></input>  
-<button type="submit" onclick="return ConfirmDelete()" style="width: 10em;margin-top:-7%;margin-left:30%" class="btn btn-warning">
+<button type="submit" onclick="return ConfirmDelete()" style="width: 10em;margin-top:-7%;margin-left:40%" class="btn btn-warning">
   Delete
 </button>
 </form>
@@ -1770,7 +1769,7 @@ function enable_disable(that){
   <label class="col-md-4 control-label" for="singlebutton"></label>
   <div class="col-md-4">
     <button  onclick="return check_file_type_user()" id="edit_btn" name="edit_btn" type="submit" class="btn btn-success" style="width: 10em;">Save</button><span><span></span></span>
-    <button onclick="goBack()" class="btn btn-warning" style="width: 10em;margin-top:-13%;margin-left:30%"><a style="color:white" href="search.php">Cancel</a></button>
+    <button onclick="goBack()" class="btn btn-warning" style="width: 10em;margin-top:-13%;padding:0.5em;margin-left:40%"><a style="color:white" href="search.php">Cancel</a></button>
   </div>
 </div>
 
