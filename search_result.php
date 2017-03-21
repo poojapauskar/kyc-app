@@ -272,7 +272,7 @@ $arr_search = json_decode($output_search,true);
 
 <div class="col-md-4">
 <input id="uploadFile" class="form-control input-md" value="<?php echo $arr_search['response'][0]['reg_certificate_details'][0]['name']; ?>" readonly/>
-  <div class="fileUpload btn btn-info" style="margin-left:105%;padding-left:10%;margin-top:-12%;padding-left:1em">
+  <div class="fileUpload btn btn-info" style="margin-left:105%;padding:0.5em;margin-top:-12%;">
     <label style="font-weight:500;margin-bottom: 2px;">ATTACH</label>
     <input id="reg_certificate" name="reg_certificate" type="file" class="upload" disabled="true">
   
@@ -313,7 +313,7 @@ VIEW
   <label class="col-md-4 control-label" for="filebutton">PAN Card:</label>
   <div class="col-md-4">
   <input id="pan_upload" class="form-control input-md" value="<?php echo $arr_search['response'][0]['pan_card_details'][0]['name']; ?>" readonly/>
-  <div class="fileUpload btn btn-info" style="margin-left:105%;margin-top:-12%;">
+  <div class="fileUpload btn btn-info" style="margin-left:105%;padding:0.5em;margin-top:-12%;">
   <label style="font-weight:500;margin-bottom: 2px;">ATTACH</label>
   <input id="pan_card" name="pan_card" type="file" class="upload" disabled="true">
 
@@ -367,7 +367,7 @@ VIEW
     <?php echo $arr_search['response'][0]['telephone_bill_details'][0]['name']; ?>
 </div>
 
-<div class="fileUpload btn btn-info" style="margin-left:-2%;margin-top:-1%;">
+<div class="fileUpload btn btn-info" style="margin-left:-2%;padding:0.5em;margin-top:-1%;">
     <label style="font-weight:500;margin-bottom: 2px;">ATTACH</label>
 <input id="telephone_bill" value="<?php echo $arr_search['response'][0]['organization_details']['telephone'] ?>" style="margin-top: -20px;margin-left: 129px;" name="telephone_bill" class="upload" type="file"  disabled="true">  
 
@@ -409,7 +409,7 @@ VIEW
      <?php echo $arr_search['response'][0]['pass_book_details'][0]['name']; ?>
 </div>
 <div class="col-md-3">
-<div class="fileUpload btn btn-info" style="margin-left:460%;margin-top:-21%;">
+<div class="fileUpload btn btn-info" style="margin-left:460%;padding:0.5em;margin-top:-21%;">
     <label style="font-weight:500;margin-bottom: 2px;">ATTACH</label>
     <input id="bank_pass_book" style="margin-top: -22px;margin-left: 129px;" name="bank_pass_book" class="upload" type="file"  disabled="true"> 
 </div>
@@ -575,7 +575,7 @@ VIEW</a>
 
 <div class="col-md-5">
   <input id="pan_upload" class="form-control input-md" value="<?php echo $arr_search['response'][0]['pan_card_details'][0]['name']; ?>" readonly/>
-<div class="fileUpload btn btn-info" style="margin-left:105%;margin-top:-12%;">
+<div class="fileUpload btn btn-info" style="margin-left:105%;padding:0.5em;margin-top:-12%;">
   <label style="font-weight:500;margin-bottom: 2px;">ATTACH</label>
 <input id="pan_card" name="pan_card" style="margin-left:-47%" value="<?php echo $_POST['pan_card'] ?>" class="upload" type="file" disabled="true">
 </div>
@@ -622,7 +622,7 @@ VIEW</a>
 </div>
 
 
-<div class="fileUpload btn btn-info" style="margin-left:-8%;margin-top:-1%;">
+<div class="fileUpload btn btn-info" style="margin-left:-8%;padding:0.5em;margin-top:-1%;">
     <label style="font-weight:500;margin-bottom: 2px;">ATTACH</label>
 <input id="telephone_bill"  value="<?php echo $_POST['telephone_bill'] ?>" style="margin-top: 5px;margin-left: 126px;" name="telephone_bill" class="upload" type="file"  disabled="true">     
  </div>
@@ -667,7 +667,7 @@ VIEW</a>
 <?php echo $arr_search['response'][0]['bank_pass_book_details'][0]['name']; ?>
 </div>
 
-<div class="fileUpload btn btn-info" style="margin-left:-8%;margin-top:-1%;">
+<div class="fileUpload btn btn-info" style="margin-left:-8%;padding:0.5em;margin-top:-1%;">
     <label style="font-weight:500;margin-bottom: 2px;">ATTACH</label>
 <input id="bank_pass_book"  value="<?php echo $_POST['bank_pass_book'] ?>" style="margin-top: 6px;margin-left: 129px;position:absolute;" name="bank_pass_book" class="upload" type="file" disabled>     
  </div>
@@ -712,7 +712,7 @@ VIEW</a>
     <div class="col-md-4">
     <?php echo $arr_search['response'][0]['voter_id_details'][0]['name']; ?>
     </div>
-    <div class="fileUpload btn btn-info" style="margin-left:-8%;margin-top:-1%;">
+    <div class="fileUpload btn btn-info" style="margin-left:-8%;padding:0.5em;margin-top:-1%;">
     <label style="font-weight:500;margin-bottom: 2px;">ATTACH</label>
     <input id="voter_id" value="<?php echo $_POST['voter_id'] ?>" style="margin-top: 6px;margin-left: 129px;position:absolute;" name="voter_id" class="input-file" type="file" disabled>     
    </div>
@@ -750,7 +750,7 @@ VIEW</a>
    <div class="col-md-4">
   <?php echo $arr_search['response'][0]['passport_details'][0]['name']; ?>
   </div>
-   <div class="fileUpload btn btn-info" style="margin-left:-8%;margin-top:-1%;">
+   <div class="fileUpload btn btn-info" style="margin-left:-8%;padding:0.5em;margin-top:-1%;">
     <label style="font-weight:500;margin-bottom: 2px;">ATTACH</label>
   <input id="passport" value="<?php echo $_POST['passport'] ?>" style="margin-top: 6px;margin-left: 129px;position:absolute;" name="passport" class="input-file" type="file" disabled>     
    </div>
@@ -794,7 +794,7 @@ VIEW</a>
   </div>
 
   <div class="col-md-4">
-   <div class="fileUpload btn btn-info" style="margin-left:245%;margin-top:-17%;">
+   <div class="fileUpload btn btn-info" style="margin-left:245%;padding:0.5em;margin-top:-17%;">
     <label style="font-weight:500;margin-bottom: 2px;">ATTACH</label>
     <input id="aadhar_card" style="margin-left:-47%" name="aadhar_card" value="<?php echo $_POST['aadhar_card'] ?>" class="upload" type="file" disabled>
   
@@ -824,7 +824,7 @@ VIEW</a>
   <label class="col-md-4 control-label" for="singlebutton"></label>
   <div class="col-md-4">
     <button id="" name="" class="btn btn-success" style="width: 10em;">Edit</button><span><span></span></span>
-    <button onclick="ClickEvent()" style="width: 10em;margin-top:-19%;margin-left:52%" class="btn btn-warning"><a style="color:white" href="search.php">Back</a></button>
+    <button onclick="ClickEvent()" style="width: 10em;margin-top:-19%;margin-left:60%" class="btn btn-warning"><a style="color:white" href="search.php">Back</a></button>
   </div>
 </div>
 
