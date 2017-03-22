@@ -1193,21 +1193,27 @@ if ($_POST['uid'] != '' and $_GET["is_user"]==1){
 
 <script type="text/javascript">
 
+$('.partner_names').attr('readonly', true);
+$('.partner_designations').attr('readonly', true);
+$('.partner_others').attr('readonly', true);
+$('.partner_btn').attr('readonly', true);
+$('.new_entry_btn').attr('readonly', true);
+
 function enable_disable(that){
 
   /*alert(that.value);*/
-  if(that.value == "Individual"){
-      $('.partner_names').attr('disabled', true);
-      $('.partner_designations').attr('disabled', true);
-      $('.partner_others').attr('disabled', true);
-      $('.partner_btn').attr('disabled', true);
-      $('.new_entry_btn').attr('disabled', true);
+  if(that.value != "Partnership"){
+      $('.partner_names').attr('readonly', true);
+      $('.partner_designations').attr('readonly', true);
+      $('.partner_others').attr('readonly', true);
+      $('.partner_btn').attr('readonly', true);
+      $('.new_entry_btn').attr('readonly', true);
   }else{
-      $('.partner_names').attr('disabled', false);
-      $('.partner_designations').attr('disabled', false);
-      $('.partner_others').attr('disabled', false);
-      $('.partner_btn').attr('disabled', false);
-      $('.new_entry_btn').attr('disabled', false);
+      $('.partner_names').attr('readonly', false);
+      $('.partner_designations').attr('readonly', false);
+      $('.partner_others').attr('readonly', false);
+      $('.partner_btn').attr('readonly', false);
+      $('.new_entry_btn').attr('readonly', false);
   }
 }
 </script>
