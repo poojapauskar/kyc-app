@@ -947,12 +947,16 @@ if ($_POST['uid'] != '' and $_GET["is_user"]==1){
   <label class="col-md-4 control-label" for="type_of_org">Type of Organization:</label>
   <div class="col-md-4">
     <select id="type_of_org" name="type_of_org" class="form-control" ONCHANGE="enable_disable(this);" >
+      <option value="Proprietorship">Proprietorship</option>
+      <option value="HUF">HUF</option>
+      <option value="Society">Society</option>
       <option value="Partnership">Partnership</option>
-      <option value="Individual">Individual</option>
+      <option value="Trust">Trust</option>
+      <option value="Govt entity">Govt entity</option>
+      <option value="Bank">Bank</option>
     </select>
   </div>
 </div>
-
 
 <!-- Text input-->
 <div class="form-group">
