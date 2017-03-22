@@ -18,18 +18,15 @@
     <!-- Material Design icon font -->
 <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-<script src="https://cdn.datatables.net/1.10.13/js/dataTables.material.min.js"></script>
+<script src="js/dataTables.material.min.js"></script>
+<script src="js/jquery.dataTables.min.js"></script>
   <script src="https://storage.googleapis.com/code.getmdl.io/1.0.6/material.min.js"></script>
 <script>
 $(document).ready(function() {
-    $('#example').DataTable( {
-        columnDefs: [
-            {
-                targets: [ 0, 1, 2 ],
-                className: 'mdl-data-table__cell--non-numeric'
-            }
-        ]
-    } );
+    $('#example').dataTable({
+        /* Disable initial sort */
+        "aaSorting": []
+    });
 } );
 </script>
 <style>
@@ -204,7 +201,7 @@ $arr_missing_report = json_decode($output_missing_report,true);
  <div class="container">
   <div class="row" style="margin-top:4%;"> 
 
-<table id="example" class="mdl-data-table" cellspacing="0" style="margin-left:3%;width:75%;margin-top:12%;">
+<table align="center" id="example" class="mdl-data-table" cellspacing="0" style="width:75%;margin-top:4%;">
         <thead>
             <th>Name</th>
         <th>UID</th>
