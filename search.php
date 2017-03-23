@@ -8,6 +8,7 @@
     <!-- Material Design Lite -->
   <script src="https://code.getmdl.io/1.3.0/material.min.js"></script>
   <link rel="stylesheet" href="css/material.css">
+  <link rel="stylesheet" href="css/kyc.css">
     <!-- Material Design icon font -->
   <link rel="stylesheet" href="css/bootstrap.css">
   <link rel="stylesheet" href="autocomplete-Files/styles.css">
@@ -96,7 +97,7 @@ if($_POST['is_user_delete'] != "" && $_POST['pk_delete'] != ""){
      box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23) !important;" class="mdl-layout__header">
     <div class="mdl-layout__header-row" >
 
-       <a href="search.php"> <img style="margin-top:36%;margin-left:28px;width:50px;height:50px" src="images/green.png"></img></a>
+       <a href="search.php"> <img id="logo1" src="images/green.png"></img></a>
       <h5 style="margin-left:35%;margin-top:9%;">Admin Panel</h5>
          <span class="mdl-layout-title" style="margin-left:26%;margin-top:7%;">KYCApp</span>
          <a href="index.php"><img style="margin-top:100%;margin-left:28px;width:40px;height:40px" src="images/logout1.png"></img></a>
