@@ -1874,6 +1874,16 @@ $('#trigger').click(function(){
 </script> 
 <div class="container">
 
+    <!-- Modal HTML -->
+    <div id="myModal" class="modal fade">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <!-- Content will be loaded here from "remote.php" file -->
+            </div>
+        </div>
+    </div>
+</div>
+
     
 <!-- Modal -->
 <div class="modal fade" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
