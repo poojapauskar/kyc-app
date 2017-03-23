@@ -902,7 +902,7 @@ $(document).on('hidden.bs.modal', function (e) {
                                  <div class="col-sm-3">
                                  </div>
                                  <div class="col-sm-3">
-                                  <button class="btn btn-success" style="color:white;width:100px;height:50px" onclick="print()">Print</button>
+                                  <button class="btn btn-success" style="color:white;width:100px;height:50px" onclick="print_image()">Print</button>
                                  </div>
                                  <div class="col-sm-3">
                                    <a href="mailto:test@gmail.com?subject=KYC Application
@@ -959,7 +959,7 @@ $(document).on('hidden.bs.modal', function (e) {
                                      <div class="col-sm-3">
                                      </div>
                                      <div class="col-sm-3">
-                                      <button class="btn btn-success" style="color:white;width:100px;height:50px" onclick="print()">Print</button>
+                                      <button class="btn btn-success" style="color:white;width:100px;height:50px" onclick="print_image()">Print</button>
                                      </div>
                                      <div class="col-sm-3">
                                      
@@ -991,17 +991,14 @@ $(document).on('hidden.bs.modal', function (e) {
     </div>
   </div>
 </div>
+</main>
+
 
 <script type="text/javascript">
-function print() {
+function print_image() {
     window.print();
 }
 </script>
-
-  <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
-<script src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js'></script>
-    <script src="js/index.js"></script>
-</main>
 </body>
 </html>
 

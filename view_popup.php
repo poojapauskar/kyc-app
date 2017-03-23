@@ -26,66 +26,62 @@ $url = $url[1];
 /*echo $_GET['name'];*/
 
 if($_GET['name'] == 'pan_card_details'){
-	$certificate_name= "Pan Card";
+  $certificate_name= "Pan Card";
 }elseif($_GET['name'] == 'telephone_bill_details'){
-	$certificate_name= "Telephon Bill";
+  $certificate_name= "Telephon Bill";
 }elseif($_GET['name'] == 'bank_pass_book_details'){
-	$certificate_name= "Pass Book";
+  $certificate_name= "Pass Book";
 }elseif($_GET['name'] == 'pass_book_details'){
-	$certificate_name= "Pass Book";
+  $certificate_name= "Pass Book";
 }elseif($_GET['name'] == 'voter_id_details'){
-	$certificate_name= "Voter Id";
+  $certificate_name= "Voter Id";
 }elseif($_GET['name'] == 'passport_details'){
-	$certificate_name= "Passport";
+  $certificate_name= "Passport";
 }elseif($_GET['name'] == 'aadhar_card_details'){
-	$certificate_name= "Aadhar Card";
+  $certificate_name= "Aadhar Card";
 }elseif($_GET['name'] == 'reg_certificate_details'){
-	$certificate_name= "Registration Certificate";
+  $certificate_name= "Registration Certificate";
 }
 
 ?>
 <div id="modal-section">
-<div style="text-align:center;margin-top:12%">
- <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button> 
-<h3><?php echo $certificate_name; ?></h3>
+  <div style="text-align:center;margin-top:12%">
+    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button> 
+    <h3><?php echo $certificate_name; ?></h3>
 
 
-<!-- if url has https://kyc-app-bucket.s3.amazonaws.com/?Signature then it has no-image -->
-<?php if($url=="" || (strpos($url, 'https://kyc-app-bucket.s3.amazonaws.com/?Signature') !== false)){
-	$img_lnk="images/no_image.jpg";
-}else{
-    $img_lnk=$url;
-}?>
+    <!-- if url has https://kyc-app-bucket.s3.amazonaws.com/?Signature then it has no-image -->
+    <?php if($url=="" || (strpos($url, 'https://kyc-app-bucket.s3.amazonaws.com/?Signature') !== false)){
+      $img_lnk="images/no_image.jpg";
+    }else{
+        $img_lnk=$url;
+    }?>
 
-<img id="img1" src="<?php echo $img_lnk; ?>"></img>
+    <img id="img1" src="<?php echo $img_lnk; ?>"></img>
 
-<div style="margin-top:5%;margin-left:-22%" class="row">
- <div class="col-sm-3">
- </div>
- <div class="col-sm-3">
-  <button class="btn btn-success" style="color:white;width:100px;height:50px" onclick="print()">Print</button>
- </div>
- <div class="col-sm-3">
- 
- <a href="mailto:test@gmail.com?subject=KYC Application
-&body=Thank You!" style="color:white"> 
-  <button class="btn btn-success" style="color:white;width:100px;height:50px" >Email
-  </button>
-</a>
-
- </div>
- <div class="col-sm-3">
-  
-  <a  style="color:white" download="<?php echo $certificate_name."jpg"; ?>" href="<?php echo $url; ?>" title="Save">
-    <button class="btn btn-success" style="color:white;width:100px;height:50px">Save
-     </button>
-  </a>
- 
- </div>
- <div class="col-sm-3"><br><br>
- </div>
-</div>
-
+    <div style="margin-top:5%;margin-left:-22%" class="row">
+      <div class="col-sm-3">
+      </div>
+      <div class="col-sm-3">
+       <button class="btn btn-success" style="color:white;width:100px;height:50px" onclick="print()">Print</button>
+      </div>
+      <div class="col-sm-3">
+        <a href="mailto:test@gmail.com?subject=KYC Application
+        &body=Thank You!" style="color:white"> 
+          <button class="btn btn-success" style="color:white;width:100px;height:50px" >Email
+          </button>
+        </a>
+      </div>
+      <div class="col-sm-3">
+        <a  style="color:white" download="<?php echo $certificate_name."jpg"; ?>" href="<?php echo $url; ?>" title="Save">
+          <button class="btn btn-success" style="color:white;width:100px;height:50px">Save
+          </button>
+        </a>
+      </div>
+      <div class="col-sm-3"><br><br>
+      </div>
+    </div>
+  </div>
 </div>
 
 <script>
@@ -93,6 +89,6 @@ function myFunction() {
     window.print();
 }
 </script>
-</div>
+
 </body>
 </html>
