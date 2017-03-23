@@ -201,6 +201,15 @@ $arr_missing_report = json_decode($output_missing_report,true);
  <div class="container">
   <div class="row" style="margin-top:4%;"> 
 
+<button class="btn btn-success" style="color:white;margin-left:35%;" type="button" id="test">Clear</button>
+<script type="text/javascript">
+$('#test').click(function() {
+    /*$('input[type=search]').val('');*/
+    $('#example').dataTable().fnFilter('');
+    /*table.search('').draw();*/ //required after
+});
+</script>
+
 <table align="center" id="example" class="mdl-data-table" cellspacing="0" style="width:75%;margin-top:4%;">
         <thead>
             <th>Name</th>

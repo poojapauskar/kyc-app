@@ -41,7 +41,17 @@
     });
 });
   </script>
+
+
   <style type="text/css">
+  @media print {
+  body * {
+    visibility:hidden;
+  }
+  .print{
+    visibility:visible;
+  }
+}
     .upload-button {
     padding: 4px;
     /*border: 1px solid black;*/
@@ -87,6 +97,7 @@
 }
 
   </style>
+
   <style type="text/css">
     span:before{
     content:" "; 
@@ -289,12 +300,12 @@ $arr_search = json_decode($output_search,true);
   $context_img_download = stream_context_create($options_img_download);
   $output_img_download = file_get_contents($url_img_download, false,$context_img_download);
   /*echo $output_img_download;*/
-  $arr_img_download = json_decode($output_img_download,true);
+  $arr_img_download_reg_org = json_decode($output_img_download,true);
   
 ?>
 </div>
 
-<a target="_blank" data-toggle="modal" data-target="#myModal" class="btn btn-info" style="color:white;background-color:#176fac;margin-top:-30%;margin-left:139%;" href="view_popup.php?name=reg_certificate_details&link=<?php echo $arr_img_download[0]['url']; ?>">
+<a data-toggle="modal" data-target="#myModal1" class="btn btn-info" style="color:white;background-color:#176fac;margin-top:-30%;margin-left:139%;">
 VIEW
 </a>
 </div>
@@ -330,11 +341,11 @@ VIEW
   $context_img_download_2 = stream_context_create($options_img_download_2);
   $output_img_download_2 = file_get_contents($url_img_download_2, false,$context_img_download_2);
   /*echo $output_img_download;*/
-  $arr_img_download_2 = json_decode($output_img_download_2,true);
+  $arr_img_download_pan_org = json_decode($output_img_download_2,true);
   
 ?>
 </div>
-<a style="color:white;background-color:#176fac;margin-top:-30%;margin-left:139%;" data-toggle="modal" data-target="#myModal" class="btn btn-info" href="view_popup.php?name=pan_card_details&link=<?php echo $arr_img_download_2[0]['url']; ?>" data-remote="view_popup.php #modal-section">VIEW</a>
+<a data-toggle="modal" data-target="#myModal2" class="btn btn-info" style="color:white;background-color:#176fac;margin-top:-30%;margin-left:139%;">VIEW</a>
 
 </div>
 </div>
@@ -865,22 +876,131 @@ $(document).on('hidden.bs.modal', function (e) {
 </script> 
 <div class="container">
 
-   <!-- Modal -->
-<div id="myModal" class="modal fade" role="dialog">
-     <div class="modal-dialog">
-          <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <p class="modal-title">My Dynamic Modal</p>
+<!-- Modal -->
+<div class="modal fade" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Registration Certificate</h4>
       </div>
-      <!-- Modal content-->
-      <div class="modal-content clearable-content">
+      <div class="modal-body">
+                          <div style="text-align:center;">
+                          <!--  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>  -->
+                          <!-- if url has https://kyc-app-bucket.s3.amazonaws.com/?Signature then it has no-image -->
+                              <?php if((strpos($arr_img_download_reg_org[0]['url'], 'https://kyc-app-bucket.s3.amazonaws.com/?Signature') !== false)){
+                                $img_lnk_reg_org="images/no_image.jpg";
+                              }else{
+                                  $img_lnk_reg_org=$arr_img_download_reg_org[0]['url'];
+                              }?>
+
+                              <div style="text-align:center">
+                              <img class="print" src="<?php echo $img_lnk_reg_org; ?>" style="height:250px;width:250px;"></img>
+                              </div>
+
+                              <div style="margin-top:5%;margin-left:-22%" class="row">
+                                 <div class="col-sm-3">
+                                 </div>
+                                 <div class="col-sm-3">
+                                  <button class="btn btn-success" style="color:white;width:100px;height:50px" onclick="print()">Print</button>
+                                 </div>
+                                 <div class="col-sm-3">
+                                   <a href="mailto:test@gmail.com?subject=KYC Application
+                                    &body=Thank You!" style="color:white"> 
+                                    <button class="btn btn-success" style="color:white;width:100px;height:50px" >Email
+                                    </button>
+                                   </a>
+                                 </div>
+                          
+                                  <div class="col-sm-3">
+                                    <a  style="color:white" download="<?php echo "reg_cert.jpg"; ?>" href="<?php echo $img_lnk_reg_org; ?>" title="Save">
+                                      <button class="btn btn-success" style="color:white;width:100px;height:50px">Save
+                                       </button>
+                                    </a>
+                                  </div>
+                                  <div class="col-sm-3"><br><br>
+                                  </div>
+                              </div>
+                          </div>
       </div>
       <div class="modal-footer">
+        <!-- <button type="button" class="btn btn-default btn-prev">Prev</button>
+        <button type="button" class="btn btn-default btn-next">Next</button> -->
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
       </div>
+    </div>
   </div>
 </div>
 
+
+<!-- Modal -->
+<div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Pan Card</h4>
+      </div>
+      <div class="modal-body">
+                          <div style="text-align:center;margin-top:%">
+                                  <!--  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>  -->
+                                  <!-- if url has https://kyc-app-bucket.s3.amazonaws.com/?Signature then it has no-image -->
+                                  <?php if((strpos($arr_img_download_pan_org[0]['url'], 'https://kyc-app-bucket.s3.amazonaws.com/?Signature') !== false)){
+                                    $img_lnk_pan_org="images/no_image.jpg";
+                                  }else{
+                                      $img_lnk_pan_org=$arr_img_download_pan_org[0]['url'];
+                                  }?>
+
+                                  <div style="text-align:center">
+                                  <img class="print" src="<?php echo $img_lnk_pan_org; ?>" style="height:250px;width:250px;"></img>
+                                  </div>
+
+                                  <div style="margin-top:5%;margin-left:-22%" class="row">
+                                     <div class="col-sm-3">
+                                     </div>
+                                     <div class="col-sm-3">
+                                      <button class="btn btn-success" style="color:white;width:100px;height:50px" onclick="print()">Print</button>
+                                     </div>
+                                     <div class="col-sm-3">
+                                     
+                                     <a href="mailto:test@gmail.com?subject=KYC Application
+                                     &body=Thank You!" style="color:white"> 
+                                      <button class="btn btn-success" style="color:white;width:100px;height:50px" >Email
+                                      </button>
+                                     </a>
+
+                                     </div>
+                                     <div class="col-sm-3">
+                                      
+                                      <a  style="color:white" download="<?php echo "pan_card.jpg"; ?>" href="<?php echo $img_lnk_pan_org; ?>" title="Save">
+                                        <button class="btn btn-success" style="color:white;width:100px;height:50px">Save
+                                         </button>
+                                      </a>
+                                     
+                                     </div>
+                                     <div class="col-sm-3"><br><br>
+                                     </div>
+                                  </div>
+                          </div>
+      </div>
+      <div class="modal-footer">
+       <!--  <button type="button" class="btn btn-default btn-prev">Prev</button>
+        <button type="button" class="btn btn-default btn-next">Next</button> -->
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script type="text/javascript">
+function print() {
+    window.print();
+}
+</script>
+
+  <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+<script src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js'></script>
+    <script src="js/index.js"></script>
 </main>
 </body>
 </html>
