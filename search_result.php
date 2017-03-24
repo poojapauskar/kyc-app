@@ -5,6 +5,7 @@
 
   <link rel="stylesheet" type="text/css" href="css/material.indigo-pink.min.css">
   <link rel="stylesheet" href="css/bootstrap.css">
+  <link rel="stylesheet" href="css/kyc.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
@@ -41,7 +42,6 @@
     });
 });
   </script>
-
 
   <style type="text/css">
   @media print {
@@ -176,7 +176,7 @@ $arr_search = json_decode($output_search,true);
      -moz-box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23) !important;
      box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23) !important;" class="mdl-layout__header">
     <div class="mdl-layout__header-row" >
-        <a href="search.php"><img style="margin-top:36%;margin-left:28px;width:50px;height:50px" src="images/green.png"></img></a><h5 style="margin-left:35%;margin-top:9%;"><?php echo $arr_search['response'][0]['organization_details']['name'] ?><?php echo $arr_search['response'][0]['user_details']['name'] ?></h5>
+        <a href="search.php"><img id="logo1" src="images/green.png"></img></a><h5 style="margin-left:35%;margin-top:9%;"><?php echo $arr_search['response'][0]['organization_details']['name'] ?><?php echo $arr_search['response'][0]['user_details']['name'] ?></h5>
          <span class="mdl-layout-title" style="margin-left:26%;margin-top:7%;">KYCApp</span>
           <!-- Add spacer, to align navigation to the right -->
     </div>
@@ -283,10 +283,13 @@ $arr_search = json_decode($output_search,true);
 
 <div class="col-md-4">
 <input id="uploadFile" class="form-control input-md" value="<?php echo $arr_search['response'][0]['reg_certificate_details'][0]['name']; ?>" readonly/>
-  <div class="fileUpload btn btn-info" style="margin-left:105%;padding:0.5em;margin-top:-12%;">
+</div>
+<div class="col-md-1">
+  <div class="fileUpload btn btn-info" style="margin-left:0%;padding:0.5em;margin-top:0%;">
     <label style="font-weight:500;margin-bottom: 2px;">ATTACH</label>
     <input id="reg_certificate" name="reg_certificate" type="file" class="upload" disabled="true">
-  
+</div>
+</div>
 <?php
   $url_img_download = 'https://kyc-application.herokuapp.com/download/';
   $options_img_download = array(
@@ -303,9 +306,9 @@ $arr_search = json_decode($output_search,true);
   $arr_img_download_reg_org = json_decode($output_img_download,true);
   
 ?>
-</div>
+<div class="col-md-1">
+<a target="_blank" data-toggle="modal" data-target="#myModal1" class="btn btn-info">
 
-<a data-toggle="modal" data-target="#myModal1" class="btn btn-info" style="color:white;background-color:#176fac;margin-top:-30%;margin-left:139%;">
 VIEW
 </a>
 </div>
@@ -313,9 +316,9 @@ VIEW
 
 <!-- Text input-->
 <div class="form-group" style="margin-top:-3%">
-  <label class="col-md-4 control-label" for="textinput" style="margin-left:-67%">PAN: </label>  
+  <label class="col-md-4 control-label" for="textinput" style="margin-left:0%">PAN: </label>  
   <div class="col-md-4">
-  <input id="pan" name="pan" style="margin-left:-112%" pattern="-?[a-zA-Z]{5}[0-9]{4}[a-zA-Z]{1}?" value="<?php echo $arr_search['response'][0]['organization_details']['pan'] ?>" type="text" placeholder="PAN Card Number" class="form-control input-md" readonly/>
+  <input id="pan" name="pan" style="margin-left:0%" pattern="-?[a-zA-Z]{5}[0-9]{4}[a-zA-Z]{1}?" value="<?php echo $arr_search['response'][0]['organization_details']['pan'] ?>" type="text" placeholder="PAN Card Number" class="form-control input-md" readonly/>
   </div>
 </div>
 
@@ -324,10 +327,13 @@ VIEW
   <label class="col-md-4 control-label" for="filebutton">PAN Card:</label>
   <div class="col-md-4">
   <input id="pan_upload" class="form-control input-md" value="<?php echo $arr_search['response'][0]['pan_card_details'][0]['name']; ?>" readonly/>
-  <div class="fileUpload btn btn-info" style="margin-left:105%;padding:0.5em;margin-top:-12%;">
+  </div>
+  <div class="col-md-1">
+  <div class="fileUpload btn btn-info" style="margin-left:0%;padding:0.5em;margin-top:0%;">
   <label style="font-weight:500;margin-bottom: 2px;">ATTACH</label>
   <input id="pan_card" name="pan_card" type="file" class="upload" disabled="true">
-
+</div>
+</div>
 <?php
   $url_img_download_2 = 'https://kyc-application.herokuapp.com/download/';
   $options_img_download_2 = array(
@@ -344,18 +350,17 @@ VIEW
   $arr_img_download_pan_org = json_decode($output_img_download_2,true);
   
 ?>
-</div>
-<a data-toggle="modal" data-target="#myModal2" class="btn btn-info" style="color:white;background-color:#176fac;margin-top:-30%;margin-left:139%;">VIEW</a>
-
+<div class="col-md-1">
+<a data-toggle="modal" data-target="#myModal2" class="btn btn-info">VIEW</a>
 </div>
 </div>
 
 <!-- Textarea -->
 
 <div class="form-group" style="margin-top:-3%">
-  <label class="col-md-4 control-label" for="textarea" style="margin-left:-67%">Address:</label>
+  <label class="col-md-4 control-label" for="textarea" style="margin-left:0%">Address:</label>
   <div class="col-md-4">                     
-    <textarea class="form-control" id="address" name="address" style="margin-left:-109%" readonly><?php echo $arr_search['response'][0]['organization_details']['address'] ?></textarea>
+    <textarea class="form-control" id="address" name="address" style="margin-left:0%" readonly><?php echo $arr_search['response'][0]['organization_details']['address'] ?></textarea>
   </div>
 </div>
 
@@ -444,7 +449,6 @@ VIEW
 
 <a target="_blank" data-toggle="modal" data-target="#myModal4" class="btn btn-info " style="color:white;background-color:#176fac;position:absolute;margin-top:-80%;margin-left:382%;">
 VIEW</a>
-<!-- Modal -->
 </div>
 </div>
  </div>
@@ -549,7 +553,7 @@ VIEW</a>
 <div class="form-group">
   <label for="textinput" class="col-md-4 control-label">Dob:</label>
   <div class="col-md-5">
-    <input style="wisth:100% !important" class="form-control input-md" id="date" name="date" value="<?php echo $arr_search['response'][0]['user_details']['dob'] ?>" style="width:31%;margin-left:34.6%;margin-top:-2%;" type="text" readonly>
+    <input style="width:100% !important" class="form-control input-md" id="date" name="date" value="<?php echo $arr_search['response'][0]['user_details']['dob'] ?>" style="width:31%;margin-left:34.6%;margin-top:-2%;" type="text" readonly>
   </div>
 </div>
 
@@ -586,9 +590,12 @@ VIEW</a>
 
 <div class="col-md-5">
   <input id="pan_upload" class="form-control input-md" value="<?php echo $arr_search['response'][0]['pan_card_details'][0]['name']; ?>" readonly/>
-<div class="fileUpload btn btn-info" style="margin-left:105%;padding:0.5em;margin-top:-12%;">
+  </div>
+  <div class="col-md-1">
+<div class="fileUpload btn btn-info">
   <label style="font-weight:500;margin-bottom: 2px;">ATTACH</label>
 <input id="pan_card" name="pan_card" style="margin-left:-47%" value="<?php echo $_POST['pan_card'] ?>" class="upload" type="file" disabled="true">
+</div>
 </div>
 
 <?php
@@ -607,7 +614,8 @@ VIEW</a>
   $arr_img_download_pan_user = json_decode($output_img_download,true);
   
 ?>
-<a target="_blank" class="btn btn-info" data-toggle="modal" data-target="#myModal5" style="background-color:#176fac;margin-top:-26%;margin-left:133%;color:white">
+<div class="col-md-1">
+<a target="_blank" class="btn btn-info" data-toggle="modal" data-target="#myModal" href="view_popup.php?name=pan_card_details&link=<?php echo $arr_img_download[0]['url']; ?>">
 VIEW</a>
 </div>
 </div>

@@ -2,8 +2,9 @@
 <html>
 <head>
   <title>CA DATA BASE</title>
-    <link rel="stylesheet" type="text/css" href="css/material.indigo-pink.min.css">
+  <link rel="stylesheet" type="text/css" href="css/material.indigo-pink.min.css">
   <link rel="stylesheet" href="css/bootstrap.css">
+  <link rel="stylesheet" href="css/kyc.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
@@ -53,8 +54,9 @@ if($arr2['status']==200 && $arr2['message']=='Is Super Admin'){
      -moz-box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23) !important;
      box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23) !important;" class="mdl-layout__header">
     <div class="mdl-layout__header-row" >
-        <img style="margin-top:5%;width:50px;height:50px" src="images/green.png"></img>
-         <span class="mdl-layout-title" style="margin-left:26%;margin-top:7%;">KYCApp</span>
+        <img id="logo" src="images/green.png"></img>
+         <span class="mdl-layout-title" style="margin-left:75%;
+    margin-top:7%;">KYCApp</span>
           <!-- Add spacer, to align navigation to the right -->
     </div>
       </header>

@@ -14,7 +14,7 @@
   <script src="https://code.getmdl.io/1.3.0/material.min.js"></script>
   <link rel="stylesheet" href="css/material.css">
   <link rel="stylesheet" href="css/fileupload.css">
-  <link rel="stylesheet" href="css/fileupload.css">
+  <link rel="stylesheet" href="css/kyc.css">
   <link rel="stylesheet" href="autocomplete-Files/styles.css">
 
   <script src="https://storage.googleapis.com/code.getmdl.io/1.0.6/material.min.js"></script>
@@ -147,47 +147,6 @@ document.getElementById('uploadFile').value='Choose File'; }
     });
 });
   </script>
-  <style type="text/css">
-    .upload-button {
-    padding: 4px;
-    border: 1px solid black;
-    border-radius: 5px;
-    display: block;
-    float: left;
-}
-
-.profile-pic {
-    max-width: 160px;
-    max-height: 160px;
-    display: block;
-}
-
-.file-upload1 {
-    display: none;
-}
-.alert {
-    padding: 20px;
-    background-color: #f44336;
-    color: white;
-    /*position: relative;*/
-}
-
-.closebtn {
-    margin-left: 15px;
-    color: white;
-    font-weight: bold;
-    float: right;
-    font-size: 22px;
-    line-height: 20px;
-    cursor: pointer;
-    transition: 0.3s;
-}
-
-.closebtn:hover {
-    color: black;
-}
-  </style>
-
 <script>
 
 function proceed(){
@@ -910,7 +869,7 @@ if ($_POST['uid'] != '' and $_GET["is_user"]==1){
      -moz-box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23) !important;
      box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23) !important;" class="mdl-layout__header mdl-layout__header--transparent">
     <div class="mdl-layout__header-row" >
-    <a href="search.php"><img style="margin-top:36%;margin-left:28px;width:50px;height:50px" src="images/green.png"></img></a>
+    <a href="search.php"><img id="logo1" src="images/green.png"></img></a>
 
     <?php if ($_GET['is_user']==0) { 
            $title="New Entry Organization";
@@ -987,9 +946,12 @@ if ($_POST['uid'] != '' and $_GET["is_user"]==1){
 <label class="col-md-4 control-label" for="reg_certificate">Registration Certificate:</label>
   <div class="col-md-4">
     <input id="uploadFile" placeholder="Choose File" class="form-control input-md" readonly/>
-    <div class="fileUpload btn btn-info" style="margin-left:105%;margin-top:-12%;">
+    </div>
+    <div class="col-md-1">
+    <div class="fileUpload btn btn-info" style="margin-left:0%;margin-top:0%;">
     <label style="font-weight:500;margin-bottom: 2px;">ATTACH</label>
     <input id="reg_certificate" name="reg_certificate" type="file" class="upload" onchange="setfilename(this.value);" />
+    </div>
 </div>
 </div>
 </div>
@@ -1008,9 +970,12 @@ if ($_POST['uid'] != '' and $_GET["is_user"]==1){
   <label class="col-md-4 control-label" for="filebutton">PAN Card:</label>
   <div class="col-md-4">
     <input id="pan_upload" placeholder="Choose File" class="form-control input-md" readonly/>
-    <div class="fileUpload btn btn-info" style="margin-left:105%;margin-top:-12%;">
+    </div>
+    <div class="col-md-1">
+    <div class="fileUpload btn btn-info" style="margin-left:0%;margin-top:0%;">
     <label style="font-weight:500;margin-bottom: 2px;">ATTACH</label>
     <input id="pan_card" name="pan_card" type="file" class="upload" onchange="panfilename(this.value);" />
+    </div>
   </div>
 </div>
 </div>
@@ -1029,12 +994,14 @@ if ($_POST['uid'] != '' and $_GET["is_user"]==1){
  <label class="col-md-4 control-label" for="checkboxes">Address Proof:</label>
  <div class="col-md-4">
    <label class="checkbox-inline" for="checkboxes-0">
-
     <input type="checkbox" name="checkboxes" id="checkboxes-0" value="1" onchange="document.getElementById('telephone_bill').disabled = !this.checked;" >Telephone</label>
      <input id="telephone_upload" style="width:68%;margin-left:32%;margin-top:-5%" readonly/>
-    <div class="fileUpload btn btn-info" style="margin-left:107%;margin-top:-6%;">
+     </div>
+     <div class="col-md-1">
+    <div class="fileUpload btn btn-info" style="margin-left:0%;margin-top:0%;">
     <label style="font-weight:500;margin-bottom: 2px;">ATTACH</label>
     <input id="telephone_bill" name="telephone_bill" type="file" class="upload" onchange="telefilename(this.value);"/> 
+    </div>
  </div>
 </div>
 </div>
@@ -1046,9 +1013,12 @@ if ($_POST['uid'] != '' and $_GET["is_user"]==1){
    <label class="checkbox-inline" for="checkboxes-0" >
      <input type="checkbox" name="checkboxes" id="checkboxes-0" value="1" onchange="document.getElementById('bank_pass_book').disabled = !this.checked;">Bank Passbook</label>
      <input id="bank_upload" style="width:68%;margin-left:32%;margin-top:0%" readonly/>
-    <div class="fileUpload btn btn-info" style="margin-left:105%;margin-top:-12%;">
+     </div>
+     <div class="col-md-1">
+    <div class="fileUpload btn btn-info" style="margin-left:0%;margin-top:0%;">
     <label style="font-weight:500;margin-bottom: 2px;">ATTACH</label>
-    <input id="bank_pass_book" name="bank_pass_book" type="file" class="upload" onchange="bankfilename(this.value);" />     
+    <input id="bank_pass_book" name="bank_pass_book" type="file" class="upload" onchange="bankfilename(this.value);" /> 
+    </div>    
  </div>
 </div>
 </div>
@@ -1083,7 +1053,7 @@ if ($_POST['uid'] != '' and $_GET["is_user"]==1){
 
     <a href="new_user_popup.php" style="color:white" target="_blank" data-toggle="modal" data-target="#myModal">
 
-     <button type="button" class="btn btn-info new_entry_btn" style="margin-left:-6%">
+     <button type="button" class="btn btn-info new_entry_btn" style="margin-left:0%">
        New Entry
      </button>
     </a>
@@ -1105,13 +1075,13 @@ if ($_POST['uid'] != '' and $_GET["is_user"]==1){
      <input id="textinput" name="textinput" type="text" placeholder="Specify if Other" class="form-control input-md partner_others"  style="width:103%;">
 </div>
 </div>
-<a href="" class="remove_field_present" style="margin-left:850px;margin-top:-40px;position:absolute"><img src="images/del24.png" ></a>
+<a href="" class="remove_field_present" style=""><img src="images/del24.png" ></a>
 </div>
 
 <div class="form-group">
 <div class="col-md-2 col-sm-2 col-2">
     <div class="input_fields_wrap" style="color:black">
-         <button class="add_field_button btn partner_btn" onclick="incrementValue()" style="margin-left: 443px;">Add New Partners</button>
+         <button class="add_field_button btn partner_btn" onclick="incrementValue()" >Add New Partners</button>
          <input type="text" name="mytext[]" hidden="" ></div>
 </div>
   </div>
@@ -1126,9 +1096,13 @@ if ($_POST['uid'] != '' and $_GET["is_user"]==1){
   <label class="col-md-4 control-label" for="selectbasic">Type of work</label>
   <div class="col-md-4">
     <select id="type_of_work[]" name="type_of_work[]" class="form-control">
-      <option value="Option one">Option one</option>
-      <option value="Option two">Option two</option>
-      <option value="Option three">Option three</option>
+     <option value="Audit Report">Audit Report</option>
+      <option value="ITR filing">ITR filing</option>
+      <option value="VAT Filing">VAT Filing</option>
+      <option value="Accounting">Accounting</option>
+      <option value="Registration">Registration</option>
+      <option value="Certification">Certification</option>
+      <option value="Others">Others</option>
     </select>
   </div>
 </div>
@@ -1161,7 +1135,7 @@ if ($_POST['uid'] != '' and $_GET["is_user"]==1){
   </div>
 </div>
 
-<a href="#" class="remove_field_pre1" style="margin-left:863px; margin-top: -46px;position:absolute">
+<a href="#" class="remove_field_pre1">
  <img src="images/del24.png" >
 </a>
 
@@ -1171,7 +1145,7 @@ if ($_POST['uid'] != '' and $_GET["is_user"]==1){
 
 <div class="col-md-8 col-sm-12 col-24">
     <div class="input_fields" style="color:black">
-         <button class="add_field btn " onclick="incrementValue()" style="margin-left: 443px;">Add More</button>
+         <button class="add_field btn " onclick="incrementValue()" >Add More</button>
          <div>
          <input type="text" name="mytextt[]" hidden="" ></div>
 </div>
@@ -1238,9 +1212,9 @@ function enable_disable(that){
 <fieldset>
 
 <div style="margin-top:12%">
-<img class="profile-pic" style="margin-left:77%;position:absolute;z-index:2;" src="images/boy-512.png" />
+<img class="profile-pic" src="images/boy-512.png" />
 
-<div class="upload-button" style="position:absolute;z-index:2;margin-left:79%;cursor:pointer;margin-top:14%;">Upload Image</div>
+<div class="upload-button" style="">Upload Image</div>
 
 <input onchange="check_image_user()" name="image" id="image" class="file-upload1" style="position:absolute;z-index:-2;margin-left:46%;margin-top:16%;" type="file">
 <!-- Text input-->
@@ -1383,9 +1357,13 @@ function enable_disable(that){
   <label class="col-md-4 control-label" for="selectbasic">Type of work</label>
   <div class="col-md-4">
     <select id="type_of_work[]" name="type_of_work[]" class="form-control">
-      <option value="Option one">Option one</option>
-      <option value="Option two">Option two</option>
-      <option value="Option three">Option three</option>
+      <option value="Audit Report">Audit Report</option>
+      <option value="ITR filing">ITR filing</option>
+      <option value="VAT Filing">VAT Filing</option>
+      <option value="Accounting">Accounting</option>
+      <option value="Registration">Registration</option>
+      <option value="Certification">Certification</option>
+      <option value="Others">Others</option>
     </select>
   </div>
 </div>
@@ -1401,6 +1379,7 @@ function enable_disable(that){
     </select>
   </div>
 </div>
+
 <!--date-->
 <div class="form-group row">
   <label for="example-date-input" class="col-2 col-form-label" style="margin-left:29.5%;">DATE</label>
@@ -1417,7 +1396,7 @@ function enable_disable(that){
   <input id="comment[]" name="comment[]" type="text" placeholder="" class="form-control input-md"/>
   </div>
 </div>
-<a href="#" class="remove_field_pre1" style="margin-left: 866px; margin-top: -42px;position:absolute">
+<a href="#" class="remove_field_pre1">
  <img src="images/del24.png" >
 </a>
 </div>
@@ -1491,7 +1470,7 @@ $('#trigger').click(function(){
         e.preventDefault();
         if(x < max_fields){ //max input box allowed
             x++; //text box increment
-            $(wrapper).prepend('<br><div style="margin-left:50px;"><center><div class="form-group"> <label class=" control-label" for="textinput" style="margin-left:327px;">Name: </label> <div > <input id="partner_names[]" name="partner_names[]" type="text" placeholder="Enter Full Name" class="form-control input-md newentry partner_names" style="margin-top: -25px;margin-left: 403px;width: 241%;">  </div>  <div class="col-md-6" > <a href="new_user_popup.php" style="color:white" target="_blank" data-toggle="modal" data-target="#myModal"><button  type="button" class="btn btn-info new_entry_btn" style="margin-left: 809px;margin-top: -61px;">New Entry</button> </a> </div></div> <div class="form-group">  <label class="control-label" for="selectbasic" style="margin-left:293px;">Designation: </label>  <div> <select id="partner_designations[]" name="partner_designations[]" class="form-control partner_designations" style="margin-left: 405px;margin-top: -34px;width:118%;">      <option value="Managing Partner">Managing Partner</option>      <option value="Manager">Manager</option>      <option value="Other">Other</option>    </select>  </div>  <div>  <input style="margin-left: 617px;margin-top: -35px;width:114%" id="textinput" name="textinput" type="text" placeholder="Specify if Other" class="form-control input-md partner_others"></div></div></center><a href="#" class="remove_field" style="margin-left:810px;margin-top:-40px;position:absolute"><img src="images/del24.png"></a></a></div>'); //add input box\
+            $(wrapper).prepend('<br><div style="margin-left:50%;"><center><div class="form-group"> <label class="control-label name" for="textinput" style="">Name: </label> <div class="partner_name"> <input id="partner_names[]" name="partner_names[]" type="text" placeholder="Enter Full Name" class="form-control input-md newentry partner_names" style="">  </div>  <div class="col-md-6" > <a href="new_user_popup.php" style="color:white" target="_blank" data-toggle="modal" data-target="#myModal"><button  type="button" class="btn btn-info new_entry_btn entry">New Entry</button> </a> </div></div> <div class="form-group">  <label class="control-label designation" for="selectbasic">Designation: </label>  <div> <select id="partner_designations[]" name="partner_designations[]" class="form-control partner_designations" style="margin-left:290%;margin-top:-20%;width:118%;">      <option value="Managing Partner">Managing Partner</option>      <option value="Manager">Manager</option>      <option value="Other">Other</option>    </select>  </div>  <div>  <input style="margin-left:485%;margin-top: -35px;width:114%" id="textinput" name="textinput" type="text" placeholder="Specify if Other" class="form-control input-md partner_others"></div></div></center><a href="#" class="remove_field" style="margin-left:370%;margin-top:-40px;position:absolute"><img src="images/del24.png"></a></a></div>'); //add input box\
         }
     });
     
@@ -1520,8 +1499,7 @@ $('#trigger').click(function(){
         e.preventDefault();
         if(x < max_fields){ //max input box allowed
             x++; //text box increment
-
-            $(wrapper).prepend('<br><div style="margin-left:50%;"><div class="form-group"><label class="control-label" for="selectbasic" style="margin-left:-325px;">Type of work</label><div class="col-md-6"><select id="type_of_work[]" name="type_of_work[]" class="form-control" style="margin-left:9%;width:208%"><option value="Option one">Option one</option><option value="Option two">Option two</option><option value="Option three">Option three</option></select></div></div><div class="form-group"> <label class="col-md-4 control-label" for="selectbasic" style="margin-left:-29%">Status</label><div class="col-md-6"><select id="status[]" name="status[]" style="width:210%;margin-left:-1%;" class="form-control"><option value="Pending">Pending</option><option value="Work in process">Work in process</option><option value="Completed">Completed</option></select></div></div><div class="form-group row"><label for="example-date-input" class="col-2 col-form-label" style="margin-left:-8.5%;";">DATE</label><div class="col-10"><input class="form-control datepicker" id="date[]" name="date[]" style="width:91%;margin-left:6.6%;margin-top:-6%;" type="text"></div></div><div class="form-group"><label class="col-md-4 control-label" for="textinput" style="margin-left:-29%">Comment</label><div class="col-md-4"><input id="comment[]" name="comment[]" type="text" placeholder="" class="form-control input-md" style="width:342%"></div></div></center><a href="#" class="remove_field" style="margin-left:446px;margin-top:-40px;position:absolute"><img src="images/del24.png" ></a></a></div>'); //add input box\
+            $(wrapper).prepend('<br><div style="margin-left:50%;"><div class="form-group"><label class="control-label type" for="selectbasic" style="">Type of work</label><div class="col-md-6"><select id="type_of_work[]" name="type_of_work[]" class="form-control" style="margin-left:9%;width:208%"><option value="Audit Report">Audit Report</option><option value="ITR filing">ITR filing</option><option value="VAT Filing">VAT Filing</option><option value="Accounting">Accounting</option><option value="Registration">Registration</option><option value="Certification">Certification</option><option value="Others">Others</option></select></div></div><div class="form-group"> <label class="col-md-4 control-label status" for="selectbasic" style="">Status</label><div class="col-md-6"><select id="status[]" name="status[]"  class="form-control status"><option value="Pending">Pending</option><option value="Work in process">Work in process</option><option value="Completed">Completed</option></select></div></div><div class="form-group row"><label for="example-date-input" class="col-2 col-form-label" style="margin-left:-8.5%;";">DATE</label><div class="col-10"><input class="form-control datepicker" id="date[]" name="date[]" style="width:88%;margin-left:7.6%;margin-top:-6%;" type="text"></div></div><div class="form-group"><label class="col-md-4 control-label" for="textinput" style="margin-left:-29%">Comment</label><div class="col-md-4"><input id="comment[]" name="comment[]" type="text" placeholder="" class="form-control input-md" style="width:342%"></div></div></center><a href="#" class="remove_field" style=""><img src="images/del24.png" ></a></a></div>'); //add input box\
             $( ".datepicker" ).datepick({dateFormat: 'dd/mm/yyyy'});
         }
     });

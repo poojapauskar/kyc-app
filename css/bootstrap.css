@@ -2985,6 +2985,7 @@ select[multiple].input-lg {
     text-align: right;
     text-transform: uppercase;
     font-weight: 600;
+    
   }
 }
 .form-horizontal .has-feedback .form-control-feedback {
