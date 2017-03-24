@@ -1,4 +1,8 @@
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 016abb16245d30d01c4fe1fad5046a68e1389dc7
 #logo
 {
 	margin-top:5%;
@@ -71,6 +75,7 @@
     transition: 0.3s;
 }
 
+<<<<<<< HEAD
 .control-label.name {
     margin-left:223%;
 }
@@ -79,6 +84,8 @@
     margin-left:181%;
 }
 
+=======
+>>>>>>> 016abb16245d30d01c4fe1fad5046a68e1389dc7
 .closebtn:hover {
     color: black;
 }
@@ -141,6 +148,7 @@ div.fileUpload.btn.btn-info{
 }
 
 /*add new partner js*/
+
 .partner_name{
 	margin-top:-20%;
 	margin-left:290%;
@@ -360,5 +368,7 @@ input#partner_names[].form-control.input-md.newentry.partner_names{
 	width: 322%;
 }
 
+
 }
+
 

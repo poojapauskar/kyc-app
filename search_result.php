@@ -137,7 +137,6 @@
 }
 
   </style>
-
 </head>
 <body style="background-color:#E8E8E8;overflow-x:hidden;">
 
@@ -309,6 +308,7 @@ $arr_search = json_decode($output_search,true);
 ?>
 <div class="col-md-1">
 <a target="_blank" data-toggle="modal" data-target="#myModal1" class="btn btn-info">
+
 VIEW
 </a>
 </div>
@@ -350,7 +350,6 @@ VIEW
   $arr_img_download_pan_org = json_decode($output_img_download_2,true);
   
 ?>
-
 <div class="col-md-1">
 <a data-toggle="modal" data-target="#myModal2" class="btn btn-info">VIEW</a>
 </div>
