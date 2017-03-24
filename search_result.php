@@ -308,8 +308,7 @@ $arr_search = json_decode($output_search,true);
   
 ?>
 <div class="col-md-1">
-<a target="_blank" data-toggle="modal" data-target="#myModal" class="btn btn-info" href="view_popup.php?name=reg_certificate_details&link=<?php echo $arr_img_download[0]['url']; ?>">
-
+<a target="_blank" data-toggle="modal" data-target="#myModal1" class="btn btn-info">
 VIEW
 </a>
 </div>
@@ -353,7 +352,7 @@ VIEW
 ?>
 
 <div class="col-md-1">
-<a data-toggle="modal" data-target="#myModal" class="btn btn-info" href="view_popup.php?name=pan_card_details&link=<?php echo $arr_img_download_2[0]['url']; ?>" data-remote="view_popup.php #modal-section">VIEW</a>
+<a data-toggle="modal" data-target="#myModal2" class="btn btn-info">VIEW</a>
 </div>
 </div>
 

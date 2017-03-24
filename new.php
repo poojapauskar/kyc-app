@@ -1096,9 +1096,13 @@ if ($_POST['uid'] != '' and $_GET["is_user"]==1){
   <label class="col-md-4 control-label" for="selectbasic">Type of work</label>
   <div class="col-md-4">
     <select id="type_of_work[]" name="type_of_work[]" class="form-control">
-      <option value="Option one">Option one</option>
-      <option value="Option two">Option two</option>
-      <option value="Option three">Option three</option>
+     <option value="Audit Report">Audit Report</option>
+      <option value="ITR filing">ITR filing</option>
+      <option value="VAT Filing">VAT Filing</option>
+      <option value="Accounting">Accounting</option>
+      <option value="Registration">Registration</option>
+      <option value="Certification">Certification</option>
+      <option value="Others">Others</option>
     </select>
   </div>
 </div>
@@ -1141,7 +1145,7 @@ if ($_POST['uid'] != '' and $_GET["is_user"]==1){
 
 <div class="col-md-8 col-sm-12 col-24">
     <div class="input_fields" style="color:black">
-         <button class="add_field btn " onclick="incrementValue()" style="margin-left: 443px;">Add More</button>
+         <button class="add_field btn " onclick="incrementValue()" >Add More</button>
          <div>
          <input type="text" name="mytextt[]" hidden="" ></div>
 </div>
@@ -1353,9 +1357,13 @@ function enable_disable(that){
   <label class="col-md-4 control-label" for="selectbasic">Type of work</label>
   <div class="col-md-4">
     <select id="type_of_work[]" name="type_of_work[]" class="form-control">
-      <option value="Option one">Option one</option>
-      <option value="Option two">Option two</option>
-      <option value="Option three">Option three</option>
+      <option value="Audit Report">Audit Report</option>
+      <option value="ITR filing">ITR filing</option>
+      <option value="VAT Filing">VAT Filing</option>
+      <option value="Accounting">Accounting</option>
+      <option value="Registration">Registration</option>
+      <option value="Certification">Certification</option>
+      <option value="Others">Others</option>
     </select>
   </div>
 </div>
@@ -1462,7 +1470,7 @@ $('#trigger').click(function(){
         e.preventDefault();
         if(x < max_fields){ //max input box allowed
             x++; //text box increment
-            $(wrapper).prepend('<br><div style="margin-left:50%;"><center><div class="form-group"> <label class="control-label" for="textinput" style="margin-left:225%;">Name: </label> <div class="partner_name"> <input id="partner_names[]" name="partner_names[]" type="text" placeholder="Enter Full Name" class="form-control input-md newentry partner_names" style="margin-top:-20%;margin-left:290%;width: 322%;">  </div>  <div class="col-md-6" > <a href="new_user_popup.php" style="color:white" target="_blank" data-toggle="modal" data-target="#myModal"><button  type="button" class="btn btn-info new_entry_btn" style="margin-left:1240%;position:absolute;margin-top: -41px;">New Entry</button> </a> </div></div> <div class="form-group">  <label class="control-label" for="selectbasic" style="margin-left:175%;">Designation: </label>  <div> <select id="partner_designations[]" name="partner_designations[]" class="form-control partner_designations" style="margin-left:290%;margin-top:-20%;width:118%;">      <option value="Managing Partner">Managing Partner</option>      <option value="Manager">Manager</option>      <option value="Other">Other</option>    </select>  </div>  <div>  <input style="margin-left:485%;margin-top: -35px;width:114%" id="textinput" name="textinput" type="text" placeholder="Specify if Other" class="form-control input-md partner_others"></div></div></center><a href="#" class="remove_field" style="margin-left:370%;margin-top:-40px;position:absolute"><img src="images/del24.png"></a></a></div>'); //add input box\
+            $(wrapper).prepend('<br><div style="margin-left:50%;"><center><div class="form-group"> <label class="control-label name" for="textinput" style="">Name: </label> <div class="partner_name"> <input id="partner_names[]" name="partner_names[]" type="text" placeholder="Enter Full Name" class="form-control input-md newentry partner_names" style="">  </div>  <div class="col-md-6" > <a href="new_user_popup.php" style="color:white" target="_blank" data-toggle="modal" data-target="#myModal"><button  type="button" class="btn btn-info new_entry_btn entry">New Entry</button> </a> </div></div> <div class="form-group">  <label class="control-label designation" for="selectbasic">Designation: </label>  <div> <select id="partner_designations[]" name="partner_designations[]" class="form-control partner_designations" style="margin-left:290%;margin-top:-20%;width:118%;">      <option value="Managing Partner">Managing Partner</option>      <option value="Manager">Manager</option>      <option value="Other">Other</option>    </select>  </div>  <div>  <input style="margin-left:485%;margin-top: -35px;width:114%" id="textinput" name="textinput" type="text" placeholder="Specify if Other" class="form-control input-md partner_others"></div></div></center><a href="#" class="remove_field" style="margin-left:370%;margin-top:-40px;position:absolute"><img src="images/del24.png"></a></a></div>'); //add input box\
         }
     });
     
@@ -1492,7 +1500,7 @@ $('#trigger').click(function(){
         if(x < max_fields){ //max input box allowed
             x++; //text box increment
 
-            $(wrapper).prepend('<br><div style="margin-left:50%;"><div class="form-group"><label class="control-label" for="selectbasic" style="margin-left:-78%;">Type of work</label><div class="col-md-6"><select id="type_of_work[]" name="type_of_work[]" class="form-control" style="margin-left:9%;width:208%"><option value="Option one">Option one</option><option value="Option two">Option two</option><option value="Option three">Option three</option></select></div></div><div class="form-group"> <label class="col-md-4 control-label" for="selectbasic" style="margin-left:-29%">Status</label><div class="col-md-6"><select id="status[]" name="status[]" style="width:210%;margin-left:-1%;" class="form-control"><option value="Pending">Pending</option><option value="Work in process">Work in process</option><option value="Completed">Completed</option></select></div></div><div class="form-group row"><label for="example-date-input" class="col-2 col-form-label" style="margin-left:-8.5%;";">DATE</label><div class="col-10"><input class="form-control datepicker" id="date[]" name="date[]" style="width:91%;margin-left:6.6%;margin-top:-6%;" type="text"></div></div><div class="form-group"><label class="col-md-4 control-label" for="textinput" style="margin-left:-29%">Comment</label><div class="col-md-4"><input id="comment[]" name="comment[]" type="text" placeholder="" class="form-control input-md" style="width:342%"></div></div></center><a href="#" class="remove_field" style="margin-left:446px;margin-top:-40px;position:absolute"><img src="images/del24.png" ></a></a></div>'); //add input box\
+            $(wrapper).prepend('<br><div style="margin-left:50%;"><div class="form-group"><label class="control-label type" for="selectbasic" style="">Type of work</label><div class="col-md-6"><select id="type_of_work[]" name="type_of_work[]" class="form-control" style="margin-left:9%;width:208%"><option value="Audit Report">Audit Report</option><option value="ITR filing">ITR filing</option><option value="VAT Filing">VAT Filing</option><option value="Accounting">Accounting</option><option value="Registration">Registration</option><option value="Certification">Certification</option><option value="Others">Others</option></select></div></div><div class="form-group"> <label class="col-md-4 control-label status" for="selectbasic" style="">Status</label><div class="col-md-6"><select id="status[]" name="status[]"  class="form-control status"><option value="Pending">Pending</option><option value="Work in process">Work in process</option><option value="Completed">Completed</option></select></div></div><div class="form-group row"><label for="example-date-input" class="col-2 col-form-label" style="margin-left:-8.5%;";">DATE</label><div class="col-10"><input class="form-control datepicker" id="date[]" name="date[]" style="width:88%;margin-left:7.6%;margin-top:-6%;" type="text"></div></div><div class="form-group"><label class="col-md-4 control-label" for="textinput" style="margin-left:-29%">Comment</label><div class="col-md-4"><input id="comment[]" name="comment[]" type="text" placeholder="" class="form-control input-md" style="width:342%"></div></div></center><a href="#" class="remove_field" style=""><img src="images/del24.png" ></a></a></div>'); //add input box\
             $( ".datepicker" ).datepick({dateFormat: 'dd/mm/yyyy'});
         }
     });
