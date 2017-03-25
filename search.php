@@ -98,8 +98,8 @@ if($_POST['is_user_delete'] != "" && $_POST['pk_delete'] != ""){
     <div class="mdl-layout__header-row" >
 
        <a href="search.php"> <img id="logo1" src="images/green.png"></img></a>
-      <h5 style="margin-left:35%;margin-top:9%;">Admin Panel</h5>
-         <span class="mdl-layout-title" style="margin-left:26%;margin-top:7%;">KYCApp</span>
+      <h5 style="margin-left:35%;margin-top:9%;">ADMIN PANEL</h5>
+         <span class="mdl-layout-title" id="title1" style="">KYCApp</span>
          <a href="index.php"><img style="margin-top:100%;margin-left:28px;width:40px;height:40px" src="images/logout1.png"></img></a>
           <!-- Add spacer, to align navigation to the right -->
           
@@ -131,8 +131,6 @@ if($_POST['is_user_delete'] != "" && $_POST['pk_delete'] != ""){
     <input id="search" name="search" type="text" placeholder="Search firms or individuals" class="form-control input-md" style="width:55%;margin-top:-8%;height:39px" required onchange="this.form.submit()">
   <input id="is_user_field" name="is_user_field" type="hidden"></input>
   <input id="id_field" name="id_field" type="hidden"></input>
-    <!-- <button style="background-color:#74b25e;margin-left:58%;margin-top:-3.5%;color:white;width:200px;height:37px" class="mdl-button mdl-js-button mdl-button--raised" type="submit" value="Search" id="submit" name="submit">
-    </button> -->
     <button style="visibility:hidden;display:none;margin-left:58%;margin-top:-3.5%;width:200px;height:37px" class="mdl-button mdl-js-button mdl-button--raised" type="submit" value="Search" id="submit" name="submit">
     </button>
     </form>

@@ -51,8 +51,7 @@ if($arr2['status']==200){
      box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23) !important;" class="mdl-layout__header">
     <div class="mdl-layout__header-row" >
         <img id="logo" src="images/green.png"></img>
-         <span class="mdl-layout-title" style="margin-left:75%;
-    margin-top:7%;">KYCApp</span>
+         <span class="mdl-layout-title" id="title" style="">KYCApp</span>
           <!-- Add spacer, to align navigation to the right -->
     </div>
       </header>

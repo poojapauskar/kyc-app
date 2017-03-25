@@ -61,8 +61,8 @@
 }
 
 .profile-pic {
-    max-width: 160px;
-    max-height: 160px;
+    max-width: 100px;
+    max-height: 100px;
     display: block;
 }
 
@@ -285,7 +285,7 @@ $arr_search = json_decode($output_search,true);
 <input id="uploadFile" class="form-control input-md" value="<?php echo $arr_search['response'][0]['reg_certificate_details'][0]['name']; ?>" readonly/>
 </div>
 <div class="col-md-1">
-  <div class="fileUpload btn btn-info" style="margin-left:0%;padding:0.5em;margin-top:0%;">
+  <div class="fileUpload btn btn-info">
     <label style="font-weight:500;margin-bottom: 2px;">ATTACH</label>
     <input id="reg_certificate" name="reg_certificate" type="file" class="upload" disabled="true">
 </div>
@@ -329,7 +329,7 @@ VIEW
   <input id="pan_upload" class="form-control input-md" value="<?php echo $arr_search['response'][0]['pan_card_details'][0]['name']; ?>" readonly/>
   </div>
   <div class="col-md-1">
-  <div class="fileUpload btn btn-info" style="margin-left:0%;padding:0.5em;margin-top:0%;">
+  <div class="fileUpload btn btn-info" >
   <label style="font-weight:500;margin-bottom: 2px;">ATTACH</label>
   <input id="pan_card" name="pan_card" type="file" class="upload" disabled="true">
 </div>
@@ -379,11 +379,10 @@ VIEW
      <input <?php echo $check_box_select1;?> type="checkbox" name="checkboxes" id="checkboxes-0" value="1"  disabled>Telephone</label>
     
   </div>
-<div class="col-md-3" style="margin-left:44%;margin-top:-2%">
-    <?php echo $arr_search['response'][0]['telephone_bill_details'][0]['name']; ?>
-</div>
+<div class="col-md-3" >
+<input style="" class="search_result tele" value="<?php echo $arr_search['response'][0]['telephone_bill_details'][0]['name']; ?>">
 
-<div class="fileUpload btn btn-info" style="margin-left:-2%;padding:0.5em;margin-top:-1%;">
+<div class="fileUpload btn btn-info tele1" style="">
     <label style="font-weight:500;margin-bottom: 2px;">ATTACH</label>
 <input id="telephone_bill" value="<?php echo $arr_search['response'][0]['organization_details']['telephone'] ?>" style="margin-top: -20px;margin-left: 129px;" name="telephone_bill" class="upload" type="file"  disabled="true">  
 
@@ -404,15 +403,16 @@ VIEW
   
 ?>
 </div> 
-<br>
-<a target="_blank" data-toggle="modal" data-target="#myModal3" style="color:white;margin-left:77%;margin-top:-9%;position: relative;" class="btn btn-info">VIEW</a>
+</div>
+<div class="col-md-1">
+<a target="_blank" data-toggle="modal" data-target="#myModal3" style="" class="btn btn-info view1">VIEW</a>
 </div> 
+</div>
 
 <div class="form-group">
  <label class="col-md-4 control-label" for="checkboxes"></label>
  <div class="col-md-4">
    <label class="checkbox-inline" for="checkboxes-0">
-   <div class="col-md-3" style="margin-left:-8%">
      <?php if($arr_search['response'][0]['pass_book_details'][0]['name'] != ''){
       $check_box_select2="checked";
       
@@ -422,10 +422,8 @@ VIEW
      <input <?php echo $check_box_select2;?> type="checkbox" name="checkboxes" id="checkboxes-0" value="1" disabled>Bank Passbook</label>
 </div>
 <div class="col-md-3"> 
-     <?php echo $arr_search['response'][0]['pass_book_details'][0]['name']; ?>
-</div>
-<div class="col-md-3">
-<div class="fileUpload btn btn-info" style="margin-left:460%;padding:0.5em;margin-top:-21%;">
+<input class="search_result tele" value="<?php echo $arr_search['response'][0]['pass_book_details'][0]['name']; ?>">
+<div class="fileUpload btn btn-info tele1" style="">
     <label style="font-weight:500;margin-bottom: 2px;">ATTACH</label>
     <input id="bank_pass_book" style="margin-top: -22px;margin-left: 129px;" name="bank_pass_book" class="upload" type="file"  disabled="true"> 
 </div>
@@ -446,12 +444,13 @@ VIEW
   $arr_img_download_pass_org = json_decode($output_img_download_4,true);
   
 ?>
-
-<a target="_blank" data-toggle="modal" data-target="#myModal4" class="btn btn-info " style="color:white;background-color:#176fac;position:absolute;margin-top:-80%;margin-left:382%;">
+</div>
+<div class="col-md-1">
+<a target="_blank" data-toggle="modal" data-target="#myModal4" class="btn btn-info view1 ">
 VIEW</a>
 </div>
 </div>
- </div>
+
 
 <!-- Added Partner 1 -->
 <label for="comment" style="margin-left: 279px;margin-top:-27%;font-size: 17px;"> Partner 1: </label>
@@ -615,7 +614,7 @@ VIEW</a>
   
 ?>
 <div class="col-md-1">
-<a target="_blank" class="btn btn-info" data-toggle="modal" data-target="#myModal" href="view_popup.php?name=pan_card_details&link=<?php echo $arr_img_download[0]['url']; ?>">
+<a target="_blank" class="btn btn-info" data-toggle="modal" data-target="#myModal5">
 VIEW</a>
 </div>
 </div>
@@ -624,7 +623,7 @@ VIEW</a>
 <div class="form-group">
   <label class="col-md-4 control-label" for="checkboxes">Address Proof</label>
 
-<div class="col-md-2">
+<div class="col-md-1">
 <label class="checkbox-inline" for="checkboxes-0">
 
 <?php if($arr_search['response'][0]['telephone_bill_details'][0]['name'] != ''){
@@ -637,13 +636,14 @@ VIEW</a>
 </div>
 
 <div class="col-md-4">
-<?php echo $arr_search['response'][0]['telephone_bill_details'][0]['name']; ?>
+<input class="search_result tele1" value="<?php echo $arr_search['response'][0]['telephone_bill_details'][0]['name']; ?>">
 </div>
 
-
-<div class="fileUpload btn btn-info" style="margin-left:-8%;padding:0.5em;margin-top:-1%;">
+<div class="col-md-1">
+<div class="fileUpload btn btn-info">
     <label style="font-weight:500;margin-bottom: 2px;">ATTACH</label>
 <input id="telephone_bill"  value="<?php echo $_POST['telephone_bill'] ?>" style="margin-top: 5px;margin-left: 126px;" name="telephone_bill" class="upload" type="file"  disabled="true">     
+ </div>
  </div>
 
 
@@ -663,15 +663,15 @@ VIEW</a>
   $arr_img_download_tel_user = json_decode($output_img_download_2,true);
   
 ?>
-
-<a target="_blank" data-toggle="modal" data-target="#myModal6" class="btn btn-info" style="color:white;margin-left:86%;margin-top:-9%;position: relative;">VIEW</a>
+<div class="col-md-1">
+<a target="_blank" data-toggle="modal" data-target="#myModal6" class="btn btn-info">VIEW</a>
 </div>
 </div>
 
 
     <div class="form-group">
  <label class="col-md-4 control-label" for="checkboxes"></label>
- <div class="col-md-2">
+ <div class="col-md-1">
    <label class="checkbox-inline" for="checkboxes-0">
    <?php if($arr_search['response'][0]['bank_pass_book_details'][0]['name'] != ''){
       $check_box_select2="checked";
@@ -683,12 +683,14 @@ VIEW</a>
  </div>
 
  <div class="col-md-4">
-<?php echo $arr_search['response'][0]['bank_pass_book_details'][0]['name']; ?>
+ <input class="search_result tele1" value="<?php echo $arr_search['response'][0]['bank_pass_book_details'][0]['name']; ?>">
 </div>
 
-<div class="fileUpload btn btn-info" style="margin-left:-8%;padding:0.5em;margin-top:-1%;">
+<div class="col-md-1">
+<div class="fileUpload btn btn-info">
     <label style="font-weight:500;margin-bottom: 2px;">ATTACH</label>
-<input id="bank_pass_book"  value="<?php echo $_POST['bank_pass_book'] ?>" style="margin-top: 6px;margin-left: 129px;position:absolute;" name="bank_pass_book" class="upload" type="file" disabled>     
+<input id="bank_pass_book"  value="<?php echo $_POST['bank_pass_book'] ?>" style="margin-top: 6px;margin-left: 129px;position:absolute;" name="bank_pass_book" class="upload" type="file" disabled>  
+ </div>
  </div>
 
 <?php
@@ -707,8 +709,9 @@ VIEW</a>
   $arr_img_download_pass_user = json_decode($output_img_download_3,true);
   
 ?>
-
-<a target="_blank" data-toggle="modal" data-target="#myModal7" style="color:white;margin-left:86%;margin-top:-11%;position:relative;" class="btn btn-info">VIEW</a>
+<div class="col-md-1">
+<a target="_blank" data-toggle="modal" data-target="#myModal7" class="btn btn-info">VIEW</a>
+</div>
 </div>
 
 <!--ID pROOF-->
@@ -716,7 +719,7 @@ VIEW</a>
 <!--address proof-->
 <div class="form-group">
   <label class="col-md-4 control-label" for="checkboxes">ID Proof</label>
-  <div class="col-md-2">
+  <div class="col-md-1">
    <label class="checkbox-inline" for="checkboxes-0">
 
    <?php if($arr_search['response'][0]['voter_id_details'][0]['name'] != ''){
@@ -729,11 +732,14 @@ VIEW</a>
    </div>
 
     <div class="col-md-4">
-    <?php echo $arr_search['response'][0]['voter_id_details'][0]['name']; ?>
+    <input class="search_result tele1" value="<?php echo $arr_search['response'][0]['voter_id_details'][0]['name']; ?>">
     </div>
-    <div class="fileUpload btn btn-info" style="margin-left:-8%;padding:0.5em;margin-top:-1%;">
+    
+     <div class="col-md-1">
+    <div class="fileUpload btn btn-info" >
     <label style="font-weight:500;margin-bottom: 2px;">ATTACH</label>
     <input id="voter_id" value="<?php echo $_POST['voter_id'] ?>" style="margin-top: 6px;margin-left: 129px;position:absolute;" name="voter_id" class="input-file" type="file" disabled>     
+   </div>
    </div>
   <?php
     $url_img_download_4 = 'https://kyc-application.herokuapp.com/download/';
@@ -751,12 +757,14 @@ VIEW</a>
     $arr_img_download_voter_user = json_decode($output_img_download_4,true);
     
   ?>
-<a target="_blank" data-toggle="modal" data-target="#myModal8" class="btn btn-info" style="margin-left:86%;margin-top:-9%;position: relative;color:white;position:relative">VIEW</a>
+   <div class="col-md-1">
+<a target="_blank" data-toggle="modal" data-target="#myModal8" class="btn btn-info">VIEW</a>
+  </div>
   </div>
 
     <div class="form-group">
  <label class="col-md-4 control-label" for="checkboxes"></label>
- <div class="col-md-2">
+ <div class="col-md-1">
    <label class="checkbox-inline" for="checkboxes-0">
    <?php if($arr_search['response'][0]['passport_details'][0]['name'] != ''){
       $check_box_select4="checked";
@@ -767,11 +775,13 @@ VIEW</a>
   </div>
 
    <div class="col-md-4">
-  <?php echo $arr_search['response'][0]['passport_details'][0]['name']; ?>
+  <input class="search_result tele1" value="<?php echo $arr_search['response'][0]['passport_details'][0]['name']; ?>">
   </div>
-   <div class="fileUpload btn btn-info" style="margin-left:-8%;padding:0.5em;margin-top:-1%;">
+  <div class="col-md-1">
+   <div class="fileUpload btn btn-info" style="">
     <label style="font-weight:500;margin-bottom: 2px;">ATTACH</label>
   <input id="passport" value="<?php echo $_POST['passport'] ?>" style="margin-top: 6px;margin-left: 129px;position:absolute;" name="passport" class="input-file" type="file" disabled>     
+   </div>
    </div>
 
   <?php
@@ -790,8 +800,10 @@ VIEW</a>
     $arr_img_download_passport_user = json_decode($output_img_download_5,true);
     
   ?>
-<a target="_blank" data-toggle="modal" data-target="#myModal9" class="btn btn-info" style="color:white;margin-left:86%;margin-top:-9%;position: relative;">
+  <div class="col-md-1">
+<a target="_blank" data-toggle="modal" data-target="#myModal9" class="btn btn-info" style="">
 VIEW</a>
+  </div>
   </div>
 
 
@@ -812,8 +824,8 @@ VIEW</a>
   <input id="pan_upload" class="form-control input-md" value="<?php echo $arr_search['response'][0]['aadhar_card_details'][0]['name']; ?>" disabled>
   </div>
 
-  <div class="col-md-4">
-   <div class="fileUpload btn btn-info" style="margin-left:245%;padding:0.5em;margin-top:-17%;">
+  <div class="col-md-1">
+   <div class="fileUpload btn btn-info" style="">
     <label style="font-weight:500;margin-bottom: 2px;">ATTACH</label>
     <input id="aadhar_card" style="margin-left:-47%" name="aadhar_card" value="<?php echo $_POST['aadhar_card'] ?>" class="upload" type="file" disabled>
   
@@ -836,7 +848,8 @@ VIEW</a>
 
 </div>
   </div>
-<a target="_blank" data-toggle="modal" data-target="#myModal10" class="btn btn-info" style="color:white;margin-left:86%;margin-top:-11%;position: relative;">VIEW</a>
+  <div class="col-md-1">
+<a target="_blank" data-toggle="modal" data-target="#myModal10" class="btn btn-info" style="">VIEW</a></div>
   </div>
 <!-- Button -->
 <div class="form-group">

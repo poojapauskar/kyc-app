@@ -6,6 +6,7 @@
 <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
   <link rel="stylesheet" href="css/bootstrap.css">
+  <link rel="stylesheet" href="css/kyc.css">
   <link rel="stylesheet" type="text/css" href="autocomplete-Files/styles.css">
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
@@ -923,10 +924,11 @@ if(isset($_POST["edit_btn"]) and $_GET["is_user"]==1) {
         </nav>
       </div>
       </div>
-      </header>
+
+<main class="">
 
 <?php if ($_GET['is_user']==0) { ?>
-<form class="form-horizontal" method="post" action="" enctype="multipart/form-data">
+<form class="form-horizontal" method="post" action="" enctype="multipart/form-data" style="">
 
 <fieldset>
 
@@ -934,7 +936,7 @@ if(isset($_POST["edit_btn"]) and $_GET["is_user"]==1) {
 
 
 <!-- Select Basic -->
-<div class="form-group" style="margin-top:10%">
+<div class="form-group" style="margin-top:13%;">
   <label class="col-md-4 control-label" for="type_of_org">Type of Organization:</label>
   <div class="col-md-4">
     <select id="type_of_org" name="type_of_org" class="form-control"  ONCHANGE="enable_disable(this);" >
@@ -992,12 +994,14 @@ if(isset($_POST["edit_btn"]) and $_GET["is_user"]==1) {
   <label class="col-md-4 control-label" for="reg_certificate">Registration Certificate:</label>
 
 <div class="col-md-4">
-
     <input id="uploadFile" class="form-control input-md" value="<?php echo $arr_search['response'][0]['reg_certificate_details'][0]['name']; ?>" readonly>
-    <div class="fileUpload btn btn-info" style="margin-left:105%;margin-top:-12%;">
+</div>
+<div class="col-md-1">
+    <div class="fileUpload btn btn-info">
     <label style="font-weight:500;margin-bottom: 2px;">ATTACH</label>
     <input id="reg_certificate" name="reg_certificate" type="file" class="upload" onchange="setfilename(this.value);" /> 
-  
+</div>
+</div>
 
 <?php
   $url_img_download = 'https://kyc-application.herokuapp.com/download/';
@@ -1017,8 +1021,8 @@ if(isset($_POST["edit_btn"]) and $_GET["is_user"]==1) {
 ?>
 
 
-</div>
-<a target="_blank" style="margin-top:-24%;margin-left:129%;color:white;" data-toggle="modal" data-target="#myModal1" class="btn btn-info">
+<div class="col-md-1">
+<a target="_blank" style="" data-toggle="modal" data-target="#myModal1" class="btn btn-info edit">
 VIEW</a>
 </div>
 
@@ -1026,9 +1030,9 @@ VIEW</a>
 
 <!-- Text input-->
 <div class="form-group" style="margin-top:-3%">
-  <label class="col-md-4 control-label" for="textinput" style="margin-left:-67%">PAN:</label>
+  <label class="col-md-4 control-label" for="textinput" style="margin-left:0%">PAN:</label>
   <div class="col-md-4">
-  <input id="pan" name="pan" style="margin-left:-107%" pattern="-?[a-zA-Z]{5}[0-9]{4}[a-zA-Z]{1}?" title="Must be of the form ARLPA0061H"  value="<?php echo $arr_search['response'][0]['organization_details']['pan'] ?>" type="text" placeholder="PAN Card Number" class="form-control input-md">
+  <input id="pan" name="pan" style="margin-left:0%" pattern="-?[a-zA-Z]{5}[0-9]{4}[a-zA-Z]{1}?" title="Must be of the form ARLPA0061H"  value="<?php echo $arr_search['response'][0]['organization_details']['pan'] ?>" type="text" placeholder="PAN Card Number" class="form-control input-md">
     
   </div>
 </div>
@@ -1039,10 +1043,13 @@ VIEW</a>
 <div class="col-md-4">
     <input id="pan_upload" class="form-control input-md" value="
  <?php echo $arr_search['response'][0]['pan_card_details'][0]['name']; ?>" readonly/>
-   <div class="fileUpload btn btn-info" style="margin-left:105%;margin-top:-12%;">
+ </div>
+ <div class="col-md-1">
+   <div class="fileUpload btn btn-info" style="">
     <label style="font-weight:500;margin-bottom: 2px;">ATTACH</label>
     <input id="pan_card" name="pan_card" type="file" class="upload" onchange="panfilename(this.value);" />
-  
+  </div>
+  </div>
   
 <?php
   $url_img_download_2 = 'https://kyc-application.herokuapp.com/download/';
@@ -1060,8 +1067,8 @@ VIEW</a>
   $arr_img_download_pan_org = json_decode($output_img_download_2,true);
   
 ?>
-</div>
-<a target="_blank" data-toggle="modal" data-target="#myModal2" class="btn btn-info" style="color:white;margin-top:-24%;margin-left:129%;">VIEW</a>
+<div class="col-md-1">
+<a target="_blank" data-toggle="modal" data-target="#myModal2" class="btn btn-info edit">VIEW</a>
 </div>
 </div>
 
@@ -1087,19 +1094,15 @@ VIEW</a>
      <input <?php echo $check_box_select1;?> type="checkbox" name="checkboxes" id="checkboxes-0" value="1">Telephone</label>
   </div>
 
-<!-- <div class="col-md-1">
-    <input id="telephone_upload" class="form-control input-md" value="
-     <?php echo $arr_search['response'][0]['telephone_bill_details'][0]['name']; ?>">
-     <div class="fileUpload btn btn-info" style="margin-left:155%;margin-top:-21%;">
-    <label style="font-weight:500;margin-bottom: 2px;">ATTACH</label>
-    <input id="telephone_bill" name="telephone_bill"  value="<?php echo $arr_search['response'][0]['organization_details']['telephone'] ?>" style="margin-top: -20px;margin-left: 146px;" type="file" class="upload" onchange="telefilename(this.value);" />  -->
-    <div class="col-md-3" style="margin-left:43%;margin-top:-2%"> 
-    <input id="telephone_upload" style="width:68%;margin-left:23%;margin-top:-5%" value="<?php echo $arr_search['response'][0]['telephone_bill_details'][0]['name']; ?>">
+    <div class="col-md-3 bkupload edit" style=""> 
+    <input id="telephone_upload" style="" value="<?php echo $arr_search['response'][0]['telephone_bill_details'][0]['name']; ?>">
 </div>
-    <div class="fileUpload btn btn-info" style="margin-left:-1%;margin-top:-1%;">
+<div class="col-md-1">
+    <div class="fileUpload btn btn-info" style="">
     <label style="font-weight:500;margin-bottom: 2px;">ATTACH</label>
     <input id="telephone_bill" name="telephone_bill" type="file" class="upload"  value="<?php echo $arr_search['response'][0]['organization_details']['telephone'] ?>" onchange="telefilename(this.value);" />
- 
+ </div>
+ </div>
 <?php
   $url_img_download_3 = 'https://kyc-application.herokuapp.com/download/';
   $options_img_download_3 = array(
@@ -1116,11 +1119,10 @@ VIEW</a>
   $arr_img_download_tel_org = json_decode($output_img_download_3,true);
   
 ?>
-</div>
-
-<br>
-<a target="_blank" data-toggle="modal" data-target="#myModal3" class="btn btn-info" style="color:white;margin-left:75%;margin-top:-6%;position:relative;">VIEW</a>
+<div class="col-md-1">
+<a target="_blank" data-toggle="modal" data-target="#myModal3" class="btn btn-info edit" style="">VIEW</a>
 </div> 
+</div>
 
 <div class="form-group">
  <label class="col-md-4 control-label" for="checkboxes"></label>
@@ -1135,20 +1137,16 @@ VIEW</a>
      <input <?php echo $check_box_select2;?> type="checkbox" name="checkboxes" id="checkboxes-0" value="1"/>Bank Passbook</label>
   
   </div>
-<div class="col-md-3" style="margin-left:43%;margin-top:-2%"> 
-<input id="bank_upload" style="width:68%;margin-left:23%;margin-top:-5%" value="
+<div class="col-md-3 teleupload edit" style=""> 
+<input id="bank_upload" style="" value="
 <?php echo $arr_search['response'][0]['pass_book_details'][0]['name']; ?>">
 </div>
-    <div class="fileUpload btn btn-info" style="margin-left:-1%;margin-top:-1%;">
+<div class="col-md-1">
+    <div class="fileUpload btn btn-info " style="">
     <label style="font-weight:500;margin-bottom: 2px;">ATTACH</label>
     <input id="bank_pass_book" name="bank_pass_book" type="file" class="upload" onchange="bankfilename(this.value);" />
-<!-- <input id="bank_upload" style="width:127%;" class="form-control input-md" value="
-     <?php echo $arr_search['response'][0]['pass_book_details'][0]['name']; ?>">
-    <div class="fileUpload btn btn-info" style="margin-left:135%;margin-top:-21%;">
-    <label style="font-weight:500;margin-bottom: 2px;">ATTACH</label>
-    <input id="bank_pass_book" name="bank_pass_book" style="margin-top: -22px;margin-left: 129px;" type="file" class="upload" onchange="bankfilename(this.value);" />  -->
- 
-
+</div>
+</div>
 <?php
   $url_img_download_4 = 'https://kyc-application.herokuapp.com/download/';
   $options_img_download_4 = array(
@@ -1165,9 +1163,9 @@ VIEW</a>
   $arr_img_download_pass_org = json_decode($output_img_download_4,true);
   
 ?>
+<div class="col-md-1">
+<a target="_blank" data-toggle="modal" data-target="#myModal4" class="btn btn-info edit">VIEW</a>
 </div>
-<br>
-<a target="_blank" data-toggle="modal" data-target="#myModal4" class="btn btn-info" style="margin-left:75%;margin-top:-6%;position:relative;color:white">VIEW</a>
 </div>
 
 
@@ -1421,7 +1419,7 @@ function enable_disable(that){
   
 ?>
 
-<div style="margin-top:10%">
+<div style="margin-top:13%">
 
 
 
@@ -1433,8 +1431,8 @@ function enable_disable(that){
  <input type="hidden" value="<?php echo $arr_search['response'][0]['user_details']['pk'] ?>" name="org_id" id="org_id"></input>
 
 <img class="profile-pic" style="margin-left:77%;position:absolute;z-index:2;" src="<?php echo $img_lnk; ?>" />
-<div class="upload-button" style="position:absolute;z-index:2;margin-left:79%;margin-top:13%;">
-<input  onchange="check_image_user()" id="image"  name="image" class="file-upload1" style="position:absolute;z-index:-2;margin-left:46%;margin-top:16%;" type="file">Upload Image</input>
+<div class="upload-button" style="position:absolute;z-index:2;margin-left:79%;margin-top:17%;">
+<input  onchange="check_image_user()" id="image"  name="image" class="file-upload1" style="position:absolute;z-index:-2;margin-left:46%;margin-top:16%;display:none" type="file">Upload Image</input>
 </div>
 
 
@@ -2489,7 +2487,7 @@ function print_image() {
         e.preventDefault();
         if(x < max_fields){ //max input box allowed
             x++; //text box increment
-            $(wrapper).prepend('<br><div style="margin-left:50px;"><center><div class="form-group"> <label class=" control-label" for="textinput" style="margin-left:327px;">Name: </label> <div > <input id="partner_names[]" name="partner_names[]" type="text" placeholder="Enter Full Name" class="form-control input-md editentry partner_names" style="margin-top: -25px;margin-left: 403px;width: 241%;">  </div>  <div class="col-md-6" > <a href="new_user_popup.php" style="color:white" target="_blank" data-toggle="modal" data-target="#myModal"><button  type="button" class="btn btn-info new_entry_btn" style="margin-left: 809px;margin-top: -61px;">New Entry</button> </a> </div></div> <div class="form-group">  <label class="control-label" for="selectbasic" style="margin-left:293px;">Designation: </label>  <div> <select id="partner_designations[]" name="partner_designations[]" class="form-control partner_designations" style="margin-left: 405px;margin-top: -34px;width:118%;">      <option value="Managing Partner">Managing Partner</option>      <option value="Manager">Manager</option>      <option value="Other">Other</option>    </select>  </div>  <div>  <input style="margin-left: 617px;margin-top: -35px;width:114%" id="textinput" name="textinput" type="text" placeholder="Specify if Other" class="form-control input-md partner_others"></div></div></center><a href="#" class="remove_field" style="margin-left:748px;margin-top:-40px;position:absolute"><img src="images/del24.png"></a></a></div>'); //add input box\
+           $(wrapper).prepend('<br><div style="margin-left:50%;"><center><div class="form-group"> <label class="control-label name" for="textinput" style="">Name: </label> <div class="partner_name"> <input id="partner_names[]" name="partner_names[]" type="text" placeholder="Enter Full Name" class="form-control input-md newentry partner_names" style="">  </div>  <div class="col-md-6" > <a href="new_user_popup.php" style="color:white" target="_blank" data-toggle="modal" data-target="#myModal"><button  type="button" class="btn btn-info new_entry_btn entry">New Entry</button> </a> </div></div> <div class="form-group">  <label class="control-label designation" for="selectbasic">Designation: </label>  <div class="partner_designation"> <select id="partner_designations[]" name="partner_designations[]" class="form-control partner_designations" >      <option value="Managing Partner">Managing Partner</option>      <option value="Manager">Manager</option>      <option value="Other">Other</option>    </select>  </div>  <div class="partner_designation col2">  <input style="" id="textinput" name="textinput" type="text" placeholder="Specify if Other" class="form-control input-md partner_others"></div></div></center><a href="#" class="remove_field" style="margin-left:370%;margin-top:-40px;position:absolute"><img src="images/del24.png"></a></a></div>'); //add input box\
         }
     });
     
@@ -2524,7 +2522,7 @@ function goBack() {
         e.preventDefault();
         if(x < max_fields){ //max input box allowed
             x++; //text box increment
-            $(wrapper).prepend('<br><div style="margin-left:50%;"><div class="form-group"><label class="control-label type" for="selectbasic" style="margin-left:-325px;">Type of work</label><div class="col-md-6"><select id="type_of_work[]" name="type_of_work[]" class="form-control" style="margin-left:9%;width:208%"><option value="Audit Report">Audit Report</option><option value="ITR filing">ITR filing</option><option value="VAT Filing">VAT Filing</option><option value="Accounting">Accounting</option><option value="Registration">Registration</option><option value="Certification">Certification</option><option value="Others">Others</option></select></div></div><div class="form-group"> <label class="col-md-4 control-label" for="selectbasic" style="margin-left:-29%">Status</label><div class="col-md-6"><select id="status[]" name="status[]" style="width:210%;margin-left:-1%;" class="form-control"><option value="Pending">Pending</option><option value="Work in process">Work in process</option><option value="Completed">Completed</option></select></div></div><div class="form-group row"><label for="example-date-input" class="col-2 col-form-label" style="margin-left:-8.5%;";">DATE</label><div class="col-10"><input class="form-control datepicker" id="date[]" name="date[]" style="width:91%;margin-left:6.6%;margin-top:-6%;" type="text"></div></div><div class="form-group"><label class="col-md-4 control-label" for="textinput" style="margin-left:-29%">Comment</label><div class="col-md-4"><input id="comment[]" name="comment[]" type="text" placeholder="" class="form-control input-md" style="width:342%" required/></div></div></center><a href="#" class="remove_field" style="margin-left:446px;margin-top:-40px;position:absolute"><img src="images/del24.png"></a></a></div>'); //add input box\
+          $(wrapper).prepend('<br><div style="margin-left:50%;"><div class="form-group"><label class="control-label type" for="selectbasic" style="">Type of work</label><div class="col-md-6"><select id="type_of_work[]" name="type_of_work[]" class="form-control type_of_work" style=""><option value="Audit Report">Audit Report</option><option value="ITR filing">ITR filing</option><option value="VAT Filing">VAT Filing</option><option value="Accounting">Accounting</option><option value="Registration">Registration</option><option value="Certification">Certification</option><option value="Others">Others</option></select></div></div><div class="form-group"> <label class="col-md-4 control-label status" for="selectbasic" style="">Status</label><div class="col-md-6"><select id="status[]" name="status[]"  class="form-control status"><option value="Pending">Pending</option><option value="Work in process">Work in process</option><option value="Completed">Completed</option></select></div></div><div class="form-group row"><label for="example-date-input" class="col-2 col-form-label date">DATE</label><div class="col-10 col"><input class="form-control datepicker" id="date[]" name="date[]" style="" type="text"></div></div><div class="form-group"><label class="col-md-4 control-label comment" for="textinput" style="">Comment</label><div class="col-md-4"><input id="comment[]" name="comment[]" type="text" placeholder="" class="form-control input-md comment" style=""></div></div></center><a href="#" class="remove_field" style=""><img src="images/del24.png" ></a></a></div>'); //add input box\
             $( ".datepicker" ).datepick({dateFormat: 'dd/mm/yyyy'});
         }
     });
