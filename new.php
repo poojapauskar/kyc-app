@@ -1216,7 +1216,7 @@ function enable_disable(that){
 
 <div class="upload-button" style="">Upload Image</div>
 
-<input onchange="check_image_user()" name="image" id="image" class="file-upload1" style="position:absolute;z-index:-2;margin-left:46%;margin-top:16%;" type="file">
+<input onchange="check_image_user()" name="image" id="image" class="file-upload1" style="position:absolute;z-index:-2;margin-left:46%;margin-top:16%;display:none" type="file">
 <!-- Text input-->
 <div class="form-group">
   <label class="col-md-4 control-label" for="textinput" >UID:</label>  

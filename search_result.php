@@ -52,51 +52,7 @@
     visibility:visible;
   }
 }
-    .upload-button {
-    padding: 4px;
-    /*border: 1px solid black;*/
-    border-radius: 5px;
-    display: block;
-    float: left;
-}
-
-.profile-pic {
-    max-width: 100px;
-    max-height: 100px;
-    display: block;
-}
-
-.file-upload1 {
-    display: none;
-}
-
-    span:before{
-    content:" "; 
-    display:inline-block; 
-    width:32px;
-}
-.alert {
-    padding: 20px;
-    background-color: #f44336;
-    color: white;
-}
-
-.closebtn {
-    margin-left: 15px;
-    color: white;
-    font-weight: bold;
-    float: right;
-    font-size: 22px;
-    line-height: 20px;
-    cursor: pointer;
-    transition: 0.3s;
-}
-
-.closebtn:hover {
-    color: black;
-}
-
-  </style>
+    </style>
 
   <style type="text/css">
     span:before{

@@ -261,6 +261,13 @@ div.fileUpload.btn.btn-info{
     margin-top: 0%;
     width: 83%;
 }
+/*seach_result page view*/
+.btn.btn-info.view1{
+     margin-left: -266%;
+    margin-top: 7%;
+    position: relative;
+    color: white;
+}
 
 
 .fileUpload.btn.btn-info.tele{
@@ -289,9 +296,20 @@ margin-top:-1%;
 .form-control.input-md.comment{
     width:348%;
 }
+.fileUpload.btn.btn-info.tele1{
+margin-left:14%;
+margin-top:-1%;
+}
 
 @media screen and (max-width:1024px) {
 
+.btn.btn-info.new_entry_btn
+{
+    color: white;
+    background-color: rgb(23, 111, 172);
+    margin-top: 4%;
+    margin-left: 10%;
+}
 
 .add_field_button.btn.partner_btn{
 	margin-left:244%;

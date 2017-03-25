@@ -1241,7 +1241,7 @@ VIEW</a>
 </div>
 
 
- <a href="" class="remove_field_present" style="margin-left:863px;margin-top:-40px;position:absolute"><img src="images/del24.png"></a>
+ <a href="" class="remove_field_present" style=""><img src="images/del24.png"></a>
 
 </div>
 
