@@ -925,7 +925,7 @@ if(isset($_POST["edit_btn"]) and $_GET["is_user"]==1) {
       </div>
       </div>
 
-<main class="">
+<main class="mdl-layout">
 
 <?php if ($_GET['is_user']==0) { ?>
 <form class="form-horizontal" method="post" action="" enctype="multipart/form-data" style="">
@@ -1168,23 +1168,6 @@ VIEW</a>
 </div>
 </div>
 
-
-<!-- Input Type : Number -->
-<!-- <div class="form-group">
-  <label class="col-md-4 control-label" for="typenumber">No of Partners: </label>
-  <div class="col-md-4">                     
-     <input value="<?php echo $arr_search['response'][0]['organization_details']['no_of_partners'] ?>"  type="number" name="no_of_partners" min="1" max="5" value="2" id="no_of_partners">
-  </div>
-</div> -->
-
-<!-- <div class="form-group col-md-4 ">
-  <label class="col-md-4 control-label"><b> <font size="4">Partner1</font></b></label>
-
-</div> -->
-
-
-
-
 <!-- Added Partner 1 -->
 <label for="comment" style="margin-left: 334px;font-size: 17px;"> Partner 1: </label>
 
@@ -1206,19 +1189,6 @@ VIEW</a>
     <a href="new_user_popup.php" style="color:white" target="_blank" data-toggle="modal" data-target="#myModal" class="btn btn-info new_entry_btn" >
        New Entry
     </a>
-    <!-- Modal -->
-<!-- <div class="modal fade" id="myModal11" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-      </div>
-      <div class="modal-body">
-        ...
-      </div>
-    </div>
-  </div>
-</div> -->
   </div>
 </div>
 
@@ -1323,7 +1293,7 @@ VIEW</a>
 
 <div class="col-md-8 col-sm-12 col-24">
     <div class="input_fields" style="color:black">
-         <button class="add_field btn " onclick="incrementValue()" style="margin-left: 443px;">Add More</button>
+         <button class="add_field btn " onclick="incrementValue()" style="">Add More</button>
          <div>
          <input type="text" name="mytextt[]" hidden="" ></div>
 </div>
@@ -1419,9 +1389,7 @@ function enable_disable(that){
   
 ?>
 
-<div style="margin-top:13%">
-
-
+<div class="form_margin">
 
 <?php if($arr_img[0]['url']=="" || (strpos($arr_img[0]['url'], 'https://kyc-app-bucket.s3.amazonaws.com/?Signature') !== false)){
   $img_lnk="images/no_image.jpg";
@@ -1503,8 +1471,10 @@ function enable_disable(that){
 
 <div class="col-md-4">
 <input id="pan_upload" class="form-control input-md" value="<?php echo $arr_search['response'][0]['pan_card_details'][0]['name']; ?>">
-<input  onchange="check_pan_card_user()" id="pan_card" name="pan_card" style="margin-left:104%;margin-top:-7%" value="<?php echo $_POST['pan_card'] ?>" class="input-file" type="file">
-
+</div>
+<div class="col-md-1">
+<input  onchange="check_pan_card_user()" id="pan_card" name="pan_card" style="" value="<?php echo $_POST['pan_card'] ?>" class="input-file" type="file">
+</div>
 <?php
   $url_img_download = 'https://kyc-application.herokuapp.com/download/';
   $options_img_download = array(
@@ -1521,7 +1491,8 @@ function enable_disable(that){
   $arr_img_download_pan_user = json_decode($output_img_download,true);
   
 ?>
-<a target="_blank" data-toggle="modal" data-target="#myModal5" class="btn btn-info"  style="color:white;margin-left:152%;margin-top:-13%;">VIEW</a>
+<div class="col-md-1">
+<a target="_blank" data-toggle="modal" data-target="#myModal5" class="btn btn-info user" >VIEW</a>
 </div>
 </div>
 
@@ -1541,11 +1512,12 @@ function enable_disable(that){
  <input <?php echo $check_box_select1 ?> type="checkbox" name="checkboxes" id="checkboxes-0" value="1">Telephone</label>
 </div>
 
-<div class="col-md-4">
-<?php echo $arr_search['response'][0]['telephone_bill_details'][0]['name']; ?>
-
-<input onchange="check_telephone_bill_user()" id="telephone_bill"  value="<?php echo $_POST['telephone_bill'] ?>" style="margin-top: 3px;margin-left: 129px;position:absolute;" name="telephone_bill" class="input-file" type="file">     
-
+<div class="col-md-3">
+<input value="<?php echo $arr_search['response'][0]['telephone_bill_details'][0]['name']; ?>">
+</div>
+<div class="col-md-1">
+<input onchange="check_telephone_bill_user()" id="telephone_bill"  value="<?php echo $_POST['telephone_bill'] ?>" style="" name="telephone_bill" class="input-file" type="file">     
+</div>
 <?php
   $url_img_download_2 = 'https://kyc-application.herokuapp.com/download/';
   $options_img_download_2 = array(
@@ -1562,7 +1534,8 @@ function enable_disable(that){
   $arr_img_download_tel_user = json_decode($output_img_download_2,true);
   
 ?>
-<a target="_blank" data-toggle="modal" data-target="#myModal6" class="btn btn-info" style="color:white;margin-left:88%;position:relative;">VIEW</a>
+<div class="col-md-1">
+<a target="_blank" data-toggle="modal" data-target="#myModal6" class="btn btn-info user" style="">VIEW</a>
 </div>
 </div>
     <div class="form-group">
@@ -1578,15 +1551,13 @@ function enable_disable(that){
 
  </div>
 
- <div class="col-md-4">
-<?php echo $arr_search['response'][0]['bank_pass_book_details'][0]['name']; ?>
+ <div class="col-md-3">
+ <input value="<?php echo $arr_search['response'][0]['bank_pass_book_details'][0]['name']; ?>">
 </div>
 
-<div class="col-md-4">
-<input onchange="check_bank_pass_book_user()" id="bank_pass_book"  value="<?php echo $_POST['bank_pass_book'] ?>" style="margin-top: 6px;margin-left: 129px;position:absolute;" name="bank_pass_book" class="input-file" type="file">     
+<div class="col-md-1">
+<input onchange="check_bank_pass_book_user()" id="bank_pass_book"  value="<?php echo $_POST['bank_pass_book'] ?>" style="" name="bank_pass_book" class="input-file" type="file">     
  </div>
-
-<div class="col-md-4">
 <?php
   $url_img_download_3 = 'https://kyc-application.herokuapp.com/download/';
   $options_img_download_3= array(
@@ -1603,7 +1574,8 @@ function enable_disable(that){
   $arr_img_download_pass_user = json_decode($output_img_download_3,true);
   
 ?>
-<a target="_blank" data-toggle="modal" data-target="#myModal7" class="btn btn-info" style="color:white;margin-left:88%">VIEW</a>
+<div class="col-md-1">
+<a target="_blank" data-toggle="modal" data-target="#myModal7" class="btn btn-info user" style="">VIEW</a>
 </div>
 </div>
 
@@ -1624,9 +1596,12 @@ function enable_disable(that){
      <input <?php echo $check_box_select3; ?> type="checkbox" name="checkboxes" id="checkboxes-0" value="1">voter ID</label>
    </div>
 
-    <div class="col-md-4">
-    <?php echo $arr_search['response'][0]['voter_id_details'][0]['name']; ?>
-  <input onchange="check_voter_id_user()" id="voter_id" value="<?php echo $_POST['voter_id'] ?>" style="margin-top:6px;margin-left: 129px;position: absolute;" name="voter_id" class="input-file" type="file">     
+    <div class="col-md-3">
+    <input value="<?php echo $arr_search['response'][0]['voter_id_details'][0]['name']; ?>">
+    </div>
+    <div class="col-md-1">
+  <input onchange="check_voter_id_user()" id="voter_id" value="<?php echo $_POST['voter_id'] ?>" style="" name="voter_id" class="input-file" type="file">  
+  </div>   
   <?php
     $url_img_download_4 = 'https://kyc-application.herokuapp.com/download/';
     $options_img_download_4= array(
@@ -1643,8 +1618,8 @@ function enable_disable(that){
     $arr_img_download_voter_user = json_decode($output_img_download_4,true);
     
   ?>
-
-<a target="_blank" style="color:white;margin-left:88%;position:relative;" data-toggle="modal" data-target="#myModal8" class="btn btn-info">VIEW</a>
+    <div class="col-md-1">
+<a target="_blank" style="" data-toggle="modal" data-target="#myModal8" class="btn btn-info user">VIEW</a>
 </div>
 
 </div>
@@ -1662,15 +1637,14 @@ function enable_disable(that){
      <input <?php echo $check_box_select4; ?> type="checkbox" name="checkboxes" id="checkboxes-0" value="1">Passport</label>
   </div>
 
-   <div class="col-md-4">
-  <?php echo $arr_search['response'][0]['passport_details'][0]['name']; ?>
+   <div class="col-md-3">
+   <input value="<?php echo $arr_search['response'][0]['passport_details'][0]['name']; ?>">
   </div>
 
-  <div class="col-sm-4">
-  <input  onchange="check_passport_user()" id="passport" value="<?php echo $_POST['passport'] ?>" style="margin-top:6px;margin-left: 129px;position:absolute" name="passport" class="input-file" type="file">     
+  <div class="col-md-1">
+  <input  onchange="check_passport_user()" id="passport" value="<?php echo $_POST['passport'] ?>" style="" name="passport" class="input-file" type="file">     
    </div>
 
-  <div class="col-md-4">
   <?php
     $url_img_download_5 = 'https://kyc-application.herokuapp.com/download/';
     $options_img_download_5= array(
@@ -1687,7 +1661,8 @@ function enable_disable(that){
     $arr_img_download_passport_user = json_decode($output_img_download_5,true);
     
   ?>
-<a target="_blank" style="color:white;margin-left:88%;" data-toggle="modal" data-target="#myModal9" class="btn btn-info">VIEW</a>
+  <div class="col-md-1">
+<a target="_blank" style="" data-toggle="modal" data-target="#myModal9" class="btn btn-info user">VIEW</a>
   </div>
 </div>
 
@@ -1706,7 +1681,10 @@ function enable_disable(that){
 
   <div class="col-md-4">
   <input class="form-control input-md" value="<?php echo $arr_search['response'][0]['aadhar_card_details'][0]['name']; ?>">
-    <input onchange="check_aadhar_card_user()" id="aadhar_card" name="aadhar_card"  style="margin-left:104%;margin-top:-7%" value="<?php echo $_POST['aadhar_card'] ?>" class="input-file" type="file">
+  </div>
+  <div class="col-md-1">
+    <input onchange="check_aadhar_card_user()" id="aadhar_card" name="aadhar_card" value="<?php echo $_POST['aadhar_card'] ?>" class="input-file" type="file">
+    </div>
   
   <?php
     $url_img_download_6 = 'https://kyc-application.herokuapp.com/download/';
@@ -1724,7 +1702,8 @@ function enable_disable(that){
     $arr_img_download_aadhar_user = json_decode($output_img_download_6,true);
     
   ?>
-<a target="_blank" style="color:white;background-color:#65AC4;margin-left:152%;margin-top:-13%" data-toggle="modal" data-target="#myModal10" class="btn btn-info">VIEW</a>
+  <div class="col-md-1">
+<a target="_blank" style="" data-toggle="modal" data-target="#myModal10" class="btn btn-info user">VIEW</a>
   </div>
 </div>
  
@@ -1789,7 +1768,7 @@ function enable_disable(that){
 
 <div class="col-md-8 col-sm-12 col-24">
     <div class="input_fields" style="color:black">
-         <button class="add_field btn " onclick="incrementValue()" style="margin-left: 443px;">Add More</button>
+         <button class="add_field btn " onclick="incrementValue()" style="">Add More</button>
          <div>
          <input type="text" name="mytextt[]" hidden="" ></div>
 </div>
@@ -2546,6 +2525,7 @@ function goBack() {
         <script type="text/javascript" src="autocomplete-Files/EditEntryValues.js"></script>
         <script type="text/javascript" src="autocomplete-Files/Logic_EditEntry.js"></script>
 
+</main>
 </body>
 </html>
 

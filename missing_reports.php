@@ -202,7 +202,7 @@ $arr_missing_report = json_decode($output_missing_report,true);
  <div class="container">
   <div class="row" style="margin-top:4%;"> 
 
-<button class="btn btn-success" style="color:white;margin-left:89%;" type="button" id="test">Clear</button>
+<button class="btn btn-success clear" style="" type="button" id="test">Clear</button>
 <script type="text/javascript">
 $('#test').click(function() {
     /*$('input[type=search]').val('');*/
