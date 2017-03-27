@@ -4,6 +4,7 @@
 <link rel="stylesheet" type="text/css" href="css/material.indigo-pink.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/material-design-lite/1.1.0/material.min.css">
  <link rel="stylesheet" href="css/table.css"> 
+ <link rel="stylesheet" href="css/kyc.css"> 
 <script src="https://code.getmdl.io/1.3.0/material.min.js"></script>
 <link rel="stylesheet" href="css/material.css">
 <link rel="stylesheet" href="css/bootstrap.css">
@@ -85,9 +86,9 @@ td, th {
      -moz-box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23) !important;
      box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23) !important;" class="mdl-layout__header">
     <div class="mdl-layout__header-row" >
-        <a href="search.php"><img style="margin-top:36%;margin-left:28px;width:50px;height:50px" src="images/green.png"></img></a>
-<h5 style="margin-left:35%;margin-top:9%;"><?php echo $_GET['status'] ?></h5>
-         <span class="mdl-layout-title" style="margin-left:26%;margin-top:7%;">KYCApp</span>
+        <a href="search.php"><img id="logo1" src="images/green.png"></img></a>
+<h5 id="title2"><?php echo $_GET['status'] ?></h5>
+         <span class="mdl-layout-title" id="title1">KYCApp</span>
           <!-- Add spacer, to align navigation to the right -->
           </div>
       </header>
