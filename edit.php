@@ -1264,7 +1264,7 @@ VIEW</a>
 </div>
 <!--date-->
 <div class="form-group row">
-  <label for="example-date-input" class="col-2 col-form-label" style="margin-left:29.5%;">DATE:</label>
+  <label for="example-date-input" class="col-2 col-form-label" style="margin-left:28.5%;">DATE:</label>
   <div class="col-10">
     <input class="form-control datepicker" id="date[]" name="date[]" value="<?php echo $arr_search['response'][0]['add_info'][$q]['date']; ?>" style="" type="text" readonly>
   </div>
@@ -1306,7 +1306,7 @@ VIEW</a>
   <label class="col-md-4 control-label" for="save_btn"></label>
   <div class="col-md-8">
     <button  onclick="return check_file_type_org()" id="edit_btn" name="edit_btn" type="submit" class="btn btn-success" style="width: 10em;">Save</button><span><span></span></span>
-    <button onclick="goBack()" class="btn btn-warning" style="width:10em;margin-top:0%;padding:0.5em;margin-left:-1%"><a style="color:white" href="search.php">Cancel</a></button>
+    <button onclick="goBack()" class="btn btn-warning" style="width: 10em;margin-top:-18%;padding:0.5em;margin-left:40%"><a style="color:white" href="search.php">Cancel</a></button>
   </div>
 </div>
 </fieldset>
@@ -1316,7 +1316,7 @@ VIEW</a>
 <form method="post" id="deleteForm" action="search.php" style="text-align:center">
 <input type="hidden" name="pk_delete" id="pk_delete" value="<?php echo $_GET['id'] ?>"></input>  
 <input type="hidden" name="is_user_delete" id="is_user_delete" value="<?php echo $_GET['is_user'] ?>"></input>  
-<button type="submit" onclick="return ConfirmDelete()" style="width: 10em;margin-top:-7%;margin-left:40%" class="btn btn-warning">
+<button type="submit" onclick="return ConfirmDelete()" style="width: 10em;margin-top:-9%;margin-left:53%" class="btn btn-warning">
   Delete
 </button>
 </form>
@@ -1740,7 +1740,7 @@ function enable_disable(that){
 </div>
 <!--date-->
 <div class="form-group row">
-  <label for="example-date-input" class="col-2 col-form-label" style="margin-left:29.5%;">Date</label>
+  <label for="example-date-input" class="col-2 col-form-label" style="margin-left:28.1%;">DATE</label>
   <div class="col-10">
     <input class="form-control datepicker" id="date[]" name="date[]" value="<?php echo $arr_search['response'][0]['add_info'][$q]['date']; ?>" style="" type="text" readonly> 
   </div>
@@ -1813,14 +1813,14 @@ $arr_can_be_deleted_or_no = json_decode($output_can_be_deleted_or_no,true);
     <form method="post" id="deleteForm" action="search.php" style="text-align:center">
     <input type="hidden" name="pk_delete" id="pk_delete" value="<?php echo $_GET['id'] ?>"></input>  
     <input type="hidden" name="is_user_delete" id="is_user_delete" value="<?php echo $_GET['is_user'] ?>"></input>  
-    <button type="submit" onclick="return ConfirmDelete()" style="width: 10em;margin-top:-9%;margin-left:23%" class="btn btn-warning">
+    <button type="submit" onclick="return ConfirmDelete()" style="width: 10em;margin-top:-9%;margin-left:53%" class="btn btn-warning">
       Delete
     </button>
     </form>
 
 <?php } else { ?>
     <div style="text-align:center">
-    <button onclick="return CannotDelete()" style="width: 10em;" class="btn btn-warning">
+    <button onclick="return CannotDelete()" style="width: 10em;margin-top:-9%;margin-left:53%" class="btn btn-warning">
       Delete
     </button>
     </div>
