@@ -61,7 +61,7 @@ if(isset($_POST['submit'])){
       <input type="text" name="username" value="<?php echo $arr_get_account_by_id['account'][0]['username'] ?>">
     </div><br>
     <div class="col-sm-4">
-      <input type="text" name="password" value="<?php echo $arr_get_account_by_id['account'][0]['password'] ?>"> 
+      <input type="password" name="password" value="<?php echo $arr_get_account_by_id['account'][0]['password'] ?>"> 
     </div><br>
     <div class="col-sm-4">
       <input type="submit" name="submit" id="submit" style="margin-top:1%;width:100px;height:30px;background-color:green" value="Save">

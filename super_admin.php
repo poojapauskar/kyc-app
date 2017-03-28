@@ -132,7 +132,7 @@ if(isset($_POST['submit'])){
       <input type="text" name="admin_username" placeholder="Admin Name">
     </div>
     <div class="col-sm-4">
-      <input type="text" name="admin_password" placeholder="Password">
+      <input type="password" name="admin_password" placeholder="Password">
     </div>
     <div class="col-sm-4">
     </div>
@@ -145,7 +145,7 @@ if(isset($_POST['submit'])){
       <input type="text" name="user1_username" placeholder="User 1 Name">
     </div>
     <div class="col-sm-4">
-      <input type="text" name="user1_password" placeholder="Password">
+      <input type="password" name="user1_password" placeholder="Password">
     </div>
     <div class="col-sm-4">
     </div>
@@ -158,7 +158,7 @@ if(isset($_POST['submit'])){
       <input type="text" name="user2_username" placeholder="User 2 Name">
     </div>
     <div class="col-sm-4">
-      <input type="text" name="user2_password" placeholder="Password">
+      <input type="password" name="user2_password" placeholder="Password">
     </div>
     <div class="col-sm-4">
       <input type="submit" name="submit" id="submit" style="margin-top:1%;width:100px;height:30px;background-color:green" value="Add">
@@ -203,7 +203,7 @@ if(isset($_POST['submit'])){
               <td><?php echo $account ?></td>
               <td><?php echo $arr_get_all_accounts[$x]['profile'][$y]['role'] ?></td>
               <td><?php echo $arr_get_all_accounts[$x]['profile'][$y]['username'] ?></td>
-              <td><?php echo $arr_get_all_accounts[$x]['profile'][$y]['password'] ?></td>
+              <td><input style="border:none" type="password" value="<?php echo $arr_get_all_accounts[$x]['profile'][$y]['password'] ?>" readonly></input></td>
               <td>
                 <form method="post" action="edit_account.php">
                   <input type="hidden" name="pk_value" value="<?php echo $arr_get_all_accounts[$x]['profile'][$y]['pk'] ?>">
