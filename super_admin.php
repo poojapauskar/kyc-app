@@ -1,6 +1,42 @@
 <!DOCTYPE html>
 <html>
 <head>
+<style type="text/css">
+#table-wrapper {
+  position:relative;
+}
+#table-scroll {
+  height:400px;
+  overflow:auto;  
+  margin-top:20px;
+}
+
+#table-wrapper table * {
+  color:black;
+  padding:6px 6px 6px 6px;
+}
+#table-wrapper table thead th .text {
+  position:absolute;   
+  top:-20px;
+  z-index:2;
+  height:20px;
+  width:35%;
+  /*border:1px solid red;*/
+}
+#table-wrapper th,td{
+  padding:8px;
+  text-align: left;
+  /*border-right:1px solid black;*/
+}
+th{
+  background-color: #B8B8B8;
+}
+td {
+  border-right: solid 1px #B8B8B8; 
+  border-left: solid 1px #B8B8B8;
+}
+
+</style>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -8,6 +44,24 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 <body>
+
+<?php
+if(isset($_POST['delete_btn'])){
+  $url_delete_account = 'https://kyc-application.herokuapp.com/delete_account/';
+  $options_delete_account = array(
+    'http' => array(
+      'header'  => array(
+                  'PK-DELETE: '.$_POST['pk_delete'],
+                ),
+      'method'  => 'GET',
+    ),
+  );
+  $context_delete_account = stream_context_create($options_delete_account);
+  $output_delete_account = file_get_contents($url_delete_account, false,$context_delete_account);
+  /*echo $output_get_all_accounts;*/
+  $arr_delete_account = json_decode($output_delete_account,true);
+/*  echo $arr_get_all_accounts;*/
+}?> 
 
 <?php
 if(isset($_POST['submit'])){
@@ -35,10 +89,25 @@ if(isset($_POST['submit'])){
     $result = file_get_contents($url, false, $context);
     /*echo $result8;*/
     $arr = json_decode($result,true);
-    if($arr != ''){
+    /*if($arr != ''){
       echo "<script>alert('New Account Added')</script>";
-    }
+    }*/
 }
+?>
+
+<?php
+  $url_get_all_accounts = 'https://kyc-application.herokuapp.com/get_all_accounts/';
+  $options_get_all_accounts = array(
+    'http' => array(
+      'method'  => 'GET',
+    ),
+  );
+  $context_get_all_accounts = stream_context_create($options_get_all_accounts);
+  $output_get_all_accounts = file_get_contents($url_get_all_accounts, false,$context_get_all_accounts);
+  /*echo $output_get_all_accounts;*/
+  $arr_get_all_accounts = json_decode($output_get_all_accounts,true);
+/*  echo $arr_get_all_accounts;*/
+  
 ?>
 
 <a href="index.php">Back</a>
@@ -96,8 +165,71 @@ if(isset($_POST['submit'])){
     </div>
   </div>
 </div>
-
 </form> 
+<!-- 
+<br><br>
+<h4 style="text-align:center">Accounts</h4> -->
+
+<div id="table-wrapper">
+  <div id="table-scroll">
+    <table align="center">
+        <thead>
+            <tr>
+                <th>Account</th> 
+                <th>Role</th>
+                <th>Name</th>
+                <th>Password</th>
+                <th>Edit</th>
+                <th>Delete</th>
+            </tr>
+        </thead>
+        <tbody>
+        <?php for($x=0;$x<count($arr_get_all_accounts);$x++){?>
+          <?php for($y=0;$y<count($arr_get_all_accounts[$x]['profile']);$y++){?>
+
+          <?php if($arr_get_all_accounts[$x]['profile'][$y]['role'] != "superadmin"){?>
+
+              <?php if($y==(count($arr_get_all_accounts[$x]['profile'])-1)){
+                    $style="border-bottom:1px solid #B8B8B8";
+                }else{
+                    $style='';
+                }?>
+            <tr style="<?php echo $style; ?>">
+              <?php if($y==0){
+                    $account=$arr_get_all_accounts[$x]['account'];
+                }else{
+                    $account='';
+                }?>
+              <td><?php echo $account ?></td>
+              <td><?php echo $arr_get_all_accounts[$x]['profile'][$y]['role'] ?></td>
+              <td><?php echo $arr_get_all_accounts[$x]['profile'][$y]['username'] ?></td>
+              <td><?php echo $arr_get_all_accounts[$x]['profile'][$y]['password'] ?></td>
+              <td>
+                <form method="post" action="edit_account.php">
+                  <input type="hidden" name="pk_value" value="<?php echo $arr_get_all_accounts[$x]['profile'][$y]['pk'] ?>">
+                  <button style="width:55px;height:30px" type="submit" name="edit_btn">Edit</button>
+                </form>
+              </td>
+              <?php if($y==0){ ?>
+                     <td>
+                        <form method="post" action="super_admin.php">
+                          <input type="hidden" name="pk_delete" value="<?php echo $arr_get_all_accounts[$x]['profile'][$y]['pk'] ?>">
+                          <button onclick="return confirm('Are you sure you want to delete?');" style="width:55px;height:30px" type="submit" name="delete_btn">Delete</button>
+                         </form>
+                     </td>
+              <?php }else{ ?>
+                     <td></td>
+              <?php } ?>
+             
+            </tr>
+
+          <?php }?>
+          <?php }?>
+        </tbody>
+        <?php }?>
+    </table>
+  </div>
+</div>
 
 </body>
 </html>
