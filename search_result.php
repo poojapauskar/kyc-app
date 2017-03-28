@@ -336,7 +336,7 @@ VIEW
     
   </div>
 <div class="col-md-3" >
-<input style="" class="search_result tele" value="<?php echo $arr_search['response'][0]['telephone_bill_details'][0]['name']; ?>">
+<input style="" class="search_result tele" value="<?php echo $arr_search['response'][0]['telephone_bill_details'][0]['name']; ?>" disabled>
 
 <div class="fileUpload btn btn-info tele1" style="">
     <label style="font-weight:500;margin-bottom: 2px;">ATTACH</label>
@@ -378,7 +378,7 @@ VIEW
      <input <?php echo $check_box_select2;?> type="checkbox" name="checkboxes" id="checkboxes-0" value="1" disabled>Bank Passbook</label>
 </div>
 <div class="col-md-3"> 
-<input class="search_result tele" value="<?php echo $arr_search['response'][0]['pass_book_details'][0]['name']; ?>">
+<input class="search_result tele" value="<?php echo $arr_search['response'][0]['pass_book_details'][0]['name']; ?>" disabled>
 <div class="fileUpload btn btn-info tele1" style="">
     <label style="font-weight:500;margin-bottom: 2px;">ATTACH</label>
     <input id="bank_pass_book" style="margin-top: -22px;margin-left: 129px;" name="bank_pass_book" class="upload" type="file"  disabled="true"> 
@@ -592,7 +592,7 @@ VIEW</a>
 </div>
 
 <div class="col-md-4">
-<input class="search_result tele1" value="<?php echo $arr_search['response'][0]['telephone_bill_details'][0]['name']; ?>">
+<input class="search_result tele1" value="<?php echo $arr_search['response'][0]['telephone_bill_details'][0]['name']; ?>" disabled>
 </div>
 
 <div class="col-md-1">
@@ -639,7 +639,7 @@ VIEW</a>
  </div>
 
  <div class="col-md-4">
- <input class="search_result tele1" value="<?php echo $arr_search['response'][0]['bank_pass_book_details'][0]['name']; ?>">
+ <input class="search_result tele1" value="<?php echo $arr_search['response'][0]['bank_pass_book_details'][0]['name']; ?>" disabled>
 </div>
 
 <div class="col-md-1">
@@ -688,7 +688,7 @@ VIEW</a>
    </div>
 
     <div class="col-md-4">
-    <input class="search_result tele1" value="<?php echo $arr_search['response'][0]['voter_id_details'][0]['name']; ?>">
+    <input class="search_result tele1" value="<?php echo $arr_search['response'][0]['voter_id_details'][0]['name']; ?>" disabled>
     </div>
     
      <div class="col-md-1">
@@ -731,7 +731,7 @@ VIEW</a>
   </div>
 
    <div class="col-md-4">
-  <input class="search_result tele1" value="<?php echo $arr_search['response'][0]['passport_details'][0]['name']; ?>">
+  <input class="search_result tele1" value="<?php echo $arr_search['response'][0]['passport_details'][0]['name']; ?>" disabled>
   </div>
   <div class="col-md-1">
    <div class="fileUpload btn btn-info" style="">

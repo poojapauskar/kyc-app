@@ -3931,6 +3931,7 @@ fieldset[disabled] .mdl-checkbox .mdl-checkbox__ripple-container .mdl-ripple,
     background-color: #e0e0e0;
     color: #000
 }
+
 @media screen and (min-width: 1025px) {
     .mdl-layout--fixed-drawer>.mdl-layout__drawer {
         -webkit-transform: translateX(0);
@@ -3957,6 +3958,33 @@ fieldset[disabled] .mdl-checkbox .mdl-checkbox__ripple-container .mdl-ripple,
     left: 30px;
     color: rgb(255, 255, 255);
     z-index: 4
+}
+
+@media screen and (max-width:1024px){
+
+    .mdl-layout__drawer-button {
+    display: block;
+    position: absolute;
+    height: 48px;
+    width: 48px;
+    border: 0;
+    -webkit-flex-shrink: 0;
+    -ms-flex-negative: 0;
+    flex-shrink: 0;
+    overflow: hidden;
+    text-align: center;
+    cursor: pointer;
+    font-size: 26px;
+    line-height: 56px;
+    font-family: Helvetica, Arial, sans-serif;
+    margin: 8px 12px;
+    top: 27px;
+    left: 30px;
+    color: rgb(255, 255, 255);
+    z-index: 4
+}
+
+ 
 }
 @media screen and (max-width: 1920px)
 {
@@ -3991,22 +4019,22 @@ fieldset[disabled] .mdl-checkbox .mdl-checkbox__ripple-container .mdl-ripple,
     margin-top:1%;
 }
 
-/*@media screen and (max-width:1920px){
-
-   .mdl-layout__header .mdl-layout__drawer-button {
+@media screen and (max-width:1024px)
+{
+.mdl-layout__header .mdl-layout__drawer-button {
     position: absolute;
     color: rgb(255, 255, 255);
     background-color: inherit;
     margin-top:2%;
 }
- 
-}*/
+}
 
-@media screen and (max-width: 1024px) {
+
+/*@media screen and (max-width: 1024px) {
     .mdl-layout__header .mdl-layout__drawer-button {
         margin: 4px
     }
-}
+}*/
 @media screen and (max-width: 1024px) {
     .mdl-layout__drawer-button {
         margin: 4px;
