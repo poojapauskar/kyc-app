@@ -1306,7 +1306,7 @@ VIEW</a>
   <label class="col-md-4 control-label" for="save_btn"></label>
   <div class="col-md-8">
     <button  onclick="return check_file_type_org()" id="edit_btn" name="edit_btn" type="submit" class="btn btn-success" style="width: 10em;">Save</button><span><span></span></span>
-    <button onclick="goBack()" class="btn btn-warning" style="width: 10em;margin-top:-18%;padding:0.5em;margin-left:40%"><a style="color:white" href="search.php">Cancel</a></button>
+    <button onclick="goBack()" class="btn btn-warning" style="width: 10em;margin-top:-2%;padding:0.5em;margin-left:2%"><a style="color:white" href="search.php">Cancel</a></button>
   </div>
 </div>
 </fieldset>
@@ -1780,7 +1780,7 @@ function enable_disable(that){
   <label class="col-md-4 control-label" for="singlebutton"></label>
   <div class="col-md-4">
     <button  onclick="return check_file_type_user()" id="edit_btn" name="edit_btn" type="submit" class="btn btn-success" style="width: 10em;">Save</button><span><span></span></span>
-    <button onclick="goBack()" class="btn btn-warning" style="width: 10em;margin-top:-13%;padding:0.5em;margin-left:40%"><a style="color:white" href="search.php">Cancel</a></button>
+    <button onclick="goBack()" class="btn btn-warning" style="width: 10em;margin-top:-2%;padding:0.5em;margin-left:2%"><a style="color:white" href="search.php">Cancel</a></button>
   </div>
 </div>
 
