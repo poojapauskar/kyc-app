@@ -877,8 +877,8 @@ if ($_POST['uid'] != '' and $_GET["is_user"]==1){
            $title="New Entry Individual"; 
       }?>
 
-    <h5 style="margin-left:28%;margin-top:9%;"><?php echo $title; ?></h5>
-    <span class="mdl-layout-title" style="margin-left:24%;margin-top:7%;">KYCApp</span>
+    <h5 id="title2"><?php echo $title; ?></h5>
+    <span class="mdl-layout-title" id="title1">KYCApp</span>
           <!-- Add spacer, to align navigation to the right -->
   </header>
       <div class="mdl-layout__drawer">
@@ -1072,7 +1072,7 @@ if ($_POST['uid'] != '' and $_GET["is_user"]==1){
   </div>
 
   <div class="col-md-2">
-     <input id="textinput" name="textinput" type="text" placeholder="Specify if Other" class="form-control input-md partner_others"  style="width:103%;">
+     <input id="textinput" name="textinput" type="text" placeholder="Specify if Other" class="form-control input-md partner_others"  style="">
 </div>
 </div>
 <a href="" class="remove_field_present" style=""><img src="images/del24.png" ></a>
@@ -1384,7 +1384,7 @@ function enable_disable(that){
 <div class="form-group row">
   <label for="example-date-input" class="col-2 col-form-label" style="margin-left:29.5%;">DATE</label>
   <div class="col-10">
-    <input class="form-control datepicker" id="date[]" name="date[]" value="<?php echo $_POST['date'] ?>" style="width:31%;margin-left:34.6%;margin-top:-2%;" type="text" readonly>
+    <input class="form-control datepicker" id="date[]" name="date[]" value="<?php echo $_POST['date'] ?>" style="" type="text" readonly>
   </div>
 </div>
 
@@ -1405,7 +1405,7 @@ function enable_disable(that){
 
 <div class="col-md-8 col-sm-12 col-24">
     <div class="input_fields" style="color:black">
-         <button class="add_field btn " onclick="incrementValue()" style="margin-left: 443px;">Add More</button>
+         <button class="add_field btn " onclick="incrementValue()" style="">Add More</button>
          <div>
          <input type="text" name="mytextt[]" hidden="" ></div>
 </div>

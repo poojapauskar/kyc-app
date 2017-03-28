@@ -180,8 +180,8 @@ $arr_missing_report = json_decode($output_missing_report,true);
      box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23) !important;" class="mdl-layout__header">
     <div class="mdl-layout__header-row" >
         <a href="search.php"><img style="" id="logo1" src="images/green.png"></img></a>
-        <h5 style="margin-left:35%;margin-top:9%;">Missing Report</h5>
-         <span class="mdl-layout-title" style="margin-left:26%;margin-top:7%;">KYCApp</span>
+        <h5 id="title2">Missing Report</h5>
+         <span class="mdl-layout-title" id="title1">KYCApp</span>
           <!-- Add spacer, to align navigation to the right -->
           </div>
       </header>
@@ -202,7 +202,7 @@ $arr_missing_report = json_decode($output_missing_report,true);
  <div class="container">
   <div class="row" style="margin-top:4%;"> 
 
-<button class="btn btn-success" style="color:white;margin-left:89%;" type="button" id="test">Clear</button>
+<button class="btn btn-success clear" style="" type="button" id="test">Clear</button>
 <script type="text/javascript">
 $('#test').click(function() {
     /*$('input[type=search]').val('');*/

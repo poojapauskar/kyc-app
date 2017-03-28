@@ -13,6 +13,21 @@
     margin-top:7%;
 }
 
+#logout
+{
+    margin-top:100%;
+    margin-left:28px;
+    width:40px;
+    height:40px;
+}
+
+#title2
+{
+    margin-left:35%;
+    margin-top:9%;
+    font-size:18px;
+}
+
 .partner_designation{
 margin-left:290%;
 margin-top:-20%;
@@ -45,7 +60,7 @@ width: 155%;
 }
 
 #logo1 {
-    margin-top:76%;
+    margin-top:99%;
     margin-left:28px;
     width:50px;
     height:50px;
@@ -301,7 +316,2172 @@ margin-left:14%;
 margin-top:-1%;
 }
 
+.add_field.btn {
+    margin-left: 52%;
+}
+
+.btn.btn-info.user{
+    color: white;
+    background-color: rgb(23, 111, 172);
+    margin-top: 0%;
+    margin-left:116%;
+}
+
+.input-file {
+    margin-top: 3px;
+    margin-left: 19px;
+    position: absolute;
+}
+
+.form_margin{
+    margin-top:10%;
+}
+
+.btn.btn-success.clear{
+    color:white;
+    margin-left:89%;
+}
+.mdl-layout__drawer-button {
+    display: block;
+    position: absolute;
+    height: 48px;
+    width: 48px;
+    border: 0;
+    -webkit-flex-shrink: 0;
+    -ms-flex-negative: 0;
+    flex-shrink: 0;
+    overflow: hidden;
+    text-align: center;
+    cursor: pointer;
+    font-size: 26px;
+    line-height: 56px;
+    font-family: Helvetica, Arial, sans-serif;
+    margin: 8px 12px;
+    top: 22px;
+    left: 30px;
+    color: rgb(255, 255, 255);
+    z-index: 4;
+}
+
+@media screen and (max-width:1920px)
+{
+
+.col-10
+{
+    width: 32%;
+    margin-left: 34%;
+    margin-top: -1.5%;
+}
+
+#logo
+{
+    margin-top:5%;
+    margin-left:28px;
+    width:4%;
+    height:77%;
+}
+
+.mdl-layout__drawer-button {
+    display: block;
+    position: absolute;
+    height: 48px;
+    width: 48px;
+    border: 0;
+    -webkit-flex-shrink: 0;
+    -ms-flex-negative: 0;
+    flex-shrink: 0;
+    overflow: hidden;
+    text-align: center;
+    cursor: pointer;
+    font-size: 26px;
+    line-height: 56px;
+    font-family: Helvetica, Arial, sans-serif;
+    margin: 8px 12px;
+    top: 22px;
+    left: 30px;
+    color: rgb(255, 255, 255);
+    z-index: 4;
+}
+#title
+{
+    margin-left:70%;
+    margin-top:7%;
+}
+
+#logout
+{
+    margin-top:100%;
+    margin-left:28px;
+    width:40px;
+    height:40px;
+}
+
+#title2
+{
+    margin-left:35%;
+    margin-top:7%;
+    font-size:18px;
+}
+
+.partner_designation{
+margin-left:290%;
+margin-top:-20%;
+width: 155%;
+}
+
+.partner_designation.col2{
+    margin-left: 467%;
+    margin-top: -33px;
+    width: 145%;
+}
+
+#title1{
+    margin-left:36%;
+    margin-top:6%;
+}
+
+#telephone_upload {
+    width: 63%;
+    margin-left: 11%;
+    position: absolute;
+    margin-top: 1%;
+}
+
+#bank_upload{
+    width: 63%;
+    margin-left: 3%;
+    margin-top: 0%;
+    position: absolute;
+}
+
+#logo1 {
+    margin-top:99%;
+    margin-left:28px;
+    width:50px;
+    height:50px;
+}
+
+.remove_field_pre1 {
+    margin-left:70%; 
+    margin-top:-3%;
+    position:absolute;
+}
+
+.remove_field_present{
+    margin-left:70%; 
+    margin-top:-3%;
+    position:absolute;
+}
+
+/*avatar profile upload btn*/
+
+ .upload-button {
+    padding: 4px;
+    border: 1px solid black;
+    border-radius: 5px;
+    display: block;
+    float: left;
+    position:absolute;
+    z-index:2;
+    margin-left:77%;
+    cursor:pointer;
+    margin-top:10%;
+}
+
+.profile-pic {
+    max-width:100px;
+    max-height:100px;
+    display: block;
+    margin-left:77%;
+    position:absolute;
+    z-index:2;
+}
+
+.file-upload1 {
+    display: none;
+}
+.alert {
+    padding: 20px;
+    background-color: #f44336;
+    color: white;
+    /*position: relative;*/
+}
+
+.closebtn {
+    margin-left: 15px;
+    color: white;
+    font-weight: bold;
+    float: right;
+    font-size: 22px;
+    line-height: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.control-label.name {
+    margin-left:239%;
+}
+
+.control-label.designation{
+    margin-left:204%;
+}
+
+.closebtn:hover {
+    color: black;
+}
+
+/*add new partner*/
+.add_field_button.btn.partner_btn{
+    margin-left:226%;
+}
+
+/*view btn*/
+a.btn.btn-info{
+    color:white;
+    background-color:#176fac;
+    margin-top:0%;
+    margin-left:1%;
+}
+
+a.btn.btn-info.edit{
+    color:white;
+    background-color:#176fac;
+    margin-top:0%;
+    margin-left:40%;
+}
+
+/*attach btn*/
+div.fileUpload.btn.btn-info{
+    margin-left:0%;
+    margin-top:0%;
+}
+
+/*notification bar css*/
+ span:before{
+    content:" "; 
+    display:inline-block; 
+    width:32px;
+    }
+
+    .alert {
+    padding: 20px;
+    background-color: #f44336;
+    color: white;
+    }
+
+  .closebtn {
+    margin-left: 15px;
+    color: white;
+    font-weight: bold;
+    float: right;
+    font-size: 22px;
+    line-height: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+    }
+
+    .closebtn:hover {
+    color: black;
+    }
+    .mdl-radio {
+    position: relative;
+    font-size: 14px;
+    line-height: 24px;
+    display: inline-block;
+    box-sizing: border-box;
+    font-weight: 500;
+    margin: 0;
+    padding-left: 0;
+}
+
+/*add new partner js*/
+
+.partner_name{
+    margin-top:-20%;
+    margin-left:290%;
+    width: 322%;
+}
+.btn.btn-info.new_entry_btn.entry{
+    margin-left:1240%;
+    position:absolute;
+    margin-top: -41px;
+
+}
+
+/*date input field*/
+.col-10.col {
+    width: 94%;
+    margin-left: 7%;
+    margin-top: -4%;
+}
+.form-control.type_of_work
+{
+    margin-left:9%;
+    width:208%
+}
+
+.form-group.designation{
+    margin-left:175%;
+}
+
+.control-label.type{
+    margin-left:-64%;
+}
+.col-md-4.control-label.status
+{
+    margin-left:-29%;
+}
+
+/*adding extra field*/
+.add_field.btn {
+    margin-left: 443px;
+}
+
+.form-control.status{
+    width:210%;
+    margin-left:-1%;
+}
+.col-2.col-form-label.date{
+    margin-left:-8.5%;
+}
+.col-md-4.control-label.comment{
+    margin-left:-29%;
+}
+
+.remove_field{
+    margin-left:54%;
+    margin-top:-40px;
+    position:absolute
+}
+
+/*edit page view*/
+.fileUpload.btn.btn-info.view{
+
+}
+
+/*search result page*/
+.search_result.tele{
+    margin-left: -99%;
+    margin-top: 0%;
+    width: 83%;
+}
+
+.search_result.tele1{
+    margin-left: 16%;
+    margin-top: 0%;
+    width: 83%;
+}
+/*seach_result page view*/
+.btn.btn-info.view1{
+     margin-left: -266%;
+    margin-top: 7%;
+    position: relative;
+    color: white;
+}
+
+
+.fileUpload.btn.btn-info.tele{
+margin-left:12%;
+margin-top:-1%;
+}
+
+.btn.btn-info.view{
+    color: white;
+    margin-left: -277%;
+    margin-top: -2%;
+    position: relative;
+}
+.col-md-3.bkupload.edit {
+    width:28%;
+    margin-left: 45%;
+    position: absolute;
+    margin-top: 0%;
+}
+.col-md-3.teleupload.edit {
+    width: 28%;
+    margin-left: 47%;
+    position: absolute;
+    margin-top: 0%;
+}
+.form-control.input-md.comment{
+    width:330%;
+}
+.fileUpload.btn.btn-info.tele1{
+margin-left:14%;
+margin-top:-1%;
+}
+
+.add_field.btn {
+    margin-left: 52%;
+}
+
+.btn.btn-info.user{
+    color: white;
+    background-color: rgb(23, 111, 172);
+    margin-top: 0%;
+    margin-left:116%;
+}
+
+.input-file {
+    margin-top: 3px;
+    margin-left: 19px;
+    position: absolute;
+}
+
+.form_margin{
+    margin-top:10%;
+}
+
+.btn.btn-success.clear{
+    color:white;
+    margin-left:82%;
+}
+}
+
+@media screen and (max-width:1680px)
+{
+#logo
+{
+    margin-top:5%;
+    margin-left:28px;
+    width:4%;
+    height:77%;
+}
+
+#title
+{
+    margin-left:70%;
+    margin-top:7%;
+}
+
+#logout
+{
+    margin-top:100%;
+    margin-left:28px;
+    width:40px;
+    height:40px;
+}
+
+#title2
+{
+    margin-left:35%;
+    margin-top:7%;
+    font-size:18px;
+}
+
+.partner_designation{
+margin-left:290%;
+margin-top:-20%;
+width: 155%;
+}
+
+.partner_designation.col2{
+    margin-left: 467%;
+    margin-top: -33px;
+    width: 145%;
+}
+
+#title1{
+    margin-left:36%;
+    margin-top:6%;
+}
+
+#telephone_upload {
+    width: 63%;
+    margin-left: 11%;
+    position: absolute;
+    margin-top: 1%;
+}
+
+#bank_upload{
+    width: 63%;
+    margin-left: 3%;
+    margin-top: 0%;
+    position: absolute;
+}
+
+#logo1 {
+    margin-top:99%;
+    margin-left:28px;
+    width:50px;
+    height:50px;
+}
+
+.remove_field_pre1 {
+    margin-left:70%; 
+    margin-top:-3%;
+    position:absolute;
+}
+
+.remove_field_present{
+    margin-left:70%; 
+    margin-top:-3%;
+    position:absolute;
+}
+
+/*avatar profile upload btn*/
+
+ .upload-button {
+    padding: 4px;
+    border: 1px solid black;
+    border-radius: 5px;
+    display: block;
+    float: left;
+    position:absolute;
+    z-index:2;
+    margin-left:77%;
+    cursor:pointer;
+    margin-top:10%;
+}
+
+.profile-pic {
+    max-width:100px;
+    max-height:100px;
+    display: block;
+    margin-left:77%;
+    position:absolute;
+    z-index:2;
+}
+
+.file-upload1 {
+    display: none;
+}
+.alert {
+    padding: 20px;
+    background-color: #f44336;
+    color: white;
+    /*position: relative;*/
+}
+
+.closebtn {
+    margin-left: 15px;
+    color: white;
+    font-weight: bold;
+    float: right;
+    font-size: 22px;
+    line-height: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.control-label.name {
+    margin-left:247%;
+}
+
+.control-label.designation{
+    margin-left:217%;
+}
+
+.closebtn:hover {
+    color: black;
+}
+
+/*add new partner*/
+.add_field_button.btn.partner_btn{
+    margin-left:226%;
+}
+
+/*view btn*/
+a.btn.btn-info{
+    color:white;
+    background-color:#176fac;
+    margin-top:0%;
+    margin-left:1%;
+}
+
+a.btn.btn-info.edit{
+    color:white;
+    background-color:#176fac;
+    margin-top:0%;
+    margin-left:40%;
+}
+
+/*attach btn*/
+div.fileUpload.btn.btn-info{
+    margin-left:0%;
+    margin-top:0%;
+}
+
+/*notification bar css*/
+ span:before{
+    content:" "; 
+    display:inline-block; 
+    width:32px;
+    }
+
+    .alert {
+    padding: 20px;
+    background-color: #f44336;
+    color: white;
+    }
+
+  .closebtn {
+    margin-left: 15px;
+    color: white;
+    font-weight: bold;
+    float: right;
+    font-size: 22px;
+    line-height: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+    }
+
+    .closebtn:hover {
+    color: black;
+    }
+    .mdl-radio {
+    position: relative;
+    font-size: 14px;
+    line-height: 24px;
+    display: inline-block;
+    box-sizing: border-box;
+    font-weight: 500;
+    margin: 0;
+    padding-left: 0;
+}
+
+/*add new partner js*/
+
+.partner_name{
+    margin-top:-20%;
+    margin-left:290%;
+    width: 322%;
+}
+.btn.btn-info.new_entry_btn.entry{
+    margin-left:1240%;
+    position:absolute;
+    margin-top: -41px;
+
+}
+
+/*date input field*/
+.col-10.col {
+    width: 94%;
+    margin-left: 7%;
+    margin-top: -4%;
+}
+.form-control.type_of_work
+{
+    margin-left:9%;
+    width:208%
+}
+
+.form-group.designation{
+    margin-left:175%;
+}
+
+.control-label.type{
+    margin-left:-68%;
+}
+.col-md-4.control-label.status
+{
+    margin-left:-29%;
+}
+
+/*adding extra field*/
+.add_field.btn {
+    margin-left: 443px;
+}
+
+.form-control.status{
+    width:210%;
+    margin-left:-1%;
+}
+.col-2.col-form-label.date{
+    margin-left:-8.5%;
+}
+.col-md-4.control-label.comment{
+    margin-left:-29%;
+}
+
+.remove_field{
+    margin-left:54%;
+    margin-top:-40px;
+    position:absolute
+}
+
+/*edit page view*/
+.fileUpload.btn.btn-info.view{
+
+}
+
+/*search result page*/
+.search_result.tele{
+    margin-left: -99%;
+    margin-top: 0%;
+    width: 83%;
+}
+
+.search_result.tele1{
+    margin-left: 16%;
+    margin-top: 0%;
+    width: 83%;
+}
+/*seach_result page view*/
+.btn.btn-info.view1{
+     margin-left: -266%;
+    margin-top: 7%;
+    position: relative;
+    color: white;
+}
+
+
+.fileUpload.btn.btn-info.tele{
+margin-left:12%;
+margin-top:-1%;
+}
+
+.btn.btn-info.view{
+    color: white;
+    margin-left: -277%;
+    margin-top: -2%;
+    position: relative;
+}
+.col-md-3.bkupload.edit {
+    width:28%;
+    margin-left: 45%;
+    position: absolute;
+    margin-top: 0%;
+}
+.col-md-3.teleupload.edit {
+    width: 28%;
+    margin-left: 47%;
+    position: absolute;
+    margin-top: 0%;
+}
+.form-control.input-md.comment{
+    width:338%;
+}
+.fileUpload.btn.btn-info.tele1{
+margin-left:14%;
+margin-top:-1%;
+}
+
+.add_field.btn {
+    margin-left: 52%;
+}
+
+.btn.btn-info.user{
+    color: white;
+    background-color: rgb(23, 111, 172);
+    margin-top: 0%;
+    margin-left:116%;
+}
+
+.input-file {
+    margin-top: 3px;
+    margin-left: 19px;
+    position: absolute;
+}
+
+.form_margin{
+    margin-top:10%;
+}
+
+.btn.btn-success.clear{
+    color:white;
+    margin-left:82%;
+}
+}
+@media screen and (max-width:1600px)
+{
+        #logo
+{
+    margin-top:5%;
+    margin-left:28px;
+    width:4%;
+    height:77%;
+}
+
+#title
+{
+    margin-left:70%;
+    margin-top:7%;
+}
+
+#logout
+{
+    margin-top:100%;
+    margin-left:28px;
+    width:40px;
+    height:40px;
+}
+
+#title2
+{
+    margin-left:35%;
+    margin-top:7%;
+    font-size:18px;
+}
+
+.partner_designation{
+margin-left:290%;
+margin-top:-20%;
+width: 155%;
+}
+
+.partner_designation.col2{
+    margin-left: 467%;
+    margin-top: -33px;
+    width: 145%;
+}
+
+#title1{
+    margin-left:36%;
+    margin-top:6%;
+}
+
+#telephone_upload {
+    width: 63%;
+    margin-left: 11%;
+    position: absolute;
+    margin-top: 1%;
+}
+
+#bank_upload{
+    width: 63%;
+    margin-left: 3%;
+    margin-top: 0%;
+    position: absolute;
+}
+
+#logo1 {
+    margin-top:99%;
+    margin-left:28px;
+    width:50px;
+    height:50px;
+}
+
+.remove_field_pre1 {
+    margin-left:70%; 
+    margin-top:-3%;
+    position:absolute;
+}
+
+.remove_field_present{
+    margin-left:70%; 
+    margin-top:-3%;
+    position:absolute;
+}
+
+/*avatar profile upload btn*/
+
+ .upload-button {
+    padding: 4px;
+    border: 1px solid black;
+    border-radius: 5px;
+    display: block;
+    float: left;
+    position:absolute;
+    z-index:2;
+    margin-left:77%;
+    cursor:pointer;
+    margin-top:10%;
+}
+
+.profile-pic {
+    max-width:100px;
+    max-height:100px;
+    display: block;
+    margin-left:77%;
+    position:absolute;
+    z-index:2;
+}
+
+.file-upload1 {
+    display: none;
+}
+.alert {
+    padding: 20px;
+    background-color: #f44336;
+    color: white;
+    /*position: relative;*/
+}
+
+.closebtn {
+    margin-left: 15px;
+    color: white;
+    font-weight: bold;
+    float: right;
+    font-size: 22px;
+    line-height: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.control-label.name {
+    margin-left:223%;
+}
+
+.control-label.designation{
+    margin-left:181%;
+}
+
+.closebtn:hover {
+    color: black;
+}
+
+/*add new partner*/
+.add_field_button.btn.partner_btn{
+    margin-left:226%;
+}
+
+/*view btn*/
+a.btn.btn-info{
+    color:white;
+    background-color:#176fac;
+    margin-top:0%;
+    margin-left:1%;
+}
+
+a.btn.btn-info.edit{
+    color:white;
+    background-color:#176fac;
+    margin-top:0%;
+    margin-left:40%;
+}
+
+/*attach btn*/
+div.fileUpload.btn.btn-info{
+    margin-left:0%;
+    margin-top:0%;
+}
+
+/*notification bar css*/
+ span:before{
+    content:" "; 
+    display:inline-block; 
+    width:32px;
+    }
+
+    .alert {
+    padding: 20px;
+    background-color: #f44336;
+    color: white;
+    }
+
+  .closebtn {
+    margin-left: 15px;
+    color: white;
+    font-weight: bold;
+    float: right;
+    font-size: 22px;
+    line-height: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+    }
+
+    .closebtn:hover {
+    color: black;
+    }
+    .mdl-radio {
+    position: relative;
+    font-size: 14px;
+    line-height: 24px;
+    display: inline-block;
+    box-sizing: border-box;
+    font-weight: 500;
+    margin: 0;
+    padding-left: 0;
+}
+
+/*add new partner js*/
+
+.partner_name{
+    margin-top:-20%;
+    margin-left:290%;
+    width: 322%;
+}
+.btn.btn-info.new_entry_btn.entry{
+    margin-left:1240%;
+    position:absolute;
+    margin-top: -41px;
+
+}
+
+/*date input field*/
+.col-10.col {
+    width: 94%;
+    margin-left: 7%;
+    margin-top: -4%;
+}
+.form-control.type_of_work
+{
+    margin-left:9%;
+    width:208%
+}
+
+.form-group.designation{
+    margin-left:175%;
+}
+
+.control-label.type{
+    margin-left:-68%;
+}
+.col-md-4.control-label.status
+{
+    margin-left:-29%;
+}
+
+/*adding extra field*/
+.add_field.btn {
+    margin-left: 443px;
+}
+
+.form-control.status{
+    width:210%;
+    margin-left:-1%;
+}
+.col-2.col-form-label.date{
+    margin-left:-8.5%;
+}
+.col-md-4.control-label.comment{
+    margin-left:-29%;
+}
+
+.remove_field{
+    margin-left:54%;
+    margin-top:-40px;
+    position:absolute
+}
+
+/*edit page view*/
+.fileUpload.btn.btn-info.view{
+
+}
+
+/*search result page*/
+.search_result.tele{
+    margin-left: -99%;
+    margin-top: 0%;
+    width: 83%;
+}
+
+.search_result.tele1{
+    margin-left: 16%;
+    margin-top: 0%;
+    width: 83%;
+}
+/*seach_result page view*/
+.btn.btn-info.view1{
+     margin-left: -266%;
+    margin-top: 7%;
+    position: relative;
+    color: white;
+}
+
+
+.fileUpload.btn.btn-info.tele{
+margin-left:12%;
+margin-top:-1%;
+}
+
+.btn.btn-info.view{
+    color: white;
+    margin-left: -277%;
+    margin-top: -2%;
+    position: relative;
+}
+.col-md-3.bkupload.edit {
+    width:28%;
+    margin-left: 45%;
+    position: absolute;
+    margin-top: 0%;
+}
+.col-md-3.teleupload.edit {
+    width: 28%;
+    margin-left: 47%;
+    position: absolute;
+    margin-top: 0%;
+}
+.form-control.input-md.comment{
+    width:338%;
+}
+.fileUpload.btn.btn-info.tele1{
+margin-left:14%;
+margin-top:-1%;
+}
+
+.add_field.btn {
+    margin-left: 52%;
+}
+
+.btn.btn-info.user{
+    color: white;
+    background-color: rgb(23, 111, 172);
+    margin-top: 0%;
+    margin-left:116%;
+}
+
+.input-file {
+    margin-top: 3px;
+    margin-left: 19px;
+    position: absolute;
+}
+
+.form_margin{
+    margin-top:10%;
+}
+
+.btn.btn-success.clear{
+    color:white;
+    margin-left:82%;
+}
+}
+@media screen and (max-width:1440px){
+    #logo
+{
+    margin-top:5%;
+    margin-left:28px;
+    width:4%;
+    height:77%;
+}
+
+#title
+{
+    margin-left:70%;
+    margin-top:7%;
+}
+
+#logout
+{
+    margin-top:100%;
+    margin-left:28px;
+    width:40px;
+    height:40px;
+}
+
+#title2
+{
+    margin-left:35%;
+    margin-top:9%;
+    font-size:18px;
+}
+
+.partner_designation{
+margin-left:290%;
+margin-top:-20%;
+width: 155%;
+}
+
+.partner_designation.col2{
+    margin-left: 467%;
+    margin-top: -33px;
+    width: 145%;
+}
+
+#title1{
+    margin-left:36%;
+    margin-top:7%;
+}
+
+#telephone_upload {
+    width: 63%;
+    margin-left: 11%;
+    position: absolute;
+    margin-top: 1%;
+}
+
+#bank_upload{
+    width: 63%;
+    margin-left: 3%;
+    margin-top: 0%;
+    position: absolute;
+}
+
+#logo1 {
+    margin-top:99%;
+    margin-left:28px;
+    width:50px;
+    height:50px;
+}
+
+.remove_field_pre1 {
+    margin-left:70%; 
+    margin-top:-3%;
+    position:absolute;
+}
+
+.remove_field_present{
+    margin-left:70%; 
+    margin-top:-3%;
+    position:absolute;
+}
+
+/*avatar profile upload btn*/
+
+ .upload-button {
+    padding: 4px;
+    border: 1px solid black;
+    border-radius: 5px;
+    display: block;
+    float: left;
+    position:absolute;
+    z-index:2;
+    margin-left:77%;
+    cursor:pointer;
+    margin-top:10%;
+}
+
+.profile-pic {
+    max-width:100px;
+    max-height:100px;
+    display: block;
+    margin-left:77%;
+    position:absolute;
+    z-index:2;
+}
+
+.file-upload1 {
+    display: none;
+}
+.alert {
+    padding: 20px;
+    background-color: #f44336;
+    color: white;
+    /*position: relative;*/
+}
+
+.closebtn {
+    margin-left: 15px;
+    color: white;
+    font-weight: bold;
+    float: right;
+    font-size: 22px;
+    line-height: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.control-label.name {
+    margin-left:223%;
+}
+
+.control-label.designation{
+    margin-left:181%;
+}
+
+.closebtn:hover {
+    color: black;
+}
+
+/*add new partner*/
+.add_field_button.btn.partner_btn{
+    margin-left:235%;
+}
+
+/*view btn*/
+a.btn.btn-info{
+    color:white;
+    background-color:#176fac;
+    margin-top:0%;
+    margin-left:1%;
+}
+
+a.btn.btn-info.edit{
+    color:white;
+    background-color:#176fac;
+    margin-top:0%;
+    margin-left:40%;
+}
+
+/*attach btn*/
+div.fileUpload.btn.btn-info{
+    margin-left:0%;
+    margin-top:0%;
+}
+
+/*notification bar css*/
+ span:before{
+    content:" "; 
+    display:inline-block; 
+    width:32px;
+    }
+
+    .alert {
+    padding: 20px;
+    background-color: #f44336;
+    color: white;
+    }
+
+  .closebtn {
+    margin-left: 15px;
+    color: white;
+    font-weight: bold;
+    float: right;
+    font-size: 22px;
+    line-height: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+    }
+
+    .closebtn:hover {
+    color: black;
+    }
+    .mdl-radio {
+    position: relative;
+    font-size: 14px;
+    line-height: 24px;
+    display: inline-block;
+    box-sizing: border-box;
+    font-weight: 500;
+    margin: 0;
+    padding-left: 0;
+}
+
+/*add new partner js*/
+
+.partner_name{
+    margin-top:-20%;
+    margin-left:290%;
+    width: 322%;
+}
+.btn.btn-info.new_entry_btn.entry{
+    margin-left:1240%;
+    position:absolute;
+    margin-top: -41px;
+
+}
+
+/*date input field*/
+.col-10.col{
+    width:91%;
+    margin-left:7.6%;
+    margin-top:-6%;
+}
+.form-control.type_of_work
+{
+    margin-left:9%;
+    width:208%
+}
+
+.form-group.designation{
+    margin-left:175%;
+}
+
+.control-label.type{
+    margin-left:-73%;
+}
+.col-md-4.control-label.status
+{
+    margin-left:-29%;
+}
+
+/*adding extra field*/
+.add_field.btn {
+    margin-left: 443px;
+}
+
+.form-control.status{
+    width:210%;
+    margin-left:-1%;
+}
+.col-2.col-form-label.date{
+    margin-left:-8.5%;
+}
+.col-md-4.control-label.comment{
+    margin-left:-29%;
+}
+
+.remove_field{
+    margin-left:54%;
+    margin-top:-40px;
+    position:absolute
+}
+
+/*edit page view*/
+.fileUpload.btn.btn-info.view{
+
+}
+
+/*search result page*/
+.search_result.tele{
+    margin-left: -99%;
+    margin-top: 0%;
+    width: 83%;
+}
+
+.search_result.tele1{
+    margin-left: 16%;
+    margin-top: 0%;
+    width: 83%;
+}
+/*seach_result page view*/
+.btn.btn-info.view1{
+     margin-left: -266%;
+    margin-top: 7%;
+    position: relative;
+    color: white;
+}
+
+
+.fileUpload.btn.btn-info.tele{
+margin-left:12%;
+margin-top:-1%;
+}
+
+.btn.btn-info.view{
+    color: white;
+    margin-left: -277%;
+    margin-top: -2%;
+    position: relative;
+}
+.col-md-3.bkupload.edit {
+    width:28%;
+    margin-left: 45%;
+    position: absolute;
+    margin-top: 0%;
+}
+.col-md-3.teleupload.edit {
+    width: 28%;
+    margin-left: 47%;
+    position: absolute;
+    margin-top: 0%;
+}
+.form-control.input-md.comment{
+    width:338%;
+}
+.fileUpload.btn.btn-info.tele1{
+margin-left:14%;
+margin-top:-1%;
+}
+
+.add_field.btn {
+    margin-left: 52%;
+}
+
+.btn.btn-info.user{
+    color: white;
+    background-color: rgb(23, 111, 172);
+    margin-top: 0%;
+    margin-left:116%;
+}
+
+.input-file {
+    margin-top: 3px;
+    margin-left: 19px;
+    position: absolute;
+}
+
+.form_margin{
+    margin-top:10%;
+}
+
+.btn.btn-success.clear{
+    color:white;
+    margin-left:82%;
+}
+}
+@media screen and (max-width: 1366px){
+    #logo
+{
+    margin-top:5%;
+    margin-left:28px;
+    width:4%;
+    height:77%;
+}
+
+#title
+{
+    margin-left:70%;
+    margin-top:7%;
+}
+
+#logout
+{
+    margin-top:100%;
+    margin-left:28px;
+    width:40px;
+    height:40px;
+}
+
+#title2
+{
+    margin-left:35%;
+    margin-top:9%;
+    font-size:18px;
+}
+
+.partner_designation{
+margin-left:290%;
+margin-top:-20%;
+width: 155%;
+}
+
+.partner_designation.col2{
+    margin-left: 467%;
+    margin-top: -33px;
+    width: 145%;
+}
+
+#title1{
+    margin-left:26%;
+    margin-top:7%;
+}
+
+#telephone_upload {
+    width: 63%;
+    margin-left: 11%;
+    position: absolute;
+    margin-top: 1%;
+}
+
+#bank_upload{
+    width: 63%;
+    margin-left: 3%;
+    margin-top: 0%;
+    position: absolute;
+}
+
+#logo1 {
+    margin-top:99%;
+    margin-left:28px;
+    width:50px;
+    height:50px;
+}
+
+.remove_field_pre1 {
+    margin-left:70%; 
+    margin-top:-3%;
+    position:absolute;
+}
+
+.remove_field_present{
+    margin-left:70%; 
+    margin-top:-3%;
+    position:absolute;
+}
+
+/*avatar profile upload btn*/
+
+ .upload-button {
+    padding: 4px;
+    border: 1px solid black;
+    border-radius: 5px;
+    display: block;
+    float: left;
+    position:absolute;
+    z-index:2;
+    margin-left:77%;
+    cursor:pointer;
+    margin-top:10%;
+}
+
+.profile-pic {
+    max-width:100px;
+    max-height:100px;
+    display: block;
+    margin-left:77%;
+    position:absolute;
+    z-index:2;
+}
+
+.file-upload1 {
+    display: none;
+}
+.alert {
+    padding: 20px;
+    background-color: #f44336;
+    color: white;
+    /*position: relative;*/
+}
+
+.closebtn {
+    margin-left: 15px;
+    color: white;
+    font-weight: bold;
+    float: right;
+    font-size: 22px;
+    line-height: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.control-label.name {
+    margin-left:223%;
+}
+
+.control-label.designation{
+    margin-left:181%;
+}
+
+.closebtn:hover {
+    color: black;
+}
+
+/*add new partner*/
+.add_field_button.btn.partner_btn{
+    margin-left:235%;
+}
+
+/*view btn*/
+a.btn.btn-info{
+    color:white;
+    background-color:#176fac;
+    margin-top:0%;
+    margin-left:2%;
+}
+
+a.btn.btn-info.edit{
+    color:white;
+    background-color:#176fac;
+    margin-top:0%;
+    margin-left:40%;
+}
+
+/*attach btn*/
+div.fileUpload.btn.btn-info{
+    margin-left:0%;
+    margin-top:0%;
+}
+
+/*notification bar css*/
+ span:before{
+    content:" "; 
+    display:inline-block; 
+    width:32px;
+    }
+
+    .alert {
+    padding: 20px;
+    background-color: #f44336;
+    color: white;
+    }
+
+  .closebtn {
+    margin-left: 15px;
+    color: white;
+    font-weight: bold;
+    float: right;
+    font-size: 22px;
+    line-height: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+    }
+
+    .closebtn:hover {
+    color: black;
+    }
+    .mdl-radio {
+    position: relative;
+    font-size: 14px;
+    line-height: 24px;
+    display: inline-block;
+    box-sizing: border-box;
+    font-weight: 500;
+    margin: 0;
+    padding-left: 0;
+}
+
+/*add new partner js*/
+
+.partner_name{
+    margin-top:-20%;
+    margin-left:290%;
+    width: 322%;
+}
+.btn.btn-info.new_entry_btn.entry{
+    margin-left:1240%;
+    position:absolute;
+    margin-top: -41px;
+
+}
+
+/*date input field*/
+.col-10.col{
+    width:91%;
+    margin-left:7.6%;
+    margin-top:-6%;
+}
+.form-control.type_of_work
+{
+    margin-left:9%;
+    width:208%
+}
+
+.form-group.designation{
+    margin-left:175%;
+}
+
+.control-label.type{
+    margin-left:-73%;
+}
+.col-md-4.control-label.status
+{
+    margin-left:-29%;
+}
+
+/*adding extra field*/
+.add_field.btn {
+    margin-left: 443px;
+}
+
+.form-control.status{
+    width:210%;
+    margin-left:-1%;
+}
+.col-2.col-form-label.date{
+    margin-left:-8.5%;
+}
+.col-md-4.control-label.comment{
+    margin-left:-29%;
+}
+
+.remove_field{
+    margin-left:54%;
+    margin-top:-40px;
+    position:absolute
+}
+
+/*edit page view*/
+.fileUpload.btn.btn-info.view{
+
+}
+
+/*search result page*/
+.search_result.tele{
+    margin-left: -99%;
+    margin-top: 0%;
+    width: 83%;
+}
+
+.search_result.tele1{
+    margin-left: 16%;
+    margin-top: 0%;
+    width: 83%;
+}
+/*seach_result page view*/
+.btn.btn-info.view1{
+     margin-left: -266%;
+    margin-top: 7%;
+    position: relative;
+    color: white;
+}
+
+
+.fileUpload.btn.btn-info.tele{
+margin-left:12%;
+margin-top:-1%;
+}
+
+.btn.btn-info.view{
+    color: white;
+    margin-left: -277%;
+    margin-top: -2%;
+    position: relative;
+}
+.col-md-3.bkupload.edit {
+    width:28%;
+    margin-left: 45%;
+    position: absolute;
+    margin-top: 0%;
+}
+.col-md-3.teleupload.edit {
+    width: 28%;
+    margin-left: 47%;
+    position: absolute;
+    margin-top: 0%;
+}
+.form-control.input-md.comment{
+    width:339%;
+}
+.fileUpload.btn.btn-info.tele1{
+margin-left:14%;
+margin-top:-1%;
+}
+
+.add_field.btn {
+    margin-left: 52%;
+}
+
+.btn.btn-info.user{
+    color: white;
+    background-color: rgb(23, 111, 172);
+    margin-top: 0%;
+    margin-left:116%;
+}
+
+.input-file {
+    margin-top: 3px;
+    margin-left: 19px;
+    position: absolute;
+}
+
+.form_margin{
+    margin-top:10%;
+}
+
+.btn.btn-success.clear{
+    color:white;
+    margin-left:82%;
+}
+
+}
+
+@media screen and (max-width:1280px) {
+
+#logo
+{
+    margin-top:5%;
+    margin-left:28px;
+    width:4%;
+    height:77%;
+}
+.add_field.btn {
+    margin-left:435%;
+}
+#title2
+{
+    margin-left:35%;
+    margin-top:9%;
+    font-size:18px;
+}
+
+.btn.btn-success.clear{
+    color:white;
+    margin-left:82%;
+}
+
+.btn.btn-info.user{
+    color: white;
+    background-color: rgb(23, 111, 172);
+    margin-top: 0%;
+    margin-left: 116%;
+}
+
+
+#title
+{
+    margin-left:70%;
+    margin-top:7%;
+}
+
+.partner_designation{
+margin-left:290%;
+margin-top:-20%;
+width: 155%;
+}
+
+.partner_designation.col2{
+    margin-left: 467%;
+    margin-top: -33px;
+    width: 145%;
+}
+
+#title1{
+    margin-left:26%;
+    margin-top:7%;
+}
+
+#telephone_upload {
+    width: 63%;
+    margin-left: 11%;
+    position: absolute;
+    margin-top: 1%;
+}
+
+#bank_upload{
+    width: 63%;
+    margin-left: 3%;
+    margin-top: 0%;
+    position: absolute;
+}
+
+#logo1 {
+    margin-top:98%;
+    margin-left:28px;
+    width:50px;
+    height:50px;
+}
+
+#mdl_icon{
+
+}
+
+.remove_field_pre1 {
+    margin-left:70%; 
+    margin-top:-3%;
+    position:absolute;
+}
+
+.remove_field_present{
+    margin-left:70%; 
+    margin-top:-3%;
+    position:absolute;
+}
+
+/*avatar profile upload btn*/
+
+ .upload-button {
+    padding: 4px;
+    border: 1px solid black;
+    border-radius: 5px;
+    display: block;
+    float: left;
+    position:absolute;
+    z-index:2;
+    margin-left:77%;
+    cursor:pointer;
+    margin-top:10%;
+}
+
+.profile-pic {
+    max-width:100px;
+    max-height:100px;
+    display: block;
+    margin-left:77%;
+    position:absolute;
+    z-index:2;
+}
+
+.file-upload1 {
+    display: none;
+}
+.alert {
+    padding: 20px;
+    background-color: #f44336;
+    color: white;
+    /*position: relative;*/
+}
+
+.closebtn {
+    margin-left: 15px;
+    color: white;
+    font-weight: bold;
+    float: right;
+    font-size: 22px;
+    line-height: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.control-label.name {
+    margin-left:223%;
+}
+
+.control-label.designation{
+    margin-left:181%;
+}
+
+.closebtn:hover {
+    color: black;
+}
+
+/*add new partner*/
+.add_field_button.btn.partner_btn{
+    margin-left:235%;
+}
+
+/*view btn*/
+a.btn.btn-info{
+    color:white;
+    background-color:#176fac;
+    margin-top:0%;
+    margin-left:40%;
+}
+
+a.btn.btn-info.edit{
+    color:white;
+    background-color:#176fac;
+    margin-top:0%;
+    margin-left:30%;
+}
+
+/*attach btn*/
+div.fileUpload.btn.btn-info{
+    margin-left:0%;
+    margin-top:0%;
+}
+
+/*notification bar css*/
+ span:before{
+    content:" "; 
+    display:inline-block; 
+    width:32px;
+    }
+
+    .alert {
+    padding: 20px;
+    background-color: #f44336;
+    color: white;
+    }
+
+  .closebtn {
+    margin-left: 15px;
+    color: white;
+    font-weight: bold;
+    float: right;
+    font-size: 22px;
+    line-height: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+    }
+
+    .closebtn:hover {
+    color: black;
+    }
+    .mdl-radio {
+    position: relative;
+    font-size: 14px;
+    line-height: 24px;
+    display: inline-block;
+    box-sizing: border-box;
+    font-weight: 500;
+    margin: 0;
+    padding-left: 0;
+}
+
+/*add new partner js*/
+
+.partner_name{
+    margin-top:-20%;
+    margin-left:290%;
+    width: 322%;
+}
+.btn.btn-info.new_entry_btn.entry{
+    margin-left:1240%;
+    position:absolute;
+    margin-top: -41px;
+
+}
+
+/*date input field*/
+.col-10.col{
+    width:91%;
+    margin-left:7.6%;
+    margin-top:-6%;
+}
+.form-control.type_of_work
+{
+    margin-left:9%;
+    width:208%
+}
+
+.form-group.designation{
+    margin-left:175%;
+}
+
+.control-label.type{
+    margin-left:-73%;
+}
+.col-md-4.control-label.status
+{
+    margin-left:-29%;
+}
+
+/*adding extra field*/
+.add_field.btn {
+    margin-left: 443px;
+}
+
+.form-control.status{
+    width:210%;
+    margin-left:-1%;
+}
+.col-2.col-form-label.date{
+    margin-left:-8.5%;
+}
+.col-md-4.control-label.comment{
+    margin-left:-29%;
+}
+
+.remove_field{
+    margin-left:54%;
+    margin-top:-40px;
+    position:absolute
+}
+
+/*edit page view*/
+.fileUpload.btn.btn-info.view{
+
+}
+
+/*search result page*/
+.search_result.tele{
+    margin-left: -96%;
+    margin-top: 0%;
+    width: 80%;
+}
+
+.search_result.tele1{
+    margin-left: 16%;
+    margin-top: 0%;
+    width: 83%;
+}
+/*seach_result page view*/
+.btn.btn-info.view1{
+     margin-left: -266%;
+    margin-top: 7%;
+    position: relative;
+    color: white;
+}
+
+
+.fileUpload.btn.btn-info.tele{
+margin-left:12%;
+margin-top:-1%;
+}
+
+.btn.btn-info.view{
+    color: white;
+    margin-left: -277%;
+    margin-top: -2%;
+    position: relative;
+}
+.col-md-3.bkupload.edit {
+    width:28%;
+    margin-left: 45%;
+    position: absolute;
+    margin-top: 0%;
+}
+.col-md-3.teleupload.edit {
+    width: 28%;
+    margin-left: 47%;
+    position: absolute;
+    margin-top: 0%;
+}
+.form-control.input-md.comment{
+    width:341%;
+}
+.fileUpload.btn.btn-info.tele1{
+margin-left:14%;
+margin-top:-1%;
+}
+
+.btn.btn-info.new_entry_btn
+{
+    color: white;
+    background-color: rgb(23, 111, 172);
+    margin-top: 4%;
+    margin-left: 10%;
+}
+
+}
+
 @media screen and (max-width:1024px) {
+
+.form_margin{
+    margin-top:13%;
+}
+
+#title2
+{
+    margin-left:35%;
+    margin-top:9%;
+    font-size:18px;
+}
+
+.btn.btn-success.clear{
+    color:white;
+    margin-left:89%;
+}
+
+.btn.btn-info.user {
+    color: white;
+    background-color: rgb(23, 111, 172);
+    margin-top: 0%;
+    margin-left:207%;
+}
 
 .btn.btn-info.new_entry_btn
 {

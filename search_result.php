@@ -132,8 +132,8 @@ $arr_search = json_decode($output_search,true);
      -moz-box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23) !important;
      box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23) !important;" class="mdl-layout__header">
     <div class="mdl-layout__header-row" >
-        <a href="search.php"><img id="logo1" src="images/green.png"></img></a><h5 style="margin-left:35%;margin-top:9%;"><?php echo $arr_search['response'][0]['organization_details']['name'] ?><?php echo $arr_search['response'][0]['user_details']['name'] ?></h5>
-         <span class="mdl-layout-title" style="margin-left:26%;margin-top:7%;">KYCApp</span>
+        <a href="search.php"><img id="logo1" src="images/green.png"></img></a><h5 id="title2"><?php echo $arr_search['response'][0]['organization_details']['name'] ?><?php echo $arr_search['response'][0]['user_details']['name'] ?></h5>
+         <span class="mdl-layout-title" id="title1">KYCApp</span>
           <!-- Add spacer, to align navigation to the right -->
     </div>
   </header>
