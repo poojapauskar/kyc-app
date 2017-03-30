@@ -197,6 +197,7 @@ $(function() {
 
 <body style="background-color:#E8E8E8;overflow-x:hidden;">
 
+<?php session_start();?>
 <script type="text/javascript">
   function submit_form(){
     $('#Form').submit();
@@ -324,7 +325,7 @@ if(isset($_POST["save_btn"]) and $_GET["is_user"]==0) {
 
 
         /*Get Signed Urls*/
-        $url = 'https://kyc-application.herokuapp.com/get_signed_url/';
+        $url = 'https://staging-kyc-application.herokuapp.com/get_signed_url/';
         $data = array('image_list' => [$names[0],$names[1],$names[2],$names[3],$names[4]]);
 
         $options = array(
@@ -507,7 +508,7 @@ if(isset($_POST["save_btn"]) and $_GET["is_user"]==0) {
   }
   $comment = ltrim($comment, ',');
 
-  $url_org = 'https://kyc-application.herokuapp.com/add_new_organization/';
+  $url_org = 'https://staging-kyc-application.herokuapp.com/add_new_organization/';
   $options_org = array(
     'http' => array(
       'header'  => array(
@@ -527,6 +528,7 @@ if(isset($_POST["save_btn"]) and $_GET["is_user"]==0) {
                           'STATUS: '.$status,
                           'DATE: '.$date,
                           'COMMENT: '.$comment,
+                          'ACCOUNT-TOKEN: '.$_SESSION['account_token'],
                           ),
       'method'  => 'GET',
     ),
@@ -564,7 +566,7 @@ if ($_POST['uid'] != '' and $_GET["is_user"]==1){
 
 
         /*Get Signed Urls*/
-        $url = 'https://kyc-application.herokuapp.com/get_signed_url/';
+        $url = 'https://staging-kyc-application.herokuapp.com/get_signed_url/';
         $data = array('image_list' => [$names[0],$names[1],$names[2],$names[3],$names[4],$names[5],$names[6]]);
 
         $options = array(
@@ -827,7 +829,7 @@ if ($_POST['uid'] != '' and $_GET["is_user"]==1){
   }
   $comment = ltrim($comment, ',');
 
-  $url_org = 'https://kyc-application.herokuapp.com/add_new_individual/';
+  $url_org = 'https://staging-kyc-application.herokuapp.com/add_new_individual/';
   $options_org = array(
     'http' => array(
       'header'  => array(
@@ -849,6 +851,7 @@ if ($_POST['uid'] != '' and $_GET["is_user"]==1){
                           'STATUS: '.$status,
                           'DATE: '.$date,
                           'COMMENT: '.$comment,
+                          'ACCOUNT-TOKEN: '.$_SESSION['account_token'],
                           ),
       'method'  => 'GET',
     ),

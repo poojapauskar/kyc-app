@@ -1,6 +1,6 @@
 <?php
 if(isset($_POST['submit'])){
-  $url = 'https://kyc-application.herokuapp.com/edit_account/';
+  $url = 'https://staging-kyc-application.herokuapp.com/edit_account/';
   $data = array(
               'pk_value' => $_POST['pk'],
               'username' => $_POST['username'],
@@ -29,7 +29,7 @@ if(isset($_POST['submit'])){
 
 <?php
   /*echo $_POST['pk_value'];*/
-  $url_get_account_by_id = 'https://kyc-application.herokuapp.com/get_account_by_id/';
+  $url_get_account_by_id = 'https://staging-kyc-application.herokuapp.com/get_account_by_id/';
   $options_get_account_by_id = array(
     'http' => array(
       'header'  => array(

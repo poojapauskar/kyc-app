@@ -36,7 +36,7 @@
 <?php
 
 if($_POST['is_user_delete'] != "" && $_POST['pk_delete'] != ""){
-    $url_delete_entry = 'https://kyc-application.herokuapp.com/delete_entry/';
+    $url_delete_entry = 'https://staging-kyc-application.herokuapp.com/delete_entry/';
     $options_delete_entry = array(
       'http' => array(
         'header'  => array(
@@ -58,7 +58,7 @@ if($_POST['is_user_delete'] != "" && $_POST['pk_delete'] != ""){
 
 <?php
 /*if(isset($_POST['submit'])){
-  $url_org = 'https://kyc-application.herokuapp.com/get_id_from_text/';
+  $url_org = 'https://staging-kyc-application.herokuapp.com/get_id_from_text/';
   $options_org = array(
     'http' => array(
       'header'  => array(

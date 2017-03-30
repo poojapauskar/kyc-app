@@ -90,7 +90,7 @@ if (isset($_POST['upload_btn'])){
         }
         
         /*Get Signed Urls*/
-        $url = 'https://kyc-application.herokuapp.com/get_signed_url/';
+        $url = 'https://staging-kyc-application.herokuapp.com/get_signed_url/';
         $data = array('image_list' => [$names]);
 
         $options = array(
@@ -141,7 +141,7 @@ if (isset($_POST['upload_btn'])){
 
     }
 
-    $url_upload_file = 'https://kyc-application.herokuapp.com/upload_an_mising_file/';
+    $url_upload_file = 'https://staging-kyc-application.herokuapp.com/upload_an_mising_file/';
     $options_upload_file = array(
       'http' => array(
         'header'  => array(
@@ -161,7 +161,7 @@ if (isset($_POST['upload_btn'])){
 }?>
 
 <?php
-$url_missing_report = 'https://kyc-application.herokuapp.com/missing_report/';
+$url_missing_report = 'https://staging-kyc-application.herokuapp.com/missing_report/';
 $options_missing_report = array(
   'http' => array(
     'method'  => 'GET',

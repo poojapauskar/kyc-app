@@ -61,7 +61,7 @@ td, th {
 
 <?php
 
-  $url_status = 'https://kyc-application.herokuapp.com/search_on_status/';
+  $url_status = 'https://staging-kyc-application.herokuapp.com/search_on_status/';
   $options_status = array(
     'http' => array(
       'header'  => array(
