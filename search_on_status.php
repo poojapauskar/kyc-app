@@ -60,12 +60,13 @@ td, th {
 <body style="background-color:#E8E8E8;overflow-x:hidden;">
 
 <?php
-
+session_start();
   $url_status = 'https://staging-kyc-application.herokuapp.com/search_on_status/';
   $options_status = array(
     'http' => array(
       'header'  => array(
                           'STATUS: '.$_GET['status'],
+                          'ACCOUNT-TOKEN: '.$_SESSION['account_token'],
                          ),
       'method'  => 'GET',
     ),

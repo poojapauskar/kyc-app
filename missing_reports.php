@@ -161,9 +161,14 @@ if (isset($_POST['upload_btn'])){
 }?>
 
 <?php
+session_start();
+
 $url_missing_report = 'https://staging-kyc-application.herokuapp.com/missing_report/';
 $options_missing_report = array(
   'http' => array(
+    'header'  => array(
+                  'ACCOUNT-TOKEN: '.$_SESSION['account_token'],
+                ),
     'method'  => 'GET',
   ),
 );
