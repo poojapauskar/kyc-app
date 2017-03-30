@@ -1,5 +1,7 @@
 <?php
 
+session_start();
+
 if ($_SERVER['REQUEST_METHOD'] == 'POST'){
 
         $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
@@ -305,6 +307,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
                           'STATUS: '.$status,
                           'DATE: '.$date,
                           'COMMENT: '.$comment,
+                          'ACCOUNT-TOKEN: '.$_SESSION['account_token'],
                           ),
       'method'  => 'GET',
     ),
