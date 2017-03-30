@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-$db = pg_pconnect("host=ec2-107-20-191-76.compute-1.amazonaws.com port=5432 dbname=deu9vahl80fvjn user=vdvqpruzihrics password=17b3e7a56da97ca021e3da54bb1694bb799849a2b5911014ed6caa05e1e4e02d");
+$db = pg_pconnect("host=ec2-54-243-252-91.compute-1.amazonaws.com port=5432 dbname=d9nk0o0a44u59m user=iqoiktexvcnwkp password=dcaaf938958ac73448ca87856def466bb40e37047113e8191dacb20f8d87b21d");
  pg_select($db, 'post_log', $_POST);
  	
  $term=$_GET["term"];
