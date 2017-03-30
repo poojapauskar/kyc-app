@@ -234,9 +234,9 @@ $db = pg_connect("host=ec2-54-243-252-91.compute-1.amazonaws.com port=5432 dbnam
  pg_select($db, 'post_log', $_POST);
  
 
- $query=pg_query("(SELECT id,name,is_user,account_token FROM organization_organization WHERE account_token = '".$_SESSION['account_token']."')
+ $query=pg_query("SELECT id,name,is_user,account_token FROM organization_organization 
   UNION 
- (SELECT id,name,is_user,account_token FROM users_users WHERE account_token = '".$_SESSION['account_token']."')");
+ SELECT id,name,is_user,account_token FROM users_users WHERE account_token = '".$_SESSION['account_token']."'");
 
 /*echo $query;*/
 
