@@ -228,13 +228,15 @@ if($_POST['is_user_delete'] != "" && $_POST['pk_delete'] != ""){
 
 <?php
 
-$db = pg_connect("host=ec2-107-20-191-76.compute-1.amazonaws.com port=5432 dbname=deu9vahl80fvjn user=vdvqpruzihrics password=17b3e7a56da97ca021e3da54bb1694bb799849a2b5911014ed6caa05e1e4e02d");
+session_start();
+
+$db = pg_connect("host=ec2-54-243-252-91.compute-1.amazonaws.com port=5432 dbname=d9nk0o0a44u59m user=iqoiktexvcnwkp password=dcaaf938958ac73448ca87856def466bb40e37047113e8191dacb20f8d87b21d");
  pg_select($db, 'post_log', $_POST);
  
 
  $query=pg_query("SELECT id,name,is_user FROM organization_organization 
   UNION 
- SELECT id,name,is_user FROM users_users");
+ SELECT id,name,is_user FROM users_users where account_token == ".$_SESSION['account_token']);
 
  $json=array();
 while ($student = pg_fetch_array($query)) {
