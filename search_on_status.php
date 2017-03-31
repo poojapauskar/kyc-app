@@ -87,9 +87,9 @@ td, th {
      box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23) !important;" class="mdl-layout__header">
     <div class="mdl-layout__header-row" >
         <a href="search.php"><img id="logo1" src="images/green.png"></img></a>
-<h5 id="title2"><?php echo $_GET['status'] ?></h5>
-         <span class="mdl-layout-title" id="title1">KYCApp</span>
-          <!-- Add spacer, to align navigation to the right -->
+<span class="mdl-layout-title" id="title2"><?php echo $_GET['status'] ?></span>
+        <span class="mdl-layout-title" id="title1" style="text-align:center">KYCApp</span>
+    <a href="index.php"><img id="logout" style="" src="images/logout1.png"></img></a>          <!-- Add spacer, to align navigation to the right -->
           </div>
       </header>
       <div class="mdl-layout__drawer">

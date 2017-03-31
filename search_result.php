@@ -132,8 +132,9 @@ $arr_search = json_decode($output_search,true);
      -moz-box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23) !important;
      box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23) !important;" class="mdl-layout__header">
     <div class="mdl-layout__header-row" >
-        <a href="search.php"><img id="logo1" src="images/green.png"></img></a><h5 id="title2"><?php echo $arr_search['response'][0]['organization_details']['name'] ?><?php echo $arr_search['response'][0]['user_details']['name'] ?></h5>
-         <span class="mdl-layout-title" id="title1">KYCApp</span>
+        <a href="search.php"><img id="logo1" src="images/green.png"></img></a><span class="mdl-layout-title" id="title2"><?php echo $arr_search['response'][0]['organization_details']['name'] ?><?php echo $arr_search['response'][0]['user_details']['name'] ?></span>
+         <span class="mdl-layout-title" id="title1" style="text-align:center">KYCApp</span>
+    <a href="index.php"><img id="logout" style="" src="images/logout1.png"></img></a>
           <!-- Add spacer, to align navigation to the right -->
     </div>
   </header>
@@ -879,19 +880,19 @@ $(document).on('hidden.bs.modal', function (e) {
                                  <div class="col-sm-3">
                                  </div>
                                  <div class="col-sm-3">
-                                  <button class="btn btn-success" style="color:white;width:100px;height:50px" onclick="print_image()">Print</button>
+                                  <button class="btn btn-success" style="color:white;width:80px;height:40px" onclick="print_image()">Print</button>
                                  </div>
                                  <div class="col-sm-3">
                                    <a href="mailto:test@gmail.com?subject=KYC Application
                                     &body=Thank You!" style="color:white"> 
-                                    <button class="btn btn-success" style="color:white;width:100px;height:50px" >Email
+                                    <button class="btn btn-success" style="color:white;width:80px;height:40px" >Email
                                     </button>
                                    </a>
                                  </div>
                           
                                   <div class="col-sm-3">
                                     <a  style="color:white" download="<?php echo "registration_certificate.jpg"; ?>" href="<?php echo $img_lnk_reg_org; ?>" title="Save">
-                                      <button class="btn btn-success" style="color:white;width:100px;height:50px">Save
+                                      <button class="btn btn-success" style="color:white;width:80px;height:40px">Save
                                        </button>
                                     </a>
                                   </div>
@@ -899,11 +900,6 @@ $(document).on('hidden.bs.modal', function (e) {
                                   </div>
                               </div>
                           </div>
-      </div>
-      <div class="modal-footer">
-        <!-- <button type="button" class="btn btn-default btn-prev">Prev</button>
-        <button type="button" class="btn btn-default btn-next">Next</button> -->
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
       </div>
     </div>
   </div>
@@ -936,13 +932,13 @@ $(document).on('hidden.bs.modal', function (e) {
                                      <div class="col-sm-3">
                                      </div>
                                      <div class="col-sm-3">
-                                      <button class="btn btn-success" style="color:white;width:100px;height:50px" onclick="print_image()">Print</button>
+                                      <button class="btn btn-success" style="color:white;width:80px;height:40px" onclick="print_image()">Print</button>
                                      </div>
                                      <div class="col-sm-3">
                                      
                                      <a href="mailto:test@gmail.com?subject=KYC Application
                                      &body=Thank You!" style="color:white"> 
-                                      <button class="btn btn-success" style="color:white;width:100px;height:50px" >Email
+                                      <button class="btn btn-success" style="color:white;width:80px;height:40px" >Email
                                       </button>
                                      </a>
 
@@ -950,7 +946,7 @@ $(document).on('hidden.bs.modal', function (e) {
                                      <div class="col-sm-3">
                                       
                                       <a  style="color:white" download="<?php echo "pan_card.jpg"; ?>" href="<?php echo $img_lnk_pan_org; ?>" title="Save">
-                                        <button class="btn btn-success" style="color:white;width:100px;height:50px">Save
+                                        <button class="btn btn-success" style="color:white;width:80px;height:40px">Save
                                          </button>
                                       </a>
                                      
@@ -959,11 +955,6 @@ $(document).on('hidden.bs.modal', function (e) {
                                      </div>
                                   </div>
                           </div>
-      </div>
-      <div class="modal-footer">
-       <!--  <button type="button" class="btn btn-default btn-prev">Prev</button>
-        <button type="button" class="btn btn-default btn-next">Next</button> -->
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
       </div>
     </div>
   </div>
@@ -995,13 +986,13 @@ $(document).on('hidden.bs.modal', function (e) {
                                      <div class="col-sm-3">
                                      </div>
                                      <div class="col-sm-3">
-                                      <button class="btn btn-success" style="color:white;width:100px;height:50px" onclick="print_image()">Print</button>
+                                      <button class="btn btn-success" style="color:white;width:80px;height:40px" onclick="print_image()">Print</button>
                                      </div>
                                      <div class="col-sm-3">
                                      
                                      <a href="mailto:test@gmail.com?subject=KYC Application
                                      &body=Thank You!" style="color:white"> 
-                                      <button class="btn btn-success" style="color:white;width:100px;height:50px" >Email
+                                      <button class="btn btn-success" style="color:white;width:80px;height:40px" >Email
                                       </button>
                                      </a>
 
@@ -1009,7 +1000,7 @@ $(document).on('hidden.bs.modal', function (e) {
                                      <div class="col-sm-3">
                                       
                                       <a  style="color:white" download="<?php echo "telephone_bill.jpg"; ?>" href="<?php echo $img_lnk_tel_org; ?>" title="Save">
-                                        <button class="btn btn-success" style="color:white;width:100px;height:50px">Save
+                                        <button class="btn btn-success" style="color:white;width:80px;height:40px">Save
                                          </button>
                                       </a>
                                      
@@ -1018,11 +1009,6 @@ $(document).on('hidden.bs.modal', function (e) {
                                      </div>
                                   </div>
                           </div>
-      </div>
-      <div class="modal-footer">
-       <!--  <button type="button" class="btn btn-default btn-prev">Prev</button>
-        <button type="button" class="btn btn-default btn-next">Next</button> -->
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
       </div>
     </div>
   </div>
@@ -1054,13 +1040,13 @@ $(document).on('hidden.bs.modal', function (e) {
                                      <div class="col-sm-3">
                                      </div>
                                      <div class="col-sm-3">
-                                      <button class="btn btn-success" style="color:white;width:100px;height:50px" onclick="print_image()">Print</button>
+                                      <button class="btn btn-success" style="color:white;width:80px;height:40px" onclick="print_image()">Print</button>
                                      </div>
                                      <div class="col-sm-3">
                                      
                                      <a href="mailto:test@gmail.com?subject=KYC Application
                                      &body=Thank You!" style="color:white"> 
-                                      <button class="btn btn-success" style="color:white;width:100px;height:50px" >Email
+                                      <button class="btn btn-success" style="color:white;width:80px;height:40px" >Email
                                       </button>
                                      </a>
 
@@ -1068,7 +1054,7 @@ $(document).on('hidden.bs.modal', function (e) {
                                      <div class="col-sm-3">
                                       
                                       <a  style="color:white" download="<?php echo "passbook.jpg"; ?>" href="<?php echo $img_lnk_pass_org; ?>" title="Save">
-                                        <button class="btn btn-success" style="color:white;width:100px;height:50px">Save
+                                        <button class="btn btn-success" style="color:white;width:80px;height:40px">Save
                                          </button>
                                       </a>
                                      
@@ -1077,11 +1063,6 @@ $(document).on('hidden.bs.modal', function (e) {
                                      </div>
                                   </div>
                           </div>
-      </div>
-      <div class="modal-footer">
-       <!--  <button type="button" class="btn btn-default btn-prev">Prev</button>
-        <button type="button" class="btn btn-default btn-next">Next</button> -->
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
       </div>
     </div>
   </div>
@@ -1113,13 +1094,13 @@ $(document).on('hidden.bs.modal', function (e) {
                                      <div class="col-sm-3">
                                      </div>
                                      <div class="col-sm-3">
-                                      <button class="btn btn-success" style="color:white;width:100px;height:50px" onclick="print_image()">Print</button>
+                                      <button class="btn btn-success" style="color:white;width:80px;height:40px" onclick="print_image()">Print</button>
                                      </div>
                                      <div class="col-sm-3">
                                      
                                      <a href="mailto:test@gmail.com?subject=KYC Application
                                      &body=Thank You!" style="color:white"> 
-                                      <button class="btn btn-success" style="color:white;width:100px;height:50px" >Email
+                                      <button class="btn btn-success" style="color:white;width:80px;height:40px" >Email
                                       </button>
                                      </a>
 
@@ -1127,7 +1108,7 @@ $(document).on('hidden.bs.modal', function (e) {
                                      <div class="col-sm-3">
                                       
                                       <a  style="color:white" download="<?php echo "pan_card.jpg"; ?>" href="<?php echo $img_lnk_pan_user; ?>" title="Save">
-                                        <button class="btn btn-success" style="color:white;width:100px;height:50px">Save
+                                        <button class="btn btn-success" style="color:white;width:80px;height:40px">Save
                                          </button>
                                       </a>
                                      
@@ -1136,11 +1117,6 @@ $(document).on('hidden.bs.modal', function (e) {
                                      </div>
                                   </div>
                           </div>
-      </div>
-      <div class="modal-footer">
-       <!--  <button type="button" class="btn btn-default btn-prev">Prev</button>
-        <button type="button" class="btn btn-default btn-next">Next</button> -->
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
       </div>
     </div>
   </div>
@@ -1172,13 +1148,13 @@ $(document).on('hidden.bs.modal', function (e) {
                                      <div class="col-sm-3">
                                      </div>
                                      <div class="col-sm-3">
-                                      <button class="btn btn-success" style="color:white;width:100px;height:50px" onclick="print_image()">Print</button>
+                                      <button class="btn btn-success" style="color:white;width:80px;height:40px" onclick="print_image()">Print</button>
                                      </div>
                                      <div class="col-sm-3">
                                      
                                      <a href="mailto:test@gmail.com?subject=KYC Application
                                      &body=Thank You!" style="color:white"> 
-                                      <button class="btn btn-success" style="color:white;width:100px;height:50px" >Email
+                                      <button class="btn btn-success" style="color:white;width:80px;height:40px" >Email
                                       </button>
                                      </a>
 
@@ -1186,7 +1162,7 @@ $(document).on('hidden.bs.modal', function (e) {
                                      <div class="col-sm-3">
                                       
                                       <a  style="color:white" download="<?php echo "telephone_bill.jpg"; ?>" href="<?php echo $img_lnk_tel_user; ?>" title="Save">
-                                        <button class="btn btn-success" style="color:white;width:100px;height:50px">Save
+                                        <button class="btn btn-success" style="color:white;width:80px;height:40px">Save
                                          </button>
                                       </a>
                                      
@@ -1195,11 +1171,6 @@ $(document).on('hidden.bs.modal', function (e) {
                                      </div>
                                   </div>
                           </div>
-      </div>
-      <div class="modal-footer">
-       <!--  <button type="button" class="btn btn-default btn-prev">Prev</button>
-        <button type="button" class="btn btn-default btn-next">Next</button> -->
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
       </div>
     </div>
   </div>
@@ -1231,13 +1202,13 @@ $(document).on('hidden.bs.modal', function (e) {
                                      <div class="col-sm-3">
                                      </div>
                                      <div class="col-sm-3">
-                                      <button class="btn btn-success" style="color:white;width:100px;height:50px" onclick="print_image()">Print</button>
+                                      <button class="btn btn-success" style="color:white;width:80px;height:40px" onclick="print_image()">Print</button>
                                      </div>
                                      <div class="col-sm-3">
                                      
                                      <a href="mailto:test@gmail.com?subject=KYC Application
                                      &body=Thank You!" style="color:white"> 
-                                      <button class="btn btn-success" style="color:white;width:100px;height:50px" >Email
+                                      <button class="btn btn-success" style="color:white;width:80px;height:40px" >Email
                                       </button>
                                      </a>
 
@@ -1245,7 +1216,7 @@ $(document).on('hidden.bs.modal', function (e) {
                                      <div class="col-sm-3">
                                       
                                       <a  style="color:white" download="<?php echo "passbook.jpg"; ?>" href="<?php echo $img_lnk_pass_user; ?>" title="Save">
-                                        <button class="btn btn-success" style="color:white;width:100px;height:50px">Save
+                                        <button class="btn btn-success" style="color:white;width:80px;height:40px">Save
                                          </button>
                                       </a>
                                      
@@ -1254,11 +1225,6 @@ $(document).on('hidden.bs.modal', function (e) {
                                      </div>
                                   </div>
                           </div>
-      </div>
-      <div class="modal-footer">
-       <!--  <button type="button" class="btn btn-default btn-prev">Prev</button>
-        <button type="button" class="btn btn-default btn-next">Next</button> -->
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
       </div>
     </div>
   </div>
@@ -1290,13 +1256,13 @@ $(document).on('hidden.bs.modal', function (e) {
                                      <div class="col-sm-3">
                                      </div>
                                      <div class="col-sm-3">
-                                      <button class="btn btn-success" style="color:white;width:100px;height:50px" onclick="print_image()">Print</button>
+                                      <button class="btn btn-success" style="color:white;width:80px;height:40px" onclick="print_image()">Print</button>
                                      </div>
                                      <div class="col-sm-3">
                                      
                                      <a href="mailto:test@gmail.com?subject=KYC Application
                                      &body=Thank You!" style="color:white"> 
-                                      <button class="btn btn-success" style="color:white;width:100px;height:50px" >Email
+                                      <button class="btn btn-success" style="color:white;width:80px;height:40px" >Email
                                       </button>
                                      </a>
 
@@ -1304,7 +1270,7 @@ $(document).on('hidden.bs.modal', function (e) {
                                      <div class="col-sm-3">
                                       
                                       <a  style="color:white" download="<?php echo "voter_id.jpg"; ?>" href="<?php echo $img_lnk_voter_user; ?>" title="Save">
-                                        <button class="btn btn-success" style="color:white;width:100px;height:50px">Save
+                                        <button class="btn btn-success" style="color:white;width:80px;height:40px">Save
                                          </button>
                                       </a>
                                      
@@ -1313,11 +1279,6 @@ $(document).on('hidden.bs.modal', function (e) {
                                      </div>
                                   </div>
                           </div>
-      </div>
-      <div class="modal-footer">
-       <!--  <button type="button" class="btn btn-default btn-prev">Prev</button>
-        <button type="button" class="btn btn-default btn-next">Next</button> -->
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
       </div>
     </div>
   </div>
@@ -1349,13 +1310,13 @@ $(document).on('hidden.bs.modal', function (e) {
                                      <div class="col-sm-3">
                                      </div>
                                      <div class="col-sm-3">
-                                      <button class="btn btn-success" style="color:white;width:100px;height:50px" onclick="print_image()">Print</button>
+                                      <button class="btn btn-success" style="color:white;width:80px;height:40px" onclick="print_image()">Print</button>
                                      </div>
                                      <div class="col-sm-3">
                                      
                                      <a href="mailto:test@gmail.com?subject=KYC Application
                                      &body=Thank You!" style="color:white"> 
-                                      <button class="btn btn-success" style="color:white;width:100px;height:50px" >Email
+                                      <button class="btn btn-success" style="color:white;width:80px;height:40px" >Email
                                       </button>
                                      </a>
 
@@ -1363,7 +1324,7 @@ $(document).on('hidden.bs.modal', function (e) {
                                      <div class="col-sm-3">
                                       
                                       <a  style="color:white" download="<?php echo "passport.jpg"; ?>" href="<?php echo $img_lnk_passport_user; ?>" title="Save">
-                                        <button class="btn btn-success" style="color:white;width:100px;height:50px">Save
+                                        <button class="btn btn-success" style="color:white;width:80px;height:40px">Save
                                          </button>
                                       </a>
                                      
@@ -1372,11 +1333,6 @@ $(document).on('hidden.bs.modal', function (e) {
                                      </div>
                                   </div>
                           </div>
-      </div>
-      <div class="modal-footer">
-       <!--  <button type="button" class="btn btn-default btn-prev">Prev</button>
-        <button type="button" class="btn btn-default btn-next">Next</button> -->
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
       </div>
     </div>
   </div>
@@ -1408,13 +1364,13 @@ $(document).on('hidden.bs.modal', function (e) {
                                      <div class="col-sm-3">
                                      </div>
                                      <div class="col-sm-3">
-                                      <button class="btn btn-success" style="color:white;width:100px;height:50px" onclick="print_image()">Print</button>
+                                      <button class="btn btn-success" style="color:white;width:80px;height:40px" onclick="print_image()">Print</button>
                                      </div>
                                      <div class="col-sm-3">
                                      
                                      <a href="mailto:test@gmail.com?subject=KYC Application
                                      &body=Thank You!" style="color:white"> 
-                                      <button class="btn btn-success" style="color:white;width:100px;height:50px" >Email
+                                      <button class="btn btn-success" style="color:white;width:80px;height:40px" >Email
                                       </button>
                                      </a>
 
@@ -1422,7 +1378,7 @@ $(document).on('hidden.bs.modal', function (e) {
                                      <div class="col-sm-3">
                                       
                                       <a  style="color:white" download="<?php echo "aadhar_card.jpg"; ?>" href="<?php echo $img_lnk_aadhar_user; ?>" title="Save">
-                                        <button class="btn btn-success" style="color:white;width:100px;height:50px">Save
+                                        <button class="btn btn-success" style="color:white;width:80px;height:40px">Save
                                          </button>
                                       </a>
                                      
@@ -1431,12 +1387,7 @@ $(document).on('hidden.bs.modal', function (e) {
                                      </div>
                                   </div>
                           </div>
-      </div>
-      <div class="modal-footer">
-       <!--  <button type="button" class="btn btn-default btn-prev">Prev</button>
-        <button type="button" class="btn btn-default btn-next">Next</button> -->
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-      </div>
+                          </div>
     </div>
   </div>
 </div>
