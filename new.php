@@ -1549,7 +1549,7 @@ session_start();
  pg_select($db, 'post_log', $_POST);
  
 
- $query=pg_query("SELECT id,name,account_token FROM users_users WHERE account_token = '".$_SESSION['account_token']."'");
+ $query=pg_query("SELECT id,name,account_token,is_active FROM users_users WHERE is_active=1 AND account_token = '".$_SESSION['account_token']."'");
 
  $json=array();
 
