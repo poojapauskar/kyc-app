@@ -1,3 +1,13 @@
+<?php
+session_start();
+if($_SESSION['login_kyc_app'] == 1){
+
+}else{
+  echo "<script>location='index.php'</script>";
+}
+
+?>
+
 <html>
   <head>
 

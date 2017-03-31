@@ -1,4 +1,14 @@
 <?php
+session_start();
+if($_SESSION['login_kyc_app'] == 1){
+
+}else{
+  echo "<script>location='index.php'</script>";
+}
+
+?>
+
+<?php
 if(isset($_POST['submit'])){
   $url = 'https://staging-kyc-application.herokuapp.com/edit_account/';
   $data = array(
