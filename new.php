@@ -162,6 +162,18 @@ document.getElementById('uploadFile').value='Choose File'; }
 function proceed(){
 
 
+/*$.ajax({ url: 'generate_format.php',
+         data: fd,
+         cache: false,
+         processData: false,
+         contentType: false,
+         type: 'POST',
+         success: function(output) {
+                      alert("hi");
+                  }
+    });*/
+
+
 var a=document.forms["Form"]["uid"].value;
 if(a==null || a==''){
         var text = "";
