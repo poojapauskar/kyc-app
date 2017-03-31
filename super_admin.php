@@ -120,7 +120,7 @@ if(isset($_POST['submit'])){
 <div class="container" style="width:50%;border:1px solid black;padding-bottom:25px">
   <div class="row" style="margin-top:25px">
     <div class="col-sm-4">
-      <input type="text" name="company" placeholder="Account Name">
+      <input type="text" name="company" placeholder="Account Name" required>
     </div>
     <div class="col-sm-4">
     </div>
@@ -132,10 +132,10 @@ if(isset($_POST['submit'])){
 
   <div class="row">
     <div class="col-sm-4">
-      <input type="text" name="admin_username" placeholder="Admin Name">
+      <input type="text" name="admin_username" placeholder="Admin Name" required>
     </div>
     <div class="col-sm-4">
-      <input type="password" name="admin_password" placeholder="Password">
+      <input type="password" name="admin_password" placeholder="Password" required>
     </div>
     <div class="col-sm-4">
     </div>
@@ -147,10 +147,10 @@ if(isset($_POST['submit'])){
 
   <div class="row">
     <div class="col-sm-4">
-      <input type="text" name="user1_username" placeholder="User 1 Name">
+      <input type="text" name="user1_username" placeholder="User 1 Name" required>
     </div>
     <div class="col-sm-4">
-      <input type="password" name="user1_password" placeholder="Password">
+      <input type="password" name="user1_password" placeholder="Password" required>
     </div>
     <div class="col-sm-4">
     </div>
@@ -160,10 +160,10 @@ if(isset($_POST['submit'])){
 
   <div class="row">
     <div class="col-sm-4">
-      <input type="text" name="user2_username" placeholder="User 2 Name">
+      <input type="text" name="user2_username" placeholder="User 2 Name" required>
     </div>
     <div class="col-sm-4">
-      <input type="password" name="user2_password" placeholder="Password">
+      <input type="password" name="user2_password" placeholder="Password" required>
     </div>
     <div class="col-sm-4">
      </div>
@@ -177,7 +177,7 @@ if(isset($_POST['submit'])){
       <input type="text" name="suffix" placeholder="Suffix">
     </div>
     <div class="col-sm-4">
-      <input type="text" name="sequence" placeholder="Sequence">
+      <input type="text" pattern="[0-9]{3}" title="Sequence must contain digits from 000-999" name="sequence" placeholder="Sequence" required>
     </div>
     <div class="col-sm-4">
      <input type="text" name="prefix" placeholder="Prefix">
