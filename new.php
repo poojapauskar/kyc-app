@@ -294,9 +294,9 @@ $(function() {
   function check_image_user(){
     image_user = document.getElementById('image');
     if(image_user.files.length != 0){
-        document.getElementById('image').value="";
         var isValid = /\.(jpg|jpeg|png|gif|pdf)$/.test(image_user.value);
         if (!isValid) {
+          document.getElementById('image').value="";
           alert('Profile Pic: Only image and pdf files allowed!');
           return false;
         }
