@@ -2558,7 +2558,7 @@ $db = pg_connect("host=ec2-54-243-252-91.compute-1.amazonaws.com port=5432 dbnam
  pg_select($db, 'post_log', $_POST);
  
 
- $query=pg_query("SELECT id,name,account_token,is_active FROM users_users WHERE is_active=1 AND account_token = '".$_SESSION['account_token']."'");
+ $query=pg_query("SELECT id,name,account_token,is_active FROM users_users WHERE is_active = 'true' AND account_token = '".$_SESSION['account_token']."'");
 
  $json=array();
 
