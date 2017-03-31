@@ -74,6 +74,9 @@ if(isset($_POST['submit'])){
               'user1_password' => $_POST['user1_password'],
               'user2_username' => $_POST['user2_username'],
               'user2_password' => $_POST['user2_password'],
+              'suffix' => $_POST['suffix'],
+              'sequence' => $_POST['sequence'],
+              'prefix' => $_POST['prefix'],
             );
 
     // use key 'http' even if you send the request to https://...
@@ -138,6 +141,8 @@ if(isset($_POST['submit'])){
     </div>
   </div>
 
+
+
 <br>
 
   <div class="row">
@@ -161,9 +166,38 @@ if(isset($_POST['submit'])){
       <input type="password" name="user2_password" placeholder="Password">
     </div>
     <div class="col-sm-4">
-      <input type="submit" name="submit" id="submit" style="margin-top:1%;width:100px;height:30px;background-color:green" value="Add">
+     </div>
+  </div>
+
+
+<br>
+
+  <div class="row">
+    <div class="col-sm-4">
+      <input type="text" name="suffix" placeholder="Suffix">
+    </div>
+    <div class="col-sm-4">
+      <input type="text" name="sequence" placeholder="Sequence">
+    </div>
+    <div class="col-sm-4">
+     <input type="text" name="prefix" placeholder="Prefix">
     </div>
   </div>
+
+
+<br>
+
+  <div class="row">
+    <div class="col-sm-4">
+       <input type="submit" name="submit" id="submit" style="margin-top:1%;width:100px;height:30px;background-color:green" value="Add">
+    </div>
+    <div class="col-sm-4">
+    </div>
+    <div class="col-sm-4">
+    </div>
+  </div>
+
+
 </div>
 </form> 
 <!-- 
