@@ -15,10 +15,12 @@
 
 #logout
 {
-    margin-top:100%;
-    margin-left:28px;
-    width:40px;
-    height:40px;
+   float:right;
+   right:139px;
+   top:52px;
+   position:absolute;
+    width: 40px;
+    height: 40px;
 }
 
 #title2
@@ -26,6 +28,19 @@
     margin-left:35%;
     margin-top:9%;
     font-size:18px;
+}
+
+.btn.btn-warning.cancel{
+    width: 10em;
+    margin-top:-2%;
+    padding:0.5em;
+    margin-left:2%
+}
+
+.btn.btn-warning.delete{
+    width: 10em;
+    margin-top:-9%;
+    margin-left:53%
 }
 
 .partner_designation{
@@ -41,10 +56,11 @@ width: 155%;
 }
 
 #title1{
-    margin-left:26%;
-    margin-top:7%;
+    float: right;
+    right: 206px;
+    top: 73px;
+    position: absolute;
 }
-
 #telephone_upload {
     width: 63%;
     margin-left: 11%;
@@ -60,10 +76,10 @@ width: 155%;
 }
 
 #logo1 {
-    margin-top:99%;
-    margin-left:28px;
-    width:50px;
-    height:50px;
+    margin-top: 75%;
+    margin-left: 28px;
+    width: 50px;
+    height: 50px;
 }
 
 .remove_field_pre1 {
@@ -90,12 +106,12 @@ width: 155%;
     z-index:2;
     margin-left:77%;
     cursor:pointer;
-    margin-top:10%;
+    margin-top:17%;
 }
 
 .profile-pic {
-    max-width:100px;
-    max-height:100px;
+    max-width:140px;
+    max-height:140px;
     display: block;
     margin-left:77%;
     position:absolute;
@@ -341,27 +357,7 @@ margin-top:-1%;
     color:white;
     margin-left:89%;
 }
-.mdl-layout__drawer-button {
-    display: block;
-    position: absolute;
-    height: 48px;
-    width: 48px;
-    border: 0;
-    -webkit-flex-shrink: 0;
-    -ms-flex-negative: 0;
-    flex-shrink: 0;
-    overflow: hidden;
-    text-align: center;
-    cursor: pointer;
-    font-size: 26px;
-    line-height: 56px;
-    font-family: Helvetica, Arial, sans-serif;
-    margin: 8px 12px;
-    top: 22px;
-    left: 30px;
-    color: rgb(255, 255, 255);
-    z-index: 4;
-}
+
 
 @media screen and (max-width:1920px)
 {
@@ -381,27 +377,6 @@ margin-top:-1%;
     height:77%;
 }
 
-.mdl-layout__drawer-button {
-    display: block;
-    position: absolute;
-    height: 48px;
-    width: 48px;
-    border: 0;
-    -webkit-flex-shrink: 0;
-    -ms-flex-negative: 0;
-    flex-shrink: 0;
-    overflow: hidden;
-    text-align: center;
-    cursor: pointer;
-    font-size: 26px;
-    line-height: 56px;
-    font-family: Helvetica, Arial, sans-serif;
-    margin: 8px 12px;
-    top: 22px;
-    left: 30px;
-    color: rgb(255, 255, 255);
-    z-index: 4;
-}
 #title
 {
     margin-left:70%;
@@ -410,10 +385,12 @@ margin-top:-1%;
 
 #logout
 {
-    margin-top:100%;
-    margin-left:28px;
-    width:40px;
-    height:40px;
+   float:right;
+   right:139px;
+   top:52px;
+   position:absolute;
+    width: 40px;
+    height: 40px;
 }
 
 #title2
@@ -436,8 +413,10 @@ width: 155%;
 }
 
 #title1{
-    margin-left:36%;
-    margin-top:6%;
+    float: right;
+    right: 206px;
+    top: 73px;
+    position: absolute;
 }
 
 #telephone_upload {
@@ -756,10 +735,12 @@ margin-top:-1%;
 
 #logout
 {
-    margin-top:100%;
-    margin-left:28px;
-    width:40px;
-    height:40px;
+   float:right;
+   right:139px;
+   top:52px;
+   position:absolute;
+    width: 40px;
+    height: 40px;
 }
 
 #title2
@@ -782,8 +763,10 @@ width: 155%;
 }
 
 #title1{
-    margin-left:36%;
-    margin-top:6%;
+    float: right;
+    right: 206px;
+    top: 73px;
+    position: absolute;
 }
 
 #telephone_upload {
@@ -1101,10 +1084,12 @@ margin-top:-1%;
 
 #logout
 {
-    margin-top:100%;
-    margin-left:28px;
-    width:40px;
-    height:40px;
+   float:right;
+   right:139px;
+   top:52px;
+   position:absolute;
+    width: 40px;
+    height: 40px;
 }
 
 #title2
@@ -1127,8 +1112,10 @@ width: 155%;
 }
 
 #title1{
-    margin-left:36%;
-    margin-top:6%;
+    float: right;
+    right: 206px;
+    top: 73px;
+    position: absolute;
 }
 
 #telephone_upload {
@@ -1445,10 +1432,12 @@ margin-top:-1%;
 
 #logout
 {
-    margin-top:100%;
-    margin-left:28px;
-    width:40px;
-    height:40px;
+   float:right;
+   right:139px;
+   top:52px;
+   position:absolute;
+    width: 40px;
+    height: 40px;
 }
 
 #title2
@@ -1471,8 +1460,10 @@ width: 155%;
 }
 
 #title1{
-    margin-left:36%;
-    margin-top:7%;
+    float: right;
+    right: 206px;
+    top: 73px;
+    position: absolute;
 }
 
 #telephone_upload {
@@ -1789,15 +1780,17 @@ margin-top:-1%;
 
 #logout
 {
-    margin-top:100%;
-    margin-left:28px;
-    width:40px;
-    height:40px;
+   float:right;
+   right:139px;
+   top:52px;
+   position:absolute;
+    width: 40px;
+    height: 40px;
 }
 
 #title2
 {
-    margin-left:35%;
+    text-align:center;
     margin-top:9%;
     font-size:18px;
 }
@@ -1815,8 +1808,10 @@ width: 155%;
 }
 
 #title1{
-    margin-left:26%;
-    margin-top:7%;
+    float: right;
+    right: 206px;
+    top: 73px;
+    position: absolute;
 }
 
 #telephone_upload {
@@ -1834,10 +1829,10 @@ width: 155%;
 }
 
 #logo1 {
-    margin-top:99%;
-    margin-left:28px;
-    width:50px;
-    height:50px;
+    margin-top: 51%;
+    margin-left: 28px;
+    width: 50px;
+    height: 50px;
 }
 
 .remove_field_pre1 {
@@ -1919,7 +1914,7 @@ a.btn.btn-info{
     color:white;
     background-color:#176fac;
     margin-top:0%;
-    margin-left:2%;
+    margin-left:66%;
 }
 
 a.btn.btn-info.edit{
@@ -2040,9 +2035,9 @@ div.fileUpload.btn.btn-info{
 
 /*search result page*/
 .search_result.tele{
-    margin-left: -99%;
+    margin-left: -95%;
     margin-top: 0%;
-    width: 83%;
+    width: 81%;
 }
 
 .search_result.tele1{
@@ -2051,9 +2046,9 @@ div.fileUpload.btn.btn-info{
     width: 83%;
 }
 /*seach_result page view*/
-.btn.btn-info.view1{
-     margin-left: -266%;
-    margin-top: 7%;
+.btn.btn-info.view1 {
+    margin-left: -253%;
+    margin-top: -1%;
     position: relative;
     color: white;
 }
@@ -2169,8 +2164,10 @@ width: 155%;
 }
 
 #title1{
-    margin-left:26%;
-    margin-top:7%;
+    float: right;
+    right: 206px;
+    top: 73px;
+    position: absolute;
 }
 
 #telephone_upload {
@@ -2470,10 +2467,11 @@ margin-top:-1%;
     padding:0.5em;
     margin-left:-1%
 }
-
-#title1 {
-    margin-left: 26%;
-    margin-top: 10%;
+#title1{
+    float: right;
+    right: 159px;
+    top: 73px;
+    position: absolute;
 }
 
 .search_result.tele {
@@ -2484,13 +2482,16 @@ margin-top:-1%;
 
 #title2 {
     margin-left: 39%;
-    margin-top: 11%;
+    margin-top: 12%;
     font-size: 18px;
 }
 
-#logout {
-    margin-top: 207%;
-    margin-left: 17%;
+#logout
+{
+   float:right;
+   right:100px;
+   top:52px;
+   position:absolute;
     width: 40px;
     height: 40px;
 }
@@ -2534,7 +2535,7 @@ margin-top:-1%;
 .remove_field{
     margin-left:54%;
     margin-top:-40px;
-    position:absolute
+    position:absolute;
 }
 
 .form-control.status{
@@ -2605,7 +2606,7 @@ margin-top:-1%;
 }
 
 #logo1 {
-    margin-top: 1%;
+    margin-top: 0.7%;
     margin-left: 28px;
     width: 50px;
     height: 50px;
@@ -2636,7 +2637,7 @@ margin-top:-1%;
     z-index:2;
     margin-left:77%;
     cursor:pointer;
-    margin-top:10%;
+    margin-top:17%;
 }
 
 .profile-pic {
@@ -2771,7 +2772,7 @@ input#partner_names[].form-control.input-md.newentry.partner_names{
 }
 
 .fileUpload.btn.btn-info.tele1{
-margin-left:14%;
+margin-left:6%;
 margin-top:-1%;
 }
 .fileUpload.btn.btn-info.tele{
@@ -2782,7 +2783,7 @@ margin-top:-1%;
 
 /*seach_result page view*/
 .btn.btn-info.view1{
-     margin-left: -266%;
+     margin-left: -272%;
     margin-top: 0%;
     position: relative;
     color: white;
@@ -2792,6 +2793,19 @@ margin-top:-1%;
     width: 31%;
     margin-left: 34.6%;
     margin-top: -1.5%;
+}
+
+.btn.btn-warning.cancel{
+    width: 10em;
+    margin-top:-2%;
+    padding:0.5em;
+    margin-left:2%
+}
+
+.btn.btn-warning.delete{
+    width: 10em;
+    margin-top:-9%;
+    margin-left:53%
 }
 }
 

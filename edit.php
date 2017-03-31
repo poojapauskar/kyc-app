@@ -162,11 +162,12 @@ document.getElementById('uploadFile').value='Choose File'; }
     border-radius: 5px;
     display: block;
     float: left;
+    margin-top:17%;
 }
 
 .profile-pic {
-    max-width: 160px;
-    max-height: 160px;
+    max-width: 140px;
+    max-height: 140px;
     display: block;
 }
 
@@ -905,8 +906,9 @@ if(isset($_POST["edit_btn"]) and $_GET["is_user"]==1) {
      box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23) !important;" class="mdl-layout__header">
     <div class="mdl-layout__header-row" >
     <a href="search.php"><img id="logo1" src="images/green.png"></img></a>
-    <h5 id="title2"><?php echo $arr_search['response'][0]['organization_details']['name'] ?><?php echo $arr_search['response'][0]['user_details']['name'] ?></h5>
-    <span class="mdl-layout-title" id="title1">KYCApp</span>
+     <span class="mdl-layout-title" id="title2"><?php echo $arr_search['response'][0]['organization_details']['name'] ?><?php echo $arr_search['response'][0]['user_details']['name'] ?></span>
+    <span class="mdl-layout-title" id="title1" style="text-align:center">KYCApp</span>
+    <a href="index.php"><img id="logout" style="" src="images/logout1.png"></img></a>
           <!-- Add spacer, to align navigation to the right -->
 
     </header>
@@ -1306,7 +1308,7 @@ VIEW</a>
   <label class="col-md-4 control-label" for="save_btn"></label>
   <div class="col-md-8">
     <button  onclick="return check_file_type_org()" id="edit_btn" name="edit_btn" type="submit" class="btn btn-success" style="width: 10em;">Save</button><span><span></span></span>
-    <button onclick="goBack()" class="btn btn-warning" style="width: 10em;margin-top:-2%;padding:0.5em;margin-left:2%"><a style="color:white" href="search.php">Cancel</a></button>
+    <button onclick="goBack()" class="btn btn-warning cancel" style=""><a style="color:white" href="search.php">Cancel</a></button>
   </div>
 </div>
 </fieldset>
@@ -1316,7 +1318,7 @@ VIEW</a>
 <form method="post" id="deleteForm" action="search.php" style="text-align:center">
 <input type="hidden" name="pk_delete" id="pk_delete" value="<?php echo $_GET['id'] ?>"></input>  
 <input type="hidden" name="is_user_delete" id="is_user_delete" value="<?php echo $_GET['is_user'] ?>"></input>  
-<button type="submit" onclick="return ConfirmDelete()" style="width: 10em;margin-top:-9%;margin-left:53%" class="btn btn-warning">
+<button type="submit" onclick="return ConfirmDelete()" style="" class="btn btn-warning delete">
   Delete
 </button>
 </form>

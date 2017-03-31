@@ -2,13 +2,14 @@
   <head>
     <!---bootstrap-->
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" type="text/css" href="css/material.indigo-pink.min.css">
+  <!-- <link rel="stylesheet" type="text/css" href="css/material.indigo-pink.min.css"> -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <link rel="stylesheet" type="text/css" href="autocomplete-Files/styles.css">
+ 
     <!-- Material Design Lite -->
   <script src="https://code.getmdl.io/1.3.0/material.min.js"></script>
   <link rel="stylesheet" href="css/material.css">
   <link rel="stylesheet" href="css/kyc.css">
+   <link rel="stylesheet" type="text/css" href="autocomplete-Files/styles.css">
     <!-- Material Design icon font -->
   <link rel="stylesheet" href="css/bootstrap.css">
   <link rel="stylesheet" href="autocomplete-Files/styles.css">
@@ -94,17 +95,16 @@ if($_POST['is_user_delete'] != "" && $_POST['pk_delete'] != ""){
 <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
   <header style="background-color:#08426a;height:110px;-webkit-box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23) !important;
      -moz-box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23) !important;
-     box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23) !important;" class="mdl-layout__header">
+     box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23) !important;" class="mdl-layout__header mdl-layout__header--transparent">
     <div class="mdl-layout__header-row" >
-
-       <a href="search.php"> <img id="logo1" src="images/green.png"></img></a>
-      <h5 style="" id="title2">ADMIN PANEL</h5>
-         <span class="mdl-layout-title" id="title1" style="">KYCApp</span>
-         <a href="index.php"><img id="logout" style="" src="images/logout1.png"></img></a>
+    <a href="search.php"><img id="logo1" src="images/green.png"></img></a>
+      <span class="mdl-layout-title" id="title2">Admin Panel</span>
+         <span class="mdl-layout-title" id="title1" style="margin-right: 0%">KYCApp</span>
+         <a href="index.php"><img id="logout" style="float:right;right:10%;position:absolute" src="images/logout1.png"></img></a>
           <!-- Add spacer, to align navigation to the right -->
           
       </header>
-      <div class="mdl-layout__drawer">
+    <div class="mdl-layout__drawer">
         <span class="mdl-layout-title">Title</span>
         <nav class="mdl-navigation">
           <a class="mdl-navigation__link" href="search.php">Home</a>
