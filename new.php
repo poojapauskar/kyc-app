@@ -162,30 +162,18 @@ document.getElementById('uploadFile').value='Choose File'; }
 function proceed(){
 
 
-/*$.ajax({ url: 'generate_format.php',
-         data: fd,
-         cache: false,
-         processData: false,
-         contentType: false,
-         type: 'POST',
-         success: function(output) {
-                      alert("hi");
-                  }
-    });*/
-
-
 var a=document.forms["Form"]["uid"].value;
 if(a==null || a==''){
-        var text = "";
+        /*var text = "";
         var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
 
         for( var i=0; i < 7; i++ )
             text += possible.charAt(Math.floor(Math.random() * possible.length));
 
         var mystring= (document.getElementById('name').value).substring(0, 3);
-        var uid_gen=mystring+text;
-        document.getElementById('uid').value = uid_gen;
-        document.getElementById('uid_in_popup').value = uid_gen;
+        var uid_gen=mystring+text;*/
+        document.getElementById('uid').value = document.getElementById('uid_format').value;
+        document.getElementById('uid_in_popup').value = document.getElementById('uid_format').value;
 
         /*alert("UID generated: "+uid_gen);*/
         var yourUl = document.getElementById("popup1");
@@ -889,6 +877,31 @@ if ($_POST['uid'] != '' and $_GET["is_user"]==1){
 }
 ?>
 
+<div id='refresh'>
+<?php
+
+/*echo "<script>alert('hi')</script>";*/
+$url_uid = 'https://staging-kyc-application.herokuapp.com/get_uid/';
+$options_uid = array(
+  'http' => array(
+    'header'  => array(
+                        'ACCOUNT-TOKEN: '.$_SESSION['account_token'],
+                        ),
+    'method'  => 'GET',
+  ),
+);
+$context_uid = stream_context_create($options_uid);
+$output_uid = file_get_contents($url_uid, false,$context_uid);
+/*echo $output_uid;*/
+$arr_uid = json_decode($output_uid,true);
+
+
+/*echo "<script type='text/javascript'>alert('$output_uid');</script>";*/
+
+
+?>
+</div>
+
 <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
   <header style="background-color:#08426a;height:110px;-webkit-box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23) !important;
      -moz-box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23) !important;
@@ -927,6 +940,8 @@ if ($_POST['uid'] != '' and $_GET["is_user"]==1){
 
 <fieldset>
 <!-- Select Basic -->
+  
+
 <div class="form-group" style="margin-top:12%;">
   <label class="col-md-4 control-label" for="type_of_org">Type of Organization:</label>
   <div class="col-md-4">
@@ -1247,7 +1262,9 @@ function enable_disable(that){
   <label class="col-md-4 control-label" for="textinput" >UID:</label>  
   <div class="col-md-4">
   <input id="uid" name="uid" type="text" value="<?php echo $_POST['uid'] ?>" placeholder="" class="form-control input-md">
-    
+  
+  <input type="hidden" name="uid_format" id="uid_format" value="<?php echo $arr_uid['uid'] ?>"></input>
+  
   </div>
 </div>
 
