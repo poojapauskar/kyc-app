@@ -182,9 +182,15 @@ document.getElementById('uploadFile').value='Choose File'; }
 <script type="text/javascript" src="js/jquery.plugin.js"></script> 
 <script type="text/javascript" src="js/jquery.datepick.js"></script>
 <script type="text/javascript">
+
 $(function() {
- $( ".datepicker" ).datepick({dateFormat: 'dd/mm/yyyy',maxDate: 0});
+  $( ".datepicker.picker" ).datepick({dateFormat: 'dd/mm/yyyy',maxDate:0});
 });
+
+$(function() {
+  $( ".datepicker.pick" ).datepick({dateFormat: 'dd/mm/yyyy'});
+});
+
 </script>
 
 </head>
@@ -1268,7 +1274,7 @@ VIEW</a>
 <div class="form-group row">
   <label for="example-date-input" class="col-2 col-form-label" style="margin-left:28.5%;">DATE:</label>
   <div class="col-10">
-    <input class="form-control datepicker" id="date[]" name="date[]" value="<?php echo $arr_search['response'][0]['add_info'][$q]['date']; ?>" style="" type="text" readonly>
+    <input class="form-control datepicker pick" id="date[]" name="date[]" value="<?php echo $arr_search['response'][0]['add_info'][$q]['date']; ?>" style="" type="text" readonly>
   </div>
 </div>
 
@@ -1430,7 +1436,7 @@ function enable_disable(that){
 <div class="form-group">
   <label class="col-md-4 control-label" for="textinput">DOB:</label>  
   <div class="col-md-4">
-  <input id="date2" name="date2" value="<?php echo $arr_search['response'][0]['user_details']['dob'] ?>" type="text" placeholder="" class="form-control input-md datepicker" readonly>
+  <input id="date2" name="date2" value="<?php echo $arr_search['response'][0]['user_details']['dob'] ?>" type="text" placeholder="" class="form-control input-md datepicker picker" readonly>
     
   </div>
 </div>
@@ -1744,7 +1750,7 @@ function enable_disable(that){
 <div class="form-group row">
   <label for="example-date-input" class="col-2 col-form-label" style="margin-left:28.1%;">DATE</label>
   <div class="col-10">
-    <input class="form-control datepicker" id="date[]" name="date[]" value="<?php echo $arr_search['response'][0]['add_info'][$q]['date']; ?>" style="" type="text" readonly> 
+    <input class="form-control datepicker pick" id="date[]" name="date[]" value="<?php echo $arr_search['response'][0]['add_info'][$q]['date']; ?>" style="" type="text" readonly> 
   </div>
 </div>
 
@@ -1889,26 +1895,26 @@ $('#trigger').click(function(){
                               }?>
 
                               <div style="text-align:center">
-                              <img class="print" src="<?php echo $img_lnk_reg_org; ?>" style="height:250px;width:250px;"></img>
+                              <img class="print" src="<?php echo $img_lnk_reg_org; ?>" style=""></img>
                               </div>
 
                               <div style="margin-top:5%;margin-left:-22%" class="row">
                                  <div class="col-sm-3">
                                  </div>
                                  <div class="col-sm-3">
-                                  <button class="btn btn-success" style="color:white;width:100px;height:50px" onclick="print_image()">Print</button>
+                                  <button class="btn btn-success" style="color:white;width:80px;height:40px" onclick="print_image()">Print</button>
                                  </div>
                                  <div class="col-sm-3">
                                    <a href="mailto:test@gmail.com?subject=KYC Application
                                     &body=Thank You!" style="color:white"> 
-                                    <button class="btn btn-success" style="color:white;width:100px;height:50px" >Email
+                                    <button class="btn btn-success" style="color:white;width:80px;height:40px" >Email
                                     </button>
                                    </a>
                                  </div>
                           
                                   <div class="col-sm-3">
                                     <a  style="color:white" download="<?php echo "registration_certificate.jpg"; ?>" href="<?php echo $img_lnk_reg_org; ?>" title="Save">
-                                      <button class="btn btn-success" style="color:white;width:100px;height:50px">Save
+                                      <button class="btn btn-success" style="color:white;width:80px;height:40px">Save
                                        </button>
                                     </a>
                                   </div>
@@ -1917,10 +1923,6 @@ $('#trigger').click(function(){
                               </div>
                           </div>
       </div>
-      <div class="modal-footer">
-        <!-- <button type="button" class="btn btn-default btn-prev">Prev</button>
-        <button type="button" class="btn btn-default btn-next">Next</button> -->
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
       </div>
     </div>
   </div>
@@ -1946,14 +1948,14 @@ $('#trigger').click(function(){
                                   }?>
 
                                   <div style="text-align:center">
-                                  <img class="print" src="<?php echo $img_lnk_pan_org; ?>" style="height:250px;width:250px;"></img>
+                                  <img class="print" src="<?php echo $img_lnk_pan_org; ?>" style=""></img>
                                   </div>
 
                                   <div style="margin-top:5%;margin-left:-22%" class="row">
                                      <div class="col-sm-3">
                                      </div>
                                      <div class="col-sm-3">
-                                      <button class="btn btn-success" style="color:white;width:100px;height:50px" onclick="print_image()">Print</button>
+                                      <button class="btn btn-success" style="color:white;width:80px;height:40px" onclick="print_image()">Print</button>
                                      </div>
                                      <div class="col-sm-3">
                                      
@@ -1967,7 +1969,7 @@ $('#trigger').click(function(){
                                      <div class="col-sm-3">
                                       
                                       <a  style="color:white" download="<?php echo "pan_card.jpg"; ?>" href="<?php echo $img_lnk_pan_org; ?>" title="Save">
-                                        <button class="btn btn-success" style="color:white;width:100px;height:50px">Save
+                                        <button class="btn btn-success" style="color:white;width:80px;height:40px">Save
                                          </button>
                                       </a>
                                      
@@ -1976,11 +1978,6 @@ $('#trigger').click(function(){
                                      </div>
                                   </div>
                           </div>
-      </div>
-      <div class="modal-footer">
-       <!--  <button type="button" class="btn btn-default btn-prev">Prev</button>
-        <button type="button" class="btn btn-default btn-next">Next</button> -->
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
       </div>
     </div>
   </div>
@@ -2005,14 +2002,14 @@ $('#trigger').click(function(){
                                   }?>
 
                                   <div style="text-align:center">
-                                  <img class="print" src="<?php echo $img_lnk_tel_org; ?>" style="height:250px;width:250px;"></img>
+                                  <img class="print" src="<?php echo $img_lnk_tel_org; ?>" style=""></img>
                                   </div>
 
                                   <div style="margin-top:5%;margin-left:-22%" class="row">
                                      <div class="col-sm-3">
                                      </div>
                                      <div class="col-sm-3">
-                                      <button class="btn btn-success" style="color:white;width:100px;height:50px" onclick="print_image()">Print</button>
+                                      <button class="btn btn-success" style="color:white;width:80px;height:40px" onclick="print_image()">Print</button>
                                      </div>
                                      <div class="col-sm-3">
                                      
@@ -2035,11 +2032,6 @@ $('#trigger').click(function(){
                                      </div>
                                   </div>
                           </div>
-      </div>
-      <div class="modal-footer">
-       <!--  <button type="button" class="btn btn-default btn-prev">Prev</button>
-        <button type="button" class="btn btn-default btn-next">Next</button> -->
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
       </div>
     </div>
   </div>
@@ -2064,20 +2056,20 @@ $('#trigger').click(function(){
                                   }?>
 
                                   <div style="text-align:center">
-                                  <img class="print" src="<?php echo $img_lnk_pass_org; ?>" style="height:250px;width:250px;"></img>
+                                  <img class="print" src="<?php echo $img_lnk_pass_org; ?>" style=""></img>
                                   </div>
 
                                   <div style="margin-top:5%;margin-left:-22%" class="row">
                                      <div class="col-sm-3">
                                      </div>
                                      <div class="col-sm-3">
-                                      <button class="btn btn-success" style="color:white;width:100px;height:50px" onclick="print_image()">Print</button>
+                                      <button class="btn btn-success" style="color:white;width:80px;height:40px" onclick="print_image()">Print</button>
                                      </div>
                                      <div class="col-sm-3">
                                      
                                      <a href="mailto:test@gmail.com?subject=KYC Application
                                      &body=Thank You!" style="color:white"> 
-                                      <button class="btn btn-success" style="color:white;width:100px;height:50px" >Email
+                                      <button class="btn btn-success" style="color:white;width:80px;height:40px" >Email
                                       </button>
                                      </a>
 
@@ -2085,7 +2077,7 @@ $('#trigger').click(function(){
                                      <div class="col-sm-3">
                                       
                                       <a  style="color:white" download="<?php echo "passbook.jpg"; ?>" href="<?php echo $img_lnk_pass_org; ?>" title="Save">
-                                        <button class="btn btn-success" style="color:white;width:100px;height:50px">Save
+                                        <button class="btn btn-success" style="color:white;width:80px;height:40px">Save
                                          </button>
                                       </a>
                                      
@@ -2094,11 +2086,6 @@ $('#trigger').click(function(){
                                      </div>
                                   </div>
                           </div>
-      </div>
-      <div class="modal-footer">
-       <!--  <button type="button" class="btn btn-default btn-prev">Prev</button>
-        <button type="button" class="btn btn-default btn-next">Next</button> -->
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
       </div>
     </div>
   </div>
@@ -2123,20 +2110,20 @@ $('#trigger').click(function(){
                                   }?>
 
                                   <div style="text-align:center">
-                                  <img class="print" src="<?php echo $img_lnk_pan_user; ?>" style="height:250px;width:250px;"></img>
+                                  <img class="print" src="<?php echo $img_lnk_pan_user; ?>" style=""></img>
                                   </div>
 
                                   <div style="margin-top:5%;margin-left:-22%" class="row">
                                      <div class="col-sm-3">
                                      </div>
                                      <div class="col-sm-3">
-                                      <button class="btn btn-success" style="color:white;width:100px;height:50px" onclick="print_image()">Print</button>
+                                      <button class="btn btn-success" style="color:white;width:80px;height:40px" onclick="print_image()">Print</button>
                                      </div>
                                      <div class="col-sm-3">
                                      
                                      <a href="mailto:test@gmail.com?subject=KYC Application
                                      &body=Thank You!" style="color:white"> 
-                                      <button class="btn btn-success" style="color:white;width:100px;height:50px" >Email
+                                      <button class="btn btn-success" style="color:white;width:80px;height:40px" >Email
                                       </button>
                                      </a>
 
@@ -2144,7 +2131,7 @@ $('#trigger').click(function(){
                                      <div class="col-sm-3">
                                       
                                       <a  style="color:white" download="<?php echo "pan_card.jpg"; ?>" href="<?php echo $img_lnk_pan_user; ?>" title="Save">
-                                        <button class="btn btn-success" style="color:white;width:100px;height:50px">Save
+                                        <button class="btn btn-success" style="color:white;width:80px;height:40px">Save
                                          </button>
                                       </a>
                                      
@@ -2153,11 +2140,6 @@ $('#trigger').click(function(){
                                      </div>
                                   </div>
                           </div>
-      </div>
-      <div class="modal-footer">
-       <!--  <button type="button" class="btn btn-default btn-prev">Prev</button>
-        <button type="button" class="btn btn-default btn-next">Next</button> -->
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
       </div>
     </div>
   </div>
@@ -2182,20 +2164,20 @@ $('#trigger').click(function(){
                                   }?>
 
                                   <div style="text-align:center">
-                                  <img class="print" src="<?php echo $img_lnk_tel_user; ?>" style="height:250px;width:250px;"></img>
+                                  <img class="print" src="<?php echo $img_lnk_tel_user; ?>" style=""></img>
                                   </div>
 
                                   <div style="margin-top:5%;margin-left:-22%" class="row">
                                      <div class="col-sm-3">
                                      </div>
                                      <div class="col-sm-3">
-                                      <button class="btn btn-success" style="color:white;width:100px;height:50px" onclick="print_image()">Print</button>
+                                      <button class="btn btn-success" style="color:white;width:80px;height:40px" onclick="print_image()">Print</button>
                                      </div>
                                      <div class="col-sm-3">
                                      
                                      <a href="mailto:test@gmail.com?subject=KYC Application
                                      &body=Thank You!" style="color:white"> 
-                                      <button class="btn btn-success" style="color:white;width:100px;height:50px" >Email
+                                      <button class="btn btn-success" style="color:white;width:80px;height:40px" >Email
                                       </button>
                                      </a>
 
@@ -2203,7 +2185,7 @@ $('#trigger').click(function(){
                                      <div class="col-sm-3">
                                       
                                       <a  style="color:white" download="<?php echo "telephone_bill.jpg"; ?>" href="<?php echo $img_lnk_tel_user; ?>" title="Save">
-                                        <button class="btn btn-success" style="color:white;width:100px;height:50px">Save
+                                        <button class="btn btn-success" style="color:white;width:80px;height:40px">Save
                                          </button>
                                       </a>
                                      
@@ -2212,11 +2194,6 @@ $('#trigger').click(function(){
                                      </div>
                                   </div>
                           </div>
-      </div>
-      <div class="modal-footer">
-       <!--  <button type="button" class="btn btn-default btn-prev">Prev</button>
-        <button type="button" class="btn btn-default btn-next">Next</button> -->
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
       </div>
     </div>
   </div>
@@ -2241,20 +2218,20 @@ $('#trigger').click(function(){
                                   }?>
 
                                   <div style="text-align:center">
-                                  <img class="print" src="<?php echo $img_lnk_pass_user; ?>" style="height:250px;width:250px;"></img>
+                                  <img class="print" src="<?php echo $img_lnk_pass_user; ?>" style=""></img>
                                   </div>
 
                                   <div style="margin-top:5%;margin-left:-22%" class="row">
                                      <div class="col-sm-3">
                                      </div>
                                      <div class="col-sm-3">
-                                      <button class="btn btn-success" style="color:white;width:100px;height:50px" onclick="print_image()">Print</button>
+                                      <button class="btn btn-success" style="color:white;width:80px;height:40px" onclick="print_image()">Print</button>
                                      </div>
                                      <div class="col-sm-3">
                                      
                                      <a href="mailto:test@gmail.com?subject=KYC Application
                                      &body=Thank You!" style="color:white"> 
-                                      <button class="btn btn-success" style="color:white;width:100px;height:50px" >Email
+                                      <button class="btn btn-success" style="color:white;width:80px;height:40px" >Email
                                       </button>
                                      </a>
 
@@ -2262,7 +2239,7 @@ $('#trigger').click(function(){
                                      <div class="col-sm-3">
                                       
                                       <a  style="color:white" download="<?php echo "passbook.jpg"; ?>" href="<?php echo $img_lnk_pass_user; ?>" title="Save">
-                                        <button class="btn btn-success" style="color:white;width:100px;height:50px">Save
+                                        <button class="btn btn-success" style="color:white;width:80px;height:40px">Save
                                          </button>
                                       </a>
                                      
@@ -2271,11 +2248,6 @@ $('#trigger').click(function(){
                                      </div>
                                   </div>
                           </div>
-      </div>
-      <div class="modal-footer">
-       <!--  <button type="button" class="btn btn-default btn-prev">Prev</button>
-        <button type="button" class="btn btn-default btn-next">Next</button> -->
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
       </div>
     </div>
   </div>
@@ -2300,20 +2272,20 @@ $('#trigger').click(function(){
                                   }?>
 
                                   <div style="text-align:center">
-                                  <img class="print" src="<?php echo $img_lnk_voter_user; ?>" style="height:250px;width:250px;"></img>
+                                  <img class="print" src="<?php echo $img_lnk_voter_user; ?>" style=""></img>
                                   </div>
 
                                   <div style="margin-top:5%;margin-left:-22%" class="row">
                                      <div class="col-sm-3">
                                      </div>
                                      <div class="col-sm-3">
-                                      <button class="btn btn-success" style="color:white;width:100px;height:50px" onclick="print_image()">Print</button>
+                                      <button class="btn btn-success" style="color:white;width:80px;height:40px" onclick="print_image()">Print</button>
                                      </div>
                                      <div class="col-sm-3">
                                      
                                      <a href="mailto:test@gmail.com?subject=KYC Application
                                      &body=Thank You!" style="color:white"> 
-                                      <button class="btn btn-success" style="color:white;width:100px;height:50px" >Email
+                                      <button class="btn btn-success" style="color:white;width:80px;height:40px" >Email
                                       </button>
                                      </a>
 
@@ -2321,7 +2293,7 @@ $('#trigger').click(function(){
                                      <div class="col-sm-3">
                                       
                                       <a  style="color:white" download="<?php echo "voter_id.jpg"; ?>" href="<?php echo $img_lnk_voter_user; ?>" title="Save">
-                                        <button class="btn btn-success" style="color:white;width:100px;height:50px">Save
+                                        <button class="btn btn-success" style="color:white;width:80px;height:40px">Save
                                          </button>
                                       </a>
                                      
@@ -2330,11 +2302,6 @@ $('#trigger').click(function(){
                                      </div>
                                   </div>
                           </div>
-      </div>
-      <div class="modal-footer">
-       <!--  <button type="button" class="btn btn-default btn-prev">Prev</button>
-        <button type="button" class="btn btn-default btn-next">Next</button> -->
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
       </div>
     </div>
   </div>
@@ -2359,20 +2326,20 @@ $('#trigger').click(function(){
                                   }?>
 
                                   <div style="text-align:center">
-                                  <img class="print" src="<?php echo $img_lnk_passport_user; ?>" style="height:250px;width:250px;"></img>
+                                  <img class="print" src="<?php echo $img_lnk_passport_user; ?>" style=""></img>
                                   </div>
 
                                   <div style="margin-top:5%;margin-left:-22%" class="row">
                                      <div class="col-sm-3">
                                      </div>
                                      <div class="col-sm-3">
-                                      <button class="btn btn-success" style="color:white;width:100px;height:50px" onclick="print_image()">Print</button>
+                                      <button class="btn btn-success" style="color:white;width:80px;height:40px" onclick="print_image()">Print</button>
                                      </div>
                                      <div class="col-sm-3">
                                      
                                      <a href="mailto:test@gmail.com?subject=KYC Application
                                      &body=Thank You!" style="color:white"> 
-                                      <button class="btn btn-success" style="color:white;width:100px;height:50px" >Email
+                                      <button class="btn btn-success" style="color:white;width:80px;height:40px" >Email
                                       </button>
                                      </a>
 
@@ -2380,7 +2347,7 @@ $('#trigger').click(function(){
                                      <div class="col-sm-3">
                                       
                                       <a  style="color:white" download="<?php echo "passport.jpg"; ?>" href="<?php echo $img_lnk_passport_user; ?>" title="Save">
-                                        <button class="btn btn-success" style="color:white;width:100px;height:50px">Save
+                                        <button class="btn btn-success" style="color:white;width:80px;height:40px">Save
                                          </button>
                                       </a>
                                      
@@ -2389,11 +2356,6 @@ $('#trigger').click(function(){
                                      </div>
                                   </div>
                           </div>
-      </div>
-      <div class="modal-footer">
-       <!--  <button type="button" class="btn btn-default btn-prev">Prev</button>
-        <button type="button" class="btn btn-default btn-next">Next</button> -->
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
       </div>
     </div>
   </div>
@@ -2418,20 +2380,20 @@ $('#trigger').click(function(){
                                   }?>
 
                                   <div style="text-align:center">
-                                  <img class="print" src="<?php echo $img_lnk_aadhar_user; ?>" style="height:250px;width:250px;"></img>
+                                  <img class="print" src="<?php echo $img_lnk_aadhar_user; ?>" style=""></img>
                                   </div>
 
                                   <div style="margin-top:5%;margin-left:-22%" class="row">
                                      <div class="col-sm-3">
                                      </div>
                                      <div class="col-sm-3">
-                                      <button class="btn btn-success" style="color:white;width:100px;height:50px" onclick="print_image()">Print</button>
+                                      <button class="btn btn-success" style="color:white;width:80px;height:40px" onclick="print_image()">Print</button>
                                      </div>
                                      <div class="col-sm-3">
                                      
                                      <a href="mailto:test@gmail.com?subject=KYC Application
                                      &body=Thank You!" style="color:white"> 
-                                      <button class="btn btn-success" style="color:white;width:100px;height:50px" >Email
+                                      <button class="btn btn-success" style="color:white;width:80px;height:40px" >Email
                                       </button>
                                      </a>
 
@@ -2439,7 +2401,7 @@ $('#trigger').click(function(){
                                      <div class="col-sm-3">
                                       
                                       <a  style="color:white" download="<?php echo "aadhar_card.jpg"; ?>" href="<?php echo $img_lnk_aadhar_user; ?>" title="Save">
-                                        <button class="btn btn-success" style="color:white;width:100px;height:50px">Save
+                                        <button class="btn btn-success" style="color:white;width:80px;height:40px">Save
                                          </button>
                                       </a>
                                      
@@ -2448,11 +2410,6 @@ $('#trigger').click(function(){
                                      </div>
                                   </div>
                           </div>
-      </div>
-      <div class="modal-footer">
-       <!--  <button type="button" class="btn btn-default btn-prev">Prev</button>
-        <button type="button" class="btn btn-default btn-next">Next</button> -->
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
       </div>
     </div>
   </div>

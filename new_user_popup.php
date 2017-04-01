@@ -11,8 +11,11 @@
 <script type="text/javascript" src="js/jquery.datepick.js"></script>
 <script type="text/javascript">
 $(function() {
- $( ".datepicker" ).datepick({dateFormat: 'dd/mm/yyyy',maxDate: 0});
- /*$( ".datepicker" ).css('z-index', 99999);*/
+  $( ".datepicker.picker" ).datepick({dateFormat: 'dd/mm/yyyy',maxDate:0});
+});
+
+$(function() {
+  $( ".datepicker.pick" ).datepick({dateFormat: 'dd/mm/yyyy'});
 });
 </script> 
 
@@ -375,7 +378,7 @@ if(a==null || a==''){
 
   <label for="example-date-input" class="col-2 col-form-label" style="margin-left:24.5%;">DOB:</label>
   <div class="col-4">
-    <input class="form-control datepicker" id="date1" name="date1" value="<?php echo $_POST['date1'] ?>" style="width:28.9%;margin-left:35.6%;margin-top:-4%;" type="text" readonly>
+    <input class="form-control datepicker picker" id="date1" name="date1" value="<?php echo $_POST['date1'] ?>" style="width:28.9%;margin-left:35.6%;margin-top:-4%;" type="text" readonly>
 
   </div>
 </div>
@@ -519,8 +522,20 @@ if(a==null || a==''){
 <div class="form-group row">
   <label for="example-date-input" class="col-2 col-form-label" style="margin-left:24.5%;">DATE:</label>
   <div class="col-4">
-    <input class="form-control datepicker" id="date[]" name="date[]" value="<?php echo $_POST['date'] ?>" style="width:28.9%;margin-left:35.6%;margin-top:-4%;" type="text" readonly>
+    <input class="form-control datepicker pick" id="date[]" name="date[]" value="<?php echo $_POST['date'] ?>" style="width:28.9%;margin-left:35.6%;margin-top:-4%;" type="text" readonly>
   </div>
+  <script id="jsbin-javascript">
+  var date = new Date();
+  var day = date.getDate();
+  var month = date.getMonth() + 1;
+  var year = date.getFullYear();
+
+  if (month < 10) month = "0" + month;
+  if (day < 10) day = "0" + day;
+
+  var today = day + "-" + month + "-" + year;
+  document.getElementById('date[]').value = today;
+</script>
 </div>
 
 
@@ -585,7 +600,7 @@ function goBack() {
         if(x < max_fields){ //max input box allowed
             x++; //text box increment
               $(wrapper).prepend('<br><div style="margin-left:50%;"><div class="form-group"><label class="control-label" for="selectbasic" style="margin-left:-220px;">Type of work</label><div class="col-md-6"><select id="type_of_work[]" name="type_of_work[]" class="form-control" style="margin-left:17%;width:222%"><option value="Option one">Audit Report</option><option value="Option two">ITR filing</option><option value="Option three">VAT Filing</option><option value="Option four">Accounting</option><option value="Option five">Registration</option><option value="Option six">Certification</option><option value="Option seven">Others</option></select></div></div><div class="form-group"> <label class="col-md-4 control-label" for="selectbasic" style="margin-left:-29%">Status</label><div class="col-md-6"><select id="status[]" name="status[]" style="width:210%;margin-left:-1%;" class="form-control"><option value="Pending">Pending</option><option value="Work in process">Work in process</option><option value="Completed">Completed</option></select></div></div><div class="form-group row"><label for="example-date-input" class="col-2 col-form-label" style="margin-left:-15.5%;";">DATE</label><div class="col-8"><input class="form-control datepicker" id="date[]" name="date[]" value="<?php echo $_POST['date'] ?>" style="width:86%;margin-left:10.6%;margin-top:-10%;" type="text" readonly></div></div><div class="form-group"><label class="col-md-4 control-label" for="textinput" style="margin-left:-36%">Comment</label><div class="col-md-4"><input id="comment[]" name="comment[]" type="text" placeholder="" class="form-control input-md" style="width:342%;margin-left:20%"></div></div></center><a href="#" class="remove_field" style="margin-left: 197px; margin-top: -40px;position:absolute"><img src="images/del24.png"></a></a></div>'); //add input box\
-              $( ".datepicker" ).datepick({dateFormat: 'dd/mm/yyyy',maxDate: 0});
+              $( ".datepicker.pick" ).datepick({dateFormat: 'dd/mm/yyyy'});
         }
     });
     
