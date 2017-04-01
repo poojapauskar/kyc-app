@@ -184,13 +184,13 @@ if(isset($_POST['submit'])){
 
   <div class="row">
     <div class="col-sm-4">
-      <input type="text" name="prefix" placeholder="Prefix">
+      <input type="text" name="prefix" style="text-transform:uppercase" placeholder="Prefix">
     </div>
     <div class="col-sm-4">
       <input type="text" pattern="[0-9]{3}" title="Sequence must contain digits from 000-999" name="sequence" placeholder="Sequence" required>
     </div>
     <div class="col-sm-4">
-      <input type="text" name="suffix" placeholder="Suffix">
+      <input type="text" name="suffix" style="text-transform:uppercase" placeholder="Suffix">
     </div>
   </div>
 
