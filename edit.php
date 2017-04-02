@@ -186,8 +186,12 @@ $(function() {
   $( ".datepicker.pick" ).datepick({dateFormat: 'dd/mm/yyyy',maxDate: 0});
 });
 
+// $(function() {
+//  $( ".datepicker.picker" ).datepick({dateFormat: 'dd/mm/yyyy',maxDate: 0});
+// });
+
 $(function() {
- $( ".datepicker.p" ).datepick({dateFormat: 'dd/mm/yyyy',maxDate: 0});
+ $( ".datepicker.p" ).datepick({dateFormat: 'dd/mm/yyyy'});
 });
 
 </script>
@@ -1437,6 +1441,21 @@ function enable_disable(that){
   <div class="col-md-4">
   <input id="date2" name="date2" value="<?php echo $arr_search['response'][0]['user_details']['dob'] ?>" type="text" placeholder="" class="form-control input-md datepicker picker" readonly> 
   </div>
+  <script type="text/javascript">
+    $(function() {
+ $( ".datepicker.picker" ).datepick({
+            maxDate: '0', 
+            beforeShow : function()
+            {
+                jQuery( this ).datepicker('option','maxDate', jQuery('#end_date').val() );
+            },
+            altFormat: "dd/mm/yy", 
+            dateFormat: 'dd/mm/yy'
+
+    
+});
+});
+  </script>
 </div>
 
 
