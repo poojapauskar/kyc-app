@@ -4010,6 +4010,7 @@ fieldset[disabled] .mdl-checkbox .mdl-checkbox__ripple-container .mdl-ripple,
 }
 }
 
+
 @media screen and (max-width: 1920px)
 {
     .mdl-layout__drawer-button {
@@ -4061,7 +4062,7 @@ fieldset[disabled] .mdl-checkbox .mdl-checkbox__ripple-container .mdl-ripple,
     position: absolute;
     color: rgb(255, 255, 255);
     background-color: inherit;
-    margin-top:2%;
+    margin-top:1%;
 }
 }
 

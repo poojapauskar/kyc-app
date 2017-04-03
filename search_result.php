@@ -864,8 +864,6 @@ $(document).on('hidden.bs.modal', function (e) {
       </div>
       <div class="modal-body">
                           <div style="text-align:center;">
-                          <!--  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>  -->
-                          <!-- if url has https://kyc-app-bucket.s3.amazonaws.com/?Signature then it has no-image -->
                               <?php if((strpos($arr_img_download_reg_org[0]['url'], 'https://kyc-app-bucket.s3.amazonaws.com/?Signature') !== false)){
                                 $img_lnk_reg_org="images/no_image.jpg";
                               }else{
@@ -873,7 +871,7 @@ $(document).on('hidden.bs.modal', function (e) {
                               }?>
 
                               <div style="text-align:center">
-                              <img class="print" src="<?php echo $img_lnk_reg_org; ?>" style="height:250px;width:250px;"></img>
+                              <img class="print" src="<?php echo $img_lnk_reg_org; ?>" style=""></img>
                               </div>
 
                               <div style="margin-top:5%;margin-left:-22%" class="row">
@@ -925,7 +923,7 @@ $(document).on('hidden.bs.modal', function (e) {
                                   }?>
 
                                   <div style="text-align:center">
-                                  <img class="print" src="<?php echo $img_lnk_pan_org; ?>" style="height:250px;width:250px;"></img>
+                                  <img class="print" src="<?php echo $img_lnk_pan_org; ?>" style=""></img>
                                   </div>
 
                                   <div style="margin-top:5%;margin-left:-22%" class="row">
@@ -979,7 +977,7 @@ $(document).on('hidden.bs.modal', function (e) {
                                   }?>
 
                                   <div style="text-align:center">
-                                  <img class="print" src="<?php echo $img_lnk_tel_org; ?>" style="height:250px;width:250px;"></img>
+                                  <img class="print" src="<?php echo $img_lnk_tel_org; ?>" style=""></img>
                                   </div>
 
                                   <div style="margin-top:5%;margin-left:-22%" class="row">
@@ -1033,7 +1031,7 @@ $(document).on('hidden.bs.modal', function (e) {
                                   }?>
 
                                   <div style="text-align:center">
-                                  <img class="print" src="<?php echo $img_lnk_pass_org; ?>" style="height:250px;width:250px;"></img>
+                                  <img class="print" src="<?php echo $img_lnk_pass_org; ?>" style=""></img>
                                   </div>
 
                                   <div style="margin-top:5%;margin-left:-22%" class="row">
@@ -1087,7 +1085,7 @@ $(document).on('hidden.bs.modal', function (e) {
                                   }?>
 
                                   <div style="text-align:center">
-                                  <img class="print" src="<?php echo $img_lnk_pan_user; ?>" style="height:250px;width:250px;"></img>
+                                  <img class="print" src="<?php echo $img_lnk_pan_user; ?>" style=""></img>
                                   </div>
 
                                   <div style="margin-top:5%;margin-left:-22%" class="row">
@@ -1141,7 +1139,7 @@ $(document).on('hidden.bs.modal', function (e) {
                                   }?>
 
                                   <div style="text-align:center">
-                                  <img class="print" src="<?php echo $img_lnk_tel_user; ?>" style="height:250px;width:250px;"></img>
+                                  <img class="print" src="<?php echo $img_lnk_tel_user; ?>" style=""></img>
                                   </div>
 
                                   <div style="margin-top:5%;margin-left:-22%" class="row">
@@ -1195,7 +1193,7 @@ $(document).on('hidden.bs.modal', function (e) {
                                   }?>
 
                                   <div style="text-align:center">
-                                  <img class="print" src="<?php echo $img_lnk_pass_user; ?>" style="height:250px;width:250px;"></img>
+                                  <img class="print" src="<?php echo $img_lnk_pass_user; ?>" style=""></img>
                                   </div>
 
                                   <div style="margin-top:5%;margin-left:-22%" class="row">
@@ -1249,7 +1247,7 @@ $(document).on('hidden.bs.modal', function (e) {
                                   }?>
 
                                   <div style="text-align:center">
-                                  <img class="print" src="<?php echo $img_lnk_voter_user; ?>" style="height:250px;width:250px;"></img>
+                                  <img class="print" src="<?php echo $img_lnk_voter_user; ?>" style=""></img>
                                   </div>
 
                                   <div style="margin-top:5%;margin-left:-22%" class="row">
@@ -1303,7 +1301,7 @@ $(document).on('hidden.bs.modal', function (e) {
                                   }?>
 
                                   <div style="text-align:center">
-                                  <img class="print" src="<?php echo $img_lnk_passport_user; ?>" style="height:250px;width:250px;"></img>
+                                  <img class="print" src="<?php echo $img_lnk_passport_user; ?>" style=""></img>
                                   </div>
 
                                   <div style="margin-top:5%;margin-left:-22%" class="row">
@@ -1357,7 +1355,7 @@ $(document).on('hidden.bs.modal', function (e) {
                                   }?>
 
                                   <div style="text-align:center">
-                                  <img class="print" src="<?php echo $img_lnk_aadhar_user; ?>" style="height:250px;width:250px;"></img>
+                                  <img class="print" src="<?php echo $img_lnk_aadhar_user; ?>" style=""></img>
                                   </div>
 
                                   <div style="margin-top:5%;margin-left:-22%" class="row">
