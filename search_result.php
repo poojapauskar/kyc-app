@@ -61,6 +61,12 @@
     width:32px;
     }
 
+    img.print{
+    display: block;
+    width: 100%;
+    height: auto;
+    }
+
     .alert {
     padding: 20px;
     background-color: #f44336;
