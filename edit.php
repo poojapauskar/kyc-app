@@ -164,6 +164,11 @@ document.getElementById('uploadFile').value='Choose File'; }
     float: left;
     margin-top:17%;
 }
+img.print{
+    display: block;
+    width: 100%;
+    height: auto;
+    }
 
 .profile-pic {
     max-width: 140px;
