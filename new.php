@@ -1182,27 +1182,27 @@ if ($_POST['uid'] != '' and $_GET["is_user"]==1){
 
 <script type="text/javascript">
 
-$('.partner_names').attr('readonly', true);
-$('.partner_designations').attr('readonly', true);
-$('.partner_others').attr('readonly', true);
-$('.partner_btn').attr('readonly', true);
-$('.new_entry_btn').attr('readonly', true);
+$('.partner_names').attr('disabled', true);
+$('.partner_designations').attr('disabled', true);
+$('.partner_others').attr('disabled', true);
+$('.partner_btn').attr('disabled', true);
+$('.new_entry_btn').attr('disabled', true);
 
 function enable_disable(that){
 
   /*alert(that.value);*/
   if(that.value != "Partnership"){
-      $('.partner_names').attr('readonly', true);
-      $('.partner_designations').attr('readonly', true);
-      $('.partner_others').attr('readonly', true);
-      $('.partner_btn').attr('readonly', true);
-      $('.new_entry_btn').attr('readonly', true);
+      $('.partner_names').attr('disabled', true);
+      $('.partner_designations').attr('disabled', true);
+      $('.partner_others').attr('disabled', true);
+      $('.partner_btn').attr('disabled', true);
+      $('.new_entry_btn').attr('disabled', true);
   }else{
-      $('.partner_names').attr('readonly', false);
-      $('.partner_designations').attr('readonly', false);
-      $('.partner_others').attr('readonly', false);
-      $('.partner_btn').attr('readonly', false);
-      $('.new_entry_btn').attr('readonly', false);
+      $('.partner_names').attr('disabled', false);
+      $('.partner_designations').attr('disabled', false);
+      $('.partner_others').attr('disabled', false);
+      $('.partner_btn').attr('disabled', false);
+      $('.new_entry_btn').attr('disabled', false);
   }
 }
 </script>
@@ -1213,8 +1213,6 @@ function enable_disable(that){
 <div class="alert" id="popup1" class="popup1" style="display:none;text-align:center;position:absolute;
     width:100%;
     top: 70%;z-index:2">
- <!--  <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> -->
- <!--  <form method="post" action="new.php">  -->
   <label>UID Generated</label><br>
   <input type="text" id="uid_in_popup" name="uid_in_popup" style="text-align:center;background-color:transparent;color:black;border:none"></input><br><br>
   <button style="margin-left:1%;" id="done" class="btn btn-success" name="done" onclick="submit_form()">Done</button>
@@ -1316,13 +1314,12 @@ function enable_disable(that){
  </div>
 </div>
 
-
-    <div class="form-group">
+<div class="form-group">
  <label class="col-md-4 control-label" for="checkboxes"></label>
  <div class="col-md-4">
    <label class="checkbox-inline" for="checkboxes-0">
      <input type="checkbox" name="checkboxes" id="checkboxes-0" value="1">Bank Passbook</label>
-<input onchange="check_bank_pass_book_user()" id="bank_pass_book"  value="<?php echo $_POST['bank_pass_book'] ?>" style="margin-top: -22px;margin-left: 129px;" name="bank_pass_book" class="input-file" type="file">     
+     <input onchange="check_bank_pass_book_user()" id="bank_pass_book"  value="<?php echo $_POST['bank_pass_book'] ?>" style="margin-top: -22px;margin-left: 129px;" name="bank_pass_book" class="input-file" type="file">     
  </div>
 </div>
 
