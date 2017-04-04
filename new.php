@@ -191,7 +191,7 @@ $(function() {
 });
 
 $(function() {
-  $( ".datepicker.pick" ).datepick({dateFormat: 'dd/mm/yyyy'});
+  $( ".datepicker.pick" ).datepick({dateFormat: 'dd/mm/yyyy'}).datepick("setDate", new Date());
 });
 
 </script>
@@ -1130,19 +1130,6 @@ if ($_POST['uid'] != '' and $_GET["is_user"]==1){
   <div class="col-md-4">
   <input id="date[]" name="date[]" value="<?php echo $_POST['date'] ?>" style="width:100%;margin-left:-0.4%;margin-top:0%;" type="text" class="form-control input-md datepicker pick" readonly>
   </div>
-  <script id="jsbin-javascript">
-  var date = new Date();
-  var day = date.getDate();
-  var month = date.getMonth() + 1;
-  var year = date.getFullYear();
-
-  if (month < 10) month = "0" + month;
-  if (day < 10) day = "0" + day;
-
-  var today = day + "-" + month + "-" + year;
-  document.getElementById('date[]').value = today;
-
-</script>
 </div>
 
 <!-- Text input-->
@@ -1185,27 +1172,27 @@ if ($_POST['uid'] != '' and $_GET["is_user"]==1){
 
 <script type="text/javascript">
 
-$('.partner_names').attr('readonly', true);
-$('.partner_designations').attr('readonly', true);
-$('.partner_others').attr('readonly', true);
-$('.partner_btn').attr('readonly', true);
-$('.new_entry_btn').attr('readonly', true);
+$('.partner_names').attr('disabled', true);
+$('.partner_designations').attr('disabled', true);
+$('.partner_others').attr('disabled', true);
+$('.partner_btn').attr('disabled', true);
+$('.new_entry_btn').attr('disabled', true);
 
 function enable_disable(that){
 
   /*alert(that.value);*/
   if(that.value != "Partnership"){
-      $('.partner_names').attr('readonly', true);
-      $('.partner_designations').attr('readonly', true);
-      $('.partner_others').attr('readonly', true);
-      $('.partner_btn').attr('readonly', true);
-      $('.new_entry_btn').attr('readonly', true);
+      $('.partner_names').attr('disabled', true);
+      $('.partner_designations').attr('disabled', true);
+      $('.partner_others').attr('disabled', true);
+      $('.partner_btn').attr('disabled', true);
+      $('.new_entry_btn').attr('disabled', true);
   }else{
-      $('.partner_names').attr('readonly', false);
-      $('.partner_designations').attr('readonly', false);
-      $('.partner_others').attr('readonly', false);
-      $('.partner_btn').attr('readonly', false);
-      $('.new_entry_btn').attr('readonly', false);
+      $('.partner_names').attr('disabled', false);
+      $('.partner_designations').attr('disabled', false);
+      $('.partner_others').attr('disabled', false);
+      $('.partner_btn').attr('disabled', false);
+      $('.new_entry_btn').attr('disabled', false);
   }
 }
 </script>
@@ -1216,8 +1203,6 @@ function enable_disable(that){
 <div class="alert" id="popup1" class="popup1" style="display:none;text-align:center;position:absolute;
     width:100%;
     top: 70%;z-index:2">
- <!--  <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> -->
- <!--  <form method="post" action="new.php">  -->
   <label>UID Generated</label><br>
   <input type="text" id="uid_in_popup" name="uid_in_popup" style="text-align:center;background-color:transparent;color:black;border:none"></input><br><br>
   <button style="margin-left:1%;" id="done" class="btn btn-success" name="done" onclick="submit_form()">Done</button>
@@ -1319,13 +1304,12 @@ function enable_disable(that){
  </div>
 </div>
 
-
-    <div class="form-group">
+<div class="form-group">
  <label class="col-md-4 control-label" for="checkboxes"></label>
  <div class="col-md-4">
    <label class="checkbox-inline" for="checkboxes-0">
      <input type="checkbox" name="checkboxes" id="checkboxes-0" value="1">Bank Passbook</label>
-<input onchange="check_bank_pass_book_user()" id="bank_pass_book"  value="<?php echo $_POST['bank_pass_book'] ?>" style="margin-top: -22px;margin-left: 129px;" name="bank_pass_book" class="input-file" type="file">     
+     <input onchange="check_bank_pass_book_user()" id="bank_pass_book"  value="<?php echo $_POST['bank_pass_book'] ?>" style="margin-top: -22px;margin-left: 129px;" name="bank_pass_book" class="input-file" type="file">     
  </div>
 </div>
 
@@ -1403,19 +1387,6 @@ function enable_disable(that){
   <div class="col-10">
     <input class="form-control datepicker pick" id="date[]" name="date[]" value="<?php echo $_POST['date'] ?>" style="" type="text" readonly>
   </div>
-  <script id="jsbin-javascript">
-  var date = new Date();
-  var day = date.getDate();
-  var month = date.getMonth() + 1;
-  var year = date.getFullYear();
-
-  if (month < 10) month = "0" + month;
-  if (day < 10) day = "0" + day;
-
-  var today = day + "-" + month + "-" + year;
-  document.getElementById('date[]').value = today;
-
-</script>
 </div>
 
 
@@ -1528,23 +1499,15 @@ $('#myModal').on('shown.bs.modal', function () {
     var add_button      = $(".add_field"); //Add button ID
     var wrapper_pre1         = $(".present_fields_1"); //Fields wrapper
     var x = 1; //initlal text box count
-    var date = new Date();
-    var day = date.getDate();
-    var month = date.getMonth() + 1;
-    var year = date.getFullYear();
-
-    if (month < 10) month = "0" + month;
-    if (day < 10) day = "0" + day;
-
-    var today = day + "-" + month + "-" + year;
     $(add_button).click(function(e){ //on add input button click
         e.preventDefault();
 
         if(x < max_fields){ //max input box allowed
             x++; //text box increment
-            $(wrapper).prepend('<br><div style="margin-left:50%;"><div class="form-group"><label class="control-label type" for="selectbasic" style="">Type of work</label><div class="col-md-6"><select id="type_of_work[]" name="type_of_work[]" class="form-control type_of_work" style=""><option value="Audit Report">Audit Report</option><option value="ITR filing">ITR filing</option><option value="VAT Filing">VAT Filing</option><option value="Accounting">Accounting</option><option value="Registration">Registration</option><option value="Certification">Certification</option><option value="Others">Others</option></select></div></div><div class="form-group"> <label class="col-md-4 control-label status" for="selectbasic" style="">Status</label><div class="col-md-6"><select id="status[]" name="status[]"  class="form-control status"><option value="Pending">Pending</option><option value="Work in process">Work in process</option><option value="Completed">Completed</option></select></div></div><div class="form-group row"><label for="example-date-input" class="col-2 col-form-label date">DATE</label><div class="col-10 col"><input class="form-control datepicker pick" id="date[]" name="date[]" style="" type="text"></div></div><div class="form-group"><label class="col-md-4 control-label comment" for="textinput" style="">Comment</label><div class="col-md-4"><input id="comment[]" name="comment[]" type="text" placeholder="" class="form-control input-md comment" style=""></div></div></center><a href="#" class="remove_field" style=""><img src="images/del24.png" ></a></a></div>'); //add input box\
-          $( ".datepicker.pick" ).datepick({dateFormat: 'dd/mm/yyyy'}).datepick("setDate", "0");
-          //$("#date[].datepicker.pick").val(today);
+           $(wrapper).prepend('<br><div style="margin-left:50%;"><div class="form-group"><label class="control-label type" for="selectbasic" style="">Type of work</label><div class="col-md-6"><select id="type_of_work[]" name="type_of_work[]" class="form-control type_of_work" style=""><option value="Audit Report">Audit Report</option><option value="ITR filing">ITR filing</option><option value="VAT Filing">VAT Filing</option><option value="Accounting">Accounting</option><option value="Registration">Registration</option><option value="Certification">Certification</option><option value="Others">Others</option></select></div></div><div class="form-group"> <label class="col-md-4 control-label status" for="selectbasic" style="">Status</label><div class="col-md-6"><select id="status[]" name="status[]"  class="form-control status"><option value="Pending">Pending</option><option value="Work in process">Work in process</option><option value="Completed">Completed</option></select></div></div><div class="form-group row"><label for="example-date-input" class="col-2 col-form-label date">DATE</label><div class="col-10 col"><input class="form-control datepicker pickers" id="date" name="date[]" style="" type="text" readonly></div></div><div class="form-group"><label class="col-md-4 control-label comment" for="textinput" style="">Comment</label><div class="col-md-4"><input id="comment[]" name="comment[]" type="text" placeholder="" class="form-control input-md comment" style=""></div></div></center><a href="#" class="remove_field" style=""><img src="images/del24.png" ></a></a></div>'); //add input box\
+          var newInput=$("#date").datepick({dateFormat: 'dd/mm/yyyy'});
+          newInput.datepick({dateFormat: 'dd/mm/yyyy'}).datepick("setDate", new Date());
+
     
       }
     });
