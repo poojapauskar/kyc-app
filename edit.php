@@ -1330,6 +1330,33 @@ VIEW</a>
 </fieldset>
 </form>
 
+<script type="text/javascript">
+
+$('.partner_names').attr('disabled', true);
+$('.partner_designations').attr('disabled', true);
+$('.partner_others').attr('disabled', true);
+$('.partner_btn').attr('disabled', true);
+$('.new_entry_btn').attr('disabled', true);
+
+function enable_disable(that){
+
+  /*alert(that.value);*/
+  if(that.value != "Partnership"){
+      $('.partner_names').attr('disabled', true);
+      $('.partner_designations').attr('disabled', true);
+      $('.partner_others').attr('disabled', true);
+      $('.partner_btn').attr('disabled', true);
+      $('.new_entry_btn').attr('disabled', true);
+  }else{
+      $('.partner_names').attr('disabled', false);
+      $('.partner_designations').attr('disabled', false);
+      $('.partner_others').attr('disabled', false);
+      $('.partner_btn').attr('disabled', false);
+      $('.new_entry_btn').attr('disabled', false);
+  }
+}
+</script>
+
 
 <form method="post" id="deleteForm" action="search.php" style="text-align:center">
 <input type="hidden" name="pk_delete" id="pk_delete" value="<?php echo $_GET['id'] ?>"></input>  
