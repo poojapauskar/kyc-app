@@ -508,7 +508,12 @@ if(isset($_POST["save_btn"]) and $_GET["is_user"]==0) {
 
   $comment='';
   for($j=0;$j<count($_POST['comment']);$j++){
-    $comment=$comment.",".$_POST['comment'][$j];
+    if($_POST['comment'][$j] == ""){
+      $comment1=' ';
+    }else{
+      $comment1=$_POST['comment'][$j];
+    }
+    $comment=$comment.",".$comment1;
   }
   $comment = ltrim($comment, ',');
 
@@ -828,7 +833,12 @@ if ($_POST['uid'] != '' and $_GET["is_user"]==1){
 
   $comment='';
   for($j=0;$j<count($_POST['comment']);$j++){
-    $comment=$comment.",".$_POST['comment'][$j];
+    if($_POST['comment'][$j] == ""){
+      $comment1=' ';
+    }else{
+      $comment1=$_POST['comment'][$j];
+    }
+    $comment=$comment.",".$comment1;
   }
   $comment = ltrim($comment, ',');
 
