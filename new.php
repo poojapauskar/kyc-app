@@ -893,7 +893,7 @@ if ($_POST['uid'] != '' and $_GET["is_user"]==1){
       }?>
 
     <span class="mdl-layout-title" id="title2"><?php echo $title; ?></span>
-    <span class="mdl-layout-title" id="title1" style="text-align:center">KYCApp</span>
+    <span class="mdl-layout-title" id="title1" style="text-align:center">KYCAPP</span>
     <a href="index.php"><img id="logout" style="" src="images/logout1.png"></img></a>
           <!-- Add spacer, to align navigation to the right -->
   </header>
