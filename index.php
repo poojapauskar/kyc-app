@@ -55,7 +55,7 @@ if($arr2['status']==200 && $arr2['message']=='Is Super Admin'){
      box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23) !important;" class="mdl-layout__header">
     <div class="mdl-layout__header-row" >
         <img id="logo" src="images/green.png"></img>
-         <span class="mdl-layout-title" id="title" style="">KYCApp</span>
+         <span class="mdl-layout-title" id="title" style="">KYCAPP</span>
           <!-- Add spacer, to align navigation to the right -->
     </div>
       </header>
