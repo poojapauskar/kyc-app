@@ -151,7 +151,6 @@ document.getElementById('uploadFile').value='Choose File'; }
 
 function proceed(){
 
-
 var a=document.forms["Form"]["uid"].value;
 if(a==null || a==''){
         var text = "";
@@ -178,6 +177,7 @@ if(a==null || a==''){
         return false;
 }
 }
+
 </script>
 
 <!-- Datepicker -->
@@ -205,6 +205,7 @@ $(function() {
 <script type="text/javascript">
   function submit_form(){
     $('#Form').submit();
+
   }
 </script>
 
@@ -1127,13 +1128,14 @@ if ($_POST['uid'] != '' and $_GET["is_user"]==1){
 <div class="form-group">
   <label class="col-md-4 control-label" for="selectbasic">Status</label>
   <div class="col-md-4">
-    <select id="status[]" name="status[]" class="form-control">
+    <select id="status" name="status[]" class="form-control" >
       <option value="Pending">Pending</option>
       <option value="Work in process">Work in process</option>
       <option value="Completed">Completed</option>
     </select>
   </div>
 </div>
+
 <!--date-->
   <div class="form-group">
   <label class="col-md-4 control-label" for="textinput">DATE</label>  
@@ -1146,7 +1148,7 @@ if ($_POST['uid'] != '' and $_GET["is_user"]==1){
 <div class="form-group">
   <label class="col-md-4 control-label" for="textinput">Comment</label>  
   <div class="col-md-4">
-  <input id="comment[]" name="comment[]" type="text" placeholder="" class="form-control input-md" /> 
+  <input id="commentss" name="comment[]" type="text" placeholder="" class="form-control input-md" /> 
   </div>
 </div>
 
@@ -1173,7 +1175,6 @@ if ($_POST['uid'] != '' and $_GET["is_user"]==1){
   <div class="col-md-8">
     <button id="save_btn" name="save_btn" type="submit" class="btn btn-success" style="width: 10em;margin-left:10px">Save</button><span><span></span></span>
     <button onclick="ClickEvent()" class="btn btn-warning" style="width: 10em;"><a style="color:white" href="search.php">Cancel</a></button>
-  
   </div>
 </div>
 </fieldset>
@@ -1206,6 +1207,19 @@ function enable_disable(that){
   }
 }
 </script>
+<script type="text/javascript">
+ $(document).ready(function () {
+        $("#status").click(function () {
+
+            if ($("#status").val() == "Completed") {
+                $("#commentss").attr("required", "required");
+            }
+            else
+              $("#commentss").attr("required", false);
+        });
+});
+</script>
+
 <?php } else { ?>
 
 
@@ -1383,7 +1397,7 @@ function enable_disable(that){
 <div class="form-group">
   <label class="col-md-4 control-label" for="selectbasic">Status</label>
   <div class="col-md-4">
-    <select id="status[]" name="status[]" class="form-control">
+    <select id="status" name="status[]" class="form-control status">
       <option value="Pending">Pending</option>
       <option value="Work in process">Work in process</option>
       <option value="Completed">Completed</option>
@@ -1404,7 +1418,7 @@ function enable_disable(that){
 <div class="form-group">
   <label class="col-md-4 control-label" for="textinput">Comment</label>  
   <div class="col-md-4">
-  <input id="comment[]" name="comment[]" type="text" placeholder="" class="form-control input-md"/>
+  <input id="commentss" name="comment[]" type="text" placeholder="" class="form-control input-md comments"/>
   </div>
 </div>
 <a href="#" class="remove_field_pre1">
@@ -1433,10 +1447,8 @@ function enable_disable(that){
 </div>
 </fieldset>
 </form>
+
 <?php } ?>
-
-
-
 <script type="text/javascript">
 $(function(){
 
@@ -1490,7 +1502,7 @@ $('#myModal').on('shown.bs.modal', function () {
             $(wrapper).prepend('<br><div style="margin-left:50%;"><center><div class="form-group"> <label class="control-label name" for="textinput" style="">Name: </label> <div class="partner_name"> <input id="partner_names[]" name="partner_names[]" type="text" placeholder="Enter Full Name" class="form-control input-md newentry partner_names" style="">  </div>  <div class="col-md-6" > <a href="new_user_popup.php" style="color:white" target="_blank" data-toggle="modal" data-target="#myModal"><button  type="button" class="btn btn-info new_entry_btn entry">New Entry</button> </a> </div></div> <div class="form-group">  <label class="control-label designation" for="selectbasic">Designation: </label>  <div class="partner_designation"> <select id="partner_designations[]" name="partner_designations[]" class="form-control partner_designations" >      <option value="Managing Partner">Managing Partner</option>      <option value="Manager">Manager</option>      <option value="Other">Other</option>    </select>  </div>  <div class="partner_designation col2">  <input style="" id="textinput" name="textinput" type="text" placeholder="Specify if Other" class="form-control input-md partner_others"></div></div></center><a href="#" class="remove_field" style="margin-left:370%;margin-top:-40px;position:absolute"><img src="images/del24.png"></a></a></div>'); //add input box\
         }
     });
-    
+
     $(wrapper).on("click",".remove_field", function(e){ //user click on remove text
         e.preventDefault(); $(this).parent('div').remove(); x--;
     })
@@ -1498,6 +1510,7 @@ $('#myModal').on('shown.bs.modal', function () {
     $(wrapper_present).on("click",".remove_field_present", function(e){ //user click on remove text
         e.preventDefault(); $(this).parent('div').remove(); x--;
     })
+
 });
     </script>
 
@@ -1514,14 +1527,19 @@ $('#myModal').on('shown.bs.modal', function () {
 
         if(x < max_fields){ //max input box allowed
             x++; //text box increment
-           $(wrapper).prepend('<br><div style="margin-left:50%;"><div class="form-group"><label class="control-label type" for="selectbasic" style="">Type of work</label><div class="col-md-6"><select id="type_of_work[]" name="type_of_work[]" class="form-control type_of_work" style=""><option value="Audit Report">Audit Report</option><option value="ITR filing">ITR filing</option><option value="VAT Filing">VAT Filing</option><option value="Accounting">Accounting</option><option value="Registration">Registration</option><option value="Certification">Certification</option><option value="Others">Others</option></select></div></div><div class="form-group"> <label class="col-md-4 control-label status" for="selectbasic" style="">Status</label><div class="col-md-6"><select id="status[]" name="status[]"  class="form-control status"><option value="Pending">Pending</option><option value="Work in process">Work in process</option><option value="Completed">Completed</option></select></div></div><div class="form-group row"><label for="example-date-input" class="col-2 col-form-label date">DATE</label><div class="col-10 col"><input class="form-control datepicker pickers" id="date" name="date[]" style="" type="text" readonly></div></div><div class="form-group"><label class="col-md-4 control-label comment" for="textinput" style="">Comment</label><div class="col-md-4"><input id="comment[]" name="comment[]" type="text" placeholder="" class="form-control input-md comment" style=""></div></div></center><a href="#" class="remove_field" style=""><img src="images/del24.png" ></a></a></div>'); //add input box\
+           $(wrapper).prepend('<br><div style="margin-left:50%;"><div class="form-group"><label class="control-label type" for="selectbasic" style="">Type of work</label><div class="col-md-6"><select id="type_of_work[]" name="type_of_work[]" class="form-control type_of_work" style=""><option value="Audit Report">Audit Report</option><option value="ITR filing">ITR filing</option><option value="VAT Filing">VAT Filing</option><option value="Accounting">Accounting</option><option value="Registration">Registration</option><option value="Certification">Certification</option><option value="Others">Others</option></select></div></div><div class="form-group"> <label class="col-md-4 control-label status" for="selectbasic" style="">Status</label><div class="col-md-6"><select id="status1' + x + '"  name="status[]"  class="form-control status"><option value="Pending">Pending</option><option value="Work in process">Work in process</option><option value="Completed">Completed</option></select></div></div><div class="form-group row"><label for="example-date-input" class="col-2 col-form-label date">DATE</label><div class="col-10 col"><input class="form-control datepicker pickers" id="date" name="date[]" style="" type="text" readonly></div></div><div class="form-group"><label class="col-md-4 control-label comment" for="textinput" style="">Comment</label><div class="col-md-4"><input id="comments' + x + '" name="comment[]" type="text" placeholder="" class="form-control input-md comment" style=""></div></div></center><a href="#" class="remove_field" style=""><img src="images/del24.png" ></a></a></div>'); //add input box\
           var newInput=$("#date").datepick({dateFormat: 'dd/mm/yyyy'});
           newInput.datepick({dateFormat: 'dd/mm/yyyy'}).datepick("setDate", new Date());
+          $("#status1" + x).click(function () {
 
-    
+            if ($("#status1" + x).val() == "Completed") {
+                $("#comments" + x).attr("required", "required");
+            }
+            else
+              $("#comments" + x).attr("required", false);
+        });
       }
     });
-    
     $(wrapper).on("click",".remove_field", function(e){ //user click on remove text
         e.preventDefault(); $(this).parent('div').remove(); x--;
     })
