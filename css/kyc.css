@@ -1566,7 +1566,8 @@ a.btn.btn-info{
     color:white;
     background-color:#176fac;
     margin-top:0%;
-    margin-left:1%;
+    margin-left:33% ;
+    width: 141%;
 }
 
 a.btn.btn-info.edit{
@@ -1700,7 +1701,7 @@ div.fileUpload.btn.btn-info{
 /*seach_result page view*/
 .btn.btn-info.view1{
      margin-left: -266%;
-    margin-top: 7%;
+    margin-top: -3%;
     position: relative;
     color: white;
 }
@@ -1915,6 +1916,8 @@ a.btn.btn-info{
     background-color:#176fac;
     margin-top:0%;
     margin-left:66%;
+    width: 166%;
+    height: 2758%;
 }
 
 a.btn.btn-info.edit{
@@ -2047,7 +2050,7 @@ div.fileUpload.btn.btn-info{
 }
 /*seach_result page view*/
 .btn.btn-info.view1 {
-    margin-left: -253%;
+    margin-left: -244%;
     margin-top: -1%;
     position: relative;
     color: white;
@@ -2081,7 +2084,7 @@ margin-top:-1%;
     width:339%;
 }
 .fileUpload.btn.btn-info.tele1{
-margin-left:14%;
+margin-left:12%;
 margin-top:-1%;
 }
 
@@ -2407,7 +2410,7 @@ div.fileUpload.btn.btn-info{
 }
 /*seach_result page view*/
 .btn.btn-info.view1{
-     margin-left: -266%;
+     margin-left: -285%;
     margin-top: 7%;
     position: relative;
     color: white;
@@ -2681,6 +2684,7 @@ a.btn.btn-info{
     background-color: #176fac;
     margin-top: 4%;
     margin-left: 107%;
+    width: 260%;
 }
 /*attach btn*/
 div.fileUpload.btn.btn-info{
@@ -2783,7 +2787,7 @@ margin-top:-1%;
 
 /*seach_result page view*/
 .btn.btn-info.view1{
-     margin-left: -272%;
+     margin-left: -278%;
     margin-top: 0%;
     position: relative;
     color: white;
