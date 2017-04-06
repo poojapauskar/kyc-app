@@ -921,7 +921,7 @@ if(isset($_POST["edit_btn"]) and $_GET["is_user"]==1) {
     <div class="mdl-layout__header-row" >
     <a href="search.php"><img id="logo1" src="images/green.png"></img></a>
      <span class="mdl-layout-title" id="title2"><?php echo $arr_search['response'][0]['organization_details']['name'] ?><?php echo $arr_search['response'][0]['user_details']['name'] ?></span>
-    <span class="mdl-layout-title" id="title1" style="text-align:center">KYCApp</span>
+    <span class="mdl-layout-title" id="title1" style="text-align:center">KYCAPP</span>
     <a href="index.php"><img id="logout" style="" src="images/logout1.png"></img></a>
           <!-- Add spacer, to align navigation to the right -->
 
@@ -1344,6 +1344,33 @@ VIEW</a>
 </fieldset>
 </form>
 
+<script type="text/javascript">
+
+$('.partner_names').attr('disabled', true);
+$('.partner_designations').attr('disabled', true);
+$('.partner_others').attr('disabled', true);
+$('.partner_btn').attr('disabled', true);
+$('.new_entry_btn').attr('disabled', true);
+
+function enable_disable(that){
+
+  /*alert(that.value);*/
+  if(that.value != "Partnership"){
+      $('.partner_names').attr('disabled', true);
+      $('.partner_designations').attr('disabled', true);
+      $('.partner_others').attr('disabled', true);
+      $('.partner_btn').attr('disabled', true);
+      $('.new_entry_btn').attr('disabled', true);
+  }else{
+      $('.partner_names').attr('disabled', false);
+      $('.partner_designations').attr('disabled', false);
+      $('.partner_others').attr('disabled', false);
+      $('.partner_btn').attr('disabled', false);
+      $('.new_entry_btn').attr('disabled', false);
+  }
+}
+</script>
+
 
 
 <script type="text/javascript">
@@ -1460,7 +1487,11 @@ function enable_disable(that){
  <input type="hidden" value="<?php echo $arr_search['response'][0]['user_details']['pk'] ?>" name="org_id" id="org_id"></input>
 
 <img class="profile-pic" style="margin-left:77%;position:absolute;z-index:2;" src="<?php echo $img_lnk; ?>" />
+<<<<<<< HEAD
 <div class="upload-button" style="">Upload Image</div>
+=======
+<div class="upload-button">Upload Image</div>
+>>>>>>> 7584dd62fd674481131a92b24e5d1cccd0565c13
 <input  onchange="check_image_user()" id="image"  name="image" class="file-upload1" style="position:absolute;z-index:-2;margin-left:46%;margin-top:16%;display:none" type="file"></input>
 </div>
 
@@ -2546,6 +2577,7 @@ function goBack() {
         e.preventDefault();
         if(x < max_fields){ //max input box allowed
             x++; //text box increment
+<<<<<<< HEAD
          $(wrapper).prepend('<br><div style="margin-left:50%;"><div class="form-group"><label class="control-label type" for="selectbasic" style="">Type of work</label><div class="col-md-6"><select id="type_of_work[]" name="type_of_work[]" class="form-control type_of_work" style=""><option value="Audit Report">Audit Report</option><option value="ITR filing">ITR filing</option><option value="VAT Filing">VAT Filing</option><option value="Accounting">Accounting</option><option value="Registration">Registration</option><option value="Certification">Certification</option><option value="Others">Others</option></select></div></div><div class="form-group"> <label class="col-md-4 control-label status" for="selectbasic" style="">Status</label><div class="col-md-6"><select id="status1" name="status[]"  class="form-control status"><option value="Pending">Pending</option><option value="Work in process">Work in process</option><option value="Completed">Completed</option></select></div></div><div class="form-group row"><label for="example-date-input" class="col-2 col-form-label date">DATE</label><div class="col-10 col"><input class="form-control datepicker pickers" id="date" name="date[]" style="" type="text" readonly></div></div><div class="form-group"><label class="col-md-4 control-label comment" for="textinput" style="">Comment</label><div class="col-md-4"><input id="comments" name="comment[]" type="text" placeholder="" class="form-control input-md comment" style=""></div></div></center><a href="#" class="remove_field" style=""><img src="images/del24.png" ></a></a></div>'); //add input box\
           var newInput=$("#date").datepick({dateFormat: 'dd/mm/yyyy'});
           newInput.datepick({dateFormat: 'dd/mm/yyyy'}).datepick("setDate", new Date());
@@ -2557,6 +2589,11 @@ function goBack() {
             else
               $("#comments").attr("required", false);
         });
+=======
+         $(wrapper).prepend('<br><div style="margin-left:50%;"><div class="form-group"><label class="control-label type" for="selectbasic" style="">Type of work</label><div class="col-md-6"><select id="type_of_work[]" name="type_of_work[]" class="form-control type_of_work" style=""><option value="Audit Report">Audit Report</option><option value="ITR filing">ITR filing</option><option value="VAT Filing">VAT Filing</option><option value="Accounting">Accounting</option><option value="Registration">Registration</option><option value="Certification">Certification</option><option value="Others">Others</option></select></div></div><div class="form-group"> <label class="col-md-4 control-label status" for="selectbasic" style="">Status</label><div class="col-md-6"><select id="status[]" name="status[]"  class="form-control status"><option value="Pending">Pending</option><option value="Work in process">Work in process</option><option value="Completed">Completed</option></select></div></div><div class="form-group row"><label for="example-date-input" class="col-2 col-form-label date">DATE</label><div class="col-10 col"><input class="form-control datepicker pickers" id="date" name="date[]" style="" type="text" readonly></div></div><div class="form-group"><label class="col-md-4 control-label comment" for="textinput" style="">Comment</label><div class="col-md-4"><input id="comment[]" name="comment[]" type="text" placeholder="" class="form-control input-md comment" style=""></div></div></center><a href="#" class="remove_field" style=""><img src="images/del24.png" ></a></a></div>'); //add input box\
+          var newInput=$("#date").datepick({dateFormat: 'dd/mm/yyyy'});
+          newInput.datepick({dateFormat: 'dd/mm/yyyy'}).datepick("setDate", new Date());
+>>>>>>> 7584dd62fd674481131a92b24e5d1cccd0565c13
         }
     });
     
