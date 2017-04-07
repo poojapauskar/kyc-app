@@ -147,16 +147,11 @@ document.getElementById('uploadFile').value='Choose File'; }
     });
 });
   </script>
-<script>
+<script type="text/javascript">
+
 
 function proceed(){
 
-var input=document.getElementById("statuss");
-        var comm=document.getElementById('commentsss')
-        var inputelement=input.value;
-
-        if (inputelement=="Completed") {
-            comm.required=true;
 var a=document.forms["Form"]["uid"].value;
 if(a==null || a==''){
         var text = "";
@@ -183,7 +178,7 @@ if(a==null || a==''){
         return false;
 }
 }
-}
+
 
 </script>
 
@@ -1256,7 +1251,7 @@ function enable_disable(that){
 });
 </script>
 
-<form name="Form" id="Form" class="form-horizontal" method="post" action="new.php?is_user=1" enctype="multipart/form-data" onsubmit="return proceed()" >
+<form name="Form" id="Form" class="form-horizontal" method="post" action="new.php?is_user=1" onsubmit="return proceed()" enctype="multipart/form-data"  >
 <fieldset>
 
 <div style="margin-top:12%">
@@ -1472,21 +1467,6 @@ function enable_disable(that){
 </form>
 
 <?php } ?>
-<script type="text/javascript">
-    function validate(this) {
-        var input=document.getElementById("statuss");
-        var comm=document.getElementById('commentsss')
-        var inputelement=input.value;
-
-        if (inputelement=="Completed") {
-            comm.required=true;
-        }
-        else {
-            comm.required=false;
-        }
-
-    }
-</script>
 
 <script type="text/javascript">
 $(function(){
