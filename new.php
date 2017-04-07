@@ -147,7 +147,8 @@ document.getElementById('uploadFile').value='Choose File'; }
     });
 });
   </script>
-<script>
+<script type="text/javascript">
+
 
 function proceed(){
 
@@ -177,6 +178,7 @@ if(a==null || a==''){
         return false;
 }
 }
+
 
 </script>
 
@@ -1220,6 +1222,7 @@ function enable_disable(that){
 });
 </script>
 
+
 <?php } else { ?>
 
 
@@ -1235,7 +1238,20 @@ function enable_disable(that){
 </div>
 
 
-<form name="Form" id="Form" class="form-horizontal" method="post" action="new.php?is_user=1" enctype="multipart/form-data">
+<script type="text/javascript">
+ $(document).ready(function () {
+        $("#statuss").click(function () {
+
+            if ($("#statuss").val() == "Completed") {
+                $("#commentsss").attr("required", "required");
+            }
+            else
+              $("#commentsss").attr("required", false);
+        });
+});
+</script>
+
+<form name="Form" id="Form" class="form-horizontal" method="post" action="new.php?is_user=1" onsubmit="return proceed()" enctype="multipart/form-data"  >
 <fieldset>
 
 <div style="margin-top:12%">
@@ -1397,13 +1413,15 @@ function enable_disable(that){
 <div class="form-group">
   <label class="col-md-4 control-label" for="selectbasic">Status</label>
   <div class="col-md-4">
-    <select id="status" name="status[]" class="form-control">
+    <select id="statuss" name="status[]" class="form-control" >
       <option value="Pending">Pending</option>
       <option value="Work in process">Work in process</option>
       <option value="Completed">Completed</option>
     </select>
   </div>
 </div>
+
+
 
 <!--date-->
 <div class="form-group row">
@@ -1418,7 +1436,7 @@ function enable_disable(that){
 <div class="form-group">
   <label class="col-md-4 control-label" for="textinput">Comment</label>  
   <div class="col-md-4">
-  <input id="commentss" name="comment[]" type="text" placeholder="" class="form-control input-md"/>
+  <input id="commentsss" name="comment[]" type="text" placeholder="" class="form-control input-md"/>
   </div>
 </div>
 <a href="#" class="remove_field_pre1">
@@ -1441,7 +1459,7 @@ function enable_disable(that){
 <div class="form-group">
   <label class="col-md-4 control-label" for="singlebutton"></label>
   <div class="col-md-4">
-    <button onclick="return proceed()" id="generate_btn" name="generate_btn">Generate</button>
+    <button id="generate_btn" name="generate_btn">Generate</button>
     <button id="singlebutton" style="margin-left:13%;" name="singlebutton" class="btn btn-primary"><a style="color:white" href="search.php">Discard</a></button>
   </div>
 </div>
@@ -1449,6 +1467,7 @@ function enable_disable(that){
 </form>
 
 <?php } ?>
+
 <script type="text/javascript">
 $(function(){
 
