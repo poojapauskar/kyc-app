@@ -361,6 +361,17 @@ margin-top:-1%;
 
 @media screen and (max-width:1920px)
 {
+.btn.btn-warning.backbutton-searchresult{/*1600 Back Button in Search_result page*/
+    width: 64%;
+    margin-top:-17%;
+    margin-left:70%
+}
+
+.btn.btn-success.editbutton-searchresult{/*1600 Back Button in Search_result page*/
+    width: 64%;
+    margin-top:-1%;
+    margin-left:-3%
+}
 
 .col-10
 {
@@ -719,6 +730,19 @@ margin-top:-1%;
 
 @media screen and (max-width:1680px)
 {
+
+.btn.btn-warning.backbutton-searchresult{/*1680 Back Button in Search_result page*/
+    width: 64%;
+    margin-top:-17%;
+    margin-left:70%
+}
+
+.btn.btn-success.editbutton-searchresult{/*1680 Back Button in Search_result page*/
+    width: 64%;
+    margin-top:-1%;
+    margin-left:-3%
+}
+
 #logo
 {
     margin-top:5%;
@@ -1068,6 +1092,20 @@ margin-top:-1%;
 }
 @media screen and (max-width:1600px)
 {
+
+ 
+ .btn.btn-warning.backbutton-searchresult{/*1600 Back Button in Search_result page*/
+    width: 64%;
+    margin-top:-17%;
+    margin-left:70%
+}
+
+.btn.btn-success.editbutton-searchresult{/*1600 Back Button in Search_result page*/
+    width: 64%;
+    margin-top:-1%;
+    margin-left:-3%
+}
+
 #logo
 {
     margin-top:5%;
@@ -1218,7 +1256,8 @@ a.btn.btn-info{
     color:white;
     background-color:#176fac;
     margin-top:0%;
-    margin-left:1%;
+    margin-left: 28%;
+    width: 139%;
 }
 
 a.btn.btn-info.edit{
@@ -1763,6 +1802,18 @@ margin-top:-1%;
     color:white;
     margin-left:82%;
 }
+
+.btn.btn-warning.backbutton-searchresult{/*1440 Back Button in Search_result page*/
+    width: 64%;
+    margin-top:-17%;
+    margin-left:70%
+}
+
+.btn.btn-success.editbutton-searchresult{/*1440 Back Button in Search_result page*/
+    width: 64%;
+    margin-top:-1%;
+    margin-left:-3%
+}
 }
 @media screen and (max-width: 1366px){
     #logo
@@ -2115,6 +2166,18 @@ margin-top:-1%;
     margin-left:82%;
 }
 
+.btn.btn-warning.backbutton-searchresult{/*1366 Back Button in Search_result page*/
+    width: 64%;
+    margin-top:-19%;
+    margin-left:70%
+}
+
+.btn.btn-success.editbutton-searchresult{/*1366 Back Button in Search_result page*/
+    width: 64%;
+    margin-top:-1%;
+    margin-left:-3%
+}
+
 }
 
 @media screen and (max-width:1280px) {
@@ -2279,6 +2342,7 @@ a.btn.btn-info{
     background-color:#176fac;
     margin-top:0%;
     margin-left:40%;
+    width: 159%;
 }
 
 a.btn.btn-info.edit{
@@ -2343,7 +2407,7 @@ div.fileUpload.btn.btn-info{
 .btn.btn-info.new_entry_btn.entry{
     margin-left:1204%;
     position:absolute;
-    margin-top: -41px;
+    margin-top: -34px;
 
 }
 
@@ -2373,7 +2437,7 @@ div.fileUpload.btn.btn-info{
 
 /*adding extra field*/
 .add_field.btn {
-    margin-left: 443px;
+    margin-left: 434px;
 }
 
 .form-control.status{
@@ -2443,7 +2507,8 @@ margin-top:-1%;
     margin-top: 0%;
 }
 .form-control.input-md.comment{
-    width:341%;
+    width: 343%;
+    margin-left: -5%;
 }
 .fileUpload.btn.btn-info.tele1{
 margin-left:14%;
@@ -2562,7 +2627,7 @@ margin-top:-1%;
 
 .form-control.status{
     width:210%;
-    margin-left:-1%;
+    margin-left:-2%;
 }
 .col-md-4.control-label.comment{
     margin-left:-29%;
@@ -2587,11 +2652,12 @@ margin-top:-1%;
 .form-control.type_of_work
 {
     margin-left:9%;
-    width:208%
+    width:210%
 }
 
 .form-control.input-md.comment{
-    width:348%;
+    width: 352%;
+    margin-left: -3%;
 }
 .control-label.designation{
 	margin-left:159%;
