@@ -99,7 +99,7 @@ if($_POST['is_user_delete'] != "" && $_POST['pk_delete'] != ""){
     <div class="mdl-layout__header-row" >
     <a href="search.php"><img id="logo1" src="images/green.png"></img></a>
       <span class="mdl-layout-title" id="title2">Admin Panel</span>
-         <span class="mdl-layout-title" id="title1" style="margin-right: 0%">KYCApp</span>
+         <span class="mdl-layout-title" id="title1" style="margin-right: 0%">KYCAPP</span>
          <a href="index.php"><img id="logout" style="float:right;right:10%;position:absolute" src="images/logout1.png"></img></a>
           <!-- Add spacer, to align navigation to the right -->
           
