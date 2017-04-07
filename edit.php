@@ -2,6 +2,7 @@
 <html>
 <head>
   <title></title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" type="text/css" href="css/material.indigo-pink.min.css">
 <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
@@ -1202,7 +1203,7 @@ VIEW</a>
   </div>
 
   <div class="col-md-2 col-sm-2 col-2">
-    <a href="new_user_popup.php" style="color:white" target="_blank" data-toggle="modal" data-target="#myModal" class="btn btn-info new_entry_btn" >
+    <a href="new_user_popup.php" style="color:white" target="_blank" data-toggle="modal" data-target="#myModal" class="btn btn-info new_entry_btn edit_modal" >
        New Entry
     </a>
   </div>

@@ -1561,8 +1561,8 @@ width: 155%;
     margin-left:235%;
 }
 
-/*view btn*/
-a.btn.btn-info{
+/*view btn */
+a.btn.btn-info.edit_page_modal{
     color:white;
     background-color:#176fac;
     margin-top:0%;
@@ -1910,13 +1910,13 @@ width: 155%;
     margin-left:235%;
 }
 
-/*view btn*/
-a.btn.btn-info{
+/*view btn wth Modal Button in edit*/
+a.btn.btn-info.edit_modal {
     color:white;
     background-color:#176fac;
     margin-top:0%;
-    margin-left:66%;
-    width: 166%;
+    margin-left:1%;
+    width: 65%;
     height: 2758%;
 }
 
@@ -1925,6 +1925,7 @@ a.btn.btn-info.edit{
     background-color:#176fac;
     margin-top:0%;
     margin-left:40%;
+    width: 101%;
 }
 
 /*attach btn*/
@@ -2285,6 +2286,7 @@ a.btn.btn-info.edit{
     background-color:#176fac;
     margin-top:0%;
     margin-left:30%;
+    width: 150%;
 }
 
 /*attach btn*/
@@ -2339,7 +2341,7 @@ div.fileUpload.btn.btn-info{
     width: 322%;
 }
 .btn.btn-info.new_entry_btn.entry{
-    margin-left:1240%;
+    margin-left:1204%;
     position:absolute;
     margin-top: -41px;
 
@@ -2454,6 +2456,23 @@ margin-top:-1%;
     background-color: rgb(23, 111, 172);
     margin-top: 4%;
     margin-left: 10%;
+}
+.btn.btn-warning.backbutton-searchresult{/*1280 Back Button in Search_result page*/
+    width: 64%;
+    margin-top:-25%;
+    margin-left:60%
+}
+
+.btn.btn-warning.backbutton-searchresult{/*1280 Back Button in Search_result page*/
+    width: 64%;
+    margin-top:-20%;
+    margin-left:70%
+}
+
+.btn.btn-success.editbutton-searchresult{/*1280 Back Button in Search_result page*/
+    width: 64%;
+    margin-top:-1%;
+    margin-left:-3%
 }
 
 }
@@ -2682,13 +2701,13 @@ margin-top:-1%;
 a.btn.btn-info{
 	color: white;
     background-color: #176fac;
-    margin-top: 4%;
-    margin-left: 107%;
+    margin-top: 0%;
+    margin-left: 50%    ;
     width: 260%;
 }
 /*attach btn*/
 div.fileUpload.btn.btn-info{
-	margin-left:0%;
+	margin-left:-38%;
 	margin-top:0%;
 }
 
@@ -2788,7 +2807,7 @@ margin-top:-1%;
 /*seach_result page view*/
 .btn.btn-info.view1{
      margin-left: -278%;
-    margin-top: 0%;
+    margin-top: -3%;
     position: relative;
     color: white;
 }
@@ -2810,6 +2829,18 @@ margin-top:-1%;
     width: 10em;
     margin-top:-9%;
     margin-left:53%
+}
+
+.btn.btn-warning.backbutton-searchresult{/*1024 Back Button in Search_result page*/
+    width: 64%;
+    margin-top:-25%;
+    margin-left:70%
+}
+
+.btn.btn-success.editbutton-searchresult{/*1024 Back Button in Search_result page*/
+    width: 64%;
+    margin-top:-1%;
+    margin-left:-3%
 }
 }
 

@@ -2,6 +2,7 @@
 <html>
 <head>
   <title></title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <link rel="stylesheet" type="text/css" href="css/material.indigo-pink.min.css">
   <link rel="stylesheet" href="css/bootstrap.css">
@@ -447,7 +448,7 @@ VIEW</a>
 <div class="form-group">
   <label class="col-md-4 control-label" for="save_btn"></label>
   <div class="col-md-8">
-    <button id="save_btn" name="save_btn" type="submit" class="btn btn-success" style="width: 10em;margin-left:2%;">Edit</button><span><span></span></span>
+    <button id="save_btn" name="save_btn" type="submit" class="btn btn-success" style="width: 64%;margin-left:2%;">Edit</button><span><span></span></span>
     <button onclick="ClickEvent()" style="width: 10em;margin-left:2%;" class="btn btn-warning"><a style="color:white" href="search.php">Back</a></button>
   
   </div>
@@ -818,8 +819,8 @@ VIEW</a>
 <div class="form-group">
   <label class="col-md-4 control-label" for="singlebutton"></label>
   <div class="col-md-4">
-    <button id="" name="" class="btn btn-success" style="width: 10em;">Edit</button><span><span></span></span>
-    <button onclick="ClickEvent()" style="width: 10em;margin-top:-19%;margin-left:60%" class="btn btn-warning"><a style="color:white" href="search.php">Back</a></button>
+    <button id="" name="" class="btn btn-success editbutton-searchresult">Edit</button><span><span></span></span>
+    <button onclick="ClickEvent()" class="btn btn-warning backbutton-searchresult"><a style="color:white" href="search.php">Back</a></button>
   </div>
 </div>
 
