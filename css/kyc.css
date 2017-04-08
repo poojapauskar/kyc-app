@@ -1,4 +1,8 @@
+/*Text box CSS class for all the pages , 70%*/
 
+#textBoxSize{
+    width: 70% !important;
+}
 #logo
 {
 	margin-top:5%;
@@ -2096,7 +2100,7 @@ div.fileUpload.btn.btn-info{
 }
 
 .search_result.tele1{
-    margin-left: 16%;
+    margin-left: 5%;
     margin-top: 0%;
     width: 83%;
 }
@@ -2470,7 +2474,7 @@ div.fileUpload.btn.btn-info{
 }
 
 .search_result.tele1{
-    margin-left: 16%;
+    margin-left: 6%;
     margin-top: 0%;
     width: 83%;
 }
