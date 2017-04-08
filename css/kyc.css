@@ -2043,14 +2043,14 @@ div.fileUpload.btn.btn-info{
 
 /*date input field*/
 .col-10.col{
-    width:91%;
+    width:63%;
     margin-left:7.6%;
     margin-top:-6%;
 }
 .form-control.type_of_work
 {
     margin-left:9%;
-    width:208%
+    width:145%
 }
 
 .form-group.designation{
@@ -2071,7 +2071,7 @@ div.fileUpload.btn.btn-info{
 }
 
 .form-control.status{
-    width:210%;
+    width:145%;
     margin-left:-1%;
 }
 .col-2.col-form-label.date{
@@ -2137,7 +2137,7 @@ margin-top:-1%;
     margin-top: 0%;
 }
 .form-control.input-md.comment{
-    width:339%;
+    width:234%;
 }
 .fileUpload.btn.btn-info.tele1{
 margin-left:12%;
