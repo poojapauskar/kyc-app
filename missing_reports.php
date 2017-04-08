@@ -232,10 +232,10 @@ $('#test').click(function() {
     
     <form method="post" action="missing_reports.php" enctype="multipart/form-data">
         <td>
-         <input name="file1" id="file1" class="file-upload" type="file">
+         <input name="file1" id="file1" class="file-upload" type="file" onclick="enableButton2()">
          <input type="hidden" value="<?php echo $arr_missing_report[$i]['uid'] ?>" name="uid1" id="uid1"></input>
          <input type="hidden" value="<?php echo $arr_missing_report[$i]['missing_file'] ?>" name="missing_file1" id="missing_file1"></input>
-         <button id="upload_btn" name="upload_btn" type="submit" class="btn btn-success">Upload</button>
+         <button id="upload_btn" name="upload_btn" type="submit" class="btn btn-success"  disabled >Upload</button>
        </form>
     </td>
 
@@ -247,5 +247,10 @@ $('#test').click(function() {
 </table>
 </div>
 </div>
+<script>
+        function enableButton2() {
+            document.getElementById("upload_btn").disabled = false;
+        }
+    </script>
 </body>
 </html>
