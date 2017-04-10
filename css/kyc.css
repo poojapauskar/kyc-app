@@ -1822,6 +1822,21 @@ margin-top:-1%;
 }
 }
 @media screen and (max-width: 1366px){
+
+/*Cancel and Delete button edit page of Individual*/
+.btn.btn-warning.cancel{   
+    width: 10em;
+    margin-top:0%;
+    padding:0.5em;
+    margin-left:2%
+}
+.btn.btn-warning.delete
+{
+    width: 10em;
+    margin-top:-6.7%;
+    margin-left:53%
+}
+
     #logo
 {
     margin-top:5%;
@@ -2108,7 +2123,7 @@ div.fileUpload.btn.btn-info{
 }
 /*seach_result page view*/
 .btn.btn-info.view1 {
-    margin-left: -244%;
+    margin-left: -283%;
     margin-top: -1%;
     position: relative;
     color: white;
