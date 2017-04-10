@@ -1130,8 +1130,12 @@ if ($_POST['uid'] != '' and $_GET["is_user"]==1){
 <div class="form-group">
   <label class="col-md-4 control-label" for="selectbasic">Status</label>
   <div class="col-md-4">
+<<<<<<< HEAD
 
     <select id="status" name="status[]" class="form-control" style="width:70%" >
+=======
+    <select id="status" name="status[]" class="form-control" >
+>>>>>>> ae787b60ae3934618a464baa1730091ba31cd9fa
       <option value="Pending">Pending</option>
       <option value="Work in process">Work in process</option>
       <option value="Completed">Completed</option>
@@ -1151,8 +1155,12 @@ if ($_POST['uid'] != '' and $_GET["is_user"]==1){
 <div class="form-group">
   <label class="col-md-4 control-label" for="textinput">Comment</label>  
   <div class="col-md-4">
+<<<<<<< HEAD
 
   <input id="commentss" name="comment[]" type="text" placeholder="" class="form-control input-md" style="width: 70%;" /> 
+=======
+  <input id="commentss" name="comment[]" type="text" placeholder="" class="form-control input-md" /> 
+>>>>>>> ae787b60ae3934618a464baa1730091ba31cd9fa
   </div>
 </div>
 
@@ -1406,11 +1414,15 @@ function enable_disable(that){
   <label class="col-md-4 control-label" for="selectbasic">Status</label>
   <div class="col-md-4">
 <<<<<<< HEAD
+<<<<<<< HEAD
 
     <select id="status" name="status[]" class="form-control">
 =======
     <select id="statuss" name="status[]" class="form-control" >
 >>>>>>> new user status validation is done
+=======
+    <select id="statuss" name="status[]" class="form-control" >
+>>>>>>> ae787b60ae3934618a464baa1730091ba31cd9fa
       <option value="Pending">Pending</option>
       <option value="Work in process">Work in process</option>
       <option value="Completed">Completed</option>
@@ -1567,6 +1579,10 @@ $('#myModal').on('shown.bs.modal', function () {
 
         if(x < max_fields){ //max input box allowed
             x++; //text box increment
+<<<<<<< HEAD
+=======
+
+>>>>>>> ae787b60ae3934618a464baa1730091ba31cd9fa
            $(wrapper).prepend('<br><div style="margin-left:50%;"><div class="form-group"><label class="control-label type" for="selectbasic" style="">Type of work</label><div class="col-md-6"><select id="type_of_work[]" name="type_of_work[]" class="form-control type_of_work" style=""><option value="Audit Report">Audit Report</option><option value="ITR filing">ITR filing</option><option value="VAT Filing">VAT Filing</option><option value="Accounting">Accounting</option><option value="Registration">Registration</option><option value="Certification">Certification</option><option value="Others">Others</option></select></div></div><div class="form-group"> <label class="col-md-4 control-label status" for="selectbasic" style="">Status</label><div class="col-md-6"><select id="status1' + x + '"  name="status[]"  class="form-control status"><option value="Pending">Pending</option><option value="Work in process">Work in process</option><option value="Completed">Completed</option></select></div></div><div class="form-group row"><label for="example-date-input" class="col-2 col-form-label date">DATE</label><div class="col-10 col"><input class="form-control datepicker pickers" id="date" name="date[]" style="" type="text" readonly></div></div><div class="form-group"><label class="col-md-4 control-label comment" for="textinput" style="">Comment</label><div class="col-md-4"><input id="comments' + x + '" name="comment[]" type="text" placeholder="" class="form-control input-md comment" style=""></div></div></center><a href="#" class="remove_field" style=""><img src="images/del24.png" ></a></a></div>'); //add input box\
           var newInput=$("#date").datepick({dateFormat: 'dd/mm/yyyy'});
           newInput.datepick({dateFormat: 'dd/mm/yyyy'}).datepick("setDate", new Date());

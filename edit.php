@@ -922,7 +922,7 @@ if(isset($_POST["edit_btn"]) and $_GET["is_user"]==1) {
     <div class="mdl-layout__header-row" >
     <a href="search.php"><img id="logo1" src="images/green.png"></img></a>
      <span class="mdl-layout-title" id="title2"><?php echo $arr_search['response'][0]['organization_details']['name'] ?><?php echo $arr_search['response'][0]['user_details']['name'] ?></span>
-    <span class="mdl-layout-title" id="title1" style="text-align:center">KYCApp</span>
+    <span class="mdl-layout-title" id="title1" style="text-align:center">KYCAPP</span>
     <a href="index.php"><img id="logout" style="" src="images/logout1.png"></img></a>
           <!-- Add spacer, to align navigation to the right -->
 
@@ -1342,6 +1342,62 @@ VIEW</a>
 </div>
 </fieldset>
 </form>
+
+<script type="text/javascript">
+
+$('.partner_names').attr('disabled', true);
+$('.partner_designations').attr('disabled', true);
+$('.partner_others').attr('disabled', true);
+$('.partner_btn').attr('disabled', true);
+$('.new_entry_btn').attr('disabled', true);
+
+function enable_disable(that){
+
+  /*alert(that.value);*/
+  if(that.value != "Partnership"){
+      $('.partner_names').attr('disabled', true);
+      $('.partner_designations').attr('disabled', true);
+      $('.partner_others').attr('disabled', true);
+      $('.partner_btn').attr('disabled', true);
+      $('.new_entry_btn').attr('disabled', true);
+  }else{
+      $('.partner_names').attr('disabled', false);
+      $('.partner_designations').attr('disabled', false);
+      $('.partner_others').attr('disabled', false);
+      $('.partner_btn').attr('disabled', false);
+      $('.new_entry_btn').attr('disabled', false);
+  }
+}
+</script>
+
+
+
+<script type="text/javascript">
+
+$('.partner_names').attr('disabled', true);
+$('.partner_designations').attr('disabled', true);
+$('.partner_others').attr('disabled', true);
+$('.partner_btn').attr('disabled', true);
+$('.new_entry_btn').attr('disabled', true);
+
+function enable_disable(that){
+
+  /*alert(that.value);*/
+  if(that.value != "Partnership"){
+      $('.partner_names').attr('disabled', true);
+      $('.partner_designations').attr('disabled', true);
+      $('.partner_others').attr('disabled', true);
+      $('.partner_btn').attr('disabled', true);
+      $('.new_entry_btn').attr('disabled', true);
+  }else{
+      $('.partner_names').attr('disabled', false);
+      $('.partner_designations').attr('disabled', false);
+      $('.partner_others').attr('disabled', false);
+      $('.partner_btn').attr('disabled', false);
+      $('.new_entry_btn').attr('disabled', false);
+  }
+}
+</script>
 
 
 
@@ -1805,7 +1861,10 @@ function enable_disable(that){
 <div class="form-group">
   <label class="col-md-4 control-label" for="selectbasic">Status</label>
   <div class="col-md-4">
+<<<<<<< HEAD
 
+=======
+>>>>>>> ae787b60ae3934618a464baa1730091ba31cd9fa
     <select id="status" name="status[]" class="form-control">
       <option value="<?php echo $arr_search['response'][0]['add_info'][$q]['status']; ?>"><?php echo $arr_search['response'][0]['add_info'][$q]['status']; ?></option>
       <option value="Pending">Pending</option>
@@ -1827,9 +1886,13 @@ function enable_disable(that){
 <div class="form-group">
   <label class="col-md-4 control-label" for="textinput">Comment</label>  
   <div class="col-md-4">
+<<<<<<< HEAD
 
   <input id="commentss" name="comment[]" value="<?php echo $arr_search['response'][0]['add_info'][$q]['comment']; ?>" type="text" placeholder="" class="form-control input-md">
 
+=======
+  <input id="commentss" name="comment[]" value="<?php echo $arr_search['response'][0]['add_info'][$q]['comment']; ?>" type="text" placeholder="" class="form-control input-md">
+>>>>>>> ae787b60ae3934618a464baa1730091ba31cd9fa
     
   </div>
 </div>
