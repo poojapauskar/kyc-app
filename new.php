@@ -1131,7 +1131,7 @@ if ($_POST['uid'] != '' and $_GET["is_user"]==1){
   <label class="col-md-4 control-label" for="selectbasic">Status</label>
   <div class="col-md-4">
 
-    <select id="status" name="status[]" class="form-control" >
+    <select id="status" name="status[]" class="form-control" style="width:70%" >
       <option value="Pending">Pending</option>
       <option value="Work in process">Work in process</option>
       <option value="Completed">Completed</option>
@@ -1152,7 +1152,7 @@ if ($_POST['uid'] != '' and $_GET["is_user"]==1){
   <label class="col-md-4 control-label" for="textinput">Comment</label>  
   <div class="col-md-4">
 
-  <input id="commentss" name="comment[]" type="text" placeholder="" class="form-control input-md" /> 
+  <input id="commentss" name="comment[]" type="text" placeholder="" class="form-control input-md" style="width: 70%;" /> 
   </div>
 </div>
 
