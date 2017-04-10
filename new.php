@@ -1404,7 +1404,7 @@ function enable_disable(that){
 <div class="form-group">
   <label class="col-md-4 control-label" for="selectbasic">Status</label>
   <div class="col-md-4">
-    <select id="statuss" name="status[]" class="form-control" >
+    <select id="statuss" name="status[]" class="form-control" style="width: 70%" >
       <option value="Pending">Pending</option>
       <option value="Work in process">Work in process</option>
       <option value="Completed">Completed</option>
@@ -1427,7 +1427,7 @@ function enable_disable(that){
 <div class="form-group">
   <label class="col-md-4 control-label" for="textinput">Comment</label>  
   <div class="col-md-4">
-  <input id="commentsss" name="comment[]" type="text" placeholder="" class="form-control input-md"/>
+  <input id="commentsss" name="comment[]" type="text" placeholder="" class="form-control input-md" style="width: 70%" />
   </div>
 </div>
 <a href="#" class="remove_field_pre1">
