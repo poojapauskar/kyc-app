@@ -1302,6 +1302,10 @@ VIEW</a>
 </a>
 
 </div>
+
+
+<?php  }?>
+
 <script type="text/javascript">
  $(document).ready(function () {
         $("#status").click(function () {
@@ -1318,8 +1322,6 @@ VIEW</a>
         });
 });
 </script>
-
-<?php  }?>
 
 
 <div class="form-group">
