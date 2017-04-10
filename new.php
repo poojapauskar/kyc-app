@@ -1418,7 +1418,7 @@ function enable_disable(that){
 <div class="form-group row">
   <label for="example-date-input" class="col-2 col-form-label" style="margin-left:28.5%;">DATE</label>
   <div class="col-10">
-    <input class="form-control datepicker pick" id="date[]" name="date[]" value="<?php echo $_POST['date'] ?>" type="text" readonly  style="width: 70%;">
+    <input class="form-control datepicker pick" id="date[]" name="date[]" value="<?php echo $_POST['date'] ?>" type="text" readonly  style="width:70%">
   </div>
 </div>
 
