@@ -1309,16 +1309,12 @@ VIEW</a>
 <script type="text/javascript">
  $(document).ready(function () {
         $("#status").click(function () {
-          var input=document.getElementById("status");
-        var comm=document.getElementById('commentss');
-        var inputelement=input.value;
 
-        if (inputelement=="Completed") {
-            comm.required=true;
-        }
-        else {
-            comm.required=false;
-        }
+            if ($("#status").val() == "Completed") {
+                $("#commentss").attr("required", "required");
+            }
+            else
+              $("#commentss").attr("required", false);
         });
 });
 </script>

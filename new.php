@@ -1229,16 +1229,6 @@ function enable_disable(that){
 
 
 <!-- <p>Click on the "x" symbol to close the alert message.</p> -->
-<div class="alert" id="popup1" class="popup1" style="display:none;text-align:center;position:absolute;
-    width:100%;
-    top: 70%;z-index:2">
-  <label>UID Generated</label><br>
-  <input type="text" id="uid_in_popup" name="uid_in_popup" style="text-align:center;background-color:transparent;color:black;border:none"></input><br><br>
-  <button style="margin-left:1%;" id="done" class="btn btn-success" name="done" onclick="submit_form()">Done</button>
-  <button style="margin-top:-1%;" onclick="make_uid_null()" id="cancel1" class="btn btn-warning" name="cancel1">Cancel</button>
-  <!-- </form> -->
-</div>
-
 
 <script type="text/javascript">
  $(document).ready(function () {
@@ -1253,7 +1243,7 @@ function enable_disable(that){
 });
 </script>
 
-<form name="Form" id="Form" class="form-horizontal" method="post" action="new.php?is_user=1" onsubmit="return proceed()" enctype="multipart/form-data"  >
+<form name="Form" id="Form" class="form-horizontal" method="post" action="new.php?is_user=1"  enctype="multipart/form-data"  >
 <fieldset>
 
 <div style="margin-top:12%">
@@ -1466,8 +1456,32 @@ function enable_disable(that){
 <div class="form-group">
   <label class="col-md-4 control-label" for="singlebutton"></label>
   <div class="col-md-4">
-    <button id="generate_btn" name="generate_btn">Generate</button>
-    <button id="singlebutton" style="margin-left:13%;" name="singlebutton" class="btn btn-primary"><a style="color:white" href="search.php">Discard</a></button>
+  <button type="button" onclick="return proceed()" class="btn btn-info btn-lg" id="generate_btn" name="generate_btn" data-toggle="modal" data-target="#myModalg">Generate</button>
+   <!-- Modal -->
+  <div class="modal fade" id="myModalg" role="dialog">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content" style="margin-top:23%" >
+       <!--  <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title" style="text-align: center"></h4>
+        </div> -->
+        <div class="modal-body">      
+<div class="alert" id="popup1" class="popup1" style="display:none;text-align:center;padding: 20px;background-color: #eee;color: white;">
+  <label style="color:black">UID Generated</label><br>
+  <input type="text" id="uid_in_popup" name="uid_in_popup" style="text-align:center;background-color:transparent;color:black;border:none"></input><br><br>
+  <button style="margin-left:0%;" id="done" class="btn btn-success" name="done" onclick="submit_form()">Done</button>
+  <button style="margin-top:0%;margin-left:5%" onclick="make_uid_null()" data-dismiss="modal"   id="cancel1" class="btn btn-warning" name="cancel1">Cancel</button>
+  <!-- </form> -->
+</div>
+        </div>
+        <!-- <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div> -->
+      </div>
+    </div>
+  </div>
+
+  <button id="singlebutton" style="margin-left:13%;" name="singlebutton" class="btn btn-primary"><a style="color:white" href="search.php">Discard</a></button>
   </div>
 </div>
 </fieldset>
