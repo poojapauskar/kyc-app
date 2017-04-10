@@ -1861,10 +1861,6 @@ function enable_disable(that){
 <div class="form-group">
   <label class="col-md-4 control-label" for="selectbasic">Status</label>
   <div class="col-md-4">
-<<<<<<< HEAD
-
-=======
->>>>>>> ae787b60ae3934618a464baa1730091ba31cd9fa
     <select id="status" name="status[]" class="form-control">
       <option value="<?php echo $arr_search['response'][0]['add_info'][$q]['status']; ?>"><?php echo $arr_search['response'][0]['add_info'][$q]['status']; ?></option>
       <option value="Pending">Pending</option>
@@ -1886,13 +1882,8 @@ function enable_disable(that){
 <div class="form-group">
   <label class="col-md-4 control-label" for="textinput">Comment</label>  
   <div class="col-md-4">
-<<<<<<< HEAD
 
   <input id="commentss" name="comment[]" value="<?php echo $arr_search['response'][0]['add_info'][$q]['comment']; ?>" type="text" placeholder="" class="form-control input-md">
-
-=======
-  <input id="commentss" name="comment[]" value="<?php echo $arr_search['response'][0]['add_info'][$q]['comment']; ?>" type="text" placeholder="" class="form-control input-md">
->>>>>>> ae787b60ae3934618a464baa1730091ba31cd9fa
     
   </div>
 </div>
