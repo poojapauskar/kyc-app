@@ -1541,6 +1541,7 @@ $('#myModal').on('shown.bs.modal', function () {
             else
               $("#comments" + x).attr("required", false);
         });
+
       }
     });
     $(wrapper).on("click",".remove_field", function(e){ //user click on remove text
