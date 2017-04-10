@@ -1,4 +1,8 @@
+/*Text box CSS class for all the pages , 70%*/
 
+#textBoxSize{
+    width: 70% !important;
+}
 #logo
 {
 	margin-top:5%;
@@ -363,6 +367,17 @@ margin-top:-1%;
 
 @media screen and (max-width:1920px)
 {
+.btn.btn-warning.backbutton-searchresult{/*1600 Back Button in Search_result page*/
+    width: 64%;
+    margin-top:-17%;
+    margin-left:70%
+}
+
+.btn.btn-success.editbutton-searchresult{/*1600 Back Button in Search_result page*/
+    width: 64%;
+    margin-top:-1%;
+    margin-left:-3%
+}
 
 .col-10
 {
@@ -721,6 +736,19 @@ margin-top:-1%;
 
 @media screen and (max-width:1680px)
 {
+
+.btn.btn-warning.backbutton-searchresult{/*1680 Back Button in Search_result page*/
+    width: 64%;
+    margin-top:-17%;
+    margin-left:70%
+}
+
+.btn.btn-success.editbutton-searchresult{/*1680 Back Button in Search_result page*/
+    width: 64%;
+    margin-top:-1%;
+    margin-left:-3%
+}
+
 #logo
 {
     margin-top:5%;
@@ -1070,6 +1098,20 @@ margin-top:-1%;
 }
 @media screen and (max-width:1600px)
 {
+
+ 
+ .btn.btn-warning.backbutton-searchresult{/*1600 Back Button in Search_result page*/
+    width: 64%;
+    margin-top:-17%;
+    margin-left:70%
+}
+
+.btn.btn-success.editbutton-searchresult{/*1600 Back Button in Search_result page*/
+    width: 64%;
+    margin-top:-1%;
+    margin-left:-3%
+}
+
 #logo
 {
     margin-top:5%;
@@ -1220,7 +1262,8 @@ a.btn.btn-info{
     color:white;
     background-color:#176fac;
     margin-top:0%;
-    margin-left:1%;
+    margin-left: 28%;
+    width: 139%;
 }
 
 a.btn.btn-info.edit{
@@ -1563,12 +1606,13 @@ width: 155%;
     margin-left:235%;
 }
 
-/*view btn*/
-a.btn.btn-info{
+/*view btn */
+a.btn.btn-info.edit_page_modal{
     color:white;
     background-color:#176fac;
     margin-top:0%;
-    margin-left:1%;
+    margin-left:33% ;
+    width: 141%;
 }
 
 a.btn.btn-info.edit{
@@ -1702,7 +1746,7 @@ div.fileUpload.btn.btn-info{
 /*seach_result page view*/
 .btn.btn-info.view1{
      margin-left: -266%;
-    margin-top: 7%;
+    margin-top: -3%;
     position: relative;
     color: white;
 }
@@ -1763,6 +1807,18 @@ margin-top:-1%;
 .btn.btn-success.clear{
     color:white;
     margin-left:82%;
+}
+
+.btn.btn-warning.backbutton-searchresult{/*1440 Back Button in Search_result page*/
+    width: 64%;
+    margin-top:-17%;
+    margin-left:70%
+}
+
+.btn.btn-success.editbutton-searchresult{/*1440 Back Button in Search_result page*/
+    width: 64%;
+    margin-top:-1%;
+    margin-left:-3%
 }
 }
 @media screen and (max-width: 1366px){
@@ -1911,12 +1967,14 @@ width: 155%;
     margin-left:235%;
 }
 
-/*view btn*/
-a.btn.btn-info{
+/*view btn wth Modal Button in edit*/
+a.btn.btn-info.edit_modal {
     color:white;
     background-color:#176fac;
     margin-top:0%;
-    margin-left:66%;
+    margin-left:1%;
+    width: 65%;
+    height: 2758%;
 }
 
 a.btn.btn-info.edit{
@@ -1924,6 +1982,7 @@ a.btn.btn-info.edit{
     background-color:#176fac;
     margin-top:0%;
     margin-left:40%;
+    width: 101%;
 }
 
 /*attach btn*/
@@ -1986,14 +2045,14 @@ div.fileUpload.btn.btn-info{
 
 /*date input field*/
 .col-10.col{
-    width:91%;
+    width:63%;
     margin-left:7.6%;
     margin-top:-6%;
 }
 .form-control.type_of_work
 {
     margin-left:9%;
-    width:208%
+    width:145%
 }
 
 .form-group.designation{
@@ -2014,7 +2073,7 @@ div.fileUpload.btn.btn-info{
 }
 
 .form-control.status{
-    width:210%;
+    width:145%;
     margin-left:-1%;
 }
 .col-2.col-form-label.date{
@@ -2043,13 +2102,13 @@ div.fileUpload.btn.btn-info{
 }
 
 .search_result.tele1{
-    margin-left: 16%;
+    margin-left: 5%;
     margin-top: 0%;
     width: 83%;
 }
 /*seach_result page view*/
 .btn.btn-info.view1 {
-    margin-left: -253%;
+    margin-left: -244%;
     margin-top: -1%;
     position: relative;
     color: white;
@@ -2080,10 +2139,10 @@ margin-top:-1%;
     margin-top: 0%;
 }
 .form-control.input-md.comment{
-    width:339%;
+    width:234%;
 }
 .fileUpload.btn.btn-info.tele1{
-margin-left:14%;
+margin-left:12%;
 margin-top:-1%;
 }
 
@@ -2111,6 +2170,18 @@ margin-top:-1%;
 .btn.btn-success.clear{
     color:white;
     margin-left:82%;
+}
+
+.btn.btn-warning.backbutton-searchresult{/*1366 Back Button in Search_result page*/
+    width: 64%;
+    margin-top:-19%;
+    margin-left:70%
+}
+
+.btn.btn-success.editbutton-searchresult{/*1366 Back Button in Search_result page*/
+    width: 64%;
+    margin-top:-1%;
+    margin-left:-3%
 }
 
 }
@@ -2277,6 +2348,7 @@ a.btn.btn-info{
     background-color:#176fac;
     margin-top:0%;
     margin-left:40%;
+    width: 159%;
 }
 
 a.btn.btn-info.edit{
@@ -2284,6 +2356,7 @@ a.btn.btn-info.edit{
     background-color:#176fac;
     margin-top:0%;
     margin-left:30%;
+    width: 150%;
 }
 
 /*attach btn*/
@@ -2338,9 +2411,9 @@ div.fileUpload.btn.btn-info{
     width: 322%;
 }
 .btn.btn-info.new_entry_btn.entry{
-    margin-left:1240%;
+    margin-left:1204%;
     position:absolute;
-    margin-top: -41px;
+    margin-top: -34px;
 
 }
 
@@ -2370,7 +2443,7 @@ div.fileUpload.btn.btn-info{
 
 /*adding extra field*/
 .add_field.btn {
-    margin-left: 443px;
+    margin-left: 434px;
 }
 
 .form-control.status{
@@ -2403,13 +2476,13 @@ div.fileUpload.btn.btn-info{
 }
 
 .search_result.tele1{
-    margin-left: 16%;
+    margin-left: 6%;
     margin-top: 0%;
     width: 83%;
 }
 /*seach_result page view*/
 .btn.btn-info.view1{
-     margin-left: -266%;
+     margin-left: -285%;
     margin-top: 7%;
     position: relative;
     color: white;
@@ -2440,7 +2513,8 @@ margin-top:-1%;
     margin-top: 0%;
 }
 .form-control.input-md.comment{
-    width:341%;
+    width: 343%;
+    margin-left: -5%;
 }
 .fileUpload.btn.btn-info.tele1{
 margin-left:14%;
@@ -2453,6 +2527,23 @@ margin-top:-1%;
     background-color: rgb(23, 111, 172);
     margin-top: 4%;
     margin-left: 10%;
+}
+.btn.btn-warning.backbutton-searchresult{/*1280 Back Button in Search_result page*/
+    width: 64%;
+    margin-top:-25%;
+    margin-left:60%
+}
+
+.btn.btn-warning.backbutton-searchresult{/*1280 Back Button in Search_result page*/
+    width: 64%;
+    margin-top:-20%;
+    margin-left:70%
+}
+
+.btn.btn-success.editbutton-searchresult{/*1280 Back Button in Search_result page*/
+    width: 64%;
+    margin-top:-1%;
+    margin-left:-3%
 }
 
 }
@@ -2542,7 +2633,7 @@ margin-top:-1%;
 
 .form-control.status{
     width:210%;
-    margin-left:-1%;
+    margin-left:-2%;
 }
 .col-md-4.control-label.comment{
     margin-left:-29%;
@@ -2567,11 +2658,12 @@ margin-top:-1%;
 .form-control.type_of_work
 {
     margin-left:9%;
-    width:208%
+    width:210%
 }
 
 .form-control.input-md.comment{
-    width:348%;
+    width: 352%;
+    margin-left: -3%;
 }
 .control-label.designation{
 	margin-left:159%;
@@ -2681,12 +2773,13 @@ margin-top:-1%;
 a.btn.btn-info{
 	color: white;
     background-color: #176fac;
-    margin-top: 4%;
-    margin-left: 107%;
+    margin-top: 0%;
+    margin-left: 50%    ;
+    width: 260%;
 }
 /*attach btn*/
 div.fileUpload.btn.btn-info{
-	margin-left:0%;
+	margin-left:-38%;
 	margin-top:0%;
 }
 
@@ -2785,8 +2878,8 @@ margin-top:-1%;
 
 /*seach_result page view*/
 .btn.btn-info.view1{
-     margin-left: -272%;
-    margin-top: 0%;
+     margin-left: -278%;
+    margin-top: -3%;
     position: relative;
     color: white;
 }
@@ -2808,6 +2901,18 @@ margin-top:-1%;
     width: 10em;
     margin-top:-9%;
     margin-left:53%
+}
+
+.btn.btn-warning.backbutton-searchresult{/*1024 Back Button in Search_result page*/
+    width: 64%;
+    margin-top:-25%;
+    margin-left:70%
+}
+
+.btn.btn-success.editbutton-searchresult{/*1024 Back Button in Search_result page*/
+    width: 64%;
+    margin-top:-1%;
+    margin-left:-3%
 }
 }
 

@@ -2,6 +2,7 @@
 <html>
 <head>
   <title></title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <link rel="stylesheet" type="text/css" href="css/material.indigo-pink.min.css">
   <link rel="stylesheet" href="css/bootstrap.css">
@@ -447,7 +448,7 @@ VIEW</a>
 <div class="form-group">
   <label class="col-md-4 control-label" for="save_btn"></label>
   <div class="col-md-8">
-    <button id="save_btn" name="save_btn" type="submit" class="btn btn-success" style="width: 10em;margin-left:2%;">Edit</button><span><span></span></span>
+    <button id="save_btn" name="save_btn" type="submit" class="btn btn-success" style="width:21%;margin-left:1%;">Edit</button><span><span></span></span>
     <button onclick="ClickEvent()" style="width: 10em;margin-left:2%;" class="btn btn-warning"><a style="color:white" href="search.php">Back</a></button>
   
   </div>
@@ -489,8 +490,9 @@ VIEW</a>
     $img_lnk=$arr_img[0]['url'];
 }?>
 
-<img class="profile-pic" style="margin-left:0%;margin-top:0%;position:absolute;z-index:2;" src="<?php echo $img_lnk; ?>" />
-<div class="upload-button" style="position:absolute;z-index:2;margin-left:0%;cursor:pointer;margin-top:13%;"><button disabled>Upload Image</button></div>
+<img class="profile-pic" style="margin-left: 58.4%;
+    margin-top: 3%;position:absolute;z-index:2;" src="<?php echo $img_lnk; ?>" />
+<div class="upload-button" style="position:absolute;z-index:2;margin-left:58%;cursor:pointer;margin-top:13%;"><button disabled>Upload Image</button></div>
 
 
 <input name="image" id="image" class="file-upload1" style="display:none;position:absolute;z-index:-2;margin-left:44%;margin-top:16%;" type="file">
@@ -498,7 +500,7 @@ VIEW</a>
 <div class="form-group">
   <label class="col-md-4 control-label" for="textinput">UID:</label>  
   <div class="col-md-5">
-  <input id="uid" name="uid" type="text" value="<?php echo $arr_search['response'][0]['user_details']['uid'] ?>" placeholder="" class="form-control input-md" readonly>
+  <input id="uid" name="uid" type="text" value="<?php echo $arr_search['response'][0]['user_details']['uid'] ?>" placeholder="" class="form-control input-md" readonly style="width: 70%;">
     
   </div>
 </div>
@@ -507,7 +509,7 @@ VIEW</a>
 <div class="form-group">
   <label class="col-md-4 control-label" for="textinput">Name:</label>  
   <div class="col-md-5">
-  <input id="name" name="name" value="<?php echo $arr_search['response'][0]['user_details']['name'] ?>" type="text" placeholder="" class="form-control input-md" readonly>
+  <input id="name" name="name" value="<?php echo $arr_search['response'][0]['user_details']['name'] ?>" type="text" placeholder="" class="form-control input-md" readonly style="width: 70%;">
     
   </div>
 </div>
@@ -515,7 +517,7 @@ VIEW</a>
 <div class="form-group">
   <label for="textinput" class="col-md-4 control-label">Dob:</label>
   <div class="col-md-5">
-    <input style="width:100% !important" class="form-control input-md" id="date" name="date" value="<?php echo $arr_search['response'][0]['user_details']['dob'] ?>" style="width:31%;margin-left:34.6%;margin-top:-2%;" type="text" readonly>
+    <input style="width:70% !important" class="form-control input-md" id="date" name="date" value="<?php echo $arr_search['response'][0]['user_details']['dob'] ?>" style="width:31%;margin-left:34.6%;margin-top:-2%;" type="text" readonly>
   </div>
 </div>
 
@@ -523,7 +525,7 @@ VIEW</a>
 <div class="form-group">
   <label class="col-md-4 control-label" for="selectbasic">Profession:</label>
   <div class="col-md-5">
-    <select id="profession" name="profession" class="form-control" readonly>
+    <select id="profession" name="profession" class="form-control" readonly style="width: 70%;">
       <option value="<?php echo $arr_search['response'][0]['user_details']['proffesion'] ?>"><?php echo $arr_search['response'][0]['user_details']['proffesion'] ?></option>
     </select>
   </div>
@@ -533,7 +535,7 @@ VIEW</a>
 <div class="form-group">
   <label class="col-md-4 control-label" for="textarea">Address:</label>
   <div class="col-md-5">                     
-    <textarea class="form-control" id="address" name="address" value="<?php echo $arr_search['response'][0]['user_details']['address'] ?>" readonly><?php echo $arr_search['response'][0]['user_details']['address'] ?></textarea>
+    <textarea class="form-control" id="address" name="address" value="<?php echo $arr_search['response'][0]['user_details']['address'] ?>" readonly style="width: 70%;"><?php echo $arr_search['response'][0]['user_details']['address'] ?></textarea>
   </div>
 </div>
 
@@ -541,7 +543,7 @@ VIEW</a>
 <div class="form-group">
   <label class="col-md-4 control-label" for="textinput">PAN:</label>  
   <div class="col-md-5">
-  <input id="pan" name="pan" value="<?php echo $arr_search['response'][0]['user_details']['pan'] ?>" type="text" placeholder="" class="form-control input-md" readonly>
+  <input id="pan" name="pan" value="<?php echo $arr_search['response'][0]['user_details']['pan'] ?>" type="text" placeholder="" class="form-control input-md" readonly style="width: 70%;">
     
   </div>
 </div>
@@ -551,7 +553,7 @@ VIEW</a>
   <label class="col-md-4 control-label" for="filebutton" >PAN card:</label>
 
 <div class="col-md-5">
-  <input id="pan_upload" class="form-control input-md" value="<?php echo $arr_search['response'][0]['pan_card_details'][0]['name']; ?>" readonly/>
+  <input id="pan_upload" class="form-control input-md" value="<?php echo $arr_search['response'][0]['pan_card_details'][0]['name']; ?>" readonly style="width: 70%;"/>
   </div>
   <div class="col-md-1">
 <div class="fileUpload btn btn-info">
@@ -599,7 +601,7 @@ VIEW</a>
 </div>
 
 <div class="col-md-4">
-<input class="search_result tele1" value="<?php echo $arr_search['response'][0]['telephone_bill_details'][0]['name']; ?>" disabled>
+<input class="search_result tele1" value="<?php echo $arr_search['response'][0]['telephone_bill_details'][0]['name']; ?>" disabled style="width: 70%;">
 </div>
 
 <div class="col-md-1">
@@ -646,7 +648,7 @@ VIEW</a>
  </div>
 
  <div class="col-md-4">
- <input class="search_result tele1" value="<?php echo $arr_search['response'][0]['bank_pass_book_details'][0]['name']; ?>" disabled>
+ <input class="search_result tele1" value="<?php echo $arr_search['response'][0]['bank_pass_book_details'][0]['name']; ?>" disabled style="width: 70%;">
 </div>
 
 <div class="col-md-1">
@@ -695,7 +697,7 @@ VIEW</a>
    </div>
 
     <div class="col-md-4">
-    <input class="search_result tele1" value="<?php echo $arr_search['response'][0]['voter_id_details'][0]['name']; ?>" disabled>
+    <input class="search_result tele1" value="<?php echo $arr_search['response'][0]['voter_id_details'][0]['name']; ?>" disabled style="width: 70%;">
     </div>
     
      <div class="col-md-1">
@@ -738,7 +740,7 @@ VIEW</a>
   </div>
 
    <div class="col-md-4">
-  <input class="search_result tele1" value="<?php echo $arr_search['response'][0]['passport_details'][0]['name']; ?>" disabled>
+  <input class="search_result tele1" value="<?php echo $arr_search['response'][0]['passport_details'][0]['name']; ?>" disabled style="width: 70%;">
   </div>
   <div class="col-md-1">
    <div class="fileUpload btn btn-info" style="">
@@ -774,7 +776,7 @@ VIEW</a>
 <div class="form-group">
   <label class="col-md-4 control-label" for="textinput">Adhar card No.</label>  
   <div class="col-md-5">
-  <input id="aadhar_no" name="aadhar_no" value="<?php echo $arr_search['response'][0]['user_details']['aadhar_no'] ?>" type="text" placeholder="" class="form-control input-md" readonly>
+  <input id="aadhar_no" name="aadhar_no" value="<?php echo $arr_search['response'][0]['user_details']['aadhar_no'] ?>" type="text" placeholder="" class="form-control input-md" readonly style="width: 70%;">
     
   </div>
 </div>
@@ -784,7 +786,7 @@ VIEW</a>
   <label class="col-md-4 control-label" for="filebutton">Adhar card:</label>
 
   <div class="col-md-5">
-  <input id="pan_upload" class="form-control input-md" value="<?php echo $arr_search['response'][0]['aadhar_card_details'][0]['name']; ?>" disabled>
+  <input id="pan_upload" class="form-control input-md" value="<?php echo $arr_search['response'][0]['aadhar_card_details'][0]['name']; ?>" disabled style="width: 70%;">
   </div>
 
   <div class="col-md-1">
@@ -818,8 +820,8 @@ VIEW</a>
 <div class="form-group">
   <label class="col-md-4 control-label" for="singlebutton"></label>
   <div class="col-md-4">
-    <button id="" name="" class="btn btn-success" style="width: 10em;">Edit</button><span><span></span></span>
-    <button onclick="ClickEvent()" style="width: 10em;margin-top:-19%;margin-left:60%" class="btn btn-warning"><a style="color:white" href="search.php">Back</a></button>
+    <button id="" name="" class="btn btn-success editbutton-searchresult">Edit</button><span><span></span></span>
+    <button onclick="ClickEvent()" class="btn btn-warning backbutton-searchresult"><a style="color:white" href="search.php">Back</a></button>
   </div>
 </div>
 

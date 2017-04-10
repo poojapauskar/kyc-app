@@ -2,6 +2,7 @@
 <html>
 <head>
   <title></title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" type="text/css" href="css/material.indigo-pink.min.css">
 <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
@@ -1202,7 +1203,7 @@ VIEW</a>
   </div>
 
   <div class="col-md-2 col-sm-2 col-2">
-    <a href="new_user_popup.php" style="color:white" target="_blank" data-toggle="modal" data-target="#myModal" class="btn btn-info new_entry_btn" >
+    <a href="new_user_popup.php" style="color:white" target="_blank" data-toggle="modal" data-target="#myModal" class="btn btn-info new_entry_btn edit_modal" >
        New Entry
     </a>
   </div>
@@ -1308,16 +1309,12 @@ VIEW</a>
 <script type="text/javascript">
  $(document).ready(function () {
         $("#status").click(function () {
-          var input=document.getElementById("status");
-        var comm=document.getElementById('commentss');
-        var inputelement=input.value;
 
-        if (inputelement=="Completed") {
-            comm.required=true;
-        }
-        else {
-            comm.required=false;
-        }
+            if ($("#status").val() == "Completed") {
+                $("#commentss").attr("required", "required");
+            }
+            else
+              $("#commentss").attr("required", false);
         });
 });
 </script>
@@ -1345,6 +1342,35 @@ VIEW</a>
 </div>
 </fieldset>
 </form>
+
+<script type="text/javascript">
+
+$('.partner_names').attr('disabled', true);
+$('.partner_designations').attr('disabled', true);
+$('.partner_others').attr('disabled', true);
+$('.partner_btn').attr('disabled', true);
+$('.new_entry_btn').attr('disabled', true);
+
+function enable_disable(that){
+
+  /*alert(that.value);*/
+  if(that.value != "Partnership"){
+      $('.partner_names').attr('disabled', true);
+      $('.partner_designations').attr('disabled', true);
+      $('.partner_others').attr('disabled', true);
+      $('.partner_btn').attr('disabled', true);
+      $('.new_entry_btn').attr('disabled', true);
+  }else{
+      $('.partner_names').attr('disabled', false);
+      $('.partner_designations').attr('disabled', false);
+      $('.partner_others').attr('disabled', false);
+      $('.partner_btn').attr('disabled', false);
+      $('.new_entry_btn').attr('disabled', false);
+  }
+}
+</script>
+
+
 
 <script type="text/javascript">
 
@@ -1488,6 +1514,7 @@ function enable_disable(that){
 }?>
  <input type="hidden" value="<?php echo $arr_search['response'][0]['user_details']['pk'] ?>" name="org_id" id="org_id"></input>
 
+
 <img class="profile-pic" style="margin-left:77%;position:absolute;z-index:2;" src="<?php echo $img_lnk; ?>" />
 <div class="upload-button" style="">Upload Image</div>
 <input  onchange="check_image_user()" id="image"  name="image" class="file-upload1" style="position:absolute;z-index:-2;margin-left:46%;margin-top:16%;display:none" type="file"></input>
@@ -1499,7 +1526,7 @@ function enable_disable(that){
 <div class="form-group">
   <label class="col-md-4 control-label" for="textinput">UID:</label>  
   <div class="col-md-4">
-  <input id="uid" name="uid" type="text" value="<?php echo $arr_search['response'][0]['user_details']['uid'] ?>" placeholder="" class="form-control input-md">
+  <input id="uid" name="uid" type="text" value="<?php echo $arr_search['response'][0]['user_details']['uid'] ?>" placeholder="" class="form-control input-md" style="width: 70%;">
     
   </div>
 </div>
@@ -1508,7 +1535,7 @@ function enable_disable(that){
 <div class="form-group">
   <label class="col-md-4 control-label" for="textinput">Name:</label>  
   <div class="col-md-4">
-  <input id="name" name="name" value="<?php echo $arr_search['response'][0]['user_details']['name'] ?>" type="text" placeholder="" class="form-control input-md">
+  <input id="name" name="name" value="<?php echo $arr_search['response'][0]['user_details']['name'] ?>" type="text" placeholder="" class="form-control input-md" style="width: 70%;">
     
   </div>
 </div>
@@ -1518,7 +1545,7 @@ function enable_disable(that){
 <div class="form-group">
   <label class="col-md-4 control-label" for="textinput">DOB:</label>  
   <div class="col-md-4">
-  <input id="date2" name="date2" value="<?php echo $arr_search['response'][0]['user_details']['dob'] ?>" type="text" placeholder="" class="form-control input-md datepicker picker" readonly> 
+  <input id="date2" name="date2" value="<?php echo $arr_search['response'][0]['user_details']['dob'] ?>" type="text" placeholder="" class="form-control input-md datepicker picker" readonly style="width: 70%;" > 
   </div>
   <script type="text/javascript">
     $(function() {
@@ -1542,7 +1569,7 @@ function enable_disable(that){
 <div class="form-group">
   <label class="col-md-4 control-label" for="selectbasic">Profession:</label>
   <div class="col-md-4">
-    <select id="profession" name="profession" class="form-control">
+    <select id="profession" name="profession" class="form-control" style="width: 70%;">
       <option value="<?php echo $arr_search['response'][0]['user_details']['proffesion'] ?>"><?php echo $arr_search['response'][0]['user_details']['proffesion'] ?></option>
       <option value="Option one">Option one</option>
       <option value="Option two">Option two</option>
@@ -1556,7 +1583,7 @@ function enable_disable(that){
 <div class="form-group">
   <label class="col-md-4 control-label" for="textarea">Address:</label>
   <div class="col-md-4">                     
-    <textarea class="form-control" id="address" name="address" value="<?php echo $arr_search['response'][0]['user_details']['address'] ?>"><?php echo $arr_search['response'][0]['user_details']['address'] ?></textarea>
+    <textarea class="form-control" id="address" name="address" value="<?php echo $arr_search['response'][0]['user_details']['address'] ?>" style="width: 70%;"><?php echo $arr_search['response'][0]['user_details']['address'] ?></textarea>
   </div>
 </div>
 
@@ -1564,7 +1591,7 @@ function enable_disable(that){
 <div class="form-group">
   <label class="col-md-4 control-label" for="textinput">PAN:</label>  
   <div class="col-md-4">
-  <input pattern="-?[a-zA-Z]{5}[0-9]{4}[a-zA-Z]{1}?" title="Must be of the form ARLPA0061H" id="pan" name="pan" value="<?php echo $arr_search['response'][0]['user_details']['pan'] ?>" type="text" placeholder="" class="form-control input-md">
+  <input pattern="-?[a-zA-Z]{5}[0-9]{4}[a-zA-Z]{1}?" title="Must be of the form ARLPA0061H" id="pan" name="pan" value="<?php echo $arr_search['response'][0]['user_details']['pan'] ?>" type="text" placeholder="" class="form-control input-md" style="width: 70%;">
     
   </div>
 </div>
@@ -1574,7 +1601,7 @@ function enable_disable(that){
   <label class="col-md-4 control-label" for="filebutton">PAN card:</label>
 
 <div class="col-md-4">
-<input id="pan_upload" class="form-control input-md" value="<?php echo $arr_search['response'][0]['pan_card_details'][0]['name']; ?>">
+<input id="pan_upload" class="form-control input-md" value="<?php echo $arr_search['response'][0]['pan_card_details'][0]['name']; ?>" style="width: 70%;">
 </div>
 <div class="col-md-1">
 <input  onchange="check_pan_card_user()" id="pan_card" name="pan_card" style="" value="<?php echo $_POST['pan_card'] ?>" class="input-file" type="file">
@@ -1774,7 +1801,7 @@ function enable_disable(that){
 <div class="form-group">
   <label class="col-md-4 control-label" for="textinput">Adhar card No.</label>  
   <div class="col-md-4">
-  <input id="aadhar_no" name="aadhar_no" value="<?php echo $arr_search['response'][0]['user_details']['aadhar_no'] ?>" type="text" placeholder="" class="form-control input-md">
+  <input id="aadhar_no" name="aadhar_no" value="<?php echo $arr_search['response'][0]['user_details']['aadhar_no'] ?>" type="text" placeholder="" class="form-control input-md" style="width: 70%;">
     
   </div>
 </div>
@@ -1784,7 +1811,7 @@ function enable_disable(that){
   <label class="col-md-4 control-label" for="filebutton">Adhar card:</label>
 
   <div class="col-md-4">
-  <input class="form-control input-md" value="<?php echo $arr_search['response'][0]['aadhar_card_details'][0]['name']; ?>">
+  <input class="form-control input-md" value="<?php echo $arr_search['response'][0]['aadhar_card_details'][0]['name']; ?>" style="width: 70%;">
   </div>
   <div class="col-md-1">
     <input onchange="check_aadhar_card_user()" id="aadhar_card" name="aadhar_card" value="<?php echo $_POST['aadhar_card'] ?>" class="input-file" type="file">
@@ -1813,12 +1840,12 @@ function enable_disable(that){
  
 
 <?php for($q=0;$q<count($arr_search['response'][0]['add_info']);$q++){?>
-<div class="present_fields_1">
+<div class="present_fields_1"> 
 <!-- Select Basic -->
 <div class="form-group">
   <label class="col-md-4 control-label" for="selectbasic">Type of work</label>
   <div class="col-md-4">
-    <select id="type_of_work[]" name="type_of_work[]" class="form-control">
+    <select id="type_of_work[]" name="type_of_work[]" class="form-control" style="width: 70%;">
       <option value="Audit Report">Audit Report</option>
       <option value="ITR filing">ITR filing</option>
       <option value="VAT Filing">VAT Filing</option>
@@ -1846,7 +1873,7 @@ function enable_disable(that){
 <div class="form-group row">
   <label for="example-date-input" class="col-2 col-form-label" style="margin-left:28.1%;">DATE</label>
   <div class="col-10">
-    <input class="form-control datepicker p" id="date[]" name="date[]" value="<?php echo $arr_search['response'][0]['add_info'][$q]['date']; ?>" style="" type="text" readonly> 
+    <input class="form-control datepicker p" id="date[]" name="date[]" value="<?php echo $arr_search['response'][0]['add_info'][$q]['date']; ?>" style="width: 70%;" type="text" readonly > 
   </div>
 </div>
 
@@ -1855,6 +1882,7 @@ function enable_disable(that){
 <div class="form-group">
   <label class="col-md-4 control-label" for="textinput">Comment</label>  
   <div class="col-md-4">
+
   <input id="commentss" name="comment[]" value="<?php echo $arr_search['response'][0]['add_info'][$q]['comment']; ?>" type="text" placeholder="" class="form-control input-md">
     
   </div>

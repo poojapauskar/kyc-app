@@ -924,7 +924,7 @@ if ($_POST['uid'] != '' and $_GET["is_user"]==1){
 <div class="form-group" style="margin-top:12%;">
   <label class="col-md-4 control-label" for="type_of_org">Type of Organization:</label>
   <div class="col-md-4">
-    <select id="type_of_org" name="type_of_org" class="form-control" ONCHANGE="enable_disable(this);" >
+    <select id="type_of_org" name="type_of_org" class="form-control" ONCHANGE="enable_disable(this);" style="width: 70%;">
       <option value="Proprietorship">Proprietorship</option>
       <option value="HUF">HUF</option>
       <option value="Society">Society</option>
@@ -940,7 +940,7 @@ if ($_POST['uid'] != '' and $_GET["is_user"]==1){
 <div class="form-group">
   <label class="col-md-4 control-label" for="textname">Name:</label>  
   <div class="col-md-4">
-  <input id="name" name="name" type="text" placeholder="Enter Name" class="form-control input-md" required/>
+  <input id="name" name="name" type="text" placeholder="Enter Name" class="form-control input-md" required style="width: 70%;"/>
     
   </div>
 </div>
@@ -964,7 +964,7 @@ if ($_POST['uid'] != '' and $_GET["is_user"]==1){
 <div class="form-group">
 <label class="col-md-4 control-label" for="reg_certificate">Registration Certificate:</label>
   <div class="col-md-4">
-    <input id="uploadFile" placeholder="Choose File" class="form-control input-md" readonly/>
+    <input id="uploadFile" placeholder="Choose File" class="form-control input-md" readonly style="width: 70%;" />
     </div>
     <div class="col-md-1">
     <div class="fileUpload btn btn-info" style="margin-left:0%;margin-top:0%;">
@@ -979,7 +979,7 @@ if ($_POST['uid'] != '' and $_GET["is_user"]==1){
 <div class="form-group">
   <label class="col-md-4 control-label" for="textinput">PAN: </label>  
   <div class="col-md-4">
-  <input id="pan" pattern="-?[a-zA-Z]{5}[0-9]{4}[a-zA-Z]{1}?" title="Must be of the form ARLPA0061H" name="pan" type="text" placeholder="PAN Card Number" class="form-control input-md">
+  <input id="pan" pattern="-?[a-zA-Z]{5}[0-9]{4}[a-zA-Z]{1}?" title="Must be of the form ARLPA0061H" name="pan" type="text" placeholder="PAN Card Number" class="form-control input-md" style="width: 70%;">
     
   </div>
 </div>
@@ -988,7 +988,7 @@ if ($_POST['uid'] != '' and $_GET["is_user"]==1){
 <div class="form-group">
   <label class="col-md-4 control-label" for="filebutton">PAN Card:</label>
   <div class="col-md-4">
-    <input id="pan_upload" placeholder="Choose File" class="form-control input-md" readonly/>
+    <input id="pan_upload" placeholder="Choose File" class="form-control input-md" readonly style="width: 70%;"/>
     </div>
     <div class="col-md-1">
     <div class="fileUpload btn btn-info" style="margin-left:0%;margin-top:0%;">
@@ -1003,7 +1003,7 @@ if ($_POST['uid'] != '' and $_GET["is_user"]==1){
 <div class="form-group">
   <label class="col-md-4 control-label" for="textarea">Address:</label>
   <div class="col-md-4">                     
-    <textarea class="form-control" id="address" name="address">Enter Address</textarea>
+    <textarea class="form-control" id="address" name="address" style="width: 70%;"  >Enter Address</textarea>
   </div>
 </div>
 
@@ -1065,7 +1065,7 @@ if ($_POST['uid'] != '' and $_GET["is_user"]==1){
 <div class="form-group">
   <label class="col-md-4 control-label" for="textinput">Name: </label>  
   <div class="col-md-4 col-sm-2 col-2">
-  <input id="partner_names[]" name="partner_names[]" type="text" placeholder="Enter Full Name" class="form-control input-md newentry partner_names" style="width: 100%;">
+  <input id="partner_names[]" name="partner_names[]" type="text" placeholder="Enter Full Name" class="form-control input-md newentry partner_names" style="width: 70%;">
   </div>
 
   <div class="col-md-2 col-sm-2 col-2">
@@ -1114,7 +1114,7 @@ if ($_POST['uid'] != '' and $_GET["is_user"]==1){
 <div class="form-group">
   <label class="col-md-4 control-label" for="selectbasic">Type of work</label>
   <div class="col-md-4">
-    <select id="type_of_work[]" name="type_of_work[]" class="form-control">
+    <select id="type_of_work[]" name="type_of_work[]" class="form-control" style="width: 70%;">
      <option value="Audit Report">Audit Report</option>
       <option value="ITR filing">ITR filing</option>
       <option value="VAT Filing">VAT Filing</option>
@@ -1130,7 +1130,7 @@ if ($_POST['uid'] != '' and $_GET["is_user"]==1){
 <div class="form-group">
   <label class="col-md-4 control-label" for="selectbasic">Status</label>
   <div class="col-md-4">
-    <select id="status" name="status[]" class="form-control" >
+    <select id="status" name="status[]" class="form-control" style="width:70%" >
       <option value="Pending">Pending</option>
       <option value="Work in process">Work in process</option>
       <option value="Completed">Completed</option>
@@ -1142,7 +1142,7 @@ if ($_POST['uid'] != '' and $_GET["is_user"]==1){
   <div class="form-group">
   <label class="col-md-4 control-label" for="textinput">DATE</label>  
   <div class="col-md-4">
-  <input id="date[]" name="date[]" value="<?php echo $_POST['date'] ?>" style="width:100%;margin-left:-0.4%;margin-top:0%;" type="text" class="form-control input-md datepicker pick" readonly>
+  <input id="date[]" name="date[]" value="<?php echo $_POST['date'] ?>" style="width:70%;margin-left:-0.4%;margin-top:0%;" type="text" class="form-control input-md datepicker pick" readonly style="width: 70%;">
   </div>
 </div>
 
@@ -1150,7 +1150,8 @@ if ($_POST['uid'] != '' and $_GET["is_user"]==1){
 <div class="form-group">
   <label class="col-md-4 control-label" for="textinput">Comment</label>  
   <div class="col-md-4">
-  <input id="commentss" name="comment[]" type="text" placeholder="" class="form-control input-md" /> 
+
+  <input id="commentss" name="comment[]" type="text" placeholder="" class="form-control input-md" style="width: 70%;" /> 
   </div>
 </div>
 
@@ -1227,16 +1228,6 @@ function enable_disable(that){
 
 
 <!-- <p>Click on the "x" symbol to close the alert message.</p> -->
-<div class="alert" id="popup1" class="popup1" style="display:none;text-align:center;position:absolute;
-    width:100%;
-    top: 70%;z-index:2">
-  <label>UID Generated</label><br>
-  <input type="text" id="uid_in_popup" name="uid_in_popup" style="text-align:center;background-color:transparent;color:black;border:none"></input><br><br>
-  <button style="margin-left:1%;" id="done" class="btn btn-success" name="done" onclick="submit_form()">Done</button>
-  <button style="margin-top:-1%;" onclick="make_uid_null()" id="cancel1" class="btn btn-warning" name="cancel1">Cancel</button>
-  <!-- </form> -->
-</div>
-
 
 <script type="text/javascript">
  $(document).ready(function () {
@@ -1251,7 +1242,7 @@ function enable_disable(that){
 });
 </script>
 
-<form name="Form" id="Form" class="form-horizontal" method="post" action="new.php?is_user=1" onsubmit="return proceed()" enctype="multipart/form-data"  >
+<form name="Form" id="Form" class="form-horizontal" method="post" action="new.php?is_user=1"  enctype="multipart/form-data"  >
 <fieldset>
 
 <div style="margin-top:12%">
@@ -1264,7 +1255,7 @@ function enable_disable(that){
 <div class="form-group">
   <label class="col-md-4 control-label" for="textinput" >UID:</label>  
   <div class="col-md-4">
-  <input id="uid" name="uid" type="text" value="<?php echo $_POST['uid'] ?>" placeholder="" class="form-control input-md">
+  <input id="uid" name="uid" type="text" value="<?php echo $_POST['uid'] ?>" placeholder="" class="form-control input-md" style="width: 70%;">
     
   </div>
 </div>
@@ -1273,7 +1264,7 @@ function enable_disable(that){
 <div class="form-group">
   <label class="col-md-4 control-label" for="textinput">Name:</label>  
   <div class="col-md-4">
-  <input id="name" name="name" value="<?php echo $_POST['name'] ?>" type="text" placeholder="" class="form-control input-md" required/>
+  <input id="name" name="name" value="<?php echo $_POST['name'] ?>" type="text" placeholder="" class="form-control input-md" required  style="width: 70%;"/>
     
   </div>
 </div>
@@ -1282,7 +1273,7 @@ function enable_disable(that){
 <div class="form-group">
   <label class="col-md-4 control-label" for="textinput">DOB:</label>  
   <div class="col-md-4">
-  <input id="date1" name="date1" value="<?php echo $_POST['date1'] ?>" type="text" class="form-control input-md datepicker picker" readonly>
+  <input id="date1" name="date1" value="<?php echo $_POST['date1'] ?>" type="text" class="form-control input-md datepicker picker" readonly  style="width: 70%;">
   </div>
 </div>
 
@@ -1290,7 +1281,7 @@ function enable_disable(that){
 <div class="form-group">
   <label class="col-md-4 control-label" for="selectbasic">Profession:</label>
   <div class="col-md-4">
-    <select id="profession" name="profession" class="form-control">
+    <select id="profession" name="profession" class="form-control"  style="width: 70%;">
       <option value="Option one"><?php echo $_POST['profession'] ?></option>
       <option value="Option one">Option one</option>
       <option value="Option two">Option two</option>
@@ -1304,7 +1295,7 @@ function enable_disable(that){
 <div class="form-group">
   <label class="col-md-4 control-label" for="textinput"></label>  
   <div class="col-md-4">
-  <input id="textinput" name="textinput" type="text" placeholder="specify " class="form-control input-md" >
+  <input id="textinput" name="textinput" type="text" placeholder="specify " class="form-control input-md"  style="width: 70%;">
     
   </div>
 </div>
@@ -1313,7 +1304,7 @@ function enable_disable(that){
 <div class="form-group">
   <label class="col-md-4 control-label" for="textarea">Address:</label>
   <div class="col-md-4">                     
-    <textarea class="form-control" id="address" name="address" value="<?php echo $_POST['address'] ?>">default text</textarea>
+    <textarea class="form-control" id="address" name="address" value="<?php echo $_POST['address'] ?>"  style="width: 70%;">default text</textarea>
   </div>
 </div>
 
@@ -1321,7 +1312,7 @@ function enable_disable(that){
 <div class="form-group">
   <label class="col-md-4 control-label" for="textinput">PAN:</label>  
   <div class="col-md-4">
-  <input pattern="-?[a-zA-Z]{5}[0-9]{4}[a-zA-Z]{1}?" title="Must be of the form ARLPA0061H" id="pan" name="pan" value="<?php echo $_POST['pan'] ?>" type="text" placeholder="" class="form-control input-md" required/>
+  <input pattern="-?[a-zA-Z]{5}[0-9]{4}[a-zA-Z]{1}?" title="Must be of the form ARLPA0061H" id="pan" name="pan" value="<?php echo $_POST['pan'] ?>" type="text" placeholder="" class="form-control input-md" required  style="width: 70%;"/>
     
   </div>
 </div>
@@ -1330,7 +1321,7 @@ function enable_disable(that){
 <div class="form-group">
   <label class="col-md-4 control-label" for="filebutton">PAN card:</label>
   <div class="col-md-4">
-    <input  onchange="check_pan_card_user()" id="pan_card" name="pan_card" value="<?php echo $_POST['pan_card'] ?>" class="input-file" type="file">
+    <input  onchange="check_pan_card_user()" id="pan_card" name="pan_card" value="<?php echo $_POST['pan_card'] ?>" class="input-file" type="file"  style="width: 70%;">
   </div>
 </div>
 
@@ -1379,7 +1370,7 @@ function enable_disable(that){
 <div class="form-group">
   <label class="col-md-4 control-label" for="textinput">Adhar card No.</label>  
   <div class="col-md-4">
-  <input id="aadhar_no" name="aadhar_no" value="<?php echo $_POST['aadhar_no'] ?>" type="text" placeholder="" class="form-control input-md" >
+  <input id="aadhar_no" name="aadhar_no" value="<?php echo $_POST['aadhar_no'] ?>" type="text" placeholder="" class="form-control input-md"  style="width: 70%;" >
     
   </div>
 </div>
@@ -1388,7 +1379,7 @@ function enable_disable(that){
 <div class="form-group">
   <label class="col-md-4 control-label" for="filebutton">Adhar card:</label>
   <div class="col-md-4">
-    <input onchange="check_aadhar_card_user()" id="aadhar_card" name="aadhar_card" value="<?php echo $_POST['aadhar_card'] ?>" class="input-file" type="file">
+    <input onchange="check_aadhar_card_user()" id="aadhar_card" name="aadhar_card" value="<?php echo $_POST['aadhar_card'] ?>" class="input-file" type="file"  style="width: 70%;">
   </div>
 </div>
 
@@ -1397,7 +1388,7 @@ function enable_disable(that){
 <div class="form-group">
   <label class="col-md-4 control-label" for="selectbasic">Type of work</label>
   <div class="col-md-4">
-    <select id="type_of_work[]" name="type_of_work[]" class="form-control">
+    <select id="type_of_work[]" name="type_of_work[]" class="form-control" style="width: 70%;">
       <option value="Audit Report">Audit Report</option>
       <option value="ITR filing">ITR filing</option>
       <option value="VAT Filing">VAT Filing</option>
@@ -1427,7 +1418,7 @@ function enable_disable(that){
 <div class="form-group row">
   <label for="example-date-input" class="col-2 col-form-label" style="margin-left:28.5%;">DATE</label>
   <div class="col-10">
-    <input class="form-control datepicker pick" id="date[]" name="date[]" value="<?php echo $_POST['date'] ?>" style="" type="text" readonly>
+    <input class="form-control datepicker pick" id="date[]" name="date[]" value="<?php echo $_POST['date'] ?>" type="text" readonly  style="width: 70%;">
   </div>
 </div>
 
@@ -1459,8 +1450,32 @@ function enable_disable(that){
 <div class="form-group">
   <label class="col-md-4 control-label" for="singlebutton"></label>
   <div class="col-md-4">
-    <button id="generate_btn" name="generate_btn">Generate</button>
-    <button id="singlebutton" style="margin-left:13%;" name="singlebutton" class="btn btn-primary"><a style="color:white" href="search.php">Discard</a></button>
+  <button type="button" onclick="return proceed()" class="btn btn-info btn-lg" id="generate_btn" name="generate_btn" data-toggle="modal" data-target="#myModalg">Generate</button>
+   <!-- Modal -->
+  <div class="modal fade" id="myModalg" role="dialog">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content" style="margin-top:23%" >
+       <!--  <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title" style="text-align: center"></h4>
+        </div> -->
+        <div class="modal-body">      
+<div class="alert" id="popup1" class="popup1" style="display:none;text-align:center;padding: 20px;background-color: #eee;color: white;">
+  <label style="color:black">UID Generated</label><br>
+  <input type="text" id="uid_in_popup" name="uid_in_popup" style="text-align:center;background-color:transparent;color:black;border:none"></input><br><br>
+  <button style="margin-left:0%;" id="done" class="btn btn-success" name="done" onclick="submit_form()">Done</button>
+  <button style="margin-top:0%;margin-left:5%" onclick="make_uid_null()" data-dismiss="modal"   id="cancel1" class="btn btn-warning" name="cancel1">Cancel</button>
+  <!-- </form> -->
+</div>
+        </div>
+        <!-- <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div> -->
+      </div>
+    </div>
+  </div>
+
+  <button id="singlebutton" style="margin-left:13%;" name="singlebutton" class="btn btn-primary"><a style="color:white" href="search.php">Discard</a></button>
   </div>
 </div>
 </fieldset>
@@ -1518,7 +1533,7 @@ $('#myModal').on('shown.bs.modal', function () {
         e.preventDefault();
         if(x < max_fields){ //max input box allowed
             x++; //text box increment
-            $(wrapper).prepend('<br><div style="margin-left:50%;"><center><div class="form-group"> <label class="control-label name" for="textinput" style="">Name: </label> <div class="partner_name"> <input id="partner_names[]" name="partner_names[]" type="text" placeholder="Enter Full Name" class="form-control input-md newentry partner_names" style="">  </div>  <div class="col-md-6" > <a href="new_user_popup.php" style="color:white" target="_blank" data-toggle="modal" data-target="#myModal"><button  type="button" class="btn btn-info new_entry_btn entry">New Entry</button> </a> </div></div> <div class="form-group">  <label class="control-label designation" for="selectbasic">Designation: </label>  <div class="partner_designation"> <select id="partner_designations[]" name="partner_designations[]" class="form-control partner_designations" >      <option value="Managing Partner">Managing Partner</option>      <option value="Manager">Manager</option>      <option value="Other">Other</option>    </select>  </div>  <div class="partner_designation col2">  <input style="" id="textinput" name="textinput" type="text" placeholder="Specify if Other" class="form-control input-md partner_others"></div></div></center><a href="#" class="remove_field" style="margin-left:370%;margin-top:-40px;position:absolute"><img src="images/del24.png"></a></a></div>'); //add input box\
+            $(wrapper).prepend('<br><div style="margin-left:50%;"><center><div class="form-group"> <label class="control-label name" for="textinput" style="">Name: </label> <div class="partner_name"> <input id="partner_names[]" name="partner_names[]" type="text" placeholder="Enter Full Name" class="form-control input-md newentry partner_names"     style="width: 70%;margin-left: -31%;">  </div>  <div class="col-md-6" > <a href="new_user_popup.php" style="color:white" target="_blank" data-toggle="modal" data-target="#myModal"><button  type="button" class="btn btn-info new_entry_btn entry">New Entry</button> </a> </div></div> <div class="form-group">  <label class="control-label designation" for="selectbasic">Designation: </label>  <div class="partner_designation"> <select id="partner_designations[]" name="partner_designations[]" class="form-control partner_designations" >      <option value="Managing Partner">Managing Partner</option>      <option value="Manager">Manager</option>      <option value="Other">Other</option>    </select>  </div>  <div class="partner_designation col2">  <input style="" id="textinput" name="textinput" type="text" placeholder="Specify if Other" class="form-control input-md partner_others"></div></div></center><a href="#" class="remove_field" style="margin-left:370%;margin-top:-40px;position:absolute"><img src="images/del24.png"></a></a></div>'); //add input box\
         }
     });
 
@@ -1546,7 +1561,6 @@ $('#myModal').on('shown.bs.modal', function () {
 
         if(x < max_fields){ //max input box allowed
             x++; //text box increment
-
            $(wrapper).prepend('<br><div style="margin-left:50%;"><div class="form-group"><label class="control-label type" for="selectbasic" style="">Type of work</label><div class="col-md-6"><select id="type_of_work[]" name="type_of_work[]" class="form-control type_of_work" style=""><option value="Audit Report">Audit Report</option><option value="ITR filing">ITR filing</option><option value="VAT Filing">VAT Filing</option><option value="Accounting">Accounting</option><option value="Registration">Registration</option><option value="Certification">Certification</option><option value="Others">Others</option></select></div></div><div class="form-group"> <label class="col-md-4 control-label status" for="selectbasic" style="">Status</label><div class="col-md-6"><select id="status1' + x + '"  name="status[]"  class="form-control status"><option value="Pending">Pending</option><option value="Work in process">Work in process</option><option value="Completed">Completed</option></select></div></div><div class="form-group row"><label for="example-date-input" class="col-2 col-form-label date">DATE</label><div class="col-10 col"><input class="form-control datepicker pickers" id="date" name="date[]" style="" type="text" readonly></div></div><div class="form-group"><label class="col-md-4 control-label comment" for="textinput" style="">Comment</label><div class="col-md-4"><input id="comments' + x + '" name="comment[]" type="text" placeholder="" class="form-control input-md comment" style=""></div></div></center><a href="#" class="remove_field" style=""><img src="images/del24.png" ></a></a></div>'); //add input box\
           var newInput=$("#date").datepick({dateFormat: 'dd/mm/yyyy'});
           newInput.datepick({dateFormat: 'dd/mm/yyyy'}).datepick("setDate", new Date());
