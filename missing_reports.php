@@ -255,7 +255,6 @@ $('#test').click(function() {
     <td><button class="btn btn-success" style="color:white;opacity: 0.5;" disabled>Generate Link</button>&nbsp
     <button class="btn btn-success" style="color:white;" id="view_user">View</button>
     </td>
-
   </tr>
   <?php }?>
   
