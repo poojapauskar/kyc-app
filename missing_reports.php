@@ -59,6 +59,17 @@ table{
 </head>
 <body style="background-color:#E8E8E8;overflow-x:hidden;">
 
+<?php 
+if(isset($_POST['view_details'])){
+
+  $string_new="<script>window.location.href='search_result.php?is_user=".$_POST['is_user_no']."&id=".$_POST['uid1']."'</script>";
+    // $string_new="<script>window.location.href='https://www.w3schools.com/php/php_forms.asp'</script>";
+  echo $string_new;
+
+  /*echo $_POST["is_user_field"];
+  echo $_POST["id_field"];*/
+}?>
+
 <?php
 if (isset($_POST['upload_btn'])){
 
@@ -234,16 +245,28 @@ $('#test').click(function() {
         <td>
          <input name="file1" id="file1" class="file-upload" type="file" onclick="enableButton2()">
          <input type="hidden" value="<?php echo $arr_missing_report[$i]['uid'] ?>" name="uid1" id="uid1"></input>
+
          <input type="hidden" value="<?php echo $arr_missing_report[$i]['missing_file'] ?>" name="missing_file1" id="missing_file1"></input>
+
+         <input type="hidden" value="<?php echo $arr_missing_report[$i]['is_user'] ?>" name="is_user_no" id="is_user_no"></input>
+         
          <button id="upload_btn" name="upload_btn" type="submit" class="btn btn-success"  disabled >Upload</button>
-       </form>
+       
     </td>
+<!-- </form>
+  
+
+  <form method="post"> -->
+
 
     <td><button class="btn btn-success" style="color:white;opacity: 0.5;" disabled>Generate Link</button>
-    <button class="btn btn-success" style="color:white;">View</button>
-    </td>
-
+<!--     <input type="submit" name="view_details" id="view_details" value="View"></input>
+ -->
+     <button class="btn btn-success" name="view_details" id="view_details" style="color:white;">View</button>
+    
+ </td>
   </tr>
+  </form>
   <?php }?>
   
 </table>
