@@ -979,7 +979,7 @@ if ($_POST['uid'] != '' and $_GET["is_user"]==1){
 <div class="form-group">
   <label class="col-md-4 control-label" for="textinput">PAN: </label>  
   <div class="col-md-4">
-  <input id="pan" pattern="-?[a-zA-Z]{5}[0-9]{4}[a-zA-Z]{1}?" title="Must be of the form ARLPA0061H" name="pan" type="text" placeholder="PAN Card Number" class="form-control input-md" style="width: 70%;">
+  <input id="pan" pattern="-?[a-zA-Z]{5}[0-9]{4}[a-zA-Z]{1}?" title="Must be of the form ARLPA0061H" name="pan" type="text" placeholder="PAN Card Number" class="form-control input-md" style="width: 70%;" required>
     
   </div>
 </div>
@@ -1312,7 +1312,7 @@ function enable_disable(that){
 <div class="form-group">
   <label class="col-md-4 control-label" for="textinput">PAN:</label>  
   <div class="col-md-4">
-  <input pattern="-?[a-zA-Z]{5}[0-9]{4}[a-zA-Z]{1}?" title="Must be of the form ARLPA0061H" id="pan" name="pan" value="<?php echo $_POST['pan'] ?>" type="text" placeholder="" class="form-control input-md" required  style="width: 70%;"/>
+  <input pattern="-?[a-zA-Z]{5}[0-9]{4}[a-zA-Z]{1}?" title="Must be of the form ARLPA0061H" id="pan" name="pan" value="<?php echo $_POST['pan'] ?>" type="text" placeholder="" class="form-control input-md" style="width: 70%;"/>
     
   </div>
 </div>
@@ -1463,7 +1463,7 @@ function enable_disable(that){
 <div class="alert" id="popup1" class="popup1" style="display:none;text-align:center;padding: 20px;background-color: #eee;color: white;">
   <label style="color:black">UID Generated</label><br>
   <input type="text" id="uid_in_popup" name="uid_in_popup" style="text-align:center;background-color:transparent;color:black;border:none"></input><br><br>
-  <button style="margin-left:0%;" id="done" class="btn btn-success" name="done" onclick="submit_form()">Done</button>
+  <button style="margin-left:0%;" id="done" class="btn btn-success" name="done" type="submit" >Done</button>
   <button style="margin-top:0%;margin-left:5%" onclick="make_uid_null()" data-dismiss="modal"   id="cancel1" class="btn btn-warning" name="cancel1">Cancel</button>
   <!-- </form> -->
 </div>
