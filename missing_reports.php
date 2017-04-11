@@ -21,7 +21,8 @@
 <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 <script src="js/dataTables.material.min.js"></script>
 <script src="js/jquery.dataTables.min.js"></script>
-  <script src="https://storage.googleapis.com/code.getmdl.io/1.0.6/material.min.js"></script>
+<script src="https://storage.googleapis.com/code.getmdl.io/1.0.6/material.min.js"></script>
+<script type="text/javascript" src="autocomplete-Files/Logic_Search.js"></script>
 <script>
 $(document).ready(function() {
     $('#example').dataTable({
@@ -212,6 +213,17 @@ $('#test').click(function() {
 });
 </script>
 
+<!-- 
+<?php if($_POST['view_user']){
+
+  $string_new="<script>window.location.href='search_result.php?is_user=".$_POST['is_user_field']."&id=".$_POST['id_field']."'</script>";
+  echo $string_new;
+
+  /*echo $_POST["is_user_field"];
+  echo $_POST["id_field"];*/
+}?>
+ -->
+
 <table align="center" id="example" class="mdl-data-table" cellspacing="0" style="width:75%;margin-top:4%;">
         <thead>
             <th>Name</th>
@@ -239,8 +251,10 @@ $('#test').click(function() {
        </form>
     </td>
 
-    <td><button class="btn btn-success" style="color:white;opacity: 0.5;" disabled>Generate Link</button></td>
 
+    <td><button class="btn btn-success" style="color:white;opacity: 0.5;" disabled>Generate Link</button>&nbsp
+    <button class="btn btn-success" style="color:white;" id="view_user">View</button>
+    </td>
   </tr>
   <?php }?>
   
@@ -252,5 +266,7 @@ $('#test').click(function() {
             document.getElementById("upload_btn").disabled = false;
         }
     </script>
+
 </body>
 </html>
+
