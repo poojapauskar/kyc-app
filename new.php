@@ -1463,7 +1463,7 @@ function enable_disable(that){
 <div class="alert" id="popup1" class="popup1" style="display:none;text-align:center;padding: 20px;background-color: #eee;color: white;">
   <label style="color:black">UID Generated</label><br>
   <input type="text" id="uid_in_popup" name="uid_in_popup" style="text-align:center;background-color:transparent;color:black;border:none"></input><br><br>
-  <button style="margin-left:0%;" id="done" class="btn btn-success" name="done" onclick="submit_form()">Done</button>
+  <button style="margin-left:0%;" id="done" class="btn btn-success" name="done" type="submit" >Done</button>
   <button style="margin-top:0%;margin-left:5%" onclick="make_uid_null()" data-dismiss="modal"   id="cancel1" class="btn btn-warning" name="cancel1">Cancel</button>
   <!-- </form> -->
 </div>
