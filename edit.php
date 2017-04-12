@@ -1911,7 +1911,7 @@ function enable_disable(that){
 <div class="form-group">
   <label class="col-md-4 control-label" for="singlebutton"></label>
   <div class="col-md-4">
-    <button  onclick="return check_file_type_user()" id="edit_btn" name="edit_btn" type="submit" class="btn btn-success" style="width: 10em;">Save</button><span><span></span></span>
+    <button  onclick="return check_file_type_user()" id="edit_btn" name="edit_btn" type="submit" class="btn btn-success successb">Save</button><span><span></span></span>
 
     <button onclick="goBack()" class="btn btn-warning cancel" ><a style="color:white" href="search.php" >Cancel</a></button>
     <!-- style="width: 10em;margin-top: 0%;padding:0.5em;margin-left:2%;" -->
