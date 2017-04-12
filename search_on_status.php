@@ -1,3 +1,13 @@
+<?php
+session_start();
+if($_SESSION['login_kyc_app'] == 1){
+
+}else{
+  echo "<script>location='index.php'</script>";
+}
+
+?>
+
 <html>
   <head>
 
@@ -60,12 +70,13 @@ td, th {
 <body style="background-color:#E8E8E8;overflow-x:hidden;">
 
 <?php
-
-  $url_status = 'https://kyc-application.herokuapp.com/search_on_status/';
+session_start();
+  $url_status = 'https://staging-kyc-application.herokuapp.com/search_on_status/';
   $options_status = array(
     'http' => array(
       'header'  => array(
                           'STATUS: '.$_GET['status'],
+                          'ACCOUNT-TOKEN: '.$_SESSION['account_token'],
                          ),
       'method'  => 'GET',
     ),

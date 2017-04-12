@@ -1,5 +1,7 @@
 <?php
 
+session_start();
+
 if ($_SERVER['REQUEST_METHOD'] == 'POST'){
 
         $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
@@ -20,7 +22,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
 
 
         /*Get Signed Urls*/
-        $url = 'https://kyc-application.herokuapp.com/get_signed_url/';
+        $url = 'https://staging-kyc-application.herokuapp.com/get_signed_url/';
         $data = array('image_list' => [$names[0],$names[1],$names[2],$names[3],$names[4],$names[5],$names[6]]);
 
         $options = array(
@@ -283,7 +285,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
   }
   $comment = ltrim($comment, ',');
 
-  $url_org = 'https://kyc-application.herokuapp.com/add_new_individual/';
+  $url_org = 'https://staging-kyc-application.herokuapp.com/add_new_individual/';
   $options_org = array(
     'http' => array(
       'header'  => array(
@@ -305,6 +307,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
                           'STATUS: '.$status,
                           'DATE: '.$date,
                           'COMMENT: '.$comment,
+                          'ACCOUNT-TOKEN: '.$_SESSION['account_token'],
                           ),
       'method'  => 'GET',
     ),

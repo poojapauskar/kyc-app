@@ -1,3 +1,13 @@
+<?php
+session_start();
+if($_SESSION['login_kyc_app'] == 1){
+
+}else{
+  echo "<script>location='index.php'</script>";
+}
+
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -47,7 +57,7 @@ td {
 
 <?php
 if(isset($_POST['delete_btn'])){
-  $url_delete_account = 'https://kyc-application.herokuapp.com/delete_account/';
+  $url_delete_account = 'https://staging-kyc-application.herokuapp.com/delete_account/';
   $options_delete_account = array(
     'http' => array(
       'header'  => array(
@@ -65,7 +75,7 @@ if(isset($_POST['delete_btn'])){
 
 <?php
 if(isset($_POST['submit'])){
-	$url = 'https://kyc-application.herokuapp.com/account/';
+	$url = 'https://staging-kyc-application.herokuapp.com/account/';
   $data = array(
               'company' => $_POST['company'],
               'admin_username' => $_POST['admin_username'],
@@ -74,6 +84,9 @@ if(isset($_POST['submit'])){
               'user1_password' => $_POST['user1_password'],
               'user2_username' => $_POST['user2_username'],
               'user2_password' => $_POST['user2_password'],
+              'suffix' => $_POST['suffix'],
+              'sequence' => $_POST['sequence'],
+              'prefix' => $_POST['prefix'],
             );
 
     // use key 'http' even if you send the request to https://...
@@ -96,7 +109,7 @@ if(isset($_POST['submit'])){
 ?>
 
 <?php
-  $url_get_all_accounts = 'https://kyc-application.herokuapp.com/get_all_accounts/';
+  $url_get_all_accounts = 'https://staging-kyc-application.herokuapp.com/get_all_accounts/';
   $options_get_all_accounts = array(
     'http' => array(
       'method'  => 'GET',
@@ -117,7 +130,7 @@ if(isset($_POST['submit'])){
 <div class="container" style="width:50%;border:1px solid black;padding-bottom:25px">
   <div class="row" style="margin-top:25px">
     <div class="col-sm-4">
-      <input type="text" name="company" placeholder="Account Name">
+      <input type="text" name="company" placeholder="Account Name" required>
     </div>
     <div class="col-sm-4">
     </div>
@@ -129,10 +142,25 @@ if(isset($_POST['submit'])){
 
   <div class="row">
     <div class="col-sm-4">
-      <input type="text" name="admin_username" placeholder="Admin Name">
+      <input type="text" name="admin_username" placeholder="Admin Name" required>
     </div>
     <div class="col-sm-4">
-      <input type="password" name="admin_password" placeholder="Password">
+      <input type="password" name="admin_password" placeholder="Password" required>
+    </div>
+    <div class="col-sm-4">
+    </div>
+  </div>
+
+
+
+<br>
+
+  <div class="row">
+    <div class="col-sm-4">
+      <input type="text" name="user1_username" placeholder="User 1 Name" required>
+    </div>
+    <div class="col-sm-4">
+      <input type="password" name="user1_password" placeholder="Password" required>
     </div>
     <div class="col-sm-4">
     </div>
@@ -142,28 +170,44 @@ if(isset($_POST['submit'])){
 
   <div class="row">
     <div class="col-sm-4">
-      <input type="text" name="user1_username" placeholder="User 1 Name">
+      <input type="text" name="user2_username" placeholder="User 2 Name" required>
     </div>
     <div class="col-sm-4">
-      <input type="password" name="user1_password" placeholder="Password">
+      <input type="password" name="user2_password" placeholder="Password" required>
     </div>
     <div class="col-sm-4">
-    </div>
+     </div>
   </div>
+
 
 <br>
 
   <div class="row">
     <div class="col-sm-4">
-      <input type="text" name="user2_username" placeholder="User 2 Name">
+      <input type="text" name="prefix" style="text-transform:uppercase" placeholder="Prefix">
     </div>
     <div class="col-sm-4">
-      <input type="password" name="user2_password" placeholder="Password">
+      <input type="text" pattern="[0-9]{3}" title="Sequence must contain digits from 000-999" name="sequence" placeholder="Sequence" required>
     </div>
     <div class="col-sm-4">
-      <input type="submit" name="submit" id="submit" style="margin-top:1%;width:100px;height:30px;background-color:green" value="Add">
+      <input type="text" name="suffix" style="text-transform:uppercase" placeholder="Suffix">
     </div>
   </div>
+
+
+<br>
+
+  <div class="row">
+    <div class="col-sm-4">
+       <input type="submit" name="submit" id="submit" style="margin-top:1%;width:100px;height:30px;background-color:green" value="Add">
+    </div>
+    <div class="col-sm-4">
+    </div>
+    <div class="col-sm-4">
+    </div>
+  </div>
+
+
 </div>
 </form> 
 <!-- 

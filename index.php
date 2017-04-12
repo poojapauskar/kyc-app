@@ -19,8 +19,11 @@
 <body style="background-color:#E8E8E8;overflow-x:hidden;">
 
 <?php
+
+session_start();
+
 if(isset($_POST['login_btn'])){
-$url2 = 'https://kyc-application.herokuapp.com/check_is_admin/';
+$url2 = 'https://staging-kyc-application.herokuapp.com/check_is_admin/';
 $options2 = array(
   'http' => array(
     'header'  => array(
@@ -35,10 +38,16 @@ $output2 = file_get_contents($url2, false,$context2);
 /*echo $output2;*/
 $arr2 = json_decode($output2,true);
 if($arr2['status']==200 && $arr2['message']=='Is Super Admin'){
+  $_SESSION['login_kyc_app'] = 1;
   echo "<script>location='super_admin.php'</script>";
 }elseif($arr2['status']==200 && $arr2['message']=='Is Admin'){
+  $_SESSION['login_kyc_app'] = 1;
+  $_SESSION['account_token'] = $arr2['account_token'];
+  /*echo $_SESSION['account_token'];*/
   echo "<script>location='search.php'</script>";
 }elseif($arr2['status']==200 && $arr2['message']=='Is User'){
+  $_SESSION['login_kyc_app'] = 1;
+  $_SESSION['account_token'] = $arr2['account_token'];
   echo "<script>location='search.php'</script>";
 }elseif($arr2['status']==401){
   echo "<script>alert('Password Invalid')</script>";

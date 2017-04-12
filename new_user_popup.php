@@ -1,3 +1,5 @@
+
+
 <html>
   <head>
 
@@ -97,7 +99,7 @@ if(n1==null || n1==''){
 
 var a=document.forms["Form_popup"]["uid"].value;
 if(a==null || a==''){
-        var text = "";
+        /*var text = "";
         var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
 
         for( var i=0; i < 7; i++ )
@@ -107,9 +109,9 @@ if(a==null || a==''){
         
 
         var mystring= (document.getElementById('name1').value).substring(0, 3);
-        var uid_gen=mystring+text;
-        document.getElementById('uid').value = uid_gen;
-        document.getElementById('uid_in_popup').value = uid_gen;
+        var uid_gen=mystring+text;*/
+        document.getElementById('uid').value = document.getElementById('uid_format_org_page').value;
+        document.getElementById('uid_in_popup').value = document.getElementById('uid_format_org_page').value;
 
         /*alert("UID generated: "+uid_gen);*/
         var yourUl = document.getElementById("popup1");
@@ -234,6 +236,32 @@ $(function() {
 </head>
 <body style="background-color:#E8E8E8;">
 
+<?php
+
+session_start();
+/*echo "<script>alert('hi')</script>";*/
+$url_uid_popup = 'https://staging-kyc-application.herokuapp.com/get_uid/';
+$options_uid_popup = array(
+  'http' => array(
+    'header'  => array(
+                        'ACCOUNT-TOKEN: '.$_SESSION['account_token'],
+                        ),
+    'method'  => 'GET',
+  ),
+);
+$context_uid_popup = stream_context_create($options_uid_popup);
+$output_uid_popup = file_get_contents($url_uid_popup, false,$context_uid_popup);
+/*echo $output_uid;*/
+$arr_uid_popup = json_decode($output_uid_popup,true);
+
+
+/*echo "<script type='text/javascript'>alert('$output_uid');</script>";*/
+
+
+?>
+
+
+
 <script type="text/javascript">
   function submit_form(){
     // new entry added should be displayed as partners name in organization page
@@ -273,6 +301,7 @@ $(function() {
                       $('#popup1').hide();
                       $('#myModal').click();
                       /*$('#myModal').modal('hide');*/
+                      /*$('#refresh').load(' #refresh');*/
                   }
     });
 
@@ -296,6 +325,7 @@ $(function() {
   }
 </script>
 
+
 <!-- <p>Click on the "x" symbol to close the alert message.</p> -->
 <div class="alert" id="popup1" class="popup1" style="display:none;text-align:center;position:absolute;
     width:100%;
@@ -308,6 +338,7 @@ $(function() {
   <button onclick="make_uid_null()" id="cancel1" class="btn btn-warning" name="cancel1">Cancel</button>
   <!-- </form> -->
 </div>
+
 
 
 
@@ -341,6 +372,7 @@ $(function() {
 <form name="Form_popup" id="Form_popup" class="form-horizontal" method="post" action="new_user_popup.php" enctype="multipart/form-data">
 <fieldset>
 
+<input type="hidden" name="uid_format_org_page" id="uid_format_org_page" value="<?php echo $arr_uid_popup['uid'] ?>"></input>
 <!-- Form_popup Name -->
 <!-- <legend><center>New Individual Entry</center></legend> -->
 <!--avatar upload-->
@@ -354,7 +386,6 @@ $(function() {
   <label class="col-md-4 control-label" for="textinput">UID:</label>  
   <div class="col-md-4">
   <input id="uid" name="uid" type="text" value="<?php echo $_POST['uid'] ?>" placeholder="" class="form-control input-md">
-    
   </div>
 </div>
 

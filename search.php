@@ -1,3 +1,13 @@
+<?php
+session_start();
+if($_SESSION['login_kyc_app'] == 1){
+
+}else{
+  echo "<script>location='index.php'</script>";
+}
+
+?>
+
 <html>
   <head>
     <!---bootstrap-->
@@ -37,7 +47,7 @@
 <?php
 
 if($_POST['is_user_delete'] != "" && $_POST['pk_delete'] != ""){
-    $url_delete_entry = 'https://kyc-application.herokuapp.com/delete_entry/';
+    $url_delete_entry = 'https://staging-kyc-application.herokuapp.com/delete_entry/';
     $options_delete_entry = array(
       'http' => array(
         'header'  => array(
@@ -59,7 +69,7 @@ if($_POST['is_user_delete'] != "" && $_POST['pk_delete'] != ""){
 
 <?php
 /*if(isset($_POST['submit'])){
-  $url_org = 'https://kyc-application.herokuapp.com/get_id_from_text/';
+  $url_org = 'https://staging-kyc-application.herokuapp.com/get_id_from_text/';
   $options_org = array(
     'http' => array(
       'header'  => array(
@@ -97,10 +107,13 @@ if($_POST['is_user_delete'] != "" && $_POST['pk_delete'] != ""){
      -moz-box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23) !important;
      box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23) !important;" class="mdl-layout__header mdl-layout__header--transparent">
     <div class="mdl-layout__header-row" >
-    <a href="search.php"><img id="logo1" src="images/green.png"></img></a>
-      <span class="mdl-layout-title" id="title2">Admin Panel</span>
-         <span class="mdl-layout-title" id="title1" style="margin-right: 0%">KYCAPP</span>
-         <a href="index.php"><img id="logout" style="float:right;right:10%;position:absolute" src="images/logout1.png"></img></a>
+
+
+       <a href="search.php"> <img id="logo1" src="images/green.png"></img></a>
+      <h5 style="" id="title2">ADMIN PANEL</h5>
+         <span class="mdl-layout-title" id="title1" style="">KYCApp</span>
+         <a href="logout.php"><img id="logout" style="" src="images/logout1.png"></img></a>
+
           <!-- Add spacer, to align navigation to the right -->
           
       </header>
@@ -228,13 +241,17 @@ if($_POST['is_user_delete'] != "" && $_POST['pk_delete'] != ""){
 
 <?php
 
-$db = pg_connect("host=ec2-107-20-191-76.compute-1.amazonaws.com port=5432 dbname=deu9vahl80fvjn user=vdvqpruzihrics password=17b3e7a56da97ca021e3da54bb1694bb799849a2b5911014ed6caa05e1e4e02d");
+session_start();
+
+$db = pg_connect("host=ec2-54-243-252-91.compute-1.amazonaws.com port=5432 dbname=d9nk0o0a44u59m user=iqoiktexvcnwkp password=dcaaf938958ac73448ca87856def466bb40e37047113e8191dacb20f8d87b21d");
  pg_select($db, 'post_log', $_POST);
  
 
- $query=pg_query("SELECT id,name,is_user FROM organization_organization 
+ $query=pg_query("(SELECT id,name,is_user,account_token,is_active FROM organization_organization WHERE is_active = 'true' AND account_token = '".$_SESSION['account_token']."')
   UNION 
- SELECT id,name,is_user FROM users_users");
+ (SELECT id,name,is_user,account_token,is_active FROM users_users WHERE is_active = 'true' AND account_token = '".$_SESSION['account_token']."')");
+
+/*echo $query;*/
 
  $json=array();
 while ($student = pg_fetch_array($query)) {
