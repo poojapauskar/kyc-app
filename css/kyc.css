@@ -2643,7 +2643,7 @@ margin-top:-1%;
 
 .col-md-4.control-label.status
 {
-    margin-left:-29%;
+    margin-left:-66%;
 }
 
 .remove_field{
@@ -2913,9 +2913,9 @@ margin-top:-1%;
 
 .btn.btn-warning.cancel{
     width: 10em;
-    margin-top:-2%;
+    margin-top:0%;
     padding:0.5em;
-    margin-left:2%
+    margin-left:-4%
 }
 
 .btn.btn-warning.delete{
