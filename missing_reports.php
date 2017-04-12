@@ -62,7 +62,7 @@ table{
 <?php 
 if(isset($_POST['view_details'])){
 
-  $string_new="<script>window.location.href='search_result.php?is_user=".$_POST['is_user_no']."&id=".$_POST['uid1']."'</script>";
+  $string_new="<script>window.location.href='search_result.php?is_user=".$_POST['is_user_no']."&id=".$_POST['pk_field']."'</script>";
     // $string_new="<script>window.location.href='https://www.w3schools.com/php/php_forms.asp'</script>";
   echo $string_new;
 
@@ -249,6 +249,7 @@ $('#test').click(function() {
          <input type="hidden" value="<?php echo $arr_missing_report[$i]['missing_file'] ?>" name="missing_file1" id="missing_file1"></input>
 
          <input type="hidden" value="<?php echo $arr_missing_report[$i]['is_user'] ?>" name="is_user_no" id="is_user_no"></input>
+         <input type="hidden" value="<?php echo $arr_missing_report[$i]['pk'] ?>" name="pk_field" id="pk_field"></input>
          
          <button id="upload_btn" name="upload_btn" type="submit" class="btn btn-success"  disabled >Upload</button>
        
