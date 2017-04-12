@@ -448,7 +448,7 @@ VIEW</a>
 <div class="form-group">
   <label class="col-md-4 control-label" for="save_btn"></label>
   <div class="col-md-8">
-    <button id="save_btn" name="save_btn" type="submit" class="btn btn-success" style="width:21%;margin-left:1%;">Edit</button><span><span></span></span>
+    <button id="save_btn" name="save_btn" type="submit" class="btn btn-success" style="width:27%;margin-left:1%;">Edit</button><span><span></span></span>
     <button onclick="ClickEvent()" style="width: 10em;margin-left:2%;" class="btn btn-warning"><a style="color:white" href="search.php">Back</a></button>
   
   </div>
