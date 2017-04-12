@@ -449,9 +449,10 @@ VIEW</a>
   <label class="col-md-4 control-label" for="save_btn"></label>
   <div class="col-md-8">
     <button id="save_btn" name="save_btn" type="submit" class="btn btn-success" style="width:27%;margin-left:1%;">Edit</button><span><span></span></span>
-    <button onclick="ClickEvent()" style="width: 10em;margin-left:2%;" class="btn btn-warning"><a style="color:white" href="search.php">Back</a></button>
-  
-  </div>
+    <button onclick="javascript:history.back()" style="width: 10em;margin-left:2%;" class="btn btn-warning">Back</button>
+<!--   <a style="color:white" href="javascript:history.back()">Go Back</a>
+ <a style="color:white" href="search.php">Back</a>
+ -->  </div>
 </div>
 </fieldset>
 </form>
@@ -821,7 +822,7 @@ VIEW</a>
   <label class="col-md-4 control-label" for="singlebutton"></label>
   <div class="col-md-4">
     <button id="" name="" class="btn btn-success editbutton-searchresult">Edit</button><span><span></span></span>
-    <button onclick="ClickEvent()" class="btn btn-warning backbutton-searchresult"><a style="color:white" href="search.php">Back</a></button>
+    <button onclick="javascript:history.back()" class="btn btn-warning backbutton-searchresult">Back </button>
   </div>
 </div>
 
