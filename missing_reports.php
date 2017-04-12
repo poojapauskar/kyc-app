@@ -21,8 +21,7 @@
 <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 <script src="js/dataTables.material.min.js"></script>
 <script src="js/jquery.dataTables.min.js"></script>
-<script src="https://storage.googleapis.com/code.getmdl.io/1.0.6/material.min.js"></script>
-<script type="text/javascript" src="autocomplete-Files/Logic_Search.js"></script>
+  <script src="https://storage.googleapis.com/code.getmdl.io/1.0.6/material.min.js"></script>
 <script>
 $(document).ready(function() {
     $('#example').dataTable({
@@ -59,6 +58,17 @@ table{
 </style>
 </head>
 <body style="background-color:#E8E8E8;overflow-x:hidden;">
+
+<?php 
+if(isset($_POST['view_details'])){
+
+  $string_new="<script>window.location.href='search_result.php?is_user=".$_POST['is_user_no']."&id=".$_POST['pk_field']."'</script>";
+    // $string_new="<script>window.location.href='https://www.w3schools.com/php/php_forms.asp'</script>";
+  echo $string_new;
+
+  /*echo $_POST["is_user_field"];
+  echo $_POST["id_field"];*/
+}?>
 
 <?php
 if (isset($_POST['upload_btn'])){
@@ -213,17 +223,6 @@ $('#test').click(function() {
 });
 </script>
 
-<!-- 
-<?php if($_POST['view_user']){
-
-  $string_new="<script>window.location.href='search_result.php?is_user=".$_POST['is_user_field']."&id=".$_POST['id_field']."'</script>";
-  echo $string_new;
-
-  /*echo $_POST["is_user_field"];
-  echo $_POST["id_field"];*/
-}?>
- -->
-
 <table align="center" id="example" class="mdl-data-table" cellspacing="0" style="width:75%;margin-top:4%;">
         <thead>
             <th>Name</th>
@@ -246,16 +245,29 @@ $('#test').click(function() {
         <td>
          <input name="file1" id="file1" class="file-upload" type="file" onclick="enableButton2()">
          <input type="hidden" value="<?php echo $arr_missing_report[$i]['uid'] ?>" name="uid1" id="uid1"></input>
+
          <input type="hidden" value="<?php echo $arr_missing_report[$i]['missing_file'] ?>" name="missing_file1" id="missing_file1"></input>
+
+         <input type="hidden" value="<?php echo $arr_missing_report[$i]['is_user'] ?>" name="is_user_no" id="is_user_no"></input>
+         <input type="hidden" value="<?php echo $arr_missing_report[$i]['pk'] ?>" name="pk_field" id="pk_field"></input>
+         
          <button id="upload_btn" name="upload_btn" type="submit" class="btn btn-success"  disabled >Upload</button>
-       </form>
+       
     </td>
+<!-- </form>
+  
+
+  <form method="post"> -->
 
 
-    <td><button class="btn btn-success" style="color:white;opacity: 0.5;" disabled>Generate Link</button>&nbsp
-    <button class="btn btn-success" style="color:white;" id="view_user">View</button>
-    </td>
+    <td><button class="btn btn-success" style="color:white;opacity: 0.5;" disabled>Generate Link</button>
+<!--     <input type="submit" name="view_details" id="view_details" value="View"></input>
+ -->
+     <button class="btn btn-success" name="view_details" id="view_details" style="color:white;">View</button>
+    
+ </td>
   </tr>
+  </form>
   <?php }?>
   
 </table>
@@ -266,7 +278,5 @@ $('#test').click(function() {
             document.getElementById("upload_btn").disabled = false;
         }
     </script>
-
 </body>
 </html>
-
