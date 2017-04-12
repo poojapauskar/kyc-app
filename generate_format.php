@@ -3,7 +3,7 @@
 session_start();
 
 
-$url_uid = 'https://staging-kyc-application.herokuapp.com/get_uid/';
+$url_uid = 'https://kyc-application.herokuapp.com/get_uid/';
 $options_uid = array(
   'http' => array(
     'header'  => array(

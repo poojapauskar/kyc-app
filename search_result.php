@@ -125,7 +125,7 @@ if($_GET["is_user"]==0){
   $is_user="1";
 }
 
-$url_search = 'https://staging-kyc-application.herokuapp.com/search/';
+$url_search = 'https://kyc-application.herokuapp.com/search/';
 $options_search = array(
   'http' => array(
     'header'  => array(
@@ -265,7 +265,7 @@ $arr_search = json_decode($output_search,true);
 </div>
 </div>
 <?php
-  $url_img_download = 'https://staging-kyc-application.herokuapp.com/download/';
+  $url_img_download = 'https://kyc-application.herokuapp.com/download/';
   $options_img_download = array(
     'http' => array(
       'header'  => array(
@@ -309,7 +309,7 @@ VIEW
 </div>
 </div>
 <?php
-  $url_img_download_2 = 'https://staging-kyc-application.herokuapp.com/download/';
+  $url_img_download_2 = 'https://kyc-application.herokuapp.com/download/';
   $options_img_download_2 = array(
     'http' => array(
       'header'  => array(
@@ -361,7 +361,7 @@ VIEW
 <input id="telephone_bill" value="<?php echo $arr_search['response'][0]['organization_details']['telephone'] ?>" style="margin-top: -20px;margin-left: 129px;" name="telephone_bill" class="upload" type="file"  disabled="true">  
 
 <?php
-  $url_img_download_3 = 'https://staging-kyc-application.herokuapp.com/download/';
+  $url_img_download_3 = 'https://kyc-application.herokuapp.com/download/';
   $options_img_download_3 = array(
     'http' => array(
       'header'  => array(
@@ -403,7 +403,7 @@ VIEW
 </div>
 
 <?php
-  $url_img_download_4 = 'https://staging-kyc-application.herokuapp.com/download/';
+  $url_img_download_4 = 'https://kyc-application.herokuapp.com/download/';
   $options_img_download_4 = array(
     'http' => array(
       'header'  => array(
@@ -473,7 +473,7 @@ VIEW</a>
 <form style="<?php echo $margin; ?>" onsubmit="return proceed();" name="Form" id="Form" class="form-horizontal" method="post" action="edit.php?is_user=1&id=<?php echo $_GET['id'] ?>" enctype="multipart/form-data">
 <fieldset>
 <?php
-  $url_img = 'https://staging-kyc-application.herokuapp.com/download/';
+  $url_img = 'https://kyc-application.herokuapp.com/download/';
   $options_img= array(
     'http' => array(
       'header'  => array(
@@ -573,7 +573,7 @@ VIEW</a>
 </div>
 
 <?php
-  $url_img_download = 'https://staging-kyc-application.herokuapp.com/download/';
+  $url_img_download = 'https://kyc-application.herokuapp.com/download/';
   $options_img_download = array(
     'http' => array(
       'header'  => array(
@@ -623,7 +623,7 @@ VIEW</a>
 
 
 <?php
-  $url_img_download_2 = 'https://staging-kyc-application.herokuapp.com/download/';
+  $url_img_download_2 = 'https://kyc-application.herokuapp.com/download/';
   $options_img_download_2 = array(
     'http' => array(
       'header'  => array(
@@ -669,7 +669,7 @@ VIEW</a>
  </div>
 
 <?php
-  $url_img_download_3 = 'https://staging-kyc-application.herokuapp.com/download/';
+  $url_img_download_3 = 'https://kyc-application.herokuapp.com/download/';
   $options_img_download_3= array(
     'http' => array(
       'header'  => array(
@@ -717,7 +717,7 @@ VIEW</a>
    </div>
    </div>
   <?php
-    $url_img_download_4 = 'https://staging-kyc-application.herokuapp.com/download/';
+    $url_img_download_4 = 'https://kyc-application.herokuapp.com/download/';
     $options_img_download_4= array(
       'http' => array(
         'header'  => array(
@@ -760,7 +760,7 @@ VIEW</a>
    </div>
 
   <?php
-    $url_img_download_5 = 'https://staging-kyc-application.herokuapp.com/download/';
+    $url_img_download_5 = 'https://kyc-application.herokuapp.com/download/';
     $options_img_download_5= array(
       'http' => array(
         'header'  => array(
@@ -805,7 +805,7 @@ VIEW</a>
     <input id="aadhar_card" style="margin-left:-47%" name="aadhar_card" value="<?php echo $_POST['aadhar_card'] ?>" class="upload" type="file" disabled>
   
   <?php
-    $url_img_download_6 = 'https://staging-kyc-application.herokuapp.com/download/';
+    $url_img_download_6 = 'https://kyc-application.herokuapp.com/download/';
     $options_img_download_6= array(
       'http' => array(
         'header'  => array(

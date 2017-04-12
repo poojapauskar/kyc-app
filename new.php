@@ -342,7 +342,7 @@ if(isset($_POST["save_btn"]) and $_GET["is_user"]==0) {
 
 
         /*Get Signed Urls*/
-        $url = 'https://staging-kyc-application.herokuapp.com/get_signed_url/';
+        $url = 'https://kyc-application.herokuapp.com/get_signed_url/';
         $data = array('image_list' => [$names[0],$names[1],$names[2],$names[3],$names[4]]);
 
         $options = array(
@@ -530,7 +530,7 @@ if(isset($_POST["save_btn"]) and $_GET["is_user"]==0) {
   }
   $comment = ltrim($comment, ',');
 
-  $url_org = 'https://staging-kyc-application.herokuapp.com/add_new_organization/';
+  $url_org = 'https://kyc-application.herokuapp.com/add_new_organization/';
   $options_org = array(
     'http' => array(
       'header'  => array(
@@ -588,7 +588,7 @@ if ($_POST['uid'] != '' and $_GET["is_user"]==1){
 
 
         /*Get Signed Urls*/
-        $url = 'https://staging-kyc-application.herokuapp.com/get_signed_url/';
+        $url = 'https://kyc-application.herokuapp.com/get_signed_url/';
         $data = array('image_list' => [$names[0],$names[1],$names[2],$names[3],$names[4],$names[5],$names[6]]);
 
         $options = array(
@@ -856,7 +856,7 @@ if ($_POST['uid'] != '' and $_GET["is_user"]==1){
   }
   $comment = ltrim($comment, ',');
 
-  $url_org = 'https://staging-kyc-application.herokuapp.com/add_new_individual/';
+  $url_org = 'https://kyc-application.herokuapp.com/add_new_individual/';
   $options_org = array(
     'http' => array(
       'header'  => array(
@@ -898,7 +898,7 @@ if ($_POST['uid'] != '' and $_GET["is_user"]==1){
 <?php
 
 /*echo "<script>alert('hi')</script>";*/
-$url_uid = 'https://staging-kyc-application.herokuapp.com/get_uid/';
+$url_uid = 'https://kyc-application.herokuapp.com/get_uid/';
 $options_uid = array(
   'http' => array(
     'header'  => array(

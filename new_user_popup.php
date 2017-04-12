@@ -240,7 +240,7 @@ $(function() {
 
 session_start();
 /*echo "<script>alert('hi')</script>";*/
-$url_uid_popup = 'https://staging-kyc-application.herokuapp.com/get_uid/';
+$url_uid_popup = 'https://kyc-application.herokuapp.com/get_uid/';
 $options_uid_popup = array(
   'http' => array(
     'header'  => array(

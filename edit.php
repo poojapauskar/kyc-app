@@ -226,7 +226,7 @@ if ($_GET['is_user']==0) {
   $pk_value=$_GET['id'];
 }
 
-$url_search = 'https://staging-kyc-application.herokuapp.com/search/';
+$url_search = 'https://kyc-application.herokuapp.com/search/';
 $options_search = array(
   'http' => array(
     'header'  => array(
@@ -353,7 +353,7 @@ if(isset($_POST["edit_btn"]) and $_GET["is_user"]==0) {
 
 
         /*Get Signed Urls*/
-        $url = 'https://staging-kyc-application.herokuapp.com/get_signed_url/';
+        $url = 'https://kyc-application.herokuapp.com/get_signed_url/';
         $data = array('image_list' => [$names[0],$names[1],$names[2],$names[3],$names[4]]);
 
         $options = array(
@@ -547,7 +547,7 @@ if(isset($_POST["edit_btn"]) and $_GET["is_user"]==0) {
   $comment = ltrim($comment, ',');
 
 
-  $url_org = 'https://staging-kyc-application.herokuapp.com/edit_organization/';
+  $url_org = 'https://kyc-application.herokuapp.com/edit_organization/';
   $options_org = array(
     'http' => array(
       'header'  => array(
@@ -609,7 +609,7 @@ if(isset($_POST["edit_btn"]) and $_GET["is_user"]==1) {
 
 
         /*Get Signed Urls*/
-        $url = 'https://staging-kyc-application.herokuapp.com/get_signed_url/';
+        $url = 'https://kyc-application.herokuapp.com/get_signed_url/';
         $data = array('image_list' => [$names[0],$names[1],$names[2],$names[3],$names[4],$names[5],$names[6]]);
 
         $options = array(
@@ -882,7 +882,7 @@ if(isset($_POST["edit_btn"]) and $_GET["is_user"]==1) {
   }
   $comment = ltrim($comment, ',');
 
-  $url_org = 'https://staging-kyc-application.herokuapp.com/edit_user/';
+  $url_org = 'https://kyc-application.herokuapp.com/edit_user/';
   $options_org = array(
     'http' => array(
       'header'  => array(
@@ -1031,7 +1031,7 @@ if(isset($_POST["edit_btn"]) and $_GET["is_user"]==1) {
 </div>
 
 <?php
-  $url_img_download = 'https://staging-kyc-application.herokuapp.com/download/';
+  $url_img_download = 'https://kyc-application.herokuapp.com/download/';
   $options_img_download = array(
     'http' => array(
       'header'  => array(
@@ -1078,7 +1078,7 @@ VIEW</a>
   </div>
   
 <?php
-  $url_img_download_2 = 'https://staging-kyc-application.herokuapp.com/download/';
+  $url_img_download_2 = 'https://kyc-application.herokuapp.com/download/';
   $options_img_download_2 = array(
     'http' => array(
       'header'  => array(
@@ -1130,7 +1130,7 @@ VIEW</a>
  </div>
  </div>
 <?php
-  $url_img_download_3 = 'https://staging-kyc-application.herokuapp.com/download/';
+  $url_img_download_3 = 'https://kyc-application.herokuapp.com/download/';
   $options_img_download_3 = array(
     'http' => array(
       'header'  => array(
@@ -1174,7 +1174,7 @@ VIEW</a>
 </div>
 </div>
 <?php
-  $url_img_download_4 = 'https://staging-kyc-application.herokuapp.com/download/';
+  $url_img_download_4 = 'https://kyc-application.herokuapp.com/download/';
   $options_img_download_4 = array(
     'http' => array(
       'header'  => array(
@@ -1496,7 +1496,7 @@ function enable_disable(that){
 <fieldset>
 
 <?php
-  $url_img = 'https://staging-kyc-application.herokuapp.com/download/';
+  $url_img = 'https://kyc-application.herokuapp.com/download/';
   $options_img= array(
     'http' => array(
       'header'  => array(
@@ -1616,7 +1616,7 @@ function enable_disable(that){
 <input  onchange="check_pan_card_user()" id="pan_card" name="pan_card" style="" value="<?php echo $_POST['pan_card'] ?>" class="input-file" type="file">
 </div>
 <?php
-  $url_img_download = 'https://staging-kyc-application.herokuapp.com/download/';
+  $url_img_download = 'https://kyc-application.herokuapp.com/download/';
   $options_img_download = array(
     'http' => array(
       'header'  => array(
@@ -1659,7 +1659,7 @@ function enable_disable(that){
 <input onchange="check_telephone_bill_user()" id="telephone_bill"  value="<?php echo $_POST['telephone_bill'] ?>" style="" name="telephone_bill" class="input-file" type="file">     
 </div>
 <?php
-  $url_img_download_2 = 'https://staging-kyc-application.herokuapp.com/download/';
+  $url_img_download_2 = 'https://kyc-application.herokuapp.com/download/';
   $options_img_download_2 = array(
     'http' => array(
       'header'  => array(
@@ -1699,7 +1699,7 @@ function enable_disable(that){
 <input onchange="check_bank_pass_book_user()" id="bank_pass_book"  value="<?php echo $_POST['bank_pass_book'] ?>" style="" name="bank_pass_book" class="input-file" type="file">     
  </div>
 <?php
-  $url_img_download_3 = 'https://staging-kyc-application.herokuapp.com/download/';
+  $url_img_download_3 = 'https://kyc-application.herokuapp.com/download/';
   $options_img_download_3= array(
     'http' => array(
       'header'  => array(
@@ -1743,7 +1743,7 @@ function enable_disable(that){
   <input onchange="check_voter_id_user()" id="voter_id" value="<?php echo $_POST['voter_id'] ?>" style="" name="voter_id" class="input-file" type="file">  
   </div>   
   <?php
-    $url_img_download_4 = 'https://staging-kyc-application.herokuapp.com/download/';
+    $url_img_download_4 = 'https://kyc-application.herokuapp.com/download/';
     $options_img_download_4= array(
       'http' => array(
         'header'  => array(
@@ -1786,7 +1786,7 @@ function enable_disable(that){
    </div>
 
   <?php
-    $url_img_download_5 = 'https://staging-kyc-application.herokuapp.com/download/';
+    $url_img_download_5 = 'https://kyc-application.herokuapp.com/download/';
     $options_img_download_5= array(
       'http' => array(
         'header'  => array(
@@ -1827,7 +1827,7 @@ function enable_disable(that){
     </div>
   
   <?php
-    $url_img_download_6 = 'https://staging-kyc-application.herokuapp.com/download/';
+    $url_img_download_6 = 'https://kyc-application.herokuapp.com/download/';
     $options_img_download_6= array(
       'http' => array(
         'header'  => array(
@@ -1932,7 +1932,7 @@ function enable_disable(that){
 
 
 <?php
-$url_can_be_deleted_or_no = 'https://staging-kyc-application.herokuapp.com/can_be_deleted_or_no/';
+$url_can_be_deleted_or_no = 'https://kyc-application.herokuapp.com/can_be_deleted_or_no/';
 $options_can_be_deleted_or_no = array(
   'http' => array(
     'header'  => array(

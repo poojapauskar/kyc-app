@@ -57,7 +57,7 @@ td {
 
 <?php
 if(isset($_POST['delete_btn'])){
-  $url_delete_account = 'https://staging-kyc-application.herokuapp.com/delete_account/';
+  $url_delete_account = 'https://kyc-application.herokuapp.com/delete_account/';
   $options_delete_account = array(
     'http' => array(
       'header'  => array(
@@ -75,7 +75,7 @@ if(isset($_POST['delete_btn'])){
 
 <?php
 if(isset($_POST['submit'])){
-	$url = 'https://staging-kyc-application.herokuapp.com/account/';
+	$url = 'https://kyc-application.herokuapp.com/account/';
   $data = array(
               'company' => $_POST['company'],
               'admin_username' => $_POST['admin_username'],
@@ -109,7 +109,7 @@ if(isset($_POST['submit'])){
 ?>
 
 <?php
-  $url_get_all_accounts = 'https://staging-kyc-application.herokuapp.com/get_all_accounts/';
+  $url_get_all_accounts = 'https://kyc-application.herokuapp.com/get_all_accounts/';
   $options_get_all_accounts = array(
     'http' => array(
       'method'  => 'GET',

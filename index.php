@@ -23,7 +23,7 @@
 session_start();
 
 if(isset($_POST['login_btn'])){
-$url2 = 'https://staging-kyc-application.herokuapp.com/check_is_admin/';
+$url2 = 'https://kyc-application.herokuapp.com/check_is_admin/';
 $options2 = array(
   'http' => array(
     'header'  => array(
