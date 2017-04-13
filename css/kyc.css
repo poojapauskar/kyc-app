@@ -17,6 +17,14 @@
     margin-top:7%;
 }
 
+#title3
+{
+    margin-left:31%;
+    margin-top:9%;
+    font-size:18px;
+
+}
+
 #logout
 {
    float:right;
@@ -29,7 +37,7 @@
 
 #title2
 {
-    margin-left:35%;
+    margin-left:26%;
     margin-top:9%;
     font-size:18px;
 }
@@ -1074,6 +1082,14 @@ margin-top:-1%;
     margin-left: 52%;
 }
 
+#title3
+{
+    margin-left:31%;
+    margin-top:9%;
+    font-size:18px;
+
+}
+
 .btn.btn-info.user{
     color: white;
     background-color: rgb(23, 111, 172);
@@ -1098,6 +1114,14 @@ margin-top:-1%;
 }
 @media screen and (max-width:1600px)
 {
+
+    #title3
+{
+    margin-left:31%;
+    margin-top:9%;
+    font-size:18px;
+
+}
 
  
  .btn.btn-warning.backbutton-searchresult{/*1600 Back Button in Search_result page*/
@@ -1468,7 +1492,13 @@ margin-top:-1%;
     width:4%;
     height:77%;
 }
+#title3
+{
+    margin-left:31%;
+    margin-top:9%;
+    font-size:18px;
 
+}
 #title
 {
     margin-left:70%;
@@ -1487,7 +1517,7 @@ margin-top:-1%;
 
 #title2
 {
-    margin-left:35%;
+    margin-left:26%;
     margin-top:9%;
     font-size:18px;
 }
