@@ -1931,6 +1931,7 @@ function enable_disable(that){
   <label class="col-md-4 control-label" for="selectbasic">Type of work</label>
   <div class="col-md-4">
     <select id="type_of_work[]" name="type_of_work[]" class="form-control" style="width: 70%;">
+      <option value=""></option>
       <option value="Audit Report">Audit Report</option>
       <option value="ITR filing">ITR filing</option>
       <option value="VAT Filing">VAT Filing</option>
@@ -1948,6 +1949,7 @@ function enable_disable(that){
   <div class="col-md-4">
     <select id="status" name="status[]" class="form-control" style="width: 70%">
       <option value="<?php echo $arr_search['response'][0]['add_info'][$q]['status']; ?>"><?php echo $arr_search['response'][0]['add_info'][$q]['status']; ?></option>
+      <option value=""></option>
       <option value="Pending">Pending</option>
       <option value="Work in process">Work in process</option>
       <option value="Completed">Completed</option>
