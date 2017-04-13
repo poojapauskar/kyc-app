@@ -171,6 +171,7 @@ if(a==null || a==''){
             text += possible.charAt(Math.floor(Math.random() * possible.length));
 
         var mystring= (document.getElementById('name').value).substring(0, 3);
+<<<<<<< HEAD
         var uid_gen=mystring+text;*/
         document.getElementById('uid').value = document.getElementById('uid_format').value;
         document.getElementById('uid_in_popup').value = document.getElementById('uid_format').value;
@@ -179,6 +180,16 @@ if(a==null || a==''){
 //         var yourUl = document.getElementById("popup1");
 //         yourUl.style.display = yourUl.style.display === 'none' ? '' : 'none';
 //         return false;
+=======
+        var uid_gen=mystring+text;
+        document.getElementById('uid').value = uid_gen;
+        document.getElementById('uid_in_popup').value = uid_gen;
+
+         // alert("UID generated: "+uid_gen);
+        var yourUl = document.getElementById("popup1");
+        yourUl.style.display = yourUl.style.display === 'none' ? '' : 'none';
+        return false;
+>>>>>>> resolved conflict
 }else{
         document.getElementById('uid_in_popup').value = document.getElementById('uid').value;
 
@@ -1301,12 +1312,17 @@ function enable_disable(that){
 <div class="form-group">
   <label class="col-md-4 control-label" for="textinput" >UID:</label>  
   <div class="col-md-4">
+<<<<<<< HEAD
 
   <input id="uid" name="uid" type="text" value="<?php echo $_POST['uid'] ?>" placeholder="" class="form-control input-md" style="width:70%">
   
   <input type="hidden" name="uid_format" id="uid_format" value="<?php echo $arr_uid['uid'] ?>"></input>
   
 
+=======
+  <input id="uid" name="uid" type="text" value="<?php echo $_POST['uid'] ?>" placeholder="" class="form-control input-md">
+    
+>>>>>>> resolved conflict
   </div>
 </div>
 
@@ -1314,7 +1330,11 @@ function enable_disable(that){
 <div class="form-group">
   <label class="col-md-4 control-label" for="textinput">Name:</label>  
   <div class="col-md-4">
+<<<<<<< HEAD
   <input id="name" name="name" value="<?php echo $_POST['name'] ?>" type="text" placeholder="" class="form-control input-md" style="width: 70%;" required/>
+=======
+  <input id="name" name="name" value="<?php echo $_POST['name'] ?>" type="text" placeholder="" class="form-control input-md" required/>
+>>>>>>> resolved conflict
     
   </div>
 </div>
@@ -1323,7 +1343,11 @@ function enable_disable(that){
 <div class="form-group">
   <label class="col-md-4 control-label" for="textinput">DOB:</label>  
   <div class="col-md-4">
+<<<<<<< HEAD
   <input id="date1" name="date1" value="<?php echo $_POST['date1'] ?>" type="text" class="form-control input-md datepicker picker" readonly style="width: 70%;">
+=======
+  <input id="date1" name="date1" value="<?php echo $_POST['date1'] ?>" type="text" class="form-control input-md datepicker picker" readonly>
+>>>>>>> resolved conflict
   </div>
 </div>
 
@@ -1331,7 +1355,11 @@ function enable_disable(that){
 <div class="form-group">
   <label class="col-md-4 control-label" for="selectbasic">Profession:</label>
   <div class="col-md-4">
+<<<<<<< HEAD
     <select id="profession" name="profession" class="form-control" style="width: 70%" >
+=======
+    <select id="profession" name="profession" class="form-control">
+>>>>>>> resolved conflict
       <option value="Option one"><?php echo $_POST['profession'] ?></option>
       <optgroup label="Academics">
         <option value="Professors">Professors</option>
@@ -1426,7 +1454,6 @@ function enable_disable(that){
   <label class="col-md-4 control-label" for="textinput"></label>  
   <div class="col-md-4">
   <input id="textinput" name="textinput" type="text" placeholder="specify " class="form-control input-md"  style="width: 70%" >
-    
   </div>
 </div>
 
@@ -1500,8 +1527,7 @@ function enable_disable(that){
 <div class="form-group">
   <label class="col-md-4 control-label" for="textinput">Adhar card No.</label>  
   <div class="col-md-4">
-  <input id="aadhar_no" name="aadhar_no" value="<?php echo $_POST['aadhar_no'] ?>" type="text" placeholder="" class="form-control input-md"  style="width: 70%" >
-    
+  <input id="aadhar_no" name="aadhar_no" value="<?php echo $_POST['aadhar_no'] ?>" type="text" placeholder="" class="form-control input-md"  style="width: 70%" >  
   </div>
 </div>
 
@@ -1509,6 +1535,7 @@ function enable_disable(that){
 <div class="form-group">
   <label class="col-md-4 control-label" for="filebutton">Adhar card:</label>
   <div class="col-md-4">
+<<<<<<< HEAD
     <input onchange="check_aadhar_card_user()" id="aadhar_card" name="aadhar_card" value="<?php echo $_POST['aadhar_card'] ?>" class="input-file" type="file"  style="width: 70%">
   </div>
 </div>
@@ -1578,10 +1605,8 @@ function enable_disable(that){
 <div class="form-group">
   <label class="col-md-4 control-label" for="singlebutton"></label>
   <div class="col-md-4">
-
     <button onclick="validate();" id="generate_btn" name="generate_btn">Generate</button>
     <button id="singlebutton" style="margin-left:13%;" name="singlebutton" class="btn btn-primary"><a style="color:white" href="search.php">Discard</a></button>
-
   </div>
 </div>
 </fieldset>
@@ -1593,7 +1618,6 @@ function enable_disable(that){
     var Form=document.getElementById("Form");
     if(Form.checkValidity()==true)
     {
-      /*alert("hello");*/
       proceed();
 
     }
