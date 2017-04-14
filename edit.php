@@ -2701,7 +2701,6 @@ function goBack() {
             changeYear : true,});
           newInput.datepicker({dateFormat: 'dd/mm/yy',changeMonth : true,
             changeYear : true,}).datepicker("setDate", new Date());
-
           $("#status1").click(function () {
 
             if ($("#status1" ).val() == "Completed") {
