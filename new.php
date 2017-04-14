@@ -159,19 +159,18 @@ document.getElementById('uploadFile').value='Choose File'; }
   </script>
 <script type="text/javascript">
 
-
 function proceed(){
 
 var a=document.forms["Form"]["uid"].value;
 if(a==null || a==''){
-        var text = "";
+        /*var text = "";
         var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
 
         for( var i=0; i < 7; i++ )
             text += possible.charAt(Math.floor(Math.random() * possible.length));
 
         var mystring= (document.getElementById('name').value).substring(0, 3);
-        var uid_gen=mystring+text;
+        var uid_gen=mystring+text;*/
         document.getElementById('uid').value = document.getElementById('uid_format').value;
         document.getElementById('uid_in_popup').value = document.getElementById('uid_format').value;
 
@@ -179,7 +178,6 @@ if(a==null || a==''){
 //         var yourUl = document.getElementById("popup1");
 //         yourUl.style.display = yourUl.style.display === 'none' ? '' : 'none';
 //         return false;
-
 }else{
         document.getElementById('uid_in_popup').value = document.getElementById('uid').value;
 
@@ -1425,9 +1423,7 @@ function enable_disable(that){
 <div class="form-group">
   <label class="col-md-4 control-label" for="textinput"></label>  
   <div class="col-md-4">
-
   <input id="textinput" name="textinput" type="text" placeholder="Specify if Others" class="form-control input-md"  style="width: 70%" >
-
   </div>
 </div>
 
@@ -1580,10 +1576,8 @@ function enable_disable(that){
 <div class="form-group">
   <label class="col-md-4 control-label" for="singlebutton"></label>
   <div class="col-md-4">
-
     <button onclick="validate();" id="generate_btn" name="generate_btn">Generate</button>
     <button id="singlebutton" style="margin-left:13%;" name="singlebutton" class="btn btn-primary"><a style="color:white" href="search.php">Discard</a></button>
-
   </div>
 </div>
 </fieldset>
