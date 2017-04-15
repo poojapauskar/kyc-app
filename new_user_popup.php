@@ -639,7 +639,7 @@ function goBack() {
     var add_button      = $(".add_field"); //Add button ID
 
     var wrapper_pre1         = $(".present_fields_1"); //Fields wrapper
-    var x = 1; //initlal text box count
+    var x11 = 1; //initlal text box count
     var date = new Date();
   var day = date.getDate();
   var month = date.getMonth() + 1;
@@ -652,20 +652,20 @@ function goBack() {
    
     $(add_button).click(function(e){ //on add input button click
         e.preventDefault();
-        if(x < max_fields){ //max input box allowed
-            x++; //text box incrementa
-              $(wrapper).prepend('<br><div style="margin-left:50%;"><div class="form-group"><label class="control-label" for="selectbasic" style="margin-left:-220px;">Type of work</label><div class="col-md-6"><select id="type_of_work[]" name="type_of_work[]" class="form-control" style="margin-left:17%;width:222%"><option value="Option one">Audit Report</option><option value="Option two">ITR filing</option><option value="Option three">VAT Filing</option><option value="Option four">Accounting</option><option value="Option five">Registration</option><option value="Option six">Certification</option><option value="Option seven">Others</option></select></div></div><div class="form-group"> <label class="col-md-4 control-label" for="selectbasic" style="margin-left:-29%">Status</label><div class="col-md-6"><select id="status1' + x + '" name="status[]" style="width:210%;margin-left:-1%;" class="form-control"><option value="Pending">Pending</option><option value="Work in process">Work in process</option><option value="Completed">Completed</option></select></div></div><div class="form-group row"><label for="example-date-input" class="col-2 col-form-label" style="margin-left:-15.5%;";">DATE</label><div class="col-8"><input class="form-control datepicker pick" id="date" name="date[]" value="<?php echo $_POST['date'] ?>" style="width:86%;margin-left:10.6%;margin-top:-10%;" type="text" readonly></div></div><div class="form-group"><label class="col-md-4 control-label" for="textinput" style="margin-left:-36%">Comment</label><div class="col-md-4"><input id=id="comments' + x + '" name="comment[]" type="text" placeholder="" class="form-control input-md" style="width:342%;margin-left:20%"></div></div></center><a href="#" class="remove_field" style="margin-left: 197px; margin-top: -40px;position:absolute"><img src="images/del24.png"></a></a></div>'); //add input box\
+        if(x11 < max_fields){ //max input box allowed
+            x11++; //text box incrementa
+              $(wrapper).prepend('<br><div style="margin-left:50%;"><div class="form-group"><label class="control-label" for="selectbasic" style="margin-left:-220px;">Type of work</label><div class="col-md-6"><select id="type_of_work[]" name="type_of_work[]" class="form-control" style="margin-left:17%;width:222%"><option value="Option one">Audit Report</option><option value="Option two">ITR filing</option><option value="Option three">VAT Filing</option><option value="Option four">Accounting</option><option value="Option five">Registration</option><option value="Option six">Certification</option><option value="Option seven">Others</option></select></div></div><div class="form-group"> <label class="col-md-4 control-label" for="selectbasic" style="margin-left:-29%">Status</label><div class="col-md-6"><select id="status11' + x11 + '" name="status[]" style="width:210%;margin-left:-1%;" class="form-control"><option value="Pending">Pending</option><option value="Work in process">Work in process</option><option value="Completed">Completed</option></select></div></div><div class="form-group row"><label for="example-date-input" class="col-2 col-form-label" style="margin-left:-15.5%;";">DATE</label><div class="col-8"><input class="form-control datepicker pick" id="date11' + x11 + '" name="date[]" value="<?php echo $_POST['date'] ?>" style="width:86%;margin-left:10.6%;margin-top:-10%;" type="text" readonly></div></div><div class="form-group"><label class="col-md-4 control-label" for="textinput" style="margin-left:-36%">Comment</label><div class="col-md-4"><input id="comments11' + x11 + '" name="comment[]" type="text" placeholder="" class="form-control input-md" style="width:342%;margin-left:20%"></div></div></center><a href="#" class="remove_field" style="margin-left: 197px; margin-top: -40px;position:absolute"><img src="images/del24.png"></a></a></div>'); //add input box\
               $(".datepicker.pick").val(today);
               $(".datepicker.pick").datepick({dateFormat: 'dd/mm/yyyy'});         
-              var newInput=$("#date").datepick({dateFormat: 'dd/mm/yyyy'});
-              newInput.datepick({dateFormat: 'dd/mm/yyyy'}).datepick("setDate", new Date());
-              $("#status1" + x).click(function () {
+              var newInput11=$("#date11" + x11).datepick({dateFormat: 'dd/mm/yyyy'});
+              newInput11.datepick({dateFormat: 'dd/mm/yyyy'}).datepick("setDate", new Date());
+              $("#status11" + x).click(function () {
 
-                 if ($("#status1" + x).val() == "Completed") {
-                 $("#comments" + x).attr("required", "required");
+                 if ($("#status11" + x11).val() == "Completed") {
+                 $("#comments11" + x11).attr("required", "required");
               }
               else
-                 $("#comments" + x).attr("required", false);
+                 $("#comments11" + x11).attr("required", false);
               });
 
       }
