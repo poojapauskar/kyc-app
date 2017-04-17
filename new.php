@@ -164,20 +164,18 @@ document.getElementById('uploadFile').value='Choose File'; }
 });
   </script>
 <script type="text/javascript">
-
-
 function proceed(){
 
 var a=document.forms["Form"]["uid"].value;
 if(a==null || a==''){
-        /*var text = "";
+        var text = "";
         var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
 
         for( var i=0; i < 7; i++ )
             text += possible.charAt(Math.floor(Math.random() * possible.length));
 
         var mystring= (document.getElementById('name').value).substring(0, 3);
-        var uid_gen=mystring+text;*/
+        var uid_gen=mystring+text;
         document.getElementById('uid').value = document.getElementById('uid_format').value;
         document.getElementById('uid_in_popup').value = document.getElementById('uid_format').value;
 
@@ -196,9 +194,7 @@ if(a==null || a==''){
 }
 }
 
-
 </script>
-
 <!-- Datepicker -->
  <link rel="stylesheet" href="css/jquery-ui.css"> 
  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"> 
@@ -1342,7 +1338,9 @@ function enable_disable(that){
   <label class="col-md-4 control-label" for="textinput" >UID:</label>  
   <div class="col-md-4">
 
-  <input id="uid" name="uid" type="text" value="<?php echo $_POST['uid'] ?>" placeholder="" class="form-control input-md" style="width:70%" readonly>
+
+  <input id="uid" name="uid" type="text" value="<?php echo $_POST['uid'] ?>" placeholder="" class="form-control input-md" style="width:70%" disabled>
+
   
   <input type="hidden" name="uid_format" id="uid_format" value="<?php echo $arr_uid['uid'] ?>"></input>
   </div>
@@ -1352,7 +1350,9 @@ function enable_disable(that){
 <div class="form-group">
   <label class="col-md-4 control-label" for="textinput">Name:</label>  
   <div class="col-md-4">
+
   <input id="name" name="name" value="<?php echo $_POST['name'] ?>" type="text" placeholder="" class="form-control input-md" style="width: 70%;" required/> 
+
   </div>
 </div>
 <!--date-->
@@ -1462,7 +1462,10 @@ function enable_disable(that){
 <div class="form-group">
   <label class="col-md-4 control-label" for="textinput"></label>  
   <div class="col-md-4">
+
+
   <input id="textinput" name="textinput" type="text" placeholder="Specify if Others" class="form-control input-md"  style="width: 70%" >
+
   </div>
 </div>
 
@@ -1623,7 +1626,7 @@ function enable_disable(that){
 </form>
 
 <?php } ?>
-<script type="text/javascript">
+ <script type="text/javascript">
   function validate(){
     var Form=document.getElementById("Form");
     if(Form.checkValidity()==true)
@@ -1714,12 +1717,10 @@ $(document).ready(function() {
 
         if(x < max_fields){ //max input box allowed
             x++; //text box increment
-           $('<div style="margin-left:50%;"><div class="form-group"><label class="control-label type" for="selectbasic" style="">Type of work</label><div class="col-md-6"><select id="type_of_work[]" name="type_of_work[]" class="form-control type_of_work" style=""><option value="Audit Report">Audit Report</option><option value="ITR filing">ITR filing</option><option value="VAT Filing">VAT Filing</option><option value="Accounting">Accounting</option><option value="Registration">Registration</option><option value="Certification">Certification</option><option value="Others">Others</option></select></div></div><div class="form-group"> <label class="col-md-4 control-label status" for="selectbasic" style="">Status</label><div class="col-md-6"><select id="status1' + x + '"  name="status[]"  class="form-control status"><option value="Pending">Pending</option><option value="Work in process">Work in process</option><option value="Completed">Completed</option></select></div></div><div class="form-group row"><label for="example-date-input" class="col-2 col-form-label date">DATE</label><div class="col-10 col"><input class="form-control datepicker pickers" id="date' + x +'" name="date[]" style="" type="text" readonly></div></div><div class="form-group"><label class="col-md-4 control-label comment" for="textinput" style="">Comment</label><div class="col-md-4"><input id="comments' + x + '" name="comment[]" type="text" placeholder="" class="form-control input-md comment" style=""></div></div></center><a href="#" class="remove_field" style=""><img src="images/del24.png" ></a></a></div>').insertBefore(add_button)//add input box\
+
+            $('<div style="margin-left:50%;"><div class="form-group"><label class="control-label type" for="selectbasic" style="">Type of work</label><div class="col-md-6"><select id="type_of_work[]" name="type_of_work[]" class="form-control type_of_work" style=""><option value="Audit Report">Audit Report</option><option value="ITR filing">ITR filing</option><option value="VAT Filing">VAT Filing</option><option value="Accounting">Accounting</option><option value="Registration">Registration</option><option value="Certification">Certification</option><option value="Others">Others</option></select></div></div><div class="form-group"> <label class="col-md-4 control-label statuss1" for="selectbasic" style="">Status</label><div class="col-md-6"><select id="status1' + x + '"  name="status[]"  class="form-control status"><option value="Pending">Pending</option><option value="Work in process">Work in process</option><option value="Completed">Completed</option></select></div></div><div class="form-group row"><label for="example-date-input" class="col-2 col-form-label date">DATE</label><div class="col-10 col"><input class="form-control datepicker pickers" id="date' + x +'" name="date[]" style="" type="text" readonly></div></div><div class="form-group"><label class="col-md-4 control-label comment" for="textinput" style="">Comment</label><div class="col-md-4"><input id="comments' + x + '" name="comment[]" type="text" placeholder="" class="form-control input-md comment" style=""></div></div></center><a href="#" class="remove_field" style=""><img src="images/del24.png" ></a></a></div>').insertBefore(add_button)//add input box\
           var newInput=$("#date"+ x).datepicker({dateFormat: 'dd/mm/yy'});
           newInput.datepicker({dateFormat: 'dd/mm/yy'}).datepicker("setDate", new Date());
-
-
-
           $("#status1" + x).click(function () {
 
             if ($("#status1" + x).val() == "Completed") {
