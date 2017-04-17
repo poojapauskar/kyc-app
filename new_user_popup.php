@@ -85,8 +85,30 @@
 
   </style>
 
+<script type="text/javascript">
+  function validate(){
+    var Form=document.getElementById("Form_popup");
+    if(Form.checkValidity()==true)
+    {
+      /*alert("hello");*/
+      return proceed();
 
+    }
+  }
+</script>
 
+<script type="text/javascript">
+ $(document).ready(function () {
+        $("#statuss").click(function () {
+
+            if ($("#statuss").val() == "Completed") {
+                $("#commentsss").attr("required", "required");
+            }
+            else
+              $("#commentsss").attr("required", false);
+        });
+});
+</script>
 <script>
 
 function proceed(){
@@ -535,7 +557,7 @@ $arr_uid_popup = json_decode($output_uid_popup,true);
 <div class="form-group">
   <label class="col-md-4 control-label" for="selectbasic">Status:</label>
   <div class="col-md-4">
-    <select id="status[]" name="status[]" class="form-control">
+    <select id="statuss" name="status[]" class="form-control">
       <option value="Pending">Pending</option>
       <option value="Work in process">Work in process</option>
       <option value="Completed">Completed</option>
@@ -567,7 +589,7 @@ $arr_uid_popup = json_decode($output_uid_popup,true);
 <div class="form-group">
   <label class="col-md-4 control-label" for="textinput">Comment:</label>  
   <div class="col-md-4">
-  <input id="comment[]" name="comment[]" type="text" placeholder="" class="form-control input-md">
+  <input id="commentsss" name="comment[]" type="text" placeholder="" class="form-control input-md">
     
   </div>
 </div>
@@ -593,7 +615,7 @@ $arr_uid_popup = json_decode($output_uid_popup,true);
   <label class="col-md-4 control-label" for="singlebutton"></label>
 
   <div class="col-md-4" style="text-align:center">
-    <button onclick="return proceed()" id="generate_btn" name="generate_btn">Generate</button>
+    <button onclick="return validate()" id="generate_btn" name="generate_btn">Generate</button>
     <!-- <button id="singlebutton" style="margin-left:13%;" name="singlebutton" class="btn btn-primary"><a style="color:white" onclick="goBack()">Discard</a></button> -->
 
   </div>
@@ -631,10 +653,22 @@ function goBack() {
     $(add_button).click(function(e){ //on add input button click
         e.preventDefault();
         if(x < max_fields){ //max input box allowed
-            x++; //text box incrementa
-              $(wrapper).prepend('<br><div style="margin-left:50%;"><div class="form-group"><label class="control-label" for="selectbasic" style="margin-left:-220px;">Type of work</label><div class="col-md-6"><select id="type_of_work[]" name="type_of_work[]" class="form-control" style="margin-left:17%;width:222%"><option value="Option one">Audit Report</option><option value="Option two">ITR filing</option><option value="Option three">VAT Filing</option><option value="Option four">Accounting</option><option value="Option five">Registration</option><option value="Option six">Certification</option><option value="Option seven">Others</option></select></div></div><div class="form-group"> <label class="col-md-4 control-label" for="selectbasic" style="margin-left:-29%">Status</label><div class="col-md-6"><select id="status[]" name="status[]" style="width:210%;margin-left:-1%;" class="form-control"><option value="Pending">Pending</option><option value="Work in process">Work in process</option><option value="Completed">Completed</option></select></div></div><div class="form-group row"><label for="example-date-input" class="col-2 col-form-label" style="margin-left:-15.5%;";">DATE</label><div class="col-8"><input class="form-control datepicker pick" id="date" name="date[]" value="<?php echo $_POST['date'] ?>" style="width:86%;margin-left:10.6%;margin-top:-10%;" type="text" readonly></div></div><div class="form-group"><label class="col-md-4 control-label" for="textinput" style="margin-left:-36%">Comment</label><div class="col-md-4"><input id="comment[]" name="comment[]" type="text" placeholder="" class="form-control input-md" style="width:342%;margin-left:20%"></div></div></center><a href="#" class="remove_field" style="margin-left: 197px; margin-top: -40px;position:absolute"><img src="images/del24.png"></a></a></div>'); //add input box\
+              x++; //text box incrementa
+              $(wrapper).prepend('<br><div style="margin-left:50%;"><div class="form-group"><label class="control-label" for="selectbasic" style="margin-left:-220px;">Type of work</label><div class="col-md-6"><select id="type_of_work[]" name="type_of_work[]" class="form-control" style="margin-left:17%;width:222%"><option value="Option one">Audit Report</option><option value="Option two">ITR filing</option><option value="Option three">VAT Filing</option><option value="Option four">Accounting</option><option value="Option five">Registration</option><option value="Option six">Certification</option><option value="Option seven">Others</option></select></div></div><div class="form-group"> <label class="col-md-4 control-label" for="selectbasic" style="margin-left:-29%">Status</label><div class="col-md-6"><select id="status11' + x + '" name="status[]" style="width:210%;margin-left:-1%;" class="form-control"><option value="Pending">Pending</option><option value="Work in process">Work in process</option><option value="Completed">Completed</option></select></div></div><div class="form-group row"><label for="example-date-input" class="col-2 col-form-label" style="margin-left:-15.5%;";">DATE</label><div class="col-8"><input class="form-control datepicker pick" id="date11' + x + '" name="date[]" value="<?php echo $_POST['date'] ?>" style="width:86%;margin-left:10.6%;margin-top:-10%;" type="text" readonly></div></div><div class="form-group"><label class="col-md-4 control-label" for="textinput" style="margin-left:-36%">Comment</label><div class="col-md-4"><input id="comments11' + x + '" name="comment[]" type="text" placeholder="" class="form-control input-md" style="width:342%;margin-left:20%"></div></div></center><a href="#" class="remove_field" style="margin-left: 197px; margin-top: -40px;position:absolute"><img src="images/del24.png"></a></a></div>'); //add input box\
               $(".datepicker.pick").val(today);
               $(".datepicker.pick").datepick({dateFormat: 'dd/mm/yyyy'});         
+              var newInput11=$("#date11" + x).datepick({dateFormat: 'dd/mm/yyyy'});
+              newInput11.datepick({dateFormat: 'dd/mm/yyyy'}).datepick("setDate", new Date());
+              $("#status11" + x).click(function () {
+
+                 if ($("#status11" + x).val() == "Completed") {
+                     $("#comments11" + x).attr("required", "required");
+                 }
+                 else{
+                     $("#comments11" + x).attr("required", false);
+                 }
+              });
+
         }
     });
     
