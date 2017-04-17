@@ -181,17 +181,17 @@ if(a==null || a==''){
         document.getElementById('uid').value = document.getElementById('uid_format').value;
         document.getElementById('uid_in_popup').value = document.getElementById('uid_format').value;
 
-         alert("UID generated: "+document.getElementById('uid_format').value);
-//         var yourUl = document.getElementById("popup1");
-//         yourUl.style.display = yourUl.style.display === 'none' ? '' : 'none';
-//         return false;
+ //        alert("UID generated: "+document.getElementById('uid_format').value);
+        var yourUl = document.getElementById("popup1");
+        yourUl.style.display = yourUl.style.display === 'none' ? '' : 'none';
+        return false;
 }else{
         document.getElementById('uid_in_popup').value = document.getElementById('uid').value;
 
-        alert("UID generated: "+document.getElementById('uid').value);
-        /*var yourUl = document.getElementById("popup1");
+  //      alert("UID generated: "+document.getElementById('uid').value);
+        var yourUl = document.getElementById("popup1");
         yourUl.style.display = yourUl.style.display === 'none' ? '' : 'none';
-        return false;*/
+        return false;
 }
 }
 
@@ -1624,10 +1624,15 @@ function enable_disable(that){
 <?php } ?>
 <script type="text/javascript">
   function validate(){
-    var Form=document.getElementById("Form");
-    if(Form.checkValidity()==true)
+    var name=document.getElementById("name");
+    var statuss=document.getElementById("statuss");
+    var pan=document.getElementById("pan");
+    if(name.checkValidity()==true)
     {
-      proceed();
+        if(statuss.checkValidity()==true)
+        {
+        proceed();
+      }
 
     }
   }

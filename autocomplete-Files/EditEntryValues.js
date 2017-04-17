@@ -1,3 +1,1 @@
-
-var partnames={"369":"professio test","371":"profress1","373":"addmore2","372":"addmore1"}
-
+var partnames={"369":"professio test","371":"profress1","373":"addmore2","372":"addmore1","374":"Pooja MH","375":"Aarti","376":"Pooja MK","377":"Karan KL","378":"Kavya","379":"Kavya RT"}
