@@ -1495,6 +1495,7 @@ margin-top:-1%;
 #title3
 {
     margin-left:31%;
+
     margin-top:8%;
     font-size:18px;
 
@@ -1518,6 +1519,7 @@ margin-top:-1%;
 #title2
 {
     margin-left:26%;
+
     margin-top:7%;
     font-size:18px;
 }
@@ -2122,10 +2124,12 @@ div.fileUpload.btn.btn-info{
 }
 .col-md-4.control-label.status
 {
+
     margin-left: -66%;
 }
 .col-md-4.control-label.statuss1{
     margin-left: -30%;
+
 }
 
 /*adding extra field*/
