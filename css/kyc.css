@@ -1495,7 +1495,7 @@ margin-top:-1%;
 #title3
 {
     margin-left:31%;
-    margin-top:9%;
+    margin-top:8%;
     font-size:18px;
 
 }
@@ -1509,7 +1509,7 @@ margin-top:-1%;
 {
    float:right;
    right:139px;
-   top:52px;
+   top:47px;
    position:absolute;
     width: 40px;
     height: 40px;
@@ -1518,7 +1518,7 @@ margin-top:-1%;
 #title2
 {
     margin-left:26%;
-    margin-top:9%;
+    margin-top:7%;
     font-size:18px;
 }
 
@@ -1537,7 +1537,7 @@ width: 155%;
 #title1{
     float: right;
     right: 206px;
-    top: 73px;
+    top: 69px;
     position: absolute;
 }
 
@@ -1556,7 +1556,7 @@ width: 155%;
 }
 
 #logo1 {
-    margin-top:99%;
+    margin-top:52%;
     margin-left:28px;
     width:50px;
     height:50px;
@@ -1650,6 +1650,7 @@ a.btn.btn-info.edit{
     background-color:#176fac;
     margin-top:0%;
     margin-left:40%;
+    width:88%;
 }
 
 /*attach btn*/
@@ -1712,14 +1713,14 @@ div.fileUpload.btn.btn-info{
 
 /*date input field*/
 .col-10.col{
-    width:91%;
+    width:64%;
     margin-left:7.6%;
     margin-top:-6%;
 }
 .form-control.type_of_work
 {
     margin-left:9%;
-    width:208%
+    width:145%
 }
 
 .form-group.designation{
@@ -1727,7 +1728,7 @@ div.fileUpload.btn.btn-info{
 }
 
 .control-label.type{
-    margin-left:-73%;
+    margin-left:-66%;
 }
 .col-md-4.control-label.status
 {
@@ -1740,7 +1741,7 @@ div.fileUpload.btn.btn-info{
 }
 
 .form-control.status{
-    width:210%;
+    width:146%;
     margin-left:-1%;
 }
 .col-2.col-form-label.date{
@@ -1806,7 +1807,7 @@ margin-top:-1%;
     margin-top: 0%;
 }
 .form-control.input-md.comment{
-    width:338%;
+    width:237%;
 }
 .fileUpload.btn.btn-info.tele1{
 margin-left:14%;
@@ -1836,7 +1837,7 @@ margin-top:-1%;
 
 .btn.btn-success.clear{
     color:white;
-    margin-left:82%;
+    margin-left:30%;
 }
 
 .btn.btn-warning.backbutton-searchresult{/*1440 Back Button in Search_result page*/
@@ -1888,12 +1889,11 @@ margin-top:-1%;
     margin-top:7%;
 }
 
-#logout
-{
-   float:right;
-   right:139px;
-   top:52px;
-   position:absolute;
+#logout {
+    float: right;
+    right: 139px;
+    top: 14.1%;
+    position: absolute;
     width: 40px;
     height: 40px;
 }
@@ -1922,6 +1922,12 @@ width: 155%;
     right: 206px;
     top: 73px;
     position: absolute;
+}
+
+#title3 {
+    margin-left: 31%;
+    margin-top: 10%;
+    font-size: 18px;
 }
 
 #telephone_upload {
@@ -2259,7 +2265,7 @@ margin-top:-1%;
 
 .btn.btn-success.clear{
     color:white;
-    margin-left:82%;
+    margin-left:32%;
 }
 
 .btn.btn-info.user{
@@ -2291,8 +2297,16 @@ width: 155%;
 #title1{
     float: right;
     right: 206px;
-    top: 73px;
+    top: 9%;
     position: absolute;
+}
+
+#title3
+{
+    margin-left:25%;
+    margin-top:8%;
+    font-size:18px;
+
 }
 
 #telephone_upload {
@@ -2310,7 +2324,7 @@ width: 155%;
 }
 
 #logo1 {
-    margin-top:98%;
+    margin-top:47%;
     margin-left:28px;
     width:50px;
     height:50px;
@@ -2471,14 +2485,14 @@ div.fileUpload.btn.btn-info{
 
 /*date input field*/
 .col-10.col{
-    width:91%;
+    width:62%;
     margin-left:7.6%;
     margin-top:-6%;
 }
 .form-control.type_of_work
 {
     margin-left:9%;
-    width:208%
+    width:145%
 }
 
 .form-group.designation{
@@ -2490,7 +2504,7 @@ div.fileUpload.btn.btn-info{
 }
 .col-md-4.control-label.status
 {
-    margin-left:-29%;
+    margin-left:-66%;
 }
 
 /*adding extra field*/
@@ -2499,7 +2513,7 @@ div.fileUpload.btn.btn-info{
 }
 
 .form-control.status{
-    width:210%;
+    width:145%;
     margin-left:-1%;
 }
 .col-2.col-form-label.date{
@@ -2565,7 +2579,7 @@ margin-top:-1%;
     margin-top: 0%;
 }
 .form-control.input-md.comment{
-    width: 343%;
+    width: 236%;
     margin-left: -5%;
 }
 .fileUpload.btn.btn-info.tele1{

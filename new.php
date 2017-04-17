@@ -181,7 +181,6 @@ if(a==null || a==''){
         document.getElementById('uid').value = document.getElementById('uid_format').value;
         document.getElementById('uid_in_popup').value = document.getElementById('uid_format').value;
 
-
          /*alert("UID generated: "+document.getElementById('uid_format').value);*/
         var yourUl = document.getElementById("popup1");
         yourUl.style.display = yourUl.style.display === 'none' ? '' : 'none';
@@ -198,40 +197,6 @@ if(a==null || a==''){
 
 
 </script>
-<script type="text/javascript">
-function proceed(){
-
-var a=document.forms["Form"]["uid"].value;
-if(a==null || a==''){
-        var text = "";
-        var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
-
-        for( var i=0; i < 7; i++ )
-            text += possible.charAt(Math.floor(Math.random() * possible.length));
-
-        var mystring= (document.getElementById('name').value).substring(0, 3);
-        var uid_gen=mystring+text;
-        document.getElementById('uid').value = document.getElementById('uid_format').value;
-        document.getElementById('uid_in_popup').value = document.getElementById('uid_format').value;
-
-
-         /*alert("UID generated: "+document.getElementById('uid_format').value);*/
-        var yourUl = document.getElementById("popup1");
-        yourUl.style.display = yourUl.style.display === 'none' ? '' : 'none';
-        return false;
-}else{
-        document.getElementById('uid_in_popup').value = document.getElementById('uid').value;
-
-        /*alert("UID generated: "+document.getElementById('uid').value);*/
-        var yourUl = document.getElementById("popup1");
-        yourUl.style.display = yourUl.style.display === 'none' ? '' : 'none';
-        return false;
-}
-}
-
-
-</script>
-
 <!-- Datepicker -->
  <link rel="stylesheet" href="css/jquery-ui.css"> 
  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"> 
@@ -1385,7 +1350,7 @@ function enable_disable(that){
 <div class="form-group">
   <label class="col-md-4 control-label" for="textinput">Name:</label>  
   <div class="col-md-4">
-  <input id="name" name="name" value="<?php echo $_POST['name'] ?>" type="text" placeholder="" class="form-control input-md" style="width: 70%;" required/> 
+  <input id="name" name="name" value="<?php echo $_POST['name'] ?>" type="text" placeholder="" class="form-control input-md" style="width: 70%;" required/>  
   </div>
 </div>
 <!--date-->
@@ -1658,15 +1623,16 @@ function enable_disable(that){
 </form>
 
 <?php } ?>
-<script type="text/javascript">
+ <script type="text/javascript">
   function validate(){
-    var Form=document.getElementById("Form");
-    if(Form.checkValidity()==true)
+    var name=document.getElementById("name");
+    var statuss=document.getElementById("statuss");
+    var pan=document.getElementById("pan");
+    if(name.checkValidity()==true)
     {
 
       /*alert("hello");*/
       return proceed();
-
 
     }
   }
