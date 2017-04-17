@@ -181,28 +181,19 @@ if(a==null || a==''){
         document.getElementById('uid').value = document.getElementById('uid_format').value;
         document.getElementById('uid_in_popup').value = document.getElementById('uid_format').value;
 
-<<<<<<< HEAD
          /*alert("UID generated: "+document.getElementById('uid_format').value);*/
-=======
- //        alert("UID generated: "+document.getElementById('uid_format').value);
->>>>>>> alignment of 1440 resolution
         var yourUl = document.getElementById("popup1");
         yourUl.style.display = yourUl.style.display === 'none' ? '' : 'none';
         return false;
 }else{
         document.getElementById('uid_in_popup').value = document.getElementById('uid').value;
 
-<<<<<<< HEAD
         /*alert("UID generated: "+document.getElementById('uid').value);*/
-=======
-  //      alert("UID generated: "+document.getElementById('uid').value);
->>>>>>> alignment of 1440 resolution
         var yourUl = document.getElementById("popup1");
         yourUl.style.display = yourUl.style.display === 'none' ? '' : 'none';
         return false;
 }
 }
-
 
 </script>
 
@@ -1630,12 +1621,10 @@ function enable_disable(that){
 </form>
 
 <?php } ?>
-<script type="text/javascript">
+ <script type="text/javascript">
   function validate(){
-    var name=document.getElementById("name");
-    var statuss=document.getElementById("statuss");
-    var pan=document.getElementById("pan");
-    if(name.checkValidity()==true)
+    var Form=document.getElementById("Form");
+    if(Form.checkValidity()==true)
     {
       /*alert("hello");*/
       return proceed();
@@ -1721,17 +1710,9 @@ $(document).ready(function() {
 
         if(x < max_fields){ //max input box allowed
             x++; //text box increment
-<<<<<<< HEAD
-           $(wrapper).prepend('<br><div style="margin-left:50%;"><div class="form-group"><label class="control-label type" for="selectbasic" style="">Type of work</label><div class="col-md-6"><select id="type_of_work[]" name="type_of_work[]" class="form-control type_of_work" style=""><option value="Audit Report">Audit Report</option><option value="ITR filing">ITR filing</option><option value="VAT Filing">VAT Filing</option><option value="Accounting">Accounting</option><option value="Registration">Registration</option><option value="Certification">Certification</option><option value="Others">Others</option></select></div></div><div class="form-group"> <label class="col-md-4 control-label status" for="selectbasic" style="">Status</label><div class="col-md-6"><select id="status1' + x + '"  name="status[]"  class="form-control status"><option value="Pending">Pending</option><option value="Work in process">Work in process</option><option value="Completed">Completed</option></select></div></div><div class="form-group row"><label for="example-date-input" class="col-2 col-form-label date">DATE</label><div class="col-10 col"><input class="form-control datepicker pickers" id="date" name="date[]" style="" type="text" readonly></div></div><div class="form-group"><label class="col-md-4 control-label comment" for="textinput" style="">Comment</label><div class="col-md-4"><input id="comments' + x + '" name="comment[]" type="text" placeholder="" class="form-control input-md comment" style=""></div></div></center><a href="#" class="remove_field" style=""><img src="images/del24.png" ></a></a></div>'); //add input box\
-          var newInput=$("#date").datepicker({dateFormat: 'dd/mm/yy'});
-          newInput.datepicker({dateFormat: 'dd/mm/yy'}).datepicker("setDate", new Date());
->>>>>>> datepicker UI is changed
-=======
-
            $('<div style="margin-left:50%;"><div class="form-group"><label class="control-label type" for="selectbasic" style="">Type of work</label><div class="col-md-6"><select id="type_of_work[]" name="type_of_work[]" class="form-control type_of_work" style=""><option value="Audit Report">Audit Report</option><option value="ITR filing">ITR filing</option><option value="VAT Filing">VAT Filing</option><option value="Accounting">Accounting</option><option value="Registration">Registration</option><option value="Certification">Certification</option><option value="Others">Others</option></select></div></div><div class="form-group"> <label class="col-md-4 control-label status" for="selectbasic" style="">Status</label><div class="col-md-6"><select id="status1' + x + '"  name="status[]"  class="form-control status"><option value="Pending">Pending</option><option value="Work in process">Work in process</option><option value="Completed">Completed</option></select></div></div><div class="form-group row"><label for="example-date-input" class="col-2 col-form-label date">DATE</label><div class="col-10 col"><input class="form-control datepicker pickers" id="date' + x +'" name="date[]" style="" type="text" readonly></div></div><div class="form-group"><label class="col-md-4 control-label comment" for="textinput" style="">Comment</label><div class="col-md-4"><input id="comments' + x + '" name="comment[]" type="text" placeholder="" class="form-control input-md comment" style=""></div></div></center><a href="#" class="remove_field" style=""><img src="images/del24.png" ></a></a></div>').insertBefore(add_button)//add input box\
           var newInput=$("#date"+ x).datepicker({dateFormat: 'dd/mm/yy'});
           newInput.datepicker({dateFormat: 'dd/mm/yy'}).datepicker("setDate", new Date());
->>>>>>> conflict resolVED DATEPICKER
           $("#status1" + x).click(function () {
 
             if ($("#status1" + x).val() == "Completed") {

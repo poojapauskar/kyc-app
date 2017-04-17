@@ -1889,12 +1889,11 @@ margin-top:-1%;
     margin-top:7%;
 }
 
-#logout
-{
-   float:right;
-   right:139px;
-   top: 6.1%;
-   position:absolute;
+#logout {
+    float: right;
+    right: 139px;
+    top: 14.1%;
+    position: absolute;
     width: 40px;
     height: 40px;
 }
@@ -1923,6 +1922,12 @@ width: 155%;
     right: 206px;
     top: 73px;
     position: absolute;
+}
+
+#title3 {
+    margin-left: 31%;
+    margin-top: 10%;
+    font-size: 18px;
 }
 
 #telephone_upload {
