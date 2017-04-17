@@ -164,7 +164,7 @@ function proceed(){
 
 var a=document.forms["Form"]["uid"].value;
 if(a==null || a==''){
-        /*var text = "";
+        var text = "";
         var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
 
         for( var i=0; i < 7; i++ )
@@ -1307,7 +1307,10 @@ function enable_disable(that){
   <input id="uid" name="uid" type="text" value="<?php echo $_POST['uid'] ?>" placeholder="" class="form-control input-md" style="width:70%">
   
   <input type="hidden" name="uid_format" id="uid_format" value="<?php echo $arr_uid['uid'] ?>"></input>
+<<<<<<< HEAD
 
+=======
+>>>>>>> alignment of the title
   </div>
 </div>
 
@@ -1315,7 +1318,11 @@ function enable_disable(that){
 <div class="form-group">
   <label class="col-md-4 control-label" for="textinput">Name:</label>  
   <div class="col-md-4">
+<<<<<<< HEAD
   <input id="name" name="name" value="<?php echo $_POST['name'] ?>" type="text" placeholder="" class="form-control input-md" style="width: 70%;" required/>  
+=======
+  <input id="name" name="name" value="<?php echo $_POST['name'] ?>" type="text" placeholder="" class="form-control input-md" style="width: 70%;" required/> 
+>>>>>>> alignment of the title
   </div>
 </div>
 <!--date-->
