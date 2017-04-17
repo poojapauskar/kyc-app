@@ -1854,6 +1854,13 @@ margin-top:-1%;
 @media screen and (max-width: 1366px){
 
 /*Cancel and Delete button edit page of Individual*/
+.btn.btn-success.successb{   
+    width: 10em;
+    margin-top:0%;
+    padding:0.5em;
+    margin-left:2%
+}
+
 .btn.btn-warning.cancel{   
     width: 10em;
     margin-top:0%;
