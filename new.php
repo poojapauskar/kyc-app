@@ -164,16 +164,17 @@ function proceed(){
 
 var a=document.forms["Form"]["uid"].value;
 if(a==null || a==''){
-        /*var text = "";
+        var text = "";
         var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
 
         for( var i=0; i < 7; i++ )
             text += possible.charAt(Math.floor(Math.random() * possible.length));
 
         var mystring= (document.getElementById('name').value).substring(0, 3);
-        var uid_gen=mystring+text;*/
+        var uid_gen=mystring+text;
         document.getElementById('uid').value = document.getElementById('uid_format').value;
         document.getElementById('uid_in_popup').value = document.getElementById('uid_format').value;
+
 
          /*alert("UID generated: "+document.getElementById('uid_format').value);*/
         var yourUl = document.getElementById("popup1");
@@ -1154,6 +1155,7 @@ $arr_uid = json_decode($output_uid,true);
   <label class="col-md-4 control-label" for="selectbasic">Type of work</label>
   <div class="col-md-4">
     <select id="type_of_work[]" name="type_of_work[]" class="form-control" style="width: 70%;">
+     <option value=""></option>
      <option value="Audit Report">Audit Report</option>
       <option value="ITR filing">ITR filing</option>
       <option value="VAT Filing">VAT Filing</option>
@@ -1170,6 +1172,7 @@ $arr_uid = json_decode($output_uid,true);
   <label class="col-md-4 control-label" for="selectbasic">Status</label>
   <div class="col-md-4">
     <select id="status" name="status[]" class="form-control" style="width:70%" >
+      <option value=""></option>
       <option value="Pending">Pending</option>
       <option value="Work in process">Work in process</option>
       <option value="Completed">Completed</option>
@@ -1302,11 +1305,9 @@ function enable_disable(that){
   <label class="col-md-4 control-label" for="textinput" >UID:</label>  
   <div class="col-md-4">
 
-  <input id="uid" name="uid" type="text" value="<?php echo $_POST['uid'] ?>" placeholder="" class="form-control input-md" style="width:70%">
+  <input id="uid" name="uid" type="text" value="<?php echo $_POST['uid'] ?>" placeholder="" class="form-control input-md" style="width:70%" disabled>
   
   <input type="hidden" name="uid_format" id="uid_format" value="<?php echo $arr_uid['uid'] ?>"></input>
-  
-
   </div>
 </div>
 
@@ -1314,8 +1315,7 @@ function enable_disable(that){
 <div class="form-group">
   <label class="col-md-4 control-label" for="textinput">Name:</label>  
   <div class="col-md-4">
-  <input id="name" name="name" value="<?php echo $_POST['name'] ?>" type="text" placeholder="" class="form-control input-md" style="width: 70%;" required/>
-    
+  <input id="name" name="name" value="<?php echo $_POST['name'] ?>" type="text" placeholder="" class="form-control input-md" style="width: 70%;" required/> 
   </div>
 </div>
 <!--date-->
@@ -1333,10 +1333,90 @@ function enable_disable(that){
   <div class="col-md-4">
     <select id="profession" name="profession" class="form-control" style="width: 70%" >
       <option value="Option one"><?php echo $_POST['profession'] ?></option>
-      <option value="Option one">Option one</option>
+      <optgroup label="Academics">
+        <option value="Professors">Professors</option>
+        <option value="Teachers">Teachers</option>
+      </optgroup>
+      <optgroup label="Cultural">
+      <option value="Clergy">Clergy</option>
+      <option value="Philosophers">Philosophers</option>
+      </optgroup>
+
+      <optgroup label="Medical">
+        <option value="Anesthesiologists">Anesthesiologists</option>
+        <option value="Audiologists">Audiologists</option>
+        <option value="Chiropractors">Chiropractors</option>
+        <option value="Dentists">Dentists</option>
+        <option value="Dietitians">Dietitians</option>
+        <option value="Nurses">Nurses</option>
+        <option value="Occupational therapists">Occupational therapists</option>
+        <option value="Pharmacists">Pharmacists</option>
+      </optgroup>
+
+      <optgroup label="Operating Department Practitioner">
+        <option value="Optometrists">Optometrists</option>
+        <option value="Physical therapists">Physical therapists</option>
+        <option value="Physicians">Physicians</option>
+        <option value="Podiatrists">Podiatrists</option>
+        <option value="Psychologists">Psychologists</option>
+        <option value="Radiographers">Radiographers</option>
+        <option value="Speech-language pathologists">Speech-language pathologists</option>
+        <option value="Surgeons">Surgeons</option>
+        <option value="Veterinarians">Veterinarians</option>
+        <option value="Gynaecologists">Gynaecologists</option>
+      </optgroup>
+
+      <optgroup label="Industry">
+        <option value="Accountants">Accountants</option>
+        <option value="Actuaries">Actuaries</option>
+        <option value="Architects">Architects</option>
+        <option value="Engineers">Engineers</option>
+        <option value="Linguistics - Translators">Linguistics - Translators</option>
+        <option value="Linguistics - Interpreters">Linguistics - Interpreters</option>
+        <option value="Surveyors">Surveyors</option>
+        <option value="Urban Planners">Urban Planners</option>
+
+      </optgroup>
+
+      <optgroup label="Transport">Transport
+      <option value="Air traffic controllers">Air traffic controllers</option>
+      <option value="Aircraft pilots">Aircraft pilots</option>
+      <option value="Sea captains">Sea captains</option>
+      </optgroup>
+
+      <optgroup label="Public services">Public services
+      <option value="Lawyers">Lawyers</option>
+      <option value="Social Workers">Social Workers</option>
+      <option value="Health inspector">Health inspector</option>
+      <option value="Park ranger">Park ranger</option>
+      <option value=" Police officer"> Police officer</option>
+      <option value="Military officers">Military officers</option>
+
+      </optgroup>
+
+      <optgroup label="Science">
+        <option value="Scientists - Astronomers">Scientists - Astronomers</option>
+        <option value="Scientists - Biologists">Scientists - Biologists</option>
+        <option value="Scientists - Biologists - Botanists">Scientists - Biologists - Botanists</option>
+        <option value="Scientists - Biologists - Ecologists">Scientists - Biologists - Ecologists</option>
+        <option value="Scientists - Biologists - Geneticists">Scientists - Biologists - Geneticists</option>
+        <option value="Scientists - Biologists - Immunologists">Scientists - Biologists - Immunologists</option>
+        <option value="Scientists - Biologists - Paleontologists">Scientists - Biologists - Paleontologists</option>
+        <option value="Scientists - Biologists - Pharmacologists">Scientists - Biologists - Pharmacologists</option>
+        <option value="Scientists - Biologists - Virologists">Scientists - Biologists - Virologists</option>
+        <option value="Scientists - Biologists - Zoologists">Scientists - Biologists - Zoologists</option>
+        <option value="Scientists - Chemists">Scientists - Chemists</option>
+        <option value="Scientists - Geologists">Scientists - Geologists</option>
+        <option value="Scientists - Meteorologists">Scientists - Meteorologists</option>
+        <option value="Scientists - Neuroscientists">Scientists - Neuroscientists</option>
+        <option value="Scientists - Oceanographers">Scientists - Oceanographers</option>
+        <option value="Scientists - Physicists">Scientists - Physicists</option>
+      </optgroup>
+      <option value="Other">Other</option>
+      <!-- <option value="Option one">Option one</option>
       <option value="Option two">Option two</option>
       <option value="Option three">Option three</option>
-      <option value="Option four">Option four</option>
+      <option value="Option four">Option four</option> -->
     </select>
   </div>
 </div>
@@ -1345,8 +1425,9 @@ function enable_disable(that){
 <div class="form-group">
   <label class="col-md-4 control-label" for="textinput"></label>  
   <div class="col-md-4">
-  <input id="textinput" name="textinput" type="text" placeholder="specify " class="form-control input-md"  style="width: 70%" >
-    
+
+  <input id="textinput" name="textinput" type="text" placeholder="Specify if Others" class="form-control input-md"  style="width: 70%" >
+
   </div>
 </div>
 
@@ -1354,7 +1435,7 @@ function enable_disable(that){
 <div class="form-group">
   <label class="col-md-4 control-label" for="textarea">Address:</label>
   <div class="col-md-4">                     
-    <textarea class="form-control" id="address" name="address" value="<?php echo $_POST['address'] ?>" style="width: 70%" >default text</textarea>
+    <textarea class="form-control" id="address" name="address" value="<?php echo $_POST['address'] ?>" style="width: 70%" placeholder="Enter Address" ></textarea>
   </div>
 </div>
 
@@ -1362,8 +1443,7 @@ function enable_disable(that){
 <div class="form-group">
   <label class="col-md-4 control-label" for="textinput">PAN:</label>  
   <div class="col-md-4">
-  <input pattern="-?[a-zA-Z]{5}[0-9]{4}[a-zA-Z]{1}?" title="Must be of the form ARLPA0061H" id="pan" name="pan" value="<?php echo $_POST['pan'] ?>" type="text" placeholder="" class="form-control input-md" required  style="width: 70%"/>
-    
+  <input pattern="-?[a-zA-Z]{5}[0-9]{4}[a-zA-Z]{1}?" title="Must be of the form ARLPA0061H" id="pan" name="pan" value="<?php echo $_POST['pan'] ?>" type="text" placeholder="" class="form-control input-md" required  style="width: 70%"/> 
   </div>
 </div>
 
@@ -1421,8 +1501,7 @@ function enable_disable(that){
 <div class="form-group">
   <label class="col-md-4 control-label" for="textinput">Adhar card No.</label>  
   <div class="col-md-4">
-  <input id="aadhar_no" name="aadhar_no" value="<?php echo $_POST['aadhar_no'] ?>" type="text" placeholder="" class="form-control input-md"  style="width: 70%" >
-    
+  <input id="aadhar_no" name="aadhar_no" value="<?php echo $_POST['aadhar_no'] ?>" type="text" placeholder="" class="form-control input-md"  style="width: 70%" >  
   </div>
 </div>
 
@@ -1440,6 +1519,7 @@ function enable_disable(that){
   <label class="col-md-4 control-label" for="selectbasic">Type of work</label>
   <div class="col-md-4">
     <select id="type_of_work[]" name="type_of_work[]" class="form-control"  style="width: 70%">
+      <option value=""></option>
       <option value="Audit Report">Audit Report</option>
       <option value="ITR filing">ITR filing</option>
       <option value="VAT Filing">VAT Filing</option>
@@ -1456,6 +1536,7 @@ function enable_disable(that){
   <label class="col-md-4 control-label" for="selectbasic">Status</label>
   <div class="col-md-4">
     <select id="statuss" name="status[]" class="form-control"  style="width: 70%">
+      <option value=""></option>
       <option value="Pending">Pending</option>
       <option value="Work in process">Work in process</option>
       <option value="Completed">Completed</option>
@@ -1512,8 +1593,10 @@ function enable_disable(that){
     var Form=document.getElementById("Form");
     if(Form.checkValidity()==true)
     {
+
       /*alert("hello");*/
       return proceed();
+
 
     }
   }
@@ -1569,7 +1652,7 @@ $('#myModal').on('shown.bs.modal', function () {
         e.preventDefault();
         if(x < max_fields){ //max input box allowed
             x++; //text box increment
-            $(wrapper).prepend('<br><div style="margin-left:50%;"><center><div class="form-group"> <label class="control-label name" for="textinput" style="">Name: </label> <div class="partner_name"> <input id="partner_names[]" name="partner_names[]" type="text" placeholder="Enter Full Name" class="form-control input-md newentry partner_names"     style="width: 70%;margin-left: -31%;">  </div>  <div class="col-md-6" > <a href="new_user_popup.php" style="color:white" target="_blank" data-toggle="modal" data-target="#myModal"><button  type="button" class="btn btn-info new_entry_btn entry">New Entry</button> </a> </div></div> <div class="form-group">  <label class="control-label designation" for="selectbasic">Designation: </label>  <div class="partner_designation"> <select id="partner_designations[]" name="partner_designations[]" class="form-control partner_designations" >      <option value="Managing Partner">Managing Partner</option>      <option value="Manager">Manager</option>      <option value="Other">Other</option>    </select>  </div>  <div class="partner_designation col2">  <input style="" id="textinput" name="textinput" type="text" placeholder="Specify if Other" class="form-control input-md partner_others"></div></div></center><a href="#" class="remove_field" style="margin-left:370%;margin-top:-40px;position:absolute"><img src="images/del24.png"></a></a></div>'); //add input box\
+            $('<div style="margin-left:50%;"><center><div class="form-group"> <label class="control-label name" for="textinput" style="">Name: </label> <div class="partner_name"> <input id="partner_names[]" name="partner_names[]" type="text" placeholder="Enter Full Name" class="form-control input-md newentry partner_names"     style="width: 70%;margin-left: -31%;">  </div>  <div class="col-md-6" > <a href="new_user_popup.php" style="color:white" target="_blank" data-toggle="modal" data-target="#myModal"><button  type="button" class="btn btn-info new_entry_btn entry">New Entry</button> </a> </div></div> <div class="form-group">  <label class="control-label designation" for="selectbasic">Designation: </label>  <div class="partner_designation"> <select id="partner_designations[]" name="partner_designations[]" class="form-control partner_designations" >      <option value="Managing Partner">Managing Partner</option>      <option value="Manager">Manager</option>      <option value="Other">Other</option>    </select>  </div>  <div class="partner_designation col2">  <input style="" id="textinput" name="textinput" type="text" placeholder="Specify if Other" class="form-control input-md partner_others"></div></div></center><a href="#" class="remove_field" style="margin-left:370%;margin-top:-40px;position:absolute"><img src="images/del24.png"></a></a></div>').insertBefore(add_button) //add input box\
         }
     });
 
@@ -1585,8 +1668,7 @@ $('#myModal').on('shown.bs.modal', function () {
     </script>
 
   <script type="text/javascript">
-
-     $(document).ready(function() {
+$(document).ready(function() {
     var max_fields      = 10; //maximum input boxes allowed
     var wrapper         = $(".input_fields"); //Fields wrapper
     var add_button      = $(".add_field"); //Add button ID
@@ -1597,7 +1679,8 @@ $('#myModal').on('shown.bs.modal', function () {
 
         if(x < max_fields){ //max input box allowed
             x++; //text box increment
-           $(wrapper).prepend('<br><div style="margin-left:50%;"><div class="form-group"><label class="control-label type" for="selectbasic" style="">Type of work</label><div class="col-md-6"><select id="type_of_work[]" name="type_of_work[]" class="form-control type_of_work" style=""><option value="Audit Report">Audit Report</option><option value="ITR filing">ITR filing</option><option value="VAT Filing">VAT Filing</option><option value="Accounting">Accounting</option><option value="Registration">Registration</option><option value="Certification">Certification</option><option value="Others">Others</option></select></div></div><div class="form-group"> <label class="col-md-4 control-label status" for="selectbasic" style="">Status</label><div class="col-md-6"><select id="status1' + x + '"  name="status[]"  class="form-control status"><option value="Pending">Pending</option><option value="Work in process">Work in process</option><option value="Completed">Completed</option></select></div></div><div class="form-group row"><label for="example-date-input" class="col-2 col-form-label date">DATE</label><div class="col-10 col"><input class="form-control datepicker pickers" id="date" name="date[]" style="" type="text" readonly></div></div><div class="form-group"><label class="col-md-4 control-label comment" for="textinput" style="">Comment</label><div class="col-md-4"><input id="comments' + x + '" name="comment[]" type="text" placeholder="" class="form-control input-md comment" style=""></div></div></center><a href="#" class="remove_field" style=""><img src="images/del24.png" ></a></a></div>'); //add input box\
+           $('<div style="margin-left:50%;"><div class="form-group"><label class="control-label type" for="selectbasic" style="">Type of work</label><div class="col-md-6"><select id="type_of_work[]" name="type_of_work[]" class="form-control type_of_work" style=""><option value=""></option><option value="Audit Report">Audit Report</option><option value="ITR filing">ITR filing</option><option value="VAT Filing">VAT Filing</option><option value="Accounting">Accounting</option><option value="Registration">Registration</option><option value="Certification">Certification</option><option value="Others">Others</option></select></div></div><div class="form-group"> <label class="col-md-4 control-label status" for="selectbasic" style="">Status</label><div class="col-md-6"><select id="status1' + x + '"  name="status[]"  class="form-control status">      <option value=""></option><option value="Pending">Pending</option><option value="Work in process">Work in process</option><option value="Completed">Completed</option></select></div></div><div class="form-group row"><label for="example-date-input" class="col-2 col-form-label date">DATE</label><div class="col-10 col"><input class="form-control datepicker pickers" id="date" name="date[]" style="" type="text" readonly></div></div><div class="form-group"><label class="col-md-4 control-label comment" for="textinput" style="">Comment</label><div class="col-md-4"><input id="comments' + x + '" name="comment[]" type="text" placeholder="" class="form-control input-md comment" style=""></div></div></center><a href="#" class="remove_field" style=""><img src="images/del24.png" ></a></a></div>').insertBefore(add_button)
+            //add input box\
           var newInput=$("#date").datepick({dateFormat: 'dd/mm/yyyy'});
           newInput.datepick({dateFormat: 'dd/mm/yyyy'}).datepick("setDate", new Date());
           $("#status1" + x).click(function () {

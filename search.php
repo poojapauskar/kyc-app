@@ -110,7 +110,7 @@ if($_POST['is_user_delete'] != "" && $_POST['pk_delete'] != ""){
 
 
        <a href="search.php"> <img id="logo1" src="images/green.png"></img></a>
-      <h5 style="" id="title2">ADMIN PANEL</h5>
+      <h5 style="" id="title3">ADMIN PANEL</h5>
          <span class="mdl-layout-title" id="title1" style="">KYCApp</span>
          <a href="logout.php"><img id="logout" style="" src="images/logout1.png"></img></a>
 
