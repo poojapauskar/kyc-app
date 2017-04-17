@@ -181,14 +181,22 @@ if(a==null || a==''){
         document.getElementById('uid').value = document.getElementById('uid_format').value;
         document.getElementById('uid_in_popup').value = document.getElementById('uid_format').value;
 
+<<<<<<< HEAD
          /*alert("UID generated: "+document.getElementById('uid_format').value);*/
+=======
+ //        alert("UID generated: "+document.getElementById('uid_format').value);
+>>>>>>> 33fc98f6522f9e5a8a3a838bde3ff3ddf8ccf787
         var yourUl = document.getElementById("popup1");
         yourUl.style.display = yourUl.style.display === 'none' ? '' : 'none';
         return false;
 }else{
         document.getElementById('uid_in_popup').value = document.getElementById('uid').value;
 
+<<<<<<< HEAD
         /*alert("UID generated: "+document.getElementById('uid').value);*/
+=======
+  //      alert("UID generated: "+document.getElementById('uid').value);
+>>>>>>> 33fc98f6522f9e5a8a3a838bde3ff3ddf8ccf787
         var yourUl = document.getElementById("popup1");
         yourUl.style.display = yourUl.style.display === 'none' ? '' : 'none';
         return false;
@@ -1350,7 +1358,11 @@ function enable_disable(that){
 <div class="form-group">
   <label class="col-md-4 control-label" for="textinput">Name:</label>  
   <div class="col-md-4">
+<<<<<<< HEAD
   <input id="name" name="name" value="<?php echo $_POST['name'] ?>" type="text" placeholder="" class="form-control input-md" style="width: 70%;" required/>  
+=======
+  <input id="name" name="name" value="<?php echo $_POST['name'] ?>" type="text" placeholder="" class="form-control input-md" style="width: 70%;" required/> 
+>>>>>>> 33fc98f6522f9e5a8a3a838bde3ff3ddf8ccf787
   </div>
 </div>
 <!--date-->
@@ -1623,11 +1635,20 @@ function enable_disable(that){
 <?php } ?>
  <script type="text/javascript">
   function validate(){
-    var Form=document.getElementById("Form");
-    if(Form.checkValidity()==true)
+    var name=document.getElementById("name");
+    var statuss=document.getElementById("statuss");
+    var pan=document.getElementById("pan");
+    if(name.checkValidity()==true)
     {
+<<<<<<< HEAD
       /*alert("hello");*/
       return proceed();
+=======
+        if(statuss.checkValidity()==true)
+        {
+        proceed();
+      }
+>>>>>>> 33fc98f6522f9e5a8a3a838bde3ff3ddf8ccf787
 
     }
   }
