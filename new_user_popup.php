@@ -5,14 +5,15 @@
 
     <!---bootstrap-->
   <!-- <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"> -->
-<link rel="stylesheet" type="text/css" href="css/material.indigo-pink.min.css">
+<!-- <link rel="stylesheet" type="text/css" href="css/material.indigo-pink.min.css"> -->
 
 <link rel="stylesheet" href="css/bootstrap.css">
-  <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <!-- Material Design Lite -->
     <script src="https://code.getmdl.io/1.3.0/material.min.js"></script>
     <link rel="stylesheet" href="css/material.css">
+    <link rel="stylesheet" href="css/bootstrap.css">
 
 
  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
@@ -85,44 +86,20 @@
 
   </style>
    <!-- Datepicker -->
- <link rel="stylesheet" href="css/jquery-ui.css"> 
+<link rel="stylesheet" type="text/css" href="css/jquery-ui.css"> 
  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"> 
-
- <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-<script src="js/jquery-ui.js"></script>
+<!-- <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script> -->
+<script type="text/javascript" src="js/jquery.plugin.js"></script> 
+<script type="text/javascript" src="js/jquery.datepick.js"></script>
 <script type="text/javascript">
 $(function() {
-  $( ".datepicker.picker" ).datepicker({dateFormat : 'mm/dd/yy',
-            changeMonth : true,
-            changeYear : true,
-            yearRange: '-100y:c+nn',
-            maxDate: '0',
-          beforeShow: function (input, inst) {
-        setTimeout(function () {
-            inst.dpDiv.css({
-            'z-index':4,
-            width:300,
-             
-            });
-        }, 0);}
-
-});});
-$(function() {
-  $( ".datepicker.pick" ).datepicker({
-    changeMonth: true,changeYear: true,
-     beforeShow: function (input, inst) {
-        setTimeout(function () {
-            inst.dpDiv.css({
-            'z-index':4,
-            width:300,
-             
-            });
-        }, 10);
-     }
-}).datepicker("setDate", new Date());
+  $( ".datepicker.picker" ).datepicker({dateFormat: 'dd/mm/yyyy',maxDate:0});
 });
 
-</script>
+$(function() {
+  $( ".datepicker.pick" ).datepicker({dateFormat: 'dd/mm/yyyy'});
+});
+</script> 
 
 <script type="text/javascript">
   function validate(){
