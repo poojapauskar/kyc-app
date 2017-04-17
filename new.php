@@ -1425,9 +1425,8 @@ function enable_disable(that){
 <div class="form-group">
   <label class="col-md-4 control-label" for="textinput"></label>  
   <div class="col-md-4">
-
   <input id="textinput" name="textinput" type="text" placeholder="Specify if Others" class="form-control input-md"  style="width: 70%" >
-
+  <input id="textinput" name="textinput" type="text" placeholder="Specify if Others" class="form-control input-md"  style="width: 70%" >
   </div>
 </div>
 
