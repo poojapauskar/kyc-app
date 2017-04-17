@@ -165,12 +165,11 @@ document.getElementById('uploadFile').value='Choose File'; }
   </script>
 <script type="text/javascript">
 
-
 function proceed(){
 
 var a=document.forms["Form"]["uid"].value;
 if(a==null || a==''){
-        var text = "";
+        /*var text = "";
         var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
 
         for( var i=0; i < 7; i++ )
@@ -180,7 +179,6 @@ if(a==null || a==''){
         var uid_gen=mystring+text;*/
         document.getElementById('uid').value = document.getElementById('uid_format').value;
         document.getElementById('uid_in_popup').value = document.getElementById('uid_format').value;
-
 
          /*alert("UID generated: "+document.getElementById('uid_format').value);*/
         var yourUl = document.getElementById("popup1");
@@ -1463,7 +1461,10 @@ function enable_disable(that){
   <label class="col-md-4 control-label" for="textinput"></label>  
   <div class="col-md-4">
   <input id="textinput" name="textinput" type="text" placeholder="Specify if Others" class="form-control input-md"  style="width: 70%" >
+<<<<<<< HEAD
   <input id="textinput" name="textinput" type="text" placeholder="Specify if Others" class="form-control input-md"  style="width: 70%" >
+=======
+>>>>>>> conflict resolved2
   </div>
 </div>
 
@@ -1618,7 +1619,6 @@ function enable_disable(that){
   <div class="col-md-4">
     <button onclick="validate();" id="generate_btn" name="generate_btn">Generate</button>
     <button id="singlebutton" style="margin-left:13%;" name="singlebutton" class="btn btn-primary"><a style="color:white" href="search.php">Discard</a></button>
-
   </div>
 </div>
 </fieldset>
