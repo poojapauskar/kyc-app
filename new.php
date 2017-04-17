@@ -19,7 +19,7 @@ if($_SESSION['login_kyc_app'] == 1){
   <link rel="stylesheet" href="css/bootstrap.css">
   <link rel="stylesheet" type="text/css" href="autocomplete-Files/styles.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script> 
- <!--  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <!-- Material Design Lite -->
   <script src="https://code.getmdl.io/1.3.0/material.min.js"></script>
   <link rel="stylesheet" href="css/material.css">
@@ -1663,7 +1663,6 @@ $('#myModal').on('shown.bs.modal', function () {
         </div>
     </div>
 </div>
-
 <!--<script
   src="https://code.jquery.com/jquery-2.2.4.js"
   integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI="

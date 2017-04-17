@@ -4,12 +4,12 @@
   <head>
 
     <!---bootstrap-->
-  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <!-- <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"> -->
 <link rel="stylesheet" type="text/css" href="css/material.indigo-pink.min.css">
 
 <link rel="stylesheet" href="css/bootstrap.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> -->
     <!-- Material Design Lite -->
     <script src="https://code.getmdl.io/1.3.0/material.min.js"></script>
     <link rel="stylesheet" href="css/material.css">
@@ -84,6 +84,45 @@
 
 
   </style>
+   <!-- Datepicker -->
+ <link rel="stylesheet" href="css/jquery-ui.css"> 
+ <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"> 
+
+ <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="js/jquery-ui.js"></script>
+<script type="text/javascript">
+$(function() {
+  $( ".datepicker.picker" ).datepicker({dateFormat : 'mm/dd/yy',
+            changeMonth : true,
+            changeYear : true,
+            yearRange: '-100y:c+nn',
+            maxDate: '0',
+          beforeShow: function (input, inst) {
+        setTimeout(function () {
+            inst.dpDiv.css({
+            'z-index':4,
+            width:300,
+             
+            });
+        }, 0);}
+
+});});
+$(function() {
+  $( ".datepicker.pick" ).datepicker({
+    changeMonth: true,changeYear: true,
+     beforeShow: function (input, inst) {
+        setTimeout(function () {
+            inst.dpDiv.css({
+            'z-index':4,
+            width:300,
+             
+            });
+        }, 10);
+     }
+}).datepicker("setDate", new Date());
+});
+
+</script>
 
 <script type="text/javascript">
   function validate(){
@@ -109,6 +148,7 @@
         });
 });
 </script>
+
 <script>
 
 function proceed(){
@@ -241,20 +281,6 @@ if(a==null || a==''){
   }
 
 </script>
-    <!-- Datepicker -->
-<link rel="stylesheet" type="text/css" href="css/jquery.datepick.css"> 
-<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-<script type="text/javascript" src="js/jquery.plugin.js"></script> 
-<script type="text/javascript" src="js/jquery.datepick.js"></script>
-<script type="text/javascript">
-$(function() {
-  $( ".datepicker.picker" ).datepick({dateFormat: 'dd/mm/yyyy',maxDate:0});
-});
-
-$(function() {
-  $( ".datepicker.pick" ).datepick({dateFormat: 'dd/mm/yyyy'});
-});
-</script> 
 </head>
 <body style="background-color:#E8E8E8;">
 
@@ -464,7 +490,7 @@ $arr_uid_popup = json_decode($output_uid_popup,true);
 <div class="form-group">
   <label class="col-md-4 control-label" for="textinput">PAN:</label>  
   <div class="col-md-4">
-  <input id="pan" name="pan" value="<?php echo $_POST['pan'] ?>" type="text" placeholder="" class="form-control input-md">
+  <input id="pan" name="pan" value="<?php echo $_POST['pan'] ?>" type="text" placeholder="" class="form-control input-md" required>
     
   </div>
 </div>
@@ -615,7 +641,7 @@ $arr_uid_popup = json_decode($output_uid_popup,true);
   <label class="col-md-4 control-label" for="singlebutton"></label>
 
   <div class="col-md-4" style="text-align:center">
-    <button onclick="return validate()" id="generate_btn" name="generate_btn">Generate</button>
+    <button onclick="return validate();" id="generate_btn" name="generate_btn">Generate</button>
     <!-- <button id="singlebutton" style="margin-left:13%;" name="singlebutton" class="btn btn-primary"><a style="color:white" onclick="goBack()">Discard</a></button> -->
 
   </div>
@@ -654,11 +680,9 @@ function goBack() {
         e.preventDefault();
         if(x < max_fields){ //max input box allowed
               x++; //text box incrementa
-              $(wrapper).prepend('<br><div style="margin-left:50%;"><div class="form-group"><label class="control-label" for="selectbasic" style="margin-left:-220px;">Type of work</label><div class="col-md-6"><select id="type_of_work[]" name="type_of_work[]" class="form-control" style="margin-left:17%;width:222%"><option value="Option one">Audit Report</option><option value="Option two">ITR filing</option><option value="Option three">VAT Filing</option><option value="Option four">Accounting</option><option value="Option five">Registration</option><option value="Option six">Certification</option><option value="Option seven">Others</option></select></div></div><div class="form-group"> <label class="col-md-4 control-label" for="selectbasic" style="margin-left:-29%">Status</label><div class="col-md-6"><select id="status11' + x + '" name="status[]" style="width:210%;margin-left:-1%;" class="form-control"><option value="Pending">Pending</option><option value="Work in process">Work in process</option><option value="Completed">Completed</option></select></div></div><div class="form-group row"><label for="example-date-input" class="col-2 col-form-label" style="margin-left:-15.5%;";">DATE</label><div class="col-8"><input class="form-control datepicker pick" id="date11' + x + '" name="date[]" value="<?php echo $_POST['date'] ?>" style="width:86%;margin-left:10.6%;margin-top:-10%;" type="text" readonly></div></div><div class="form-group"><label class="col-md-4 control-label" for="textinput" style="margin-left:-36%">Comment</label><div class="col-md-4"><input id="comments11' + x + '" name="comment[]" type="text" placeholder="" class="form-control input-md" style="width:342%;margin-left:20%"></div></div></center><a href="#" class="remove_field" style="margin-left: 197px; margin-top: -40px;position:absolute"><img src="images/del24.png"></a></a></div>'); //add input box\
-              $(".datepicker.pick").val(today);
-              $(".datepicker.pick").datepick({dateFormat: 'dd/mm/yyyy'});         
+              $('<div style="margin-left:50%;"><div class="form-group"><label class="control-label" for="selectbasic" style="margin-left:-220px;">Type of work</label><div class="col-md-6"><select id="type_of_work[]" name="type_of_work[]" class="form-control" style="margin-left:17%;width:222%"><option value="Option one">Audit Report</option><option value="Option two">ITR filing</option><option value="Option three">VAT Filing</option><option value="Option four">Accounting</option><option value="Option five">Registration</option><option value="Option six">Certification</option><option value="Option seven">Others</option></select></div></div><div class="form-group"> <label class="col-md-4 control-label" for="selectbasic" style="margin-left:-29%">Status</label><div class="col-md-6"><select id="status11' + x + '" name="status[]" style="width:210%;margin-left:-1%;" class="form-control"><option value="Pending">Pending</option><option value="Work in process">Work in process</option><option value="Completed">Completed</option></select></div></div><div class="form-group row"><label for="example-date-input" class="col-2 col-form-label" style="margin-left:-15.5%;";">DATE</label><div class="col-8"><input class="form-control datepicker pick" id="date11' + x + '" name="date[]" value="<?php echo $_POST['date'] ?>" style="width:86%;margin-left:10.6%;margin-top:-10%;" type="text" readonly></div></div><div class="form-group"><label class="col-md-4 control-label" for="textinput" style="margin-left:-36%">Comment</label><div class="col-md-4"><input id="comments11' + x + '" name="comment[]" type="text" placeholder="" class="form-control input-md" style="width:342%;margin-left:20%"></div></div></center><a href="#" class="remove_field" style="margin-left: 197px; margin-top: -40px;position:absolute"><img src="images/del24.png"></a></a></div>').insertBefore(add_button) //add input box\         
               var newInput11=$("#date11" + x).datepick({dateFormat: 'dd/mm/yyyy'});
-              newInput11.datepick({dateFormat: 'dd/mm/yyyy'}).datepick("setDate", new Date());
+              newInput11.datepicker({dateFormat: 'dd/mm/yyyy'}).datepicker("setDate", new Date());
               $("#status11" + x).click(function () {
 
                  if ($("#status11" + x).val() == "Completed") {
