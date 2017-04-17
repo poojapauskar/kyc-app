@@ -1307,10 +1307,6 @@ function enable_disable(that){
   <input id="uid" name="uid" type="text" value="<?php echo $_POST['uid'] ?>" placeholder="" class="form-control input-md" style="width:70%">
   
   <input type="hidden" name="uid_format" id="uid_format" value="<?php echo $arr_uid['uid'] ?>"></input>
-<<<<<<< HEAD
-
-=======
->>>>>>> alignment of the title
   </div>
 </div>
 
@@ -1318,11 +1314,7 @@ function enable_disable(that){
 <div class="form-group">
   <label class="col-md-4 control-label" for="textinput">Name:</label>  
   <div class="col-md-4">
-<<<<<<< HEAD
   <input id="name" name="name" value="<?php echo $_POST['name'] ?>" type="text" placeholder="" class="form-control input-md" style="width: 70%;" required/>  
-=======
-  <input id="name" name="name" value="<?php echo $_POST['name'] ?>" type="text" placeholder="" class="form-control input-md" style="width: 70%;" required/> 
->>>>>>> alignment of the title
   </div>
 </div>
 <!--date-->
@@ -1586,6 +1578,7 @@ function enable_disable(that){
 
     <button onclick="return validate();" id="generate_btn" name="generate_btn">Generate</button>
     <button id="singlebutton" style="margin-left:13%;" name="singlebutton" class="btn btn-primary"><a style="color:white" href="search.php">Discard</a></button>
+
   </div>
 </div>
 </fieldset>
