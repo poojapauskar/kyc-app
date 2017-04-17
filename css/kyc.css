@@ -1892,7 +1892,7 @@ margin-top:-1%;
 #logout {
     float: right;
     right: 139px;
-    top: 14.1%;
+    top: 52px;
     position: absolute;
     width: 40px;
     height: 40px;
@@ -2123,6 +2123,9 @@ div.fileUpload.btn.btn-info{
 .col-md-4.control-label.status
 {
     margin-left: -66%;
+}
+.col-md-4.control-label.statuss1{
+    margin-left: -30%;
 }
 
 /*adding extra field*/
