@@ -35,8 +35,7 @@ if($_SESSION['login_kyc_app'] == 1){
 $(document).ready(function() {
     $('#example').dataTable({
         /* Disable initial sort */
-        "aaSorting": [],
-        "scrollY": "200px"
+        "aaSorting": []
     });
 } );
 </script>
