@@ -158,6 +158,8 @@ document.getElementById('uploadFile').value='Choose File'; }
 });
   </script>
 <script type="text/javascript">
+
+
 function proceed(){
 
 var a=document.forms["Form"]["uid"].value;
@@ -188,20 +190,54 @@ if(a==null || a==''){
 }
 }
 
+
 </script>
+
 <!-- Datepicker -->
-<link rel="stylesheet" type="text/css" href="css/jquery.datepick.css"> 
-<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-<script type="text/javascript" src="js/jquery.plugin.js"></script> 
-<script type="text/javascript" src="js/jquery.datepick.js"></script>
+ <link rel="stylesheet" href="css/jquery-ui.css"> 
+ <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
+ <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="js/jquery-ui.js"></script>
 <script type="text/javascript">
 $(function() {
-  $( ".datepicker.picker" ).datepick({dateFormat: 'dd/mm/yyyy',maxDate:0});
+  $( ".datepicker.picker" ).datepicker({dateFormat : 'mm/dd/yy',
+            changeMonth : true,
+            changeYear : true,
+            yearRange: '-100y:c+nn',
+            maxDate: '0',
+          beforeShow: function (input, inst) {
+        setTimeout(function () {
+            inst.dpDiv.css({
+            'z-index':4,
+            width:300,
+             
+            });
+        }, 0);}
+
+});});
+
+// $(function() {
+//   $( ".datepicker.pick" ).datepicker({changeMonth: true,changeYear: true}).datepicker("setDate", new Date()).setTimeout(function(){
+//             $('.ui-datepicker').css('z-index',44444);
+//         }, 0);
+
+// });
+$(function() {
+  $( ".datepicker.pick" ).datepicker({
+    changeMonth: true,changeYear: true,
+     beforeShow: function (input, inst) {
+        setTimeout(function () {
+            inst.dpDiv.css({
+            'z-index':4,
+            width:300,
+             
+            });
+        }, 10);
+     }
+}).datepicker("setDate", new Date());
 });
 
-$(function() {
-  $( ".datepicker.pick" ).datepick({dateFormat: 'dd/mm/yyyy'}).datepick("setDate", new Date());
-});
 
 </script>
 
@@ -1311,9 +1347,7 @@ function enable_disable(that){
 <div class="form-group">
   <label class="col-md-4 control-label" for="textinput">Name:</label>  
   <div class="col-md-4">
-
   <input id="name" name="name" value="<?php echo $_POST['name'] ?>" type="text" placeholder="" class="form-control input-md" style="width: 70%;" required/> 
-
   </div>
 </div>
 <!--date-->
@@ -1586,7 +1620,7 @@ function enable_disable(that){
 </form>
 
 <?php } ?>
- <script type="text/javascript">
+<script type="text/javascript">
   function validate(){
     var Form=document.getElementById("Form");
     if(Form.checkValidity()==true)
@@ -1676,7 +1710,6 @@ $(document).ready(function() {
 
         if(x < max_fields){ //max input box allowed
             x++; //text box increment
-
             $('<div style="margin-left:50%;"><div class="form-group"><label class="control-label type" for="selectbasic" style="">Type of work</label><div class="col-md-6"><select id="type_of_work[]" name="type_of_work[]" class="form-control type_of_work" style=""><option value="Audit Report">Audit Report</option><option value="ITR filing">ITR filing</option><option value="VAT Filing">VAT Filing</option><option value="Accounting">Accounting</option><option value="Registration">Registration</option><option value="Certification">Certification</option><option value="Others">Others</option></select></div></div><div class="form-group"> <label class="col-md-4 control-label statuss1" for="selectbasic" style="">Status</label><div class="col-md-6"><select id="status1' + x + '"  name="status[]"  class="form-control status"><option value="Pending">Pending</option><option value="Work in process">Work in process</option><option value="Completed">Completed</option></select></div></div><div class="form-group row"><label for="example-date-input" class="col-2 col-form-label date">DATE</label><div class="col-10 col"><input class="form-control datepicker pickers" id="date' + x +'" name="date[]" style="" type="text" readonly></div></div><div class="form-group"><label class="col-md-4 control-label comment" for="textinput" style="">Comment</label><div class="col-md-4"><input id="comments' + x + '" name="comment[]" type="text" placeholder="" class="form-control input-md comment" style=""></div></div></center><a href="#" class="remove_field" style=""><img src="images/del24.png" ></a></a></div>').insertBefore(add_button)//add input box\
           var newInput=$("#date"+ x).datepicker({dateFormat: 'dd/mm/yy'});
           newInput.datepicker({dateFormat: 'dd/mm/yy'}).datepicker("setDate", new Date());

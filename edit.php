@@ -14,14 +14,14 @@ if($_SESSION['login_kyc_app'] == 1){
   <title></title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" type="text/css" href="css/material.indigo-pink.min.css">
-<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<!-- <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"> -->
 
   <link rel="stylesheet" href="css/bootstrap.css">
   <link rel="stylesheet" href="css/kyc.css">
   <link rel="stylesheet" type="text/css" href="autocomplete-Files/styles.css">
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> -->
     <!-- Material Design Lite -->
     <script src="https://code.getmdl.io/1.3.0/material.min.js"></script>
     <link rel="stylesheet" href="css/material.css">
@@ -195,55 +195,22 @@ img.print{
  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"> 
 
 
-<link rel="stylesheet" href="css/jquery-ui.css"> 
- <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"> 
-
- <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-<script src="js/jquery-ui.js"></script>
+<!-- Datepicker -->
+<link rel="stylesheet" type="text/css" href="css/jquery.datepick.css"> 
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script type="text/javascript" src="js/jquery.plugin.js"></script> 
+<script type="text/javascript" src="js/jquery.datepick.js"></script>
 <script type="text/javascript">
 $(function() {
-  $( ".datepicker.picker" ).datepicker({dateFormat : 'mm/dd/yy',
-            changeMonth : true,
-            changeYear : true,
-            yearRange: '-100y:c+nn',
-            maxDate: '0',
-          beforeShow: function (input, inst) {
-        setTimeout(function () {
-            inst.dpDiv.css({
-            'z-index':4,
-            width:300,
-             
-            });
-        }, 0);}
-
-});});
+  $( ".datepicker.pick" ).datepick({dateFormat: 'dd/mm/yyyy',maxDate: 0});
+});
 
 // $(function() {
-//   $( ".datepicker.pick" ).datepicker({changeMonth: true,changeYear: true}).datepicker("setDate", new Date()).setTimeout(function(){
-//             $('.ui-datepicker').css('z-index',44444);
-//         }, 0);
-
+//  $( ".datepicker.picker" ).datepick({dateFormat: 'dd/mm/yyyy',maxDate: 0});
 // });
 
 $(function() {
- $( ".datepicker.p" ).datepicker({dateFormat: 'dd/mm/yy',changeMonth: true,
-    changeYear: true});
-});
-
-$(function() {
-  $( ".datepicker.pick" ).datepicker({
-    changeMonth: true,
-    changeYear: true,
-    beforeShow: function (input, inst) {
-        setTimeout(function () {
-            inst.dpDiv.css({
-            'z-index':4,
-            width:300,
-             
-            });
-        }, 0);
-    }
-});
+ $( ".datepicker.p" ).datepick({dateFormat: 'dd/mm/yyyy'});
 });
 
 </script>
@@ -988,7 +955,6 @@ if(isset($_POST["edit_btn"]) and $_GET["is_user"]==1) {
       </div>
       </div>
 
-
 <main class="mdl-layout">
 
 <?php if ($_GET['is_user']==0) { ?>
@@ -1474,6 +1440,7 @@ function enable_disable(that){
 }
 </script>
 
+
 <form method="post" id="deleteForm" action="search.php" style="text-align:center">
 <input type="hidden" name="pk_delete" id="pk_delete" value="<?php echo $_GET['id'] ?>"></input>  
 <input type="hidden" name="is_user_delete" id="is_user_delete" value="<?php echo $_GET['is_user'] ?>"></input>  
@@ -1593,23 +1560,20 @@ function enable_disable(that){
   <input id="date2" name="date2" value="<?php echo $arr_search['response'][0]['user_details']['dob'] ?>" type="text" placeholder="" class="form-control input-md datepicker picker" readonly style="width: 70%;" > 
   </div>
   <script type="text/javascript">
-  $(function() {
-  $( ".datepicker.picker" ).datepicker({dateFormat : 'mm/dd/yy',
-            changeMonth : true,
-            changeYear : true,
-            yearRange: '-100y:c+nn',
-            maxDate: '0',
-          beforeShow: function (input, inst) {
-        setTimeout(function () {
-            inst.dpDiv.css({
-            'z-index':4,
-            width:300,
-             
-            });
-        }, 0);}
+    $(function() {
+ $( ".datepicker.picker" ).datepick({
+            maxDate: '0', 
+            beforeShow : function()
+            {
+                jQuery( this ).datepicker('option','maxDate', jQuery('#end_date').val() );
+            },
+            altFormat: "dd/mm/yy", 
+            dateFormat: 'dd/mm/yy'
 
-});});
-</script>
+    
+});
+});
+  </script>
 </div>
 
 
@@ -2046,6 +2010,7 @@ function enable_disable(that){
 
 </fieldset>
 </form>
+
 
 <?php
 $url_can_be_deleted_or_no = 'https://kyc-application.herokuapp.com/can_be_deleted_or_no/';
@@ -2791,4 +2756,3 @@ $textval = json_encode($json);
 $foo = "var partnames=" . $textval;
 file_put_contents('autocomplete-Files/EditEntryValues.js', $foo);
 ?>
-
