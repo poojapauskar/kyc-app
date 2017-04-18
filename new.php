@@ -13,8 +13,8 @@ if($_SESSION['login_kyc_app'] == 1){
 <head>
   <title></title>
 
-  <!-- <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"> -->
-  <link rel="stylesheet" type="text/css" href="css/material.indigo-pink.min.css"> 
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<!-- <link rel="stylesheet" type="text/css" href="css/material.indigo-pink.min.css"> -->
  <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="css/bootstrap.css">
   <link rel="stylesheet" type="text/css" href="autocomplete-Files/styles.css">
@@ -45,12 +45,6 @@ if($_SESSION['login_kyc_app'] == 1){
     font-weight: 500;
     margin: 0;
     padding-left: 0;
-}
-
-.ui-datepicker {
-    width:22em;
-    padding:.2em .2em 0;
-    display:none;
 }
 </style>
 <script type="text/javascript">
@@ -164,6 +158,8 @@ document.getElementById('uploadFile').value='Choose File'; }
 });
   </script>
 <script type="text/javascript">
+
+
 function proceed(){
 
 var a=document.forms["Form"]["uid"].value;
@@ -194,10 +190,12 @@ if(a==null || a==''){
 }
 }
 
+
 </script>
+
 <!-- Datepicker -->
  <link rel="stylesheet" href="css/jquery-ui.css"> 
- <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"> 
+ <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 
  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 <script src="js/jquery-ui.js"></script>
@@ -239,6 +237,7 @@ $(function() {
      }
 }).datepicker("setDate", new Date());
 });
+
 
 </script>
 
@@ -972,7 +971,7 @@ $arr_uid = json_decode($output_uid,true);
           <!-- Add spacer, to align navigation to the right -->
   </header>
       <div class="mdl-layout__drawer">
-        <span class="mdl-layout-title">Title</span>
+        <span class="mdl-layout-title" >KYCAPP</span>
         <nav class="mdl-navigation">
           <a class="mdl-navigation__link" href="search.php">Home</a>
           <a class="mdl-navigation__link" href="new.php?is_user=0">New Entry Organization</a>
@@ -1340,13 +1339,9 @@ function enable_disable(that){
   <label class="col-md-4 control-label" for="textinput" >UID:</label>  
   <div class="col-md-4">
 
-<<<<<<< HEAD
+
   <input id="uid" name="uid" type="text" value="<?php echo $_POST['uid'] ?>" placeholder="" class="form-control input-md" style="width:70%" readonly>
-=======
 
-  <input id="uid" name="uid" type="text" value="<?php echo $_POST['uid'] ?>" placeholder="" class="form-control input-md" style="width:70%" disabled>
-
->>>>>>> 6104d07c85f87d0ffe9dd30a4dc802939be5a7d3
   
   <input type="hidden" name="uid_format" id="uid_format" value="<?php echo $arr_uid['uid'] ?>"></input>
   </div>
@@ -1356,9 +1351,7 @@ function enable_disable(that){
 <div class="form-group">
   <label class="col-md-4 control-label" for="textinput">Name:</label>  
   <div class="col-md-4">
-
   <input id="name" name="name" value="<?php echo $_POST['name'] ?>" type="text" placeholder="" class="form-control input-md" style="width: 70%;" required/> 
-
   </div>
 </div>
 <!--date-->
@@ -1468,10 +1461,7 @@ function enable_disable(that){
 <div class="form-group">
   <label class="col-md-4 control-label" for="textinput"></label>  
   <div class="col-md-4">
-
-
   <input id="textinput" name="textinput" type="text" placeholder="Specify if Others" class="form-control input-md"  style="width: 70%" >
-
   </div>
 </div>
 
@@ -1632,7 +1622,7 @@ function enable_disable(that){
 </form>
 
 <?php } ?>
- <script type="text/javascript">
+<script type="text/javascript">
   function validate(){
     var Form=document.getElementById("Form");
     if(Form.checkValidity()==true)
@@ -1722,10 +1712,10 @@ $(document).ready(function() {
 
         if(x < max_fields){ //max input box allowed
             x++; //text box increment
-
             $('<div style="margin-left:50%;"><div class="form-group"><label class="control-label type" for="selectbasic" style="">Type of work</label><div class="col-md-6"><select id="type_of_work[]" name="type_of_work[]" class="form-control type_of_work" style=""><option value="Audit Report">Audit Report</option><option value="ITR filing">ITR filing</option><option value="VAT Filing">VAT Filing</option><option value="Accounting">Accounting</option><option value="Registration">Registration</option><option value="Certification">Certification</option><option value="Others">Others</option></select></div></div><div class="form-group"> <label class="col-md-4 control-label statuss1" for="selectbasic" style="">Status</label><div class="col-md-6"><select id="status1' + x + '"  name="status[]"  class="form-control status"><option value="Pending">Pending</option><option value="Work in process">Work in process</option><option value="Completed">Completed</option></select></div></div><div class="form-group row"><label for="example-date-input" class="col-2 col-form-label date">DATE</label><div class="col-10 col"><input class="form-control datepicker pickers" id="date' + x +'" name="date[]" style="" type="text" readonly></div></div><div class="form-group"><label class="col-md-4 control-label comment" for="textinput" style="">Comment</label><div class="col-md-4"><input id="comments' + x + '" name="comment[]" type="text" placeholder="" class="form-control input-md comment" style=""></div></div></center><a href="#" class="remove_field" style=""><img src="images/del24.png" ></a></a></div>').insertBefore(add_button)//add input box\
-          var newInput=$("#date"+ x).datepicker({dateFormat: 'dd/mm/yy'});
+          var newInput=$("#date"+ x).datepicker({dateFormat: 'dd/mm/yy',changeMonth : true,changeYear : true});
           newInput.datepicker({dateFormat: 'dd/mm/yy'}).datepicker("setDate", new Date());
+
           $("#status1" + x).click(function () {
 
             if ($("#status1" + x).val() == "Completed") {
