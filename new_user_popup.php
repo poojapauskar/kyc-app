@@ -93,7 +93,7 @@
 <script type="text/javascript" src="js/jquery.datepick.js"></script>
 <script type="text/javascript">
 $(function() {
-  $( ".datepicker.picker" ).datepicker({dateFormat: 'dd/mm/yy',maxDate:0,changeMonth : true,changeYear : true});
+  $( ".datepicker.picker" ).datepicker({dateFormat: 'dd/mm/yy',maxDate:0,changeMonth : true,changeYear : true,yearRange: '-100y:c+nn',});
 });
 
 $(function() {
@@ -432,6 +432,7 @@ $arr_uid_popup = json_decode($output_uid_popup,true);
 
   </div>
 </div>
+<img src="/images/calendar.png" style="margin-left: 68%;margin-top:-15%">
 
 <!-- Select Basic -->
 <div class="form-group">
