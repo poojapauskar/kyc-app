@@ -151,7 +151,7 @@ $arr_search = json_decode($output_search,true);
     <div class="mdl-layout__header-row" >
         <a href="search.php"><img id="logo1" src="images/green.png"></img></a><span class="mdl-layout-title" id="title2"><?php echo $arr_search['response'][0]['organization_details']['name'] ?><?php echo $arr_search['response'][0]['user_details']['name'] ?></span>
          <span class="mdl-layout-title" id="title1" style="text-align:center">KYCAPP</span>
-    <a href="index.php"><img id="logout" style="" src="images/logout1.png"></img></a>
+    <a href="logout.php"><img id="logout" style="" src="images/logout1.png"></img></a>
           <!-- Add spacer, to align navigation to the right -->
     </div>
   </header>
@@ -162,7 +162,9 @@ $arr_search = json_decode($output_search,true);
           <a class="mdl-navigation__link" href="new.php?is_user=0">New Entry Organization</a>
           <a class="mdl-navigation__link" href="new.php?is_user=1">New Entry Individual</a>
           <a class="mdl-navigation__link" href="missing_reports.php">Missing Reports</a>
-          <a class="mdl-navigation__link" href="search.php">Admin</a>
+        <?php if($_SESSION['is_admin'] == 1){?>
+          <a class="mdl-navigation__link" href="admin_page.php">Admin</a>
+        <?php }?>
           <a class="mdl-navigation__link" href="">Help</a>
           <a class="mdl-navigation__link" href="">About Us</a>
           <a class="mdl-navigation__link" href="">Contact</a>

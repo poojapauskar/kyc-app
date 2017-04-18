@@ -111,7 +111,8 @@ if($_POST['is_user_delete'] != "" && $_POST['pk_delete'] != ""){
 
        <a href="search.php"> <img id="logo1" src="images/green.png"></img></a>
       <h5 style="" id="title3">ADMIN PANEL</h5>
-         <span class="mdl-layout-title" id="title1" style="">KYCApp</span>
+         <span class="mdl-layout-title" id="title1" style="">KYCAPP</span>
+
          <a href="logout.php"><img id="logout" style="" src="images/logout1.png"></img></a>
 
           <!-- Add spacer, to align navigation to the right -->
@@ -124,7 +125,9 @@ if($_POST['is_user_delete'] != "" && $_POST['pk_delete'] != ""){
           <a class="mdl-navigation__link" href="new.php?is_user=0">New Entry Organization</a>
           <a class="mdl-navigation__link" href="new.php?is_user=1">New Entry Individual</a>
           <a class="mdl-navigation__link" href="missing_reports.php">Missing Reports</a>
-          <a class="mdl-navigation__link" href="search.php">Admin</a>
+        <?php if($_SESSION['is_admin'] == 1){?>
+          <a class="mdl-navigation__link" href="admin_page.php">Admin</a>
+        <?php }?>
           <a class="mdl-navigation__link" href="">Help</a>
           <a class="mdl-navigation__link" href="">About Us</a>
           <a class="mdl-navigation__link" href="">Contact</a>
