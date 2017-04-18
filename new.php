@@ -968,7 +968,7 @@ $arr_uid = json_decode($output_uid,true);
 
     <span class="mdl-layout-title" id="title2"><?php echo $title; ?></span>
     <span class="mdl-layout-title" id="title1" style="text-align:center">KYCAPP</span>
-    <a href="logout.php"><img id="logout" style="" src="images/logout1.png"></img></a>
+    <a href="logout.php"><img id="logout" style="" src="images/logout_btn.png"></img></a>
           <!-- Add spacer, to align navigation to the right -->
   </header>
       <div class="mdl-layout__drawer">
@@ -1361,7 +1361,7 @@ function enable_disable(that){
   <label class="col-md-4 control-label" for="textinput">DOB:</label>  
   <div class="col-md-4">
   <input id="date1" name="date1" value="<?php echo $_POST['date1'] ?>" type="text" class="form-control input-md datepicker picker" readonly style="width: 70%;">
-  </div>
+  </div><img src="/images/calendar.png" style="margin-left: -9%;">
 </div>
 
 <!-- Select Basic -->
