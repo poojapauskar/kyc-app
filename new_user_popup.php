@@ -410,7 +410,7 @@ $arr_uid_popup = json_decode($output_uid_popup,true);
 <div class="form-group">
   <label class="col-md-4 control-label" for="textinput">UID:</label>  
   <div class="col-md-4">
-  <input id="uid" name="uid" type="text" value="<?php echo $_POST['uid'] ?>" placeholder="" class="form-control input-md" readonly>
+  <input id="uid" name="uid" type="text" value="<?php echo $_POST['uid'] ?>" placeholder="" class="form-control input-md">
   </div>
 </div>
 
@@ -438,91 +438,10 @@ $arr_uid_popup = json_decode($output_uid_popup,true);
   <div class="col-md-4">
     <select id="profession" name="profession" class="form-control">
       <option value="Option one"><?php echo $_POST['profession'] ?></option>
-      <optgroup label="Academics">
-        <option value="Professors">Professors</option>
-        <option value="Teachers">Teachers</option>
-      </optgroup>
-      <optgroup label="Cultural">
-      <option value="Clergy">Clergy</option>
-      <option value="Philosophers">Philosophers</option>
-      </optgroup>
-
-      <optgroup label="Medical">
-        <option value="Anesthesiologists">Anesthesiologists</option>
-        <option value="Audiologists">Audiologists</option>
-        <option value="Chiropractors">Chiropractors</option>
-        <option value="Dentists">Dentists</option>
-        <option value="Dietitians">Dietitians</option>
-        <option value="Nurses">Nurses</option>
-        <option value="Occupational therapists">Occupational therapists</option>
-        <option value="Pharmacists">Pharmacists</option>
-      </optgroup>
-
-      <optgroup label="Operating Department Practitioner">
-        <option value="Optometrists">Optometrists</option>
-        <option value="Physical therapists">Physical therapists</option>
-        <option value="Physicians">Physicians</option>
-        <option value="Podiatrists">Podiatrists</option>
-        <option value="Psychologists">Psychologists</option>
-        <option value="Radiographers">Radiographers</option>
-        <option value="Speech-language pathologists">Speech-language pathologists</option>
-        <option value="Surgeons">Surgeons</option>
-        <option value="Veterinarians">Veterinarians</option>
-        <option value="Gynaecologists">Gynaecologists</option>
-      </optgroup>
-
-      <optgroup label="Industry">
-        <option value="Accountants">Accountants</option>
-        <option value="Actuaries">Actuaries</option>
-        <option value="Architects">Architects</option>
-        <option value="Engineers">Engineers</option>
-        <option value="Linguistics - Translators">Linguistics - Translators</option>
-        <option value="Linguistics - Interpreters">Linguistics - Interpreters</option>
-        <option value="Surveyors">Surveyors</option>
-        <option value="Urban Planners">Urban Planners</option>
-
-      </optgroup>
-
-      <optgroup label="Transport">Transport
-      <option value="Air traffic controllers">Air traffic controllers</option>
-      <option value="Aircraft pilots">Aircraft pilots</option>
-      <option value="Sea captains">Sea captains</option>
-      </optgroup>
-
-      <optgroup label="Public services">Public services
-      <option value="Lawyers">Lawyers</option>
-      <option value="Social Workers">Social Workers</option>
-      <option value="Health inspector">Health inspector</option>
-      <option value="Park ranger">Park ranger</option>
-      <option value=" Police officer"> Police officer</option>
-      <option value="Military officers">Military officers</option>
-
-      </optgroup>
-
-      <optgroup label="Science">
-        <option value="Scientists - Astronomers">Scientists - Astronomers</option>
-        <option value="Scientists - Biologists">Scientists - Biologists</option>
-        <option value="Scientists - Biologists - Botanists">Scientists - Biologists - Botanists</option>
-        <option value="Scientists - Biologists - Ecologists">Scientists - Biologists - Ecologists</option>
-        <option value="Scientists - Biologists - Geneticists">Scientists - Biologists - Geneticists</option>
-        <option value="Scientists - Biologists - Immunologists">Scientists - Biologists - Immunologists</option>
-        <option value="Scientists - Biologists - Paleontologists">Scientists - Biologists - Paleontologists</option>
-        <option value="Scientists - Biologists - Pharmacologists">Scientists - Biologists - Pharmacologists</option>
-        <option value="Scientists - Biologists - Virologists">Scientists - Biologists - Virologists</option>
-        <option value="Scientists - Biologists - Zoologists">Scientists - Biologists - Zoologists</option>
-        <option value="Scientists - Chemists">Scientists - Chemists</option>
-        <option value="Scientists - Geologists">Scientists - Geologists</option>
-        <option value="Scientists - Meteorologists">Scientists - Meteorologists</option>
-        <option value="Scientists - Neuroscientists">Scientists - Neuroscientists</option>
-        <option value="Scientists - Oceanographers">Scientists - Oceanographers</option>
-        <option value="Scientists - Physicists">Scientists - Physicists</option>
-      </optgroup>
-      <option value="Other">Other</option>
-
-      <!-- <option value="Option one">Option one</option>
+      <option value="Option one">Option one</option>
       <option value="Option two">Option two</option>
       <option value="Option three">Option three</option>
-      <option value="Option four">Option four</option> -->
+      <option value="Option four">Option four</option>
     </select>
   </div>
 </div>
@@ -540,7 +459,7 @@ $arr_uid_popup = json_decode($output_uid_popup,true);
 <div class="form-group">
   <label class="col-md-4 control-label" for="textarea">Address:</label>
   <div class="col-md-4">                     
-    <textarea class="form-control" id="address" name="address" value="<?php echo $_POST['address'] ?>" placeholder="Specify Address"></textarea>
+    <textarea class="form-control" id="address" name="address" value="<?php echo $_POST['address'] ?>">default text</textarea>
   </div>
 </div>
 
@@ -678,7 +597,7 @@ $arr_uid_popup = json_decode($output_uid_popup,true);
   </div>
 </div>
 
-<a href="#" class="remove_field_pre1" style="margin-left: 416px; margin-top: -42px;position:absolute">
+<a href="#" class="remove_field_pre1" style="margin-left: 426px; margin-top: -42px;position:absolute">
  <img src="images/del24.png" >
 </a>
 </div>
@@ -687,7 +606,8 @@ $arr_uid_popup = json_decode($output_uid_popup,true);
 
 <div class="col-md-8 col-sm-12 col-24">
     <div class="input_fields" style="color:black">
-         <button class="add_field  btn " onclick="incrementValue()" style="margin-left: 204px;">Add</button>
+         <button class="add_field btn " onclick="incrementValue()" style="margin-left: 443px;">Add</button>
+
          <div>
          <input type="text" name="mytextt[]" hidden="" ></div>
 </div>
