@@ -13,7 +13,7 @@ if($_SESSION['is_admin'] != 1){
 
 
 if(isset($_POST['submit'])){
-    $url = 'http://127.0.0.1:8000/export_a_firm/';
+    $url = 'https://kyc-application.herokuapp.com/export_a_firm/';
     $options = array(
       'http' => array(
         'header'  => array(
@@ -29,11 +29,8 @@ if(isset($_POST['submit'])){
     $arr = json_decode($output,true);
 
 /*echo $arr;*/
-$arr[0]['organization'][0]['type_of_org'];
+/*echo $arr['organization'];*/
 
-/*$columnHeader = '';  
-$setData = '';  
-$columnHeader = "Type of Organization" . "\t" . "Name" . "\t" . "Registration" . "\t" . "Address" . "\t";
 
  
   
@@ -42,13 +39,35 @@ header("Content-type: application/octet-stream");
 header("Content-Disposition: attachment; filename=Reoprt.xls");  
 header("Pragma: no-cache");  
 header("Expires: 0");  
-  
-echo ucwords($columnHeader) . "\n";  
+ 
+$columnHeader = '';  
+$setData = '';  
+$columnHeader = "Type of Organization" . "\t" . "Name" . "\t" . "Registration" . "\t" . "Address" . "\t";
 
-for($i=0;$i<count($arr[0]['organization']);$i++){
-  $setData= $arr[0]['organization'][$i]['type_of_org']. "\t" . $arr[0]['organization'][$i]['name'] . "\t" . $arr[0]['organization'][$i]['registration'] . "\t" . $arr[0]['organization'][$i]['address'] . "\t"; 
-  echo $setData . "\n"; 
-}*/
+echo ucwords($columnHeader) . "\n"; 
+echo "<br>";  
+
+for($i=0;$i<count($arr['organization']);$i++){
+  $setData= $arr['organization'][$i]['type_of_org']. "\t" . $arr['organization'][$i]['name'] . "\t" . $arr['organization'][$i]['registration'] . "\t" . $arr['organization'][$i]['address'] . "\t"; 
+  echo $setData;
+  echo "<br>"; 
+}
+
+echo "<br>"; 
+echo "<br>"; 
+
+$columnHeader1 = '';  
+$setData1 = '';  
+$columnHeader1 = "UID" . "\t" . "Name" . "\t" . "Profession" . "\t" . "Address" . "\t";
+
+echo ucwords($columnHeader1) . "\n"; 
+echo "<br>";  
+
+for($i=0;$i<count($arr['users']);$i++){
+  $setData1= $arr['users'][$i]['uid']. "\t" . $arr['users'][$i]['name'] . "\t" . $arr['users'][$i]['proffesion'] . "\t" . $arr['users'][$i]['address'] . "\t"; 
+  echo $setData1;
+  echo "<br>"; 
+}
 
 
     /*$arr = json_decode($output,true);*/
