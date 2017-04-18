@@ -25,8 +25,7 @@ if(isset($_POST['submit'])){
     $context = stream_context_create($options);
     $output = file_get_contents($url, false,$context);
     /*echo $output_can_be_deleted_or_no;*/
-    /*$file = file_get_contents('path of your file');*/
-    file_put_contents('file.xls', $output);
+    echo $output;
     /*$arr = json_decode($output,true);*/
     /*echo $arr_can_be_deleted_or_no['status'];*/
 }else{
