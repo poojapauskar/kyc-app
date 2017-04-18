@@ -2,6 +2,7 @@
 <html>
 <head>
   <title>CA DATA BASE</title>
+  <link rel="icon" type="image/png" sizes="36x36" href="images/green.png">
   <link rel="stylesheet" type="text/css" href="css/material.indigo-pink.min.css">
   <link rel="stylesheet" href="css/bootstrap.css">
   <link rel="stylesheet" href="css/kyc.css">
