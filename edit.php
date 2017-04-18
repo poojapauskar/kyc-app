@@ -941,7 +941,7 @@ if(isset($_POST["edit_btn"]) and $_GET["is_user"]==1) {
 
     </header>
     <div class="mdl-layout__drawer">
-        <span class="mdl-layout-title">Title</span>
+        <span class="mdl-layout-title">KYCAPP</span>
         <nav class="mdl-navigation">
           <a class="mdl-navigation__link" href="search.php">Home</a>
           <a class="mdl-navigation__link" href="new.php?is_user=0">New Entry Organization</a>

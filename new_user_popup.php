@@ -379,7 +379,7 @@ $arr_uid_popup = json_decode($output_uid_popup,true);
           <!-- Add spacer, to align navigation to the right -->
       </header>
       <div class="mdl-layout__drawer">
-        <span class="mdl-layout-title">Title</span>
+        <span class="mdl-layout-title">KYCAPP</span>
         <nav class="mdl-navigation">
           <a class="mdl-navigation__link" href="search.php">Home</a>
           <a class="mdl-navigation__link" href="new_organization.php">New Entry Organization</a>

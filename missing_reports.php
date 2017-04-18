@@ -213,7 +213,7 @@ $arr_missing_report = json_decode($output_missing_report,true);
           </div>
       </header>
       <div class="mdl-layout__drawer">
-        <span class="mdl-layout-title">Title</span>
+        <span class="mdl-layout-title">KYCAPP</span>
         <nav class="mdl-navigation">
           <a class="mdl-navigation__link" href="search.php">Home</a>
           <a class="mdl-navigation__link" href="new.php?is_user=0">New Entry Organization</a>
