@@ -607,7 +607,6 @@ $arr_uid_popup = json_decode($output_uid_popup,true);
 <div class="col-md-8 col-sm-12 col-24">
     <div class="input_fields" style="color:black">
          <button class="add_field btn " onclick="incrementValue()" style="margin-left: 443px;">Add</button>
-
          <div>
          <input type="text" name="mytextt[]" hidden="" ></div>
 </div>
