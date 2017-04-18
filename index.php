@@ -1,3 +1,10 @@
+<?php
+session_start();
+if($_SESSION['login_kyc_app'] == 1){
+  echo "<script>location='search.php'</script>";
+}
+
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -43,6 +50,8 @@ if($arr2['status']==200 && $arr2['message']=='Is Super Admin'){
   echo "<script>location='super_admin.php'</script>";
 }elseif($arr2['status']==200 && $arr2['message']=='Is Admin'){
   $_SESSION['login_kyc_app'] = 1;
+  $_SESSION['is_admin'] = 1;
+  $_SESSION['admin_pk'] = $arr2['admin_pk'];
   $_SESSION['account_token'] = $arr2['account_token'];
   /*echo $_SESSION['account_token'];*/
   echo "<script>location='search.php'</script>";
