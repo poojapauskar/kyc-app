@@ -87,7 +87,7 @@
   </style>
    <!-- Datepicker -->
 <link rel="stylesheet" type="text/css" href="css/jquery-ui.css"> 
- <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"> 
+ <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"> 
 <!-- <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script> -->
 <script type="text/javascript" src="js/jquery.plugin.js"></script> 
 <script type="text/javascript" src="js/jquery.datepick.js"></script>
