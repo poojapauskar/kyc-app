@@ -13,8 +13,8 @@ if($_SESSION['login_kyc_app'] == 1){
 <head>
   <title></title>
 
-  <!-- <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"> -->
-  <link rel="stylesheet" type="text/css" href="css/material.indigo-pink.min.css"> 
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<!-- <link rel="stylesheet" type="text/css" href="css/material.indigo-pink.min.css"> -->
  <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="css/bootstrap.css">
   <link rel="stylesheet" type="text/css" href="autocomplete-Files/styles.css">
@@ -45,12 +45,6 @@ if($_SESSION['login_kyc_app'] == 1){
     font-weight: 500;
     margin: 0;
     padding-left: 0;
-}
-
-.ui-datepicker {
-    width:22em;
-    padding:.2em .2em 0;
-    display:none;
 }
 </style>
 <script type="text/javascript">
@@ -196,48 +190,17 @@ if(a==null || a==''){
 
 </script>
 <!-- Datepicker -->
- <link rel="stylesheet" href="css/jquery-ui.css"> 
- <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"> 
-
- <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-<script src="js/jquery-ui.js"></script>
+<link rel="stylesheet" type="text/css" href="css/jquery.datepick.css"> 
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script type="text/javascript" src="js/jquery.plugin.js"></script> 
+<script type="text/javascript" src="js/jquery.datepick.js"></script>
 <script type="text/javascript">
 $(function() {
-  $( ".datepicker.picker" ).datepicker({dateFormat : 'mm/dd/yy',
-            changeMonth : true,
-            changeYear : true,
-            yearRange: '-100y:c+nn',
-            maxDate: '0',
-          beforeShow: function (input, inst) {
-        setTimeout(function () {
-            inst.dpDiv.css({
-            'z-index':4,
-            width:300,
-             
-            });
-        }, 0);}
+  $( ".datepicker.picker" ).datepick({dateFormat: 'dd/mm/yyyy',maxDate:0});
+});
 
-});});
-
-// $(function() {
-//   $( ".datepicker.pick" ).datepicker({changeMonth: true,changeYear: true}).datepicker("setDate", new Date()).setTimeout(function(){
-//             $('.ui-datepicker').css('z-index',44444);
-//         }, 0);
-
-// });
 $(function() {
-  $( ".datepicker.pick" ).datepicker({
-    changeMonth: true,changeYear: true,
-     beforeShow: function (input, inst) {
-        setTimeout(function () {
-            inst.dpDiv.css({
-            'z-index':4,
-            width:300,
-             
-            });
-        }, 10);
-     }
-}).datepicker("setDate", new Date());
+  $( ".datepicker.pick" ).datepick({dateFormat: 'dd/mm/yyyy'}).datepick("setDate", new Date());
 });
 
 </script>
@@ -1338,7 +1301,7 @@ function enable_disable(that){
   <label class="col-md-4 control-label" for="textinput" >UID:</label>  
   <div class="col-md-4">
 
-  <input id="uid" name="uid" type="text" value="<?php echo $_POST['uid'] ?>" placeholder="" class="form-control input-md" style="width:70%" readonly>
+  <input id="uid" name="uid" type="text" value="<?php echo $_POST['uid'] ?>" placeholder="" class="form-control input-md" style="width:70%" disabled>
   
   <input type="hidden" name="uid_format" id="uid_format" value="<?php echo $arr_uid['uid'] ?>"></input>
   </div>
@@ -1462,6 +1425,7 @@ function enable_disable(that){
   <div class="col-md-4">
 
   <input id="textinput" name="textinput" type="text" placeholder="Specify if Others" class="form-control input-md"  style="width: 70%" >
+
   </div>
 </div>
 
