@@ -2152,10 +2152,11 @@ div.fileUpload.btn.btn-info{
 }
 
 .remove_field{
-    margin-left:54%;
-    margin-top:-40px;
-    position:absolute
+    margin-left: 40%;
+    margin-top: -40px;
+    position: absolute;
 }
+
 
 /*edit page view*/
 .fileUpload.btn.btn-info.view{

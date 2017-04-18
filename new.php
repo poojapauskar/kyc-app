@@ -1361,7 +1361,7 @@ function enable_disable(that){
   <label class="col-md-4 control-label" for="textinput">DOB:</label>  
   <div class="col-md-4">
   <input id="date1" name="date1" value="<?php echo $_POST['date1'] ?>" type="text" class="form-control input-md datepicker picker" readonly style="width: 70%;">
-  </div>
+  </div><img src="/images/calendar.png" style="margin-left: -9%;">
 </div>
 
 <!-- Select Basic -->

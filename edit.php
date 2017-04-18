@@ -1591,7 +1591,7 @@ function enable_disable(that){
   <label class="col-md-4 control-label" for="textinput">DOB:</label>  
   <div class="col-md-4">
   <input id="date2" name="date2" value="<?php echo $arr_search['response'][0]['user_details']['dob'] ?>" type="text" placeholder="" class="form-control input-md datepicker picker" readonly style="width: 70%;" > 
-  </div>
+  </div><img src="/images/calendar.png" style="margin-left: -9%;">
   <script type="text/javascript">
   $(function() {
   $( ".datepicker.picker" ).datepicker({dateFormat : 'mm/dd/yy',
