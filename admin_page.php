@@ -12,7 +12,7 @@ if($_SESSION['is_admin'] != 1){
 }
 
 
-if(isset($_POST['submit'])){
+if(isset($_POST['submit_org'])){
     $url = 'https://kyc-application.herokuapp.com/export_a_firm/';
     $options = array(
       'http' => array(
@@ -27,53 +27,98 @@ if(isset($_POST['submit'])){
     /*echo $output_can_be_deleted_or_no;*/
     /*echo $output;*/
     $arr = json_decode($output,true);
-
-/*echo $arr;*/
-/*echo $arr['organization'];*/
-
-
- 
   
-  
-header("Content-type: application/octet-stream");  
-header("Content-Disposition: attachment; filename=Reoprt.xls");  
-header("Pragma: no-cache");  
-header("Expires: 0");  
- 
-$columnHeader = '';  
-$setData = '';  
-$columnHeader = "Type of Organization" . "\t" . "Name" . "\t" . "Registration" . "\t" . "Address" . "\t";
+header('Content-Disposition: attachment; filename=Organization.xls');
+header('Content-type: application/force-download');
+header('Content-Transfer-Encoding: binary');
+header('Pragma: public');
+//print "\xEF\xBB\xBF"; // UTF-8 BOM
+$h = array();
 
-echo ucwords($columnHeader) . "\n"; 
-echo "<br>";  
+$Header = ["Type of Organization","Name","Registration","Pan","Address","Partner UIDs","Registration Certificate","Pan Card","Telephone Bill","Bank Pass Book"];
 
-for($i=0;$i<count($arr['organization']);$i++){
-  $setData= $arr['organization'][$i]['type_of_org']. "\t" . $arr['organization'][$i]['name'] . "\t" . $arr['organization'][$i]['registration'] . "\t" . $arr['organization'][$i]['address'] . "\t"; 
-  echo $setData;
-  echo "<br>"; 
+
+echo '<table border="1"><tr>';
+foreach ($Header as $key) {
+   $key = ucwords($key);
+   echo '<th>' . $key . '</th>';
+}
+echo '</tr>';
+
+
+for($k=0;$k<count($arr['details']);$k++) {
+   echo '<td>' . $arr['details'][$k]['type_of_org'] . '</td>';
+   echo '<td>' . $arr['details'][$k]['name'] . '</td>';
+   echo '<td>' . $arr['details'][$k]['registration'] . '</td>';
+   echo '<td>' . $arr['details'][$k]['pan'] . '</td>';
+   echo '<td>' . $arr['details'][$k]['address'] . '</td>';
+   echo '<td>' . $arr['details'][$k]['partner_uids'] . '</td>';
+   echo '<td>' . $arr['details'][$k]['reg_certificate'] . '</td>';
+   echo '<td>' . $arr['details'][$k]['pan_card'] . '</td>';
+   echo '<td>' . $arr['details'][$k]['telephone_bill'] . '</td>';
+   echo '<td>' . $arr['details'][$k]['pass_book'] . '</td>';
+   echo '</tr>';
 }
 
-echo "<br>"; 
-echo "<br>"; 
+echo '</table>';
 
-$columnHeader1 = '';  
-$setData1 = '';  
-$columnHeader1 = "UID" . "\t" . "Name" . "\t" . "Profession" . "\t" . "Address" . "\t";
+}
+if(isset($_POST['submit_usr'])){
+$url2 = 'https://kyc-application.herokuapp.com/export_users/';
+    $options2 = array(
+      'http' => array(
+        'header'  => array(
+                      'PK: '.$_POST['admin_pk'],
+                    ),
+        'method'  => 'GET',
+      ),
+    );
+    $context2 = stream_context_create($options2);
+    $output2 = file_get_contents($url2, false,$context2);
+    /*echo $output_can_be_deleted_or_no;*/
+    /*echo $output;*/
+    $arr2 = json_decode($output2,true);
 
-echo ucwords($columnHeader1) . "\n"; 
-echo "<br>";  
+header('Content-Disposition: attachment; filename=User.xls');
+header('Content-type: application/force-download');
+header('Content-Transfer-Encoding: binary');
+header('Pragma: public');
+//print "\xEF\xBB\xBF"; // UTF-8 BOM
+$h = array();
 
-for($i=0;$i<count($arr['users']);$i++){
-  $setData1= $arr['users'][$i]['uid']. "\t" . $arr['users'][$i]['name'] . "\t" . $arr['users'][$i]['proffesion'] . "\t" . $arr['users'][$i]['address'] . "\t"; 
-  echo $setData1;
-  echo "<br>"; 
+$Header = ["UID","Name","DOB","Proffesion","Pan","Pan Card","Address","Telephone Bill","Bank Pass Book","Voter Id","Passport","Aadhar No.","Aadhar Card","Image","Designation"];
+
+
+echo '<table border="1"><tr>';
+foreach ($Header as $key) {
+   $key = ucwords($key);
+   echo '<th>' . $key . '</th>';
+}
+echo '</tr>';
+
+
+for($k=0;$k<count($arr2['details']);$k++) {
+   echo '<td>' . $arr2['details'][$k]['uid'] . '</td>';
+   echo '<td>' . $arr2['details'][$k]['name'] . '</td>';
+   echo '<td>' . $arr2['details'][$k]['dob'] . '</td>';
+   echo '<td>' . $arr2['details'][$k]['pan'] . '</td>';
+   echo '<td>' . $arr2['details'][$k]['proffesion'] . '</td>';
+   echo '<td>' . $arr2['details'][$k]['pan'] . '</td>';
+   echo '<td>' . $arr2['details'][$k]['pan_card'] . '</td>';
+   echo '<td>' . $arr2['details'][$k]['address'] . '</td>';
+   echo '<td>' . $arr2['details'][$k]['telephone_bill'] . '</td>';
+   echo '<td>' . $arr2['details'][$k]['bank_pass_book'] . '</td>';
+   echo '<td>' . $arr2['details'][$k]['voter_id'] . '</td>';
+   echo '<td>' . $arr2['details'][$k]['passport'] . '</td>';
+   echo '<td>' . $arr2['details'][$k]['aadhar_no'] . '</td>';
+   echo '<td>' . $arr2['details'][$k]['aadhar_card'] . '</td>';
+   echo '<td>' . $arr2['details'][$k]['image'] . '</td>';
+   echo '<td>' . $arr2['details'][$k]['designation'] . '</td>';
+   echo '</tr>';
 }
 
+echo '</table>';
 
-    /*$arr = json_decode($output,true);*/
-    /*echo $arr_can_be_deleted_or_no['status'];*/
-}else{
-  /*echo "hi";*/
 }
 ?>
 
@@ -83,6 +128,7 @@ for($i=0;$i<count($arr['users']);$i++){
 <br>
 <form action="admin_page.php" method="post">
   <input type="hidden" name="admin_pk" value="<?php echo $_SESSION['admin_pk'] ?>">
-  <button type="submit" class="btn btn-success" style="color:white;margin-left:2%" name="submit">Import All Data</button>
+  <button type="submit" class="btn btn-success" style="color:white;margin-left:2%" name="submit_org">Import All Organization</button>
+  <button type="submit" class="btn btn-success" style="color:white;margin-left:2%" name="submit_usr">Import All Users</button>
 </form> 
 </div>
