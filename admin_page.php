@@ -101,7 +101,6 @@ for($k=0;$k<count($arr2['details']);$k++) {
    echo '<td>' . $arr2['details'][$k]['uid'] . '</td>';
    echo '<td>' . $arr2['details'][$k]['name'] . '</td>';
    echo '<td>' . $arr2['details'][$k]['dob'] . '</td>';
-   echo '<td>' . $arr2['details'][$k]['pan'] . '</td>';
    echo '<td>' . $arr2['details'][$k]['proffesion'] . '</td>';
    echo '<td>' . $arr2['details'][$k]['pan'] . '</td>';
    echo '<td>' . $arr2['details'][$k]['pan_card'] . '</td>';
