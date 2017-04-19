@@ -119,6 +119,138 @@ for($k=0;$k<count($arr2['details']);$k++) {
 echo '</table>';
 
 }
+
+
+if(isset($_POST['submit_img'])){
+$url3 = 'https://kyc-application.herokuapp.com/export_images/';
+    $options3 = array(
+      'http' => array(
+        'header'  => array(
+                      'PK: '.$_POST['admin_pk'],
+                    ),
+        'method'  => 'GET',
+      ),
+    );
+    $context3 = stream_context_create($options3);
+    $output3 = file_get_contents($url3, false,$context3);
+    /*echo $output_can_be_deleted_or_no;*/
+    /*echo $output;*/
+    $arr3 = json_decode($output3,true);
+
+# create new zip opbject
+$zip = new ZipArchive();
+
+# create a temp file & open it
+$tmp_file = tempnam('.','');
+$zip->open($tmp_file, ZipArchive::CREATE);
+
+for($c=0;$c<count($arr3['organization']);$c++){
+  if($arr3['organization'][$c]['url_telephone_bill'] != ""){
+    $download_file = file_get_contents($arr3['organization'][$c]['url_telephone_bill']);
+
+    $parts = explode("?",$arr3['organization'][$c]['url_telephone_bill']); 
+
+    #add it to the zip
+    $zip->addFromString(basename($parts['0']),$download_file);
+    $zip->renameName(basename($parts['0']),$arr3['organization'][$c]['name']."_telephone_bill");
+  }
+
+  if($arr3['organization'][$c]['url_reg_certificate'] != ""){
+    $download_file = file_get_contents($arr3['organization'][$c]['url_reg_certificate']);
+
+    $parts = explode("?",$arr3['organization'][$c]['url_reg_certificate']); 
+
+    $zip->addFromString(basename($parts['0']),$download_file);
+    $zip->renameName(basename($parts['0']),$arr3['organization'][$c]['name']."_reg_certificate");
+  }
+
+  if($arr3['organization'][$c]['url_pan_card'] != ""){
+    $download_file = file_get_contents($arr3['organization'][$c]['url_pan_card']);
+
+    $parts = explode("?",$arr3['organization'][$c]['url_pan_card']); 
+
+    $zip->addFromString(basename($parts['0']),$download_file);
+    $zip->renameName(basename($parts['0']),$arr3['organization'][$c]['name']."_pan_card");
+  }
+
+  if($arr3['organization'][$c]['url_pass_book'] != ""){
+    $download_file = file_get_contents($arr3['organization'][$c]['url_pass_book']);
+
+    $parts = explode("?",$arr3['organization'][$c]['url_pass_book']); 
+
+    $zip->addFromString(basename($parts['0']),$download_file);
+    $zip->renameName(basename($parts['0']),$arr3['organization'][$c]['name']."_pass_book");
+  }
+}
+for($c=0;$c<count($arr3['users']);$c++){
+  if($arr3['users'][$c]['url_pan_card'] != ""){
+    $download_file = file_get_contents($arr3['users'][$c]['url_pan_card']);
+
+    $parts = explode("?",$arr3['users'][$c]['url_pan_card']); 
+
+    $zip->addFromString(basename($parts['0']),$download_file);
+    $zip->renameName(basename($parts['0']),$arr3['users'][$c]['uid']."_pan_card");
+  }
+  if($arr3['users'][$c]['url_telephone_bill'] != ""){
+    $download_file = file_get_contents($arr3['users'][$c]['url_telephone_bill']);
+
+    $parts = explode("?",$arr3['users'][$c]['url_telephone_bill']); 
+
+    $zip->addFromString(basename($parts['0']),$download_file);
+    $zip->renameName(basename($parts['0']),$arr3['users'][$c]['uid']."_telephone_bill");
+  }
+  if($arr3['users'][$c]['url_bank_pass_book'] != ""){
+    $download_file = file_get_contents($arr3['users'][$c]['url_bank_pass_book']);
+
+    $parts = explode("?",$arr3['users'][$c]['url_bank_pass_book']); 
+
+    $zip->addFromString(basename($parts['0']),$download_file);
+    $zip->renameName(basename($parts['0']),$arr3['users'][$c]['uid']."_bank_pass_book");
+  }
+  if($arr3['users'][$c]['url_voter_id'] != ""){
+    $download_file = file_get_contents($arr3['users'][$c]['url_voter_id']);
+
+    $parts = explode("?",$arr3['users'][$c]['url_voter_id']); 
+
+    $zip->addFromString(basename($parts['0']),$download_file);
+    $zip->renameName(basename($parts['0']),$arr3['users'][$c]['uid']."_voter_id");
+  }
+  if($arr3['users'][$c]['url_passbook'] != ""){
+    $download_file = file_get_contents($arr3['users'][$c]['url_passbook']);
+
+    $parts = explode("?",$arr3['users'][$c]['url_passbook']); 
+
+    $zip->addFromString(basename($parts['0']),$download_file);
+    $zip->renameName(basename($parts['0']),$arr3['users'][$c]['uid']."_passbook");
+  }
+  if($arr3['users'][$c]['url_aadhar_card'] != ""){
+    $download_file = file_get_contents($arr3['users'][$c]['url_aadhar_card']);
+
+    $parts = explode("?",$arr3['users'][$c]['url_aadhar_card']); 
+
+    $zip->addFromString(basename($parts['0']),$download_file);
+    $zip->renameName(basename($parts['0']),$arr3['users'][$c]['uid']."_aadhar_card");
+  }
+  if($arr3['users'][$c]['url_image'] != ""){
+    $download_file = file_get_contents($arr3['users'][$c]['url_image']);
+
+    $parts = explode("?",$arr3['users'][$c]['url_image']); 
+
+    $zip->addFromString(basename($parts['0']),$download_file);
+    $zip->renameName(basename($parts['0']),$arr3['users'][$c]['uid']."_image");
+  }
+}
+
+# close zip
+$zip->close();
+
+# send the file to the browser as a download
+header('Content-disposition: attachment; filename=Images.zip');
+header('Content-type: application/zip');
+readfile($tmp_file);
+
+
+}
 ?>
 
 <div style="margin-top:2%">
@@ -129,5 +261,6 @@ echo '</table>';
   <input type="hidden" name="admin_pk" value="<?php echo $_SESSION['admin_pk'] ?>">
   <button type="submit" class="btn btn-success" style="color:white;margin-left:2%" name="submit_org">Import All Organization</button>
   <button type="submit" class="btn btn-success" style="color:white;margin-left:2%" name="submit_usr">Import All Users</button>
+  <button type="submit" class="btn btn-success" style="color:white;margin-left:2%" name="submit_img">Import Images</button>
 </form> 
 </div>
