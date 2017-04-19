@@ -245,8 +245,14 @@ for($c=0;$c<count($arr3['users']);$c++){
 $zip->close();
 
 # send the file to the browser as a download
+header("Pragma: public");
+header("Expires: 0");
+header("Cache-Control: must-revalidate, post-check=0, pre-check=0");
+header("Cache-Control: public");
+header("Content-Description: File Transfer");
 header('Content-disposition: attachment; filename=Images.zip');
-header('Content-type: application/zip');
+header('Content-type: application/octet-stream');
+header("Content-Transfer-Encoding: binary");
 readfile($tmp_file);
 
 
