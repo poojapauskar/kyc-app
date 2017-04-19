@@ -41,7 +41,7 @@ if($_SESSION['login_kyc_app'] == 1){
     </style>
   </head>
 
-<body style="background-color:#E8E8E8;overflow-x:hidden;">
+<body style="background-color:#E8E8E8;overflow:hidden;">
 
 
 <?php
@@ -132,59 +132,79 @@ if($_POST['is_user_delete'] != "" && $_POST['pk_delete'] != ""){
         </nav>
       </div>
       </div>
- <div class="container">
-  <div class="row" style="margin-top:33%;"> 
-
+<div class="container">
+  <div class="row" > 
 
   <!-- AutoSearch TEXT field -->
+  <!-- First Card Below -->
+  <div class="card1" >
+    <div class="card-header"> Database</div> 
+      <div class="card-block">
+
+
     <div class="col-md-12" style="margin-left:11%;">
-
-
     <form id="target1" name="target1" class="form-group" method="post" action="" style="padding-bottom:7%">
 
-    <input id="search" name="search" type="text" placeholder="Search firms or individuals" class="form-control input-md" style="width:55%;margin-top:-8%;height:39px" required onchange="this.form.submit()" autofocus>
+    <input id="search" name="search" type="text" placeholder="Search firms or individuals" class="form-control input-md" style="width:71%;margin-top:4%;height:39px;border-color: #757575;" required onchange="this.form.submit()" autofocus>
   <input id="is_user_field" name="is_user_field" type="hidden"></input>
   <input id="id_field" name="id_field" type="hidden"></input>
     <button style="visibility:hidden;display:none;margin-left:58%;margin-top:-3.5%;width:200px;height:37px" class="mdl-button mdl-js-button mdl-button--raised" type="submit" value="Search" id="submit" name="submit">
     </button>
     </form>
-    </div>
-       <!--  <div id="tagname" style="height:100px; width:300px; border:1px solid #000;"></div>
- -->
-      
-    <div class="col-sm-1" style="width:10.66667%;">
+      </div>   
+      <!-- Below code for two buttons inside -->
+<div class="col-sm-1" style="width:10.66667%;">
     </div> 
     <div class="col-sm-2">
       <a href="new.php?is_user=0">
-      <button style="background-color:#74b25e;color:white;width:200px;height:60px" class="mdl-button mdl-js-button mdl-button--raised">
-      <p style="margin-top:7px;">New Entry<br>Organization</p>
+      <button class="mdl-button mdl-js-button mdl-button--raised new-entry-org-btn">
+      New Entry Organization
       </button>
       </a>
     </div>
-    <div class="col-sm-2" style="width:11.66667%;">
-    </div>
-    <div class="col-sm-2">
-      <a href="new.php?is_user=1">
-      <button style="background-color:#74b25e;color:white;width:200px;height:60px" class="mdl-button mdl-js-button mdl-button--raised">
-      <p style="margin-top:7px;">New Entry<br>Individual</p>
-      </button>
-      </a>
-    </div>
-    <div class="col-sm-2" style="width:11.66667%;">
+
+ <div class="col-sm-2" style="width:11.66667%;">
     </div>
     <div class="col-sm-2">
 
        <a href="missing_reports.php">
-       <button style="background-color:#74b25e;color:white;width:200px;height:60px" class="mdl-button mdl-js-button mdl-button--raised" data-tooltip-text="Missing Data">
-       <p style="margin-top:7px;">Missing<br>Report</p>
+       <button class="mdl-button mdl-js-button mdl-button--raised missing-report-btn" data-tooltip-text="Missing Data">
+     Missing Report
        </button>
        </a>
     </div>
+    <div class="col-sm-2" style="width:11.66667%;">
+    </div>
 
+</div>
+    </div>
+    </div>
+    <!-- AutoSearch Function ends above -->
+       <!--  <div id="tagname" style="height:100px; width:300px; border:1px solid #000;"></div>
+ -->
+
+
+
+<!-- New row for button below -->
+  <div class="row" > 
+        <!-- Second Card below -->
+
+   <div class="card2">
+  <div class="card-header2">Assignment Status</div>
+<div class="card-block2">
+  
+
+      <div class="col-sm-2">
+      <a href="new.php?is_user=1">
+      <button class="mdl-button mdl-js-button mdl-button--raised new-entry-individual-btn">
+      New Entry Individual
+      </button>
+      </a>
+    </div>
     <div class="col-sm-2">
       <a href="search_on_status.php?status=Pending">
-      <button style="background-color:#74b25e;color:white;width:200px;height:60px;margin-top:12%;margin-left:76%;" class="mdl-button mdl-js-button mdl-button--raised">
-      <p style="margin-top:7px;">Pending</p>
+      <button class="mdl-button mdl-js-button mdl-button--raised  pending-btn">
+      Pending
       </button>
       </a>
     </div>
@@ -193,8 +213,8 @@ if($_POST['is_user_delete'] != "" && $_POST['pk_delete'] != ""){
     </div>
     <div class="col-sm-2">
       <a href="search_on_status.php?status=Work in process">
-      <button style="background-color:#74b25e;color:white;width:200px;height:60px;margin-top:12%;margin-left:76%;" class="mdl-button mdl-js-button mdl-button--raised">
-      <p style="margin-top:7px;">Work in process</p>
+      <button class="mdl-button mdl-js-button mdl-button--raised workin-btn">
+      Work in process
       </button>
       </a>
     </div>
@@ -203,11 +223,15 @@ if($_POST['is_user_delete'] != "" && $_POST['pk_delete'] != ""){
     <div class="col-sm-2">
 
        <a href="search_on_status.php?status=Completed">
-       <button style="background-color:#74b25e;color:white;width:200px;height:60px;margin-top:12%;margin-left:76%;" class="mdl-button mdl-js-button mdl-button--raised">
-       <p style="margin-top:7px;">Completed<br></p>
+       <button class="mdl-button mdl-js-button mdl-button--raised completed-btn">
+       Completed
        </button>
        </a>
     </div>
+
+    </div>
+
+</div>
 
     <!-- AutoSearch Script files don't move -->
      <script type="text/javascript" src="autocomplete-Files/jquery-1.8.2.min.js"></script>
@@ -231,11 +255,11 @@ if($_POST['is_user_delete'] != "" && $_POST['pk_delete'] != ""){
                     });
                 });
         </script> -->
-        
-</div>
+</div>  
 </div>
 </div>
 </body>
+
 </html>
 
      
