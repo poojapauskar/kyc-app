@@ -501,9 +501,13 @@ VIEW</a>
     $img_lnk=$arr_img[0]['url'];
 }?>
 
-<img class="profile-pic" style="margin-left: 58.4%;
-    margin-top: 3%;position:absolute;z-index:2;" src="<?php echo $img_lnk; ?>" />
-<div class="upload-button" style="position:absolute;z-index:2;margin-left:58%;cursor:pointer;margin-top:13%;"><button disabled>Upload Image</button></div>
+<img class="profile-pic" style="
+    margin-left: 55.4%;
+    margin-top: 0%;
+    position:absolute;
+    z-index:2;
+    " src="<?php echo $img_lnk; ?>" />
+<div class="upload-button" style="position:absolute;z-index:2;margin-left:55%;cursor:pointer;margin-top:13%;"><button disabled>Upload Image</button></div>
 
 
 <input name="image" id="image" class="file-upload1" style="display:none;position:absolute;z-index:-2;margin-left:44%;margin-top:16%;" type="file">

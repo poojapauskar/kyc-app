@@ -655,7 +655,7 @@ function goBack() {
 
   var today = day + "-" + month + "-" + year;
    
-    $(add_button).click(function(e){ //on add input button click
+    $(add_button).on("click",function(e){ //on add input button click
         e.preventDefault();
         if(x < max_fields){ //max input box allowed
               x++; //text box incrementa
@@ -664,7 +664,7 @@ function goBack() {
               var newInput11=$("#date11" + x).datepick({dateFormat: 'dd/mm/yy',changeMonth : true,
             changeYear : true});
               newInput11.datepicker({dateFormat: 'dd/mm/yyyy'}).datepicker("setDate", new Date());
-              $("#status11" + x).click(function () {
+              $("#status11" + x).on("click",".form-control",function () {
 
                  if ($("#status11" + x).val() == "Completed") {
                      $("#comments11" + x).attr("required", "required");

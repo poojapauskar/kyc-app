@@ -1888,7 +1888,7 @@ margin-top:-1%;
 #title
 {
     margin-left:70%;
-    margin-top:7%;
+    margin-top:8%;
 }
 
 #logout {
@@ -2109,12 +2109,12 @@ div.fileUpload.btn.btn-info{
 /*date input field*/
 .col-10.col{
     width:63%;
-    margin-left:7.6%;
+    margin-left:6.6%;
     margin-top:-6%;
 }
 .form-control.type_of_work
 {
-    margin-left:9%;
+    margin-left:8%;
     width:145%
 }
 
@@ -2123,7 +2123,7 @@ div.fileUpload.btn.btn-info{
 }
 
 .control-label.type{
-    margin-left:-73%;
+    margin-left:-75%;
 }
 .col-md-4.control-label.status
 {
@@ -2145,7 +2145,7 @@ div.fileUpload.btn.btn-info{
     margin-left:-1%;
 }
 .col-2.col-form-label.date{
-    margin-left:-8.5%;
+    margin-left:-9.5%;
 }
 .col-md-4.control-label.comment{
     margin-left:-29%;
@@ -2209,6 +2209,7 @@ margin-top:-1%;
 }
 .form-control.input-md.comment{
     width:234%;
+    margin-left: -4%;
 }
 .fileUpload.btn.btn-info.tele1{
 margin-left:12%;
@@ -2633,7 +2634,7 @@ margin-top:-1%;
 
 #title3 {
     margin-left: 38%;
-    margin-top: 13%;
+    margin-top: 12%;
     font-size: 18px;
 }
 
@@ -2701,11 +2702,11 @@ margin-top:-1%;
 }
 
 .col-2.col-form-label.date{
-    margin-left:-8.5%;
+    margin-left:-11.5%;
 }
 
 .control-label.type{
-    margin-left:-78%;
+    margin-left:-81%;
 }
 
 .col-md-4.control-label.status
@@ -2722,7 +2723,7 @@ margin-top:-1%;
 
 .form-control.status{
     width: 149%;
-    margin-left: -3%;
+    margin-left: 1%;
 }
 .col-md-4.control-label.comment{
     margin-left:-29%;
@@ -2863,8 +2864,8 @@ a.btn.btn-info{
 	color: white;
     background-color: #176fac;
     margin-top: 0%;
-    margin-left: 50%    ;
-    width: 260%;
+    margin-left: 68%;
+    width: 237%;
 }
 /*attach btn*/
 div.fileUpload.btn.btn-info{
