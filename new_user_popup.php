@@ -607,9 +607,9 @@ $arr_uid_popup = json_decode($output_uid_popup,true);
 <div class="form-group">
 
 <div class="col-md-8 col-sm-12 col-24">
-    <div class="input_fields" style="color:black">
 
-         <button class="add_field  btn " onclick="incrementValue()" style="margin-left: 204px;">Add</button>
+    <div class="input_fieldss" style="color:black">
+         <button class="add_fields btn" onclick="incrementValue()" style="margin-left: 443px;">Add</button>
          <div>
          <input type="text" name="mytextt[]" hidden="" ></div>
 </div>
@@ -641,8 +641,8 @@ function goBack() {
 
      $(document).ready(function() {
     var max_fields      = 10; //maximum input boxes allowed
-    var wrapper         = $(".input_fields"); //Fields wrapper
-    var add_button      = $(".add_field"); //Add button ID
+    var wrapper         = $(".input_fieldss"); //Fields wrapper
+    var add_button      = $(".add_fields"); //Add button ID
 
     var wrapper_pre1         = $(".present_fields_1"); //Fields wrapper
     var x = 1; //initlal text box count
