@@ -25,7 +25,6 @@ if(isset($_POST['submit'])){
     $context = stream_context_create($options);
     $output = file_get_contents($url, false,$context);
     /*echo $output_can_be_deleted_or_no;*/
-
     /*echo $output;*/
     $arr = json_decode($output,true);
 
