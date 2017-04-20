@@ -2217,7 +2217,7 @@ margin-top:-1%;
 
     margin-top: -12%;
     width: 133%;
-    height: 65%;
+  /*  height: 65%;*/
     margin-left: -30%;
 }
 
@@ -3147,12 +3147,6 @@ margin-top:-1%;
 #title3 {
     margin-left: 30%;
     margin-top: 12%;
-    font-size: 18px;
-}
-
-#title4 {
-    margin-left: 38%;
-    margin-top: 13%;
     font-size: 18px;
 }
 
