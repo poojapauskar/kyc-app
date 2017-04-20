@@ -14,14 +14,15 @@
 
 .card-block{
 
-     background-color: #ffffff !important;
+  background-color: #ffffff !important;
     width: 59% !important;
+    height: 143%;
     -webkit-box-flex: 1 !important;
     -webkit-flex: 1 1 auto !important;
     -ms-flex: 1 1 auto !important;
     flex: 1 1 auto !important;
     /* max-height: 40%; */
-    height: 22% !important;
+    height: 45% !important;
     padding: 1.25rem !important;
     margin-left: 30% !important;
 }
@@ -1913,16 +1914,15 @@ margin-top:-1%;
 
 /*Card2 sizing*/
 .card1{
-    margin-top: 12%;
+    margin-top: 11%;
     margin-left: -30%;
     width: 133%;
-    height: 134%;
-
+    height: 447px
 }
 .card2{
-    margin-top: -49%;
+    margin-top: -12%;
     width: 133%;
-    height:71%;
+    height: 65%;
     margin-left: -30%;
 }
 
@@ -2764,12 +2764,12 @@ margin-top:-1%;
     margin-top: 14%;
     margin-left: -30%;
     width: 133%;
-    height: 126%;
+    height: 69%;
 }
 .card2{
-    margin-top: -69%;
+     margin-top: -16%;
     width: 133%;
-    height:71%;
+    height: 70%;
     margin-left: -30%;
 }
 .form_margin{

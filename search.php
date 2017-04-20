@@ -41,7 +41,7 @@ if($_SESSION['login_kyc_app'] == 1){
     </style>
   </head>
 
-<body style="background-color:#E8E8E8;overflow:hidden;">
+<body style="background-color:#E8E8E8;overflow-y: hidden;">
 
 
 <?php
@@ -116,7 +116,7 @@ if($_POST['is_user_delete'] != "" && $_POST['pk_delete'] != ""){
          <a href="logout.php"><img id="logout" style="" src="images/logout_btn.png"></img></a>
 
           <!-- Add spacer, to align navigation to the right -->
-          
+          </div>
       </header>
     <div class="mdl-layout__drawer">
         <span class="mdl-layout-title">KYCAPP</span>
@@ -132,8 +132,8 @@ if($_POST['is_user_delete'] != "" && $_POST['pk_delete'] != ""){
           <a class="mdl-navigation__link" href="">About Us</a>
           <a class="mdl-navigation__link" href="">Contact</a>
         </nav>
-      </div>
-      </div>
+      </div></div>
+
 <div class="container">
   <div class="row" > 
 
@@ -144,43 +144,44 @@ if($_POST['is_user_delete'] != "" && $_POST['pk_delete'] != ""){
       <div class="card-block">
 
 
-    <div class="col-md-12" style="margin-left:11%;">
-    <form id="target1" name="target1" class="form-group" method="post" action="" style="padding-bottom:7%">
+        <div class="col-md-12" style="margin-left:11%;">
+        <form id="target1" name="target1" class="form-group" method="post" action="" style="padding-bottom:7%">
 
-    <input id="search" name="search" type="text" placeholder="Search firms or individuals" class="form-control input-md" style="width:71%;margin-top:4%;height:39px;border-color: #757575;" required onchange="this.form.submit()" autofocus>
-  <input id="is_user_field" name="is_user_field" type="hidden"></input>
-  <input id="id_field" name="id_field" type="hidden"></input>
-    <button style="visibility:hidden;display:none;margin-left:58%;margin-top:-3.5%;width:200px;height:37px" class="mdl-button mdl-js-button mdl-button--raised" type="submit" value="Search" id="submit" name="submit">
-    </button>
-    </form>
-      </div>   
+        <input id="search" name="search" type="text" placeholder="Search firms or individuals" class="form-control input-md" style="width:71%;margin-top:4%;height:39px;border-color: #757575;" required onchange="this.form.submit()" autofocus>
+      <input id="is_user_field" name="is_user_field" type="hidden"></input>
+      <input id="id_field" name="id_field" type="hidden"></input>
+        <button style="visibility:hidden;display:none;margin-left:58%;margin-top:-3.5%;width:200px;height:37px" class="mdl-button mdl-js-button mdl-button--raised" type="submit" value="Search" id="submit" name="submit">
+        </button>
+        </form>
+          </div>   
       <!-- Below code for two buttons inside -->
-<div class="col-sm-1" style="width:10.66667%;">
-    </div> 
-    <div class="col-sm-2">
-      <a href="new.php?is_user=0">
-      <button class="mdl-button mdl-js-button mdl-button--raised new-entry-org-btn">
-      New Entry Organization
-      </button>
-      </a>
-    </div>
+    <div class="col-sm-1" style="width:10.66667%;">
+        </div> 
+        <div class="col-sm-2">
+          <a href="new.php?is_user=0">
+          <button class="mdl-button mdl-js-button mdl-button--raised new-entry-org-btn">
+          New Entry Organization
+          </button>
+          </a>
+        </div>
 
- <div class="col-sm-2" style="width:11.66667%;">
-    </div>
-    <div class="col-sm-2">
+     <div class="col-sm-2" style="width:11.66667%;">
+        </div>
+        <div class="col-sm-2">
 
-       <a href="missing_reports.php">
-       <button class="mdl-button mdl-js-button mdl-button--raised missing-report-btn" data-tooltip-text="Missing Data">
-     Missing Report
-       </button>
-       </a>
-    </div>
-    <div class="col-sm-2" style="width:11.66667%;">
-    </div>
-
+           <a href="missing_reports.php">
+           <button class="mdl-button mdl-js-button mdl-button--raised missing-report-btn" data-tooltip-text="Missing Data">
+         Missing Report
+           </button>
+           </a>
+        </div>
+        <div class="col-sm-2" style="width:11.66667%;">
+        </div>
 </div>
+  </div>
     </div>
-    </div>
+      </div>
+  
     <!-- AutoSearch Function ends above -->
        <!--  <div id="tagname" style="height:100px; width:300px; border:1px solid #000;"></div>
  -->
@@ -188,6 +189,7 @@ if($_POST['is_user_delete'] != "" && $_POST['pk_delete'] != ""){
 
 
 <!-- New row for button below -->
+<div class="container">
   <div class="row" > 
         <!-- Second Card below -->
 
@@ -257,9 +259,9 @@ if($_POST['is_user_delete'] != "" && $_POST['pk_delete'] != ""){
                     });
                 });
         </script> -->
-</div>  
-</div>
-</div>
+  </div>  
+    </div>
+      </div>
 </body>
 
 </html>
