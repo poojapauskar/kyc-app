@@ -1774,7 +1774,7 @@ margin-top:-1%;
 .card2{
     margin-top: -12%;
     width: 133%;
-    height: 65%;
+  /*  height: 65%;*/
     margin-left: -30%;
 }
 
@@ -2383,10 +2383,9 @@ width: 155%;
     margin-top:-3%;
     position:absolute;
 }
-
 .remove_field_pre1 {
     margin-left: 60%;
-    margin-top: -14.6%;
+    margin-top: -3.2%;
     position: absolute;
 }
 .remove_field_present{
@@ -2580,10 +2579,9 @@ div.fileUpload.btn.btn-info{
 
 .remove_field {
     margin-left: 40%;
-    margin-top: -183px;
+    margin-top: -41px;
     position: absolute;
 }
-
 
 /*edit page view*/
 .fileUpload.btn.btn-info.view{
@@ -3139,7 +3137,7 @@ margin-top:-1%;
 .card2{
      margin-top: -16%;
     width: 133%;
-    height: 70%;
+  /*  height: 70%;*/
     margin-left: -30%;
 }
 .form_margin{
