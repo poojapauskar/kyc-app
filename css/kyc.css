@@ -2327,8 +2327,9 @@ margin-top:-1%;
 #title2
 {
     text-align:center;
-    margin-top:9%;
+    margin-top:10%;
     font-size:18px;
+    margin-left: 30%;
 }
 
 .partner_designation{
@@ -2351,8 +2352,8 @@ width: 155%;
 }
 
 #title3 {
-    margin-left: 31%;
-    margin-top: 10%;
+    margin-left: 26%;
+    margin-top: 9%;
     font-size: 18px;
 }
 
@@ -2385,7 +2386,7 @@ width: 155%;
 
 .remove_field_pre1 {
     margin-left: 60%;
-    margin-top: -4%;
+    margin-top: -14.6%;
     position: absolute;
 }
 .remove_field_present{
@@ -2577,9 +2578,9 @@ div.fileUpload.btn.btn-info{
     margin-left:-29%;
 }
 
-.remove_field{
+.remove_field {
     margin-left: 40%;
-    margin-top: -40px;
+    margin-top: -183px;
     position: absolute;
 }
 
@@ -3146,8 +3147,8 @@ margin-top:-1%;
 }
 
 #title3 {
-    margin-left: 38%;
-    margin-top: 13%;
+    margin-left: 30%;
+    margin-top: 12%;
     font-size: 18px;
 }
 
@@ -3195,8 +3196,8 @@ margin-top:-1%;
 }
 
 #title2 {
-    margin-left: 29%;
-    margin-top: 12%;
+    margin-left: 35%;
+    margin-top: 13%;
     font-size: 18px;
 }
 
