@@ -3288,7 +3288,7 @@ margin-top:-1%;
 	margin-left:159%;
 }
 .partner_name {
-    margin-top: -35%;
+    margin-top: -32%;
     margin-left: 283%;
     width: 318%;
 }
@@ -3334,7 +3334,7 @@ margin-top:-1%;
 
 .remove_field_present{
 	margin-left:70%; 
-	margin-top:-3%;
+	margin-top:-5%;
 	position:absolute;
 }
 
@@ -3461,15 +3461,15 @@ input#partner_names[].form-control.input-md.newentry.partner_names{
 }
 /*input field for telephone*/
 #telephone_upload {
-    width: 59%;
-    margin-left: 8%;
+    width: 37%;
+    margin-left: 11%;
     position: absolute;
     margin-top: 1%;
 }
 
 #bank_upload{
-    width: 55%;
-    margin-left: 3%;
+    width: 37%;
+    margin-left: 1%;
     margin-top: 0%;
     position: absolute;
 }
