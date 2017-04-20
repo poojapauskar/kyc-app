@@ -14,14 +14,14 @@ if($_SESSION['login_kyc_app'] == 1){
   <title></title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" type="text/css" href="css/material.indigo-pink.min.css">
-<!-- <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"> -->
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
   <link rel="stylesheet" href="css/bootstrap.css">
   <link rel="stylesheet" href="css/kyc.css">
   <link rel="stylesheet" type="text/css" href="autocomplete-Files/styles.css">
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-  <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <!-- Material Design Lite -->
     <script src="https://code.getmdl.io/1.3.0/material.min.js"></script>
     <link rel="stylesheet" href="css/material.css">
@@ -191,26 +191,56 @@ img.print{
     display: none;
 }
   </style>  
+
 <link rel="stylesheet" href="css/jquery-ui.css"> 
  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"> 
 
-
-<!-- Datepicker -->
-<link rel="stylesheet" type="text/css" href="css/jquery.datepick.css"> 
-<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-<script type="text/javascript" src="js/jquery.plugin.js"></script> 
-<script type="text/javascript" src="js/jquery.datepick.js"></script>
+ <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="js/jquery-ui.js"></script>
 <script type="text/javascript">
 $(function() {
-  $( ".datepicker.pick" ).datepick({dateFormat: 'dd/mm/yyyy',maxDate: 0});
-});
+  $( ".datepicker.picker" ).datepicker({dateFormat : 'mm/dd/yy',
+            changeMonth : true,
+            changeYear : true,
+            yearRange: '-100y:c+nn',
+            maxDate: '0',
+          beforeShow: function (input, inst) {
+        setTimeout(function () {
+            inst.dpDiv.css({
+            'z-index':4,
+            width:300,
+             
+            });
+        }, 0);}
+
+});});
 
 // $(function() {
-//  $( ".datepicker.picker" ).datepick({dateFormat: 'dd/mm/yyyy',maxDate: 0});
+//   $( ".datepicker.pick" ).datepicker({changeMonth: true,changeYear: true}).datepicker("setDate", new Date()).setTimeout(function(){
+//             $('.ui-datepicker').css('z-index',44444);
+//         }, 0);
+
 // });
 
 $(function() {
- $( ".datepicker.p" ).datepick({dateFormat: 'dd/mm/yyyy'});
+ $( ".datepicker.p" ).datepicker({dateFormat: 'dd/mm/yy',changeMonth: true,
+    changeYear: true});
+});
+
+$(function() {
+  $( ".datepicker.pick" ).datepicker({
+    changeMonth: true,
+    changeYear: true,
+    beforeShow: function (input, inst) {
+        setTimeout(function () {
+            inst.dpDiv.css({
+            'z-index':4,
+            width:300,
+             
+            });
+        }, 0);
+    }
+});
 });
 
 </script>
@@ -934,28 +964,27 @@ if(isset($_POST["edit_btn"]) and $_GET["is_user"]==1) {
      box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23) !important;" class="mdl-layout__header">
     <div class="mdl-layout__header-row" >
     <a href="search.php"><img id="logo1" src="images/green.png"></img></a>
-     <span class="mdl-layout-title" id="title3"><?php echo $arr_search['response'][0]['organization_details']['name'] ?><?php echo $arr_search['response'][0]['user_details']['name'] ?></span>
+     <span class="mdl-layout-title" id="title2"><?php echo $arr_search['response'][0]['organization_details']['name'] ?><?php echo $arr_search['response'][0]['user_details']['name'] ?></span>
     <span class="mdl-layout-title" id="title1" style="text-align:center">KYCAPP</span>
-    <a href="logout.php"><img id="logout" style="" src="images/logout_btn.png"></img></a>
+    <a href="index.php"><img id="logout" style="" src="images/logout1.png"></img></a>
           <!-- Add spacer, to align navigation to the right -->
 
     </header>
     <div class="mdl-layout__drawer">
-        <span class="mdl-layout-title">KYCAPP</span>
+        <span class="mdl-layout-title">Title</span>
         <nav class="mdl-navigation">
           <a class="mdl-navigation__link" href="search.php">Home</a>
           <a class="mdl-navigation__link" href="new.php?is_user=0">New Entry Organization</a>
           <a class="mdl-navigation__link" href="new.php?is_user=1">New Entry Individual</a>
           <a class="mdl-navigation__link" href="missing_reports.php">Missing Reports</a>
-        <?php if($_SESSION['is_admin'] == 1){?>
-          <a class="mdl-navigation__link" href="admin_page.php">Admin</a>
-        <?php }?>
+          <a class="mdl-navigation__link" href="search.php">Admin</a>
           <a class="mdl-navigation__link" href="">Help</a>
           <a class="mdl-navigation__link" href="">About Us</a>
           <a class="mdl-navigation__link" href="">Contact</a>
         </nav>
       </div>
       </div>
+
 
 <main class="mdl-layout">
 
@@ -1442,7 +1471,6 @@ function enable_disable(that){
 }
 </script>
 
-
 <form method="post" id="deleteForm" action="search.php" style="text-align:center">
 <input type="hidden" name="pk_delete" id="pk_delete" value="<?php echo $_GET['id'] ?>"></input>  
 <input type="hidden" name="is_user_delete" id="is_user_delete" value="<?php echo $_GET['is_user'] ?>"></input>  
@@ -1560,22 +1588,25 @@ function enable_disable(that){
   <label class="col-md-4 control-label" for="textinput">DOB:</label>  
   <div class="col-md-4">
   <input id="date2" name="date2" value="<?php echo $arr_search['response'][0]['user_details']['dob'] ?>" type="text" placeholder="" class="form-control input-md datepicker picker" readonly style="width: 70%;" > 
-  </div><img src="/images/calendar.png" style="margin-left: -9%;">
+  </div>
   <script type="text/javascript">
-    $(function() {
- $( ".datepicker.picker" ).datepick({
-            maxDate: '0', 
-            beforeShow : function()
-            {
-                jQuery( this ).datepicker('option','maxDate', jQuery('#end_date').val() );
-            },
-            altFormat: "dd/mm/yy", 
-            dateFormat: 'dd/mm/yy'
+  $(function() {
+  $( ".datepicker.picker" ).datepicker({dateFormat : 'mm/dd/yy',
+            changeMonth : true,
+            changeYear : true,
+            yearRange: '-100y:c+nn',
+            maxDate: '0',
+          beforeShow: function (input, inst) {
+        setTimeout(function () {
+            inst.dpDiv.css({
+            'z-index':4,
+            width:300,
+             
+            });
+        }, 0);}
 
-    
-});
-});
-  </script>
+});});
+</script>
 </div>
 
 
@@ -2012,7 +2043,6 @@ function enable_disable(that){
 
 </fieldset>
 </form>
-
 
 <?php
 $url_can_be_deleted_or_no = 'https://kyc-application.herokuapp.com/can_be_deleted_or_no/';
@@ -2699,7 +2729,6 @@ function goBack() {
             x++; //text box increment
          $('<div style="margin-left:50%;"><div class="form-group"><label class="control-label type" for="selectbasic" style="">Type of work</label><div class="col-md-6"><select id="type_of_work[]" name="type_of_work[]" class="form-control type_of_work" style=""><option value="Audit Report">Audit Report</option><option value="ITR filing">ITR filing</option><option value="VAT Filing">VAT Filing</option><option value="Accounting">Accounting</option><option value="Registration">Registration</option><option value="Certification">Certification</option><option value="Others">Others</option></select></div></div><div class="form-group"> <label class="col-md-4 control-label status" for="selectbasic" style="width:70%;">Status</label><div class="col-md-6"><select id="status1" name="status[]"  class="form-control status"><option value="Pending">Pending</option><option value="Work in process">Work in process</option><option value="Completed">Completed</option></select></div></div><div class="form-group row"><label for="example-date-input" class="col-2 col-form-label date">DATE</label><div class="col-10 col"><input class="form-control datepicker pickers" id="datee'+ x +'" name="date[]" style="" type="text" readonly></div></div><div class="form-group"><label class="col-md-4 control-label comment" for="textinput" style="">Comment</label><div class="col-md-4"><input id="comments" name="comment[]" type="text" placeholder="" class="form-control input-md comment" style=""></div></div></center><a href="#" class="remove_field" style=""><img src="images/del24.png" ></a></a></div>').insertBefore(add_button) //add input box\
           var newInput=$("#datee"+x).datepicker({dateFormat: 'dd/mm/yy',changeMonth : true,
-
             changeYear : true,});
           newInput.datepicker({dateFormat: 'dd/mm/yy',changeMonth : true,
             changeYear : true,}).datepicker("setDate", new Date());

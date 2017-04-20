@@ -3389,12 +3389,12 @@ a.btn.btn-info{
 	color: white;
     background-color: #176fac;
     margin-top: 0%;
-    margin-left: 68%;
+    margin-left: 105%;
     width: 237%;
 }
 /*attach btn*/
 div.fileUpload.btn.btn-info{
-	margin-left:-38%;
+	margin-left:-4%;
 	margin-top:0%;
 }
 
