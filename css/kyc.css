@@ -3336,15 +3336,17 @@ margin-top:-1%;
 
  .upload-button {
     padding: 4px;
-    border: 1px solid black;
-    border-radius: 5px;
+    border: 1px solid #176fac;
+    border-radius: 6px;
     display: block;
     float: left;
     position:absolute;
     z-index:2;
     margin-left:77%;
     cursor:pointer;
-    margin-top:17%;
+    margin-top:11%;
+    color: #fff;
+    background-color: #176fac;
 }
 
 .profile-pic {
