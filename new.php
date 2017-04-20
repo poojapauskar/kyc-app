@@ -1255,7 +1255,7 @@ $arr_uid = json_decode($output_uid,true);
 <div class="form-group">
   <label class="col-md-4 control-label" for="save_btn"></label>
   <div class="col-md-8">
-    <button id="save_btn" name="save_btn" type="submit" class="btn btn-success" style="width: 10em;margin-left:10px">Save</button><span><span></span></span>
+    <button id="save_btn" name="save_btn" type="submit" class="btn btn-success" style="width: 10em;margin-left:1px">Save</button><span><span></span></span>
     <button onclick="ClickEvent()" class="btn btn-warning" style="width: 10em;"><a style="color:white" href="search.php">Cancel</a></button>
   </div>
 </div>
