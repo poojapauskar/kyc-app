@@ -3167,6 +3167,18 @@ margin-top:-1%;
     top: 54px;
     position: absolute;
 }
+
+.search_result.tele{
+    margin-left: -96%;
+    margin-top: 0%;
+    width: 80%;
+}
+
+.search_result.tele1{
+    margin-left: 15%;
+    margin-top: 0%;
+/*    width: 83%;*/
+}
 /*File Upload button on 10214 screen*/
 .input-file {
     margin-top: 1%;
@@ -3243,7 +3255,10 @@ margin-top:-1%;
     margin-top: -40px;
     position: absolute;
 }
-
+.form-control.status-edit{
+    width: 149%;
+    margin-left: -3%;
+}
 .form-control.status{
     width: 149%;
     margin-left: 1%;
@@ -3292,15 +3307,15 @@ margin-top:-1%;
     margin-top: -33px;
 }
 .col-md-3.bkupload.edit {
-    width: 30%;
-    margin-left: 45%;
+    width: 37%;
+    margin-left: 44%;
     position: absolute;
     margin-top: 0%;
 }
 
 .col-md-3.teleupload.edit {
-    width: 32%;
-    margin-left: 47%;
+    width: 37%;
+    margin-left: 46.5%
     position: absolute;
     margin-top: 0%;
 }
@@ -3389,7 +3404,7 @@ a.btn.btn-info{
 	color: white;
     background-color: #176fac;
     margin-top: 0%;
-    margin-left: 105%;
+    margin-left: 83%;
     width: 237%;
 }
 /*attach btn*/
