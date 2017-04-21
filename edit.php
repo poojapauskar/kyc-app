@@ -1725,7 +1725,7 @@ function enable_disable(that){
 <input id="pan_upload" class="form-control input-md" value="<?php echo $arr_search['response'][0]['pan_card_details'][0]['name']; ?>" style="width: 70%;">
 </div>
 <div class="col-md-1">
-<input  onchange="check_pan_card_user()" id="pan_card" name="pan_card" style="" value="<?php echo $_POST['pan_card'] ?>" class="input-file user_edit" type="file">
+<input  onchange="check_pan_card_user()" id="pan_card" name="pan_card" style="" value="<?php echo $_POST['pan_card'] ?>" class="input-file edit-user" type="file">
 </div>
 <?php
   $url_img_download = 'https://kyc-application.herokuapp.com/download/';
@@ -1768,7 +1768,7 @@ function enable_disable(that){
 <input value="<?php echo $arr_search['response'][0]['telephone_bill_details'][0]['name']; ?>">
 </div>
 <div class="col-md-1">
-<input onchange="check_telephone_bill_user()" id="telephone_bill"  value="<?php echo $_POST['telephone_bill'] ?>" style="" name="telephone_bill" class="input-file" type="file">     
+<input onchange="check_telephone_bill_user()" id="telephone_bill"  value="<?php echo $_POST['telephone_bill'] ?>" style="" name="telephone_bill" class="input-file edit-user" type="file">     
 </div>
 <?php
   $url_img_download_2 = 'https://kyc-application.herokuapp.com/download/';
@@ -1808,7 +1808,7 @@ function enable_disable(that){
 </div>
 
 <div class="col-md-1">
-<input onchange="check_bank_pass_book_user()" id="bank_pass_book"  value="<?php echo $_POST['bank_pass_book'] ?>" style="" name="bank_pass_book" class="input-file" type="file">     
+<input onchange="check_bank_pass_book_user()" id="bank_pass_book"  value="<?php echo $_POST['bank_pass_book'] ?>" style="" name="bank_pass_book" class="input-file edit-user" type="file">     
  </div>
 <?php
   $url_img_download_3 = 'https://kyc-application.herokuapp.com/download/';
@@ -1852,7 +1852,7 @@ function enable_disable(that){
     <input value="<?php echo $arr_search['response'][0]['voter_id_details'][0]['name']; ?>">
     </div>
     <div class="col-md-1">
-  <input onchange="check_voter_id_user()" id="voter_id" value="<?php echo $_POST['voter_id'] ?>" style="" name="voter_id" class="input-file" type="file">  
+  <input onchange="check_voter_id_user()" id="voter_id" value="<?php echo $_POST['voter_id'] ?>" style="" name="voter_id" class="input-file edit-user" type="file">  
   </div>   
   <?php
     $url_img_download_4 = 'https://kyc-application.herokuapp.com/download/';
@@ -1894,7 +1894,7 @@ function enable_disable(that){
   </div>
 
   <div class="col-md-1">
-  <input  onchange="check_passport_user()" id="passport" value="<?php echo $_POST['passport'] ?>" style="" name="passport" class="input-file" type="file">     
+  <input  onchange="check_passport_user()" id="passport" value="<?php echo $_POST['passport'] ?>" style="" name="passport" class="input-file edit-user" type="file">     
    </div>
 
   <?php
@@ -1935,7 +1935,7 @@ function enable_disable(that){
   <input class="form-control input-md" value="<?php echo $arr_search['response'][0]['aadhar_card_details'][0]['name']; ?>" style="width: 70%;">
   </div>
   <div class="col-md-1">
-    <input onchange="check_aadhar_card_user()" id="aadhar_card" name="aadhar_card" value="<?php echo $_POST['aadhar_card'] ?>" class="input-file" type="file">
+    <input onchange="check_aadhar_card_user()" id="aadhar_card" name="aadhar_card" value="<?php echo $_POST['aadhar_card'] ?>" class="input-file edit-user" type="file">
     </div>
   
   <?php
