@@ -2076,7 +2076,7 @@ $arr_can_be_deleted_or_no = json_decode($output_can_be_deleted_or_no,true);
 
 <?php } else { ?>
     <div style="text-align:center">
-    <button onclick="return CannotDelete()" class="btn btn-warning delete">
+    <button onclick="return CannotDelete()" class="btn btn-warning delete1">
       Delete
     </button>
     </div>
