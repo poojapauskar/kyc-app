@@ -511,7 +511,7 @@ VIEW</a>
 <div class="upload-button" style="position:absolute;z-index:2;margin-left:55%;cursor:pointer;margin-top:13%;cursor: not-allowed;" readonly>Upload Image</div>
 
 
-<input name="image" id="image" class="file-upload1" style="display:none;position:absolute;z-index:-2;margin-left:44%;margin-top:16%;" type="file">
+<input name="image" id="image" class="file-upload1" style="display:none;position:absolute;z-index:-2;margin-left:44%;margin-top:16%;" type="file" disabled="true">
 <!-- Text input-->
 <div class="form-group">
   <label class="col-md-4 control-label" for="textinput">UID:</label>  

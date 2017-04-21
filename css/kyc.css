@@ -3188,7 +3188,7 @@ margin-top:-1%;
 /*File Upload button on 10214 screen*/
 .input-file {
     margin-top: 1%;
-    margin-left: 0%;
+    margin-left: -30%;
     position: absolute;
 }
 
@@ -3528,7 +3528,7 @@ margin-top:-1%;
 
 .btn.btn-warning.cancel{
     width: 10em;
-    margin-top:0%;
+    margin-top:-18%;
     padding:0.5em;
     margin-left:-3%
 }
@@ -3536,13 +3536,13 @@ margin-top:-1%;
     width: 10em;
 /*    margin-top:0%;
 */
-    margin-left:-4%
+    margin-left:-1%
 }
 
 .btn.btn-warning.delete{
     width: 10em;
-    margin-top: -8.2%;
-    margin-left: 57%;
+    margin-top: -13.2%;
+    margin-left: 52%;
 }
 
 .btn.btn-warning.backbutton-searchresult{/*1024 Back Button in Search_result page*/
@@ -3555,6 +3555,11 @@ margin-top:-1%;
     width: 64%;
     margin-top:-1%;
     margin-left:-3%
+}
+
+#title{
+    margin-top: 11%;
+    margin-left: 70%;
 }
 }
 

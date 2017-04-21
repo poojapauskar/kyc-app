@@ -166,15 +166,15 @@ document.getElementById('uploadFile').value='Choose File'; }
     visibility:visible;
   }
 }
-
+/*
     .upload-button {
     padding: 4px;
-   /* border: 1px solid black;*/
+   /* border: 1px solid black;
     border-radius: 5px;
     display: block;
     float: left;
-    margin-top:17%;
-}
+    margin-top:11%;
+}*/
 img.print{
     display: block;
     width: 100%;
@@ -199,7 +199,7 @@ img.print{
 <script src="js/jquery-ui.js"></script>
 <script type="text/javascript">
 $(function() {
-  $( ".datepicker.picker" ).datepicker({dateFormat : 'mm/dd/yy',
+  $( ".sspicker.picker" ).datepicker({dateFormat : 'mm/dd/yy',
             changeMonth : true,
             changeYear : true,
             yearRange: '-100y:c+nn',
@@ -1557,7 +1557,7 @@ function enable_disable(that){
  <input type="hidden" value="<?php echo $arr_search['response'][0]['user_details']['pk'] ?>" name="org_id" id="org_id"></input>
 
 
-<img class="profile-pic" style="margin-left:77%;position:absolute;z-index:2;" src="<?php echo $img_lnk; ?>" />
+<img class="profile-pic" style="margin-left:78%;position:absolute;z-index:2;" src="<?php echo $img_lnk; ?>" />
 <div class="upload-button" style="">Upload Image</div>
 <input  onchange="check_image_user()" id="image"  name="image" class="file-upload1" style="position:absolute;z-index:-2;margin-left:46%;margin-top:16%;display:none" type="file"></input>
 </div>
@@ -1750,7 +1750,7 @@ function enable_disable(that){
 
 <!--address proof-->
 <div class="form-group">
-  <label class="col-md-4 control-label" for="checkboxes">Address Proof</label>
+  <label class="col-md-4 control-label" for="checkboxes">Address Proof:</label>
 
 <div class="col-md-1">
 <label class="checkbox-inline" for="checkboxes-0">
@@ -1835,7 +1835,7 @@ function enable_disable(that){
 
 <!--address proof-->
 <div class="form-group">
-  <label class="col-md-4 control-label" for="checkboxes">ID Proof</label>
+  <label class="col-md-4 control-label" for="checkboxes">ID Proof:</label>
   <div class="col-md-1">
    <label class="checkbox-inline" for="checkboxes-0">
 
@@ -1964,7 +1964,7 @@ function enable_disable(that){
 <div class="present_fields_1"> 
 <!-- Select Basic -->
 <div class="form-group">
-  <label class="col-md-4 control-label" for="selectbasic">Type of work</label>
+  <label class="col-md-4 control-label" for="selectbasic">Type of work:</label>
   <div class="col-md-4">
     <select id="type_of_work[]" name="type_of_work[]" class="form-control" style="width: 70%;">
       <option value=""></option>
@@ -1981,7 +1981,7 @@ function enable_disable(that){
 
 <!-- Select Basic -->
 <div class="form-group">
-  <label class="col-md-4 control-label" for="selectbasic">Status</label>
+  <label class="col-md-4 control-label" for="selectbasic">Status:</label>
   <div class="col-md-4">
     <select id="status" name="status[]" class="form-control" style="width: 70%">
       <option value="<?php echo $arr_search['response'][0]['add_info'][$q]['status']; ?>"><?php echo $arr_search['response'][0]['add_info'][$q]['status']; ?></option>
@@ -1994,7 +1994,7 @@ function enable_disable(that){
 </div>
 <!--date-->
 <div class="form-group row">
-  <label for="example-date-input" class="col-2 col-form-label" style="margin-left:28.1%;">DATE</label>
+  <label for="example-date-input" class="col-2 col-form-label" style="margin-left:28.1%;">DATE:</label>
   <div class="col-10">
     <input class="form-control datepicker p" id="date[]" name="date[]" value="<?php echo $arr_search['response'][0]['add_info'][$q]['date']; ?>" style="width: 70%;" type="text" readonly > 
   </div>
@@ -2003,7 +2003,7 @@ function enable_disable(that){
 
 <!-- Text input-->
 <div class="form-group">
-  <label class="col-md-4 control-label" for="textinput">Comment</label>  
+  <label class="col-md-4 control-label" for="textinput">Comment:</label>  
   <div class="col-md-4">
 
   <input id="commentss" name="comment[]" value="<?php echo $arr_search['response'][0]['add_info'][$q]['comment']; ?>" type="text" placeholder="" class="form-control input-md" style="width: 70%;">
@@ -2727,7 +2727,7 @@ function goBack() {
         e.preventDefault();
         if(x < max_fields){ //max input box allowed
             x++; //text box increment
-         $('<div style="margin-left:50%;"><div class="form-group"><label class="control-label type" for="selectbasic" style="">Type of work</label><div class="col-md-6"><select id="type_of_work[]" name="type_of_work[]" class="form-control type_of_work" style=""><option value="Audit Report">Audit Report</option><option value="ITR filing">ITR filing</option><option value="VAT Filing">VAT Filing</option><option value="Accounting">Accounting</option><option value="Registration">Registration</option><option value="Certification">Certification</option><option value="Others">Others</option></select></div></div><div class="form-group"> <label class="col-md-4 control-label status" for="selectbasic" style="width:70%;">Status</label><div class="col-md-6"><select id="status1" name="status[]"  class="form-control status-edit"><option value="Pending">Pending</option><option value="Work in process">Work in process</option><option value="Completed">Completed</option></select></div></div><div class="form-group row"><label for="example-date-input" class="col-2 col-form-label date">DATE</label><div class="col-10 col"><input class="form-control datepicker pickers" id="datee'+ x +'" name="date[]" style="" type="text" readonly></div></div><div class="form-group"><label class="col-md-4 control-label comment" for="textinput" style="">Comment</label><div class="col-md-4"><input id="comments" name="comment[]" type="text" placeholder="" class="form-control input-md comment" style=""></div></div></center><a href="#" class="remove_field" style=""><img src="images/del24.png" ></a></a></div>').insertBefore(add_button) //add input box\
+         $('<div style="margin-left:50%;"><div class="form-group"><label class="control-label type" for="selectbasic" style="">Type of work:</label><div class="col-md-6"><select id="type_of_work[]" name="type_of_work[]" class="form-control type_of_work" style=""><option value="Audit Report">Audit Report</option><option value="ITR filing">ITR filing</option><option value="VAT Filing">VAT Filing</option><option value="Accounting">Accounting</option><option value="Registration">Registration</option><option value="Certification">Certification</option><option value="Others">Others</option></select></div></div><div class="form-group"> <label class="col-md-4 control-label status" for="selectbasic" style="width:70%;">Status:</label><div class="col-md-6"><select id="status1" name="status[]"  class="form-control status-edit"><option value="Pending">Pending</option><option value="Work in process">Work in process</option><option value="Completed">Completed</option></select></div></div><div class="form-group row"><label for="example-date-input" class="col-2 col-form-label date">DATE:</label><div class="col-10 col"><input class="form-control datepicker pickers" id="datee'+ x +'" name="date[]" style="" type="text" readonly></div></div><div class="form-group"><label class="col-md-4 control-label comment" for="textinput" style="">Comment:</label><div class="col-md-4"><input id="comments" name="comment[]" type="text" placeholder="" class="form-control input-md comment" style=""></div></div></center><a href="#" class="remove_field" style=""><img src="images/del24.png" ></a></a></div>').insertBefore(add_button) //add input box\
           var newInput=$("#datee"+x).datepicker({dateFormat: 'dd/mm/yy',changeMonth : true,
             changeYear : true,});
           newInput.datepicker({dateFormat: 'dd/mm/yy',changeMonth : true,
