@@ -1725,7 +1725,7 @@ function enable_disable(that){
 <input id="pan_upload" class="form-control input-md" value="<?php echo $arr_search['response'][0]['pan_card_details'][0]['name']; ?>" style="width: 70%;">
 </div>
 <div class="col-md-1">
-<input  onchange="check_pan_card_user()" id="pan_card" name="pan_card" style="" value="<?php echo $_POST['pan_card'] ?>" class="input-file" type="file">
+<input  onchange="check_pan_card_user()" id="pan_card" name="pan_card" style="" value="<?php echo $_POST['pan_card'] ?>" class="input-file user_edit" type="file">
 </div>
 <?php
   $url_img_download = 'https://kyc-application.herokuapp.com/download/';
@@ -2036,7 +2036,7 @@ function enable_disable(that){
   <div class="col-md-4">
     <button  onclick="return check_file_type_user()" id="edit_btn" name="edit_btn" type="submit" class="btn btn-success successb">Save</button><span><span></span></span>
 
-    <button onclick="goBack()" class="btn btn-warning cancel" ><a style="color:white" href="search.php" >Cancel</a></button>
+    <button onclick="goBack()" class="btn btn-warning cancel1" ><a style="color:white" href="search.php" >Cancel</a></button>
     <!-- style="width: 10em;margin-top: 0%;padding:0.5em;margin-left:2%;" -->
   </div>
 </div>

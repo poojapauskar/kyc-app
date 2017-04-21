@@ -3182,9 +3182,15 @@ margin-top:-1%;
 /*File Upload button on 10214 screen*/
 .input-file {
     margin-top: 1%;
-    margin-left: -30%;
+    margin-left: 1%;
     position: absolute;
 }
+
+/*.input-file {
+    margin-top: 1%;
+    margin-left: 1%;
+    position: absolute;
+}*/
 
 .btn.btn-warning{
     width:10em;
@@ -3536,7 +3542,13 @@ margin-top:-1%;
     width: 10em;
     margin-top:-18%;
     padding:0.5em;
-    margin-left:-3%
+    margin-left:53%
+}
+.btn.btn-warning.cancel1{
+    width: 10em;
+    margin-top:-18%;
+    padding:0.5em;
+    margin-left:53%
 }
 .btn.btn-success.successb{
     width: 10em;
