@@ -2069,7 +2069,7 @@ $arr_can_be_deleted_or_no = json_decode($output_can_be_deleted_or_no,true);
     <form method="post" id="deleteForm" action="search.php" style="text-align:center">
     <input type="hidden" name="pk_delete" id="pk_delete" value="<?php echo $_GET['id'] ?>"></input>  
     <input type="hidden" name="is_user_delete" id="is_user_delete" value="<?php echo $_GET['is_user'] ?>"></input>  
-    <button type="submit" onclick="return ConfirmDelete()" class="btn btn-warning delete">
+    <button type="submit" onclick="return ConfirmDelete()" class="btn btn-warning delete1">
       Delete
     </button>
     </form>
