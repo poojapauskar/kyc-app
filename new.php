@@ -204,7 +204,7 @@ if(a==null || a==''){
 <script src="js/jquery-ui.js"></script>
 <script type="text/javascript">
 $(function() {
-  $( ".datepicker.picker" ).datepicker({dateFormat : 'mm/dd/yy',
+  $( ".datepicker.picker" ).datepicker({dateFormat : 'dd/mm/yy',
             changeMonth : true,
             changeYear : true,
             yearRange: '-100y:c+nn',
@@ -228,6 +228,7 @@ $(function() {
 // });
 $(function() {
   $( ".datepicker.pick" ).datepicker({
+    dateFormat : 'dd/mm/yy',
     changeMonth: true,changeYear: true,
      beforeShow: function (input, inst) {
         setTimeout(function () {
