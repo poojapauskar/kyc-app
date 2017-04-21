@@ -304,7 +304,7 @@ VIEW
   <input id="pan_upload" class="form-control input-md" value="<?php echo $arr_search['response'][0]['pan_card_details'][0]['name']; ?>" readonly style="width: 70%" />
   </div>
   <div class="col-md-1">
-  <div class="fileUpload btn btn-info" >
+  <div class="fileUpload search btn btn-info" >
   <label style="font-weight:500;margin-bottom: 2px;">ATTACH</label>
   <input id="pan_card" name="pan_card" type="file" class="upload" disabled="true">
 </div>
@@ -326,7 +326,7 @@ VIEW
   
 ?>
 <div class="col-md-1">
-<a data-toggle="modal" data-target="#myModal2" class="btn btn-info searchview">VIEW</a>
+<a data-toggle="modal" data-target="#myModal2" class="searchview btn btn-info">VIEW</a>
 </div>
 </div>
 

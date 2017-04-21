@@ -3418,7 +3418,7 @@ a.searchview.btn.btn-info{
     color: white;
     background-color: #176fac;
     margin-top: 0%;
-    margin-left: 97%;
+    margin-left: 103%;
     width: 237%;
 }
 /*attach btn*/
@@ -3427,7 +3427,7 @@ div.fileUpload.btn.btn-info{
 	margin-top:0%;
 }
 div.fileUpload.search.btn.btn-info{
-    margin-left:-7%;
+    margin-left:-4%;
     margin-top:0%;
 }
 
@@ -3570,7 +3570,7 @@ margin-top:-1%;
 }
 
 #title{
-    margin-top: 11%;
+    margin-top: 12%;
     margin-left: 70%;
 }
 }
