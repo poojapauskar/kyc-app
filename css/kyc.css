@@ -3413,10 +3413,22 @@ a.btn.btn-info{
     margin-left: 83%;
     width: 237%;
 }
+
+a.btn.btn-info-searchview{
+    color: white;
+    background-color: #176fac;
+    margin-top: 0%;
+    margin-left: 97%;
+    width: 237%;
+}
 /*attach btn*/
 div.fileUpload.btn.btn-info{
 	margin-left:-48%;
 	margin-top:0%;
+}
+div.fileUpload.btn.btn-info-search{
+    margin-left:-7%;
+    margin-top:0%;
 }
 
 /*notification bar css*/
