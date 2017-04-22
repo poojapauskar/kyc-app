@@ -177,7 +177,7 @@ $arr_search = json_decode($output_search,true);
         <strong>
 
         <?php for($q=0;$q<count($arr_search['response'][0]['add_info']);$q++){
-         echo "&nbsp".$arr_search['response'][0]['add_info'][$q]['type_of_work']."&nbsp->&nbsp".$arr_search['response'][0]['add_info'][$q]['status']."&nbsp->&nbsp".$arr_search['response'][0]['add_info'][$q]['date']."&nbsp";
+         echo "&nbsp".$arr_search['response'][0]['add_info'][$q]['type_of_work']."&nbsp &rarr;&nbsp".$arr_search['response'][0]['add_info'][$q]['status']."&nbsp &rarr; &nbsp".$arr_search['response'][0]['add_info'][$q]['date']."&nbsp";
          echo "<br>";
         }?>
 
