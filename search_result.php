@@ -503,12 +503,12 @@ VIEW</a>
 }?>
 
 <img class="profile-pic" style="
-    margin-left: 55.4%;
+    margin-left: 55.7%;
     margin-top: 0%;
     position:absolute;
     z-index:2;
     " src="<?php echo $img_lnk; ?>" />
-<div class="upload-button" style="position:absolute;z-index:2;margin-left:55%;cursor:pointer;margin-top:13%;cursor: not-allowed;" readonly>Upload Image</div>
+<div class="upload-button" style="position:absolute;z-index:2;margin-left:56%;cursor:pointer;margin-top:13%;cursor: not-allowed;" readonly>Upload Image</div>
 
 
 <input name="image" id="image" class="file-upload1" style="display:none;position:absolute;z-index:-2;margin-left:44%;margin-top:16%;" type="file" disabled="true">
