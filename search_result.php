@@ -210,7 +210,7 @@ $arr_search = json_decode($output_search,true);
 <div class="form-group" style="margin-top:0%">
   <label class="col-md-4 control-label" for="type_of_org">Type of Organization:</label>
   <div class="col-md-4">
-    <select id="type_of_org" name="type_of_org" class="form-control"  readonly style="width: 80%;">
+    <select id="type_of_org" name="type_of_org" class="form-control"  readonly style="width: 90%;">
       <option value="<?php echo $arr_search['response'][0]['organization_details']['type_of_org'];?>"><?php echo $arr_search['response'][0]['organization_details']['type_of_org'];?></option>
     </select>
   </div>
@@ -222,7 +222,7 @@ $arr_search = json_decode($output_search,true);
 <div class="form-group">
   <label class="col-md-4 control-label" for="textname">Name:</label>  
   <div class="col-md-4">
-  <input value="<?php echo $arr_search['response'][0]['organization_details']['name'];?>" id="name" name="name" type="text" placeholder="Enter Name" class="form-control input-md" readonly style="width:80%;">
+  <input value="<?php echo $arr_search['response'][0]['organization_details']['name'];?>" id="name" name="name" type="text" placeholder="Enter Name" class="form-control input-md" readonly style="width:90%;">
     
   </div>
 </div>
@@ -257,11 +257,11 @@ $arr_search = json_decode($output_search,true);
   <label class="col-md-4 control-label" for="reg_certificate">Registration Certificate:</label>
 
 <div class="col-md-4">
-<input id="uploadFile" class="form-control input-md" value="<?php echo $arr_search['response'][0]['reg_certificate_details'][0]['name']; ?>" readonly style="width:80%;"/>
+<input id="uploadFile" class="form-control input-md" value="<?php echo $arr_search['response'][0]['reg_certificate_details'][0]['name']; ?>" readonly style="width:90%;"/>
 </div>
 <div class="col-md-1">
   <div class="fileUpload search btn btn-info">
-    <label style="font-weight:500;margin-bottom: 2px;">ATTACH</label>
+    <label style="font-weight:500;margin-bottom: 0px;">ATTACH</label>
     <input id="reg_certificate" name="reg_certificate" type="file" class="upload" disabled="true" style="cursor: not-allowed;">
 </div>
 </div>
@@ -293,7 +293,7 @@ VIEW
 <div class="form-group" style="margin-top:-3%">
   <label class="col-md-4 control-label" for="textinput" style="margin-left:0%">PAN: </label>  
   <div class="col-md-4">
-  <input id="pan" name="pan" style="margin-left:0%;width:80%;" pattern="-?[a-zA-Z]{5}[0-9]{4}[a-zA-Z]{1}?" value="<?php echo $arr_search['response'][0]['organization_details']['pan'] ?>" type="text" placeholder="PAN Card Number" class="form-control input-md" readonly/>
+  <input id="pan" name="pan" style="margin-left:0%;width:90%;" pattern="-?[a-zA-Z]{5}[0-9]{4}[a-zA-Z]{1}?" value="<?php echo $arr_search['response'][0]['organization_details']['pan'] ?>" type="text" placeholder="PAN Card Number" class="form-control input-md" readonly/>
   </div>
 </div>
 
@@ -301,11 +301,11 @@ VIEW
 <div class="form-group">
   <label class="col-md-4 control-label" for="filebutton">PAN Card:</label>
   <div class="col-md-4">
-  <input id="pan_upload" class="form-control input-md" value="<?php echo $arr_search['response'][0]['pan_card_details'][0]['name']; ?>" readonly style="width:80%" />
+  <input id="pan_upload" class="form-control input-md" value="<?php echo $arr_search['response'][0]['pan_card_details'][0]['name']; ?>" readonly style="width:90%" />
   </div>
   <div class="col-md-1">
   <div class="fileUpload search btn btn-info" >
-  <label style="font-weight:500;margin-bottom: 2px;">ATTACH</label>
+  <label style="font-weight:500;margin-bottom: 0px;">ATTACH</label>
   <input id="pan_card" name="pan_card" type="file" class="upload" disabled="true" style="cursor: not-allowed;">
 </div>
 </div>
@@ -335,7 +335,7 @@ VIEW
 <div class="form-group" style="margin-top:-3%">
   <label class="col-md-4 control-label" for="textarea" style="margin-left:0%">Address:</label>
   <div class="col-md-4">                     
-    <textarea class="form-control" id="address" name="address" style="margin-left:0%;width:80%" readonly><?php echo $arr_search['response'][0]['organization_details']['address'] ?></textarea>
+    <textarea class="form-control" id="address" name="address" style="margin-left:0%;width:90%" readonly><?php echo $arr_search['response'][0]['organization_details']['address'] ?></textarea>
   </div>
 </div>
 
@@ -358,7 +358,7 @@ VIEW
 <input style="" class="search_result tele" value="<?php echo $arr_search['response'][0]['telephone_bill_details'][0]['name']; ?>" disabled>
 
 <div class="fileUpload btn btn-info tele1" style="">
-    <label style="font-weight:500;margin-bottom: 2px;">ATTACH</label>
+    <label style="font-weight:500;margin-bottom: 0px;">ATTACH</label>
 <input id="telephone_bill" value="<?php echo $arr_search['response'][0]['organization_details']['telephone'] ?>" style="margin-top: -20px;margin-left: 129px; cursor: not-allowed;" name="telephone_bill" class="upload" type="file"  disabled="true">  
 
 <?php
@@ -394,12 +394,12 @@ VIEW
      }else{
       $check_box_select2="";
     }?>
-     <input <?php echo $check_box_select2;?> type="checkbox" name="checkboxes" id="checkboxes-0" value="1" disabled>Bank Passbook</label>
+     <input <?php echo $check_box_select2;?> type="checkbox" name="checkboxes" id="checkboxes-0" value="1" disabled>Bank<br>Passbook</label>
 </div>
 <div class="col-md-3"> 
 <input class="search_result tele" value="<?php echo $arr_search['response'][0]['pass_book_details'][0]['name']; ?>" disabled>
 <div class="fileUpload btn btn-info tele1" style="">
-    <label style="font-weight:500;margin-bottom: 2px;">ATTACH</label>
+    <label style="font-weight:500;margin-bottom: 0px;">ATTACH</label>
     <input id="bank_pass_book" style="margin-top: -22px;margin-left: 129px;cursor: not-allowed;" name="bank_pass_book" class="upload" type="file"  disabled="true"> 
 </div>
 
@@ -434,7 +434,7 @@ VIEW</a>
 <div class="form-group">
   <label class="col-md-4 control-label" for="textinput">Name:</label>  
   <div class="col-md-4 col-sm-2 col-2">
-  <input id="partner_names[]" value="<?php echo $arr_search['response'][0]['partner_details'][$x]['detail'][0]['name'] ?>" name="partner_names[]" type="text" placeholder="Enter Full Name" class="form-control input-md"  readonly style="width: 80%;">
+  <input id="partner_names[]" value="<?php echo $arr_search['response'][0]['partner_details'][$x]['detail'][0]['name'] ?>" name="partner_names[]" type="text" placeholder="Enter Full Name" class="form-control input-md"  readonly style="width: 90%;">
   </div>
 </div>
 
@@ -442,12 +442,12 @@ VIEW</a>
 <div class="form-group">
   <label class="col-md-4 control-label" for="designation">Designation: </label>
   <div class="col-md-4">
-    <select id="partner_designations[]" name="partner_designations[]" class="form-control"  readonly style="width: 80%;">
+    <select id="partner_designations[]" name="partner_designations[]" class="form-control"  readonly style="width:50%;">
  <option value="<?php echo $arr_search['response'][0]['partner_details'][$x]['detail'][0]['designation'] ?>"><?php echo $arr_search['response'][0]['partner_details'][$x]['detail'][0]['designation'] ?></option>
     </select>
   </div>
   <div class="col-md-2">
-     <input id="textinput" name="textinput" type="text" placeholder="Specify if Other" class="form-control input-md" readonly style="margin-left: -84%">
+     <input id="textinput" name="textinput" type="text" placeholder="Specify if Other" class="form-control input-md" readonly style="width:83%;margin-left: -139%">
   </div>
 
 </div>
@@ -573,7 +573,7 @@ VIEW</a>
   </div>
   <div class="col-md-1">
 <div class="fileUpload btn btn-info">
-  <label style="font-weight:500;margin-bottom: 2px;">ATTACH</label>
+  <label style="font-weight:500;margin-bottom: 0px;">ATTACH</label>
 <input id="pan_card" name="pan_card" style="margin-left:-47%;cursor: not-allowed;" value="<?php echo $_POST['pan_card'] ?>" class="upload" type="file" disabled="true">
 </div>
 </div>
@@ -807,7 +807,7 @@ VIEW</a>
 
   <div class="col-md-1">
    <div class="fileUpload btn btn-info" style="">
-    <label style="font-weight:500;margin-bottom: 2px;">ATTACH</label>
+    <label style="font-weight:500;margin-bottom: 0px;">ATTACH</label>
     <input id="aadhar_card" style="margin-left:-47%;cursor: not-allowed;" name="aadhar_card" value="<?php echo $_POST['aadhar_card'] ?>" class="upload" type="file" disabled>
   
   <?php
