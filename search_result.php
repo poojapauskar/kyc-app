@@ -210,7 +210,7 @@ $arr_search = json_decode($output_search,true);
 <div class="form-group" style="margin-top:0%">
   <label class="col-md-4 control-label" for="type_of_org">Type of Organization:</label>
   <div class="col-md-4">
-    <select id="type_of_org" name="type_of_org" class="form-control"  readonly style="width: 70%;">
+    <select id="type_of_org" name="type_of_org" class="form-control"  readonly style="width: 80%;">
       <option value="<?php echo $arr_search['response'][0]['organization_details']['type_of_org'];?>"><?php echo $arr_search['response'][0]['organization_details']['type_of_org'];?></option>
     </select>
   </div>
@@ -222,7 +222,7 @@ $arr_search = json_decode($output_search,true);
 <div class="form-group">
   <label class="col-md-4 control-label" for="textname">Name:</label>  
   <div class="col-md-4">
-  <input value="<?php echo $arr_search['response'][0]['organization_details']['name'];?>" id="name" name="name" type="text" placeholder="Enter Name" class="form-control input-md" readonly style="width: 70%;">
+  <input value="<?php echo $arr_search['response'][0]['organization_details']['name'];?>" id="name" name="name" type="text" placeholder="Enter Name" class="form-control input-md" readonly style="width:80%;">
     
   </div>
 </div>
@@ -257,7 +257,7 @@ $arr_search = json_decode($output_search,true);
   <label class="col-md-4 control-label" for="reg_certificate">Registration Certificate:</label>
 
 <div class="col-md-4">
-<input id="uploadFile" class="form-control input-md" value="<?php echo $arr_search['response'][0]['reg_certificate_details'][0]['name']; ?>" readonly style="width: 70%;"/>
+<input id="uploadFile" class="form-control input-md" value="<?php echo $arr_search['response'][0]['reg_certificate_details'][0]['name']; ?>" readonly style="width:80%;"/>
 </div>
 <div class="col-md-1">
   <div class="fileUpload search btn btn-info">
@@ -293,7 +293,7 @@ VIEW
 <div class="form-group" style="margin-top:-3%">
   <label class="col-md-4 control-label" for="textinput" style="margin-left:0%">PAN: </label>  
   <div class="col-md-4">
-  <input id="pan" name="pan" style="margin-left:0%;width: 70%;" pattern="-?[a-zA-Z]{5}[0-9]{4}[a-zA-Z]{1}?" value="<?php echo $arr_search['response'][0]['organization_details']['pan'] ?>" type="text" placeholder="PAN Card Number" class="form-control input-md" readonly/>
+  <input id="pan" name="pan" style="margin-left:0%;width:80%;" pattern="-?[a-zA-Z]{5}[0-9]{4}[a-zA-Z]{1}?" value="<?php echo $arr_search['response'][0]['organization_details']['pan'] ?>" type="text" placeholder="PAN Card Number" class="form-control input-md" readonly/>
   </div>
 </div>
 
@@ -301,7 +301,7 @@ VIEW
 <div class="form-group">
   <label class="col-md-4 control-label" for="filebutton">PAN Card:</label>
   <div class="col-md-4">
-  <input id="pan_upload" class="form-control input-md" value="<?php echo $arr_search['response'][0]['pan_card_details'][0]['name']; ?>" readonly style="width: 70%" />
+  <input id="pan_upload" class="form-control input-md" value="<?php echo $arr_search['response'][0]['pan_card_details'][0]['name']; ?>" readonly style="width:80%" />
   </div>
   <div class="col-md-1">
   <div class="fileUpload search btn btn-info" >
@@ -335,7 +335,7 @@ VIEW
 <div class="form-group" style="margin-top:-3%">
   <label class="col-md-4 control-label" for="textarea" style="margin-left:0%">Address:</label>
   <div class="col-md-4">                     
-    <textarea class="form-control" id="address" name="address" style="margin-left:0%;width: 70%" readonly><?php echo $arr_search['response'][0]['organization_details']['address'] ?></textarea>
+    <textarea class="form-control" id="address" name="address" style="margin-left:0%;width:80%" readonly><?php echo $arr_search['response'][0]['organization_details']['address'] ?></textarea>
   </div>
 </div>
 
@@ -434,7 +434,7 @@ VIEW</a>
 <div class="form-group">
   <label class="col-md-4 control-label" for="textinput">Name:</label>  
   <div class="col-md-4 col-sm-2 col-2">
-  <input id="partner_names[]" value="<?php echo $arr_search['response'][0]['partner_details'][$x]['detail'][0]['name'] ?>" name="partner_names[]" type="text" placeholder="Enter Full Name" class="form-control input-md"  readonly style="width: 70%;">
+  <input id="partner_names[]" value="<?php echo $arr_search['response'][0]['partner_details'][$x]['detail'][0]['name'] ?>" name="partner_names[]" type="text" placeholder="Enter Full Name" class="form-control input-md"  readonly style="width: 80%;">
   </div>
 </div>
 
@@ -442,7 +442,7 @@ VIEW</a>
 <div class="form-group">
   <label class="col-md-4 control-label" for="designation">Designation: </label>
   <div class="col-md-4">
-    <select id="partner_designations[]" name="partner_designations[]" class="form-control"  readonly style="width: 70%;">
+    <select id="partner_designations[]" name="partner_designations[]" class="form-control"  readonly style="width: 80%;">
  <option value="<?php echo $arr_search['response'][0]['partner_details'][$x]['detail'][0]['designation'] ?>"><?php echo $arr_search['response'][0]['partner_details'][$x]['detail'][0]['designation'] ?></option>
     </select>
   </div>
