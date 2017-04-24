@@ -3173,7 +3173,7 @@ margin-top:-1%;
 .search_result.tele{
     margin-left: -96%;
     margin-top: 0%;
-    width: 80%;
+    width:55%;
 }
 
 .search_result.tele1{
@@ -3273,9 +3273,9 @@ margin-top:-1%;
 }
 
 .search_result.tele {
-    margin-left: -84%;
+    margin-left: -103%;
     margin-top: 0%;
-    width: 75%;
+    width: 71%;
 }
 
 #title2 {
@@ -3485,7 +3485,7 @@ a.searchview.btn.btn-info{
     color: white;
     background-color: #176fac;
     margin-top: 0%;
-    margin-left: 103%;
+    margin-left: 127%;
     width: 237%;
 }
 /*attach btn*/
@@ -3494,7 +3494,7 @@ div.fileUpload.btn.btn-info{
     margin-top:0%;
 }
 div.fileUpload.search.btn.btn-info{
-    margin-left:-4%;
+    margin-left:16%;
     margin-top:0%;
 }
 
@@ -3582,8 +3582,8 @@ input#partner_names[].form-control.input-md.newentry.partner_names{
 }
 
 .fileUpload.btn.btn-info.tele1{
-margin-left:6%;
-margin-top:-1%;
+    margin-left: 32%;
+    margin-top: -1%;
 }
 .fileUpload.btn.btn-info.tele{
 margin-left:-2%;
@@ -3593,7 +3593,7 @@ margin-top:-1%;
 
 /*seach_result page view*/
 .btn.btn-info.view1{
-     margin-left: -278%;
+     margin-left: -255%;
     margin-top: -3%;
     position: relative;
     color: white;
