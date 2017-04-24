@@ -262,7 +262,7 @@ $arr_search = json_decode($output_search,true);
 <div class="col-md-1">
   <div class="fileUpload btn btn-info">
     <label style="font-weight:500;margin-bottom: 2px;">ATTACH</label>
-    <input id="reg_certificate" name="reg_certificate" type="file" class="upload" disabled="true">
+    <input id="reg_certificate" name="reg_certificate" type="file" class="upload" disabled="true" style="cursor: not-allowed;">
 </div>
 </div>
 <?php
@@ -306,7 +306,7 @@ VIEW
   <div class="col-md-1">
   <div class="fileUpload btn btn-info" >
   <label style="font-weight:500;margin-bottom: 2px;">ATTACH</label>
-  <input id="pan_card" name="pan_card" type="file" class="upload" disabled="true">
+  <input id="pan_card" name="pan_card" type="file" class="upload" disabled="true" style="cursor: not-allowed;">
 </div>
 </div>
 <?php
@@ -359,7 +359,7 @@ VIEW
 
 <div class="fileUpload btn btn-info tele1" style="">
     <label style="font-weight:500;margin-bottom: 2px;">ATTACH</label>
-<input id="telephone_bill" value="<?php echo $arr_search['response'][0]['organization_details']['telephone'] ?>" style="margin-top: -20px;margin-left: 129px;" name="telephone_bill" class="upload" type="file"  disabled="true">  
+<input id="telephone_bill" value="<?php echo $arr_search['response'][0]['organization_details']['telephone'] ?>" style="margin-top: -20px;margin-left: 129px; cursor: not-allowed;" name="telephone_bill" class="upload" type="file"  disabled="true">  
 
 <?php
   $url_img_download_3 = 'https://kyc-application.herokuapp.com/download/';
@@ -400,7 +400,7 @@ VIEW
 <input class="search_result tele" value="<?php echo $arr_search['response'][0]['pass_book_details'][0]['name']; ?>" disabled>
 <div class="fileUpload btn btn-info tele1" style="">
     <label style="font-weight:500;margin-bottom: 2px;">ATTACH</label>
-    <input id="bank_pass_book" style="margin-top: -22px;margin-left: 129px;" name="bank_pass_book" class="upload" type="file"  disabled="true"> 
+    <input id="bank_pass_book" style="margin-top: -22px;margin-left: 129px;cursor: not-allowed;" name="bank_pass_book" class="upload" type="file"  disabled="true"> 
 </div>
 
 <?php
@@ -574,7 +574,7 @@ VIEW</a>
   <div class="col-md-1">
 <div class="fileUpload btn btn-info">
   <label style="font-weight:500;margin-bottom: 2px;">ATTACH</label>
-<input id="pan_card" name="pan_card" style="margin-left:-47%" value="<?php echo $_POST['pan_card'] ?>" class="upload" type="file" disabled="true">
+<input id="pan_card" name="pan_card" style="margin-left:-47%;cursor: not-allowed;" value="<?php echo $_POST['pan_card'] ?>" class="upload" type="file" disabled="true">
 </div>
 </div>
 
@@ -623,7 +623,7 @@ VIEW</a>
 <div class="col-md-1">
 <div class="fileUpload btn btn-info">
     <label style="font-weight:500;margin-bottom: 2px;">ATTACH</label>
-<input id="telephone_bill"  value="<?php echo $_POST['telephone_bill'] ?>" style="margin-top: 5px;margin-left: 126px;" name="telephone_bill" class="upload" type="file"  disabled="true">     
+<input id="telephone_bill"  value="<?php echo $_POST['telephone_bill'] ?>" style="margin-top: 5px;margin-left: 126px;cursor: not-allowed;" name="telephone_bill" class="upload" type="file"  disabled="true">     
  </div>
  </div>
 
@@ -670,7 +670,7 @@ VIEW</a>
 <div class="col-md-1">
 <div class="fileUpload btn btn-info">
     <label style="font-weight:500;margin-bottom: 2px;">ATTACH</label>
-<input id="bank_pass_book"  value="<?php echo $_POST['bank_pass_book'] ?>" style="margin-top: 6px;margin-left: 129px;position:absolute;" name="bank_pass_book" class="upload" type="file" disabled>  
+<input id="bank_pass_book"  value="<?php echo $_POST['bank_pass_book'] ?>" style="margin-top: 6px;margin-left: 129px;position:absolute;cursor: not-allowed;" name="bank_pass_book" class="upload" type="file" disabled>  
  </div>
  </div>
 
@@ -719,7 +719,7 @@ VIEW</a>
      <div class="col-md-1">
     <div class="fileUpload btn btn-info" >
     <label style="font-weight:500;margin-bottom: 2px;">ATTACH</label>
-    <input id="voter_id" value="<?php echo $_POST['voter_id'] ?>" style="margin-top: 6px;margin-left: 129px;position:absolute;" name="voter_id" class="input-file" type="file" disabled>     
+    <input id="voter_id" value="<?php echo $_POST['voter_id'] ?>" style="margin-top: 6px;margin-left: 129px;position:absolute;cursor: not-allowed;" name="voter_id" class="input-file" type="file" disabled>     
    </div>
    </div>
   <?php
@@ -761,7 +761,7 @@ VIEW</a>
   <div class="col-md-1">
    <div class="fileUpload btn btn-info" style="">
     <label style="font-weight:500;margin-bottom: 2px;">ATTACH</label>
-  <input id="passport" value="<?php echo $_POST['passport'] ?>" style="margin-top: 6px;margin-left: 129px;position:absolute;" name="passport" class="input-file" type="file" disabled>     
+  <input id="passport" value="<?php echo $_POST['passport'] ?>" style="margin-top: 6px;margin-left: 129px;position:absolute;cursor: not-allowed;" name="passport" class="input-file" type="file" disabled>     
    </div>
    </div>
 
@@ -808,7 +808,7 @@ VIEW</a>
   <div class="col-md-1">
    <div class="fileUpload btn btn-info" style="">
     <label style="font-weight:500;margin-bottom: 2px;">ATTACH</label>
-    <input id="aadhar_card" style="margin-left:-47%" name="aadhar_card" value="<?php echo $_POST['aadhar_card'] ?>" class="upload" type="file" disabled>
+    <input id="aadhar_card" style="margin-left:-47%;cursor: not-allowed;" name="aadhar_card" value="<?php echo $_POST['aadhar_card'] ?>" class="upload" type="file" disabled>
   
   <?php
     $url_img_download_6 = 'https://kyc-application.herokuapp.com/download/';
