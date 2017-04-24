@@ -254,7 +254,10 @@ flush();
 
 readfile($tmp_file);
 
-
+    /*$arr = json_decode($output,true);*/
+    /*echo $arr_can_be_deleted_or_no['status'];*/
+}else{
+  /*echo "hi";*/
 }
 ?>
 

@@ -1,4 +1,64 @@
 /*Text box CSS class for all the pages , 70%*/
+.card-header{
+
+     width: 59% !important;
+    padding: .75rem 1.25rem !important;
+    margin-bottom: 0 !important;
+    color: #fff !important;
+    margin-left: 30% !important;
+    background-color: #08426a !important;
+    border-bottom: 1px solid #e8e8e8 !important;
+    padding: 1.2% !important;
+    font-size: medium;
+}
+
+.card-block{
+
+  background-color: #ffffff !important;
+    width: 59% !important;
+    height: 143%;
+    -webkit-box-flex: 1 !important;
+    -webkit-flex: 1 1 auto !important;
+    -ms-flex: 1 1 auto !important;
+    flex: 1 1 auto !important;
+    /* max-height: 40%; */
+    height: 45% !important;
+    padding: 1.25rem !important;
+    margin-left: 30% !important;
+}
+
+/*card second on search.php page*/
+.card-header2{
+
+     width: 59% !important;
+    padding: .75rem 1.25rem !important;
+    margin-bottom: 0 !important;
+    color: #fff !important;
+    margin-left: 30% !important;
+    background-color: #08426a !important;
+    border-bottom: 1px solid #e8e8e8 !important;
+    padding: 1.2% !important;
+    font-size: medium;
+}
+
+
+.card-block2{
+
+     background-color: #ffffff !important;
+    width: 59% !important;
+    -webkit-box-flex: 1 !important;
+    -webkit-flex: 1 1 auto !important;
+    -ms-flex: 1 1 auto !important;
+    flex: 1 1 auto !important;
+    /* max-height: 40%; */
+    height: 25% !important;
+    padding: 1.25rem !important;
+    margin-left: 30% !important;
+}
+/*Remove the underline for anchor tags*/
+a {
+    text-decoration: none !important;
+}
 
 #textBoxSize{
     width: 70% !important;
@@ -373,8 +433,83 @@ margin-top:-1%;
 }
 
 
-@media screen and (max-width:1920px)
-{
+@media screen and (max-width:1920px){
+
+/*Card2 sizing*/
+.card1{
+    margin-top: 11%;
+    margin-left: -30%;
+    width: 133%;
+    height: 447px
+}
+.card2{
+    margin-top: -12%;
+    width: 133%;
+    height: 65%;
+    margin-left: -30%;
+}
+
+/*search page button css starts below*/
+.new-entry-org-btn{
+    background-color: #176fac !important;
+    width: 159%;
+    margin-top: -24%;
+/*    z-index: 4;
+*/    margin-left: 10%;
+    color: white;
+}
+
+.missing-report-btn{
+    background-color: #176fac !important;
+    width: 136%;
+    margin-top: -23%;
+    margin-left: 85%;
+    color: white;
+/*    z-index: 4;
+*/}
+
+.new-entry-individual-btn{
+ background-color: #176fac !important;
+    width: 136%;
+    margin-top: 19%;
+    margin-left: 39%;
+    color: white;
+/*    z-index: 4;
+*/}
+
+.pending-btn{
+ background-color: #176fac !important;
+    width: 136%;
+    margin-top: 19%;
+    margin-left: 92%;
+    color: white;
+/*    z-index: 4;
+*/
+}
+
+.workin-btn{
+ background-color: #176fac !important;
+    width: 136%;
+    margin-top: 20%;
+    margin-left: 71%;
+    color: white;
+/*    z-index: 4;
+*/}
+
+.completed-btn{
+ background-color: #176fac !important;
+    width: 136%;
+    margin-top: 18%;
+    margin-left: 36%;
+    color: white;
+/*    z-index: 4;
+*/
+}
+
+
+/*Search button css above end*/
+
+
 .btn.btn-warning.backbutton-searchresult{/*1600 Back Button in Search_result page*/
     width: 64%;
     margin-top:-17%;
@@ -744,6 +879,79 @@ margin-top:-1%;
 
 @media screen and (max-width:1680px)
 {
+
+
+/*Card2 sizing*/
+.card1{
+    margin-top: 11%;
+    margin-left: -30%;
+    width: 133%;
+    height: 447px
+}
+.card2{
+    margin-top: -12%;
+    width: 133%;
+    height: 65%;
+    margin-left: -30%;
+}
+
+/*search page button css starts below*/
+.new-entry-org-btn{
+    background-color: #176fac !important;
+    width: 159%;
+    margin-top: -24%;
+/*    z-index: 4;
+*/    margin-left: 10%;
+    color: white;
+}
+
+.missing-report-btn{
+    background-color: #176fac !important;
+    width: 136%;
+    margin-top: -23%;
+    margin-left: 85%;
+    color: white;
+/*    z-index: 4;
+*/}
+
+.new-entry-individual-btn{
+ background-color: #176fac !important;
+    width: 136%;
+    margin-top: 19%;
+    margin-left: 39%;
+    color: white;
+/*    z-index: 4;
+*/}
+
+.pending-btn{
+ background-color: #176fac !important;
+    width: 136%;
+    margin-top: 19%;
+    margin-left: 92%;
+    color: white;
+/*    z-index: 4;
+*/
+}
+
+.workin-btn{
+ background-color: #176fac !important;
+    width: 136%;
+    margin-top: 20%;
+    margin-left: 71%;
+    color: white;
+/*    z-index: 4;
+*/}
+
+.completed-btn{
+ background-color: #176fac !important;
+    width: 136%;
+    margin-top: 18%;
+    margin-left: 36%;
+    color: white;
+/*    z-index: 4;
+*/
+}
+
 
 .btn.btn-warning.backbutton-searchresult{/*1680 Back Button in Search_result page*/
     width: 64%;
@@ -1115,6 +1323,79 @@ margin-top:-1%;
 @media screen and (max-width:1600px)
 {
 
+
+
+/*Card2 sizing*/
+.card1{
+    margin-top: 11%;
+    margin-left: -30%;
+    width: 133%;
+    height: 447px
+}
+.card2{
+    margin-top: -12%;
+    width: 133%;
+    height: 65%;
+    margin-left: -30%;
+}
+
+/*search page button css starts below*/
+.new-entry-org-btn{
+    background-color: #176fac !important;
+    width: 159%;
+    margin-top: -24%;
+/*    z-index: 4;
+*/    margin-left: 10%;
+    color: white;
+}
+
+.missing-report-btn{
+    background-color: #176fac !important;
+    width: 136%;
+    margin-top: -23%;
+    margin-left: 85%;
+    color: white;
+/*    z-index: 4;
+*/}
+
+.new-entry-individual-btn{
+ background-color: #176fac !important;
+    width: 136%;
+    margin-top: 19%;
+    margin-left: 39%;
+    color: white;
+/*    z-index: 4;
+*/}
+
+.pending-btn{
+ background-color: #176fac !important;
+    width: 136%;
+    margin-top: 19%;
+    margin-left: 92%;
+    color: white;
+/*    z-index: 4;
+*/
+}
+
+.workin-btn{
+ background-color: #176fac !important;
+    width: 136%;
+    margin-top: 20%;
+    margin-left: 71%;
+    color: white;
+/*    z-index: 4;
+*/}
+
+.completed-btn{
+ background-color: #176fac !important;
+    width: 136%;
+    margin-top: 18%;
+    margin-left: 36%;
+    color: white;
+/*    z-index: 4;
+*/
+}
+
     #title3
 {
     margin-left:31%;
@@ -1485,6 +1766,79 @@ margin-top:-1%;
 }
 }
 @media screen and (max-width:1440px){
+   
+
+/*Card2 sizing*/
+.card1{
+    margin-top: 11%;
+    margin-left: -30%;
+    width: 133%;
+    height: 447px
+}
+.card2{
+    margin-top: -12%;
+    width: 133%;
+  /*  height: 65%;*/
+    margin-left: -30%;
+}
+
+/*search page button css starts below*/
+.new-entry-org-btn{
+    background-color: #176fac !important;
+    width: 159%;
+    margin-top: -24%;
+/*    z-index: 4;
+*/    margin-left: 10%;
+    color: white;
+}
+
+.missing-report-btn{
+    background-color: #176fac !important;
+    width: 136%;
+    margin-top: -23%;
+    margin-left: 85%;
+    color: white;
+/*    z-index: 4;
+*/}
+
+.new-entry-individual-btn{
+ background-color: #176fac !important;
+    width: 136%;
+    margin-top: 19%;
+    margin-left: 39%;
+    color: white;
+/*    z-index: 4;
+*/}
+
+.pending-btn{
+ background-color: #176fac !important;
+    width: 136%;
+    margin-top: 19%;
+    margin-left: 92%;
+    color: white;
+/*    z-index: 4;
+*/
+}
+
+.workin-btn{
+ background-color: #176fac !important;
+    width: 136%;
+    margin-top: 20%;
+    margin-left: 71%;
+    color: white;
+/*    z-index: 4;
+*/}
+
+.completed-btn{
+ background-color: #176fac !important;
+    width: 136%;
+    margin-top: 18%;
+    margin-left: 36%;
+    color: white;
+/*    z-index: 4;
+*/
+}
+
     #logo
 {
     margin-top:5%;
@@ -1856,6 +2210,82 @@ margin-top:-1%;
 }
 @media screen and (max-width: 1366px){
 
+/*Card2 sizing*/
+.card1{
+    margin-top: 11%;
+    margin-left: -30%;
+    width: 133%;
+    height: 447px
+}
+.card2{
+
+    margin-top: -12%;
+    width: 133%;
+  /*  height: 65%;*/
+    margin-left: -30%;
+}
+
+/*search page button css starts below*/
+.new-entry-org-btn{
+    background-color: #176fac !important;
+    width: 159%;
+    margin-top: -24%;
+/*    z-index: 4;
+*/    margin-left: 10%;
+    color: white;
+}
+
+.missing-report-btn{
+    background-color: #176fac !important;
+    width: 136%;
+    margin-top: -23%;
+    margin-left: 85%;
+    color: white;
+/*    z-index: 4;
+*/}
+
+.new-entry-individual-btn{
+ background-color: #176fac !important;
+    width: 136%;
+    margin-top: 19%;
+    margin-left: 39%;
+    color: white;
+/*    z-index: 4;
+*/}
+
+.pending-btn{
+ background-color: #176fac !important;
+    width: 136%;
+    margin-top: 19%;
+    margin-left: 92%;
+    color: white;
+/*    z-index: 4;
+*/
+}
+
+.workin-btn{
+ background-color: #176fac !important;
+    width: 136%;
+    margin-top: 20%;
+    margin-left: 71%;
+    color: white;
+/*    z-index: 4;
+*/}
+
+.completed-btn{
+ background-color: #176fac !important;
+    width: 136%;
+    margin-top: 18%;
+    margin-left: 36%;
+    color: white;
+/*    z-index: 4;
+*/
+}
+
+
+/*Search button css above end*/
+
+
 /*Cancel and Delete button edit page of Individual*/
 .btn.btn-success.successb{   
     width: 10em;
@@ -1888,7 +2318,7 @@ margin-top:-1%;
 #title
 {
     margin-left:70%;
-    margin-top:7%;
+    margin-top:8%;
 }
 
 #logout {
@@ -1901,8 +2331,9 @@ margin-top:-1%;
 #title2
 {
     text-align:center;
-    margin-top:9%;
+    margin-top:10%;
     font-size:18px;
+    margin-left: 30%;
 }
 
 .partner_designation{
@@ -1925,8 +2356,8 @@ width: 155%;
 }
 
 #title3 {
-    margin-left: 31%;
-    margin-top: 10%;
+    margin-left: 26%;
+    margin-top: 9%;
     font-size: 18px;
 }
 
@@ -1956,10 +2387,9 @@ width: 155%;
     margin-top:-3%;
     position:absolute;
 }
-
 .remove_field_pre1 {
     margin-left: 60%;
-    margin-top: -4%;
+    margin-top: -3.2%;
     position: absolute;
 }
 .remove_field_present{
@@ -2109,12 +2539,12 @@ div.fileUpload.btn.btn-info{
 /*date input field*/
 .col-10.col{
     width:63%;
-    margin-left:7.6%;
+    margin-left:6.6%;
     margin-top:-6%;
 }
 .form-control.type_of_work
 {
-    margin-left:9%;
+    margin-left:8%;
     width:145%
 }
 
@@ -2123,7 +2553,7 @@ div.fileUpload.btn.btn-info{
 }
 
 .control-label.type{
-    margin-left:-73%;
+    margin-left:-75%;
 }
 .col-md-4.control-label.status
 {
@@ -2145,18 +2575,17 @@ div.fileUpload.btn.btn-info{
     margin-left:-1%;
 }
 .col-2.col-form-label.date{
-    margin-left:-8.5%;
+    margin-left:-9.5%;
 }
 .col-md-4.control-label.comment{
     margin-left:-29%;
 }
 
-.remove_field{
+.remove_field {
     margin-left: 40%;
-    margin-top: -40px;
+    margin-top: -41px;
     position: absolute;
 }
-
 
 /*edit page view*/
 .fileUpload.btn.btn-info.view{
@@ -2209,6 +2638,7 @@ margin-top:-1%;
 }
 .form-control.input-md.comment{
     width:234%;
+    margin-left: -4%;
 }
 .fileUpload.btn.btn-info.tele1{
 margin-left:12%;
@@ -2256,6 +2686,80 @@ margin-top:-1%;
 }
 
 @media screen and (max-width:1280px) {
+
+
+
+/*Card2 sizing*/
+.card1{
+    margin-top: 11%;
+    margin-left: -30%;
+    width: 133%;
+    height: 447px
+}
+.card2{
+    margin-top: -12%;
+    width: 133%;
+    height: 65%;
+    margin-left: -30%;
+}
+
+/*search page button css starts below*/
+.new-entry-org-btn{
+    background-color: #176fac !important;
+    width: 159%;
+    margin-top: -24%;
+/*    z-index: 4;
+*/    margin-left: 10%;
+    color: white;
+}
+
+.missing-report-btn{
+    background-color: #176fac !important;
+    width: 136%;
+    margin-top: -23%;
+    margin-left: 85%;
+    color: white;
+/*    z-index: 4;
+*/}
+
+.new-entry-individual-btn{
+ background-color: #176fac !important;
+    width: 136%;
+    margin-top: 19%;
+    margin-left: 39%;
+    color: white;
+/*    z-index: 4;
+*/}
+
+.pending-btn{
+ background-color: #176fac !important;
+    width: 136%;
+    margin-top: 19%;
+    margin-left: 92%;
+    color: white;
+/*    z-index: 4;
+*/
+}
+
+.workin-btn{
+ background-color: #176fac !important;
+    width: 136%;
+    margin-top: 20%;
+    margin-left: 71%;
+    color: white;
+/*    z-index: 4;
+*/}
+
+.completed-btn{
+ background-color: #176fac !important;
+    width: 136%;
+    margin-top: 18%;
+    margin-left: 36%;
+    color: white;
+/*    z-index: 4;
+*/
+}
+
 
 #logo
 {
@@ -2626,12 +3130,36 @@ margin-top:-1%;
 }
 
 @media screen and (max-width:1024px) {
+/*Card 2 height*/
 
+.card1{
+    margin-top: 14%;
+    margin-left: -30%;
+    width: 133%;
+    height: 69%;
+}
+.card2{
+     margin-top: -16%;
+    width: 133%;
+  /*  height: 70%;*/
+    margin-left: -30%;
+}
 .form_margin{
     margin-top:13%;
 }
 
 #title3 {
+    margin-left: 30%;
+    margin-top: 12%;
+    font-size: 18px;
+}
+
+#title4 {
+    margin-left: 38%;
+    margin-top: 12%;
+    font-size: 18px;
+}
+#title4 {
     margin-left: 38%;
     margin-top: 13%;
     font-size: 18px;
@@ -2643,10 +3171,93 @@ margin-top:-1%;
     top: 54px;
     position: absolute;
 }
+
+.search_result.tele{
+    margin-left: -96%;
+    margin-top: 0%;
+    width: 80%;
+}
+
+.search_result.tele1{
+    margin-left: 15%;
+    margin-top: 1.2%;
+/*    width: 83%;*/
+}
 /*File Upload button on 10214 screen*/
+
+/*search page button css starts below*/
+.new-entry-org-btn{
+    background-color: #176fac !important;
+    width: 243%;
+    margin-top: -24%;
+    /* z-index: 4; */
+    margin-left: 49%;
+    color: white;
+}
+
+.missing-report-btn{
+     background-color: #176fac !important;
+    width: 243%;
+    margin-top: -24%;
+    margin-left: 83%;
+    color: white;
+    /* z-index: 4; */
+
+ }
+
+.new-entry-individual-btn{
+    background-color: #176fac !important;
+    width: 243%;
+    margin-top: -24%;
+    margin-left: 3%;
+    color: white;
+    /* z-index: 4; */
+
+}
+
+.pending-btn{
+    background-color: #176fac !important;
+    width: 243%;
+    margin-top: 19%;
+    margin-left: 2%;
+    color: white;
+    /* z-index: 4; */
+}
+
+.workin-btn{
+     background-color: #176fac !important;
+    width: 243%;
+    margin-top: 20%;
+    margin-left: 42%;
+    color: white;
+    /* z-index: 4; */
+}
+
+.completed-btn{
+     background-color: #176fac !important;
+    width: 243%;
+    margin-top: 19%;
+    margin-left: 76%;
+    color: white;
+    /* z-index: 4; */
+}
+
+
+/*Search button css above end*/
+
+
+
+
+/*File Upload button on 1024 screen*/
 .input-file {
     margin-top: 1%;
-    margin-left: 0%;
+    margin-left: 1%;
+    position: absolute;
+}
+
+.input-file.edit-user{
+    margin-top: 1%;
+    margin-left:-21%;
     position: absolute;
 }
 
@@ -2670,8 +3281,8 @@ margin-top:-1%;
 }
 
 #title2 {
-    margin-left: 29%;
-    margin-top: 12%;
+    margin-left: 35%;
+    margin-top: 13%;
     font-size: 18px;
 }
 
@@ -2701,11 +3312,11 @@ margin-top:-1%;
 }
 
 .col-2.col-form-label.date{
-    margin-left:-8.5%;
+    margin-left:-11.5%;
 }
 
 .control-label.type{
-    margin-left:-78%;
+    margin-left:-81%;
 }
 
 .col-md-4.control-label.status
@@ -2719,10 +3330,13 @@ margin-top:-1%;
     margin-top: -40px;
     position: absolute;
 }
-
-.form-control.status{
+.form-control.status-edit{
     width: 149%;
     margin-left: -3%;
+}
+.form-control.status{
+    width: 149%;
+    margin-left: 1%;
 }
 .col-md-4.control-label.comment{
     margin-left:-29%;
@@ -2758,7 +3372,7 @@ margin-top:-1%;
 	margin-left:159%;
 }
 .partner_name {
-    margin-top: -35%;
+    margin-top: -32%;
     margin-left: 283%;
     width: 318%;
 }
@@ -2768,15 +3382,15 @@ margin-top:-1%;
     margin-top: -33px;
 }
 .col-md-3.bkupload.edit {
-    width: 30%;
-    margin-left: 45%;
+    width: 37%;
+    margin-left: 44%;
     position: absolute;
     margin-top: 0%;
 }
 
 .col-md-3.teleupload.edit {
-    width: 32%;
-    margin-left: 47%;
+    width: 37%;
+    margin-left: 46.5%
     position: absolute;
     margin-top: 0%;
 }
@@ -2804,7 +3418,7 @@ margin-top:-1%;
 
 .remove_field_present{
 	margin-left:70%; 
-	margin-top:-3%;
+	margin-top:-5%;
 	position:absolute;
 }
 
@@ -2812,15 +3426,17 @@ margin-top:-1%;
 
  .upload-button {
     padding: 4px;
-    border: 1px solid black;
-    border-radius: 5px;
+    border: 1px solid #176fac;
+    border-radius: 1px;
     display: block;
     float: left;
     position:absolute;
     z-index:2;
     margin-left:77%;
     cursor:pointer;
-    margin-top:17%;
+    margin-top:11%;
+    color: #fff;
+    background-color: #176fac;
 }
 
 .profile-pic {
@@ -2863,13 +3479,25 @@ a.btn.btn-info{
 	color: white;
     background-color: #176fac;
     margin-top: 0%;
-    margin-left: 50%    ;
-    width: 260%;
+   margin-left: -12%;
+    width: 237%;
+}
+
+a.searchview.btn.btn-info{
+    color: white;
+    background-color: #176fac;
+    margin-top: 0%;
+    margin-left: 103%;
+    width: 237%;
 }
 /*attach btn*/
 div.fileUpload.btn.btn-info{
-	margin-left:-38%;
+	margin-left:-145%;
 	margin-top:0%;
+}
+div.fileUpload.search.btn.btn-info{
+    margin-left:-4%;
+    margin-top:0%;
 }
 
 /*notification bar css*/
@@ -2931,15 +3559,15 @@ input#partner_names[].form-control.input-md.newentry.partner_names{
 }
 /*input field for telephone*/
 #telephone_upload {
-    width: 59%;
-    margin-left: 8%;
+    width: 37%;
+    margin-left: 11%;
     position: absolute;
     margin-top: 1%;
 }
 
 #bank_upload{
-    width: 55%;
-    margin-left: 3%;
+    width: 37%;
+    margin-left: 1%;
     margin-top: 0%;
     position: absolute;
 }
@@ -2983,19 +3611,31 @@ margin-top:-1%;
     width: 10em;
     margin-top:0%;
     padding:0.5em;
-    margin-left:-3%
+    margin-left:-7%
+}
+.btn.btn-warning.cancel1{
+    width: 10em;
+    margin-top:-18%;
+    padding:0.5em;
+    margin-left:53%;
+    color:#176fac;
 }
 .btn.btn-success.successb{
     width: 10em;
 /*    margin-top:0%;
 */
-    margin-left:-4%
+    margin-left:-1%
 }
 
 .btn.btn-warning.delete{
     width: 10em;
-    margin-top: -8.2%;
-    margin-left: 57%;
+    margin-top: -9.2%;
+    margin-left: 52%;
+}
+.btn.btn-warning.delete1{
+    width: 10em;
+    margin-top: -12.5%;
+    margin-left: 52%;
 }
 
 .btn.btn-warning.backbutton-searchresult{/*1024 Back Button in Search_result page*/
@@ -3008,6 +3648,11 @@ margin-top:-1%;
     width: 64%;
     margin-top:-1%;
     margin-left:-3%
+}
+
+#title{
+    margin-top: 12%;
+    margin-left: 70%;
 }
 }
 

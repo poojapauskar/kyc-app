@@ -5610,7 +5610,7 @@ fieldset[disabled] .mdl-switch .mdl-switch__ripple-container .mdl-ripple,
     display: inline-block;
     box-sizing: border-box;
     width: 300px;
-    max-width: 100%;
+    max-width: 89%;
     margin: 0;
     padding: 20px 0
 }

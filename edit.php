@@ -14,14 +14,14 @@ if($_SESSION['login_kyc_app'] == 1){
   <title></title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" type="text/css" href="css/material.indigo-pink.min.css">
-<!-- <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"> -->
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
   <link rel="stylesheet" href="css/bootstrap.css">
   <link rel="stylesheet" href="css/kyc.css">
   <link rel="stylesheet" type="text/css" href="autocomplete-Files/styles.css">
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-  <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <!-- Material Design Lite -->
     <script src="https://code.getmdl.io/1.3.0/material.min.js"></script>
     <link rel="stylesheet" href="css/material.css">
@@ -166,15 +166,15 @@ document.getElementById('uploadFile').value='Choose File'; }
     visibility:visible;
   }
 }
-
+/*
     .upload-button {
     padding: 4px;
-   /* border: 1px solid black;*/
+   /* border: 1px solid black;
     border-radius: 5px;
     display: block;
     float: left;
-    margin-top:17%;
-}
+    margin-top:11%;
+}*/
 img.print{
     display: block;
     width: 100%;
@@ -191,26 +191,56 @@ img.print{
     display: none;
 }
   </style>  
+
 <link rel="stylesheet" href="css/jquery-ui.css"> 
  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"> 
 
-
-<!-- Datepicker -->
-<link rel="stylesheet" type="text/css" href="css/jquery.datepick.css"> 
-<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-<script type="text/javascript" src="js/jquery.plugin.js"></script> 
-<script type="text/javascript" src="js/jquery.datepick.js"></script>
+ <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="js/jquery-ui.js"></script>
 <script type="text/javascript">
 $(function() {
-  $( ".datepicker.pick" ).datepick({dateFormat: 'dd/mm/yyyy',maxDate: 0});
-});
+  $( ".sspicker.picker" ).datepicker({dateFormat : 'mm/dd/yy',
+            changeMonth : true,
+            changeYear : true,
+            yearRange: '-100y:c+nn',
+            maxDate: '0',
+          beforeShow: function (input, inst) {
+        setTimeout(function () {
+            inst.dpDiv.css({
+            'z-index':4,
+            width:300,
+             
+            });
+        }, 0);}
+
+});});
 
 // $(function() {
-//  $( ".datepicker.picker" ).datepick({dateFormat: 'dd/mm/yyyy',maxDate: 0});
+//   $( ".datepicker.pick" ).datepicker({changeMonth: true,changeYear: true}).datepicker("setDate", new Date()).setTimeout(function(){
+//             $('.ui-datepicker').css('z-index',44444);
+//         }, 0);
+
 // });
 
 $(function() {
- $( ".datepicker.p" ).datepick({dateFormat: 'dd/mm/yyyy'});
+ $( ".datepicker.p" ).datepicker({dateFormat: 'dd/mm/yy',changeMonth: true,
+    changeYear: true});
+});
+
+$(function() {
+  $( ".datepicker.pick" ).datepicker({
+    changeMonth: true,
+    changeYear: true,
+    beforeShow: function (input, inst) {
+        setTimeout(function () {
+            inst.dpDiv.css({
+            'z-index':4,
+            width:300,
+             
+            });
+        }, 0);
+    }
+});
 });
 
 </script>
@@ -934,28 +964,27 @@ if(isset($_POST["edit_btn"]) and $_GET["is_user"]==1) {
      box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23) !important;" class="mdl-layout__header">
     <div class="mdl-layout__header-row" >
     <a href="search.php"><img id="logo1" src="images/green.png"></img></a>
-     <span class="mdl-layout-title" id="title2"><?php echo $arr_search['response'][0]['organization_details']['name'] ?><?php echo $arr_search['response'][0]['user_details']['name'] ?></span>
+     <span class="mdl-layout-title" id="title3"><?php echo $arr_search['response'][0]['organization_details']['name'] ?><?php echo $arr_search['response'][0]['user_details']['name'] ?></span>
     <span class="mdl-layout-title" id="title1" style="text-align:center">KYCAPP</span>
-    <a href="logout.php"><img id="logout" style="" src="images/logout_btn.png"></img></a>
+    <a href="index.php"><img id="logout" style="" src="images/logout_btn.png"></img></a>
           <!-- Add spacer, to align navigation to the right -->
 
     </header>
     <div class="mdl-layout__drawer">
-        <span class="mdl-layout-title">KYCAPP</span>
+        <span class="mdl-layout-title">Title</span>
         <nav class="mdl-navigation">
           <a class="mdl-navigation__link" href="search.php">Home</a>
           <a class="mdl-navigation__link" href="new.php?is_user=0">New Entry Organization</a>
           <a class="mdl-navigation__link" href="new.php?is_user=1">New Entry Individual</a>
           <a class="mdl-navigation__link" href="missing_reports.php">Missing Reports</a>
-        <?php if($_SESSION['is_admin'] == 1){?>
-          <a class="mdl-navigation__link" href="admin_page.php">Admin</a>
-        <?php }?>
+          <a class="mdl-navigation__link" href="search.php">Admin</a>
           <a class="mdl-navigation__link" href="">Help</a>
           <a class="mdl-navigation__link" href="">About Us</a>
           <a class="mdl-navigation__link" href="">Contact</a>
         </nav>
       </div>
       </div>
+
 
 <main class="mdl-layout">
 
@@ -1442,7 +1471,6 @@ function enable_disable(that){
 }
 </script>
 
-
 <form method="post" id="deleteForm" action="search.php" style="text-align:center">
 <input type="hidden" name="pk_delete" id="pk_delete" value="<?php echo $_GET['id'] ?>"></input>  
 <input type="hidden" name="is_user_delete" id="is_user_delete" value="<?php echo $_GET['is_user'] ?>"></input>  
@@ -1529,7 +1557,7 @@ function enable_disable(that){
  <input type="hidden" value="<?php echo $arr_search['response'][0]['user_details']['pk'] ?>" name="org_id" id="org_id"></input>
 
 
-<img class="profile-pic" style="margin-left:77%;position:absolute;z-index:2;" src="<?php echo $img_lnk; ?>" />
+<img class="profile-pic" style="margin-left:78%;position:absolute;z-index:2;" src="<?php echo $img_lnk; ?>" />
 <div class="upload-button" style="">Upload Image</div>
 <input  onchange="check_image_user()" id="image"  name="image" class="file-upload1" style="position:absolute;z-index:-2;margin-left:46%;margin-top:16%;display:none" type="file"></input>
 </div>
@@ -1560,22 +1588,25 @@ function enable_disable(that){
   <label class="col-md-4 control-label" for="textinput">DOB:</label>  
   <div class="col-md-4">
   <input id="date2" name="date2" value="<?php echo $arr_search['response'][0]['user_details']['dob'] ?>" type="text" placeholder="" class="form-control input-md datepicker picker" readonly style="width: 70%;" > 
-  </div><img src="/images/calendar.png" style="margin-left: -9%;">
+  </div>
   <script type="text/javascript">
-    $(function() {
- $( ".datepicker.picker" ).datepick({
-            maxDate: '0', 
-            beforeShow : function()
-            {
-                jQuery( this ).datepicker('option','maxDate', jQuery('#end_date').val() );
-            },
-            altFormat: "dd/mm/yy", 
-            dateFormat: 'dd/mm/yy'
+  $(function() {
+  $( ".datepicker.picker" ).datepicker({dateFormat : 'mm/dd/yy',
+            changeMonth : true,
+            changeYear : true,
+            yearRange: '-100y:c+nn',
+            maxDate: '0',
+          beforeShow: function (input, inst) {
+        setTimeout(function () {
+            inst.dpDiv.css({
+            'z-index':4,
+            width:300,
+             
+            });
+        }, 0);}
 
-    
-});
-});
-  </script>
+});});
+</script>
 </div>
 
 
@@ -1694,7 +1725,7 @@ function enable_disable(that){
 <input id="pan_upload" class="form-control input-md" value="<?php echo $arr_search['response'][0]['pan_card_details'][0]['name']; ?>" style="width: 70%;">
 </div>
 <div class="col-md-1">
-<input  onchange="check_pan_card_user()" id="pan_card" name="pan_card" style="" value="<?php echo $_POST['pan_card'] ?>" class="input-file" type="file">
+<input  onchange="check_pan_card_user()" id="pan_card" name="pan_card" style="" value="<?php echo $_POST['pan_card'] ?>" class="input-file edit-user" type="file">
 </div>
 <?php
   $url_img_download = 'https://kyc-application.herokuapp.com/download/';
@@ -1719,7 +1750,7 @@ function enable_disable(that){
 
 <!--address proof-->
 <div class="form-group">
-  <label class="col-md-4 control-label" for="checkboxes">Address Proof</label>
+  <label class="col-md-4 control-label" for="checkboxes">Address Proof:</label>
 
 <div class="col-md-1">
 <label class="checkbox-inline" for="checkboxes-0">
@@ -1737,7 +1768,7 @@ function enable_disable(that){
 <input value="<?php echo $arr_search['response'][0]['telephone_bill_details'][0]['name']; ?>">
 </div>
 <div class="col-md-1">
-<input onchange="check_telephone_bill_user()" id="telephone_bill"  value="<?php echo $_POST['telephone_bill'] ?>" style="" name="telephone_bill" class="input-file" type="file">     
+<input onchange="check_telephone_bill_user()" id="telephone_bill"  value="<?php echo $_POST['telephone_bill'] ?>" style="" name="telephone_bill" class="input-file edit-user" type="file">     
 </div>
 <?php
   $url_img_download_2 = 'https://kyc-application.herokuapp.com/download/';
@@ -1777,7 +1808,7 @@ function enable_disable(that){
 </div>
 
 <div class="col-md-1">
-<input onchange="check_bank_pass_book_user()" id="bank_pass_book"  value="<?php echo $_POST['bank_pass_book'] ?>" style="" name="bank_pass_book" class="input-file" type="file">     
+<input onchange="check_bank_pass_book_user()" id="bank_pass_book"  value="<?php echo $_POST['bank_pass_book'] ?>" style="" name="bank_pass_book" class="input-file edit-user" type="file">     
  </div>
 <?php
   $url_img_download_3 = 'https://kyc-application.herokuapp.com/download/';
@@ -1804,7 +1835,7 @@ function enable_disable(that){
 
 <!--address proof-->
 <div class="form-group">
-  <label class="col-md-4 control-label" for="checkboxes">ID Proof</label>
+  <label class="col-md-4 control-label" for="checkboxes">ID Proof:</label>
   <div class="col-md-1">
    <label class="checkbox-inline" for="checkboxes-0">
 
@@ -1821,7 +1852,7 @@ function enable_disable(that){
     <input value="<?php echo $arr_search['response'][0]['voter_id_details'][0]['name']; ?>">
     </div>
     <div class="col-md-1">
-  <input onchange="check_voter_id_user()" id="voter_id" value="<?php echo $_POST['voter_id'] ?>" style="" name="voter_id" class="input-file" type="file">  
+  <input onchange="check_voter_id_user()" id="voter_id" value="<?php echo $_POST['voter_id'] ?>" style="" name="voter_id" class="input-file edit-user" type="file">  
   </div>   
   <?php
     $url_img_download_4 = 'https://kyc-application.herokuapp.com/download/';
@@ -1863,7 +1894,7 @@ function enable_disable(that){
   </div>
 
   <div class="col-md-1">
-  <input  onchange="check_passport_user()" id="passport" value="<?php echo $_POST['passport'] ?>" style="" name="passport" class="input-file" type="file">     
+  <input  onchange="check_passport_user()" id="passport" value="<?php echo $_POST['passport'] ?>" style="" name="passport" class="input-file edit-user" type="file">     
    </div>
 
   <?php
@@ -1904,7 +1935,7 @@ function enable_disable(that){
   <input class="form-control input-md" value="<?php echo $arr_search['response'][0]['aadhar_card_details'][0]['name']; ?>" style="width: 70%;">
   </div>
   <div class="col-md-1">
-    <input onchange="check_aadhar_card_user()" id="aadhar_card" name="aadhar_card" value="<?php echo $_POST['aadhar_card'] ?>" class="input-file" type="file">
+    <input onchange="check_aadhar_card_user()" id="aadhar_card" name="aadhar_card" value="<?php echo $_POST['aadhar_card'] ?>" class="input-file edit-user" type="file">
     </div>
   
   <?php
@@ -1933,7 +1964,7 @@ function enable_disable(that){
 <div class="present_fields_1"> 
 <!-- Select Basic -->
 <div class="form-group">
-  <label class="col-md-4 control-label" for="selectbasic">Type of work</label>
+  <label class="col-md-4 control-label" for="selectbasic">Type of work:</label>
   <div class="col-md-4">
     <select id="type_of_work[]" name="type_of_work[]" class="form-control" style="width: 70%;">
       <option value=""></option>
@@ -1950,7 +1981,7 @@ function enable_disable(that){
 
 <!-- Select Basic -->
 <div class="form-group">
-  <label class="col-md-4 control-label" for="selectbasic">Status</label>
+  <label class="col-md-4 control-label" for="selectbasic">Status:</label>
   <div class="col-md-4">
     <select id="status" name="status[]" class="form-control" style="width: 70%">
       <option value="<?php echo $arr_search['response'][0]['add_info'][$q]['status']; ?>"><?php echo $arr_search['response'][0]['add_info'][$q]['status']; ?></option>
@@ -1963,7 +1994,7 @@ function enable_disable(that){
 </div>
 <!--date-->
 <div class="form-group row">
-  <label for="example-date-input" class="col-2 col-form-label" style="margin-left:28.1%;">DATE</label>
+  <label for="example-date-input" class="col-2 col-form-label" style="margin-left:28.1%;">DATE:</label>
   <div class="col-10">
     <input class="form-control datepicker p" id="date[]" name="date[]" value="<?php echo $arr_search['response'][0]['add_info'][$q]['date']; ?>" style="width: 70%;" type="text" readonly > 
   </div>
@@ -1972,7 +2003,7 @@ function enable_disable(that){
 
 <!-- Text input-->
 <div class="form-group">
-  <label class="col-md-4 control-label" for="textinput">Comment</label>  
+  <label class="col-md-4 control-label" for="textinput">Comment:</label>  
   <div class="col-md-4">
 
   <input id="commentss" name="comment[]" value="<?php echo $arr_search['response'][0]['add_info'][$q]['comment']; ?>" type="text" placeholder="" class="form-control input-md" style="width: 70%;">
@@ -2005,14 +2036,13 @@ function enable_disable(that){
   <div class="col-md-4">
     <button  onclick="return check_file_type_user()" id="edit_btn" name="edit_btn" type="submit" class="btn btn-success successb">Save</button><span><span></span></span>
 
-    <button onclick="goBack()" class="btn btn-warning cancel" ><a style="color:white" href="search.php" >Cancel</a></button>
+    <button onclick="goBack()" class="btn btn-warning cancel1" ><a style="color:white" href="search.php" >Cancel</a></button>
     <!-- style="width: 10em;margin-top: 0%;padding:0.5em;margin-left:2%;" -->
   </div>
 </div>
 
 </fieldset>
 </form>
-
 
 <?php
 $url_can_be_deleted_or_no = 'https://kyc-application.herokuapp.com/can_be_deleted_or_no/';
@@ -2039,14 +2069,14 @@ $arr_can_be_deleted_or_no = json_decode($output_can_be_deleted_or_no,true);
     <form method="post" id="deleteForm" action="search.php" style="text-align:center">
     <input type="hidden" name="pk_delete" id="pk_delete" value="<?php echo $_GET['id'] ?>"></input>  
     <input type="hidden" name="is_user_delete" id="is_user_delete" value="<?php echo $_GET['is_user'] ?>"></input>  
-    <button type="submit" onclick="return ConfirmDelete()" class="btn btn-warning delete">
+    <button type="submit" onclick="return ConfirmDelete()" class="btn btn-warning delete1">
       Delete
     </button>
     </form>
 
 <?php } else { ?>
     <div style="text-align:center">
-    <button onclick="return CannotDelete()" class="btn btn-warning delete">
+    <button onclick="return CannotDelete()" class="btn btn-warning delete1">
       Delete
     </button>
     </div>
@@ -2697,9 +2727,8 @@ function goBack() {
         e.preventDefault();
         if(x < max_fields){ //max input box allowed
             x++; //text box increment
-         $('<div style="margin-left:50%;"><div class="form-group"><label class="control-label type" for="selectbasic" style="">Type of work</label><div class="col-md-6"><select id="type_of_work[]" name="type_of_work[]" class="form-control type_of_work" style=""><option value="Audit Report">Audit Report</option><option value="ITR filing">ITR filing</option><option value="VAT Filing">VAT Filing</option><option value="Accounting">Accounting</option><option value="Registration">Registration</option><option value="Certification">Certification</option><option value="Others">Others</option></select></div></div><div class="form-group"> <label class="col-md-4 control-label status" for="selectbasic" style="width:70%;">Status</label><div class="col-md-6"><select id="status1" name="status[]"  class="form-control status"><option value="Pending">Pending</option><option value="Work in process">Work in process</option><option value="Completed">Completed</option></select></div></div><div class="form-group row"><label for="example-date-input" class="col-2 col-form-label date">DATE</label><div class="col-10 col"><input class="form-control datepicker pickers" id="datee'+ x +'" name="date[]" style="" type="text" readonly></div></div><div class="form-group"><label class="col-md-4 control-label comment" for="textinput" style="">Comment</label><div class="col-md-4"><input id="comments" name="comment[]" type="text" placeholder="" class="form-control input-md comment" style=""></div></div></center><a href="#" class="remove_field" style=""><img src="images/del24.png" ></a></a></div>').insertBefore(add_button) //add input box\
+         $('<div style="margin-left:50%;"><div class="form-group"><label class="control-label type" for="selectbasic" style="">Type of work:</label><div class="col-md-6"><select id="type_of_work[]" name="type_of_work[]" class="form-control type_of_work" style=""><option value="Audit Report">Audit Report</option><option value="ITR filing">ITR filing</option><option value="VAT Filing">VAT Filing</option><option value="Accounting">Accounting</option><option value="Registration">Registration</option><option value="Certification">Certification</option><option value="Others">Others</option></select></div></div><div class="form-group"> <label class="col-md-4 control-label status" for="selectbasic" style="width:70%;">Status:</label><div class="col-md-6"><select id="status1" name="status[]"  class="form-control status-edit"><option value="Pending">Pending</option><option value="Work in process">Work in process</option><option value="Completed">Completed</option></select></div></div><div class="form-group row"><label for="example-date-input" class="col-2 col-form-label date">DATE:</label><div class="col-10 col"><input class="form-control datepicker pickers" id="datee'+ x +'" name="date[]" style="" type="text" readonly></div></div><div class="form-group"><label class="col-md-4 control-label comment" for="textinput" style="">Comment:</label><div class="col-md-4"><input id="comments" name="comment[]" type="text" placeholder="" class="form-control input-md comment" style=""></div></div></center><a href="#" class="remove_field" style=""><img src="images/del24.png" ></a></a></div>').insertBefore(add_button) //add input box\
           var newInput=$("#datee"+x).datepicker({dateFormat: 'dd/mm/yy',changeMonth : true,
-
             changeYear : true,});
           newInput.datepicker({dateFormat: 'dd/mm/yy',changeMonth : true,
             changeYear : true,}).datepicker("setDate", new Date());

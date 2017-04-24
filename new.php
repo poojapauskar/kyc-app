@@ -46,6 +46,9 @@ if($_SESSION['login_kyc_app'] == 1){
     margin: 0;
     padding-left: 0;
 }
+/*#pan_upload{
+  background:url(images/Upload-26 (1).png)right center no-repeat; 
+}*/
 </style>
 <script type="text/javascript">
 
@@ -201,7 +204,7 @@ if(a==null || a==''){
 <script src="js/jquery-ui.js"></script>
 <script type="text/javascript">
 $(function() {
-  $( ".datepicker.picker" ).datepicker({dateFormat : 'mm/dd/yy',
+  $( ".datepicker.picker" ).datepicker({dateFormat : 'dd/mm/yy',
             changeMonth : true,
             changeYear : true,
             yearRange: '-100y:c+nn',
@@ -225,6 +228,7 @@ $(function() {
 // });
 $(function() {
   $( ".datepicker.pick" ).datepicker({
+    dateFormat : 'dd/mm/yy',
     changeMonth: true,changeYear: true,
      beforeShow: function (input, inst) {
         setTimeout(function () {
@@ -965,13 +969,13 @@ $arr_uid = json_decode($output_uid,true);
            $title="New Entry Individual"; 
       }?>
 
-    <span class="mdl-layout-title" id="title2"><?php echo $title; ?></span>
+    <span class="mdl-layout-title" id="title3"><?php echo $title; ?></span>
     <span class="mdl-layout-title" id="title1" style="text-align:center">KYCAPP</span>
     <a href="logout.php"><img id="logout" style="" src="images/logout_btn.png"></img></a>
           <!-- Add spacer, to align navigation to the right -->
   </header>
       <div class="mdl-layout__drawer">
-        <span class="mdl-layout-title" >KYCAPP</span>
+        <span class="mdl-layout-title" style="background: transparent;color:black;" >KYCAPP</span>
         <nav class="mdl-navigation">
           <a class="mdl-navigation__link" href="search.php">Home</a>
           <a class="mdl-navigation__link" href="new.php?is_user=0">New Entry Organization</a>
@@ -1186,7 +1190,7 @@ $arr_uid = json_decode($output_uid,true);
 <div class="present_fields_1">
 <!-- Select Basic -->
 <div class="form-group">
-  <label class="col-md-4 control-label" for="selectbasic">Type of work</label>
+  <label class="col-md-4 control-label" for="selectbasic">Type of work:</label>
   <div class="col-md-4">
     <select id="type_of_work[]" name="type_of_work[]" class="form-control" style="width: 70%;">
      <option value=""></option>
@@ -1203,7 +1207,7 @@ $arr_uid = json_decode($output_uid,true);
 
 <!-- Select Basic -->
 <div class="form-group">
-  <label class="col-md-4 control-label" for="selectbasic">Status</label>
+  <label class="col-md-4 control-label" for="selectbasic">Status:</label>
   <div class="col-md-4">
     <select id="status" name="status[]" class="form-control" style="width:70%" >
       <option value=""></option>
@@ -1216,7 +1220,7 @@ $arr_uid = json_decode($output_uid,true);
 
 <!--date-->
   <div class="form-group">
-  <label class="col-md-4 control-label" for="textinput">DATE</label>  
+  <label class="col-md-4 control-label" for="textinput">DATE:</label>  
   <div class="col-md-4">
   <input id="date[]" name="date[]" value="<?php echo $_POST['date'] ?>" style="width:70%;margin-left:-0.4%;margin-top:0%;" type="text" class="form-control input-md datepicker pick" readonly style="width: 70%;">
   </div>
@@ -1224,7 +1228,7 @@ $arr_uid = json_decode($output_uid,true);
 
 <!-- Text input-->
 <div class="form-group">
-  <label class="col-md-4 control-label" for="textinput">Comment</label>  
+  <label class="col-md-4 control-label" for="textinput">Comment:</label>  
   <div class="col-md-4">
 
   <input id="commentss" name="comment[]" type="text" placeholder="" class="form-control input-md" style="width: 70%;" /> 
@@ -1252,7 +1256,7 @@ $arr_uid = json_decode($output_uid,true);
 <div class="form-group">
   <label class="col-md-4 control-label" for="save_btn"></label>
   <div class="col-md-8">
-    <button id="save_btn" name="save_btn" type="submit" class="btn btn-success" style="width: 10em;margin-left:10px">Save</button><span><span></span></span>
+    <button id="save_btn" name="save_btn" type="submit" class="btn btn-success" style="width: 10em;margin-left:1px">Save</button><span><span></span></span>
     <button onclick="ClickEvent()" class="btn btn-warning" style="width: 10em;"><a style="color:white" href="search.php">Cancel</a></button>
   </div>
 </div>
@@ -1339,9 +1343,7 @@ function enable_disable(that){
   <label class="col-md-4 control-label" for="textinput" >UID:</label>  
   <div class="col-md-4">
 
-
   <input id="uid" name="uid" type="text" value="<?php echo $_POST['uid'] ?>" placeholder="" class="form-control input-md" style="width:70%" readonly>
-
   
   <input type="hidden" name="uid_format" id="uid_format" value="<?php echo $arr_uid['uid'] ?>"></input>
   </div>
@@ -1550,7 +1552,7 @@ function enable_disable(that){
 <div class="present_fields_1">
 <!-- Select Basic -->
 <div class="form-group">
-  <label class="col-md-4 control-label" for="selectbasic">Type of work</label>
+  <label class="col-md-4 control-label" for="selectbasic">Type of work:</label>
   <div class="col-md-4">
     <select id="type_of_work[]" name="type_of_work[]" class="form-control"  style="width: 70%">
       <option value=""></option>
@@ -1567,7 +1569,7 @@ function enable_disable(that){
 
 <!-- Select Basic -->
 <div class="form-group">
-  <label class="col-md-4 control-label" for="selectbasic">Status</label>
+  <label class="col-md-4 control-label" for="selectbasic">Status:</label>
   <div class="col-md-4">
     <select id="statuss" name="status[]" class="form-control"  style="width: 70%">
       <option value=""></option>
@@ -1580,16 +1582,16 @@ function enable_disable(that){
 
 <!--date-->
 <div class="form-group row">
-  <label for="example-date-input" class="col-2 col-form-label" style="margin-left:28.5%;">DATE</label>
+  <label for="example-date-input" class="col-2 col-form-label" style="margin-left: 28.11%;margin-top: 1%;position:absolute;">DATE:</label>
   <div class="col-10">
-    <input class="form-control datepicker pick" id="date[]" name="date[]" value="<?php echo $_POST['date'] ?>"  style="width: 70%" type="text" readonly>
+    <input class="form-control datepicker pick" id="date[]" name="date[]" value="<?php echo $_POST['date'] ?>"  style="width: 70%;margin-top:5%;" type="text" readonly>
   </div>
 </div>
 
 
 <!-- Text input-->
 <div class="form-group">
-  <label class="col-md-4 control-label" for="textinput">Comment</label>  
+  <label class="col-md-4 control-label" for="textinput">Comment:</label>  
   <div class="col-md-4">
   <input id="commentsss" name="comment[]" type="text" placeholder="" class="form-control input-md"  style="width: 70%"/>
   </div>
@@ -1614,7 +1616,7 @@ function enable_disable(that){
 <div class="form-group">
   <label class="col-md-4 control-label" for="singlebutton"></label>
   <div class="col-md-4">
-    <button onclick="return validate();" id="generate_btn" name="generate_btn">Generate</button>
+    <button onclick="return validate();" id="generate_btn" name="generate_btn" class="btn btn-success">Generate</button>
     <button id="singlebutton" style="margin-left:13%;" name="singlebutton" class="btn btn-primary"><a style="color:white" href="search.php">Discard</a></button>
   </div>
 </div>
@@ -1712,7 +1714,7 @@ $(document).ready(function() {
 
         if(x < max_fields){ //max input box allowed
             x++; //text box increment
-            $('<div style="margin-left:50%;"><div class="form-group"><label class="control-label type" for="selectbasic" style="">Type of work</label><div class="col-md-6"><select id="type_of_work[]" name="type_of_work[]" class="form-control type_of_work" style=""><option value="Audit Report">Audit Report</option><option value="ITR filing">ITR filing</option><option value="VAT Filing">VAT Filing</option><option value="Accounting">Accounting</option><option value="Registration">Registration</option><option value="Certification">Certification</option><option value="Others">Others</option></select></div></div><div class="form-group"> <label class="col-md-4 control-label statuss1" for="selectbasic" style="">Status</label><div class="col-md-6"><select id="status1' + x + '"  name="status[]"  class="form-control status"><option value="Pending">Pending</option><option value="Work in process">Work in process</option><option value="Completed">Completed</option></select></div></div><div class="form-group row"><label for="example-date-input" class="col-2 col-form-label date">DATE</label><div class="col-10 col"><input class="form-control datepicker pickers" id="date' + x +'" name="date[]" style="" type="text" readonly></div></div><div class="form-group"><label class="col-md-4 control-label comment" for="textinput" style="">Comment</label><div class="col-md-4"><input id="comments' + x + '" name="comment[]" type="text" placeholder="" class="form-control input-md comment" style=""></div></div></center><a href="#" class="remove_field" style=""><img src="images/del24.png" ></a></a></div>').insertBefore(add_button)//add input box\
+            $('<div style="margin-left:50%;"><div class="form-group"><label class="control-label type" for="selectbasic" style="">Type of work:</label><div class="col-md-6"><select id="type_of_work[]" name="type_of_work[]" class="form-control type_of_work"><option value=""></option><option value="Audit Report">Audit Report</option><option value="ITR filing">ITR filing</option><option value="VAT Filing">VAT Filing</option><option value="Accounting">Accounting</option><option value="Registration">Registration</option><option value="Certification">Certification</option><option value="Others">Others</option></select></div></div><div class="form-group"> <label class="col-md-4 control-label statuss1" for="selectbasic" style="">Status:</label><div class="col-md-6"><select id="status1' + x + '"  name="status[]"  class="form-control status"><option value=""></option><option value="Pending">Pending</option><option value="Work in process">Work in process</option><option value="Completed">Completed</option></select></div></div><div class="form-group row"><label for="example-date-input" class="col-2 col-form-label date">DATE:</label><div class="col-10 col"><input class="form-control datepicker pickers" id="date' + x +'" name="date[]" style="" type="text" readonly></div></div><div class="form-group"><label class="col-md-4 control-label comment" for="textinput" style="">Comment:</label><div class="col-md-4"><input id="comments' + x + '" name="comment[]" type="text" placeholder="" class="form-control input-md comment" style=""></div></div></center><a href="#" class="remove_field" style=""><img src="images/del24.png" ></a></a></div>').insertBefore(add_button)//add input box\
           var newInput=$("#date"+ x).datepicker({dateFormat: 'dd/mm/yy',changeMonth : true,changeYear : true});
           newInput.datepicker({dateFormat: 'dd/mm/yy'}).datepicker("setDate", new Date());
 

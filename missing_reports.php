@@ -205,7 +205,7 @@ $arr_missing_report = json_decode($output_missing_report,true);
      box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23) !important;" class="mdl-layout__header">
     <div class="mdl-layout__header-row" >
         <a href="search.php"><img style="" id="logo1" src="images/green.png"></img></a>
-        <span class="mdl-layout-title" id="title3">Missing Report</span>
+        <span class="mdl-layout-title" id="title3" style="margin-left:35%;">Missing Report</span>
         <span class="mdl-layout-title" id="title1" style="text-align:center">KYCAPP</span>
         <a href="logout.php"><img id="logout" style="" src="images/logout_btn.png"></img></a>
           <!-- Add spacer, to align navigation to the right -->
@@ -279,7 +279,7 @@ $('#test').click(function() {
     <td><button class="btn btn-success" style="color:white;opacity: 0.5;" disabled>Generate Link</button>
 <!--     <input type="submit" name="view_details" id="view_details" value="View"></input>
  -->
-     <button class="btn btn-success" name="view_details" id="view_details" style="color:white;">View</button>
+     <button class="btn btn-success" name="view_details" id="view_details" style="color:white;margin-left:1%">View</button>
     
  </td>
   </tr>
