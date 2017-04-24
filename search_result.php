@@ -720,7 +720,6 @@ VIEW</a>
     <div class="fileUpload btn btn-info" >
     <label style="font-weight:500;margin-bottom:0px;">ATTACH</label>
     <input id="voter_id" value="<?php echo $_POST['voter_id'] ?>" style="margin-top: 6px;margin-left: 129px;position:absolute;" name="voter_id" class="input-file" type="file" disabled>     
-
    </div>
    </div>
   <?php
