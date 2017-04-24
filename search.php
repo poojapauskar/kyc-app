@@ -154,7 +154,16 @@ if($_POST['is_user_delete'] != "" && $_POST['pk_delete'] != ""){
         </button>
         </form>
           </div>   
-      <!-- Below code for two buttons inside -->
+      <!-- Below code for three buttons inside -->
+
+       <div class="col-sm-2">
+      <a href="new.php?is_user=1">
+      <button class="mdl-button mdl-js-button mdl-button--raised new-entry-individual-btn">
+      New Entry Individual
+      </button>
+      </a>
+    </div>
+    
     <div class="col-sm-1" style="width:10.66667%;">
         </div> 
         <div class="col-sm-2">
@@ -197,14 +206,6 @@ if($_POST['is_user_delete'] != "" && $_POST['pk_delete'] != ""){
   <div class="card-header2">Assignment Status</div>
 <div class="card-block2">
   
-
-      <div class="col-sm-2">
-      <a href="new.php?is_user=1">
-      <button class="mdl-button mdl-js-button mdl-button--raised new-entry-individual-btn">
-      New Entry Individual
-      </button>
-      </a>
-    </div>
     <div class="col-sm-2">
       <a href="search_on_status.php?status=Pending">
       <button class="mdl-button mdl-js-button mdl-button--raised  pending-btn">
