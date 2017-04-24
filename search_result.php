@@ -516,7 +516,7 @@ VIEW</a>
 <div class="form-group">
   <label class="col-md-4 control-label" for="textinput">UID:</label>  
   <div class="col-md-5">
-  <input id="uid" name="uid" type="text" value="<?php echo $arr_search['response'][0]['user_details']['uid'] ?>" placeholder="" class="form-control input-md" readonly style="width: 70%;">
+  <input id="uid" name="uid" type="text" value="<?php echo $arr_search['response'][0]['user_details']['uid'] ?>" placeholder="" class="form-control input-md" readonly style="width:80%;">
     
   </div>
 </div>
@@ -525,7 +525,7 @@ VIEW</a>
 <div class="form-group">
   <label class="col-md-4 control-label" for="textinput">Name:</label>  
   <div class="col-md-5">
-  <input id="name" name="name" value="<?php echo $arr_search['response'][0]['user_details']['name'] ?>" type="text" placeholder="" class="form-control input-md" readonly style="width: 70%;">
+  <input id="name" name="name" value="<?php echo $arr_search['response'][0]['user_details']['name'] ?>" type="text" placeholder="" class="form-control input-md" readonly style="width: 80%;">
     
   </div>
 </div>
@@ -533,7 +533,7 @@ VIEW</a>
 <div class="form-group">
   <label for="textinput" class="col-md-4 control-label">Dob:</label>
   <div class="col-md-5">
-    <input style="width:70% !important" class="form-control input-md" id="date" name="date" value="<?php echo $arr_search['response'][0]['user_details']['dob'] ?>" style="width:31%;margin-left:34.6%;margin-top:-2%;" type="text" readonly>
+    <input style="width:80% !important" class="form-control input-md" id="date" name="date" value="<?php echo $arr_search['response'][0]['user_details']['dob'] ?>" style="width:31%;margin-left:34.6%;margin-top:-2%;" type="text" readonly>
   </div>
 </div>
 
@@ -541,7 +541,7 @@ VIEW</a>
 <div class="form-group">
   <label class="col-md-4 control-label" for="selectbasic">Profession:</label>
   <div class="col-md-5">
-    <select id="profession" name="profession" class="form-control" readonly style="width: 70%;">
+    <select id="profession" name="profession" class="form-control" readonly style="width: 80%;">
       <option value="<?php echo $arr_search['response'][0]['user_details']['proffesion'] ?>"><?php echo $arr_search['response'][0]['user_details']['proffesion'] ?></option>
     </select>
   </div>
@@ -551,7 +551,7 @@ VIEW</a>
 <div class="form-group">
   <label class="col-md-4 control-label" for="textarea">Address:</label>
   <div class="col-md-5">                     
-    <textarea class="form-control" id="address" name="address" value="<?php echo $arr_search['response'][0]['user_details']['address'] ?>" readonly style="width: 70%;"><?php echo $arr_search['response'][0]['user_details']['address'] ?></textarea>
+    <textarea class="form-control" id="address" name="address" value="<?php echo $arr_search['response'][0]['user_details']['address'] ?>" readonly style="width: 80%;"><?php echo $arr_search['response'][0]['user_details']['address'] ?></textarea>
   </div>
 </div>
 
@@ -559,7 +559,7 @@ VIEW</a>
 <div class="form-group">
   <label class="col-md-4 control-label" for="textinput">PAN:</label>  
   <div class="col-md-5">
-  <input id="pan" name="pan" value="<?php echo $arr_search['response'][0]['user_details']['pan'] ?>" type="text" placeholder="" class="form-control input-md" readonly style="width: 70%;">
+  <input id="pan" name="pan" value="<?php echo $arr_search['response'][0]['user_details']['pan'] ?>" type="text" placeholder="" class="form-control input-md" readonly style="width: 80%;">
     
   </div>
 </div>
@@ -569,7 +569,7 @@ VIEW</a>
   <label class="col-md-4 control-label" for="filebutton" >PAN card:</label>
 
 <div class="col-md-5">
-  <input id="pan_upload" class="form-control input-md" value="<?php echo $arr_search['response'][0]['pan_card_details'][0]['name']; ?>" readonly style="width: 70%;"/>
+  <input id="pan_upload" class="form-control input-md" value="<?php echo $arr_search['response'][0]['pan_card_details'][0]['name']; ?>" readonly style="width: 80%;"/>
   </div>
   <div class="col-md-1">
 <div class="fileUpload btn btn-info">
@@ -617,12 +617,12 @@ VIEW</a>
 </div>
 
 <div class="col-md-4">
-<input class="search_result tele1" value="<?php echo $arr_search['response'][0]['telephone_bill_details'][0]['name']; ?>" disabled style="width: 70%;">
+<input class="search_result tele1" value="<?php echo $arr_search['response'][0]['telephone_bill_details'][0]['name']; ?>" disabled style="width: 60%;">
 </div>
 
 <div class="col-md-1">
 <div class="fileUpload btn btn-info">
-    <label style="font-weight:500;margin-bottom: 2px;">ATTACH</label>
+    <label style="font-weight:500;margin-bottom:0px;">ATTACH</label>
 <input id="telephone_bill"  value="<?php echo $_POST['telephone_bill'] ?>" style="margin-top: 5px;margin-left: 126px;" name="telephone_bill" class="upload" type="file"  disabled="true">     
  </div>
  </div>
@@ -664,12 +664,12 @@ VIEW</a>
  </div>
 
  <div class="col-md-4">
- <input class="search_result tele1" value="<?php echo $arr_search['response'][0]['bank_pass_book_details'][0]['name']; ?>" disabled style="width: 70%;">
+ <input class="search_result tele1" value="<?php echo $arr_search['response'][0]['bank_pass_book_details'][0]['name']; ?>" disabled style="width: 60%;">
 </div>
 
 <div class="col-md-1">
 <div class="fileUpload btn btn-info">
-    <label style="font-weight:500;margin-bottom: 2px;">ATTACH</label>
+    <label style="font-weight:500;margin-bottom:0px;">ATTACH</label>
 <input id="bank_pass_book"  value="<?php echo $_POST['bank_pass_book'] ?>" style="margin-top: 6px;margin-left: 129px;position:absolute;" name="bank_pass_book" class="upload" type="file" disabled>  
  </div>
  </div>
@@ -713,12 +713,12 @@ VIEW</a>
    </div>
 
     <div class="col-md-4">
-    <input class="search_result tele1" value="<?php echo $arr_search['response'][0]['voter_id_details'][0]['name']; ?>" disabled style="width: 70%;">
+    <input class="search_result tele1" value="<?php echo $arr_search['response'][0]['voter_id_details'][0]['name']; ?>" disabled style="width: 60%;">
     </div>
     
      <div class="col-md-1">
     <div class="fileUpload btn btn-info" >
-    <label style="font-weight:500;margin-bottom: 2px;">ATTACH</label>
+    <label style="font-weight:500;margin-bottom:0px;">ATTACH</label>
     <input id="voter_id" value="<?php echo $_POST['voter_id'] ?>" style="margin-top: 6px;margin-left: 129px;position:absolute;" name="voter_id" class="input-file" type="file" disabled>     
    </div>
    </div>
@@ -756,11 +756,11 @@ VIEW</a>
   </div>
 
    <div class="col-md-4">
-  <input class="search_result tele1" value="<?php echo $arr_search['response'][0]['passport_details'][0]['name']; ?>" disabled style="width: 70%;">
+  <input class="search_result tele1" value="<?php echo $arr_search['response'][0]['passport_details'][0]['name']; ?>" disabled style="width: 60%;">
   </div>
   <div class="col-md-1">
    <div class="fileUpload btn btn-info" style="">
-    <label style="font-weight:500;margin-bottom: 2px;">ATTACH</label>
+    <label style="font-weight:500;margin-bottom:0px;">ATTACH</label>
   <input id="passport" value="<?php echo $_POST['passport'] ?>" style="margin-top: 6px;margin-left: 129px;position:absolute;" name="passport" class="input-file" type="file" disabled>     
    </div>
    </div>
@@ -792,7 +792,7 @@ VIEW</a>
 <div class="form-group">
   <label class="col-md-4 control-label" for="textinput">Adhar card No.</label>  
   <div class="col-md-5">
-  <input id="aadhar_no" name="aadhar_no" value="<?php echo $arr_search['response'][0]['user_details']['aadhar_no'] ?>" type="text" placeholder="" class="form-control input-md" readonly style="width: 70%;">
+  <input id="aadhar_no" name="aadhar_no" value="<?php echo $arr_search['response'][0]['user_details']['aadhar_no'] ?>" type="text" placeholder="" class="form-control input-md" readonly style="width: 80%;">
     
   </div>
 </div>
@@ -802,7 +802,7 @@ VIEW</a>
   <label class="col-md-4 control-label" for="filebutton">Adhar card:</label>
 
   <div class="col-md-5">
-  <input id="pan_upload" class="form-control input-md" value="<?php echo $arr_search['response'][0]['aadhar_card_details'][0]['name']; ?>" disabled style="width: 70%;">
+  <input id="pan_upload" class="form-control input-md" value="<?php echo $arr_search['response'][0]['aadhar_card_details'][0]['name']; ?>" disabled style="width: 80%;">
   </div>
 
   <div class="col-md-1">

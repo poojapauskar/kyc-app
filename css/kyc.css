@@ -3182,7 +3182,7 @@ margin-top:-1%;
 
 .search_result.tele1{
     margin-left: 15%;
-    margin-top: 0%;
+    margin-top: 1.2%;
 /*    width: 83%;*/
 }
 /*File Upload button on 10214 screen*/
@@ -3364,7 +3364,7 @@ margin-top:-1%;
  .upload-button {
     padding: 4px;
     border: 1px solid #176fac;
-    border-radius: 6px;
+    border-radius: 1px;
     display: block;
     float: left;
     position:absolute;
@@ -3416,7 +3416,7 @@ a.btn.btn-info{
 	color: white;
     background-color: #176fac;
     margin-top: 0%;
-    margin-left: 83%;
+   margin-left: -12%;
     width: 237%;
 }
 
@@ -3429,7 +3429,7 @@ a.searchview.btn.btn-info{
 }
 /*attach btn*/
 div.fileUpload.btn.btn-info{
-	margin-left:-48%;
+	margin-left:-145%;
 	margin-top:0%;
 }
 div.fileUpload.search.btn.btn-info{
