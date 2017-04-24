@@ -607,10 +607,6 @@ $arr_uid_popup = json_decode($output_uid_popup,true);
 <div class="form-group">
 
 <div class="col-md-8 col-sm-12 col-24">
-<<<<<<< HEAD
-=======
-
->>>>>>> updated code of alignment
     <div class="input_fieldss" style="color:black">
          <button class="add_fields btn" onclick="incrementValue()" style="margin-left: 443px;">Add</button>
          <div>
