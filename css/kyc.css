@@ -3352,8 +3352,8 @@ a.btn.btn-info.edit{
 {
     color: white;
     background-color: rgb(23, 111, 172);
-    margin-top: 4%;
-    margin-left: 10%;
+    margin-top: 0%;
+    margin-left: -20%;
 }
 
 .add_field_button.btn.partner_btn{
@@ -3384,7 +3384,7 @@ a.btn.btn-info.edit{
     margin-left: -3%;
 }
 .form-control.status{
-    width: 149%;
+    width: 169%;
     margin-left: 1%;
 }
 .col-md-4.control-label.comment{
@@ -3426,7 +3426,7 @@ a.btn.btn-info.edit{
     width: 318%;
 }
 .btn.btn-info.new_entry_btn.entry {
-    margin-left: 1203%;
+    margin-left: 1149%;
     position: absolute;
     margin-top: -33px;
 }
