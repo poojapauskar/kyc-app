@@ -1557,7 +1557,7 @@ function enable_disable(that){
  <input type="hidden" value="<?php echo $arr_search['response'][0]['user_details']['pk'] ?>" name="org_id" id="org_id"></input>
 
 
-<img class="profile-pic" style="margin-left:78%;position:absolute;z-index:2;" src="<?php echo $img_lnk; ?>" />
+<img class="profile-pic" style="margin-left:70.2%;position:absolute;z-index:2;" src="<?php echo $img_lnk; ?>" />
 <div class="upload-button" style="">Upload Image</div>
 <input  onchange="check_image_user()" id="image"  name="image" class="file-upload1" style="position:absolute;z-index:-2;margin-left:46%;margin-top:16%;display:none" type="file"></input>
 </div>
@@ -1765,7 +1765,7 @@ function enable_disable(that){
 </div>
 
 <div class="col-md-3">
-<input value="<?php echo $arr_search['response'][0]['telephone_bill_details'][0]['name']; ?>">
+<input value="<?php echo $arr_search['response'][0]['telephone_bill_details'][0]['name']; ?>" style="width: 59%;">
 </div>
 <div class="col-md-1">
 <input onchange="check_telephone_bill_user()" id="telephone_bill"  value="<?php echo $_POST['telephone_bill'] ?>" style="" name="telephone_bill" class="input-file edit-user" type="file">     
@@ -1804,7 +1804,7 @@ function enable_disable(that){
  </div>
 
  <div class="col-md-3">
- <input value="<?php echo $arr_search['response'][0]['bank_pass_book_details'][0]['name']; ?>">
+ <input value="<?php echo $arr_search['response'][0]['bank_pass_book_details'][0]['name']; ?>" style="width: 59%;">
 </div>
 
 <div class="col-md-1">
@@ -1849,7 +1849,7 @@ function enable_disable(that){
    </div>
 
     <div class="col-md-3">
-    <input value="<?php echo $arr_search['response'][0]['voter_id_details'][0]['name']; ?>">
+    <input value="<?php echo $arr_search['response'][0]['voter_id_details'][0]['name']; ?>" style="width: 59%;">
     </div>
     <div class="col-md-1">
   <input onchange="check_voter_id_user()" id="voter_id" value="<?php echo $_POST['voter_id'] ?>" style="" name="voter_id" class="input-file edit-user" type="file">  
@@ -1890,7 +1890,7 @@ function enable_disable(that){
   </div>
 
    <div class="col-md-3">
-   <input value="<?php echo $arr_search['response'][0]['passport_details'][0]['name']; ?>">
+   <input value="<?php echo $arr_search['response'][0]['passport_details'][0]['name']; ?>" style="width: 59%;">
   </div>
 
   <div class="col-md-1">

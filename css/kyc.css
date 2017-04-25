@@ -3256,8 +3256,8 @@ margin-top:-1%;
 }
 
 .input-file.edit-user{
-    margin-top: 1%;
-    margin-left:-21%;
+    margin-top: 7%;
+    margin-left:-94%;
     position: absolute;
 }
 
@@ -3295,7 +3295,7 @@ margin-top:-1%;
     color: white;
     background-color: rgb(23, 111, 172);
     margin-top: 0%;
-    margin-left:174%;
+    margin-left:65%;
     width: 150%;
 }
 
@@ -3425,16 +3425,16 @@ margin-top:-1%;
 /*avatar profile upload btn*/
 
  .upload-button {
-    padding: 4px;
+        padding: 4px;
     border: 1px solid #176fac;
     border-radius: 1px;
     display: block;
     float: left;
-    position:absolute;
-    z-index:2;
-    margin-left:77%;
-    cursor:pointer;
-    margin-top:11%;
+    position: absolute;
+    z-index: 2;
+    margin-left: 69%;
+    cursor: pointer;
+    margin-top: 10%;
     color: #fff;
     background-color: #176fac;
 }
