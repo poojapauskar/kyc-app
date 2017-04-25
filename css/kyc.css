@@ -1,4 +1,9 @@
 /*Text box CSS class for all the pages , 70%*/
+.mdl-data-table td {
+    text-align: center !important;
+}
+
+
 .card-header{
 
      width: 59% !important;
@@ -2849,6 +2854,7 @@ width: 155%;
 
 }
 
+
 .remove_field_pre1 {
     margin-left:70%; 
     margin-top:-3%;
@@ -3618,7 +3624,8 @@ margin-top:-1%;
     margin-top:-18%;
     padding:0.5em;
     margin-left:53%;
-    color:#176fac;
+    color:white;
+    background-color: #176fac;
 }
 .btn.btn-success.successb{
     width: 10em;
