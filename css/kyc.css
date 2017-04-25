@@ -3432,16 +3432,16 @@ a.btn.btn-info.edit{
 /*avatar profile upload btn*/
 
  .upload-button {
-        padding: 4px;
+     padding: 4px;
     border: 1px solid #176fac;
     border-radius: 1px;
     display: block;
     float: left;
     position: absolute;
     z-index: 2;
-    margin-left:72%;
+    margin-left: 70%;
     cursor: pointer;
-    margin-top: 15%;
+    margin-top: 14.6%;
     color: #fff;
     background-color: #176fac;
 }
