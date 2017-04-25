@@ -122,6 +122,15 @@ session_start();
 <div class="container">
   <div class="row" style="margin-top:4%;"> 
 
+  <button class="btn btn-success clear-pendingpage" style="" type="button" id="test">Clear</button>
+<script type="text/javascript">
+$('#test').click(function() {
+    /*$('input[type=search]').val('');*/
+    $('#example').dataTable().fnFilter('');
+    /*table.search('').draw();*/ //required after
+});
+</script>
+
 <table id="example" class="mdl-data-table" cellspacing="0" style="margin-left:8%;width:75%;margin-top:12%;">
         <thead>
             <th>Name</th>
