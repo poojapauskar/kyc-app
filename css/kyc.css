@@ -880,6 +880,12 @@ margin-top:-1%;
     color:white;
     margin-left:82%;
 }
+.btn.btn-success.clear-pendingpage{
+    color: white;
+    margin-left: 30%;
+    margin-top: 4%;
+    position: absolute;
+}
 }
 
 @media screen and (max-width:1680px)
@@ -1323,6 +1329,12 @@ margin-top:-1%;
 .btn.btn-success.clear{
     color:white;
     margin-left:82%;
+}
+.btn.btn-success.clear-pendingpage{
+    color: white;
+    margin-left: 30%;
+    margin-top: 4%;
+    position: absolute;
 }
 }
 @media screen and (max-width:1600px)
@@ -1769,6 +1781,12 @@ margin-top:-1%;
     color:white;
     margin-left:82%;
 }
+.btn.btn-success.clear-pendingpage{
+    color: white;
+    margin-left: 30%;
+    margin-top: 4%;
+    position: absolute;
+}
 }
 @media screen and (max-width:1440px){
    
@@ -2211,6 +2229,12 @@ margin-top:-1%;
     width: 64%;
     margin-top:-1%;
     margin-left:-3%
+}
+.btn.btn-success.clear-pendingpage{
+   color: white;
+    margin-left: 30%;
+    margin-top: 4%;
+    position: absolute;
 }
 }
 @media screen and (max-width: 1366px){
@@ -2687,6 +2711,12 @@ margin-top:-1%;
     margin-top:-1%;
     margin-left:-3%
 }
+.btn.btn-success.clear-pendingpage{
+    color: white;
+    margin-left: 27%;
+    margin-top: 4%;
+    position: absolute;
+}
 
 }
 
@@ -3132,7 +3162,12 @@ margin-top:-1%;
     margin-top:-1%;
     margin-left:-3%
 }
-
+.btn.btn-success.clear-pendingpage{
+    color: white;
+    margin-left: 30%;
+    margin-top: 4%;
+    position: absolute;
+}
 }
 
 @media screen and (max-width:1024px) {
@@ -3660,6 +3695,12 @@ margin-top:-1%;
 #title{
     margin-top: 12%;
     margin-left: 70%;
+}
+.btn.btn-success.clear-pendingpage{
+    color: white;
+    margin-left: 30%;
+    margin-top: 4%;
+    position: absolute;
 }
 }
 
