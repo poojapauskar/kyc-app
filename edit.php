@@ -14,7 +14,7 @@ if($_SESSION['login_kyc_app'] == 1){
   <title></title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" type="text/css" href="css/material.indigo-pink.min.css">
-<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<!-- <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"> -->
 
   <link rel="stylesheet" href="css/bootstrap.css">
   <link rel="stylesheet" href="css/kyc.css">
@@ -1000,7 +1000,7 @@ if(isset($_POST["edit_btn"]) and $_GET["is_user"]==1) {
 <div class="form-group" style="margin-top:13%;">
   <label class="col-md-4 control-label" for="type_of_org">Type of Organization:</label>
   <div class="col-md-4">
-    <select id="type_of_org" name="type_of_org" class="form-control"  ONCHANGE="enable_disable(this);" style="width: 70%;">
+    <select id="type_of_org" name="type_of_org" class="form-control"  ONCHANGE="enable_disable(this);" style="width: 80%;">
       <option value="<?php echo $arr_search['response'][0]['organization_details']['type_of_org'];?>"><?php echo $arr_search['response'][0]['organization_details']['type_of_org'];?></option>
       <option value="Proprietorship">Proprietorship</option>
       <option value="HUF">HUF</option>
@@ -1019,7 +1019,7 @@ if(isset($_POST["edit_btn"]) and $_GET["is_user"]==1) {
 <div class="form-group">
   <label class="col-md-4 control-label" for="textname">Name:</label>  
   <div class="col-md-4">
-  <input value="<?php echo $arr_search['response'][0]['organization_details']['name'];?>" id="name" name="name" type="text" placeholder="Enter Name" class="form-control input-md" style="width: 70%;">
+  <input value="<?php echo $arr_search['response'][0]['organization_details']['name'];?>" id="name" name="name" type="text" placeholder="Enter Name" class="form-control input-md" style="width: 80%;">
   </div>
 </div>
 
@@ -1055,11 +1055,11 @@ if(isset($_POST["edit_btn"]) and $_GET["is_user"]==1) {
   <label class="col-md-4 control-label" for="reg_certificate">Registration Certificate:</label>
 
 <div class="col-md-4">
-    <input id="uploadFile" class="form-control input-md" value="<?php echo $arr_search['response'][0]['reg_certificate_details'][0]['name']; ?>" readonly style="width: 70%;">
+    <input id="uploadFile" class="form-control input-md" value="<?php echo $arr_search['response'][0]['reg_certificate_details'][0]['name']; ?>" readonly style="width: 80%;">
 </div>
 <div class="col-md-1">
-    <div class="fileUpload btn btn-info">
-    <label style="font-weight:500;margin-bottom: 2px;">ATTACH</label>
+    <div class="fileUpload org btn btn-info">
+    <label style="font-weight:500;margin-bottom: 0px;">ATTACH</label>
     <input id="reg_certificate" name="reg_certificate" type="file" class="upload" onchange="setfilename(this.value);" /> 
 </div>
 </div>
@@ -1093,7 +1093,7 @@ VIEW</a>
 <div class="form-group" style="margin-top:-3%">
   <label class="col-md-4 control-label" for="textinput" style="margin-left:0%">PAN:</label>
   <div class="col-md-4">
-  <input id="pan" name="pan" style="margin-left:0%;width: 70%;" pattern="-?[a-zA-Z]{5}[0-9]{4}[a-zA-Z]{1}?" title="Must be of the form ARLPA0061H"  value="<?php echo $arr_search['response'][0]['organization_details']['pan'] ?>" type="text" placeholder="PAN Card Number" class="form-control input-md"> 
+  <input id="pan" name="pan" style="margin-left:0%;width: 80%;" pattern="-?[a-zA-Z]{5}[0-9]{4}[a-zA-Z]{1}?" title="Must be of the form ARLPA0061H"  value="<?php echo $arr_search['response'][0]['organization_details']['pan'] ?>" type="text" placeholder="PAN Card Number" class="form-control input-md"> 
   </div>
 </div>
 
@@ -1102,11 +1102,11 @@ VIEW</a>
   <label class="col-md-4 control-label" for="filebutton">PAN Card:</label>
 <div class="col-md-4">
     <input id="pan_upload" class="form-control input-md" value="
- <?php echo $arr_search['response'][0]['pan_card_details'][0]['name']; ?>" readonly style="width: 70%;"/>
+ <?php echo $arr_search['response'][0]['pan_card_details'][0]['name']; ?>" readonly style="width: 80%;"/>
  </div>
  <div class="col-md-1">
-   <div class="fileUpload btn btn-info" style="">
-    <label style="font-weight:500;margin-bottom: 2px;">ATTACH</label>
+   <div class="fileUpload org btn btn-info" style="">
+    <label style="font-weight:500;margin-bottom: 0px;">ATTACH</label>
     <input id="pan_card" name="pan_card" type="file" class="upload" onchange="panfilename(this.value);" />
   </div>
   </div>
@@ -1136,7 +1136,7 @@ VIEW</a>
 <div class="form-group">
   <label class="col-md-4 control-label" for="textarea">Address:</label>
   <div class="col-md-4">                     
-    <textarea class="form-control" style="width: 70%;" id="address" name="address"><?php echo $arr_search['response'][0]['organization_details']['address'] ?></textarea>
+    <textarea class="form-control" style="width: 80%;" id="address" name="address"><?php echo $arr_search['response'][0]['organization_details']['address'] ?></textarea>
   </div>
 </div>
 
@@ -1158,8 +1158,8 @@ VIEW</a>
     <input id="telephone_upload" style="" value="<?php echo $arr_search['response'][0]['telephone_bill_details'][0]['name']; ?>">
 </div>
 <div class="col-md-1">
-    <div class="fileUpload btn btn-info" style="">
-    <label style="font-weight:500;margin-bottom: 2px;">ATTACH</label>
+    <div class="fileUpload org btn btn-info" style="">
+    <label style="font-weight:500;margin-bottom: 0px;">ATTACH</label>
     <input id="telephone_bill" name="telephone_bill" type="file" class="upload"  value="<?php echo $arr_search['response'][0]['organization_details']['telephone'] ?>" onchange="telefilename(this.value);" />
  </div>
  </div>
@@ -1194,16 +1194,16 @@ VIEW</a>
      }else{
       $check_box_select2="";
     }?>
-     <input <?php echo $check_box_select2;?> type="checkbox" name="checkboxes" id="checkboxes-0" value="1"/>Bank Passbook</label>
+     <input <?php echo $check_box_select2;?> type="checkbox" name="checkboxes" id="checkboxes-0" value="1"/>Bank<br> Passbook</label>
   
   </div>
 <div class="col-md-3 teleupload edit" style=""> 
 <input id="bank_upload" style="" value="
-<?php echo $arr_search['response'][0]['pass_book_details'][0]['name']; ?>">
+<?php echo $arr_search['response'][0]['pass_book_details'][0]['name']; ?>" >
 </div>
 <div class="col-md-1">
-    <div class="fileUpload btn btn-info " style="">
-    <label style="font-weight:500;margin-bottom: 2px;">ATTACH</label>
+    <div class="fileUpload org btn btn-info " style="">
+    <label style="font-weight:500;margin-bottom: 0px;">ATTACH</label>
     <input id="bank_pass_book" name="bank_pass_book" type="file" class="upload" onchange="bankfilename(this.value);" />
 </div>
 </div>
@@ -1229,7 +1229,7 @@ VIEW</a>
 </div>
 
 <!-- Added Partner 1 -->
-<label for="comment" style="margin-left: 334px;font-size: 17px;"> Partner 1: </label>
+<label for="comment" style="margin-left: 236px;font-size: 17px;"> Partner 1: </label>
 
 
 
@@ -1242,7 +1242,7 @@ VIEW</a>
   <label class="col-md-4 control-label" for="textinput">Name:</label>  
 
   <div class="col-md-4 col-sm-2 col-2">
-  <input id="partner_names[]" value="<?php echo $arr_search['response'][0]['partner_details'][$x]['detail'][0]['name'] ?>" name="partner_names[]" type="text" placeholder="Enter Full Name" class="form-control input-md editentry partner_names" style="width: 70%;">
+  <input id="partner_names[]" value="<?php echo $arr_search['response'][0]['partner_details'][$x]['detail'][0]['name'] ?>" name="partner_names[]" type="text" placeholder="Enter Full Name" class="form-control input-md editentry partner_names" style="width:80%;">
   </div>
 
   <div class="col-md-2 col-sm-2 col-2">
@@ -1266,7 +1266,7 @@ VIEW</a>
     </select>
   </div>
   <div class="col-md-2">
-     <input id="textinput" style="" name="textinput" type="text" placeholder="Specify if Other" class="form-control input-md partner_others">
+     <input id="textinput" style="margin-left:-13%;width:68%;" name="textinput" type="text" placeholder="Specify if Other" class="form-control input-md partner_others">
   </div>
 </div>
 
@@ -1298,7 +1298,7 @@ VIEW</a>
 <div class="form-group">
   <label class="col-md-4 control-label" for="selectbasic">Type of work:</label>
   <div class="col-md-4">
-    <select id="type_of_work[]" name="type_of_work[]" class="form-control" style="width: 70%;">
+    <select id="type_of_work[]" name="type_of_work[]" class="form-control" style="width: 80%;">
       <option value="Audit Report">Audit Report</option>
       <option value="ITR filing">ITR filing</option>
       <option value="VAT Filing">VAT Filing</option>
@@ -1314,7 +1314,7 @@ VIEW</a>
 <div class="form-group">
   <label class="col-md-4 control-label" for="selectbasic">Status:</label>
   <div class="col-md-4">
-    <select id="status" name="status[]" class="form-control" style="width: 70%;">
+    <select id="status" name="status[]" class="form-control" style="width: 80%;">
       <option value="<?php echo $arr_search['response'][0]['add_info'][$q]['status']; ?>"><?php echo $arr_search['response'][0]['add_info'][$q]['status']; ?></option>  
       <option value="Pending">Pending</option>
       <option value="Work in process">Work in process</option>
@@ -1324,9 +1324,9 @@ VIEW</a>
 </div>
 <!--date-->
 <div class="form-group row">
-  <label for="example-date-input" class="col-2 col-form-label" style="margin-left:28.5%;">DATE:</label>
+  <label for="example-date-input" class="col-2 col-form-label" style="margin-left:28.5%;position:absolute;">DATE:</label>
   <div class="col-10">
-    <input class="form-control datepicker p" id="date[]" name="date[]" value="<?php echo $arr_search['response'][0]['add_info'][$q]['date']; ?>"   type="text" readonly style="width: 70%;">
+    <input class="form-control datepicker p" id="date[]" name="date[]" value="<?php echo $arr_search['response'][0]['add_info'][$q]['date']; ?>"   type="text" readonly style="width: 80%;">
   </div>
 </div>
 
@@ -1335,7 +1335,7 @@ VIEW</a>
 <div class="form-group">
   <label class="col-md-4 control-label" for="textinput">Comment:</label>  
   <div class="col-md-4">
-  <input id="commentss" name="comment[]" value="<?php echo $arr_search['response'][0]['add_info'][$q]['comment']; ?>" type="text" placeholder="" class="form-control input-md" style="width: 70%;" >
+  <input id="commentss" name="comment[]" value="<?php echo $arr_search['response'][0]['add_info'][$q]['comment']; ?>" type="text" placeholder="" class="form-control input-md" style="width: 80%;" >
     
   </div>
 </div>
@@ -1568,7 +1568,7 @@ function enable_disable(that){
 <div class="form-group">
   <label class="col-md-4 control-label" for="textinput">UID:</label>  
   <div class="col-md-4">
-  <input id="uid" name="uid" type="text" value="<?php echo $arr_search['response'][0]['user_details']['uid'] ?>" placeholder="" class="form-control input-md" style="width: 70%;" disabled>
+  <input id="uid" name="uid" type="text" value="<?php echo $arr_search['response'][0]['user_details']['uid'] ?>" placeholder="" class="form-control input-md" style="width: 80%;" disabled>
     
   </div>
 </div>
@@ -1577,7 +1577,7 @@ function enable_disable(that){
 <div class="form-group">
   <label class="col-md-4 control-label" for="textinput">Name:</label>  
   <div class="col-md-4">
-  <input id="name" name="name" value="<?php echo $arr_search['response'][0]['user_details']['name'] ?>" type="text" placeholder="" class="form-control input-md" style="width: 70%;">
+  <input id="name" name="name" value="<?php echo $arr_search['response'][0]['user_details']['name'] ?>" type="text" placeholder="" class="form-control input-md" style="width: 80%;">
     
   </div>
 </div>
@@ -1587,7 +1587,7 @@ function enable_disable(that){
 <div class="form-group">
   <label class="col-md-4 control-label" for="textinput">DOB:</label>  
   <div class="col-md-4">
-  <input id="date2" name="date2" value="<?php echo $arr_search['response'][0]['user_details']['dob'] ?>" type="text" placeholder="" class="form-control input-md datepicker picker" readonly style="width: 70%;" > 
+  <input id="date2" name="date2" value="<?php echo $arr_search['response'][0]['user_details']['dob'] ?>" type="text" placeholder="" class="form-control input-md datepicker picker" readonly style="width: 80%;" > 
   </div>
   <script type="text/javascript">
   $(function() {
@@ -1614,7 +1614,7 @@ function enable_disable(that){
 <div class="form-group">
   <label class="col-md-4 control-label" for="selectbasic">Profession:</label>
   <div class="col-md-4">
-    <select id="profession" name="profession" class="form-control" style="width: 70%;">
+    <select id="profession" name="profession" class="form-control" style="width: 80%;">
       <option value="<?php echo $arr_search['response'][0]['user_details']['proffesion'] ?>"><?php echo $arr_search['response'][0]['user_details']['proffesion'] ?></option>
       <optgroup label="Academics">
         <option value="Professors">Professors</option>
@@ -1704,7 +1704,7 @@ function enable_disable(that){
 <div class="form-group">
   <label class="col-md-4 control-label" for="textarea">Address:</label>
   <div class="col-md-4">                     
-    <textarea class="form-control" id="address" name="address" value="<?php echo $arr_search['response'][0]['user_details']['address'] ?>" style="width: 70%;"><?php echo $arr_search['response'][0]['user_details']['address'] ?></textarea>
+    <textarea class="form-control" id="address" name="address" value="<?php echo $arr_search['response'][0]['user_details']['address'] ?>" style="width: 80%;"><?php echo $arr_search['response'][0]['user_details']['address'] ?></textarea>
   </div>
 </div>
 
@@ -1712,7 +1712,7 @@ function enable_disable(that){
 <div class="form-group">
   <label class="col-md-4 control-label" for="textinput">PAN:</label>  
   <div class="col-md-4">
-  <input pattern="-?[a-zA-Z]{5}[0-9]{4}[a-zA-Z]{1}?" title="Must be of the form ARLPA0061H" id="pan" name="pan" value="<?php echo $arr_search['response'][0]['user_details']['pan'] ?>" type="text" placeholder="" class="form-control input-md" style="width: 70%;" required>
+  <input pattern="-?[a-zA-Z]{5}[0-9]{4}[a-zA-Z]{1}?" title="Must be of the form ARLPA0061H" id="pan" name="pan" value="<?php echo $arr_search['response'][0]['user_details']['pan'] ?>" type="text" placeholder="" class="form-control input-md" style="width: 80%;" required>
     
   </div>
 </div>
@@ -1722,7 +1722,7 @@ function enable_disable(that){
   <label class="col-md-4 control-label" for="filebutton">PAN card:</label>
 
 <div class="col-md-4">
-<input id="pan_upload" class="form-control input-md" value="<?php echo $arr_search['response'][0]['pan_card_details'][0]['name']; ?>" style="width: 70%;">
+<input id="pan_upload" class="form-control input-md" value="<?php echo $arr_search['response'][0]['pan_card_details'][0]['name']; ?>" style="width: 80%;">
 </div>
 <div class="col-md-1">
 <input  onchange="check_pan_card_user()" id="pan_card" name="pan_card" style="" value="<?php echo $_POST['pan_card'] ?>" class="input-file edit-user" type="file">
@@ -1765,7 +1765,7 @@ function enable_disable(that){
 </div>
 
 <div class="col-md-3">
-<input value="<?php echo $arr_search['response'][0]['telephone_bill_details'][0]['name']; ?>" style="width: 59%;">
+<input value="<?php echo $arr_search['response'][0]['telephone_bill_details'][0]['name']; ?>" style="width:70%;">
 </div>
 <div class="col-md-1">
 <input onchange="check_telephone_bill_user()" id="telephone_bill"  value="<?php echo $_POST['telephone_bill'] ?>" style="" name="telephone_bill" class="input-file edit-user" type="file">     
@@ -1804,7 +1804,7 @@ function enable_disable(that){
  </div>
 
  <div class="col-md-3">
- <input value="<?php echo $arr_search['response'][0]['bank_pass_book_details'][0]['name']; ?>" style="width: 59%;">
+ <input value="<?php echo $arr_search['response'][0]['bank_pass_book_details'][0]['name']; ?>" style="width:70%;">
 </div>
 
 <div class="col-md-1">
@@ -1849,7 +1849,7 @@ function enable_disable(that){
    </div>
 
     <div class="col-md-3">
-    <input value="<?php echo $arr_search['response'][0]['voter_id_details'][0]['name']; ?>" style="width: 59%;">
+    <input value="<?php echo $arr_search['response'][0]['voter_id_details'][0]['name']; ?>" style="width:70%;">
     </div>
     <div class="col-md-1">
   <input onchange="check_voter_id_user()" id="voter_id" value="<?php echo $_POST['voter_id'] ?>" style="" name="voter_id" class="input-file edit-user" type="file">  
@@ -1890,7 +1890,7 @@ function enable_disable(that){
   </div>
 
    <div class="col-md-3">
-   <input value="<?php echo $arr_search['response'][0]['passport_details'][0]['name']; ?>" style="width: 59%;">
+   <input value="<?php echo $arr_search['response'][0]['passport_details'][0]['name']; ?>" style="width:70%;">
   </div>
 
   <div class="col-md-1">
@@ -1922,7 +1922,7 @@ function enable_disable(that){
 <div class="form-group">
   <label class="col-md-4 control-label" for="textinput">Adhar card No.</label>  
   <div class="col-md-4">
-  <input id="aadhar_no" name="aadhar_no" value="<?php echo $arr_search['response'][0]['user_details']['aadhar_no'] ?>" type="text" placeholder="" class="form-control input-md" style="width: 70%;">
+  <input id="aadhar_no" name="aadhar_no" value="<?php echo $arr_search['response'][0]['user_details']['aadhar_no'] ?>" type="text" placeholder="" class="form-control input-md" style="width: 80%;">
     
   </div>
 </div>
@@ -1932,7 +1932,7 @@ function enable_disable(that){
   <label class="col-md-4 control-label" for="filebutton">Adhar card:</label>
 
   <div class="col-md-4">
-  <input class="form-control input-md" value="<?php echo $arr_search['response'][0]['aadhar_card_details'][0]['name']; ?>" style="width: 70%;">
+  <input class="form-control input-md" value="<?php echo $arr_search['response'][0]['aadhar_card_details'][0]['name']; ?>" style="width: 80%;">
   </div>
   <div class="col-md-1">
     <input onchange="check_aadhar_card_user()" id="aadhar_card" name="aadhar_card" value="<?php echo $_POST['aadhar_card'] ?>" class="input-file edit-user" type="file">
@@ -1966,7 +1966,7 @@ function enable_disable(that){
 <div class="form-group">
   <label class="col-md-4 control-label" for="selectbasic">Type of work:</label>
   <div class="col-md-4">
-    <select id="type_of_work[]" name="type_of_work[]" class="form-control" style="width: 70%;">
+    <select id="type_of_work[]" name="type_of_work[]" class="form-control" style="width: 80%;">
       <option value=""></option>
       <option value="Audit Report">Audit Report</option>
       <option value="ITR filing">ITR filing</option>
@@ -1983,7 +1983,7 @@ function enable_disable(that){
 <div class="form-group">
   <label class="col-md-4 control-label" for="selectbasic">Status:</label>
   <div class="col-md-4">
-    <select id="status" name="status[]" class="form-control" style="width: 70%">
+    <select id="status" name="status[]" class="form-control" style="width:80%">
       <option value="<?php echo $arr_search['response'][0]['add_info'][$q]['status']; ?>"><?php echo $arr_search['response'][0]['add_info'][$q]['status']; ?></option>
       <option value=""></option>
       <option value="Pending">Pending</option>
@@ -1994,9 +1994,9 @@ function enable_disable(that){
 </div>
 <!--date-->
 <div class="form-group row">
-  <label for="example-date-input" class="col-2 col-form-label" style="margin-left:28.1%;">DATE:</label>
+  <label for="example-date-input" class="col-2 col-form-label" style="margin-left:28.1%;position:absolute">DATE:</label>
   <div class="col-10">
-    <input class="form-control datepicker p" id="date[]" name="date[]" value="<?php echo $arr_search['response'][0]['add_info'][$q]['date']; ?>" style="width: 70%;" type="text" readonly > 
+    <input class="form-control datepicker p" id="date[]" name="date[]" value="<?php echo $arr_search['response'][0]['add_info'][$q]['date']; ?>" style="width: 80%;" type="text" readonly > 
   </div>
 </div>
 
@@ -2006,7 +2006,7 @@ function enable_disable(that){
   <label class="col-md-4 control-label" for="textinput">Comment:</label>  
   <div class="col-md-4">
 
-  <input id="commentss" name="comment[]" value="<?php echo $arr_search['response'][0]['add_info'][$q]['comment']; ?>" type="text" placeholder="" class="form-control input-md" style="width: 70%;">
+  <input id="commentss" name="comment[]" value="<?php echo $arr_search['response'][0]['add_info'][$q]['comment']; ?>" type="text" placeholder="" class="form-control input-md" style="width: 80%;">
     
   </div>
 </div>
