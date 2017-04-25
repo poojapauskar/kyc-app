@@ -1,4 +1,9 @@
 /*Text box CSS class for all the pages , 70%*/
+.mdl-data-table td {
+    text-align: center !important;
+}
+
+
 .card-header{
 
      width: 59% !important;
@@ -2848,6 +2853,7 @@ width: 155%;
 #mdl_icon{
 
 }
+
 
 .remove_field_pre1 {
     margin-left:70%; 
