@@ -3143,7 +3143,7 @@ a.btn.btn-info.edit{
     color:white;
     background-color:#176fac;
     margin-top:0%;
-    margin-left:30%!important;
+    margin-left:-46%!important;
     width: 150%!important;
 }
 .card2{
@@ -3265,7 +3265,7 @@ a.btn.btn-info.edit{
 
 .input-file.edit-user{
     margin-top: 7%;
-    margin-left: -27%;
+    margin-left: -50%;
     position: absolute;
 }
 
@@ -3303,7 +3303,7 @@ a.btn.btn-info.edit{
     color: white;
     background-color: rgb(23, 111, 172);
     margin-top: 0%;
-    margin-left:145%;
+    margin-left:122%;
     width: 150%;
 }
 
@@ -3334,7 +3334,7 @@ a.btn.btn-info.edit{
 }
 
 .remove_field {
-    margin-left: 51%;
+    margin-left: 46%;
     margin-top: -36px;
     position: absolute;
 }
@@ -3418,7 +3418,7 @@ a.btn.btn-info.edit{
 }
 
 .remove_field_pre1 {
-   margin-left: 68%;
+   margin-left: 64%;
     margin-top: -4%;
     position: absolute;
 }
@@ -3503,7 +3503,7 @@ div.fileUpload.btn.btn-info{
 	margin-top:0%;
 }
 div.fileUpload.org.btn.btn-info{
-    margin-left:-6%;
+    margin-left:-92%;
     margin-top:0%;
 }
 div.fileUpload.search.btn.btn-info{
