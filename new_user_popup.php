@@ -98,7 +98,7 @@ $(function() {
 
 $(function() {
   $( ".datepicker.pick" ).datepicker({dateFormat: 'dd/mm/yy',changeMonth : true,
-            changeYear : true});
+            changeYear : true}).datepicker("setDate", new Date());
 });
 </script> 
 
@@ -573,20 +573,8 @@ $arr_uid_popup = json_decode($output_uid_popup,true);
 <div class="form-group row">
   <label for="example-date-input" class="col-2 col-form-label" style="margin-left:24.5%;">DATE:</label>
   <div class="col-4">
-    <input class="form-control datepicker pick" id="date[]" name="date[]" value="<?php echo $_POST['date'] ?>" style="width:28.9%;margin-left:35.6%;margin-top:-4%;" type="text" readonly>
+    <input class="form-control datepicker pick" id="dateuser" name="date[]" value="<?php echo $_POST['date'] ?>" style="width:28.9%;margin-left:35.6%;margin-top:-4%;" type="text" readonly>
   </div>
-  <script id="jsbin-javascript">
-  var date = new Date();
-  var day = date.getDate();
-  var month = date.getMonth() + 1;
-  var year = date.getFullYear();
-
-  if (month < 10) month = "0" + month;
-  if (day < 10) day = "0" + day;
-
-  var today = day + "-" + month + "-" + year;
-   $(".datepicker.pick").val(today);
-</script>
 </div>
 
 
