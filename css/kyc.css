@@ -70,10 +70,10 @@ a {
 }
 #logo
 {
-	margin-top:5%;
-	margin-left:28px;
-	width:4%;
-	height:77%;
+    margin-top:5%;
+    margin-left:28px;
+    width:4%;
+    height:77%;
 }
 
 #title
@@ -162,15 +162,15 @@ width: 155%;
 }
 
 .remove_field_pre1 {
-	margin-left:70%; 
-	margin-top:-3%;
-	position:absolute;
+    margin-left:70%; 
+    margin-top:-3%;
+    position:absolute;
 }
 
 .remove_field_present{
-	margin-left:70%; 
-	margin-top:-3%;
-	position:absolute;
+    margin-left:70%; 
+    margin-top:-3%;
+    position:absolute;
 }
 
 /*avatar profile upload btn*/
@@ -232,15 +232,15 @@ width: 155%;
 
 /*add new partner*/
 .add_field_button.btn.partner_btn{
-	margin-left:235%;
+    margin-left:235%;
 }
 
 /*view btn*/
 a.btn.btn-info{
-	color:white;
-	background-color:#176fac;
-	margin-top:0%;
-	margin-left:40%;
+    color:white;
+    background-color:#176fac;
+    margin-top:0%;
+    margin-left:40%;
 }
 
 a.btn.btn-info.edit{
@@ -252,8 +252,8 @@ a.btn.btn-info.edit{
 
 /*attach btn*/
 div.fileUpload.btn.btn-info{
-	margin-left:0%;
-	margin-top:0%;
+    margin-left:0%;
+    margin-top:0%;
 }
 
 /*notification bar css*/
@@ -297,14 +297,14 @@ div.fileUpload.btn.btn-info{
 /*add new partner js*/
 
 .partner_name{
-	margin-top:-20%;
-	margin-left:290%;
-	width: 322%;
+    margin-top:-20%;
+    margin-left:290%;
+    width: 322%;
 }
 .btn.btn-info.new_entry_btn.entry{
-	margin-left:1240%;
-	position:absolute;
-	margin-top: -41px;
+    margin-left:1240%;
+    position:absolute;
+    margin-top: -41px;
 
 }
 
@@ -321,7 +321,7 @@ div.fileUpload.btn.btn-info{
 }
 
 .form-group.designation{
-	margin-left:175%;
+    margin-left:175%;
 }
 
 .control-label.type{
@@ -334,7 +334,7 @@ div.fileUpload.btn.btn-info{
 
 /*adding extra field*/
 .add_field.btn {
-	margin-left: 443px;
+    margin-left: 443px;
 }
 
 .form-control.status{
@@ -888,8 +888,7 @@ margin-top:-1%;
 }
 }
 
-@media screen and (max-width:1680px)
-{
+@media screen and (max-width:1680px){
 
 
 /*Card2 sizing*/
@@ -1337,8 +1336,7 @@ margin-top:-1%;
     position: absolute;
 }
 }
-@media screen and (max-width:1600px)
-{
+@media screen and (max-width:1600px){
 
 
 
@@ -3357,7 +3355,7 @@ a.btn.btn-info.edit{
 }
 
 .add_field_button.btn.partner_btn{
-	margin-left:244%;
+    margin-left:244%;
 }
 
 .col-2.col-form-label.date{
@@ -3393,12 +3391,12 @@ a.btn.btn-info.edit{
 
 /*adding extra field*/
 .add_field.btn {
-	margin-left: 52%;
+    margin-left: 52%;
 }
  
 /* add new partner the css for the class which is inside the js*/
 .control-label.name{
-		margin-left:212%;
+        margin-left:212%;
 }
 
 /*date input field*/
@@ -3418,7 +3416,7 @@ a.btn.btn-info.edit{
     margin-left: -3%;
 }
 .control-label.designation{
-	margin-left:159%;
+    margin-left:159%;
 }
 .partner_name {
     margin-top: -32%;
@@ -3444,6 +3442,7 @@ a.btn.btn-info.edit{
 }
 /*#logo
 {
+
 	margin-top:5%;
 	margin-left:28px;
 	width:4%;
@@ -3455,6 +3454,7 @@ a.btn.btn-info.edit{
   width: 50px;   
  height: 50px;  
    position: absolute;}
+
 
 #logo1 {
     margin-top: 0.1%;
@@ -3474,6 +3474,7 @@ a.btn.btn-info.edit{
 	margin-left:64%; 
 	margin-top:-3.7%;
 	position:absolute;
+
 }
 
 /*avatar profile upload btn*/
@@ -3544,7 +3545,7 @@ a.btn.btn-info.edit{
 
 /*view btn*/
 a.btn.btn-info{
-	color: white;
+    color: white;
     background-color: #176fac;
     margin-top: 0%;
    margin-left: -12%;
@@ -3560,8 +3561,8 @@ a.searchview.btn.btn-info{
 }
 /*attach btn*/
 div.fileUpload.btn.btn-info{
-	margin-left:-145%;
-	margin-top:0%;
+    margin-left:-145%;
+    margin-top:0%;
 }
 div.fileUpload.org.btn.btn-info{
     margin-left:-92%;
@@ -3613,9 +3614,9 @@ div.fileUpload.search.btn.btn-info{
 /*add new partner js*/
 
 input#partner_names[].form-control.input-md.newentry.partner_names{
-	margin-top:-20%;
-	margin-left:290%;
-	width: 322%;
+    margin-top:-20%;
+    margin-left:290%;
+    width: 322%;
 }
 
 /*edit page view*/

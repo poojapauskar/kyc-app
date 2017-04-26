@@ -17,7 +17,9 @@ if($_SESSION['login_kyc_app'] == 1){
  
     <!-- Material Design Lite -->
   <script src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+
   <link rel="stylesheet" type="text/css" href="css/material.css">
+
   <link rel="stylesheet" type="text/css" href="css/kyc.css">
    <link rel="stylesheet" type="text/css" href="autocomplete-Files/styles.css">
     <!-- Material Design icon font -->
