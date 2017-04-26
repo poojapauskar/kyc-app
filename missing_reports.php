@@ -90,23 +90,31 @@ if (isset($_POST['upload_btn'])){
         }
 
 
+$ext1 = $_FILES["file1"]["name"];
+$ext1 = end((explode(".", $ext1))); # extra () to prevent notice
+if($ext1 == ""){
+  $ext1=".jpg";
+}else{
+  $ext1=".".$ext1;
+}
+
         if($_POST['missing_file1'] == "Missing Pan Card"){
-          $names= "pan_card".rand(0, 9999).".jpg";
+          $names= "pan_card".rand(0, 9999).$ext1;
         }
         if($_POST['missing_file1'] == "Missing Voter Id"){
-          $names= "voter_id".rand(0, 9999).".jpg";
+          $names= "voter_id".rand(0, 9999).$ext1;
         }
         if($_POST['missing_file1'] == "Missing Bank Pass Book"){
-          $names= "pass_book".rand(0, 9999).".jpg";
+          $names= "pass_book".rand(0, 9999).$ext1;
         }
         if($_POST['missing_file1'] == "Missing Telephone Bill"){
-          $names= "telephone_bill".rand(0, 9999).".jpg";
+          $names= "telephone_bill".rand(0, 9999).$ext1;
         }
         if($_POST['missing_file1'] == "Missing Aadhar Card"){
-          $names= "aadhar_card".rand(0, 9999).".jpg";
+          $names= "aadhar_card".rand(0, 9999).$ext1;
         }
         if($_POST['missing_file1'] == "Missing Passport"){
-          $names= "passport".rand(0, 9999).".jpg";
+          $names= "passport".rand(0, 9999).$ext1;
         }
         
         /*Get Signed Urls*/
@@ -132,7 +140,7 @@ if (isset($_POST['upload_btn'])){
     
 
     $check = getimagesize($_FILES["file1"]["tmp_name"]);
-    if($check !== false) {
+    if(is_uploaded_file($_FILES['file1']['tmp_name']) && !($_FILES['file1']['error'])) {
         $url_upload = $arr[0][0];
         /*echo $url_upload;*/
 

@@ -376,18 +376,49 @@ if(isset($_POST["edit_btn"]) and $_GET["is_user"]==0) {
         for ($i = 0; $i < 4; $i++) {
             $randomString .= $characters[rand(0, $charactersLength - 1)];
         }*/
+$reg11 = $_FILES["reg_certificate"]["name"];
+$reg11 = end((explode(".", $reg11))); # extra () to prevent notice
+if($reg11 == ""){
+  $reg11=".jpg";
+}else{
+  $reg11=".".$reg11;
+}
+
+$pan11 = $_FILES["pan_card"]["name"];
+$pan11 = end((explode(".", $pan11))); # extra () to prevent notice
+if($pan11 == ""){
+  $pan11=".jpg";
+}else{
+  $pan11=".".$pan11;
+}
+
+$pass11 = $_FILES["bank_pass_book"]["name"];
+$pass11 = end((explode(".", $pass11))); # extra () to prevent notice
+if($pass11 == ""){
+  $pass11=".jpg";
+}else{
+  $pass11=".".$pass11;
+}
+
+$tel11 = $_FILES["telephone_bill"]["name"];
+$tel11 = end((explode(".", $tel11))); # extra () to prevent notice
+if($tel11 == ""){
+  $tel11=".jpg";
+}else{
+  $tel11=".".$tel11;
+}
 
         $names=array();
-        $names[0]= "reg_cert".rand(0, 9999).".jpg";
-        $names[1]= "pan_card".rand(0, 9999).".jpg";
-        $names[2]= "pass_book".rand(0, 9999).".jpg";
-        $names[3]= "telephone_bill".rand(0, 9999).".jpg";
-        $names[4]= $randomString.rand(0, 9999).".jpg";
+        $names[0]= "reg_cert".rand(0, 9999).$reg11;
+        $names[1]= "pan_card".rand(0, 9999).$pan11;
+        $names[2]= "pass_book".rand(0, 9999).$pas11;
+        $names[3]= "telephone_bill".rand(0, 9999).$tel11;
+        /*$names[4]= $randomString.rand(0, 9999).".jpg";*/
 
 
         /*Get Signed Urls*/
         $url = 'https://kyc-application.herokuapp.com/get_signed_url/';
-        $data = array('image_list' => [$names[0],$names[1],$names[2],$names[3],$names[4]]);
+        $data = array('image_list' => [$names[0],$names[1],$names[2],$names[3]]);
 
         $options = array(
           'http' => array(
@@ -408,7 +439,7 @@ if(isset($_POST["edit_btn"]) and $_GET["is_user"]==0) {
     
 
     $check = getimagesize($_FILES["reg_certificate"]["tmp_name"]);
-    if($check !== false) {
+    if(is_uploaded_file($_FILES['reg_certificate']['tmp_name']) && !($_FILES['reg_certificate']['error'])) {
         $url_upload = $arr[0][0];
         /*echo $url_upload;*/
 
@@ -440,7 +471,7 @@ if(isset($_POST["edit_btn"]) and $_GET["is_user"]==0) {
 
 
     $check_pan = getimagesize($_FILES["pan_card"]["tmp_name"]);
-    if($check_pan !== false) {
+    if(is_uploaded_file($_FILES['pan_card']['tmp_name']) && !($_FILES['pan_card']['error'])) {
         $url_upload_pan = $arr[1][1];
         /*echo $url_upload;*/
 
@@ -471,7 +502,7 @@ if(isset($_POST["edit_btn"]) and $_GET["is_user"]==0) {
     }
 
     $check_pass_book = getimagesize($_FILES["bank_pass_book"]["tmp_name"]);
-    if($check_pass_book !== false) {
+    if(is_uploaded_file($_FILES['bank_pass_book']['tmp_name']) && !($_FILES['bank_pass_book']['error'])) {
         $url_upload_pass_book = $arr[2][2];
         /*echo $url_upload;*/
 
@@ -502,7 +533,7 @@ if(isset($_POST["edit_btn"]) and $_GET["is_user"]==0) {
     }
 
     $check_telephone_bill = getimagesize($_FILES["telephone_bill"]["tmp_name"]);
-    if($check_telephone_bill !== false) {
+    if(is_uploaded_file($_FILES['telephone_bill']['tmp_name']) && !($_FILES['telephone_bill']['error'])) {
         $url_upload_telephone_bill = $arr[3][3];
         /*echo $url_upload;*/
 
@@ -631,14 +662,70 @@ if(isset($_POST["edit_btn"]) and $_GET["is_user"]==1) {
             $randomString .= $characters[rand(0, $charactersLength - 1)];
         }
 
+$pan22= $_FILES["pan_card"]["name"];
+$pan22 = end((explode(".", $pan22))); # extra () to prevent notice
+if($pan22 == ""){
+  $pan22=".jpg";
+}else{
+  $pan22=".".$pan22;
+}
+
+$voter22 = $_FILES["voter_id"]["name"];
+$voter22 = end((explode(".", $voter22))); # extra () to prevent notice
+if($voter22 == ""){
+  $voter22=".jpg";
+}else{
+  $voter22=".".$voter22;
+}
+
+$pass22 = $_FILES["bank_pass_book"]["name"];
+$pass22 = end((explode(".", $pass22))); # extra () to prevent notice
+if($pass22 == ""){
+  $pass22=".jpg";
+}else{
+  $pass22=".".$pass22;
+}
+
+$tel22 = $_FILES["telephone_bill"]["name"];
+$tel22 = end((explode(".", $tel22))); # extra () to prevent notice
+if($tel22 == ""){
+  $tel22=".jpg";
+}else{
+  $tel22=".".$tel22;
+}
+
+$aadhar22 = $_FILES["aadhar_card"]["name"];
+$aadhar22 = end((explode(".", $aadhar22))); # extra () to prevent notice
+if($aadhar22 == ""){
+  $aadhar22=".jpg";
+}else{
+  $aadhar22=".".$aadhar22;
+}
+
+$passport22 = $_FILES["passport"]["name"];
+$passport22 = end((explode(".", $passport22))); # extra () to prevent notice
+if($passport22 == ""){
+  $passport22=".jpg";
+}else{
+  $passport22=".".$passport22;
+}
+
+$profile22 = $_FILES["image"]["name"];
+$profile22 = end((explode(".", $profile22))); # extra () to prevent notice
+if($profile22 == ""){
+  $profile22=".jpg";
+}else{
+  $profile22=".".$profile22;
+}
+
         $names=array();
-        $names[0]= "pan_card".rand(0, 9999).".jpg";
-        $names[1]= "voter_id".rand(0, 9999).".jpg";
-        $names[2]= "pass_book".rand(0, 9999).".jpg";
-        $names[3]= "telephone_bill".rand(0, 9999).".jpg";
-        $names[4]= "aadhar_card".rand(0, 9999).".jpg";
-        $names[5]= "passport".rand(0, 9999).".jpg";
-        $names[6]= "profile".rand(0, 9999).".jpg";
+        $names[0]= "pan_card".rand(0, 9999).$pan22;
+        $names[1]= "voter_id".rand(0, 9999).$voter22;
+        $names[2]= "pass_book".rand(0, 9999).$pass22;
+        $names[3]= "telephone_bill".rand(0, 9999).$tel22;
+        $names[4]= "aadhar_card".rand(0, 9999).$aadhar22;
+        $names[5]= "passport".rand(0, 9999).$passport22;
+        $names[6]= "profile".rand(0, 9999).$profile22;
 
 
         /*Get Signed Urls*/
@@ -664,7 +751,7 @@ if(isset($_POST["edit_btn"]) and $_GET["is_user"]==1) {
     
 
     $check = getimagesize($_FILES["pan_card"]["tmp_name"]);
-    if($check !== false) {
+    if(is_uploaded_file($_FILES['pan_card']['tmp_name']) && !($_FILES['pan_card']['error'])) {
         $url_upload = $arr[0][0];
         /*echo $url_upload;*/
 
@@ -696,7 +783,7 @@ if(isset($_POST["edit_btn"]) and $_GET["is_user"]==1) {
 
 
     $check_voter_id = getimagesize($_FILES["voter_id"]["tmp_name"]);
-    if($check_voter_id !== false) {
+    if(is_uploaded_file($_FILES['voter_id']['tmp_name']) && !($_FILES['voter_id']['error'])) {
         $url_upload_voter_id = $arr[1][1];
         /*echo $url_upload;*/
 
@@ -727,7 +814,7 @@ if(isset($_POST["edit_btn"]) and $_GET["is_user"]==1) {
     }
 
     $check_pass_book = getimagesize($_FILES["bank_pass_book"]["tmp_name"]);
-    if($check_pass_book !== false) {
+    if(is_uploaded_file($_FILES['bank_pass_book']['tmp_name']) && !($_FILES['bank_pass_book']['error'])) {
         $url_upload_pass_book = $arr[2][2];
         /*echo $url_upload;*/
 
@@ -758,7 +845,7 @@ if(isset($_POST["edit_btn"]) and $_GET["is_user"]==1) {
     }
 
     $check_telephone_bill = getimagesize($_FILES["telephone_bill"]["tmp_name"]);
-    if($check_telephone_bill !== false) {
+    if(is_uploaded_file($_FILES['telephone_bill']['tmp_name']) && !($_FILES['telephone_bill']['error'])) {
         $url_upload_telephone_bill = $arr[3][3];
         /*echo $url_upload;*/
 
@@ -789,7 +876,7 @@ if(isset($_POST["edit_btn"]) and $_GET["is_user"]==1) {
     }
 
     $check_aadhar_card = getimagesize($_FILES["aadhar_card"]["tmp_name"]);
-    if($check_aadhar_card !== false) {
+    if(is_uploaded_file($_FILES['aadhar_card']['tmp_name']) && !($_FILES['aadhar_card']['error'])) {
         $url_upload_aadhar_card = $arr[4][4];
         /*echo $url_upload;*/
 
@@ -820,7 +907,7 @@ if(isset($_POST["edit_btn"]) and $_GET["is_user"]==1) {
     }
 
     $check_passport = getimagesize($_FILES["passport"]["tmp_name"]);
-    if($check_passport !== false) {
+    if(is_uploaded_file($_FILES['passport']['tmp_name']) && !($_FILES['passport']['error'])) {
         $url_upload_passport = $arr[5][5];
         /*echo $url_upload;*/
 
@@ -851,7 +938,7 @@ if(isset($_POST["edit_btn"]) and $_GET["is_user"]==1) {
     }
 
     $check_image = getimagesize($_FILES["image"]["tmp_name"]);
-    if($check_image !== false) {
+    if(is_uploaded_file($_FILES['image']['tmp_name']) && !($_FILES['image']['error'])) {
         $url_upload_image = $arr[6][6];
         /*echo $url_upload;*/
 
