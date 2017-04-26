@@ -629,7 +629,7 @@ function goBack() {
      $(document).ready(function() {
     var max_fields      = 10; //maximum input boxes allowed
     var wrapper         = $(".input_fieldss"); //Fields wrapper
-    var add_button      = $("add_fields"); //Add button ID
+    var add_button      = $(".add_fields"); //Add button ID
 
     var wrapper_pre1         = $(".present_fields_1"); //Fields wrapper
     var x = 1; //initlal text box count

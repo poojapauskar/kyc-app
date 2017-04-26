@@ -1260,7 +1260,7 @@ $arr_uid = json_decode($output_uid,true);
      <input id="textinput" name="textinput" type="text" placeholder="Specify if Other" class="form-control input-md partner_others"  style="">
 </div>
 </div>
-<a href="" class="remove_field_present" style=""><img src="images/del24.png" ></a>
+<a href="" class="remove_field_present p" style=""><img src="images/del24.png" ></a>
 </div>
 
 <div class="form-group">
@@ -1581,7 +1581,7 @@ function enable_disable(that){
 
 <!--address proof-->
 <div class="form-group">
-  <label class="col-md-4 control-label" for="checkboxes">Address Proof</label>
+  <label class="col-md-4 control-label" for="checkboxes">Address Proof:</label>
   <div class="col-md-4">
    <label class="checkbox-inline" for="checkboxes-0">
      <input type="checkbox" name="checkboxes" id="checkboxes-0" value="1">Telephone</label>
@@ -1603,7 +1603,7 @@ function enable_disable(that){
 
 <!--address proof-->
 <div class="form-group">
-  <label class="col-md-4 control-label" for="checkboxes">ID Proof</label>
+  <label class="col-md-4 control-label" for="checkboxes">ID Proof:</label>
   <div class="col-md-4">
    <label class="checkbox-inline" for="checkboxes-0">
      <input type="checkbox" name="checkboxes" id="checkboxes-0" value="1">voter ID</label>
@@ -1623,7 +1623,7 @@ function enable_disable(that){
 
 <!-- Text input-->
 <div class="form-group">
-  <label class="col-md-4 control-label" for="textinput">Adhar card No.</label>  
+  <label class="col-md-4 control-label" for="textinput">Adhar card No:</label>  
   <div class="col-md-4">
   <input id="aadhar_no" name="aadhar_no" value="<?php echo $_POST['aadhar_no'] ?>" type="text" placeholder="" class="form-control input-md"  style="width: 80%" >  
   </div>
