@@ -13,6 +13,7 @@ if($_SESSION['login_kyc_app'] == 1){
 <head>
   <title></title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/png" sizes="36x36" href="images/green.png">
 
   <link rel="stylesheet" type="text/css" href="css/material.indigo-pink.min.css">
   <link rel="stylesheet" href="css/bootstrap.css">
