@@ -16,7 +16,7 @@ if($_SESSION['login_kyc_app'] == 1){
 <link rel="stylesheet" type="text/css" href="css/material.indigo-pink.min.css">
 <!-- <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"> -->
 
-  <link rel="stylesheet" href="css/bootstrap.css">
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
   <link rel="stylesheet" type="text/css" href="css/kyc.css">
   <link rel="stylesheet" type="text/css" href="autocomplete-Files/styles.css">
 
@@ -24,9 +24,9 @@ if($_SESSION['login_kyc_app'] == 1){
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <!-- Material Design Lite -->
     <script src="https://code.getmdl.io/1.3.0/material.min.js"></script>
-    <link rel="stylesheet" href="css/material.css">
-    <link rel="stylesheet" href="css/fileupload.css">
-     <link rel="stylesheet" href="autocomplete-Files/styles.css">
+    <link rel="stylesheet" type="text/css" href="css/material.css">
+    <link rel="stylesheet" type="text/css" href="css/fileupload.css">
+     <link rel="stylesheet" type="text/css" href="autocomplete-Files/styles.css">
 
  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
   <style type="text/css">
@@ -1558,7 +1558,7 @@ function enable_disable(that){
 
 
 <img class="profile-pic" style="margin-left:70.2%;position:absolute;z-index:2;" src="<?php echo $img_lnk; ?>" />
-<div class="upload-button" style="">Upload Image</div>
+<div class="upload-button edit" style="">Upload Image</div>
 <input  onchange="check_image_user()" id="image"  name="image" class="file-upload1" style="position:absolute;z-index:-2;margin-left:46%;margin-top:16%;display:none" type="file"></input>
 </div>
 
