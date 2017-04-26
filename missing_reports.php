@@ -9,28 +9,28 @@ if($_SESSION['login_kyc_app'] == 1){
 ?>
 <html>
   <head>
-  <link rel="icon" type="image/png" sizes="36x36" href="images/green.png">
+    <link rel="icon" type="image/png" sizes="36x36" href="images/green.png">
 
 <link rel="stylesheet" type="text/css" href="css/material.indigo-pink.min.css">
- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/material-design-lite/1.1.0/material.min.css">
- <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/material-design-lite/1.1.0/material.min.css">
  <link rel="stylesheet" type="text/css" href="css/table.css"> 
- <script src="https://code.getmdl.io/1.3.0/material.min.js"></script>
-    <link rel="stylesheet" href="css/material.css">
+ <link rel="stylesheet" type="text/css" href="css/kyc.css"> 
+<script src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+<link rel="stylesheet" type="text/css" href="css/material.css">
+<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
     <!-- <script src="javascript/material.min.js"></script> -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <!-- Material Design Lite -->
 <script src="https://code.getmdl.io/1.3.0/material.min.js"></script>
 <link rel="stylesheet" type="text/css" href="css/material.css">
-<link rel="stylesheet" type="text/css" href="css/kyc.css">
-<link rel="stylesheet" type="text/css" href="css/fileupload.css">
+ <link rel="stylesheet" type="text/css" href="css/fileupload.css">
     <!-- Material Design icon font -->
 <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-<script src="js/dataTables.material.min.js"></script>
-<script src="js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.10.13/js/dataTables.material.min.js"></script>
+<script src="https://cdn.datatables.net/1.10.13/js/jquery.dataTables.min.js"></script>
   <script src="https://storage.googleapis.com/code.getmdl.io/1.0.6/material.min.js"></script>
 <script>
 $(document).ready(function() {
