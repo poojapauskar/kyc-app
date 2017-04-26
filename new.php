@@ -1335,7 +1335,7 @@ function enable_disable(that){
 <div style="margin-top:12%">
 <img class="profile-pic" src="images/boy-512.png" />
 
-<div class="upload-button" style="">Upload Image</div>
+<div class="upload-button up" style="">Upload Image</div>
 
 <input onchange="check_image_user()" name="image" id="image" class="file-upload1" style="position:absolute;z-index:-2;margin-left:46%;margin-top:16%;display:none" type="file">
 <!-- Text input-->

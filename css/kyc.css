@@ -2494,7 +2494,7 @@ a.btn.btn-info.edit_modal {
     color:white;
     background-color:#176fac;
     margin-top:0%;
-    margin-left:1%;
+    margin-left:-36%;
     width: 65%;
     height: 2758%;
 }
@@ -3465,7 +3465,7 @@ a.btn.btn-info.edit{
 }
 
 .remove_field_present{
-	margin-left:68%; 
+	margin-left:63%; 
 	margin-top:-3.7%;
 	position:absolute;
 }
@@ -3712,6 +3712,20 @@ margin-top:-1%;
     margin-left: 30%;
     margin-top: 4%;
     position: absolute;
+}
+.upload-button.up {
+    padding: 4px;
+    border: 1px solid #176fac;
+    border-radius: 1px;
+    display: block;
+    float: left;
+    position: absolute;
+    z-index: 2;
+    margin-left: 77%;
+    cursor: pointer;
+    margin-top: 14.6%;
+    color: #fff;
+    background-color: #176fac;
 }
 }
 
