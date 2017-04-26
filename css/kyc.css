@@ -3440,21 +3440,13 @@ a.btn.btn-info.edit{
     margin-left: 43% !important;
     margin-top: 0.5% !important;
 }
-/*#logo
-{
 
-	margin-top:5%;
-	margin-left:28px;
-	width:4%;
-	height:77%;
-}*/
 #logo{  /*margin-top:5%;    margin-left:28px;   width:4%;   height:77%;*/   
  margin-top: 3.1%;    
  margin-left: 28px;   
   width: 50px;   
  height: 50px;  
    position: absolute;}
-
 
 #logo1 {
     margin-top: 0.1%;
