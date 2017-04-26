@@ -3443,10 +3443,10 @@ a.btn.btn-info.edit{
 /*#logo
 {
 
-	margin-top:5%;
-	margin-left:28px;
-	width:4%;
-	height:77%;
+    margin-top:5%;
+    margin-left:28px;
+    width:4%;
+    height:77%;
 }*/
 #logo{  /*margin-top:5%;    margin-left:28px;   width:4%;   height:77%;*/   
  margin-top: 3.1%;    
@@ -3471,9 +3471,9 @@ a.btn.btn-info.edit{
 }
 
 .remove_field_present{
-	margin-left:64%; 
-	margin-top:-3.7%;
-	position:absolute;
+    margin-left:64%; 
+    margin-top:-3.7%;
+    position:absolute;
 
 }
 .remove_field_present.p{
@@ -3754,5 +3754,4 @@ margin-top:-1%;
     background-color: #176fac;
 }
 }
-
 
