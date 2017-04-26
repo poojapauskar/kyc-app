@@ -1655,7 +1655,7 @@ function enable_disable(that){
 <div class="form-group">
   <label class="col-md-4 control-label" for="textinput">UID:</label>  
   <div class="col-md-4">
-  <input id="uid" name="uid" type="text" value="<?php echo $arr_search['response'][0]['user_details']['uid'] ?>" placeholder="" class="form-control input-md" style="width: 70%;" disabled>
+  <input id="uid" name="uid" type="text" value="<?php echo $arr_search['response'][0]['user_details']['uid'] ?>" placeholder="" class="form-control input-md" style="width: 70%;" readonly>
     
   </div>
 </div>
