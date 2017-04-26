@@ -895,7 +895,11 @@ $(document).on('hidden.bs.modal', function (e) {
                               }?>
 
                               <div style="text-align:center">
-                              <img class="print" src="<?php echo $img_lnk_reg_org; ?>" style=""></img>
+                              <?php if (strpos($img_lnk_reg_org, '.pdf') !== false) {?>
+                                      <iframe class="print" src="<?php echo $img_lnk_reg_org; ?>" style="height:400px"></iframe>
+                                  <?php }else{ ?>
+                                      <img class="print" src="<?php echo $img_lnk_reg_org; ?>" style=""></img>
+                                  <?php }?>
                               </div>
 
                               <div style="margin-top:5%;margin-left:-22%" class="row">
@@ -947,7 +951,11 @@ $(document).on('hidden.bs.modal', function (e) {
                                   }?>
 
                                   <div style="text-align:center">
-                                  <img class="print" src="<?php echo $img_lnk_pan_org; ?>" style=""></img>
+                                  <?php if (strpos($img_lnk_pan_org, '.pdf') !== false) {?>
+                                      <iframe class="print" src="<?php echo $img_lnk_pan_org; ?>" style="height:400px"></iframe>
+                                  <?php }else{ ?>
+                                      <img class="print" src="<?php echo $img_lnk_pan_org; ?>" style=""></img>
+                                  <?php }?>
                                   </div>
 
                                   <div style="margin-top:5%;margin-left:-22%" class="row">
@@ -1001,7 +1009,11 @@ $(document).on('hidden.bs.modal', function (e) {
                                   }?>
 
                                   <div style="text-align:center">
-                                  <img class="print" src="<?php echo $img_lnk_tel_org; ?>" style=""></img>
+                                  <?php if (strpos($img_lnk_tel_org, '.pdf') !== false) {?>
+                                      <iframe class="print" src="<?php echo $img_lnk_tel_org; ?>" style="height:400px"></iframe>
+                                  <?php }else{ ?>
+                                      <img class="print" src="<?php echo $img_lnk_tel_org; ?>" style=""></img>
+                                  <?php }?>
                                   </div>
 
                                   <div style="margin-top:5%;margin-left:-22%" class="row">
@@ -1055,7 +1067,11 @@ $(document).on('hidden.bs.modal', function (e) {
                                   }?>
 
                                   <div style="text-align:center">
-                                  <img class="print" src="<?php echo $img_lnk_pass_org; ?>" style=""></img>
+                                  <?php if (strpos($img_lnk_pass_org, '.pdf') !== false) {?>
+                                      <iframe class="print" src="<?php echo $img_lnk_pass_org; ?>" style="height:400px"></iframe>
+                                  <?php }else{ ?>
+                                      <img class="print" src="<?php echo $img_lnk_pass_org; ?>" style=""></img>
+                                  <?php }?>
                                   </div>
 
                                   <div style="margin-top:5%;margin-left:-22%" class="row">
@@ -1109,7 +1125,11 @@ $(document).on('hidden.bs.modal', function (e) {
                                   }?>
 
                                   <div style="text-align:center">
-                                  <img class="print" src="<?php echo $img_lnk_pan_user; ?>" style=""></img>
+                                  <?php if (strpos($img_lnk_pan_user, '.pdf') !== false) {?>
+                                      <iframe class="print" src="<?php echo $img_lnk_pan_user; ?>" style="height:400px"></iframe>
+                                  <?php }else{ ?>
+                                      <img class="print" src="<?php echo $img_lnk_pan_user; ?>" style=""></img>
+                                  <?php }?>
                                   </div>
 
                                   <div style="margin-top:5%;margin-left:-22%" class="row">
@@ -1163,7 +1183,11 @@ $(document).on('hidden.bs.modal', function (e) {
                                   }?>
 
                                   <div style="text-align:center">
-                                  <img class="print" src="<?php echo $img_lnk_tel_user; ?>" style=""></img>
+                                  <?php if (strpos($img_lnk_tel_user, '.pdf') !== false) {?>
+                                      <iframe class="print" src="<?php echo $img_lnk_tel_user; ?>" style="height:400px"></iframe>
+                                  <?php }else{ ?>
+                                      <img class="print" src="<?php echo $img_lnk_tel_user; ?>" style=""></img>
+                                  <?php }?>
                                   </div>
 
                                   <div style="margin-top:5%;margin-left:-22%" class="row">
@@ -1217,7 +1241,11 @@ $(document).on('hidden.bs.modal', function (e) {
                                   }?>
 
                                   <div style="text-align:center">
-                                  <img class="print" src="<?php echo $img_lnk_pass_user; ?>" style=""></img>
+                                  <?php if (strpos($img_lnk_pass_user, '.pdf') !== false) {?>
+                                      <iframe class="print" src="<?php echo $img_lnk_pass_user; ?>" style="height:400px"></iframe>
+                                  <?php }else{ ?>
+                                      <img class="print" src="<?php echo $img_lnk_pass_user; ?>" style=""></img>
+                                  <?php }?>
                                   </div>
 
                                   <div style="margin-top:5%;margin-left:-22%" class="row">
@@ -1271,7 +1299,11 @@ $(document).on('hidden.bs.modal', function (e) {
                                   }?>
 
                                   <div style="text-align:center">
-                                  <img class="print" src="<?php echo $img_lnk_voter_user; ?>" style=""></img>
+                                  <?php if (strpos($img_lnk_voter_user, '.pdf') !== false) {?>
+                                      <iframe class="print" src="<?php echo $img_lnk_voter_user; ?>" style="height:400px"></iframe>
+                                  <?php }else{ ?>
+                                      <img class="print" src="<?php echo $img_lnk_voter_user; ?>" style=""></img>
+                                  <?php }?>
                                   </div>
 
                                   <div style="margin-top:5%;margin-left:-22%" class="row">
@@ -1325,7 +1357,11 @@ $(document).on('hidden.bs.modal', function (e) {
                                   }?>
 
                                   <div style="text-align:center">
-                                  <img class="print" src="<?php echo $img_lnk_passport_user; ?>" style=""></img>
+                                  <?php if (strpos($img_lnk_passport_user, '.pdf') !== false) {?>
+                                      <iframe class="print" src="<?php echo $img_lnk_passport_user; ?>" style="height:400px"></iframe>
+                                  <?php }else{ ?>
+                                      <img class="print" src="<?php echo $img_lnk_passport_user; ?>" style=""></img>
+                                  <?php }?>
                                   </div>
 
                                   <div style="margin-top:5%;margin-left:-22%" class="row">
@@ -1379,7 +1415,11 @@ $(document).on('hidden.bs.modal', function (e) {
                                   }?>
 
                                   <div style="text-align:center">
-                                  <img class="print" src="<?php echo $img_lnk_aadhar_user; ?>" style=""></img>
+                                  <?php if (strpos($img_lnk_aadhar_user, '.pdf') !== false) {?>
+                                      <iframe class="print" src="<?php echo $img_lnk_aadhar_user; ?>" style="height:400px"></iframe>
+                                  <?php }else{ ?>
+                                      <img class="print" src="<?php echo $img_lnk_aadhar_user; ?>" style=""></img>
+                                  <?php }?>
                                   </div>
 
                                   <div style="margin-top:5%;margin-left:-22%" class="row">
