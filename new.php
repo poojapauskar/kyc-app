@@ -1260,7 +1260,7 @@ $arr_uid = json_decode($output_uid,true);
      <input id="textinput" name="textinput" type="text" placeholder="Specify if Other" class="form-control input-md partner_others"  style="">
 </div>
 </div>
-<a href="" class="remove_field_present" style=""><img src="images/del24.png" ></a>
+<a href="" class="remove_field_present p" style=""><img src="images/del24.png" ></a>
 </div>
 
 <div class="form-group">

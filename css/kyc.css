@@ -3476,6 +3476,11 @@ a.btn.btn-info.edit{
 	position:absolute;
 
 }
+.remove_field_present.p{
+    margin-left:67%; 
+    margin-top:-3.7%;
+    position:absolute;
+}
 
 /*avatar profile upload btn*/
 
