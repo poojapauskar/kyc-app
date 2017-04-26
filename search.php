@@ -139,6 +139,15 @@ if($_POST['is_user_delete'] != "" && $_POST['pk_delete'] != ""){
 <div class="container">
   <div class="row" > 
 
+<script type="text/javascript">
+  function fun1(){
+    if(document.getElementById("id_field").value == ""){
+      alert("Record not found");
+      return false;
+    }
+  }
+</script>
+
   <!-- AutoSearch TEXT field -->
   <!-- First Card Below -->
   <div class="card1" >
@@ -152,7 +161,7 @@ if($_POST['is_user_delete'] != "" && $_POST['pk_delete'] != ""){
         <input id="search" name="search" type="text" placeholder="Search firms or individuals" class="form-control input-md" style="width:71%;margin-top:4%;height:39px;border-color: #757575;" required onchange="this.form.submit()" autofocus>
       <input id="is_user_field" name="is_user_field" type="hidden"></input>
       <input id="id_field" name="id_field" type="hidden"></input>
-        <button style="visibility:hidden;display:none;margin-left:58%;margin-top:-3.5%;width:200px;height:37px" class="mdl-button mdl-js-button mdl-button--raised" type="submit" value="Search" id="submit" name="submit">
+        <button onclick="return fun1()" style="visibility:hidden;display:none;margin-left:58%;margin-top:-3.5%;width:200px;height:37px" class="mdl-button mdl-js-button mdl-button--raised" type="submit" value="Search" id="submit" name="submit">
         </button>
         </form>
           </div>   
