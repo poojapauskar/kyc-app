@@ -22,9 +22,9 @@ if($_SESSION['login_kyc_app'] == 1){
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <!-- Material Design Lite -->
 <script src="https://code.getmdl.io/1.3.0/material.min.js"></script>
-<link rel="stylesheet" href="css/material.css">
-<link rel="stylesheet" href="css/kyc.css">
-<link rel="stylesheet" href="css/fileupload.css">
+<link rel="stylesheet" type="text/css" href="css/material.css">
+<link rel="stylesheet" type="text/css" href="css/kyc.css">
+<link rel="stylesheet" type="text/css" href="css/fileupload.css">
     <!-- Material Design icon font -->
 <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
