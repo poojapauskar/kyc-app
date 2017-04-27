@@ -2764,7 +2764,7 @@ a.btn.btn-info.edit_modal {
 div.fileUpload.org.btn.btn-info {
     margin-left: -92%;
     margin-top: 0%;
-        width: 150%;
+        /*width: 150%;*/
 }
 /*Card2 sizing*/
 .card1{
@@ -2871,7 +2871,20 @@ div.fileUpload.org.btn.btn-info {
 #title
 {
     margin-left:70%;
-    margin-top:7%;
+    margin-top:9%;
+}
+
+div.fileUpload.search.btn.btn-info {
+    margin-left:2%;
+    margin-top: 0%;
+}
+
+a.searchview.btn.btn-info {
+    color: white;
+    background-color: #176fac;
+    margin-top: 0%;
+    margin-left:64%;
+    width: 237%;
 }
 
 .form-control.datepicker.pickers.dateorgcss{
@@ -3019,8 +3032,15 @@ a.btn.btn-info.edit{
     color:white;
     background-color:#176fac;
     margin-top:0%;
-    margin-left: -41%;
-    width: 150%;
+    margin-left: -75%;
+    /*width: 150%;*/
+}
+
+.btn.btn-success.successb {
+    width: 10em;
+    margin-top: 0%;
+    padding: 0.5em;
+    margin-left: 2%;
 }
 
 /*attach btn*/
@@ -3146,7 +3166,7 @@ div.fileUpload.btn.btn-info{
 }
 /*seach_result page view*/
 .btn.btn-info.view1{
-     margin-left: -285%;
+     margin-left: -258%;
     margin-top:-3%;
     position: relative;
     color: white;
@@ -3776,7 +3796,7 @@ margin-top:-1%;
 
 .btn.btn-warning.delete{
     width: 10em;
-    margin-top: -8.2%;
+    margin-top: -9%;
     margin-left: 52%;
 }
 .btn.btn-warning.delete1{
