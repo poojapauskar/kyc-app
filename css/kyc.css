@@ -2303,7 +2303,7 @@ margin-top:-1%;
  background-color: #176fac !important;
     width: 210%;
     margin-top: 18%;
-    margin-left: 70%;
+    margin-left: 77%;
     color: white;
 /*    z-index: 4;
 */
@@ -2830,6 +2830,13 @@ margin-top:-1%;
     margin-top:7%;
 }
 
+.form-control.datepicker.pickers.dateorgcss{
+
+    width: 165;
+
+}
+
+
 .partner_designation{
 margin-left:290%;
 margin-top:-20%;
@@ -2858,14 +2865,14 @@ width: 155%;
 }
 
 #telephone_upload {
-    width: 63%;
+    width: 43%;
     margin-left: 11%;
     position: absolute;
     margin-top: 1%;
 }
 
 #bank_upload{
-    width: 63%;
+    width: 43%;
     margin-left: 3%;
     margin-top: 0%;
     position: absolute;
@@ -3040,8 +3047,8 @@ div.fileUpload.btn.btn-info{
 }
 .form-control.type_of_work
 {
-    margin-left:9%;
-    width:145%
+    margin-left: 7%;
+    width: 167%;
 }
 
 .form-group.designation{
@@ -3062,8 +3069,8 @@ div.fileUpload.btn.btn-info{
 }
 
 .form-control.status{
-    width:145%;
-    margin-left:-1%;
+    width:167%;
+    margin-left:0%;
 }
 .col-2.col-form-label.date{
     margin-left:-8.5%;
@@ -3128,7 +3135,7 @@ margin-top:-1%;
     margin-top: 0%;
 }
 .form-control.input-md.comment{
-    width: 236%;
+    width: 272%;
     margin-left: -5%;
 }
 .fileUpload.btn.btn-info.tele1{
@@ -3140,8 +3147,8 @@ margin-top:-1%;
 {
     color: white;
     background-color: rgb(23, 111, 172);
-    margin-top: 4%;
-    margin-left: 10%;
+       margin-top: 0%;
+    margin-left: -20%;
 }
 .btn.btn-warning.backbutton-searchresult{/*1280 Back Button in Search_result page*/
     width: 64%;
@@ -3416,8 +3423,15 @@ a.btn.btn-info.edit{
     margin-left: -3%;
 }
 .control-label.designation{
-    margin-left:159%;
+    margin-left: 159%;
+    margin-top: -1%;
 }
+
+.form-control.partner_designations.newpartner{
+
+    margin-top: -19%;
+}
+
 .partner_name {
     margin-top: -32%;
     margin-left: 283%;
