@@ -10,10 +10,11 @@ if($_SESSION['login_kyc_app'] == 1){
 
 <html>
   <head>
+  <link rel="icon" type="image/png" sizes="36x36" href="images/green.png">
 
 <link rel="stylesheet" type="text/css" href="css/material.indigo-pink.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/material-design-lite/1.1.0/material.min.css">
- <link rel="stylesheet" href="css/table.css"> 
+ <link rel="stylesheet" type="text/css" href="css/table.css"> 
  <link rel="stylesheet" type="text/css" href="css/kyc.css"> 
 <script src="https://code.getmdl.io/1.3.0/material.min.js"></script>
 <link rel="stylesheet" type="text/css" href="css/material.css">
