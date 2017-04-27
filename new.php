@@ -7,7 +7,7 @@ if($_SESSION['login_kyc_app'] == 1){
 }
 
 ?>
-
+<!-- htnl starts here -->
 <!DOCTYPE html>
 <html>
 <head>
