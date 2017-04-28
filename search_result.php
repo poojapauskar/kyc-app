@@ -13,7 +13,6 @@ if($_SESSION['login_kyc_app'] == 1){
 <head>
   <title></title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" type="image/png" sizes="36x36" href="images/green.png">
 
   <link rel="stylesheet" type="text/css" href="css/material.indigo-pink.min.css">
   <link rel="stylesheet" href="css/bootstrap.css">
@@ -261,7 +260,7 @@ $arr_search = json_decode($output_search,true);
 <input id="uploadFile" class="form-control input-md" value="<?php echo $arr_search['response'][0]['reg_certificate_details'][0]['name']; ?>" readonly style="width:90%;"/>
 </div>
 <div class="col-md-1">
-  <div class="fileUpload search btn btn-info" style="opacity: .4;">
+  <div class="fileUpload search btn btn-info">
     <label style="font-weight:500;margin-bottom: 0px;">ATTACH</label>
     <input id="reg_certificate" name="reg_certificate" type="file" class="upload" disabled="true" style="cursor: not-allowed;">
 </div>
@@ -305,7 +304,7 @@ VIEW
   <input id="pan_upload" class="form-control input-md" value="<?php echo $arr_search['response'][0]['pan_card_details'][0]['name']; ?>" readonly style="width:90%" />
   </div>
   <div class="col-md-1">
-  <div class="fileUpload search btn btn-info" style="opacity: .4;" >
+  <div class="fileUpload search btn btn-info" >
   <label style="font-weight:500;margin-bottom: 0px;">ATTACH</label>
   <input id="pan_card" name="pan_card" type="file" class="upload" disabled="true" style="cursor: not-allowed;">
 </div>
@@ -358,7 +357,7 @@ VIEW
 <div class="col-md-3" >
 <input style="" class="search_result tele" value="<?php echo $arr_search['response'][0]['telephone_bill_details'][0]['name']; ?>" disabled>
 
-<div class="fileUpload btn btn-info tele1" style="opacity: .4;">
+<div class="fileUpload btn btn-info tele1" style="">
     <label style="font-weight:500;margin-bottom: 0px;">ATTACH</label>
 <input id="telephone_bill" value="<?php echo $arr_search['response'][0]['organization_details']['telephone'] ?>" style="margin-top: -20px;margin-left: 129px; cursor: not-allowed;" name="telephone_bill" class="upload" type="file"  disabled="true">  
 
@@ -399,7 +398,7 @@ VIEW
 </div>
 <div class="col-md-3"> 
 <input class="search_result tele" value="<?php echo $arr_search['response'][0]['pass_book_details'][0]['name']; ?>" disabled>
-<div class="fileUpload btn btn-info tele1" style="opacity: .4;">
+<div class="fileUpload btn btn-info tele1" style="">
     <label style="font-weight:500;margin-bottom: 0px;">ATTACH</label>
     <input id="bank_pass_book" style="margin-top: -22px;margin-left: 129px;cursor: not-allowed;" name="bank_pass_book" class="upload" type="file"  disabled="true"> 
 </div>
@@ -447,8 +446,8 @@ VIEW</a>
  <option value="<?php echo $arr_search['response'][0]['partner_details'][$x]['detail'][0]['designation'] ?>"><?php echo $arr_search['response'][0]['partner_details'][$x]['detail'][0]['designation'] ?></option>
     </select>
   </div>
-  <div class="col-md-2 search_org">
-     <input id="textinput" name="textinput" type="text" placeholder="Specify if Other" class="form-control input-md" readonly>
+  <div class="col-md-2">
+     <input id="textinput" name="textinput" type="text" placeholder="Specify if Other" class="form-control input-md" readonly style="width:83%;margin-left: -139%">
   </div>
 
 </div>
@@ -509,7 +508,7 @@ VIEW</a>
     position:absolute;
     z-index:2;
     " src="<?php echo $img_lnk; ?>" />
-<div class="upload-button" style="position:absolute;z-index:2;margin-left:56%;cursor:pointer;margin-top:13%;cursor: not-allowed;opacity: .4;" readonly>Upload Image</div>
+<div class="upload-button" style="position:absolute;z-index:2;margin-left:56%;cursor:pointer;margin-top:13%;cursor: not-allowed;" readonly>Upload Image</div>
 
 
 <input name="image" id="image" class="file-upload1" style="display:none;position:absolute;z-index:-2;margin-left:44%;margin-top:16%;" type="file" disabled="true">
@@ -573,7 +572,7 @@ VIEW</a>
   <input id="pan_upload" class="form-control input-md" value="<?php echo $arr_search['response'][0]['pan_card_details'][0]['name']; ?>" readonly style="width: 80%;"/>
   </div>
   <div class="col-md-1">
-<div class="fileUpload btn btn-info" style="opacity: .4;">
+<div class="fileUpload btn btn-info">
   <label style="font-weight:500;margin-bottom: 0px;">ATTACH</label>
 <input id="pan_card" name="pan_card" style="margin-left:-47%;cursor: not-allowed;" value="<?php echo $_POST['pan_card'] ?>" class="upload" type="file" disabled="true">
 </div>
@@ -622,7 +621,7 @@ VIEW</a>
 </div>
 
 <div class="col-md-1">
-<div class="fileUpload btn btn-info" style="opacity: .4;">
+<div class="fileUpload btn btn-info">
     <label style="font-weight:500;margin-bottom:0px;">ATTACH</label>
 <input id="telephone_bill"  value="<?php echo $_POST['telephone_bill'] ?>" style="margin-top: 5px;margin-left: 126px;" name="telephone_bill" class="upload" type="file"  disabled="true">     
  </div>
@@ -669,7 +668,7 @@ VIEW</a>
 </div>
 
 <div class="col-md-1">
-<div class="fileUpload btn btn-info" style="opacity: .4;">
+<div class="fileUpload btn btn-info">
 <label style="font-weight:500;margin-bottom:0px;">ATTACH</label>
 <input id="bank_pass_book"  value="<?php echo $_POST['bank_pass_book'] ?>" style="margin-top: 6px;margin-left: 129px;position:absolute;" name="bank_pass_book" class="upload" type="file" disabled>
  </div>
@@ -718,7 +717,7 @@ VIEW</a>
     </div>
     
      <div class="col-md-1">
-    <div class="fileUpload btn btn-info" style="opacity: .4;">
+    <div class="fileUpload btn btn-info" >
     <label style="font-weight:500;margin-bottom:0px;">ATTACH</label>
     <input id="voter_id" value="<?php echo $_POST['voter_id'] ?>" style="margin-top: 6px;margin-left: 129px;position:absolute;" name="voter_id" class="input-file" type="file" disabled>     
    </div>
@@ -760,7 +759,7 @@ VIEW</a>
   <input class="search_result tele1" value="<?php echo $arr_search['response'][0]['passport_details'][0]['name']; ?>" disabled style="width: 60%;">
   </div>
   <div class="col-md-1">
-   <div class="fileUpload btn btn-info" style="opacity: .4;">
+   <div class="fileUpload btn btn-info" style="">
     <label style="font-weight:500;margin-bottom:0px;">ATTACH</label>
   <input id="passport" value="<?php echo $_POST['passport'] ?>" style="margin-top: 6px;margin-left: 129px;position:absolute;" name="passport" class="input-file" type="file" disabled>     
    </div>
@@ -807,7 +806,7 @@ VIEW</a>
   </div>
 
   <div class="col-md-1">
-   <div class="fileUpload btn btn-info" style="opacity: .4;">
+   <div class="fileUpload btn btn-info" style="">
     <label style="font-weight:500;margin-bottom: 0px;">ATTACH</label>
     <input id="aadhar_card" style="margin-left:-47%;cursor: not-allowed;" name="aadhar_card" value="<?php echo $_POST['aadhar_card'] ?>" class="upload" type="file" disabled>
   
@@ -1311,7 +1310,7 @@ $(document).on('hidden.bs.modal', function (e) {
                                      <div class="col-sm-3">
                                      </div>
                                      <div class="col-sm-3">
-                                      <button class="btn btn-success" style="color:white;width:80px;height:40px" onclick="print_image()">Print</button>
+                                      <button class="btn btn-success" style="color:white;width:80px;height:40px" onclick="printPDF('<?php echo $img_lnk_voter_user; ?>')">Print</button>
                                      </div>
                                      <div class="col-sm-3">
                                      
@@ -1338,6 +1337,26 @@ $(document).on('hidden.bs.modal', function (e) {
     </div>
   </div>
 </div>
+
+<script type="text/javascript">
+  function printPDF(pdfUrl)
+{
+/*alert(pdfUrl);*/
+    var myWindow = window.open();
+    myWindow.document.write('<iframe width="100%" height="100%" src="'+pdfUrl+'" frameborder="0" allowfullscreen></iframe>');
+    
+
+    setTimeout(function() { // wait until all resources loaded 
+        myWindow.document.close(); // necessary for IE >= 10
+        myWindow.focus(); // necessary for IE >= 10
+        myWindow.print(); // change window to winPrint
+        myWindow.close(); // change window to winPrint
+     }, 250);
+    /*if (navigator.appName == 'Microsoft Internet Explorer') window.print();
+    else w.print();*/
+    return true;
+}
+</script>
 
 <!-- Modal -->
 <div class="modal fade" id="myModal9" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
