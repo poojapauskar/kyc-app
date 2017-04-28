@@ -236,7 +236,7 @@ $arr_missing_report = json_decode($output_missing_report,true);
         </nav>
       </div>
 
- <div class="container">
+ <div class="container contain-align">
   <div class="row" style="margin-top:4%;"> 
 
 <button class="btn btn-success clear" style="" type="button" id="test">Clear</button>

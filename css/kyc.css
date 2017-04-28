@@ -2719,10 +2719,39 @@ margin-top:-1%;
 }
 
 @media screen and (max-width:1280px) {
+
+/*Container Alignment of missing reports*/
+.container.contain-align{
+     margin-left: -1% !important;
+    margin-top: 1%;
+}
+
+
 /*search organization page*/
 .col-md-2.search_org{
    width: 14%;
     margin-left: -17%;
+}
+
+.remove_field_present.p {
+    margin-left: 67%;
+    margin-top: -3.7%;
+    position: absolute;
+}
+
+.upload-button.up {
+    padding: 4px;
+    border: 1px solid #176fac;
+    border-radius: 1px;
+    display: block;
+    float: left;
+    position: absolute;
+    z-index: 2;
+    margin-left: 77%;
+    cursor: pointer;
+    margin-top: 8.6%;
+    color: #fff;
+    background-color: #176fac;
 }
 
 .btn.btn-warning.delete1 {
@@ -2937,7 +2966,7 @@ width: 155%;
 #title1{
     float: right;
     right: 206px;
-    top: 18%;
+    top: 9%;
     position: absolute;
 }
 
@@ -3173,7 +3202,7 @@ div.fileUpload.btn.btn-info{
 }
 
 .remove_field{
-    margin-left:45.6%;
+    margin-left:42.9%;
     margin-top:-40px;
     position:absolute
 }
@@ -3289,8 +3318,8 @@ margin-left: 26%;
 }
 .mdl-data-table.dataTable.no-footer{
     margin-left:13% !important; 
-    width: 75% !important; 
-    margin-top: 12% !important;
+    width: 75% ; 
+    margin-top: 12% ;
 
 }
 .dataTables_wrapper .dataTables_info {
@@ -3308,6 +3337,14 @@ margin-left: 26%;
 }
 
 @media screen and (max-width:1024px) {
+
+/*Container Alignment of missing reports*/
+.container.contain-align{
+    margin-left: -5% !important;
+    margin-top: -4%;
+}
+
+
 /*Card 2 height*/
 .mdl-data-table.dataTable.no-footer{
     margin-left:7% !important; 
@@ -3506,8 +3543,10 @@ a.btn.btn-info.edit{
 }
 
 .btn.btn-success.clear{
-    color:white;
-    margin-left:32%;
+    color: white;
+    margin-left: 32%;
+    margin-top: 4%;
+    position: absolute;
 }
 
 .btn.btn-info.user {
