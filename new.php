@@ -7,7 +7,7 @@ if($_SESSION['login_kyc_app'] == 1){
 }
 
 ?>
-
+<!-- htnl starts here -->
 <!DOCTYPE html>
 <html>
 <head>
@@ -1669,11 +1669,11 @@ function enable_disable(that){
   </div>
 </div>
 
-<!--date-->
+<!--date __Individual page___-->
 <div class="form-group">
-  <label for="example-date-input" class="col-md-1 col-label" style="margin-left:25%;">DATE:</label>
+  <label for="example-date-input" class="col-md-4 col-label date-label-individual">DATE:</label>
   <div class="col-md-4">
-    <input class="form-control datepicker pick" id="date[]" name="date[]" value="<?php echo $_POST['date'] ?>" style="width:80%" type="text" readonly>
+    <input class="form-control datepicker pick date-individual" id="date[]" name="date[]" value="<?php echo $_POST['date'] ?>" type="text" readonly>
   </div>
 </div>
 
@@ -1803,7 +1803,7 @@ $(document).ready(function() {
 
         if(x < max_fields){ //max input box allowed
             x++; //text box increment
-            $('<div style="margin-left:50%;"><div class="form-group"><label class="control-label type" for="selectbasic" style="">Type of work:</label><div class="col-md-6"><select id="type_of_work[]" name="type_of_work[]" class="form-control type_of_work"><option value=""></option><option value="Audit Report">Audit Report</option><option value="ITR filing">ITR filing</option><option value="VAT Filing">VAT Filing</option><option value="Accounting">Accounting</option><option value="Registration">Registration</option><option value="Certification">Certification</option><option value="Others">Others</option></select></div></div><div class="form-group"> <label class="col-md-4 control-label statuss1" for="selectbasic" style="">Status:</label><div class="col-md-6"><select id="status1' + x + '"  name="status[]"  class="form-control status"><option value=""></option><option value="Pending">Pending</option><option value="Work in process">Work in process</option><option value="Completed">Completed</option></select></div></div><div class="form-group row"><label for="example-date-input" class="col-2 col-form-label date">DATE:</label><div class="col-10 col"><input class="form-control datepicker pickers " id="date' + x +'" name="date[]" style="" type="text" readonly></div></div><div class="form-group"><label class="col-md-4 control-label comment" for="textinput" style="">Comment:</label><div class="col-md-4"><input id="comments' + x + '" name="comment[]" type="text" placeholder="" class="form-control input-md comment" style=""></div></div></center><a href="#" class="remove_field" style=""><img src="images/del24.png" ></a></a></div>').insertBefore(add_button)//add input box\
+            $('<div style="margin-left:50%;"><div class="form-group"><label class="control-label type" for="selectbasic" style="">Type of work:</label><div class="col-md-6"><select id="type_of_work[]" name="type_of_work[]" class="form-control type_of_work"><option value=""></option><option value="Audit Report">Audit Report</option><option value="ITR filing">ITR filing</option><option value="VAT Filing">VAT Filing</option><option value="Accounting">Accounting</option><option value="Registration">Registration</option><option value="Certification">Certification</option><option value="Others">Others</option></select></div></div><div class="form-group"> <label class="col-md-4 control-label statuss1" for="selectbasic" style="">Status:</label><div class="col-md-6"><select id="status1' + x + '"  name="status[]"  class="form-control status"><option value=""></option><option value="Pending">Pending</option><option value="Work in process">Work in process</option><option value="Completed">Completed</option></select></div></div><div class="form-group row"><label for="example-date-input" class="col-2 col-form-label date">DATE:</label><div class="col-10 col"><input class="form-control datepicker pickers" id="date' + x +'" name="date[]" type="text" readonly></div></div><div class="form-group"><label class="col-md-4 control-label comment" for="textinput" style="">Comment:</label><div class="col-md-4"><input id="comments' + x + '" name="comment[]" type="text" placeholder="" class="form-control input-md comment" style=""></div></div></center><a href="#" class="remove_field"><img src="images/del24.png" ></a></a></div>').insertBefore(add_button)//add input box\
           var newInput=$("#date"+ x).datepicker({dateFormat: 'dd/mm/yy',changeMonth : true,changeYear : true});
           newInput.datepicker({dateFormat: 'dd/mm/yy'}).datepicker("setDate", new Date());
 
