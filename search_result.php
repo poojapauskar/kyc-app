@@ -1310,7 +1310,7 @@ $(document).on('hidden.bs.modal', function (e) {
                                      <div class="col-sm-3">
                                      </div>
                                      <div class="col-sm-3">
-                                      <button class="btn btn-success" style="color:white;width:80px;height:40px" onclick="printPDF('<?php echo $img_lnk_voter_user; ?>')">Print</button>
+                                      <button class="btn btn-success" style="color:white;width:80px;height:40px" onclick="print_image()">Print</button>
                                      </div>
                                      <div class="col-sm-3">
                                      
