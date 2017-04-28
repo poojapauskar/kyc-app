@@ -2725,6 +2725,21 @@ margin-top:-1%;
     margin-left: -17%;
 }
 
+.btn.btn-warning.delete1 {
+    width: 10em;
+    margin-top: -10.2%;
+    margin-left: 49%;
+}
+
+.btn.btn-warning.cancel1{
+    width: 10em;
+    margin-top:-14%;
+    padding:0.5em;
+    margin-left:55%;
+    background: #176fac;
+    border-color: #176fac;
+}
+
 .upload-button.edit {
     padding: 4px;
     border: 1px solid #176fac;
@@ -2735,7 +2750,7 @@ margin-top:-1%;
     z-index: 2;
     margin-left: 72%;
     cursor: pointer;
-    margin-top: 14.6%;
+    margin-top: 12.6%;
     color: #fff;
     background-color: #176fac;
 }
@@ -2884,7 +2899,7 @@ a.searchview.btn.btn-info {
     background-color: #176fac;
     margin-top: 0%;
     margin-left:64%;
-    width: 237%;
+    /*width: 237%;*/
 }
 
 .form-control.datepicker.pickers.dateorgcss{
@@ -3185,16 +3200,21 @@ margin-top:-1%;
     position: relative;
 }
 .col-md-3.bkupload.edit {
-    width: 26%;
+    width: 36% !important;
     margin-left: 40%;
     position: absolute;
     margin-top: 0%;
 }
 .col-md-3.teleupload.edit {
-    width: 26%;
-    margin-left: 42%;
+    width: 36% !important;
+    margin-left: 43% !important;
     position: absolute;
     margin-top: 0%;
+}
+.btn.btn-warning.delete {
+    width: 10em;
+    margin-top: -7%;
+    margin-left: 51%;
 }
 .form-control.input-md.comment{
    width: 262%;
@@ -3221,7 +3241,9 @@ margin-left: 26%;
 .btn.btn-warning.backbutton-searchresult{/*1280 Back Button in Search_result page*/
     width: 64%;
     margin-top:-20%;
-    margin-left:70%
+    margin-left:70%;
+    background: #176fac;
+    border-color: #176fac;
 }
 
 .btn.btn-success.editbutton-searchresult{/*1280 Back Button in Search_result page*/
