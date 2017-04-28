@@ -3271,10 +3271,30 @@ margin-left: 26%;
     position:absolute;
 
 }
+.mdl-data-table.dataTable.no-footer{
+    margin-left:13% !important; 
+    width: 75% !important; 
+    margin-top: 12% !important;
+
+}
+.dataTables_wrapper .dataTables_info {
+    clear: both;
+    float: left;
+    padding-top: .755em;
+    margin-left: 14%;
+}
+.dataTables_wrapper .dataTables_filter label, .dataTables_wrapper .dataTables_length label {
+    font-size: 1rem;
+    margin-left: -70%;
+    position: absolute;
+    margin-top: -6%;
+}
 }
 
 @media screen and (max-width:1024px) {
 /*Card 2 height*/
+
+
 .datepicker.p
 {
     width: 80%;
