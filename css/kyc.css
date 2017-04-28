@@ -3293,7 +3293,24 @@ margin-left: 26%;
 
 @media screen and (max-width:1024px) {
 /*Card 2 height*/
+.mdl-data-table.dataTable.no-footer{
+    margin-left:7% !important; 
+    width: 75% !important; 
+    margin-top: 12% !important;
 
+}
+.dataTables_wrapper .dataTables_info {
+    clear: both;
+    float: left;
+    padding-top: .755em;
+    margin-left: 7%;
+}
+.dataTables_wrapper .dataTables_filter label, .dataTables_wrapper .dataTables_length label {
+    font-size: 1rem;
+    margin-left: -71%;
+    position: absolute;
+    margin-top: -6%;
+}
 
 .datepicker.p
 {
