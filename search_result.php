@@ -1310,7 +1310,7 @@ $(document).on('hidden.bs.modal', function (e) {
                                      <div class="col-sm-3">
                                      </div>
                                      <div class="col-sm-3">
-                                      <button class="btn btn-success" style="color:white;width:80px;height:40px" onclick="print_image()">Print</button>
+                                      <button class="btn btn-success" style="color:white;width:80px;height:40px" onclick="printPDF('<?php echo $img_lnk_voter_user; ?>')">Print</button>
                                      </div>
                                      <div class="col-sm-3">
                                      
@@ -1342,18 +1342,16 @@ $(document).on('hidden.bs.modal', function (e) {
   function printPDF(pdfUrl)
 {
 /*alert(pdfUrl);*/
+/*alert("hi");*/
     var myWindow = window.open();
     myWindow.document.write('<iframe width="100%" height="100%" src="'+pdfUrl+'" frameborder="0" allowfullscreen></iframe>');
     
 
-    setTimeout(function() { // wait until all resources loaded 
-        myWindow.document.close(); // necessary for IE >= 10
-        myWindow.focus(); // necessary for IE >= 10
-        myWindow.print(); // change window to winPrint
-        myWindow.close(); // change window to winPrint
-     }, 250);
-    /*if (navigator.appName == 'Microsoft Internet Explorer') window.print();
-    else w.print();*/
+   
+    myWindow.document.close(); 
+    myWindow.focus();
+    myWindow.print(); 
+    setTimeout(myWindow.close(), 10);
     return true;
 }
 </script>
