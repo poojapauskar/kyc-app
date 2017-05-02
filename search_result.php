@@ -1306,6 +1306,7 @@ $(document).on('hidden.bs.modal', function (e) {
                                   <?php }?>
                                   </div>
 
+    
                                   <div style="margin-top:5%;margin-left:-22%" class="row">
                                      <div class="col-sm-3">
                                      </div>
@@ -1344,15 +1345,19 @@ $(document).on('hidden.bs.modal', function (e) {
 /*alert(pdfUrl);*/
     var myWindow = window.open();
     myWindow.document.write('<iframe width="100%" height="100%" src="'+pdfUrl+'" frameborder="0" allowfullscreen></iframe>');
-    
+    /*setTimeout(
+    function() {
+      myWindow.print();
+    }, 20);*/
 
     myWindow.document.close(); // necessary for IE >= 10
     myWindow.focus(); // necessary for IE >= 10
-    myWindow.print(); 
-    setTimeout(myWindow.close(), 10);
+    
+    setTimeout(myWindow.print(), 10);
+    setTimeout(myWindow.close(), 20);
     /*if (navigator.appName == 'Microsoft Internet Explorer') window.print();
     else w.print();*/
-    return true;
+   /* return true;*/
 }
 </script>
 
