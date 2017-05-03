@@ -1317,7 +1317,7 @@ VIEW</a>
 </div>
 
 <!-- Added Partner 1 -->
-<label for="comment" style="margin-left: 236px;font-size: 17px;"> Partner 1: </label>
+<label for="comment" style="margin-left: 26%;font-size: 17px;"> Partner 1: </label>
 
 
 
