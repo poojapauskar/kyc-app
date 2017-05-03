@@ -1583,7 +1583,7 @@ a.btn.btn-info{
     background-color:#176fac;
     margin-top:0%;
     margin-left: 28%;
-    width: 139%;
+    /*width: 139%;*/
 }
 
 a.btn.btn-info.edit{
@@ -2252,6 +2252,26 @@ margin-top:-1%;
     margin-left: -30%;
 }
 
+.col-md-2.search_org {
+    width: 14%;
+    margin-left: -17%;
+}
+
+.btn.btn-warning.cancel1 {
+    width: 10em;
+    margin-top: -14%;
+    padding: 0.5em;
+    margin-left: 55%;
+    background: #176fac;
+    border-color: #176fac;
+}
+
+.btn.btn-warning.delete1 {
+    width: 10em;
+    margin-top: -10.2%;
+    margin-left: 49%;
+}
+
 /*search page button css starts below*/
 .new-entry-org-btn{
     background-color: #176fac !important;
@@ -2360,7 +2380,7 @@ margin-top:-1%;
 #title
 {
     margin-left:70%;
-    margin-top:8%;
+    margin-top:9%;
 }
 
 #logout {
@@ -2430,12 +2450,13 @@ width: 155%;
     position:absolute;
 }*/
 .remove_field_pre1 {
-    margin-left: 62%;
-    margin-top: -2.7%;
+
+    margin-left: 63%;
+    margin-top: -3.2%;
     position: absolute;
 }
 .remove_field_present{
-    margin-left:68%; 
+    margin-left:63%; 
     margin-top:-3%;
     position:absolute;
 }
@@ -2451,15 +2472,17 @@ width: 155%;
 
  .upload-button {
     padding: 4px;
-    border: 1px solid black;
-    border-radius: 5px;
+    border: 1px solid #176fac;
+    border-radius: 1px;
     display: block;
     float: left;
-    position:absolute;
-    z-index:2;
-    margin-left:77%;
-    cursor:pointer;
-    margin-top:10%;
+    position: absolute;
+    z-index: 2;
+    margin-left: 70%;
+    cursor: pointer;
+    margin-top: 10.6% !important;
+    color: #fff;
+    background-color: #176fac;
 }
 
 .profile-pic {
@@ -2523,14 +2546,27 @@ a.btn.btn-info.edit{
     color:white;
     background-color:#176fac;
     margin-top:0%;
-    margin-left:40%;
+    margin-left:-69%;
     width: 101%;
+}
+
+div.fileUpload.search.btn.btn-info {
+    margin-left: 16%;
+    margin-top: 0%;
+}
+
+a.btn.btn-info {
+    color: white;
+    background-color: #176fac;
+    margin-top: 0%;
+    margin-left: 2%;
+    width: 158%;
 }
 
 /*attach btn*/
 div.fileUpload.btn.btn-info{
-    margin-left:0%;
-    margin-top:0%;
+   margin-left: -83%;
+    margin-top: 0%;
 }
 
 /*notification bar css*/
@@ -2586,17 +2622,20 @@ div.fileUpload.btn.btn-info{
 }
 
 /*date input field*/
-.col-10.col{
-    width:72%;
-    margin-left:6.5%;
-    margin-top:-6%;
+.col-10.col {
+    width: 72%;
+    margin-left: 6.6%;
+    margin-top: -6%;
 }
 .form-control.type_of_work
 {
-    margin-left:7.6%;
+    margin-left:8%;
     width:165%
 }
-
+.form-control.status-edit {
+    width: 166%;
+    margin-left: -2%;
+}
 .form-group.designation{
     margin-left:175%;
 }
@@ -2643,24 +2682,24 @@ div.fileUpload.btn.btn-info{
 
 /*search result page*/
 .search_result.tele{
-    margin-left: -95%;
+    margin-left: -105%;
     margin-top: 0%;
     width: 81%;
 }
 
 .search_result.tele1{
-    margin-left: 5%;
+    margin-left: 15%;
     margin-top: 0%;
     width: 83%;
 }
 /*seach_result page view*/
 .btn.btn-info.view1 {
-    margin-left: -283%;
-    margin-top: -1%;
+    margin-left: -222%;
+    margin-top: -4%;
     position: relative;
     color: white;
+    width: 164%;
 }
-
 
 .fileUpload.btn.btn-info.tele{
 margin-left:12%;
@@ -2674,40 +2713,76 @@ margin-top:-1%;
     position: relative;
 }
 .col-md-3.bkupload.edit {
-    width:28%;
-    margin-left: 45%;
+    width: 28%;
+    margin-left: 39%;
     position: absolute;
     margin-top: 0%;
 }
 .col-md-3.teleupload.edit {
     width: 28%;
-    margin-left: 47%;
+    margin-left: 41.2%;
     position: absolute;
     margin-top: 0%;
 }
-.form-control.input-md.comment{
-    width:267%;
-    margin-left: 3%;
+
+.form-control.input-md.comment {
+    width: 271%;
+    margin-left: -4%;
 }
-.fileUpload.btn.btn-info.tele1{
-margin-left:12%;
-margin-top:-1%;
+a.searchview.btn.btn-info {
+    color: white;
+    background-color: #176fac;
+    margin-top: 0%;
+    margin-left: 102%;
+    width: 161%;
+}
+
+.fileUpload.btn.btn-info.tele1 {
+    margin-left: 26%;
+    margin-top: -1%;
 }
 
 .add_field.btn {
     margin-left: 52%;
 }
 
+.datepicker.p {
+    width: 77% !important;
+    margin-top: 4% !important;
+    margin-left: 2%;
+}
+
+.upload-button.edit {
+    padding: 4px;
+    border: 1px solid #176fac;
+    border-radius: 1px;
+    display: block;
+    float: left;
+    position: absolute;
+    z-index: 2;
+    margin-left: 72%;
+    cursor: pointer;
+    margin-top: 12.6% !important;
+    color: #fff;
+    background-color: #176fac;
+}
+
 .btn.btn-info.user{
     color: white;
     background-color: rgb(23, 111, 172);
     margin-top: 0%;
-    margin-left:116%;
+    margin-left:73%;
 }
 
 .input-file {
     margin-top: 3px;
     margin-left: 19px;
+    position: absolute;
+}
+
+.input-file.edit-user {
+    margin-top: 7%;
+    margin-left: -50%;
     position: absolute;
 }
 
@@ -2988,7 +3063,7 @@ width: 155%;
 #title1{
     float: right;
     right: 206px;
-    top: 9%;
+    top: 11%;
     position: absolute;
 }
 
@@ -3105,7 +3180,7 @@ a.btn.btn-info{
     background-color:#176fac;
     margin-top:0%;
     margin-left: -41%;
-    width: 159%;
+   /* width: 159%;*/
 }
 
 a.btn.btn-info.edit{
@@ -3740,7 +3815,7 @@ a.btn.btn-info.edit{
     z-index: 2;
     margin-left: 72%;
     cursor: pointer;
-    margin-top: 14.6%;
+    margin-top: 14.6% !important;
     color: #fff;
     background-color: #176fac;
 }
@@ -3966,6 +4041,7 @@ margin-top:-1%;
     margin-top: 12%;
     margin-left: 76%;
 }
+
 .btn.btn-success.clear-pendingpage{
     color: white;
     margin-left: 30%;
