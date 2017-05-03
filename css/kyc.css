@@ -2244,6 +2244,27 @@ margin-top:-1%;
     width: 133%;
     height: 447px
 }
+
+.remove_field_present.p {
+    margin-left: 67%;
+    margin-top: -3.7%;
+    position: absolute;
+}
+
+.upload-button.up {
+    padding: 4px;
+    border: 1px solid #176fac;
+    border-radius: 1px;
+    display: block;
+    float: left;
+    position: absolute;
+    z-index: 2;
+    margin-left: 77%;
+    cursor: pointer;
+    margin-top: 8.6%;
+    color: #fff;
+    background-color: #176fac;
+}
 .card2{
 
     margin-top: -12%;
@@ -2450,9 +2471,8 @@ width: 155%;
     position:absolute;
 }*/
 .remove_field_pre1 {
-
-    margin-left: 63%;
-    margin-top: -3.2%;
+    margin-left: 62.1%;
+    margin-top: -3.0%;
     position: absolute;
 }
 .remove_field_present{
@@ -2727,8 +2747,9 @@ margin-top:-1%;
 
 .form-control.input-md.comment {
     width: 271%;
-    margin-left: -4%;
+    margin-left: 3%;
 }
+
 a.searchview.btn.btn-info {
     color: white;
     background-color: #176fac;
