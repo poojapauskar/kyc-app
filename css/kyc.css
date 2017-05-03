@@ -2995,6 +2995,8 @@ div.fileUpload.org.btn.btn-info {
     background-color: rgb(23, 111, 172);
     margin-top: 0%;
     margin-left: 67%;
+    width: 116%;
+
 }
 
 
@@ -3240,8 +3242,8 @@ div.fileUpload.btn.btn-info{
 }
 
 .form-control.type_of_work {
-    margin-left: 9%;
-    width: 164%;
+    margin-left: 7%;
+    width: 167%;
 }
 
 .form-group.designation{
