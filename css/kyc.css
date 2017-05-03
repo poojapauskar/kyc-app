@@ -2247,7 +2247,7 @@ margin-top:-1%;
 
 .remove_field_present.p {
     margin-left: 67%;
-    margin-top: -3.7%;
+    margin-top: -3%;
     position: absolute;
 }
 
@@ -2696,7 +2696,11 @@ div.fileUpload.btn.btn-info{
     margin-top: -37px;
     position: absolute;
 }
-
+.remove_field_partner{
+    margin-left: 349.7%;
+    margin-top: -37px;
+    position: absolute;
+}
 /*edit page view*/
 .fileUpload.btn.btn-info.view{
 
@@ -2735,14 +2739,15 @@ margin-top:-1%;
     position: relative;
 }
 .col-md-3.bkupload.edit {
-    width: 28%;
-    margin-left: 39%;
+    width: 33%;
+    margin-left: 40.6%;
     position: absolute;
     margin-top: 0%;
 }
+
 .col-md-3.teleupload.edit {
-    width: 28%;
-    margin-left: 41.2%;
+    width: 33%;
+    margin-left: 43.2%;
     position: absolute;
     margin-top: 0%;
 }
@@ -2796,6 +2801,7 @@ a.searchview.btn.btn-info {
     background-color: rgb(23, 111, 172);
     margin-top: 0%;
     margin-left:73%;
+    width: 103%;
 }
 
 .input-file {
