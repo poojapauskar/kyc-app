@@ -1055,7 +1055,7 @@ if($profile22 == ""){
     <a href="search.php"><img id="logo1" src="images/green.png"></img></a>
      <span class="mdl-layout-title" id="title3"><?php echo $arr_search['response'][0]['organization_details']['name'] ?><?php echo $arr_search['response'][0]['user_details']['name'] ?></span>
     <span class="mdl-layout-title" id="title1" style="text-align:center">KYCAPP</span>
-    <a href="index.php"><img id="logout" style="" src="images/logout_btn.png"></img></a>
+     <a href="logout.php"><img id="logout" style="" src="images/logout_btn.png"></img></a>
           <!-- Add spacer, to align navigation to the right -->
 
     </header>

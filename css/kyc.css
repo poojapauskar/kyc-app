@@ -2244,6 +2244,11 @@ margin-top:-1%;
     width: 133%;
     height: 447px
 }
+.mdl-data-table.dataTable.no-footer {
+    margin-left: 13% !important;
+    width: 75%;
+    margin-top: 12%;
+}
 
 .remove_field_present.p {
     margin-left: 67%;
@@ -2838,7 +2843,7 @@ a.searchview.btn.btn-info {
 }
 .btn.btn-success.clear-pendingpage{
     color: white;
-    margin-left: 27%;
+    margin-left: 29%;
     margin-top: 4%;
     position: absolute;
 }
@@ -3474,6 +3479,7 @@ margin-left: 26%;
 }
 
 
+
 /*Card 2 height*/
 .mdl-data-table.dataTable.no-footer{
     margin-left:7% !important; 
@@ -4017,6 +4023,7 @@ margin-top:-1%;
     margin-top: -3%;
     position: relative;
     color: white;
+    width: 237%;
 }
 
 .col-10 {
