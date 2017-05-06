@@ -14,7 +14,6 @@ if($_SESSION['login_kyc_app'] == 1){
   <title></title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" type="text/css" href="css/material.indigo-pink.min.css">
-<!-- <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"> -->
   <link rel="icon" type="image/png" sizes="36x36" href="images/green.png">
 
   <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
@@ -1501,64 +1500,6 @@ function enable_disable(that){
 }
 </script>
 
-
-
-<script type="text/javascript">
-
-$('.partner_names').attr('disabled', true);
-$('.partner_designations').attr('disabled', true);
-$('.partner_others').attr('disabled', true);
-$('.partner_btn').attr('disabled', true);
-$('.new_entry_btn').attr('disabled', true);
-
-function enable_disable(that){
-
-  /*alert(that.value);*/
-  if(that.value != "Partnership"){
-      $('.partner_names').attr('disabled', true);
-      $('.partner_designations').attr('disabled', true);
-      $('.partner_others').attr('disabled', true);
-      $('.partner_btn').attr('disabled', true);
-      $('.new_entry_btn').attr('disabled', true);
-  }else{
-      $('.partner_names').attr('disabled', false);
-      $('.partner_designations').attr('disabled', false);
-      $('.partner_others').attr('disabled', false);
-      $('.partner_btn').attr('disabled', false);
-      $('.new_entry_btn').attr('disabled', false);
-  }
-}
-</script>
-
-
-
-<script type="text/javascript">
-
-$('.partner_names').attr('disabled', true);
-$('.partner_designations').attr('disabled', true);
-$('.partner_others').attr('disabled', true);
-$('.partner_btn').attr('disabled', true);
-$('.new_entry_btn').attr('disabled', true);
-
-function enable_disable(that){
-
-  /*alert(that.value);*/
-  if(that.value != "Partnership"){
-      $('.partner_names').attr('disabled', true);
-      $('.partner_designations').attr('disabled', true);
-      $('.partner_others').attr('disabled', true);
-      $('.partner_btn').attr('disabled', true);
-      $('.new_entry_btn').attr('disabled', true);
-  }else{
-      $('.partner_names').attr('disabled', false);
-      $('.partner_designations').attr('disabled', false);
-      $('.partner_others').attr('disabled', false);
-      $('.partner_btn').attr('disabled', false);
-      $('.new_entry_btn').attr('disabled', false);
-  }
-}
-</script>
-
 <form method="post" id="deleteForm" action="search.php" style="text-align:center">
 <input type="hidden" name="pk_delete" id="pk_delete" value="<?php echo $_GET['id'] ?>"></input>  
 <input type="hidden" name="is_user_delete" id="is_user_delete" value="<?php echo $_GET['is_user'] ?>"></input>  
@@ -1578,7 +1519,7 @@ function enable_disable(that){
    }
 </script>  
 
-<script type="text/javascript">
+<!-- <script type="text/javascript">
 
 if(document.getElementById('type_of_org').value == "Partnership"){
   $('.partner_names').attr('readonly', false);
@@ -1610,7 +1551,7 @@ function enable_disable(that){
       $('.new_entry_btn').attr('readonly', false);
   }
 }
-</script>
+</script> -->
 
 <?php } else { ?>
 <form class="form-horizontal" method="post" action="" enctype="multipart/form-data">
