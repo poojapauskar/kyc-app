@@ -195,6 +195,36 @@ if(a==null || a==''){
 }
 
 
+function proceed_org(){
+
+var a=document.forms["Form_org"]["uid_org"].value;
+if(a==null || a==''){
+        var text = "";
+        var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+
+        for( var i=0; i < 7; i++ )
+            text += possible.charAt(Math.floor(Math.random() * possible.length));
+
+        var mystring= (document.getElementById('name').value).substring(0, 3);
+        var uid_gen=mystring+text;
+        document.getElementById('uid_org').value = document.getElementById('uid_format_org').value;
+        document.getElementById('uid_in_popup_org').value = document.getElementById('uid_format_org').value;
+
+
+         /*alert("UID generated: "+document.getElementById('uid_format').value);*/
+        var yourUl = document.getElementById("popup2");
+        yourUl.style.display = yourUl.style.display === 'none' ? '' : 'none';
+        return false;
+}else{
+        document.getElementById('uid_in_popup_org').value = document.getElementById('uid_org').value;
+
+        /*alert("UID generated: "+document.getElementById('uid').value);*/
+        var yourUl = document.getElementById("popup2");
+        yourUl.style.display = yourUl.style.display === 'none' ? '' : 'none';
+        return false;
+}
+}
+
 </script>
 
 <!-- Datepicker -->
@@ -260,10 +290,25 @@ $(function() {
 </script>
 
 <script type="text/javascript">
+  function submit_form_org(){
+    $('#Form_org').submit();
+  }
+</script>
+
+<script type="text/javascript">
     function make_uid_null(){
     
     $('#uid').val("");
     document.getElementById("popup1").style.display='none';
+    /*alert("helo");*/
+  }
+</script>
+
+<script type="text/javascript">
+    function make_uid_null_org(){
+    
+    $('#uid_org').val("");
+    document.getElementById("popup2").style.display='none';
     /*alert("helo");*/
   }
 </script>
@@ -362,7 +407,7 @@ $(function() {
 
 <?php
 
-if(isset($_POST["save_btn"]) and $_GET["is_user"]==0) {
+if($_POST['uid_org'] != '' and $_GET["is_user"]==0) {
 
         /*$characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
         $charactersLength = strlen($characters);
@@ -605,6 +650,7 @@ if($tel11 == ""){
     'http' => array(
       'header'  => array(
                           'TYPE-OF-ORG: '.$_POST['type_of_org'],
+                          'UID: '.$_POST['uid_org'],
                           'NAME: '.$_POST['name'],
                           'REGISTRATION: '.$_POST['registration'],
                           'REG-CERTIFICATE: '.$reg_certificate_id,
@@ -1082,13 +1128,33 @@ $arr_uid = json_decode($output_uid,true);
 
 <?php if ($_GET['is_user']==0) { ?>
 
-<form class="form-horizontal" method="post" action="new.php?is_user=0" enctype="multipart/form-data">
+
+<div class="alert" id="popup2" class="popup1" style="display:none;text-align:center;position:absolute;
+    width:100%;
+    top: 70%;z-index:2">
+  <label>UID Generated</label><br>
+  <input type="text" id="uid_in_popup_org" name="uid_in_popup_org" style="text-align:center;background-color:transparent;color:black;border:none"></input><br><br>
+  <button style="margin-left:1%;" id="done_org" class="btn btn-success" name="done_org" onclick="submit_form_org()">Done</button>
+  <button style="margin-top:-1%;" onclick="make_uid_null_org()" id="cancel1_org" class="btn btn-warning" name="cancel1_org">Cancel</button>
+</div>
+
+
+<form name="Form_org" id="Form_org" class="form-horizontal" method="post" action="new.php?is_user=0" enctype="multipart/form-data">
 
 <fieldset>
 <!-- Select Basic -->
   
-
 <div class="form-group" style="margin-top:12%;">
+  <label class="col-md-4 control-label" for="textinput" >UID:</label>  
+  <div class="col-md-4">
+
+  <input id="uid_org" name="uid_org" type="text" value="<?php echo $_POST['uid_org'] ?>" placeholder="" class="form-control input-md" style="width:80%" readonly>
+  
+  <input type="hidden" name="uid_format_org" id="uid_format_org" value="<?php echo $arr_uid['uid'] ?>"></input>
+  </div>
+</div>
+
+<div class="form-group">
   <label class="col-md-4 control-label" for="type_of_org">Type of Organization:</label>
   <div class="col-md-4">
     <select id="type_of_org" name="type_of_org" class="form-control" ONCHANGE="enable_disable(this);" style="width: 80%;">
@@ -1345,8 +1411,10 @@ $arr_uid = json_decode($output_uid,true);
 <div class="form-group">
   <label class="col-md-4 control-label" for="save_btn"></label>
   <div class="col-md-8">
-    <button id="save_btn" name="save_btn" type="submit" class="btn btn-success" style="width: 10em;margin-left:1px">Save</button><span><span></span></span>
-    <button onclick="ClickEvent()" class="btn btn-warning" style="width: 10em;"><a style="color:white" href="search.php">Cancel</a></button>
+    <!-- <button id="save_btn" name="save_btn" type="submit" class="btn btn-success" style="width: 10em;margin-left:1px">Save</button><span><span></span></span>
+    <button onclick="ClickEvent()" class="btn btn-warning" style="width: 10em;"><a style="color:white" href="search.php">Cancel</a></button> -->
+    <button onclick="return validate_org();" id="generate_btn_org" name="generate_btn_org" class="btn btn-success">Generate</button>
+    <button id="singlebutton" style="margin-left:13%;" name="singlebutton" class="btn btn-primary"><a style="color:white" href="search.php">Discard</a></button>
   </div>
 </div>
 </fieldset>
@@ -1721,6 +1789,20 @@ function enable_disable(that){
 
       /*alert("hello");*/
       return proceed();
+
+
+    }
+  }
+</script>
+
+<script type="text/javascript">
+  function validate_org(){
+    var Form_org=document.getElementById("Form_org");
+    if(Form_org.checkValidity()==true)
+    {
+
+      /*alert("hello");*/
+      return proceed_org();
 
 
     }

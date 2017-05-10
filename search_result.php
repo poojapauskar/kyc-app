@@ -206,6 +206,16 @@ $arr_search = json_decode($output_search,true);
 <fieldset>
  <input type="hidden" value="<?php echo $arr_search['response'][0]['organization_details']['pk'] ?>" name="org_id" id="org_id"></input>
 
+<div class="form-group" style="margin-top:0%;">
+  <label class="col-md-4 control-label" for="textinput">UID:</label>  
+  <div class="col-md-4">
+
+  <input id="uid_org" name="uid_org" type="text" value="<?php echo $arr_search['response'][0]['organization_details']['uid'] ?>" placeholder="" class="form-control input-md" style="width: 90%;" readonly>
+
+    
+  </div>
+</div>
+
 <!-- Select Basic -->
 <div class="form-group" style="margin-top:0%">
   <label class="col-md-4 control-label" for="type_of_org">Type of Organization:</label>
@@ -906,7 +916,13 @@ $(document).on('hidden.bs.modal', function (e) {
                                  <div class="col-sm-3">
                                  </div>
                                  <div class="col-sm-3">
-                                  <button class="btn btn-success" style="color:white;width:80px;height:40px" onclick="print_image()">Print</button>
+
+                                 <?php if (strpos($img_lnk_reg_org, '.pdf') !== false) {?>
+                                  <button class="btn btn-success" style="color:white;width:80px;height:40px;visibility:hidden" onclick="print_image()">Print</button>
+                                 <?php }else{ ?>
+                                    <button class="btn btn-success" style="color:white;width:80px;height:40px" onclick="print_image()">Print</button>
+                                  <?php }?>
+
                                  </div>
                                  <div class="col-sm-3">
                                    <a href="mailto:test@gmail.com?subject=KYC Application
@@ -918,8 +934,14 @@ $(document).on('hidden.bs.modal', function (e) {
                           
                                   <div class="col-sm-3">
                                     <a  style="color:white" download="<?php echo "registration_certificate.jpg"; ?>" href="<?php echo $img_lnk_reg_org; ?>" title="Save">
+                                      <?php if (strpos($img_lnk_reg_org, '.pdf') !== false) {?>
+                                      <button class="btn btn-success" style="color:white;width:80px;height:40px;visibility:hidden">Save
+                                       </button>
+                                       <?php }else{ ?>
                                       <button class="btn btn-success" style="color:white;width:80px;height:40px">Save
                                        </button>
+                                  <?php }?>
+
                                     </a>
                                   </div>
                                   <div class="col-sm-3"><br><br>
@@ -962,7 +984,11 @@ $(document).on('hidden.bs.modal', function (e) {
                                      <div class="col-sm-3">
                                      </div>
                                      <div class="col-sm-3">
-                                      <button class="btn btn-success" style="color:white;width:80px;height:40px" onclick="print_image()">Print</button>
+                                      <?php if (strpos($img_lnk_pan_org, '.pdf') !== false) {?>
+                                  <button class="btn btn-success" style="color:white;width:80px;height:40px;visibility:hidden" onclick="print_image()">Print</button>
+                                 <?php }else{ ?>
+                                    <button class="btn btn-success" style="color:white;width:80px;height:40px" onclick="print_image()">Print</button>
+                                  <?php }?>
                                      </div>
                                      <div class="col-sm-3">
                                      
@@ -976,8 +1002,13 @@ $(document).on('hidden.bs.modal', function (e) {
                                      <div class="col-sm-3">
                                       
                                       <a  style="color:white" download="<?php echo "pan_card.jpg"; ?>" href="<?php echo $img_lnk_pan_org; ?>" title="Save">
-                                        <button class="btn btn-success" style="color:white;width:80px;height:40px">Save
-                                         </button>
+                                        <?php if (strpos($img_lnk_pan_org, '.pdf') !== false) {?>
+                                      <button class="btn btn-success" style="color:white;width:80px;height:40px;visibility:hidden">Save
+                                       </button>
+                                       <?php }else{ ?>
+                                      <button class="btn btn-success" style="color:white;width:80px;height:40px">Save
+                                       </button>
+                                  <?php }?>
                                       </a>
                                      
                                      </div>
@@ -1020,7 +1051,11 @@ $(document).on('hidden.bs.modal', function (e) {
                                      <div class="col-sm-3">
                                      </div>
                                      <div class="col-sm-3">
-                                      <button class="btn btn-success" style="color:white;width:80px;height:40px" onclick="print_image()">Print</button>
+                                      <?php if (strpos($img_lnk_tel_org, '.pdf') !== false) {?>
+                                  <button class="btn btn-success" style="color:white;width:80px;height:40px;visibility:hidden" onclick="print_image()">Print</button>
+                                 <?php }else{ ?>
+                                    <button class="btn btn-success" style="color:white;width:80px;height:40px" onclick="print_image()">Print</button>
+                                  <?php }?>
                                      </div>
                                      <div class="col-sm-3">
                                      
@@ -1034,8 +1069,13 @@ $(document).on('hidden.bs.modal', function (e) {
                                      <div class="col-sm-3">
                                       
                                       <a  style="color:white" download="<?php echo "telephone_bill.jpg"; ?>" href="<?php echo $img_lnk_tel_org; ?>" title="Save">
-                                        <button class="btn btn-success" style="color:white;width:80px;height:40px">Save
-                                         </button>
+                                        <?php if (strpos($img_lnk_tel_org, '.pdf') !== false) {?>
+                                      <button class="btn btn-success" style="color:white;width:80px;height:40px;visibility:hidden">Save
+                                       </button>
+                                       <?php }else{ ?>
+                                      <button class="btn btn-success" style="color:white;width:80px;height:40px">Save
+                                       </button>
+                                  <?php }?>
                                       </a>
                                      
                                      </div>
@@ -1078,7 +1118,11 @@ $(document).on('hidden.bs.modal', function (e) {
                                      <div class="col-sm-3">
                                      </div>
                                      <div class="col-sm-3">
-                                      <button class="btn btn-success" style="color:white;width:80px;height:40px" onclick="print_image()">Print</button>
+                                      <?php if (strpos($img_lnk_pass_org, '.pdf') !== false) {?>
+                                  <button class="btn btn-success" style="color:white;width:80px;height:40px;visibility:hidden" onclick="print_image()">Print</button>
+                                 <?php }else{ ?>
+                                    <button class="btn btn-success" style="color:white;width:80px;height:40px" onclick="print_image()">Print</button>
+                                  <?php }?>
                                      </div>
                                      <div class="col-sm-3">
                                      
@@ -1092,8 +1136,13 @@ $(document).on('hidden.bs.modal', function (e) {
                                      <div class="col-sm-3">
                                       
                                       <a  style="color:white" download="<?php echo "passbook.jpg"; ?>" href="<?php echo $img_lnk_pass_org; ?>" title="Save">
-                                        <button class="btn btn-success" style="color:white;width:80px;height:40px">Save
-                                         </button>
+                                        <?php if (strpos($img_lnk_pass_org, '.pdf') !== false) {?>
+                                      <button class="btn btn-success" style="color:white;width:80px;height:40px;visibility:hidden">Save
+                                       </button>
+                                       <?php }else{ ?>
+                                      <button class="btn btn-success" style="color:white;width:80px;height:40px">Save
+                                       </button>
+                                  <?php }?>
                                       </a>
                                      
                                      </div>
@@ -1136,7 +1185,11 @@ $(document).on('hidden.bs.modal', function (e) {
                                      <div class="col-sm-3">
                                      </div>
                                      <div class="col-sm-3">
-                                      <button class="btn btn-success" style="color:white;width:80px;height:40px" onclick="print_image()">Print</button>
+                                      <?php if (strpos($img_lnk_pan_user, '.pdf') !== false) {?>
+                                  <button class="btn btn-success" style="color:white;width:80px;height:40px;visibility:hidden" onclick="print_image()">Print</button>
+                                 <?php }else{ ?>
+                                    <button class="btn btn-success" style="color:white;width:80px;height:40px" onclick="print_image()">Print</button>
+                                  <?php }?>
                                      </div>
                                      <div class="col-sm-3">
                                      
@@ -1150,8 +1203,13 @@ $(document).on('hidden.bs.modal', function (e) {
                                      <div class="col-sm-3">
                                       
                                       <a  style="color:white" download="<?php echo "pan_card.jpg"; ?>" href="<?php echo $img_lnk_pan_user; ?>" title="Save">
-                                        <button class="btn btn-success" style="color:white;width:80px;height:40px">Save
-                                         </button>
+                                        <?php if (strpos($img_lnk_pan_user, '.pdf') !== false) {?>
+                                      <button class="btn btn-success" style="color:white;width:80px;height:40px;visibility:hidden">Save
+                                       </button>
+                                       <?php }else{ ?>
+                                      <button class="btn btn-success" style="color:white;width:80px;height:40px">Save
+                                       </button>
+                                  <?php }?>
                                       </a>
                                      
                                      </div>
@@ -1194,7 +1252,11 @@ $(document).on('hidden.bs.modal', function (e) {
                                      <div class="col-sm-3">
                                      </div>
                                      <div class="col-sm-3">
-                                      <button class="btn btn-success" style="color:white;width:80px;height:40px" onclick="print_image()">Print</button>
+                                      <?php if (strpos($img_lnk_tel_user, '.pdf') !== false) {?>
+                                  <button class="btn btn-success" style="color:white;width:80px;height:40px;visibility:hidden" onclick="print_image()">Print</button>
+                                 <?php }else{ ?>
+                                    <button class="btn btn-success" style="color:white;width:80px;height:40px" onclick="print_image()">Print</button>
+                                  <?php }?>
                                      </div>
                                      <div class="col-sm-3">
                                      
@@ -1208,8 +1270,13 @@ $(document).on('hidden.bs.modal', function (e) {
                                      <div class="col-sm-3">
                                       
                                       <a  style="color:white" download="<?php echo "telephone_bill.jpg"; ?>" href="<?php echo $img_lnk_tel_user; ?>" title="Save">
-                                        <button class="btn btn-success" style="color:white;width:80px;height:40px">Save
-                                         </button>
+                                        <?php if (strpos($img_lnk_tel_user, '.pdf') !== false) {?>
+                                      <button class="btn btn-success" style="color:white;width:80px;height:40px;visibility:hidden">Save
+                                       </button>
+                                       <?php }else{ ?>
+                                      <button class="btn btn-success" style="color:white;width:80px;height:40px">Save
+                                       </button>
+                                  <?php }?>
                                       </a>
                                      
                                      </div>
@@ -1252,7 +1319,11 @@ $(document).on('hidden.bs.modal', function (e) {
                                      <div class="col-sm-3">
                                      </div>
                                      <div class="col-sm-3">
-                                      <button class="btn btn-success" style="color:white;width:80px;height:40px" onclick="print_image()">Print</button>
+                                      <?php if (strpos($img_lnk_pass_user, '.pdf') !== false) {?>
+                                  <button class="btn btn-success" style="color:white;width:80px;height:40px;visibility:hidden" onclick="print_image()">Print</button>
+                                 <?php }else{ ?>
+                                    <button class="btn btn-success" style="color:white;width:80px;height:40px" onclick="print_image()">Print</button>
+                                  <?php }?>
                                      </div>
                                      <div class="col-sm-3">
                                      
@@ -1266,8 +1337,13 @@ $(document).on('hidden.bs.modal', function (e) {
                                      <div class="col-sm-3">
                                       
                                       <a  style="color:white" download="<?php echo "passbook.jpg"; ?>" href="<?php echo $img_lnk_pass_user; ?>" title="Save">
-                                        <button class="btn btn-success" style="color:white;width:80px;height:40px">Save
-                                         </button>
+                                       <?php if (strpos($img_lnk_pass_user, '.pdf') !== false) {?>
+                                      <button class="btn btn-success" style="color:white;width:80px;height:40px;visibility:hidden">Save
+                                       </button>
+                                       <?php }else{ ?>
+                                      <button class="btn btn-success" style="color:white;width:80px;height:40px">Save
+                                       </button>
+                                  <?php }?>
                                       </a>
                                      
                                      </div>
@@ -1311,7 +1387,11 @@ $(document).on('hidden.bs.modal', function (e) {
                                      <div class="col-sm-3">
                                      </div>
                                      <div class="col-sm-3">
-                                      <button class="btn btn-success" style="color:white;width:80px;height:40px" onclick="print_image()">Print</button>
+                                      <?php if (strpos($img_lnk_voter_user, '.pdf') !== false) {?>
+                                  <button class="btn btn-success" style="color:white;width:80px;height:40px;visibility:hidden" onclick="print_image()">Print</button>
+                                 <?php }else{ ?>
+                                    <button class="btn btn-success" style="color:white;width:80px;height:40px" onclick="print_image()">Print</button>
+                                  <?php }?>
                                      </div>
                                      <div class="col-sm-3">
                                      
@@ -1325,8 +1405,13 @@ $(document).on('hidden.bs.modal', function (e) {
                                      <div class="col-sm-3">
                                       
                                       <a  style="color:white" download="<?php echo "voter_id.jpg"; ?>" href="<?php echo $img_lnk_voter_user; ?>" title="Save">
-                                        <button class="btn btn-success" style="color:white;width:80px;height:40px">Save
-                                         </button>
+                                        <?php if (strpos($img_lnk_voter_user, '.pdf') !== false) {?>
+                                      <button class="btn btn-success" style="color:white;width:80px;height:40px;visibility:hidden">Save
+                                       </button>
+                                       <?php }else{ ?>
+                                      <button class="btn btn-success" style="color:white;width:80px;height:40px">Save
+                                       </button>
+                                  <?php }?>
                                       </a>
                                      
                                      </div>
@@ -1339,27 +1424,6 @@ $(document).on('hidden.bs.modal', function (e) {
   </div>
 </div>
 
-<script type="text/javascript">
-  function printPDF(pdfUrl)
-{
-/*alert(pdfUrl);*/
-    var myWindow = window.open();
-    myWindow.document.write('<iframe width="100%" height="100%" src="'+pdfUrl+'" frameborder="0" allowfullscreen></iframe>');
-    /*setTimeout(
-    function() {
-      myWindow.print();
-    }, 20);*/
-
-    myWindow.document.close(); // necessary for IE >= 10
-    myWindow.focus(); // necessary for IE >= 10
-    
-    setTimeout(myWindow.print(), 10);
-    setTimeout(myWindow.close(), 20);
-    /*if (navigator.appName == 'Microsoft Internet Explorer') window.print();
-    else w.print();*/
-   /* return true;*/
-}
-</script>
 
 <!-- Modal -->
 <div class="modal fade" id="myModal9" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -1391,7 +1455,11 @@ $(document).on('hidden.bs.modal', function (e) {
                                      <div class="col-sm-3">
                                      </div>
                                      <div class="col-sm-3">
-                                      <button class="btn btn-success" style="color:white;width:80px;height:40px" onclick="print_image()">Print</button>
+                                     <?php if (strpos($img_lnk_passport_user, '.pdf') !== false) {?>
+                                  <button class="btn btn-success" style="color:white;width:80px;height:40px;visibility:hidden" onclick="print_image()">Print</button>
+                                 <?php }else{ ?>
+                                    <button class="btn btn-success" style="color:white;width:80px;height:40px" onclick="print_image()">Print</button>
+                                  <?php }?>
                                      </div>
                                      <div class="col-sm-3">
                                      
@@ -1405,8 +1473,13 @@ $(document).on('hidden.bs.modal', function (e) {
                                      <div class="col-sm-3">
                                       
                                       <a  style="color:white" download="<?php echo "passport.jpg"; ?>" href="<?php echo $img_lnk_passport_user; ?>" title="Save">
-                                        <button class="btn btn-success" style="color:white;width:80px;height:40px">Save
-                                         </button>
+                                        <?php if (strpos($img_lnk_passport_user, '.pdf') !== false) {?>
+                                      <button class="btn btn-success" style="color:white;width:80px;height:40px;visibility:hidden">Save
+                                       </button>
+                                       <?php }else{ ?>
+                                      <button class="btn btn-success" style="color:white;width:80px;height:40px">Save
+                                       </button>
+                                  <?php }?>
                                       </a>
                                      
                                      </div>
@@ -1449,7 +1522,11 @@ $(document).on('hidden.bs.modal', function (e) {
                                      <div class="col-sm-3">
                                      </div>
                                      <div class="col-sm-3">
-                                      <button class="btn btn-success" style="color:white;width:80px;height:40px" onclick="print_image()">Print</button>
+                                     <?php if (strpos($img_lnk_aadhar_user, '.pdf') !== false) {?>
+                                  <button class="btn btn-success" style="color:white;width:80px;height:40px;visibility:hidden" onclick="print_image()">Print</button>
+                                 <?php }else{ ?>
+                                    <button class="btn btn-success" style="color:white;width:80px;height:40px" onclick="print_image()">Print</button>
+                                  <?php }?>
                                      </div>
                                      <div class="col-sm-3">
                                      
@@ -1463,8 +1540,13 @@ $(document).on('hidden.bs.modal', function (e) {
                                      <div class="col-sm-3">
                                       
                                       <a  style="color:white" download="<?php echo "aadhar_card.jpg"; ?>" href="<?php echo $img_lnk_aadhar_user; ?>" title="Save">
-                                        <button class="btn btn-success" style="color:white;width:80px;height:40px">Save
-                                         </button>
+                                       <?php if (strpos($img_lnk_aadhar_user, '.pdf') !== false) {?>
+                                      <button class="btn btn-success" style="color:white;width:80px;height:40px;visibility:hidden">Save
+                                       </button>
+                                       <?php }else{ ?>
+                                      <button class="btn btn-success" style="color:white;width:80px;height:40px">Save
+                                       </button>
+                                  <?php }?>
                                       </a>
                                      
                                      </div>

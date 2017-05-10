@@ -618,6 +618,7 @@ if($tel11 == ""){
       'header'  => array(
                           'PK: '.$_POST['org_id'],
                           'TYPE-OF-ORG: '.$_POST['type_of_org'],
+                          'UID: '.$_POST['uid_org'],
                           'NAME: '.$_POST['name'],
                           'REGISTRATION: '.$_POST['registration'],
                           'REG-CERTIFICATE: '.$reg_certificate_id,
@@ -1083,9 +1084,18 @@ if($profile22 == ""){
 
  <input type="hidden" value="<?php echo $arr_search['response'][0]['organization_details']['pk'] ?>" name="org_id" id="org_id"></input>
 
+<div class="form-group" style="margin-top:13%;">
+  <label class="col-md-4 control-label" for="textinput">UID:</label>  
+  <div class="col-md-4">
+
+  <input id="uid_org" name="uid_org" type="text" value="<?php echo $arr_search['response'][0]['organization_details']['uid'] ?>" placeholder="" class="form-control input-md" style="width: 80%;" readonly>
+
+    
+  </div>
+</div>
 
 <!-- Select Basic -->
-<div class="form-group" style="margin-top:13%;">
+<div class="form-group">
   <label class="col-md-4 control-label" for="type_of_org">Type of Organization:</label>
   <div class="col-md-4">
     <select id="type_of_org" name="type_of_org" class="form-control"  ONCHANGE="enable_disable(this);" style="width: 80%;">
@@ -2224,8 +2234,6 @@ $('#trigger').click(function(){
       </div>
       <div class="modal-body">
                           <div style="text-align:center;">
-                          <!--  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>  -->
-                          <!-- if url has https://kyc-app-bucket.s3.amazonaws.com/?Signature then it has no-image -->
                               <?php if((strpos($arr_img_download_reg_org[0]['url'], 'https://kyc-app-bucket.s3.amazonaws.com/?Signature') !== false)){
                                 $img_lnk_reg_org="images/no_image.jpg";
                               }else{
@@ -2244,7 +2252,13 @@ $('#trigger').click(function(){
                                  <div class="col-sm-3">
                                  </div>
                                  <div class="col-sm-3">
-                                  <button class="btn btn-success" style="color:white;width:80px;height:40px" onclick="print_image()">Print</button>
+
+                                 <?php if (strpos($img_lnk_reg_org, '.pdf') !== false) {?>
+                                  <button class="btn btn-success" style="color:white;width:80px;height:40px;visibility:hidden" onclick="print_image()">Print</button>
+                                 <?php }else{ ?>
+                                    <button class="btn btn-success" style="color:white;width:80px;height:40px" onclick="print_image()">Print</button>
+                                  <?php }?>
+
                                  </div>
                                  <div class="col-sm-3">
                                    <a href="mailto:test@gmail.com?subject=KYC Application
@@ -2256,15 +2270,20 @@ $('#trigger').click(function(){
                           
                                   <div class="col-sm-3">
                                     <a  style="color:white" download="<?php echo "registration_certificate.jpg"; ?>" href="<?php echo $img_lnk_reg_org; ?>" title="Save">
+                                      <?php if (strpos($img_lnk_reg_org, '.pdf') !== false) {?>
+                                      <button class="btn btn-success" style="color:white;width:80px;height:40px;visibility:hidden">Save
+                                       </button>
+                                       <?php }else{ ?>
                                       <button class="btn btn-success" style="color:white;width:80px;height:40px">Save
                                        </button>
+                                  <?php }?>
+
                                     </a>
                                   </div>
                                   <div class="col-sm-3"><br><br>
                                   </div>
                               </div>
                           </div>
-      </div>
       </div>
     </div>
   </div>
@@ -2301,13 +2320,17 @@ $('#trigger').click(function(){
                                      <div class="col-sm-3">
                                      </div>
                                      <div class="col-sm-3">
-                                      <button class="btn btn-success" style="color:white;width:80px;height:40px" onclick="print_image()">Print</button>
+                                      <?php if (strpos($img_lnk_pan_org, '.pdf') !== false) {?>
+                                  <button class="btn btn-success" style="color:white;width:80px;height:40px;visibility:hidden" onclick="print_image()">Print</button>
+                                 <?php }else{ ?>
+                                    <button class="btn btn-success" style="color:white;width:80px;height:40px" onclick="print_image()">Print</button>
+                                  <?php }?>
                                      </div>
                                      <div class="col-sm-3">
                                      
                                      <a href="mailto:test@gmail.com?subject=KYC Application
                                      &body=Thank You!" style="color:white"> 
-                                      <button class="btn btn-success" style="color:white;width:100px;height:50px" >Email
+                                      <button class="btn btn-success" style="color:white;width:80px;height:40px" >Email
                                       </button>
                                      </a>
 
@@ -2315,8 +2338,13 @@ $('#trigger').click(function(){
                                      <div class="col-sm-3">
                                       
                                       <a  style="color:white" download="<?php echo "pan_card.jpg"; ?>" href="<?php echo $img_lnk_pan_org; ?>" title="Save">
-                                        <button class="btn btn-success" style="color:white;width:80px;height:40px">Save
-                                         </button>
+                                        <?php if (strpos($img_lnk_pan_org, '.pdf') !== false) {?>
+                                      <button class="btn btn-success" style="color:white;width:80px;height:40px;visibility:hidden">Save
+                                       </button>
+                                       <?php }else{ ?>
+                                      <button class="btn btn-success" style="color:white;width:80px;height:40px">Save
+                                       </button>
+                                  <?php }?>
                                       </a>
                                      
                                      </div>
@@ -2359,13 +2387,17 @@ $('#trigger').click(function(){
                                      <div class="col-sm-3">
                                      </div>
                                      <div class="col-sm-3">
-                                      <button class="btn btn-success" style="color:white;width:80px;height:40px" onclick="print_image()">Print</button>
+                                      <?php if (strpos($img_lnk_tel_org, '.pdf') !== false) {?>
+                                  <button class="btn btn-success" style="color:white;width:80px;height:40px;visibility:hidden" onclick="print_image()">Print</button>
+                                 <?php }else{ ?>
+                                    <button class="btn btn-success" style="color:white;width:80px;height:40px" onclick="print_image()">Print</button>
+                                  <?php }?>
                                      </div>
                                      <div class="col-sm-3">
                                      
                                      <a href="mailto:test@gmail.com?subject=KYC Application
                                      &body=Thank You!" style="color:white"> 
-                                      <button class="btn btn-success" style="color:white;width:100px;height:50px" >Email
+                                      <button class="btn btn-success" style="color:white;width:80px;height:40px" >Email
                                       </button>
                                      </a>
 
@@ -2373,8 +2405,13 @@ $('#trigger').click(function(){
                                      <div class="col-sm-3">
                                       
                                       <a  style="color:white" download="<?php echo "telephone_bill.jpg"; ?>" href="<?php echo $img_lnk_tel_org; ?>" title="Save">
-                                        <button class="btn btn-success" style="color:white;width:100px;height:50px">Save
-                                         </button>
+                                        <?php if (strpos($img_lnk_tel_org, '.pdf') !== false) {?>
+                                      <button class="btn btn-success" style="color:white;width:80px;height:40px;visibility:hidden">Save
+                                       </button>
+                                       <?php }else{ ?>
+                                      <button class="btn btn-success" style="color:white;width:80px;height:40px">Save
+                                       </button>
+                                  <?php }?>
                                       </a>
                                      
                                      </div>
@@ -2417,7 +2454,11 @@ $('#trigger').click(function(){
                                      <div class="col-sm-3">
                                      </div>
                                      <div class="col-sm-3">
-                                      <button class="btn btn-success" style="color:white;width:80px;height:40px" onclick="print_image()">Print</button>
+                                      <?php if (strpos($img_lnk_pass_org, '.pdf') !== false) {?>
+                                  <button class="btn btn-success" style="color:white;width:80px;height:40px;visibility:hidden" onclick="print_image()">Print</button>
+                                 <?php }else{ ?>
+                                    <button class="btn btn-success" style="color:white;width:80px;height:40px" onclick="print_image()">Print</button>
+                                  <?php }?>
                                      </div>
                                      <div class="col-sm-3">
                                      
@@ -2431,8 +2472,13 @@ $('#trigger').click(function(){
                                      <div class="col-sm-3">
                                       
                                       <a  style="color:white" download="<?php echo "passbook.jpg"; ?>" href="<?php echo $img_lnk_pass_org; ?>" title="Save">
-                                        <button class="btn btn-success" style="color:white;width:80px;height:40px">Save
-                                         </button>
+                                        <?php if (strpos($img_lnk_pass_org, '.pdf') !== false) {?>
+                                      <button class="btn btn-success" style="color:white;width:80px;height:40px;visibility:hidden">Save
+                                       </button>
+                                       <?php }else{ ?>
+                                      <button class="btn btn-success" style="color:white;width:80px;height:40px">Save
+                                       </button>
+                                  <?php }?>
                                       </a>
                                      
                                      </div>
@@ -2475,7 +2521,11 @@ $('#trigger').click(function(){
                                      <div class="col-sm-3">
                                      </div>
                                      <div class="col-sm-3">
-                                      <button class="btn btn-success" style="color:white;width:80px;height:40px" onclick="print_image()">Print</button>
+                                      <?php if (strpos($img_lnk_pan_user, '.pdf') !== false) {?>
+                                  <button class="btn btn-success" style="color:white;width:80px;height:40px;visibility:hidden" onclick="print_image()">Print</button>
+                                 <?php }else{ ?>
+                                    <button class="btn btn-success" style="color:white;width:80px;height:40px" onclick="print_image()">Print</button>
+                                  <?php }?>
                                      </div>
                                      <div class="col-sm-3">
                                      
@@ -2489,8 +2539,13 @@ $('#trigger').click(function(){
                                      <div class="col-sm-3">
                                       
                                       <a  style="color:white" download="<?php echo "pan_card.jpg"; ?>" href="<?php echo $img_lnk_pan_user; ?>" title="Save">
-                                        <button class="btn btn-success" style="color:white;width:80px;height:40px">Save
-                                         </button>
+                                        <?php if (strpos($img_lnk_pan_user, '.pdf') !== false) {?>
+                                      <button class="btn btn-success" style="color:white;width:80px;height:40px;visibility:hidden">Save
+                                       </button>
+                                       <?php }else{ ?>
+                                      <button class="btn btn-success" style="color:white;width:80px;height:40px">Save
+                                       </button>
+                                  <?php }?>
                                       </a>
                                      
                                      </div>
@@ -2533,7 +2588,11 @@ $('#trigger').click(function(){
                                      <div class="col-sm-3">
                                      </div>
                                      <div class="col-sm-3">
-                                      <button class="btn btn-success" style="color:white;width:80px;height:40px" onclick="print_image()">Print</button>
+                                      <?php if (strpos($img_lnk_tel_user, '.pdf') !== false) {?>
+                                  <button class="btn btn-success" style="color:white;width:80px;height:40px;visibility:hidden" onclick="print_image()">Print</button>
+                                 <?php }else{ ?>
+                                    <button class="btn btn-success" style="color:white;width:80px;height:40px" onclick="print_image()">Print</button>
+                                  <?php }?>
                                      </div>
                                      <div class="col-sm-3">
                                      
@@ -2547,8 +2606,13 @@ $('#trigger').click(function(){
                                      <div class="col-sm-3">
                                       
                                       <a  style="color:white" download="<?php echo "telephone_bill.jpg"; ?>" href="<?php echo $img_lnk_tel_user; ?>" title="Save">
-                                        <button class="btn btn-success" style="color:white;width:80px;height:40px">Save
-                                         </button>
+                                        <?php if (strpos($img_lnk_tel_user, '.pdf') !== false) {?>
+                                      <button class="btn btn-success" style="color:white;width:80px;height:40px;visibility:hidden">Save
+                                       </button>
+                                       <?php }else{ ?>
+                                      <button class="btn btn-success" style="color:white;width:80px;height:40px">Save
+                                       </button>
+                                  <?php }?>
                                       </a>
                                      
                                      </div>
@@ -2591,7 +2655,11 @@ $('#trigger').click(function(){
                                      <div class="col-sm-3">
                                      </div>
                                      <div class="col-sm-3">
-                                      <button class="btn btn-success" style="color:white;width:80px;height:40px" onclick="print_image()">Print</button>
+                                      <?php if (strpos($img_lnk_pass_user, '.pdf') !== false) {?>
+                                  <button class="btn btn-success" style="color:white;width:80px;height:40px;visibility:hidden" onclick="print_image()">Print</button>
+                                 <?php }else{ ?>
+                                    <button class="btn btn-success" style="color:white;width:80px;height:40px" onclick="print_image()">Print</button>
+                                  <?php }?>
                                      </div>
                                      <div class="col-sm-3">
                                      
@@ -2605,8 +2673,13 @@ $('#trigger').click(function(){
                                      <div class="col-sm-3">
                                       
                                       <a  style="color:white" download="<?php echo "passbook.jpg"; ?>" href="<?php echo $img_lnk_pass_user; ?>" title="Save">
-                                        <button class="btn btn-success" style="color:white;width:80px;height:40px">Save
-                                         </button>
+                                       <?php if (strpos($img_lnk_pass_user, '.pdf') !== false) {?>
+                                      <button class="btn btn-success" style="color:white;width:80px;height:40px;visibility:hidden">Save
+                                       </button>
+                                       <?php }else{ ?>
+                                      <button class="btn btn-success" style="color:white;width:80px;height:40px">Save
+                                       </button>
+                                  <?php }?>
                                       </a>
                                      
                                      </div>
@@ -2645,11 +2718,16 @@ $('#trigger').click(function(){
                                   <?php }?>
                                   </div>
 
+    
                                   <div style="margin-top:5%;margin-left:-22%" class="row">
                                      <div class="col-sm-3">
                                      </div>
                                      <div class="col-sm-3">
-                                      <button class="btn btn-success" style="color:white;width:80px;height:40px" onclick="print_image()">Print</button>
+                                      <?php if (strpos($img_lnk_voter_user, '.pdf') !== false) {?>
+                                  <button class="btn btn-success" style="color:white;width:80px;height:40px;visibility:hidden" onclick="print_image()">Print</button>
+                                 <?php }else{ ?>
+                                    <button class="btn btn-success" style="color:white;width:80px;height:40px" onclick="print_image()">Print</button>
+                                  <?php }?>
                                      </div>
                                      <div class="col-sm-3">
                                      
@@ -2663,8 +2741,13 @@ $('#trigger').click(function(){
                                      <div class="col-sm-3">
                                       
                                       <a  style="color:white" download="<?php echo "voter_id.jpg"; ?>" href="<?php echo $img_lnk_voter_user; ?>" title="Save">
-                                        <button class="btn btn-success" style="color:white;width:80px;height:40px">Save
-                                         </button>
+                                        <?php if (strpos($img_lnk_voter_user, '.pdf') !== false) {?>
+                                      <button class="btn btn-success" style="color:white;width:80px;height:40px;visibility:hidden">Save
+                                       </button>
+                                       <?php }else{ ?>
+                                      <button class="btn btn-success" style="color:white;width:80px;height:40px">Save
+                                       </button>
+                                  <?php }?>
                                       </a>
                                      
                                      </div>
@@ -2676,6 +2759,7 @@ $('#trigger').click(function(){
     </div>
   </div>
 </div>
+
 
 <!-- Modal -->
 <div class="modal fade" id="myModal9" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -2707,7 +2791,11 @@ $('#trigger').click(function(){
                                      <div class="col-sm-3">
                                      </div>
                                      <div class="col-sm-3">
-                                      <button class="btn btn-success" style="color:white;width:80px;height:40px" onclick="print_image()">Print</button>
+                                     <?php if (strpos($img_lnk_passport_user, '.pdf') !== false) {?>
+                                  <button class="btn btn-success" style="color:white;width:80px;height:40px;visibility:hidden" onclick="print_image()">Print</button>
+                                 <?php }else{ ?>
+                                    <button class="btn btn-success" style="color:white;width:80px;height:40px" onclick="print_image()">Print</button>
+                                  <?php }?>
                                      </div>
                                      <div class="col-sm-3">
                                      
@@ -2721,8 +2809,13 @@ $('#trigger').click(function(){
                                      <div class="col-sm-3">
                                       
                                       <a  style="color:white" download="<?php echo "passport.jpg"; ?>" href="<?php echo $img_lnk_passport_user; ?>" title="Save">
-                                        <button class="btn btn-success" style="color:white;width:80px;height:40px">Save
-                                         </button>
+                                        <?php if (strpos($img_lnk_passport_user, '.pdf') !== false) {?>
+                                      <button class="btn btn-success" style="color:white;width:80px;height:40px;visibility:hidden">Save
+                                       </button>
+                                       <?php }else{ ?>
+                                      <button class="btn btn-success" style="color:white;width:80px;height:40px">Save
+                                       </button>
+                                  <?php }?>
                                       </a>
                                      
                                      </div>
@@ -2765,7 +2858,11 @@ $('#trigger').click(function(){
                                      <div class="col-sm-3">
                                      </div>
                                      <div class="col-sm-3">
-                                      <button class="btn btn-success" style="color:white;width:80px;height:40px" onclick="print_image()">Print</button>
+                                     <?php if (strpos($img_lnk_aadhar_user, '.pdf') !== false) {?>
+                                  <button class="btn btn-success" style="color:white;width:80px;height:40px;visibility:hidden" onclick="print_image()">Print</button>
+                                 <?php }else{ ?>
+                                    <button class="btn btn-success" style="color:white;width:80px;height:40px" onclick="print_image()">Print</button>
+                                  <?php }?>
                                      </div>
                                      <div class="col-sm-3">
                                      
@@ -2779,8 +2876,13 @@ $('#trigger').click(function(){
                                      <div class="col-sm-3">
                                       
                                       <a  style="color:white" download="<?php echo "aadhar_card.jpg"; ?>" href="<?php echo $img_lnk_aadhar_user; ?>" title="Save">
-                                        <button class="btn btn-success" style="color:white;width:80px;height:40px">Save
-                                         </button>
+                                       <?php if (strpos($img_lnk_aadhar_user, '.pdf') !== false) {?>
+                                      <button class="btn btn-success" style="color:white;width:80px;height:40px;visibility:hidden">Save
+                                       </button>
+                                       <?php }else{ ?>
+                                      <button class="btn btn-success" style="color:white;width:80px;height:40px">Save
+                                       </button>
+                                  <?php }?>
                                       </a>
                                      
                                      </div>
@@ -2788,7 +2890,7 @@ $('#trigger').click(function(){
                                      </div>
                                   </div>
                           </div>
-      </div>
+                          </div>
     </div>
   </div>
 </div>
