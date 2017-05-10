@@ -1,3 +1,4 @@
+
 /*Text box CSS class for all the pages , 70%*/
 
 /*Global css*/
@@ -1791,7 +1792,17 @@ margin-top:-1%;
 }
 @media screen and (max-width:1440px){
    
+.search_result.tele {
+    margin-left: -99%;
+    margin-top: 0%;
+    width: 83%;
+}
 
+div.fileUpload.org.btn.btn-info {
+    margin-left: -92%;
+    margin-top: 0%;
+        /*width: 150%;*/
+}
 /*Card2 sizing*/
 .card1{
     margin-top: 11%;
@@ -1884,22 +1895,17 @@ margin-top:-1%;
     margin-top:7%;
 }
 
-#logout
-{
-   float:right;
-   right:139px;
-   top:47px;
-   position:absolute;
-   /* width: 40px;
-    height: 40px;*/
+#logout {
+    float: right;
+    right: 123px;
+    top: 56px;
+    position: absolute;
 }
 
-#title2
-{
-    margin-left:26%;
-
-    margin-top:7%;
-    font-size:18px;
+#title2 {
+    margin-left: 32%;
+    margin-top: 8.9%;
+    font-size: 18px;
 }
 
 .partner_designation{
@@ -1914,10 +1920,10 @@ width: 155%;
     width: 145%;
 }
 
-#title1{
+#title1 {
     float: right;
     right: 206px;
-    top: 69px;
+    top: 73px;
     position: absolute;
 }
 
@@ -2427,16 +2433,16 @@ margin-top:-1%;
     margin-left: 30%;
 }
 
-.partner_designation{
-margin-left:290%;
-margin-top:-20%;
-width: 155%;
+.partner_designation {
+    margin-left: 288%;
+    margin-top: -20%;
+    width: 152%;
 }
 
-.partner_designation.col2{
-    margin-left: 467%;
-    margin-top: -33px;
-    width: 145%;
+.partner_designation.col2 {
+    margin-left: 445%;
+    margin-top: -35px;
+    width: 107%;
 }
 
 #title1{
@@ -2454,7 +2460,7 @@ width: 155%;
 
 #telephone_upload {
     width: 47.2%;
-    margin-left: 9.6%;
+    margin-left: 7.6%;
     position: absolute;
     margin-top: 1%;
 }
@@ -2562,11 +2568,11 @@ width: 155%;
 
 /*view btn wth Modal Button in edit*/
 a.btn.btn-info.edit_modal {
-    color:white;
-    background-color:#176fac;
-    margin-top:0%;
-    margin-left:-36%;
-    width: 65%;
+    color: white;
+    background-color: #176fac;
+    margin-top: 0%;
+    margin-left: -35%;
+    width: 47%;
     height: 2758%;
 }
 
@@ -2636,17 +2642,15 @@ div.fileUpload.btn.btn-info{
 }
 
 /*add new partner js*/
-
-.partner_name{
-    margin-top:-20%;
-    margin-left:290%;
-    width: 322%;
+.partner_name {
+    margin-top: -20%;
+    margin-left: 288%;
+    width: 262%;
 }
-.btn.btn-info.new_entry_btn.entry{
-    margin-left: 1170%;
+.btn.btn-info.new_entry_btn.entry {
+    margin-left: 1122%;
     position: absolute;
     margin-top: -35px;
-
 }
 
 /*date input field*/
@@ -2936,7 +2940,7 @@ a.btn.btn-info.edit_modal {
 }
 .form-control.status-edit {
     width: 163%!important;
-    margin-left: -1%!important;
+    margin-left: -3%!important;
 }
 
 /*edit page of org attach btn*/
@@ -3773,16 +3777,20 @@ a.btn.btn-info.edit{
 
     margin-top: -19%;
 }
-
 .partner_name {
     margin-top: -32%;
     margin-left: 283%;
-    width: 318%;
+    width: 248%;
 }
 .btn.btn-info.new_entry_btn.entry {
-    margin-left: 1149%;
+    margin-left: 1101%;
     position: absolute;
     margin-top: -33px;
+}
+.remove_field1 {
+    margin-left: 305.7% !important;
+    margin-top: -36px;
+    position: absolute;
 }
 .col-md-3.bkupload.edit {
     width: 43% !important;
@@ -3817,12 +3825,10 @@ a.btn.btn-info.edit{
     margin-top: -4%;
     position: absolute;
 }
-
-.remove_field_present{
-    margin-left:64%; 
-    margin-top:-3.7%;
-    position:absolute;
-
+.remove_field_present {
+    margin-left: 63%;
+    margin-top: -3.7%;
+    position: absolute;
 }
 .remove_field_present.p{
     margin-left:67%; 
@@ -4003,11 +4009,10 @@ input#partner_names[].form-control.input-md.newentry.partner_names{
     margin-top: -20%;
     width: 143%;
 }
-
-.partner_designation.col2{
-    margin-left: 454%;
-    margin-top: -33px;
-    width: 145%;
+.partner_designation.col2 {
+    margin-left: 437%;
+    margin-top: -35px;
+    width: 96%;
 }
 
 .fileUpload.btn.btn-info.tele1{
