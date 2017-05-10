@@ -364,10 +364,6 @@ $arr_uid_popup = json_decode($output_uid_popup,true);
   <button onclick="make_uid_null()" style="margin-top:0%;margin-left:6%;width:5em" id="cancel1" class="btn btn-warning" name="cancel1">Cancel</button>
   <!-- </form> -->
 </div>
-
-
-
-
 <div class="demo-layout-transparent mdl-layout mdl-js-layout">
       <header style="background-color:#08426a;height:110px;-webkit-box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23) !important;
      -moz-box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23) !important;
