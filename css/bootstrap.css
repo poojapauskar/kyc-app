@@ -111,7 +111,6 @@ samp {
 button,
 input,
 optgroup,
-select,
 textarea {
   margin: 0;
   font: inherit;
@@ -2985,6 +2984,7 @@ select[multiple].input-lg {
     text-align: right;
     text-transform: uppercase;
     font-weight: 600;
+    
   }
 }
 .form-horizontal .has-feedback .form-control-feedback {
@@ -3021,7 +3021,7 @@ select[multiple].input-lg {
           user-select: none;
   background-image: none;
   border: 1px solid transparent;
-  border-radius: 4px;
+  border-radius: 2px;
 }
 .btn:focus,
 .btn:active:focus,
@@ -3174,10 +3174,10 @@ fieldset[disabled] .btn-primary.focus {
 }
 .btn-success {
   color: #fff;
-  background-color: #176fac;
-  border-color: #176fac;
-  margin-left: -8%;
-  margin-top: -1%
+  background-color: #5cb85c;
+  border-color: #5cb85c;
+  margin-left: 1%;
+  margin-top: 0%
 }
 .btn-success:focus,
 .btn-success.focus {

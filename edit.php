@@ -1,20 +1,32 @@
 <!DOCTYPE html>
+
+<?php
+session_start();
+if($_SESSION['login_kyc_app'] == 1){
+
+}else{
+  echo "<script>location='index.php'</script>";
+}
+
+?>
 <html>
 <head>
   <title></title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" type="text/css" href="css/material.indigo-pink.min.css">
-<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="icon" type="image/png" sizes="36x36" href="images/green.png">
 
-  <link rel="stylesheet" href="css/bootstrap.css">
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+  <link rel="stylesheet" type="text/css" href="css/kyc.css">
   <link rel="stylesheet" type="text/css" href="autocomplete-Files/styles.css">
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <!-- Material Design Lite -->
     <script src="https://code.getmdl.io/1.3.0/material.min.js"></script>
-    <link rel="stylesheet" href="css/material.css">
-    <link rel="stylesheet" href="css/fileupload.css">
-     <link rel="stylesheet" href="autocomplete-Files/styles.css">
+    <link rel="stylesheet" type="text/css" href="css/material.css">
+    <link rel="stylesheet" type="text/css" href="css/fileupload.css">
+     <link rel="stylesheet" type="text/css" href="autocomplete-Files/styles.css">
 
  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
   <style type="text/css">
@@ -154,18 +166,24 @@ document.getElementById('uploadFile').value='Choose File'; }
     visibility:visible;
   }
 }
-
+/*
     .upload-button {
     padding: 4px;
-   /* border: 1px solid black;*/
+   /* border: 1px solid black;
     border-radius: 5px;
     display: block;
     float: left;
-}
+    margin-top:11%;
+}*/
+img.print{
+    display: block;
+    width: 100%;
+    height: auto;
+    }
 
 .profile-pic {
-    max-width: 160px;
-    max-height: 160px;
+    max-width: 140px;
+    max-height: 140px;
     display: block;
 }
 
@@ -174,15 +192,57 @@ document.getElementById('uploadFile').value='Choose File'; }
 }
   </style>  
 
-<!-- Datepicker -->
-<link rel="stylesheet" type="text/css" href="css/jquery.datepick.css"> 
-<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-<script type="text/javascript" src="js/jquery.plugin.js"></script> 
-<script type="text/javascript" src="js/jquery.datepick.js"></script>
+<link rel="stylesheet" href="css/jquery-ui.css"> 
+ <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"> 
+
+ <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="js/jquery-ui.js"></script>
 <script type="text/javascript">
 $(function() {
- $( ".datepicker" ).datepick({dateFormat: 'dd/mm/yyyy',maxDate: 0});
+  $( ".sspicker.picker" ).datepicker({dateFormat : 'mm/dd/yy',
+            changeMonth : true,
+            changeYear : true,
+            yearRange: '-100y:c+nn',
+            maxDate: '0',
+          beforeShow: function (input, inst) {
+        setTimeout(function () {
+            inst.dpDiv.css({
+            'z-index':4,
+            width:300,
+             
+            });
+        }, 0);}
+
+});});
+
+// $(function() {
+//   $( ".datepicker.pick" ).datepicker({changeMonth: true,changeYear: true}).datepicker("setDate", new Date()).setTimeout(function(){
+//             $('.ui-datepicker').css('z-index',44444);
+//         }, 0);
+
+// });
+
+$(function() {
+ $( ".datepicker.p" ).datepicker({dateFormat: 'dd/mm/yy',changeMonth: true,
+    changeYear: true});
 });
+
+$(function() {
+  $( ".datepicker.pick" ).datepicker({
+    changeMonth: true,
+    changeYear: true,
+    beforeShow: function (input, inst) {
+        setTimeout(function () {
+            inst.dpDiv.css({
+            'z-index':4,
+            width:300,
+             
+            });
+        }, 0);
+    }
+});
+});
+
 </script>
 
 </head>
@@ -316,18 +376,49 @@ if(isset($_POST["edit_btn"]) and $_GET["is_user"]==0) {
         for ($i = 0; $i < 4; $i++) {
             $randomString .= $characters[rand(0, $charactersLength - 1)];
         }*/
+$reg11 = $_FILES["reg_certificate"]["name"];
+$reg11 = end((explode(".", $reg11))); # extra () to prevent notice
+if($reg11 == ""){
+  $reg11=".jpg";
+}else{
+  $reg11=".".$reg11;
+}
+
+$pan11 = $_FILES["pan_card"]["name"];
+$pan11 = end((explode(".", $pan11))); # extra () to prevent notice
+if($pan11 == ""){
+  $pan11=".jpg";
+}else{
+  $pan11=".".$pan11;
+}
+
+$pass11 = $_FILES["bank_pass_book"]["name"];
+$pass11 = end((explode(".", $pass11))); # extra () to prevent notice
+if($pass11 == ""){
+  $pass11=".jpg";
+}else{
+  $pass11=".".$pass11;
+}
+
+$tel11 = $_FILES["telephone_bill"]["name"];
+$tel11 = end((explode(".", $tel11))); # extra () to prevent notice
+if($tel11 == ""){
+  $tel11=".jpg";
+}else{
+  $tel11=".".$tel11;
+}
 
         $names=array();
-        $names[0]= "reg_cert".rand(0, 9999).".jpg";
-        $names[1]= "pan_card".rand(0, 9999).".jpg";
-        $names[2]= "pass_book".rand(0, 9999).".jpg";
-        $names[3]= "telephone_bill".rand(0, 9999).".jpg";
-        $names[4]= $randomString.rand(0, 9999).".jpg";
+        $names[0]= "reg_cert".rand(0, 9999).$reg11;
+        $names[1]= "pan_card".rand(0, 9999).$pan11;
+        $names[2]= "pass_book".rand(0, 9999).$pas11;
+        $names[3]= "telephone_bill".rand(0, 9999).$tel11;
+        /*$names[4]= $randomString.rand(0, 9999).".jpg";*/
 
 
         /*Get Signed Urls*/
         $url = 'https://kyc-application.herokuapp.com/get_signed_url/';
-        $data = array('image_list' => [$names[0],$names[1],$names[2],$names[3],$names[4]]);
+        $data = array('image_list' => [$names[0],$names[1],$names[2],$names[3]]);
 
         $options = array(
           'http' => array(
@@ -348,7 +439,7 @@ if(isset($_POST["edit_btn"]) and $_GET["is_user"]==0) {
     
 
     $check = getimagesize($_FILES["reg_certificate"]["tmp_name"]);
-    if($check !== false) {
+    if(is_uploaded_file($_FILES['reg_certificate']['tmp_name']) && !($_FILES['reg_certificate']['error'])) {
         $url_upload = $arr[0][0];
         /*echo $url_upload;*/
 
@@ -380,7 +471,7 @@ if(isset($_POST["edit_btn"]) and $_GET["is_user"]==0) {
 
 
     $check_pan = getimagesize($_FILES["pan_card"]["tmp_name"]);
-    if($check_pan !== false) {
+    if(is_uploaded_file($_FILES['pan_card']['tmp_name']) && !($_FILES['pan_card']['error'])) {
         $url_upload_pan = $arr[1][1];
         /*echo $url_upload;*/
 
@@ -411,7 +502,7 @@ if(isset($_POST["edit_btn"]) and $_GET["is_user"]==0) {
     }
 
     $check_pass_book = getimagesize($_FILES["bank_pass_book"]["tmp_name"]);
-    if($check_pass_book !== false) {
+    if(is_uploaded_file($_FILES['bank_pass_book']['tmp_name']) && !($_FILES['bank_pass_book']['error'])) {
         $url_upload_pass_book = $arr[2][2];
         /*echo $url_upload;*/
 
@@ -442,7 +533,7 @@ if(isset($_POST["edit_btn"]) and $_GET["is_user"]==0) {
     }
 
     $check_telephone_bill = getimagesize($_FILES["telephone_bill"]["tmp_name"]);
-    if($check_telephone_bill !== false) {
+    if(is_uploaded_file($_FILES['telephone_bill']['tmp_name']) && !($_FILES['telephone_bill']['error'])) {
         $url_upload_telephone_bill = $arr[3][3];
         /*echo $url_upload;*/
 
@@ -571,14 +662,70 @@ if(isset($_POST["edit_btn"]) and $_GET["is_user"]==1) {
             $randomString .= $characters[rand(0, $charactersLength - 1)];
         }
 
+$pan22= $_FILES["pan_card"]["name"];
+$pan22 = end((explode(".", $pan22))); # extra () to prevent notice
+if($pan22 == ""){
+  $pan22=".jpg";
+}else{
+  $pan22=".".$pan22;
+}
+
+$voter22 = $_FILES["voter_id"]["name"];
+$voter22 = end((explode(".", $voter22))); # extra () to prevent notice
+if($voter22 == ""){
+  $voter22=".jpg";
+}else{
+  $voter22=".".$voter22;
+}
+
+$pass22 = $_FILES["bank_pass_book"]["name"];
+$pass22 = end((explode(".", $pass22))); # extra () to prevent notice
+if($pass22 == ""){
+  $pass22=".jpg";
+}else{
+  $pass22=".".$pass22;
+}
+
+$tel22 = $_FILES["telephone_bill"]["name"];
+$tel22 = end((explode(".", $tel22))); # extra () to prevent notice
+if($tel22 == ""){
+  $tel22=".jpg";
+}else{
+  $tel22=".".$tel22;
+}
+
+$aadhar22 = $_FILES["aadhar_card"]["name"];
+$aadhar22 = end((explode(".", $aadhar22))); # extra () to prevent notice
+if($aadhar22 == ""){
+  $aadhar22=".jpg";
+}else{
+  $aadhar22=".".$aadhar22;
+}
+
+$passport22 = $_FILES["passport"]["name"];
+$passport22 = end((explode(".", $passport22))); # extra () to prevent notice
+if($passport22 == ""){
+  $passport22=".jpg";
+}else{
+  $passport22=".".$passport22;
+}
+
+$profile22 = $_FILES["image"]["name"];
+$profile22 = end((explode(".", $profile22))); # extra () to prevent notice
+if($profile22 == ""){
+  $profile22=".jpg";
+}else{
+  $profile22=".".$profile22;
+}
+
         $names=array();
-        $names[0]= "pan_card".rand(0, 9999).".jpg";
-        $names[1]= "voter_id".rand(0, 9999).".jpg";
-        $names[2]= "pass_book".rand(0, 9999).".jpg";
-        $names[3]= "telephone_bill".rand(0, 9999).".jpg";
-        $names[4]= "aadhar_card".rand(0, 9999).".jpg";
-        $names[5]= "passport".rand(0, 9999).".jpg";
-        $names[6]= "profile".rand(0, 9999).".jpg";
+        $names[0]= "pan_card".rand(0, 9999).$pan22;
+        $names[1]= "voter_id".rand(0, 9999).$voter22;
+        $names[2]= "pass_book".rand(0, 9999).$pass22;
+        $names[3]= "telephone_bill".rand(0, 9999).$tel22;
+        $names[4]= "aadhar_card".rand(0, 9999).$aadhar22;
+        $names[5]= "passport".rand(0, 9999).$passport22;
+        $names[6]= "profile".rand(0, 9999).$profile22;
 
 
         /*Get Signed Urls*/
@@ -604,7 +751,7 @@ if(isset($_POST["edit_btn"]) and $_GET["is_user"]==1) {
     
 
     $check = getimagesize($_FILES["pan_card"]["tmp_name"]);
-    if($check !== false) {
+    if(is_uploaded_file($_FILES['pan_card']['tmp_name']) && !($_FILES['pan_card']['error'])) {
         $url_upload = $arr[0][0];
         /*echo $url_upload;*/
 
@@ -636,7 +783,7 @@ if(isset($_POST["edit_btn"]) and $_GET["is_user"]==1) {
 
 
     $check_voter_id = getimagesize($_FILES["voter_id"]["tmp_name"]);
-    if($check_voter_id !== false) {
+    if(is_uploaded_file($_FILES['voter_id']['tmp_name']) && !($_FILES['voter_id']['error'])) {
         $url_upload_voter_id = $arr[1][1];
         /*echo $url_upload;*/
 
@@ -667,7 +814,7 @@ if(isset($_POST["edit_btn"]) and $_GET["is_user"]==1) {
     }
 
     $check_pass_book = getimagesize($_FILES["bank_pass_book"]["tmp_name"]);
-    if($check_pass_book !== false) {
+    if(is_uploaded_file($_FILES['bank_pass_book']['tmp_name']) && !($_FILES['bank_pass_book']['error'])) {
         $url_upload_pass_book = $arr[2][2];
         /*echo $url_upload;*/
 
@@ -698,7 +845,7 @@ if(isset($_POST["edit_btn"]) and $_GET["is_user"]==1) {
     }
 
     $check_telephone_bill = getimagesize($_FILES["telephone_bill"]["tmp_name"]);
-    if($check_telephone_bill !== false) {
+    if(is_uploaded_file($_FILES['telephone_bill']['tmp_name']) && !($_FILES['telephone_bill']['error'])) {
         $url_upload_telephone_bill = $arr[3][3];
         /*echo $url_upload;*/
 
@@ -729,7 +876,7 @@ if(isset($_POST["edit_btn"]) and $_GET["is_user"]==1) {
     }
 
     $check_aadhar_card = getimagesize($_FILES["aadhar_card"]["tmp_name"]);
-    if($check_aadhar_card !== false) {
+    if(is_uploaded_file($_FILES['aadhar_card']['tmp_name']) && !($_FILES['aadhar_card']['error'])) {
         $url_upload_aadhar_card = $arr[4][4];
         /*echo $url_upload;*/
 
@@ -760,7 +907,7 @@ if(isset($_POST["edit_btn"]) and $_GET["is_user"]==1) {
     }
 
     $check_passport = getimagesize($_FILES["passport"]["tmp_name"]);
-    if($check_passport !== false) {
+    if(is_uploaded_file($_FILES['passport']['tmp_name']) && !($_FILES['passport']['error'])) {
         $url_upload_passport = $arr[5][5];
         /*echo $url_upload;*/
 
@@ -791,7 +938,7 @@ if(isset($_POST["edit_btn"]) and $_GET["is_user"]==1) {
     }
 
     $check_image = getimagesize($_FILES["image"]["tmp_name"]);
-    if($check_image !== false) {
+    if(is_uploaded_file($_FILES['image']['tmp_name']) && !($_FILES['image']['error'])) {
         $url_upload_image = $arr[6][6];
         /*echo $url_upload;*/
 
@@ -903,9 +1050,10 @@ if(isset($_POST["edit_btn"]) and $_GET["is_user"]==1) {
      -moz-box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23) !important;
      box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23) !important;" class="mdl-layout__header">
     <div class="mdl-layout__header-row" >
-    <a href="search.php"><img style="margin-top:36%;margin-left:28px;width:50px;height:50px" src="images/green.png"></img></a>
-    <h5 style="margin-left:35%;margin-top:9%;"><?php echo $arr_search['response'][0]['organization_details']['name'] ?><?php echo $arr_search['response'][0]['user_details']['name'] ?></h5>
-    <span class="mdl-layout-title" style="margin-left:26%;margin-top:7%;">KYCApp</span>
+    <a href="search.php"><img id="logo1" src="images/green.png"></img></a>
+     <span class="mdl-layout-title" id="title3"><?php echo $arr_search['response'][0]['organization_details']['name'] ?><?php echo $arr_search['response'][0]['user_details']['name'] ?></span>
+    <span class="mdl-layout-title" id="title1" style="text-align:center">KYCAPP</span>
+     <a href="logout.php"><img id="logout" style="" src="images/logout_btn.png"></img></a>
           <!-- Add spacer, to align navigation to the right -->
 
     </header>
@@ -923,10 +1071,12 @@ if(isset($_POST["edit_btn"]) and $_GET["is_user"]==1) {
         </nav>
       </div>
       </div>
-      </header>
+
+
+<main class="mdl-layout">
 
 <?php if ($_GET['is_user']==0) { ?>
-<form class="form-horizontal" method="post" action="" enctype="multipart/form-data">
+<form class="form-horizontal" method="post" action="" enctype="multipart/form-data" style="">
 
 <fieldset>
 
@@ -934,10 +1084,10 @@ if(isset($_POST["edit_btn"]) and $_GET["is_user"]==1) {
 
 
 <!-- Select Basic -->
-<div class="form-group" style="margin-top:10%">
+<div class="form-group" style="margin-top:13%;">
   <label class="col-md-4 control-label" for="type_of_org">Type of Organization:</label>
   <div class="col-md-4">
-    <select id="type_of_org" name="type_of_org" class="form-control"  ONCHANGE="enable_disable(this);" >
+    <select id="type_of_org" name="type_of_org" class="form-control"  ONCHANGE="enable_disable(this);" style="width: 80%;">
       <option value="<?php echo $arr_search['response'][0]['organization_details']['type_of_org'];?>"><?php echo $arr_search['response'][0]['organization_details']['type_of_org'];?></option>
       <option value="Proprietorship">Proprietorship</option>
       <option value="HUF">HUF</option>
@@ -956,7 +1106,7 @@ if(isset($_POST["edit_btn"]) and $_GET["is_user"]==1) {
 <div class="form-group">
   <label class="col-md-4 control-label" for="textname">Name:</label>  
   <div class="col-md-4">
-  <input value="<?php echo $arr_search['response'][0]['organization_details']['name'];?>" id="name" name="name" type="text" placeholder="Enter Name" class="form-control input-md">
+  <input value="<?php echo $arr_search['response'][0]['organization_details']['name'];?>" id="name" name="name" type="text" placeholder="Enter Name" class="form-control input-md" style="width: 80%;">
   </div>
 </div>
 
@@ -992,12 +1142,14 @@ if(isset($_POST["edit_btn"]) and $_GET["is_user"]==1) {
   <label class="col-md-4 control-label" for="reg_certificate">Registration Certificate:</label>
 
 <div class="col-md-4">
-
-    <input id="uploadFile" class="form-control input-md" value="<?php echo $arr_search['response'][0]['reg_certificate_details'][0]['name']; ?>" readonly>
-    <div class="fileUpload btn btn-info" style="margin-left:105%;margin-top:-12%;">
-    <label style="font-weight:500;margin-bottom: 2px;">ATTACH</label>
+    <input id="uploadFile" class="form-control input-md" value="<?php echo $arr_search['response'][0]['reg_certificate_details'][0]['name']; ?>" readonly style="width: 80%;">
+</div>
+<div class="col-md-1">
+    <div class="fileUpload org btn btn-info">
+    <label style="font-weight:500;margin-bottom: 0px;">ATTACH</label>
     <input id="reg_certificate" name="reg_certificate" type="file" class="upload" onchange="setfilename(this.value);" /> 
-  
+</div>
+</div>
 
 <?php
   $url_img_download = 'https://kyc-application.herokuapp.com/download/';
@@ -1017,8 +1169,8 @@ if(isset($_POST["edit_btn"]) and $_GET["is_user"]==1) {
 ?>
 
 
-</div>
-<a target="_blank" style="margin-top:-24%;margin-left:129%;color:white;" data-toggle="modal" data-target="#myModal1" class="btn btn-info">
+<div class="col-md-1">
+<a target="_blank" style="" data-toggle="modal" data-target="#myModal1" class="btn btn-info edit">
 VIEW</a>
 </div>
 
@@ -1026,10 +1178,9 @@ VIEW</a>
 
 <!-- Text input-->
 <div class="form-group" style="margin-top:-3%">
-  <label class="col-md-4 control-label" for="textinput" style="margin-left:-67%">PAN:</label>
+  <label class="col-md-4 control-label" for="textinput" style="margin-left:0%">PAN:</label>
   <div class="col-md-4">
-  <input id="pan" name="pan" style="margin-left:-107%" pattern="-?[a-zA-Z]{5}[0-9]{4}[a-zA-Z]{1}?" title="Must be of the form ARLPA0061H"  value="<?php echo $arr_search['response'][0]['organization_details']['pan'] ?>" type="text" placeholder="PAN Card Number" class="form-control input-md">
-    
+  <input id="pan" name="pan" style="margin-left:0%;width: 80%;" pattern="-?[a-zA-Z]{5}[0-9]{4}[a-zA-Z]{1}?" title="Must be of the form ARLPA0061H"  value="<?php echo $arr_search['response'][0]['organization_details']['pan'] ?>" type="text" placeholder="PAN Card Number" class="form-control input-md"> 
   </div>
 </div>
 
@@ -1038,11 +1189,14 @@ VIEW</a>
   <label class="col-md-4 control-label" for="filebutton">PAN Card:</label>
 <div class="col-md-4">
     <input id="pan_upload" class="form-control input-md" value="
- <?php echo $arr_search['response'][0]['pan_card_details'][0]['name']; ?>" readonly/>
-   <div class="fileUpload btn btn-info" style="margin-left:105%;margin-top:-12%;">
-    <label style="font-weight:500;margin-bottom: 2px;">ATTACH</label>
+ <?php echo $arr_search['response'][0]['pan_card_details'][0]['name']; ?>" readonly style="width: 80%;"/>
+ </div>
+ <div class="col-md-1">
+   <div class="fileUpload org btn btn-info" style="">
+    <label style="font-weight:500;margin-bottom: 0px;">ATTACH</label>
     <input id="pan_card" name="pan_card" type="file" class="upload" onchange="panfilename(this.value);" />
-  
+  </div>
+  </div>
   
 <?php
   $url_img_download_2 = 'https://kyc-application.herokuapp.com/download/';
@@ -1060,8 +1214,8 @@ VIEW</a>
   $arr_img_download_pan_org = json_decode($output_img_download_2,true);
   
 ?>
-</div>
-<a target="_blank" data-toggle="modal" data-target="#myModal2" class="btn btn-info" style="color:white;margin-top:-24%;margin-left:129%;">VIEW</a>
+<div class="col-md-1">
+<a target="_blank" data-toggle="modal" data-target="#myModal2" class="btn btn-info edit">VIEW</a>
 </div>
 </div>
 
@@ -1069,7 +1223,7 @@ VIEW</a>
 <div class="form-group">
   <label class="col-md-4 control-label" for="textarea">Address:</label>
   <div class="col-md-4">                     
-    <textarea class="form-control" id="address" name="address"><?php echo $arr_search['response'][0]['organization_details']['address'] ?></textarea>
+    <textarea class="form-control" style="width: 80%;" id="address" name="address"><?php echo $arr_search['response'][0]['organization_details']['address'] ?></textarea>
   </div>
 </div>
 
@@ -1087,19 +1241,15 @@ VIEW</a>
      <input <?php echo $check_box_select1;?> type="checkbox" name="checkboxes" id="checkboxes-0" value="1">Telephone</label>
   </div>
 
-<!-- <div class="col-md-1">
-    <input id="telephone_upload" class="form-control input-md" value="
-     <?php echo $arr_search['response'][0]['telephone_bill_details'][0]['name']; ?>">
-     <div class="fileUpload btn btn-info" style="margin-left:155%;margin-top:-21%;">
-    <label style="font-weight:500;margin-bottom: 2px;">ATTACH</label>
-    <input id="telephone_bill" name="telephone_bill"  value="<?php echo $arr_search['response'][0]['organization_details']['telephone'] ?>" style="margin-top: -20px;margin-left: 146px;" type="file" class="upload" onchange="telefilename(this.value);" />  -->
-    <div class="col-md-3" style="margin-left:43%;margin-top:-2%"> 
-    <input id="telephone_upload" style="width:68%;margin-left:23%;margin-top:-5%" value="<?php echo $arr_search['response'][0]['telephone_bill_details'][0]['name']; ?>">
+    <div class="col-md-3 bkupload edit" style=""> 
+    <input id="telephone_upload" style="" value="<?php echo $arr_search['response'][0]['telephone_bill_details'][0]['name']; ?>">
 </div>
-    <div class="fileUpload btn btn-info" style="margin-left:-1%;margin-top:-1%;">
-    <label style="font-weight:500;margin-bottom: 2px;">ATTACH</label>
+<div class="col-md-1">
+    <div class="fileUpload org btn btn-info" style="">
+    <label style="font-weight:500;margin-bottom: 0px;">ATTACH</label>
     <input id="telephone_bill" name="telephone_bill" type="file" class="upload"  value="<?php echo $arr_search['response'][0]['organization_details']['telephone'] ?>" onchange="telefilename(this.value);" />
- 
+ </div>
+ </div>
 <?php
   $url_img_download_3 = 'https://kyc-application.herokuapp.com/download/';
   $options_img_download_3 = array(
@@ -1116,11 +1266,10 @@ VIEW</a>
   $arr_img_download_tel_org = json_decode($output_img_download_3,true);
   
 ?>
-</div>
-
-<br>
-<a target="_blank" data-toggle="modal" data-target="#myModal3" class="btn btn-info" style="color:white;margin-left:75%;margin-top:-6%;position:relative;">VIEW</a>
+<div class="col-md-1">
+<a target="_blank" data-toggle="modal" data-target="#myModal3" class="btn btn-info edit" style="">VIEW</a>
 </div> 
+</div>
 
 <div class="form-group">
  <label class="col-md-4 control-label" for="checkboxes"></label>
@@ -1132,23 +1281,19 @@ VIEW</a>
      }else{
       $check_box_select2="";
     }?>
-     <input <?php echo $check_box_select2;?> type="checkbox" name="checkboxes" id="checkboxes-0" value="1"/>Bank Passbook</label>
+     <input <?php echo $check_box_select2;?> type="checkbox" name="checkboxes" id="checkboxes-0" value="1"/>Bank<br> Passbook</label>
   
   </div>
-<div class="col-md-3" style="margin-left:43%;margin-top:-2%"> 
-<input id="bank_upload" style="width:68%;margin-left:23%;margin-top:-5%" value="
-<?php echo $arr_search['response'][0]['pass_book_details'][0]['name']; ?>">
+<div class="col-md-3 teleupload edit" style=""> 
+<input id="bank_upload" style="" value="
+<?php echo $arr_search['response'][0]['pass_book_details'][0]['name']; ?>" >
 </div>
-    <div class="fileUpload btn btn-info" style="margin-left:-1%;margin-top:-1%;">
-    <label style="font-weight:500;margin-bottom: 2px;">ATTACH</label>
+<div class="col-md-1">
+    <div class="fileUpload org btn btn-info " style="">
+    <label style="font-weight:500;margin-bottom: 0px;">ATTACH</label>
     <input id="bank_pass_book" name="bank_pass_book" type="file" class="upload" onchange="bankfilename(this.value);" />
-<!-- <input id="bank_upload" style="width:127%;" class="form-control input-md" value="
-     <?php echo $arr_search['response'][0]['pass_book_details'][0]['name']; ?>">
-    <div class="fileUpload btn btn-info" style="margin-left:135%;margin-top:-21%;">
-    <label style="font-weight:500;margin-bottom: 2px;">ATTACH</label>
-    <input id="bank_pass_book" name="bank_pass_book" style="margin-top: -22px;margin-left: 129px;" type="file" class="upload" onchange="bankfilename(this.value);" />  -->
- 
-
+</div>
+</div>
 <?php
   $url_img_download_4 = 'https://kyc-application.herokuapp.com/download/';
   $options_img_download_4 = array(
@@ -1165,30 +1310,13 @@ VIEW</a>
   $arr_img_download_pass_org = json_decode($output_img_download_4,true);
   
 ?>
+<div class="col-md-1">
+<a target="_blank" data-toggle="modal" data-target="#myModal4" class="btn btn-info edit">VIEW</a>
 </div>
-<br>
-<a target="_blank" data-toggle="modal" data-target="#myModal4" class="btn btn-info" style="margin-left:75%;margin-top:-6%;position:relative;color:white">VIEW</a>
 </div>
-
-
-<!-- Input Type : Number -->
-<!-- <div class="form-group">
-  <label class="col-md-4 control-label" for="typenumber">No of Partners: </label>
-  <div class="col-md-4">                     
-     <input value="<?php echo $arr_search['response'][0]['organization_details']['no_of_partners'] ?>"  type="number" name="no_of_partners" min="1" max="5" value="2" id="no_of_partners">
-  </div>
-</div> -->
-
-<!-- <div class="form-group col-md-4 ">
-  <label class="col-md-4 control-label"><b> <font size="4">Partner1</font></b></label>
-
-</div> -->
-
-
-
 
 <!-- Added Partner 1 -->
-<label for="comment" style="margin-left: 334px;font-size: 17px;"> Partner 1: </label>
+<label for="comment" style="margin-left: 26%;font-size: 17px;"> Partner 1: </label>
 
 
 
@@ -1201,26 +1329,13 @@ VIEW</a>
   <label class="col-md-4 control-label" for="textinput">Name:</label>  
 
   <div class="col-md-4 col-sm-2 col-2">
-  <input id="partner_names[]" value="<?php echo $arr_search['response'][0]['partner_details'][$x]['detail'][0]['name'] ?>" name="partner_names[]" type="text" placeholder="Enter Full Name" class="form-control input-md editentry partner_names">
+  <input id="partner_names[]" value="<?php echo $arr_search['response'][0]['partner_details'][$x]['detail'][0]['name'] ?>" name="partner_names[]" type="text" placeholder="Enter Full Name" class="form-control input-md editentry partner_names" style="width:80%;">
   </div>
 
   <div class="col-md-2 col-sm-2 col-2">
-    <a href="new_user_popup.php" style="color:white" target="_blank" data-toggle="modal" data-target="#myModal" class="btn btn-info new_entry_btn" >
+    <a href="new_user_popup.php" style="color:white" target="_blank" data-toggle="modal" data-target="#myModal" class="btn btn-info new_entry_btn edit_modal" >
        New Entry
     </a>
-    <!-- Modal -->
-<!-- <div class="modal fade" id="myModal11" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-      </div>
-      <div class="modal-body">
-        ...
-      </div>
-    </div>
-  </div>
-</div> -->
   </div>
 </div>
 
@@ -1238,12 +1353,12 @@ VIEW</a>
     </select>
   </div>
   <div class="col-md-2">
-     <input id="textinput" style="" name="textinput" type="text" placeholder="Specify if Other" class="form-control input-md partner_others">
+     <input id="textinput" style="margin-left:-13%;width:68%;" name="textinput" type="text" placeholder="Specify if Other" class="form-control input-md partner_others">
   </div>
 </div>
 
 
- <a href="" class="remove_field_present" style="margin-left:863px;margin-top:-40px;position:absolute"><img src="images/del24.png"></a>
+ <a href="" class="remove_field_present" style=""><img src="images/del24.png"></a>
 
 </div>
 
@@ -1254,7 +1369,7 @@ VIEW</a>
 <center>
 <div class="col-md-2 col-sm-2 col-2">
     <div class="input_fields_wrap">
-         <button class="add_field_button btn partner_btn" onclick="incrementValue()" style="margin-left: 443px;">Add New Partners</button>
+         <button class="add_field_button btn partner_btn" onclick="incrementValue()" style="">Add New Partners</button>
          <div>
          <input type="text" name="mytext[]" hidden="" ></div>
 </div>
@@ -1270,11 +1385,14 @@ VIEW</a>
 <div class="form-group">
   <label class="col-md-4 control-label" for="selectbasic">Type of work:</label>
   <div class="col-md-4">
-    <select id="type_of_work[]" name="type_of_work[]" class="form-control">
-      <option value="<?php echo $arr_search['response'][0]['add_info'][$q]['type_of_work']; ?>"><?php echo $arr_search['response'][0]['add_info'][$q]['type_of_work']; ?></option>
-      <option value="Option one">Option one</option>
-      <option value="Option two">Option two</option>
-      <option value="Option three">Option three</option>
+    <select id="type_of_work[]" name="type_of_work[]" class="form-control" style="width: 80%;">
+      <option value="Audit Report">Audit Report</option>
+      <option value="ITR filing">ITR filing</option>
+      <option value="VAT Filing">VAT Filing</option>
+      <option value="Accounting">Accounting</option>
+      <option value="Registration">Registration</option>
+      <option value="Certification">Certification</option>
+      <option value="Others">Others</option>
     </select>
   </div>
 </div>
@@ -1283,8 +1401,8 @@ VIEW</a>
 <div class="form-group">
   <label class="col-md-4 control-label" for="selectbasic">Status:</label>
   <div class="col-md-4">
-    <select id="status[]" name="status[]" class="form-control">
-      <option value="<?php echo $arr_search['response'][0]['add_info'][$q]['status']; ?>"><?php echo $arr_search['response'][0]['add_info'][$q]['status']; ?></option>
+    <select id="status" name="status[]" class="form-control" style="width: 80%;">
+      <option value="<?php echo $arr_search['response'][0]['add_info'][$q]['status']; ?>"><?php echo $arr_search['response'][0]['add_info'][$q]['status']; ?></option>  
       <option value="Pending">Pending</option>
       <option value="Work in process">Work in process</option>
       <option value="Completed">Completed</option>
@@ -1293,9 +1411,9 @@ VIEW</a>
 </div>
 <!--date-->
 <div class="form-group row">
-  <label for="example-date-input" class="col-2 col-form-label" style="margin-left:29.5%;">DATE:</label>
+  <label for="example-date-input" class="col-2 col-form-label" style="margin-left:28.5%;position:absolute;">DATE:</label>
   <div class="col-10">
-    <input class="form-control datepicker" id="date[]" name="date[]" value="<?php echo $arr_search['response'][0]['add_info'][$q]['date']; ?>" style="width:31%;margin-left:34.6%;margin-top:-2%;" type="text" readonly>
+    <input class="form-control datepicker p" id="date[]" name="date[]" value="<?php echo $arr_search['response'][0]['add_info'][$q]['date']; ?>"   type="text" readonly style="">
   </div>
 </div>
 
@@ -1304,25 +1422,39 @@ VIEW</a>
 <div class="form-group">
   <label class="col-md-4 control-label" for="textinput">Comment:</label>  
   <div class="col-md-4">
-  <input id="comment[]" name="comment[]" value="<?php echo $arr_search['response'][0]['add_info'][$q]['comment']; ?>" type="text" placeholder="" class="form-control input-md">
+  <input id="commentss" name="comment[]" value="<?php echo $arr_search['response'][0]['add_info'][$q]['comment']; ?>" type="text" placeholder="" class="form-control input-md" style="width: 80%;" >
     
   </div>
 </div>
 
-<a href="#" class="remove_field_pre1" style="margin-left:863px; margin-top: -46px;position:absolute">
+<a href="#" class="remove_field_pre1" style="">
  <img src="images/del24.png">
 </a>
 
 </div>
 
+
 <?php  }?>
+
+<script type="text/javascript">
+ $(document).ready(function () {
+        $("#status").click(function () {
+
+            if ($("#status").val() == "Completed") {
+                $("#commentss").attr("required", "required");
+            }
+            else
+              $("#commentss").attr("required", false);
+        });
+});
+</script>
 
 
 <div class="form-group">
 
 <div class="col-md-8 col-sm-12 col-24">
     <div class="input_fields" style="color:black">
-         <button class="add_field btn " onclick="incrementValue()" style="margin-left: 443px;">Add More</button>
+         <button class="add_field btn " onclick="incrementValue()" style="">Add More</button>
          <div>
          <input type="text" name="mytextt[]" hidden="" ></div>
 </div>
@@ -1335,17 +1467,43 @@ VIEW</a>
   <label class="col-md-4 control-label" for="save_btn"></label>
   <div class="col-md-8">
     <button  onclick="return check_file_type_org()" id="edit_btn" name="edit_btn" type="submit" class="btn btn-success" style="width: 10em;">Save</button><span><span></span></span>
-    <button onclick="goBack()" class="btn btn-warning" style="width:10em;margin-top:0%;padding:0.5em;margin-left:-1%"><a style="color:white" href="search.php">Cancel</a></button>
+    <button onclick="goBack()" class="btn btn-warning cancel" style=""><a style="color:white" href="search.php">Cancel</a></button>
   </div>
 </div>
 </fieldset>
 </form>
 
+<script type="text/javascript">
+
+$('.partner_names').attr('disabled', true);
+$('.partner_designations').attr('disabled', true);
+$('.partner_others').attr('disabled', true);
+$('.partner_btn').attr('disabled', true);
+$('.new_entry_btn').attr('disabled', true);
+
+function enable_disable(that){
+
+  /*alert(that.value);*/
+  if(that.value != "Partnership"){
+      $('.partner_names').attr('disabled', true);
+      $('.partner_designations').attr('disabled', true);
+      $('.partner_others').attr('disabled', true);
+      $('.partner_btn').attr('disabled', true);
+      $('.new_entry_btn').attr('disabled', true);
+  }else{
+      $('.partner_names').attr('disabled', false);
+      $('.partner_designations').attr('disabled', false);
+      $('.partner_others').attr('disabled', false);
+      $('.partner_btn').attr('disabled', false);
+      $('.new_entry_btn').attr('disabled', false);
+  }
+}
+</script>
 
 <form method="post" id="deleteForm" action="search.php" style="text-align:center">
 <input type="hidden" name="pk_delete" id="pk_delete" value="<?php echo $_GET['id'] ?>"></input>  
 <input type="hidden" name="is_user_delete" id="is_user_delete" value="<?php echo $_GET['is_user'] ?>"></input>  
-<button type="submit" onclick="return ConfirmDelete()" style="width: 10em;margin-top:-7%;margin-left:40%" class="btn btn-warning">
+<button type="submit" onclick="return ConfirmDelete()" style="" class="btn btn-warning delete">
   Delete
 </button>
 </form>
@@ -1361,7 +1519,7 @@ VIEW</a>
    }
 </script>  
 
-<script type="text/javascript">
+<!-- <script type="text/javascript">
 
 if(document.getElementById('type_of_org').value == "Partnership"){
   $('.partner_names').attr('readonly', false);
@@ -1393,7 +1551,7 @@ function enable_disable(that){
       $('.new_entry_btn').attr('readonly', false);
   }
 }
-</script>
+</script> -->
 
 <?php } else { ?>
 <form class="form-horizontal" method="post" action="" enctype="multipart/form-data">
@@ -1418,9 +1576,7 @@ function enable_disable(that){
   
 ?>
 
-<div style="margin-top:10%">
-
-
+<div class="form_margin">
 
 <?php if($arr_img[0]['url']=="" || (strpos($arr_img[0]['url'], 'https://kyc-app-bucket.s3.amazonaws.com/?Signature') !== false)){
   $img_lnk="images/no_image.jpg";
@@ -1429,9 +1585,10 @@ function enable_disable(that){
 }?>
  <input type="hidden" value="<?php echo $arr_search['response'][0]['user_details']['pk'] ?>" name="org_id" id="org_id"></input>
 
-<img class="profile-pic" style="margin-left:77%;position:absolute;z-index:2;" src="<?php echo $img_lnk; ?>" />
-<div class="upload-button" style="position:absolute;z-index:2;margin-left:79%;margin-top:13%;">
-<input  onchange="check_image_user()" id="image"  name="image" class="file-upload1" style="position:absolute;z-index:-2;margin-left:46%;margin-top:16%;" type="file">Upload Image</input>
+
+<img class="profile-pic" style="margin-left:70.2%;position:absolute;z-index:2;" src="<?php echo $img_lnk; ?>" />
+<div class="upload-button edit" style="">Upload Image</div>
+<input  onchange="check_image_user()" id="image"  name="image" class="file-upload1" style="position:absolute;z-index:-2;margin-left:46%;margin-top:16%;display:none" type="file"></input>
 </div>
 
 
@@ -1440,7 +1597,9 @@ function enable_disable(that){
 <div class="form-group">
   <label class="col-md-4 control-label" for="textinput">UID:</label>  
   <div class="col-md-4">
-  <input id="uid" name="uid" type="text" value="<?php echo $arr_search['response'][0]['user_details']['uid'] ?>" placeholder="" class="form-control input-md">
+
+  <input id="uid" name="uid" type="text" value="<?php echo $arr_search['response'][0]['user_details']['uid'] ?>" placeholder="" class="form-control input-md" style="width: 80%;" readonly>
+
     
   </div>
 </div>
@@ -1449,7 +1608,7 @@ function enable_disable(that){
 <div class="form-group">
   <label class="col-md-4 control-label" for="textinput">Name:</label>  
   <div class="col-md-4">
-  <input id="name" name="name" value="<?php echo $arr_search['response'][0]['user_details']['name'] ?>" type="text" placeholder="" class="form-control input-md">
+  <input id="name" name="name" value="<?php echo $arr_search['response'][0]['user_details']['name'] ?>" type="text" placeholder="" class="form-control input-md" style="width: 80%;">
     
   </div>
 </div>
@@ -1459,9 +1618,26 @@ function enable_disable(that){
 <div class="form-group">
   <label class="col-md-4 control-label" for="textinput">DOB:</label>  
   <div class="col-md-4">
-  <input id="date2" name="date2" value="<?php echo $arr_search['response'][0]['user_details']['dob'] ?>" type="text" placeholder="" class="form-control input-md datepicker" readonly>
-    
+  <input id="date2" name="date2" value="<?php echo $arr_search['response'][0]['user_details']['dob'] ?>" type="text" placeholder="" class="form-control input-md datepicker picker" readonly style="width: 80%;" > 
   </div>
+  <script type="text/javascript">
+  $(function() {
+  $( ".datepicker.picker" ).datepicker({dateFormat : 'mm/dd/yy',
+            changeMonth : true,
+            changeYear : true,
+            yearRange: '-100y:c+nn',
+            maxDate: '0',
+          beforeShow: function (input, inst) {
+        setTimeout(function () {
+            inst.dpDiv.css({
+            'z-index':4,
+            width:300,
+             
+            });
+        }, 0);}
+
+});});
+</script>
 </div>
 
 
@@ -1469,12 +1645,88 @@ function enable_disable(that){
 <div class="form-group">
   <label class="col-md-4 control-label" for="selectbasic">Profession:</label>
   <div class="col-md-4">
-    <select id="profession" name="profession" class="form-control">
+    <select id="profession" name="profession" class="form-control" style="width: 80%;">
       <option value="<?php echo $arr_search['response'][0]['user_details']['proffesion'] ?>"><?php echo $arr_search['response'][0]['user_details']['proffesion'] ?></option>
-      <option value="Option one">Option one</option>
-      <option value="Option two">Option two</option>
-      <option value="Option three">Option three</option>
-      <option value="Option four">Option four</option>
+      <optgroup label="Academics">
+        <option value="Professors">Professors</option>
+        <option value="Teachers">Teachers</option>
+      </optgroup>
+      <optgroup label="Cultural">
+      <option value="Clergy">Clergy</option>
+      <option value="Philosophers">Philosophers</option>
+      </optgroup>
+
+      <optgroup label="Medical">
+        <option value="Anesthesiologists">Anesthesiologists</option>
+        <option value="Audiologists">Audiologists</option>
+        <option value="Chiropractors">Chiropractors</option>
+        <option value="Dentists">Dentists</option>
+        <option value="Dietitians">Dietitians</option>
+        <option value="Nurses">Nurses</option>
+        <option value="Occupational therapists">Occupational therapists</option>
+        <option value="Pharmacists">Pharmacists</option>
+      </optgroup>
+
+      <optgroup label="Operating Department Practitioner">
+        <option value="Optometrists">Optometrists</option>
+        <option value="Physical therapists">Physical therapists</option>
+        <option value="Physicians">Physicians</option>
+        <option value="Podiatrists">Podiatrists</option>
+        <option value="Psychologists">Psychologists</option>
+        <option value="Radiographers">Radiographers</option>
+        <option value="Speech-language pathologists">Speech-language pathologists</option>
+        <option value="Surgeons">Surgeons</option>
+        <option value="Veterinarians">Veterinarians</option>
+        <option value="Gynaecologists">Gynaecologists</option>
+      </optgroup>
+
+      <optgroup label="Industry">
+        <option value="Accountants">Accountants</option>
+        <option value="Actuaries">Actuaries</option>
+        <option value="Architects">Architects</option>
+        <option value="Engineers">Engineers</option>
+        <option value="Linguistics - Translators">Linguistics - Translators</option>
+        <option value="Linguistics - Interpreters">Linguistics - Interpreters</option>
+        <option value="Surveyors">Surveyors</option>
+        <option value="Urban Planners">Urban Planners</option>
+
+      </optgroup>
+
+      <optgroup label="Transport">Transport
+      <option value="Air traffic controllers">Air traffic controllers</option>
+      <option value="Aircraft pilots">Aircraft pilots</option>
+      <option value="Sea captains">Sea captains</option>
+      </optgroup>
+
+      <optgroup label="Public services">Public services
+      <option value="Lawyers">Lawyers</option>
+      <option value="Social Workers">Social Workers</option>
+      <option value="Health inspector">Health inspector</option>
+      <option value="Park ranger">Park ranger</option>
+      <option value=" Police officer"> Police officer</option>
+      <option value="Military officers">Military officers</option>
+
+      </optgroup>
+
+      <optgroup label="Science">
+        <option value="Scientists - Astronomers">Scientists - Astronomers</option>
+        <option value="Scientists - Biologists">Scientists - Biologists</option>
+        <option value="Scientists - Biologists - Botanists">Scientists - Biologists - Botanists</option>
+        <option value="Scientists - Biologists - Ecologists">Scientists - Biologists - Ecologists</option>
+        <option value="Scientists - Biologists - Geneticists">Scientists - Biologists - Geneticists</option>
+        <option value="Scientists - Biologists - Immunologists">Scientists - Biologists - Immunologists</option>
+        <option value="Scientists - Biologists - Paleontologists">Scientists - Biologists - Paleontologists</option>
+        <option value="Scientists - Biologists - Pharmacologists">Scientists - Biologists - Pharmacologists</option>
+        <option value="Scientists - Biologists - Virologists">Scientists - Biologists - Virologists</option>
+        <option value="Scientists - Biologists - Zoologists">Scientists - Biologists - Zoologists</option>
+        <option value="Scientists - Chemists">Scientists - Chemists</option>
+        <option value="Scientists - Geologists">Scientists - Geologists</option>
+        <option value="Scientists - Meteorologists">Scientists - Meteorologists</option>
+        <option value="Scientists - Neuroscientists">Scientists - Neuroscientists</option>
+        <option value="Scientists - Oceanographers">Scientists - Oceanographers</option>
+        <option value="Scientists - Physicists">Scientists - Physicists</option>
+      </optgroup>
+      <option value="Other">Other</option>
     </select>
   </div>
 </div>
@@ -1483,7 +1735,7 @@ function enable_disable(that){
 <div class="form-group">
   <label class="col-md-4 control-label" for="textarea">Address:</label>
   <div class="col-md-4">                     
-    <textarea class="form-control" id="address" name="address" value="<?php echo $arr_search['response'][0]['user_details']['address'] ?>"><?php echo $arr_search['response'][0]['user_details']['address'] ?></textarea>
+    <textarea class="form-control" id="address" name="address" value="<?php echo $arr_search['response'][0]['user_details']['address'] ?>" style="width: 80%;"><?php echo $arr_search['response'][0]['user_details']['address'] ?></textarea>
   </div>
 </div>
 
@@ -1491,7 +1743,7 @@ function enable_disable(that){
 <div class="form-group">
   <label class="col-md-4 control-label" for="textinput">PAN:</label>  
   <div class="col-md-4">
-  <input pattern="-?[a-zA-Z]{5}[0-9]{4}[a-zA-Z]{1}?" title="Must be of the form ARLPA0061H" id="pan" name="pan" value="<?php echo $arr_search['response'][0]['user_details']['pan'] ?>" type="text" placeholder="" class="form-control input-md">
+  <input pattern="-?[a-zA-Z]{5}[0-9]{4}[a-zA-Z]{1}?" title="Must be of the form ARLPA0061H" id="pan" name="pan" value="<?php echo $arr_search['response'][0]['user_details']['pan'] ?>" type="text" placeholder="" class="form-control input-md" style="width: 80%;" required>
     
   </div>
 </div>
@@ -1501,9 +1753,11 @@ function enable_disable(that){
   <label class="col-md-4 control-label" for="filebutton">PAN card:</label>
 
 <div class="col-md-4">
-<input id="pan_upload" class="form-control input-md" value="<?php echo $arr_search['response'][0]['pan_card_details'][0]['name']; ?>">
-<input  onchange="check_pan_card_user()" id="pan_card" name="pan_card" style="margin-left:104%;margin-top:-7%" value="<?php echo $_POST['pan_card'] ?>" class="input-file" type="file">
-
+<input id="pan_upload" class="form-control input-md" value="<?php echo $arr_search['response'][0]['pan_card_details'][0]['name']; ?>" style="width: 80%;">
+</div>
+<div class="col-md-1">
+<input  onchange="check_pan_card_user()" id="pan_card" name="pan_card" style="" value="<?php echo $_POST['pan_card'] ?>" class="input-file edit-user" type="file">
+</div>
 <?php
   $url_img_download = 'https://kyc-application.herokuapp.com/download/';
   $options_img_download = array(
@@ -1520,13 +1774,14 @@ function enable_disable(that){
   $arr_img_download_pan_user = json_decode($output_img_download,true);
   
 ?>
-<a target="_blank" data-toggle="modal" data-target="#myModal5" class="btn btn-info"  style="color:white;margin-left:152%;margin-top:-13%;">VIEW</a>
+<div class="col-md-1">
+<a target="_blank" data-toggle="modal" data-target="#myModal5" class="btn btn-info user" >VIEW</a>
 </div>
 </div>
 
 <!--address proof-->
 <div class="form-group">
-  <label class="col-md-4 control-label" for="checkboxes">Address Proof</label>
+  <label class="col-md-4 control-label" for="checkboxes">Address Proof:</label>
 
 <div class="col-md-1">
 <label class="checkbox-inline" for="checkboxes-0">
@@ -1540,11 +1795,12 @@ function enable_disable(that){
  <input <?php echo $check_box_select1 ?> type="checkbox" name="checkboxes" id="checkboxes-0" value="1">Telephone</label>
 </div>
 
-<div class="col-md-4">
-<?php echo $arr_search['response'][0]['telephone_bill_details'][0]['name']; ?>
-
-<input onchange="check_telephone_bill_user()" id="telephone_bill"  value="<?php echo $_POST['telephone_bill'] ?>" style="margin-top: 3px;margin-left: 129px;position:absolute;" name="telephone_bill" class="input-file" type="file">     
-
+<div class="col-md-3">
+<input value="<?php echo $arr_search['response'][0]['telephone_bill_details'][0]['name']; ?>" style="width:70%;">
+</div>
+<div class="col-md-1">
+<input onchange="check_telephone_bill_user()" id="telephone_bill"  value="<?php echo $_POST['telephone_bill'] ?>" style="" name="telephone_bill" class="input-file edit-user" type="file">     
+</div>
 <?php
   $url_img_download_2 = 'https://kyc-application.herokuapp.com/download/';
   $options_img_download_2 = array(
@@ -1561,7 +1817,8 @@ function enable_disable(that){
   $arr_img_download_tel_user = json_decode($output_img_download_2,true);
   
 ?>
-<a target="_blank" data-toggle="modal" data-target="#myModal6" class="btn btn-info" style="color:white;margin-left:88%;position:relative;">VIEW</a>
+<div class="col-md-1">
+<a target="_blank" data-toggle="modal" data-target="#myModal6" class="btn btn-info user" style="">VIEW</a>
 </div>
 </div>
     <div class="form-group">
@@ -1577,15 +1834,13 @@ function enable_disable(that){
 
  </div>
 
- <div class="col-md-4">
-<?php echo $arr_search['response'][0]['bank_pass_book_details'][0]['name']; ?>
+ <div class="col-md-3">
+ <input value="<?php echo $arr_search['response'][0]['bank_pass_book_details'][0]['name']; ?>" style="width:70%;">
 </div>
 
-<div class="col-md-4">
-<input onchange="check_bank_pass_book_user()" id="bank_pass_book"  value="<?php echo $_POST['bank_pass_book'] ?>" style="margin-top: 6px;margin-left: 129px;position:absolute;" name="bank_pass_book" class="input-file" type="file">     
+<div class="col-md-1">
+<input onchange="check_bank_pass_book_user()" id="bank_pass_book"  value="<?php echo $_POST['bank_pass_book'] ?>" style="" name="bank_pass_book" class="input-file edit-user" type="file">     
  </div>
-
-<div class="col-md-4">
 <?php
   $url_img_download_3 = 'https://kyc-application.herokuapp.com/download/';
   $options_img_download_3= array(
@@ -1602,7 +1857,8 @@ function enable_disable(that){
   $arr_img_download_pass_user = json_decode($output_img_download_3,true);
   
 ?>
-<a target="_blank" data-toggle="modal" data-target="#myModal7" class="btn btn-info" style="color:white;margin-left:88%">VIEW</a>
+<div class="col-md-1">
+<a target="_blank" data-toggle="modal" data-target="#myModal7" class="btn btn-info user" style="">VIEW</a>
 </div>
 </div>
 
@@ -1610,7 +1866,7 @@ function enable_disable(that){
 
 <!--address proof-->
 <div class="form-group">
-  <label class="col-md-4 control-label" for="checkboxes">ID Proof</label>
+  <label class="col-md-4 control-label" for="checkboxes">ID Proof:</label>
   <div class="col-md-1">
    <label class="checkbox-inline" for="checkboxes-0">
 
@@ -1623,9 +1879,12 @@ function enable_disable(that){
      <input <?php echo $check_box_select3; ?> type="checkbox" name="checkboxes" id="checkboxes-0" value="1">voter ID</label>
    </div>
 
-    <div class="col-md-4">
-    <?php echo $arr_search['response'][0]['voter_id_details'][0]['name']; ?>
-  <input onchange="check_voter_id_user()" id="voter_id" value="<?php echo $_POST['voter_id'] ?>" style="margin-top:6px;margin-left: 129px;position: absolute;" name="voter_id" class="input-file" type="file">     
+    <div class="col-md-3">
+    <input value="<?php echo $arr_search['response'][0]['voter_id_details'][0]['name']; ?>" style="width:70%;">
+    </div>
+    <div class="col-md-1">
+  <input onchange="check_voter_id_user()" id="voter_id" value="<?php echo $_POST['voter_id'] ?>" style="" name="voter_id" class="input-file edit-user" type="file">  
+  </div>   
   <?php
     $url_img_download_4 = 'https://kyc-application.herokuapp.com/download/';
     $options_img_download_4= array(
@@ -1642,8 +1901,8 @@ function enable_disable(that){
     $arr_img_download_voter_user = json_decode($output_img_download_4,true);
     
   ?>
-
-<a target="_blank" style="color:white;margin-left:88%;position:relative;" data-toggle="modal" data-target="#myModal8" class="btn btn-info">VIEW</a>
+    <div class="col-md-1">
+<a target="_blank" style="" data-toggle="modal" data-target="#myModal8" class="btn btn-info user">VIEW</a>
 </div>
 
 </div>
@@ -1661,15 +1920,14 @@ function enable_disable(that){
      <input <?php echo $check_box_select4; ?> type="checkbox" name="checkboxes" id="checkboxes-0" value="1">Passport</label>
   </div>
 
-   <div class="col-md-4">
-  <?php echo $arr_search['response'][0]['passport_details'][0]['name']; ?>
+   <div class="col-md-3">
+   <input value="<?php echo $arr_search['response'][0]['passport_details'][0]['name']; ?>" style="width:70%;">
   </div>
 
-  <div class="col-sm-4">
-  <input  onchange="check_passport_user()" id="passport" value="<?php echo $_POST['passport'] ?>" style="margin-top:6px;margin-left: 129px;position:absolute" name="passport" class="input-file" type="file">     
+  <div class="col-md-1">
+  <input  onchange="check_passport_user()" id="passport" value="<?php echo $_POST['passport'] ?>" style="" name="passport" class="input-file edit-user" type="file">     
    </div>
 
-  <div class="col-md-4">
   <?php
     $url_img_download_5 = 'https://kyc-application.herokuapp.com/download/';
     $options_img_download_5= array(
@@ -1686,7 +1944,8 @@ function enable_disable(that){
     $arr_img_download_passport_user = json_decode($output_img_download_5,true);
     
   ?>
-<a target="_blank" style="color:white;margin-left:88%;" data-toggle="modal" data-target="#myModal9" class="btn btn-info">VIEW</a>
+  <div class="col-md-1">
+<a target="_blank" style="" data-toggle="modal" data-target="#myModal9" class="btn btn-info user">VIEW</a>
   </div>
 </div>
 
@@ -1694,7 +1953,7 @@ function enable_disable(that){
 <div class="form-group">
   <label class="col-md-4 control-label" for="textinput">Adhar card No.</label>  
   <div class="col-md-4">
-  <input id="aadhar_no" name="aadhar_no" value="<?php echo $arr_search['response'][0]['user_details']['aadhar_no'] ?>" type="text" placeholder="" class="form-control input-md">
+  <input id="aadhar_no" name="aadhar_no" value="<?php echo $arr_search['response'][0]['user_details']['aadhar_no'] ?>" type="text" placeholder="" class="form-control input-md" style="width: 80%;">
     
   </div>
 </div>
@@ -1704,8 +1963,11 @@ function enable_disable(that){
   <label class="col-md-4 control-label" for="filebutton">Adhar card:</label>
 
   <div class="col-md-4">
-  <input class="form-control input-md" value="<?php echo $arr_search['response'][0]['aadhar_card_details'][0]['name']; ?>">
-    <input onchange="check_aadhar_card_user()" id="aadhar_card" name="aadhar_card"  style="margin-left:104%;margin-top:-7%" value="<?php echo $_POST['aadhar_card'] ?>" class="input-file" type="file">
+  <input class="form-control input-md" value="<?php echo $arr_search['response'][0]['aadhar_card_details'][0]['name']; ?>" style="width: 80%;">
+  </div>
+  <div class="col-md-1">
+    <input onchange="check_aadhar_card_user()" id="aadhar_card" name="aadhar_card" value="<?php echo $_POST['aadhar_card'] ?>" class="input-file edit-user" type="file">
+    </div>
   
   <?php
     $url_img_download_6 = 'https://kyc-application.herokuapp.com/download/';
@@ -1723,32 +1985,38 @@ function enable_disable(that){
     $arr_img_download_aadhar_user = json_decode($output_img_download_6,true);
     
   ?>
-<a target="_blank" style="color:white;background-color:#65AC4;margin-left:152%;margin-top:-13%" data-toggle="modal" data-target="#myModal10" class="btn btn-info">VIEW</a>
+  <div class="col-md-1">
+<a target="_blank" style="" data-toggle="modal" data-target="#myModal10" class="btn btn-info user">VIEW</a>
   </div>
 </div>
  
 
 <?php for($q=0;$q<count($arr_search['response'][0]['add_info']);$q++){?>
-<div class="present_fields_1">
+<div class="present_fields_1"> 
 <!-- Select Basic -->
 <div class="form-group">
-  <label class="col-md-4 control-label" for="selectbasic">Type of work</label>
+  <label class="col-md-4 control-label" for="selectbasic">Type of work:</label>
   <div class="col-md-4">
-    <select id="type_of_work[]" name="type_of_work[]" class="form-control">
-      <option value="<?php echo $arr_search['response'][0]['add_info'][$q]['type_of_work']; ?>"><?php echo $arr_search['response'][0]['add_info'][$q]['type_of_work']; ?></option>
-      <option value="Option one">Option one</option>
-      <option value="Option two">Option two</option>
-      <option value="Option three">Option three</option>
+    <select id="type_of_work[]" name="type_of_work[]" class="form-control" style="width: 80%;">
+      <option value=""></option>
+      <option value="Audit Report">Audit Report</option>
+      <option value="ITR filing">ITR filing</option>
+      <option value="VAT Filing">VAT Filing</option>
+      <option value="Accounting">Accounting</option>
+      <option value="Registration">Registration</option>
+      <option value="Certification">Certification</option>
+      <option value="Others">Others</option>
     </select>
   </div>
 </div>
 
 <!-- Select Basic -->
 <div class="form-group">
-  <label class="col-md-4 control-label" for="selectbasic">Status</label>
+  <label class="col-md-4 control-label" for="selectbasic">Status:</label>
   <div class="col-md-4">
-    <select id="status[]" name="status[]" class="form-control">
+    <select id="status" name="status[]" class="form-control" style="width:80%">
       <option value="<?php echo $arr_search['response'][0]['add_info'][$q]['status']; ?>"><?php echo $arr_search['response'][0]['add_info'][$q]['status']; ?></option>
+      <option value=""></option>
       <option value="Pending">Pending</option>
       <option value="Work in process">Work in process</option>
       <option value="Completed">Completed</option>
@@ -1757,23 +2025,24 @@ function enable_disable(that){
 </div>
 <!--date-->
 <div class="form-group row">
-  <label for="example-date-input" class="col-2 col-form-label" style="margin-left:29.5%;">Date</label>
+  <label for="example-date-input" class="col-2 col-form-label" style="margin-left:28.1%;position:absolute">DATE:</label>
   <div class="col-10">
-    <input class="form-control datepicker" id="date[]" name="date[]" value="<?php echo $arr_search['response'][0]['add_info'][$q]['date']; ?>" style="width:31%;margin-left:34.6%;margin-top:-2%;" type="text" readonly> 
+    <input class="form-control datepicker p" id="date[]" name="date[]" value="<?php echo $arr_search['response'][0]['add_info'][$q]['date']; ?>" style="width: 80%;" type="text" readonly > 
   </div>
 </div>
 
 
 <!-- Text input-->
 <div class="form-group">
-  <label class="col-md-4 control-label" for="textinput">Comment</label>  
+  <label class="col-md-4 control-label" for="textinput">Comment:</label>  
   <div class="col-md-4">
-  <input id="comment[]" name="comment[]" value="<?php echo $arr_search['response'][0]['add_info'][$q]['comment']; ?>" type="text" placeholder="" class="form-control input-md">
+
+  <input id="commentss" name="comment[]" value="<?php echo $arr_search['response'][0]['add_info'][$q]['comment']; ?>" type="text" placeholder="" class="form-control input-md" style="width: 80%;">
     
   </div>
 </div>
 
-<a href="#" class="remove_field_pre1" style="margin-left: 900px; margin-top: -44px;position:absolute">
+<a href="#" class="remove_field_pre1" style="">
  <img src="images/del24.png">
 </a>
 
@@ -1785,7 +2054,7 @@ function enable_disable(that){
 
 <div class="col-md-8 col-sm-12 col-24">
     <div class="input_fields" style="color:black">
-         <button class="add_field btn " onclick="incrementValue()" style="margin-left: 443px;">Add More</button>
+         <button class="add_field btn " onclick="incrementValue()" style="">Add More</button>
          <div>
          <input type="text" name="mytextt[]" hidden="" ></div>
 </div>
@@ -1796,14 +2065,15 @@ function enable_disable(that){
 <div class="form-group">
   <label class="col-md-4 control-label" for="singlebutton"></label>
   <div class="col-md-4">
-    <button  onclick="return check_file_type_user()" id="edit_btn" name="edit_btn" type="submit" class="btn btn-success" style="width: 10em;">Save</button><span><span></span></span>
-    <button onclick="goBack()" class="btn btn-warning" style="width: 10em;margin-top:-13%;padding:0.5em;margin-left:40%"><a style="color:white" href="search.php">Cancel</a></button>
+    <button  onclick="return check_file_type_user()" id="edit_btn" name="edit_btn" type="submit" class="btn btn-success successb">Save</button><span><span></span></span>
+
+    <button onclick="goBack()" class="btn btn-warning cancel1" ><a style="color:white" href="search.php" >Cancel</a></button>
+    <!-- style="width: 10em;margin-top: 0%;padding:0.5em;margin-left:2%;" -->
   </div>
 </div>
 
 </fieldset>
 </form>
-
 
 <?php
 $url_can_be_deleted_or_no = 'https://kyc-application.herokuapp.com/can_be_deleted_or_no/';
@@ -1830,14 +2100,14 @@ $arr_can_be_deleted_or_no = json_decode($output_can_be_deleted_or_no,true);
     <form method="post" id="deleteForm" action="search.php" style="text-align:center">
     <input type="hidden" name="pk_delete" id="pk_delete" value="<?php echo $_GET['id'] ?>"></input>  
     <input type="hidden" name="is_user_delete" id="is_user_delete" value="<?php echo $_GET['is_user'] ?>"></input>  
-    <button type="submit" onclick="return ConfirmDelete()" style="width: 10em;margin-top:-9%;margin-left:23%" class="btn btn-warning">
+    <button type="submit" onclick="return ConfirmDelete()" class="btn btn-warning delete1">
       Delete
     </button>
     </form>
 
 <?php } else { ?>
     <div style="text-align:center">
-    <button onclick="return CannotDelete()" style="width: 10em;" class="btn btn-warning">
+    <button onclick="return CannotDelete()" class="btn btn-warning delete1">
       Delete
     </button>
     </div>
@@ -1904,26 +2174,30 @@ $('#trigger').click(function(){
                               }?>
 
                               <div style="text-align:center">
-                              <img class="print" src="<?php echo $img_lnk_reg_org; ?>" style="height:250px;width:250px;"></img>
+                              <?php if (strpos($img_lnk_reg_org, '.pdf') !== false) {?>
+                                      <iframe class="print" src="<?php echo $img_lnk_reg_org; ?>" style="height:400px"></iframe>
+                                  <?php }else{ ?>
+                                      <img class="print" src="<?php echo $img_lnk_reg_org; ?>" style=""></img>
+                                  <?php }?>
                               </div>
 
                               <div style="margin-top:5%;margin-left:-22%" class="row">
                                  <div class="col-sm-3">
                                  </div>
                                  <div class="col-sm-3">
-                                  <button class="btn btn-success" style="color:white;width:100px;height:50px" onclick="print_image()">Print</button>
+                                  <button class="btn btn-success" style="color:white;width:80px;height:40px" onclick="print_image()">Print</button>
                                  </div>
                                  <div class="col-sm-3">
                                    <a href="mailto:test@gmail.com?subject=KYC Application
                                     &body=Thank You!" style="color:white"> 
-                                    <button class="btn btn-success" style="color:white;width:100px;height:50px" >Email
+                                    <button class="btn btn-success" style="color:white;width:80px;height:40px" >Email
                                     </button>
                                    </a>
                                  </div>
                           
                                   <div class="col-sm-3">
                                     <a  style="color:white" download="<?php echo "registration_certificate.jpg"; ?>" href="<?php echo $img_lnk_reg_org; ?>" title="Save">
-                                      <button class="btn btn-success" style="color:white;width:100px;height:50px">Save
+                                      <button class="btn btn-success" style="color:white;width:80px;height:40px">Save
                                        </button>
                                     </a>
                                   </div>
@@ -1932,10 +2206,6 @@ $('#trigger').click(function(){
                               </div>
                           </div>
       </div>
-      <div class="modal-footer">
-        <!-- <button type="button" class="btn btn-default btn-prev">Prev</button>
-        <button type="button" class="btn btn-default btn-next">Next</button> -->
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
       </div>
     </div>
   </div>
@@ -1961,14 +2231,18 @@ $('#trigger').click(function(){
                                   }?>
 
                                   <div style="text-align:center">
-                                  <img class="print" src="<?php echo $img_lnk_pan_org; ?>" style="height:250px;width:250px;"></img>
+                                  <?php if (strpos($img_lnk_pan_org, '.pdf') !== false) {?>
+                                      <iframe class="print" src="<?php echo $img_lnk_pan_org; ?>" style="height:400px"></iframe>
+                                  <?php }else{ ?>
+                                      <img class="print" src="<?php echo $img_lnk_pan_org; ?>" style=""></img>
+                                  <?php }?>
                                   </div>
 
                                   <div style="margin-top:5%;margin-left:-22%" class="row">
                                      <div class="col-sm-3">
                                      </div>
                                      <div class="col-sm-3">
-                                      <button class="btn btn-success" style="color:white;width:100px;height:50px" onclick="print_image()">Print</button>
+                                      <button class="btn btn-success" style="color:white;width:80px;height:40px" onclick="print_image()">Print</button>
                                      </div>
                                      <div class="col-sm-3">
                                      
@@ -1982,7 +2256,7 @@ $('#trigger').click(function(){
                                      <div class="col-sm-3">
                                       
                                       <a  style="color:white" download="<?php echo "pan_card.jpg"; ?>" href="<?php echo $img_lnk_pan_org; ?>" title="Save">
-                                        <button class="btn btn-success" style="color:white;width:100px;height:50px">Save
+                                        <button class="btn btn-success" style="color:white;width:80px;height:40px">Save
                                          </button>
                                       </a>
                                      
@@ -1991,11 +2265,6 @@ $('#trigger').click(function(){
                                      </div>
                                   </div>
                           </div>
-      </div>
-      <div class="modal-footer">
-       <!--  <button type="button" class="btn btn-default btn-prev">Prev</button>
-        <button type="button" class="btn btn-default btn-next">Next</button> -->
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
       </div>
     </div>
   </div>
@@ -2020,14 +2289,18 @@ $('#trigger').click(function(){
                                   }?>
 
                                   <div style="text-align:center">
-                                  <img class="print" src="<?php echo $img_lnk_tel_org; ?>" style="height:250px;width:250px;"></img>
+                                  <?php if (strpos($img_lnk_tel_org, '.pdf') !== false) {?>
+                                      <iframe class="print" src="<?php echo $img_lnk_tel_org; ?>" style="height:400px"></iframe>
+                                  <?php }else{ ?>
+                                      <img class="print" src="<?php echo $img_lnk_tel_org; ?>" style=""></img>
+                                  <?php }?>
                                   </div>
 
                                   <div style="margin-top:5%;margin-left:-22%" class="row">
                                      <div class="col-sm-3">
                                      </div>
                                      <div class="col-sm-3">
-                                      <button class="btn btn-success" style="color:white;width:100px;height:50px" onclick="print_image()">Print</button>
+                                      <button class="btn btn-success" style="color:white;width:80px;height:40px" onclick="print_image()">Print</button>
                                      </div>
                                      <div class="col-sm-3">
                                      
@@ -2050,11 +2323,6 @@ $('#trigger').click(function(){
                                      </div>
                                   </div>
                           </div>
-      </div>
-      <div class="modal-footer">
-       <!--  <button type="button" class="btn btn-default btn-prev">Prev</button>
-        <button type="button" class="btn btn-default btn-next">Next</button> -->
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
       </div>
     </div>
   </div>
@@ -2079,20 +2347,24 @@ $('#trigger').click(function(){
                                   }?>
 
                                   <div style="text-align:center">
-                                  <img class="print" src="<?php echo $img_lnk_pass_org; ?>" style="height:250px;width:250px;"></img>
+                                  <?php if (strpos($img_lnk_pass_org, '.pdf') !== false) {?>
+                                      <iframe class="print" src="<?php echo $img_lnk_pass_org; ?>" style="height:400px"></iframe>
+                                  <?php }else{ ?>
+                                      <img class="print" src="<?php echo $img_lnk_pass_org; ?>" style=""></img>
+                                  <?php }?>
                                   </div>
 
                                   <div style="margin-top:5%;margin-left:-22%" class="row">
                                      <div class="col-sm-3">
                                      </div>
                                      <div class="col-sm-3">
-                                      <button class="btn btn-success" style="color:white;width:100px;height:50px" onclick="print_image()">Print</button>
+                                      <button class="btn btn-success" style="color:white;width:80px;height:40px" onclick="print_image()">Print</button>
                                      </div>
                                      <div class="col-sm-3">
                                      
                                      <a href="mailto:test@gmail.com?subject=KYC Application
                                      &body=Thank You!" style="color:white"> 
-                                      <button class="btn btn-success" style="color:white;width:100px;height:50px" >Email
+                                      <button class="btn btn-success" style="color:white;width:80px;height:40px" >Email
                                       </button>
                                      </a>
 
@@ -2100,7 +2372,7 @@ $('#trigger').click(function(){
                                      <div class="col-sm-3">
                                       
                                       <a  style="color:white" download="<?php echo "passbook.jpg"; ?>" href="<?php echo $img_lnk_pass_org; ?>" title="Save">
-                                        <button class="btn btn-success" style="color:white;width:100px;height:50px">Save
+                                        <button class="btn btn-success" style="color:white;width:80px;height:40px">Save
                                          </button>
                                       </a>
                                      
@@ -2109,11 +2381,6 @@ $('#trigger').click(function(){
                                      </div>
                                   </div>
                           </div>
-      </div>
-      <div class="modal-footer">
-       <!--  <button type="button" class="btn btn-default btn-prev">Prev</button>
-        <button type="button" class="btn btn-default btn-next">Next</button> -->
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
       </div>
     </div>
   </div>
@@ -2138,20 +2405,24 @@ $('#trigger').click(function(){
                                   }?>
 
                                   <div style="text-align:center">
-                                  <img class="print" src="<?php echo $img_lnk_pan_user; ?>" style="height:250px;width:250px;"></img>
+                                  <?php if (strpos($img_lnk_pan_user, '.pdf') !== false) {?>
+                                      <iframe class="print" src="<?php echo $img_lnk_pan_user; ?>" style="height:400px"></iframe>
+                                  <?php }else{ ?>
+                                      <img class="print" src="<?php echo $img_lnk_pan_user; ?>" style=""></img>
+                                  <?php }?>
                                   </div>
 
                                   <div style="margin-top:5%;margin-left:-22%" class="row">
                                      <div class="col-sm-3">
                                      </div>
                                      <div class="col-sm-3">
-                                      <button class="btn btn-success" style="color:white;width:100px;height:50px" onclick="print_image()">Print</button>
+                                      <button class="btn btn-success" style="color:white;width:80px;height:40px" onclick="print_image()">Print</button>
                                      </div>
                                      <div class="col-sm-3">
                                      
                                      <a href="mailto:test@gmail.com?subject=KYC Application
                                      &body=Thank You!" style="color:white"> 
-                                      <button class="btn btn-success" style="color:white;width:100px;height:50px" >Email
+                                      <button class="btn btn-success" style="color:white;width:80px;height:40px" >Email
                                       </button>
                                      </a>
 
@@ -2159,7 +2430,7 @@ $('#trigger').click(function(){
                                      <div class="col-sm-3">
                                       
                                       <a  style="color:white" download="<?php echo "pan_card.jpg"; ?>" href="<?php echo $img_lnk_pan_user; ?>" title="Save">
-                                        <button class="btn btn-success" style="color:white;width:100px;height:50px">Save
+                                        <button class="btn btn-success" style="color:white;width:80px;height:40px">Save
                                          </button>
                                       </a>
                                      
@@ -2168,11 +2439,6 @@ $('#trigger').click(function(){
                                      </div>
                                   </div>
                           </div>
-      </div>
-      <div class="modal-footer">
-       <!--  <button type="button" class="btn btn-default btn-prev">Prev</button>
-        <button type="button" class="btn btn-default btn-next">Next</button> -->
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
       </div>
     </div>
   </div>
@@ -2197,20 +2463,24 @@ $('#trigger').click(function(){
                                   }?>
 
                                   <div style="text-align:center">
-                                  <img class="print" src="<?php echo $img_lnk_tel_user; ?>" style="height:250px;width:250px;"></img>
+                                  <?php if (strpos($img_lnk_tel_user, '.pdf') !== false) {?>
+                                      <iframe class="print" src="<?php echo $img_lnk_tel_user; ?>" style="height:400px"></iframe>
+                                  <?php }else{ ?>
+                                      <img class="print" src="<?php echo $img_lnk_tel_user; ?>" style=""></img>
+                                  <?php }?>
                                   </div>
 
                                   <div style="margin-top:5%;margin-left:-22%" class="row">
                                      <div class="col-sm-3">
                                      </div>
                                      <div class="col-sm-3">
-                                      <button class="btn btn-success" style="color:white;width:100px;height:50px" onclick="print_image()">Print</button>
+                                      <button class="btn btn-success" style="color:white;width:80px;height:40px" onclick="print_image()">Print</button>
                                      </div>
                                      <div class="col-sm-3">
                                      
                                      <a href="mailto:test@gmail.com?subject=KYC Application
                                      &body=Thank You!" style="color:white"> 
-                                      <button class="btn btn-success" style="color:white;width:100px;height:50px" >Email
+                                      <button class="btn btn-success" style="color:white;width:80px;height:40px" >Email
                                       </button>
                                      </a>
 
@@ -2218,7 +2488,7 @@ $('#trigger').click(function(){
                                      <div class="col-sm-3">
                                       
                                       <a  style="color:white" download="<?php echo "telephone_bill.jpg"; ?>" href="<?php echo $img_lnk_tel_user; ?>" title="Save">
-                                        <button class="btn btn-success" style="color:white;width:100px;height:50px">Save
+                                        <button class="btn btn-success" style="color:white;width:80px;height:40px">Save
                                          </button>
                                       </a>
                                      
@@ -2227,11 +2497,6 @@ $('#trigger').click(function(){
                                      </div>
                                   </div>
                           </div>
-      </div>
-      <div class="modal-footer">
-       <!--  <button type="button" class="btn btn-default btn-prev">Prev</button>
-        <button type="button" class="btn btn-default btn-next">Next</button> -->
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
       </div>
     </div>
   </div>
@@ -2256,20 +2521,24 @@ $('#trigger').click(function(){
                                   }?>
 
                                   <div style="text-align:center">
-                                  <img class="print" src="<?php echo $img_lnk_pass_user; ?>" style="height:250px;width:250px;"></img>
+                                  <?php if (strpos($img_lnk_pass_user, '.pdf') !== false) {?>
+                                      <iframe class="print" src="<?php echo $img_lnk_pass_user; ?>" style="height:400px"></iframe>
+                                  <?php }else{ ?>
+                                      <img class="print" src="<?php echo $img_lnk_pass_user; ?>" style=""></img>
+                                  <?php }?>
                                   </div>
 
                                   <div style="margin-top:5%;margin-left:-22%" class="row">
                                      <div class="col-sm-3">
                                      </div>
                                      <div class="col-sm-3">
-                                      <button class="btn btn-success" style="color:white;width:100px;height:50px" onclick="print_image()">Print</button>
+                                      <button class="btn btn-success" style="color:white;width:80px;height:40px" onclick="print_image()">Print</button>
                                      </div>
                                      <div class="col-sm-3">
                                      
                                      <a href="mailto:test@gmail.com?subject=KYC Application
                                      &body=Thank You!" style="color:white"> 
-                                      <button class="btn btn-success" style="color:white;width:100px;height:50px" >Email
+                                      <button class="btn btn-success" style="color:white;width:80px;height:40px" >Email
                                       </button>
                                      </a>
 
@@ -2277,7 +2546,7 @@ $('#trigger').click(function(){
                                      <div class="col-sm-3">
                                       
                                       <a  style="color:white" download="<?php echo "passbook.jpg"; ?>" href="<?php echo $img_lnk_pass_user; ?>" title="Save">
-                                        <button class="btn btn-success" style="color:white;width:100px;height:50px">Save
+                                        <button class="btn btn-success" style="color:white;width:80px;height:40px">Save
                                          </button>
                                       </a>
                                      
@@ -2286,11 +2555,6 @@ $('#trigger').click(function(){
                                      </div>
                                   </div>
                           </div>
-      </div>
-      <div class="modal-footer">
-       <!--  <button type="button" class="btn btn-default btn-prev">Prev</button>
-        <button type="button" class="btn btn-default btn-next">Next</button> -->
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
       </div>
     </div>
   </div>
@@ -2315,20 +2579,24 @@ $('#trigger').click(function(){
                                   }?>
 
                                   <div style="text-align:center">
-                                  <img class="print" src="<?php echo $img_lnk_voter_user; ?>" style="height:250px;width:250px;"></img>
+                                  <?php if (strpos($img_lnk_voter_user, '.pdf') !== false) {?>
+                                      <iframe class="print" src="<?php echo $img_lnk_voter_user; ?>" style="height:400px"></iframe>
+                                  <?php }else{ ?>
+                                      <img class="print" src="<?php echo $img_lnk_voter_user; ?>" style=""></img>
+                                  <?php }?>
                                   </div>
 
                                   <div style="margin-top:5%;margin-left:-22%" class="row">
                                      <div class="col-sm-3">
                                      </div>
                                      <div class="col-sm-3">
-                                      <button class="btn btn-success" style="color:white;width:100px;height:50px" onclick="print_image()">Print</button>
+                                      <button class="btn btn-success" style="color:white;width:80px;height:40px" onclick="print_image()">Print</button>
                                      </div>
                                      <div class="col-sm-3">
                                      
                                      <a href="mailto:test@gmail.com?subject=KYC Application
                                      &body=Thank You!" style="color:white"> 
-                                      <button class="btn btn-success" style="color:white;width:100px;height:50px" >Email
+                                      <button class="btn btn-success" style="color:white;width:80px;height:40px" >Email
                                       </button>
                                      </a>
 
@@ -2336,7 +2604,7 @@ $('#trigger').click(function(){
                                      <div class="col-sm-3">
                                       
                                       <a  style="color:white" download="<?php echo "voter_id.jpg"; ?>" href="<?php echo $img_lnk_voter_user; ?>" title="Save">
-                                        <button class="btn btn-success" style="color:white;width:100px;height:50px">Save
+                                        <button class="btn btn-success" style="color:white;width:80px;height:40px">Save
                                          </button>
                                       </a>
                                      
@@ -2345,11 +2613,6 @@ $('#trigger').click(function(){
                                      </div>
                                   </div>
                           </div>
-      </div>
-      <div class="modal-footer">
-       <!--  <button type="button" class="btn btn-default btn-prev">Prev</button>
-        <button type="button" class="btn btn-default btn-next">Next</button> -->
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
       </div>
     </div>
   </div>
@@ -2374,20 +2637,24 @@ $('#trigger').click(function(){
                                   }?>
 
                                   <div style="text-align:center">
-                                  <img class="print" src="<?php echo $img_lnk_passport_user; ?>" style="height:250px;width:250px;"></img>
+                                  <?php if (strpos($img_lnk_passport_user, '.pdf') !== false) {?>
+                                      <iframe class="print" src="<?php echo $img_lnk_passport_user; ?>" style="height:400px"></iframe>
+                                  <?php }else{ ?>
+                                      <img class="print" src="<?php echo $img_lnk_passport_user; ?>" style=""></img>
+                                  <?php }?>
                                   </div>
 
                                   <div style="margin-top:5%;margin-left:-22%" class="row">
                                      <div class="col-sm-3">
                                      </div>
                                      <div class="col-sm-3">
-                                      <button class="btn btn-success" style="color:white;width:100px;height:50px" onclick="print_image()">Print</button>
+                                      <button class="btn btn-success" style="color:white;width:80px;height:40px" onclick="print_image()">Print</button>
                                      </div>
                                      <div class="col-sm-3">
                                      
                                      <a href="mailto:test@gmail.com?subject=KYC Application
                                      &body=Thank You!" style="color:white"> 
-                                      <button class="btn btn-success" style="color:white;width:100px;height:50px" >Email
+                                      <button class="btn btn-success" style="color:white;width:80px;height:40px" >Email
                                       </button>
                                      </a>
 
@@ -2395,7 +2662,7 @@ $('#trigger').click(function(){
                                      <div class="col-sm-3">
                                       
                                       <a  style="color:white" download="<?php echo "passport.jpg"; ?>" href="<?php echo $img_lnk_passport_user; ?>" title="Save">
-                                        <button class="btn btn-success" style="color:white;width:100px;height:50px">Save
+                                        <button class="btn btn-success" style="color:white;width:80px;height:40px">Save
                                          </button>
                                       </a>
                                      
@@ -2404,11 +2671,6 @@ $('#trigger').click(function(){
                                      </div>
                                   </div>
                           </div>
-      </div>
-      <div class="modal-footer">
-       <!--  <button type="button" class="btn btn-default btn-prev">Prev</button>
-        <button type="button" class="btn btn-default btn-next">Next</button> -->
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
       </div>
     </div>
   </div>
@@ -2433,20 +2695,24 @@ $('#trigger').click(function(){
                                   }?>
 
                                   <div style="text-align:center">
-                                  <img class="print" src="<?php echo $img_lnk_aadhar_user; ?>" style="height:250px;width:250px;"></img>
+                                  <?php if (strpos($img_lnk_aadhar_user, '.pdf') !== false) {?>
+                                      <iframe class="print" src="<?php echo $img_lnk_aadhar_user; ?>" style="height:400px"></iframe>
+                                  <?php }else{ ?>
+                                      <img class="print" src="<?php echo $img_lnk_aadhar_user; ?>" style=""></img>
+                                  <?php }?>
                                   </div>
 
                                   <div style="margin-top:5%;margin-left:-22%" class="row">
                                      <div class="col-sm-3">
                                      </div>
                                      <div class="col-sm-3">
-                                      <button class="btn btn-success" style="color:white;width:100px;height:50px" onclick="print_image()">Print</button>
+                                      <button class="btn btn-success" style="color:white;width:80px;height:40px" onclick="print_image()">Print</button>
                                      </div>
                                      <div class="col-sm-3">
                                      
                                      <a href="mailto:test@gmail.com?subject=KYC Application
                                      &body=Thank You!" style="color:white"> 
-                                      <button class="btn btn-success" style="color:white;width:100px;height:50px" >Email
+                                      <button class="btn btn-success" style="color:white;width:80px;height:40px" >Email
                                       </button>
                                      </a>
 
@@ -2454,7 +2720,7 @@ $('#trigger').click(function(){
                                      <div class="col-sm-3">
                                       
                                       <a  style="color:white" download="<?php echo "aadhar_card.jpg"; ?>" href="<?php echo $img_lnk_aadhar_user; ?>" title="Save">
-                                        <button class="btn btn-success" style="color:white;width:100px;height:50px">Save
+                                        <button class="btn btn-success" style="color:white;width:80px;height:40px">Save
                                          </button>
                                       </a>
                                      
@@ -2463,11 +2729,6 @@ $('#trigger').click(function(){
                                      </div>
                                   </div>
                           </div>
-      </div>
-      <div class="modal-footer">
-       <!--  <button type="button" class="btn btn-default btn-prev">Prev</button>
-        <button type="button" class="btn btn-default btn-next">Next</button> -->
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
       </div>
     </div>
   </div>
@@ -2493,11 +2754,11 @@ function print_image() {
         e.preventDefault();
         if(x < max_fields){ //max input box allowed
             x++; //text box increment
-            $(wrapper).prepend('<br><div style="margin-left:50px;"><center><div class="form-group"> <label class=" control-label" for="textinput" style="margin-left:327px;">Name: </label> <div > <input id="partner_names[]" name="partner_names[]" type="text" placeholder="Enter Full Name" class="form-control input-md editentry partner_names" style="margin-top: -25px;margin-left: 403px;width: 241%;">  </div>  <div class="col-md-6" > <a href="new_user_popup.php" style="color:white" target="_blank" data-toggle="modal" data-target="#myModal"><button  type="button" class="btn btn-info new_entry_btn" style="margin-left: 809px;margin-top: -61px;">New Entry</button> </a> </div></div> <div class="form-group">  <label class="control-label" for="selectbasic" style="margin-left:293px;">Designation: </label>  <div> <select id="partner_designations[]" name="partner_designations[]" class="form-control partner_designations" style="margin-left: 405px;margin-top: -34px;width:118%;">      <option value="Managing Partner">Managing Partner</option>      <option value="Manager">Manager</option>      <option value="Other">Other</option>    </select>  </div>  <div>  <input style="margin-left: 617px;margin-top: -35px;width:114%" id="textinput" name="textinput" type="text" placeholder="Specify if Other" class="form-control input-md partner_others"></div></div></center><a href="#" class="remove_field" style="margin-left:748px;margin-top:-40px;position:absolute"><img src="images/del24.png"></a></a></div>'); //add input box\
+           $(wrapper).prepend('<div style="margin-left:50%;"><center><div class="form-group"> <label class="control-label name" for="textinput" style="">Name: </label> <div class="partner_name"> <input id="partner_names[]" name="partner_names[]" type="text" placeholder="Enter Full Name" class="form-control input-md newentry partner_names" style="">  </div>  <div class="col-md-6" > <a href="new_user_popup.php" style="color:white" target="_blank" data-toggle="modal" data-target="#myModal"><button  type="button" class="btn btn-info new_entry_btn entry">New Entry</button> </a> </div></div> <div class="form-group">  <label class="control-label designation" for="selectbasic">Designation: </label>  <div class="partner_designation"> <select id="partner_designations[]" name="partner_designations[]" class="form-control partner_designations" >      <option value="Managing Partner">Managing Partner</option>      <option value="Manager">Manager</option>      <option value="Other">Other</option>    </select>  </div>  <div class="partner_designation col2">  <input style="" id="textinput" name="textinput" type="text" placeholder="Specify if Other" class="form-control input-md partner_others"></div></div></center><a href="#" class="remove_field1" ><img src="images/del24.png"></a></a></div>'); //add input box\
         }
     });
     
-    $(wrapper).on("click",".remove_field", function(e){ //user click on remove text
+    $(wrapper).on("click",".remove_field1", function(e){ //user click on remove text
         e.preventDefault(); $(this).parent('div').remove(); x--;
     })
 
@@ -2524,12 +2785,32 @@ function goBack() {
     var wrapper_pre1         = $(".present_fields_1"); //Fields wrapper
     
     var x = 1; //initlal text box count
+    var date = new Date();
+    var day = date.getDate();
+    var month = date.getMonth() + 1;
+    var year = date.getFullYear();
+
+    if (month < 10) month = "0" + month;
+    if (day < 10) day = "0" + day;
+
+    var today = day + "-" + month + "-" + year;
     $(add_button).click(function(e){ //on add input button click
         e.preventDefault();
         if(x < max_fields){ //max input box allowed
             x++; //text box increment
-            $(wrapper).prepend('<br><div style="margin-left:50%;"><div class="form-group"><label class="control-label" for="selectbasic" style="margin-left:-325px;">Type of work</label><div class="col-md-6"><select id="type_of_work[]" name="type_of_work[]" class="form-control" style="margin-left:9%;width:208%"><option value="Option one">Option one</option><option value="Option two">Option two</option><option value="Option three">Option three</option></select></div></div><div class="form-group"> <label class="col-md-4 control-label" for="selectbasic" style="margin-left:-29%">Status</label><div class="col-md-6"><select id="status[]" name="status[]" style="width:210%;margin-left:-1%;" class="form-control"><option value="Pending">Pending</option><option value="Work in process">Work in process</option><option value="Completed">Completed</option></select></div></div><div class="form-group row"><label for="example-date-input" class="col-2 col-form-label" style="margin-left:-8.5%;";">DATE</label><div class="col-10"><input class="form-control datepicker" id="date[]" name="date[]" style="width:91%;margin-left:6.6%;margin-top:-6%;" type="text"></div></div><div class="form-group"><label class="col-md-4 control-label" for="textinput" style="margin-left:-29%">Comment</label><div class="col-md-4"><input id="comment[]" name="comment[]" type="text" placeholder="" class="form-control input-md" style="width:342%" required/></div></div></center><a href="#" class="remove_field" style="margin-left:446px;margin-top:-40px;position:absolute"><img src="images/del24.png"></a></a></div>'); //add input box\
-            $( ".datepicker" ).datepick({dateFormat: 'dd/mm/yyyy'});
+         $('<div style="margin-left:50%;"><div class="form-group"><label class="control-label type" for="selectbasic" style="">Type of work:</label><div class="col-md-6"><select id="type_of_work[]" name="type_of_work[]" class="form-control type_of_work" style=""><option value="Audit Report">Audit Report</option><option value="ITR filing">ITR filing</option><option value="VAT Filing">VAT Filing</option><option value="Accounting">Accounting</option><option value="Registration">Registration</option><option value="Certification">Certification</option><option value="Others">Others</option></select></div></div><div class="form-group"> <label class="col-md-4 control-label status" for="selectbasic" style="width:70%;">Status:</label><div class="col-md-6"><select id="status1" name="status[]"  class="form-control status-edit"><option value="Pending">Pending</option><option value="Work in process">Work in process</option><option value="Completed">Completed</option></select></div></div><div class="form-group row"><label for="example-date-input" class="col-2 col-form-label date">DATE:</label><div class="col-10 col"><input class="form-control datepicker pickers" id="datee'+ x +'" name="date[]" style="" type="text" readonly></div></div><div class="form-group"><label class="col-md-4 control-label comment" for="textinput" style="">Comment:</label><div class="col-md-4"><input id="comments" name="comment[]" type="text" placeholder="" class="form-control input-md comment" style=""></div></div></center><a href="#" class="remove_field" style=""><img src="images/del24.png" ></a></a></div>').insertBefore(add_button) //add input box\
+          var newInput=$("#datee"+x).datepicker({dateFormat: 'dd/mm/yy',changeMonth : true,
+            changeYear : true,});
+          newInput.datepicker({dateFormat: 'dd/mm/yy',changeMonth : true,
+            changeYear : true,}).datepicker("setDate", new Date());
+          $("#status1").click(function () {
+
+            if ($("#status1" ).val() == "Completed") {
+                $("#comments" ).attr("required", "required");
+            }
+            else
+              $("#comments").attr("required", false);
+        });
         }
     });
     
@@ -2552,17 +2833,20 @@ function goBack() {
         <script type="text/javascript" src="autocomplete-Files/EditEntryValues.js"></script>
         <script type="text/javascript" src="autocomplete-Files/Logic_EditEntry.js"></script>
 
+</main>
 </body>
 </html>
 
 
 <?php
 
+session_start();
+
 $db = pg_connect("host=ec2-107-20-191-76.compute-1.amazonaws.com port=5432 dbname=deu9vahl80fvjn user=vdvqpruzihrics password=17b3e7a56da97ca021e3da54bb1694bb799849a2b5911014ed6caa05e1e4e02d");
  pg_select($db, 'post_log', $_POST);
  
 
- $query=pg_query("SELECT id,name FROM users_users");
+ $query=pg_query("SELECT id,name,account_token,is_active FROM users_users WHERE is_active = 'true' AND account_token = '".$_SESSION['account_token']."'");
 
  $json=array();
 

@@ -1,23 +1,35 @@
+<?php
+session_start();
+if($_SESSION['login_kyc_app'] == 1){
+  echo "<script>location='search.php'</script>";
+}
+
+?>
 <!DOCTYPE html>
 <html>
 <head>
   <title>CA DATA BASE</title>
-    <link rel="stylesheet" type="text/css" href="css/material.indigo-pink.min.css">
-  <link rel="stylesheet" href="css/bootstrap.css">
+  <link rel="icon" type="image/png" sizes="36x36" href="images/green.png">
+  <link rel="stylesheet" type="text/css" href="css/material.indigo-pink.min.css">
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+  <link rel="stylesheet" type="text/css" href="css/kyc.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
 <!-- Material Design Lite -->
   <script src="https://code.getmdl.io/1.3.0/material.min.js"></script>
-  <link rel="stylesheet" href="css/material.css">
-  <link rel="stylesheet" href="css/fileupload.css">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" type="text/css" href="css/material.css">
+  <link rel="stylesheet" type="text/css" href="css/fileupload.css">
+  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 
   <script src="https://storage.googleapis.com/code.getmdl.io/1.0.6/material.min.js"></script>
 </head>
 <body style="background-color:#E8E8E8;overflow-x:hidden;">
 
 <?php
+
+session_start();
+
 if(isset($_POST['login_btn'])){
 $url2 = 'https://kyc-application.herokuapp.com/check_is_admin/';
 $options2 = array(
@@ -33,7 +45,19 @@ $context2 = stream_context_create($options2);
 $output2 = file_get_contents($url2, false,$context2);
 /*echo $output2;*/
 $arr2 = json_decode($output2,true);
-if($arr2['status']==200){
+if($arr2['status']==200 && $arr2['message']=='Is Super Admin'){
+  $_SESSION['login_kyc_app'] = 1;
+  echo "<script>location='super_admin.php'</script>";
+}elseif($arr2['status']==200 && $arr2['message']=='Is Admin'){
+  $_SESSION['login_kyc_app'] = 1;
+  $_SESSION['is_admin'] = 1;
+  $_SESSION['admin_pk'] = $arr2['admin_pk'];
+  $_SESSION['account_token'] = $arr2['account_token'];
+  /*echo $_SESSION['account_token'];*/
+  echo "<script>location='search.php'</script>";
+}elseif($arr2['status']==200 && $arr2['message']=='Is User'){
+  $_SESSION['login_kyc_app'] = 1;
+  $_SESSION['account_token'] = $arr2['account_token'];
   echo "<script>location='search.php'</script>";
 }elseif($arr2['status']==401){
   echo "<script>alert('Password Invalid')</script>";
@@ -49,8 +73,8 @@ if($arr2['status']==200){
      -moz-box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23) !important;
      box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23) !important;" class="mdl-layout__header">
     <div class="mdl-layout__header-row" >
-        <img style="margin-top:5%;width:50px;height:50px" src="images/green.png"></img>
-         <span class="mdl-layout-title" style="margin-left:26%;margin-top:7%;">KYCApp</span>
+        <img id="logo" src="images/green.png"></img>
+         <span class="mdl-layout-title" id="title" style="">KYCAPP</span>
           <!-- Add spacer, to align navigation to the right -->
     </div>
       </header>

@@ -3835,7 +3835,8 @@ fieldset[disabled] .mdl-checkbox .mdl-checkbox__ripple-container .mdl-ripple,
     line-height: 1;
     letter-spacing: .02em;
     font-weight: 400;
-    box-sizing: border-box
+    box-sizing: border-box;
+
 }
 .mdl-layout-spacer {
     -webkit-flex-grow: 1;
@@ -3890,13 +3891,13 @@ fieldset[disabled] .mdl-checkbox .mdl-checkbox__ripple-container .mdl-ripple,
 }
 .mdl-layout__drawer>.mdl-layout__title,
 .mdl-layout__drawer>.mdl-layout-title {
-    line-height: 64px;
+    line-height: 106px;
     padding-left: 40px
 }
 @media screen and (max-width: 1024px) {
     .mdl-layout__drawer>.mdl-layout__title,
     .mdl-layout__drawer>.mdl-layout-title {
-        line-height: 56px;
+        line-height: 108px;
         padding-left: 16px
     }
 }
@@ -3930,6 +3931,7 @@ fieldset[disabled] .mdl-checkbox .mdl-checkbox__ripple-container .mdl-ripple,
     background-color: #e0e0e0;
     color: #000
 }
+
 @media screen and (min-width: 1025px) {
     .mdl-layout--fixed-drawer>.mdl-layout__drawer {
         -webkit-transform: translateX(0);
@@ -3957,14 +3959,118 @@ fieldset[disabled] .mdl-checkbox .mdl-checkbox__ripple-container .mdl-ripple,
     color: rgb(255, 255, 255);
     z-index: 4
 }
+
+@media screen and (max-width:1024px){
+
+    .mdl-layout__drawer-button {
+    display: block;
+    position: absolute;
+    height: 48px;
+    width: 48px;
+    border: 0;
+    -webkit-flex-shrink: 0;
+    -ms-flex-negative: 0;
+    flex-shrink: 0;
+    overflow: hidden;
+    text-align: center;
+    cursor: pointer;
+    font-size: 26px;
+    line-height: 56px;
+    font-family: Helvetica, Arial, sans-serif;
+    margin: 8px 12px;
+    top: 27px;
+    left: 30px;
+    color: rgb(255, 255, 255);
+    z-index: 4
+}
+}
+
+@media screen and (max-width:1366px){
+
+    .mdl-layout__drawer-button {
+    display: block;
+    position: absolute;
+    height: 48px;
+    width: 48px;
+    border: 0;
+    -webkit-flex-shrink: 0;
+    -ms-flex-negative: 0;
+    flex-shrink: 0;
+    overflow: hidden;
+    text-align: center;
+    cursor: pointer;
+    font-size: 26px;
+    line-height: 56px;
+    font-family: Helvetica, Arial, sans-serif;
+    margin: 8px 12px;
+    top: 27px;
+    left: 30px;
+    color: rgb(255, 255, 255);
+    z-index: 4
+}
+}
+
+
+@media screen and (max-width: 1920px)
+{
+    .mdl-layout__drawer-button {
+    display: block;
+    position: absolute;
+    height: 48px;
+    width: 48px;
+    border: 0;
+    -webkit-flex-shrink: 0;
+    -ms-flex-negative: 0;
+    flex-shrink: 0;
+    overflow: hidden;
+    text-align: center;
+    cursor: pointer;
+    font-size: 26px;
+    line-height: 38px;
+    font-family: Helvetica, Arial, sans-serif;
+    margin: 8px 12px;
+    top: 27px;
+    left: 30px;
+    color: rgb(255, 255, 255);
+    z-index: 4
+}
+
+}
+
 .mdl-layout__header .mdl-layout__drawer-button {
     position: absolute;
     color: rgb(255, 255, 255);
-    background-color: inherit
+    background-color: inherit;
+    margin-top:1%;
+    padding:1px;
 }
-@media screen and (max-width: 1024px) {
+
+@media screen and (max-width:1366px)
+{
     .mdl-layout__header .mdl-layout__drawer-button {
-        margin: 4px
+    position: absolute;
+    color: rgb(255, 255, 255);
+    background-color: inherit;
+    margin-top:1%;
+    padding:1px;
+}
+}
+
+@media screen and (max-width:1024px)
+{
+.mdl-layout__header .mdl-layout__drawer-button {
+    position: absolute;
+    color: rgb(255, 255, 255);
+    background-color: inherit;
+    margin-top:1%;
+}
+}
+
+
+@media screen and (max-width: 1366px) {
+    .mdl-layout__drawer-button {
+        margin: 4px;
+        color: rgba(0, 0, 0, .5)
     }
 }
 @media screen and (max-width: 1024px) {
@@ -3973,9 +4079,22 @@ fieldset[disabled] .mdl-checkbox .mdl-checkbox__ripple-container .mdl-ripple,
         color: rgba(0, 0, 0, .5)
     }
 }
+
+@media screen and (min-width: 1366px) {
+    .mdl-layout__drawer-button {
+        line-height: 21px
+    }
+    .mdl-layout--no-desktop-drawer-button .mdl-layout__drawer-button,
+    .mdl-layout--fixed-drawer>.mdl-layout__drawer-button,
+    .mdl-layout--no-drawer-button .mdl-layout__drawer-button {
+        display: none
+    }
+}
+
+
 @media screen and (min-width: 1025px) {
     .mdl-layout__drawer-button {
-        line-height: 54px
+        line-height: 21px
     }
     .mdl-layout--no-desktop-drawer-button .mdl-layout__drawer-button,
     .mdl-layout--fixed-drawer>.mdl-layout__drawer-button,
@@ -5491,7 +5610,7 @@ fieldset[disabled] .mdl-switch .mdl-switch__ripple-container .mdl-ripple,
     display: inline-block;
     box-sizing: border-box;
     width: 300px;
-    max-width: 100%;
+    max-width: 89%;
     margin: 0;
     padding: 20px 0
 }

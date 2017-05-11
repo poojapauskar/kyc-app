@@ -1,32 +1,19 @@
+
+
 <html>
   <head>
 
-
-
-
-<!-- Datepicker -->
-<link rel="stylesheet" type="text/css" href="css/jquery.datepick.css"> 
-<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-<script type="text/javascript" src="js/jquery.plugin.js"></script> 
-<script type="text/javascript" src="js/jquery.datepick.js"></script>
-<script type="text/javascript">
-$(function() {
- $( ".datepicker" ).datepick({dateFormat: 'dd/mm/yyyy',maxDate: 0});
- /*$( ".datepicker" ).css('z-index', 99999);*/
-});
-</script> 
-
-
     <!---bootstrap-->
-  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-<link rel="stylesheet" type="text/css" href="css/material.indigo-pink.min.css">
+  <!-- <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"> -->
+<!-- <link rel="stylesheet" type="text/css" href="css/material.indigo-pink.min.css"> -->
 
 <link rel="stylesheet" href="css/bootstrap.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <!-- Material Design Lite -->
     <script src="https://code.getmdl.io/1.3.0/material.min.js"></script>
-    <link rel="stylesheet" href="css/material.css">
+    <link rel="stylesheet" type="text/css" href="css/material.css">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
 
 
  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
@@ -98,8 +85,47 @@ $(function() {
 
 
   </style>
+   <!-- Datepicker -->
+<link rel="stylesheet" type="text/css" href="css/jquery-ui.css"> 
+ <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"> 
+<!-- <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script> -->
+<script type="text/javascript" src="js/jquery.plugin.js"></script> 
+<script type="text/javascript" src="js/jquery.datepick.js"></script>
+<script type="text/javascript">
+$(function() {
+  $( ".datepicker.picker" ).datepicker({dateFormat: 'dd/mm/yy',maxDate:0,changeMonth : true,changeYear : true,yearRange: '-100y:c+nn',});
+});
 
+$(function() {
+  $( ".datepicker.pick" ).datepicker({dateFormat: 'dd/mm/yy',changeMonth : true,
+            changeYear : true}).datepicker("setDate", new Date());
+});
+</script> 
 
+<script type="text/javascript">
+  function validate(){
+    var Form=document.getElementById("Form_popup");
+    if(Form.checkValidity()==true)
+    {
+      /*alert("hello");*/
+      return proceed();
+
+    }
+  }
+</script>
+
+<script type="text/javascript">
+ $(document).ready(function () {
+        $("#statuss").click(function () {
+
+            if ($("#statuss").val() == "Completed") {
+                $("#commentsss").attr("required", "required");
+            }
+            else
+              $("#commentsss").attr("required", false);
+        });
+});
+</script>
 
 <script>
 
@@ -113,7 +139,7 @@ if(n1==null || n1==''){
 
 var a=document.forms["Form_popup"]["uid"].value;
 if(a==null || a==''){
-        var text = "";
+        /*var text = "";
         var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
 
         for( var i=0; i < 7; i++ )
@@ -123,9 +149,9 @@ if(a==null || a==''){
         
 
         var mystring= (document.getElementById('name1').value).substring(0, 3);
-        var uid_gen=mystring+text;
-        document.getElementById('uid').value = uid_gen;
-        document.getElementById('uid_in_popup').value = uid_gen;
+        var uid_gen=mystring+text;*/
+        document.getElementById('uid').value = document.getElementById('uid_format_org_page').value;
+        document.getElementById('uid_in_popup').value = document.getElementById('uid_format_org_page').value;
 
         /*alert("UID generated: "+uid_gen);*/
         var yourUl = document.getElementById("popup1");
@@ -233,10 +259,34 @@ if(a==null || a==''){
   }
 
 </script>
-
-
 </head>
 <body style="background-color:#E8E8E8;">
+
+<?php
+
+session_start();
+/*echo "<script>alert('hi')</script>";*/
+$url_uid_popup = 'https://kyc-application.herokuapp.com/get_uid/';
+$options_uid_popup = array(
+  'http' => array(
+    'header'  => array(
+                        'ACCOUNT-TOKEN: '.$_SESSION['account_token'],
+                        ),
+    'method'  => 'GET',
+  ),
+);
+$context_uid_popup = stream_context_create($options_uid_popup);
+$output_uid_popup = file_get_contents($url_uid_popup, false,$context_uid_popup);
+/*echo $output_uid;*/
+$arr_uid_popup = json_decode($output_uid_popup,true);
+
+
+/*echo "<script type='text/javascript'>alert('$output_uid');</script>";*/
+
+
+?>
+
+
 
 <script type="text/javascript">
   function submit_form(){
@@ -277,6 +327,7 @@ if(a==null || a==''){
                       $('#popup1').hide();
                       $('#myModal').click();
                       /*$('#myModal').modal('hide');*/
+                      /*$('#refresh').load(' #refresh');*/
                   }
     });
 
@@ -300,6 +351,7 @@ if(a==null || a==''){
   }
 </script>
 
+
 <!-- <p>Click on the "x" symbol to close the alert message.</p> -->
 <div class="alert" id="popup1" class="popup1" style="display:none;text-align:center;position:absolute;
     width:100%;
@@ -309,12 +361,9 @@ if(a==null || a==''){
   <label>UID Generated</label><br>
   <input type="text" id="uid_in_popup" name="uid_in_popup" style="text-align:center;background-color:transparent;color:black;border:none"></input><br><br>
   <button style="margin-left:1%" id="done" class="btn btn-success" name="done" onclick="submit_form()">Done</button>
-  <button onclick="make_uid_null()" id="cancel1" class="btn btn-warning" name="cancel1">Cancel</button>
+  <button onclick="make_uid_null()" style="margin-top:0%;margin-left:6%;width:5em" id="cancel1" class="btn btn-warning" name="cancel1">Cancel</button>
   <!-- </form> -->
 </div>
-
-
-
 <div class="demo-layout-transparent mdl-layout mdl-js-layout">
       <header style="background-color:#08426a;height:110px;-webkit-box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23) !important;
      -moz-box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23) !important;
@@ -323,11 +372,11 @@ if(a==null || a==''){
 
         <a href="search.php"><img style="margin-top:5%;margin-left:28px;width:50px;height:50px" src="images/green.png"></img></a>
 <h5 style="margin-left:35%;margin-top:9%;">New Entry Individual</h5>
-         <span class="mdl-layout-title" style="margin-left:26%;margin-top:7%;">KYCApp</span>
+         <span class="mdl-layout-title" style="margin-left:26%;margin-top:7%;">KYCAPP</span>
           <!-- Add spacer, to align navigation to the right -->
       </header>
       <div class="mdl-layout__drawer">
-        <span class="mdl-layout-title">Title</span>
+        <span class="mdl-layout-title">KYCAPP</span>
         <nav class="mdl-navigation">
           <a class="mdl-navigation__link" href="search.php">Home</a>
           <a class="mdl-navigation__link" href="new_organization.php">New Entry Organization</a>
@@ -345,20 +394,20 @@ if(a==null || a==''){
 <form name="Form_popup" id="Form_popup" class="form-horizontal" method="post" action="new_user_popup.php" enctype="multipart/form-data">
 <fieldset>
 
+<input type="hidden" name="uid_format_org_page" id="uid_format_org_page" value="<?php echo $arr_uid_popup['uid'] ?>"></input>
 <!-- Form_popup Name -->
 <!-- <legend><center>New Individual Entry</center></legend> -->
 <!--avatar upload-->
 
 <div style="margin-top:7%">
 <img class="profile-pic" style="margin-left:77%;position:absolute;z-index:2;" src="images/boy-512.png" />
-<div class="upload-button" style="position:absolute;z-index:2;margin-left:79%;margin-top:23%;">Upload Image</div>
+<div class="upload-button" style="position:absolute;z-index:2;margin-left:79%;margin-top:26%!important;">Upload Image</div>
 <input onchange="check_image_1_user()" name="image" id="image" class="file-upload1" style="position:absolute;z-index:-2;margin-left:46%;margin-top:16%;" type="file">
 <!-- Text input-->
 <div class="form-group">
   <label class="col-md-4 control-label" for="textinput">UID:</label>  
   <div class="col-md-4">
-  <input id="uid" name="uid" type="text" value="<?php echo $_POST['uid'] ?>" placeholder="" class="form-control input-md">
-    
+  <input id="uid" name="uid" type="text" value="<?php echo $_POST['uid'] ?>" placeholder="" class="form-control input-md" readonly>
   </div>
 </div>
 
@@ -375,10 +424,11 @@ if(a==null || a==''){
 
   <label for="example-date-input" class="col-2 col-form-label" style="margin-left:24.5%;">DOB:</label>
   <div class="col-4">
-    <input class="form-control datepicker" id="date1" name="date1" value="<?php echo $_POST['date1'] ?>" style="width:28.9%;margin-left:35.6%;margin-top:-4%;" type="text" readonly>
+    <input class="form-control datepicker picker" id="date1" name="date1" value="<?php echo $_POST['date1'] ?>" style="width:28.9%;margin-left:35.6%;margin-top:-4%;" type="text" readonly>
 
   </div>
 </div>
+<img src="/images/calendar.png" style="margin-left: 68%;margin-top:-15%">
 
 <!-- Select Basic -->
 <div class="form-group">
@@ -415,7 +465,7 @@ if(a==null || a==''){
 <div class="form-group">
   <label class="col-md-4 control-label" for="textinput">PAN:</label>  
   <div class="col-md-4">
-  <input id="pan" name="pan" value="<?php echo $_POST['pan'] ?>" type="text" placeholder="" class="form-control input-md">
+  <input id="pan" name="pan" value="<?php echo $_POST['pan'] ?>" type="text" placeholder="" class="form-control input-md" required>
     
   </div>
 </div>
@@ -493,9 +543,13 @@ if(a==null || a==''){
   <label class="col-md-4 control-label" for="selectbasic">Type of work:</label>
   <div class="col-md-4">
     <select id="type_of_work[]" name="type_of_work[]" class="form-control">
-      <option value="Option one">Option one</option>
-      <option value="Option two">Option two</option>
-      <option value="Option three">Option three</option>
+      <option value="Audit Report">Audit Report</option>
+      <option value="ITR filing">ITR filing</option>
+      <option value="VAT Filing">VAT Filing</option>
+      <option value="Accounting">Accounting</option>
+      <option value="Registration">Registration</option>
+      <option value="Certification">Certification</option>
+      <option value="Others">Others</option>
     </select>
   </div>
 </div>
@@ -504,7 +558,7 @@ if(a==null || a==''){
 <div class="form-group">
   <label class="col-md-4 control-label" for="selectbasic">Status:</label>
   <div class="col-md-4">
-    <select id="status[]" name="status[]" class="form-control">
+    <select id="statuss" name="status[]" class="form-control">
       <option value="Pending">Pending</option>
       <option value="Work in process">Work in process</option>
       <option value="Completed">Completed</option>
@@ -515,7 +569,7 @@ if(a==null || a==''){
 <div class="form-group row">
   <label for="example-date-input" class="col-2 col-form-label" style="margin-left:24.5%;">DATE:</label>
   <div class="col-4">
-    <input class="form-control datepicker" id="date[]" name="date[]" value="<?php echo $_POST['date'] ?>" style="width:28.9%;margin-left:35.6%;margin-top:-4%;" type="text" readonly>
+    <input class="form-control datepicker pick" id="dateuser" name="date[]" value="<?php echo $_POST['date'] ?>" style="width:28.9%;margin-left:35.6%;margin-top:-4%;" type="text" readonly>
   </div>
 </div>
 
@@ -524,7 +578,7 @@ if(a==null || a==''){
 <div class="form-group">
   <label class="col-md-4 control-label" for="textinput">Comment:</label>  
   <div class="col-md-4">
-  <input id="comment[]" name="comment[]" type="text" placeholder="" class="form-control input-md">
+  <input id="commentsss" name="comment[]" type="text" placeholder="" class="form-control input-md">
     
   </div>
 </div>
@@ -537,8 +591,8 @@ if(a==null || a==''){
 <div class="form-group">
 
 <div class="col-md-8 col-sm-12 col-24">
-    <div class="input_fields" style="color:black">
-         <button class="add_field btn " onclick="incrementValue()" style="margin-left: 443px;">Add</button>
+    <div class="input_fieldss" style="color:black">
+         <button class="add_fields btn" id="add_fields" onclick="incrementValue()" style="margin-left: 206px;">Add</button>
          <div>
          <input type="text" name="mytextt[]" hidden="" ></div>
 </div>
@@ -550,7 +604,7 @@ if(a==null || a==''){
   <label class="col-md-4 control-label" for="singlebutton"></label>
 
   <div class="col-md-4" style="text-align:center">
-    <button onclick="return proceed()" id="generate_btn" name="generate_btn">Generate</button>
+    <button onclick="return validate();" id="generate_btn" name="generate_btn" class="btn btn-success">Generate</button>
     <!-- <button id="singlebutton" style="margin-left:13%;" name="singlebutton" class="btn btn-primary"><a style="color:white" onclick="goBack()">Discard</a></button> -->
 
   </div>
@@ -570,18 +624,39 @@ function goBack() {
 
      $(document).ready(function() {
     var max_fields      = 10; //maximum input boxes allowed
-    var wrapper         = $(".input_fields"); //Fields wrapper
-    var add_button      = $(".add_field"); //Add button ID
+    var wrapper         = $(".input_fieldss"); //Fields wrapper
+    var add_button      = $(".add_fields"); //Add button ID
 
     var wrapper_pre1         = $(".present_fields_1"); //Fields wrapper
-    
     var x = 1; //initlal text box count
-    $(add_button).click(function(e){ //on add input button click
+    var date = new Date();
+  var day = date.getDate();
+  var month = date.getMonth() + 1;
+  var year = date.getFullYear();
+
+  if (month < 10) month = "0" + month;
+  if (day < 10) day = "0" + day;
+
+  var today = day + "-" + month + "-" + year;
+  // $(".datepick").val(today);
+    $(add_button).on("click",function(e){ //on add input button click
         e.preventDefault();
         if(x < max_fields){ //max input box allowed
-            x++; //text box increment
-              $(wrapper).prepend('<br><div style="margin-left:50%;"><div class="form-group"><label class="control-label" for="selectbasic" style="margin-left:-220px;">Type of work</label><div class="col-md-6"><select id="type_of_work[]" name="type_of_work[]" class="form-control" style="margin-left:17%;width:222%"><option value="Option one">Option one</option><option value="Option two">Option two</option><option value="Option three">Option three</option></select></div></div><div class="form-group"> <label class="col-md-4 control-label" for="selectbasic" style="margin-left:-29%">Status</label><div class="col-md-6"><select id="status[]" name="status[]" style="width:210%;margin-left:-1%;" class="form-control"><option value="Pending">Pending</option><option value="Work in process">Work in process</option><option value="Completed">Completed</option></select></div></div><div class="form-group row"><label for="example-date-input" class="col-2 col-form-label" style="margin-left:-15.5%;";">DATE</label><div class="col-8"><input class="form-control datepicker" id="date[]" name="date[]" value="<?php echo $_POST['date'] ?>" style="width:86%;margin-left:10.6%;margin-top:-10%;" type="text" readonly></div></div><div class="form-group"><label class="col-md-4 control-label" for="textinput" style="margin-left:-36%">Comment</label><div class="col-md-4"><input id="comment[]" name="comment[]" type="text" placeholder="" class="form-control input-md" style="width:342%;margin-left:20%"></div></div></center><a href="#" class="remove_field" style="margin-left: 197px; margin-top: -40px;position:absolute"><img src="images/del24.png"></a></a></div>'); //add input box\
-              $( ".datepicker" ).datepick({dateFormat: 'dd/mm/yyyy',maxDate: 0});
+              x++; //text box incrementa
+              $('<div style="margin-left:50%;"><div class="form-group"><label class="control-label" for="selectbasic" style="margin-left:-220px;">Type of work</label><div class="col-md-6"><select id="type_of_work[]" name="type_of_work[]" class="form-control" style="margin-left:17%;width:222%"><option value="Option one"></option><option value="Option one">Audit Report</option><option value="Option two">ITR filing</option><option value="Option three">VAT Filing</option><option value="Option four">Accounting</option><option value="Option five">Registration</option><option value="Option six">Certification</option><option value="Option seven">Others</option></select></div></div><div class="form-group"> <label class="col-md-4 control-label" for="selectbasic" style="margin-left:-29%">Status</label><div class="col-md-6"><select id="status11' + x + '" name="status[]" style="width:223%;margin-left:3%;" class="form-control"><option value="Option one"></option><option value="Pending">Pending</option><option value="Work in process">Work in process</option><option value="Completed">Completed</option></select></div></div><div class="form-group row"><label for="example-date-input" class="col-2 col-form-label" style="margin-left:-15.5%;";">DATE</label><div class="col-8"><input class="form-control datepicker pick" id="date11' + x + '" name="date[]" value="<?php echo $_POST['date'] ?>" style="width:86%;margin-left:11.6%;margin-top:-10%;" type="text" readonly></div></div><div class="form-group"><label class="col-md-4 control-label" for="textinput" style="margin-left:-36%">Comment</label><div class="col-md-4"><input id="comments11' + x + '" name="comment[]" type="text" placeholder="" class="form-control input-md" style="width:432%;margin-left:26%"></div></div></center><a href="#" class="remove_field" style="margin-left: 230px; margin-top: -40px;position:absolute"><img src="images/del24.png"></a></a></div>').insertBefore(add_button) //add input box\         
+              var newInput11=$("#date11" + x).datepicker({dateFormat: 'dd/mm/yy',changeMonth : true,
+            changeYear : true});
+              newInput11.datepicker({dateFormat: 'dd/mm/yyyy'}).datepicker("setDate", new Date());
+              $("#status11" + x).on("click",".form-control",function () {
+
+                 if ($("#status11" + x).val() == "Completed") {
+                     $("#comments11" + x).attr("required", "required");
+                 }
+                 else{
+                     $("#comments11" + x).attr("required", false);
+                 }
+              });
+
         }
     });
     
@@ -595,6 +670,5 @@ function goBack() {
 });
 
     </script>
-
 </body>
 </html>

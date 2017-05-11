@@ -1,21 +1,32 @@
+<?php
+session_start();
+if($_SESSION['login_kyc_app'] == 1){
+
+}else{
+  echo "<script>location='index.php'</script>";
+}
+
+?>
+<!-- htnl starts here -->
 <!DOCTYPE html>
 <html>
 <head>
   <title></title>
+  <link rel="icon" type="image/png" sizes="36x36" href="images/green.png">
 
   <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 <!-- <link rel="stylesheet" type="text/css" href="css/material.indigo-pink.min.css"> -->
  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="css/bootstrap.css">
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
   <link rel="stylesheet" type="text/css" href="autocomplete-Files/styles.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script> 
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <!-- Material Design Lite -->
   <script src="https://code.getmdl.io/1.3.0/material.min.js"></script>
-  <link rel="stylesheet" href="css/material.css">
-  <link rel="stylesheet" href="css/fileupload.css">
-  <link rel="stylesheet" href="css/fileupload.css">
-  <link rel="stylesheet" href="autocomplete-Files/styles.css">
+  <link rel="stylesheet" type="text/css" href="css/material.css">
+  <link rel="stylesheet" type="text/css" href="css/fileupload.css">
+  <link rel="stylesheet" type="text/css" href="css/kyc.css">
+  <link rel="stylesheet" type="text/css" href="autocomplete-Files/styles.css">
 
   <script src="https://storage.googleapis.com/code.getmdl.io/1.0.6/material.min.js"></script>
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"> 
@@ -36,6 +47,9 @@
     margin: 0;
     padding-left: 0;
 }
+/*#pan_upload{
+  background:url(images/Upload-26 (1).png)right center no-repeat; 
+}*/
 </style>
 <script type="text/javascript">
 
@@ -147,51 +161,10 @@ document.getElementById('uploadFile').value='Choose File'; }
     });
 });
   </script>
-  <style type="text/css">
-    .upload-button {
-    padding: 4px;
-    border: 1px solid black;
-    border-radius: 5px;
-    display: block;
-    float: left;
-}
+<script type="text/javascript">
 
-.profile-pic {
-    max-width: 160px;
-    max-height: 160px;
-    display: block;
-}
-
-.file-upload1 {
-    display: none;
-}
-.alert {
-    padding: 20px;
-    background-color: #f44336;
-    color: white;
-    /*position: relative;*/
-}
-
-.closebtn {
-    margin-left: 15px;
-    color: white;
-    font-weight: bold;
-    float: right;
-    font-size: 22px;
-    line-height: 20px;
-    cursor: pointer;
-    transition: 0.3s;
-}
-
-.closebtn:hover {
-    color: black;
-}
-  </style>
-
-<script>
 
 function proceed(){
-
 
 var a=document.forms["Form"]["uid"].value;
 if(a==null || a==''){
@@ -203,33 +176,74 @@ if(a==null || a==''){
 
         var mystring= (document.getElementById('name').value).substring(0, 3);
         var uid_gen=mystring+text;
-        document.getElementById('uid').value = uid_gen;
-        document.getElementById('uid_in_popup').value = uid_gen;
+        document.getElementById('uid').value = document.getElementById('uid_format').value;
+        document.getElementById('uid_in_popup').value = document.getElementById('uid_format').value;
 
-        /*alert("UID generated: "+uid_gen);*/
+
+         /*alert("UID generated: "+document.getElementById('uid_format').value);*/
         var yourUl = document.getElementById("popup1");
         yourUl.style.display = yourUl.style.display === 'none' ? '' : 'none';
         return false;
 }else{
         document.getElementById('uid_in_popup').value = document.getElementById('uid').value;
 
-        /*alert("UID generated: "+uid_gen);*/
+        /*alert("UID generated: "+document.getElementById('uid').value);*/
         var yourUl = document.getElementById("popup1");
         yourUl.style.display = yourUl.style.display === 'none' ? '' : 'none';
         return false;
 }
 }
+
+
 </script>
 
 <!-- Datepicker -->
-<link rel="stylesheet" type="text/css" href="css/jquery.datepick.css"> 
-<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-<script type="text/javascript" src="js/jquery.plugin.js"></script> 
-<script type="text/javascript" src="js/jquery.datepick.js"></script>
+ <link rel="stylesheet" href="css/jquery-ui.css"> 
+ <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
+ <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="js/jquery-ui.js"></script>
 <script type="text/javascript">
 $(function() {
- $( ".datepicker" ).datepick({dateFormat: 'dd/mm/yyyy',maxDate: 0});
+  $( ".datepicker.picker" ).datepicker({dateFormat : 'dd/mm/yy',
+            changeMonth : true,
+            changeYear : true,
+            yearRange: '-100y:c+nn',
+            maxDate: '0',
+          beforeShow: function (input, inst) {
+        setTimeout(function () {
+            inst.dpDiv.css({
+            'z-index':4,
+            width:300,
+             
+            });
+        }, 0);}
+
+});});
+
+// $(function() {
+//   $( ".datepicker.pick" ).datepicker({changeMonth: true,changeYear: true}).datepicker("setDate", new Date()).setTimeout(function(){
+//             $('.ui-datepicker').css('z-index',44444);
+//         }, 0);
+
+// });
+$(function() {
+  $( ".datepicker.pick" ).datepicker({
+    dateFormat : 'dd/mm/yy',
+    changeMonth: true,changeYear: true,
+     beforeShow: function (input, inst) {
+        setTimeout(function () {
+            inst.dpDiv.css({
+            'z-index':4,
+            width:300,
+             
+            });
+        }, 10);
+     }
+}).datepicker("setDate", new Date());
 });
+
+
 </script>
 
 
@@ -238,6 +252,7 @@ $(function() {
 
 <body style="background-color:#E8E8E8;overflow-x:hidden;">
 
+<?php session_start();?>
 <script type="text/javascript">
   function submit_form(){
     $('#Form').submit();
@@ -334,9 +349,9 @@ $(function() {
   function check_image_user(){
     image_user = document.getElementById('image');
     if(image_user.files.length != 0){
-        document.getElementById('image').value="";
         var isValid = /\.(jpg|jpeg|png|gif|pdf)$/.test(image_user.value);
         if (!isValid) {
+          document.getElementById('image').value="";
           alert('Profile Pic: Only image and pdf files allowed!');
           return false;
         }
@@ -355,18 +370,49 @@ if(isset($_POST["save_btn"]) and $_GET["is_user"]==0) {
         for ($i = 0; $i < 4; $i++) {
             $randomString .= $characters[rand(0, $charactersLength - 1)];
         }*/
+$reg11 = $_FILES["reg_certificate"]["name"];
+$reg11 = end((explode(".", $reg11))); # extra () to prevent notice
+if($reg11 == ""){
+  $reg11=".jpg";
+}else{
+  $reg11=".".$reg11;
+}
+
+$pan11 = $_FILES["pan_card"]["name"];
+$pan11 = end((explode(".", $pan11))); # extra () to prevent notice
+if($pan11 == ""){
+  $pan11=".jpg";
+}else{
+  $pan11=".".$pan11;
+}
+
+$pass11 = $_FILES["bank_pass_book"]["name"];
+$pass11 = end((explode(".", $pass11))); # extra () to prevent notice
+if($pass11 == ""){
+  $pass11=".jpg";
+}else{
+  $pass11=".".$pass11;
+}
+
+$tel11 = $_FILES["telephone_bill"]["name"];
+$tel11 = end((explode(".", $tel11))); # extra () to prevent notice
+if($tel11 == ""){
+  $tel11=".jpg";
+}else{
+  $tel11=".".$tel11;
+}
 
         $names=array();
-        $names[0]= "reg_cert".rand(0, 9999).".jpg";
-        $names[1]= "pan_card".rand(0, 9999).".jpg";
-        $names[2]= "pass_book".rand(0, 9999).".jpg";
-        $names[3]= "telephone_bill".rand(0, 9999).".jpg";
-        $names[4]= $randomString.rand(0, 9999).".jpg";
+        $names[0]= "reg_cert".rand(0, 9999).$reg11;
+        $names[1]= "pan_card".rand(0, 9999).$pan11;
+        $names[2]= "pass_book".rand(0, 9999).$pas11;
+        $names[3]= "telephone_bill".rand(0, 9999).$tel11;
+        /*$names[4]= $randomString.rand(0, 9999).".jpg";*/
 
 
         /*Get Signed Urls*/
         $url = 'https://kyc-application.herokuapp.com/get_signed_url/';
-        $data = array('image_list' => [$names[0],$names[1],$names[2],$names[3],$names[4]]);
+        $data = array('image_list' => [$names[0],$names[1],$names[2],$names[3]]);
 
         $options = array(
           'http' => array(
@@ -387,7 +433,7 @@ if(isset($_POST["save_btn"]) and $_GET["is_user"]==0) {
     
 
     $check = getimagesize($_FILES["reg_certificate"]["tmp_name"]);
-    if($check !== false) {
+    if(is_uploaded_file($_FILES['reg_certificate']['tmp_name']) && !($_FILES['reg_certificate']['error'])) {
         $url_upload = $arr[0][0];
         /*echo $url_upload;*/
 
@@ -414,12 +460,13 @@ if(isset($_POST["save_btn"]) and $_GET["is_user"]==0) {
         $reg_certificate_id=$arr[0]['id'];
 
     } else {
+      /* echo "hello";*/
         $reg_certificate_id="";
     }
 
 
     $check_pan = getimagesize($_FILES["pan_card"]["tmp_name"]);
-    if($check_pan !== false) {
+    if(is_uploaded_file($_FILES['pan_card']['tmp_name']) && !($_FILES['pan_card']['error'])) {
         $url_upload_pan = $arr[1][1];
         /*echo $url_upload;*/
 
@@ -450,7 +497,7 @@ if(isset($_POST["save_btn"]) and $_GET["is_user"]==0) {
     }
 
     $check_pass_book = getimagesize($_FILES["bank_pass_book"]["tmp_name"]);
-    if($check_pass_book !== false) {
+    if(is_uploaded_file($_FILES['bank_pass_book']['tmp_name']) && !($_FILES['bank_pass_book']['error'])) {
         $url_upload_pass_book = $arr[2][2];
         /*echo $url_upload;*/
 
@@ -481,7 +528,7 @@ if(isset($_POST["save_btn"]) and $_GET["is_user"]==0) {
     }
 
     $check_telephone_bill = getimagesize($_FILES["telephone_bill"]["tmp_name"]);
-    if($check_telephone_bill !== false) {
+    if(is_uploaded_file($_FILES['telephone_bill']['tmp_name']) && !($_FILES['telephone_bill']['error'])) {
         $url_upload_telephone_bill = $arr[3][3];
         /*echo $url_upload;*/
 
@@ -544,7 +591,12 @@ if(isset($_POST["save_btn"]) and $_GET["is_user"]==0) {
 
   $comment='';
   for($j=0;$j<count($_POST['comment']);$j++){
-    $comment=$comment.",".$_POST['comment'][$j];
+    if($_POST['comment'][$j] == ""){
+      $comment1=' ';
+    }else{
+      $comment1=$_POST['comment'][$j];
+    }
+    $comment=$comment.",".$comment1;
   }
   $comment = ltrim($comment, ',');
 
@@ -568,6 +620,7 @@ if(isset($_POST["save_btn"]) and $_GET["is_user"]==0) {
                           'STATUS: '.$status,
                           'DATE: '.$date,
                           'COMMENT: '.$comment,
+                          'ACCOUNT-TOKEN: '.$_SESSION['account_token'],
                           ),
       'method'  => 'GET',
     ),
@@ -577,7 +630,7 @@ if(isset($_POST["save_btn"]) and $_GET["is_user"]==0) {
   $arr_org = json_decode($output_org,true);
 
   if($arr_org['status']==200){
-    /*echo "<script>alert('New Organization Created')</script>";*/
+    echo "<script>alert('New Organization Created')</script>";
     $_POST = array();
   }
 }
@@ -594,14 +647,70 @@ if ($_POST['uid'] != '' and $_GET["is_user"]==1){
             $randomString .= $characters[rand(0, $charactersLength - 1)];
         }
 
+$pan22= $_FILES["pan_card"]["name"];
+$pan22 = end((explode(".", $pan22))); # extra () to prevent notice
+if($pan22 == ""){
+  $pan22=".jpg";
+}else{
+  $pan22=".".$pan22;
+}
+
+$voter22 = $_FILES["voter_id"]["name"];
+$voter22 = end((explode(".", $voter22))); # extra () to prevent notice
+if($voter22 == ""){
+  $voter22=".jpg";
+}else{
+  $voter22=".".$voter22;
+}
+
+$pass22 = $_FILES["bank_pass_book"]["name"];
+$pass22 = end((explode(".", $pass22))); # extra () to prevent notice
+if($pass22 == ""){
+  $pass22=".jpg";
+}else{
+  $pass22=".".$pass22;
+}
+
+$tel22 = $_FILES["telephone_bill"]["name"];
+$tel22 = end((explode(".", $tel22))); # extra () to prevent notice
+if($tel22 == ""){
+  $tel22=".jpg";
+}else{
+  $tel22=".".$tel22;
+}
+
+$aadhar22 = $_FILES["aadhar_card"]["name"];
+$aadhar22 = end((explode(".", $aadhar22))); # extra () to prevent notice
+if($aadhar22 == ""){
+  $aadhar22=".jpg";
+}else{
+  $aadhar22=".".$aadhar22;
+}
+
+$passport22 = $_FILES["passport"]["name"];
+$passport22 = end((explode(".", $passport22))); # extra () to prevent notice
+if($passport22 == ""){
+  $passport22=".jpg";
+}else{
+  $passport22=".".$passport22;
+}
+
+$profile22 = $_FILES["image"]["name"];
+$profile22 = end((explode(".", $profile22))); # extra () to prevent notice
+if($profile22 == ""){
+  $profile22=".jpg";
+}else{
+  $profile22=".".$profile22;
+}
+
         $names=array();
-        $names[0]= "pan_card".rand(0, 9999).".jpg";
-        $names[1]= "voter_id".rand(0, 9999).".jpg";
-        $names[2]= "pass_book".rand(0, 9999).".jpg";
-        $names[3]= "telephone_bill".rand(0, 9999).".jpg";
-        $names[4]= "aadhar_card".rand(0, 9999).".jpg";
-        $names[5]= "passport".rand(0, 9999).".jpg";
-        $names[6]= "profile".rand(0, 9999).".jpg";
+        $names[0]= "pan_card".rand(0, 9999).$pan22;
+        $names[1]= "voter_id".rand(0, 9999).$voter22;
+        $names[2]= "pass_book".rand(0, 9999).$pass22;
+        $names[3]= "telephone_bill".rand(0, 9999).$tel22;
+        $names[4]= "aadhar_card".rand(0, 9999).$aadhar22;
+        $names[5]= "passport".rand(0, 9999).$passport22;
+        $names[6]= "profile".rand(0, 9999).$profile22;
 
 
         /*Get Signed Urls*/
@@ -627,7 +736,7 @@ if ($_POST['uid'] != '' and $_GET["is_user"]==1){
     
 
     $check = getimagesize($_FILES["pan_card"]["tmp_name"]);
-    if($check !== false) {
+    if(is_uploaded_file($_FILES['pan_card']['tmp_name']) && !($_FILES['pan_card']['error'])) {
         $url_upload = $arr[0][0];
         /*echo $url_upload;*/
 
@@ -659,7 +768,7 @@ if ($_POST['uid'] != '' and $_GET["is_user"]==1){
 
 
     $check_voter_id = getimagesize($_FILES["voter_id"]["tmp_name"]);
-    if($check_voter_id !== false) {
+    if(is_uploaded_file($_FILES['voter_id']['tmp_name']) && !($_FILES['voter_id']['error'])) {
         $url_upload_voter_id = $arr[1][1];
         /*echo $url_upload;*/
 
@@ -690,7 +799,7 @@ if ($_POST['uid'] != '' and $_GET["is_user"]==1){
     }
 
     $check_pass_book = getimagesize($_FILES["bank_pass_book"]["tmp_name"]);
-    if($check_pass_book !== false) {
+    if(is_uploaded_file($_FILES['bank_pass_book']['tmp_name']) && !($_FILES['bank_pass_book']['error'])) {
         $url_upload_pass_book = $arr[2][2];
         /*echo $url_upload;*/
 
@@ -721,7 +830,7 @@ if ($_POST['uid'] != '' and $_GET["is_user"]==1){
     }
 
     $check_telephone_bill = getimagesize($_FILES["telephone_bill"]["tmp_name"]);
-    if($check_telephone_bill !== false) {
+    if(is_uploaded_file($_FILES['telephone_bill']['tmp_name']) && !($_FILES['telephone_bill']['error'])) {
         $url_upload_telephone_bill = $arr[3][3];
         /*echo $url_upload;*/
 
@@ -752,7 +861,7 @@ if ($_POST['uid'] != '' and $_GET["is_user"]==1){
     }
 
     $check_aadhar_card = getimagesize($_FILES["aadhar_card"]["tmp_name"]);
-    if($check_aadhar_card !== false) {
+    if(is_uploaded_file($_FILES['aadhar_card']['tmp_name']) && !($_FILES['aadhar_card']['error'])) {
         $url_upload_aadhar_card = $arr[4][4];
         /*echo $url_upload;*/
 
@@ -783,7 +892,7 @@ if ($_POST['uid'] != '' and $_GET["is_user"]==1){
     }
 
     $check_passport = getimagesize($_FILES["passport"]["tmp_name"]);
-    if($check_passport !== false) {
+    if(is_uploaded_file($_FILES['passport']['tmp_name']) && !($_FILES['passport']['error'])) {
         $url_upload_passport = $arr[5][5];
         /*echo $url_upload;*/
 
@@ -814,7 +923,7 @@ if ($_POST['uid'] != '' and $_GET["is_user"]==1){
     }
 
     $check_image = getimagesize($_FILES["image"]["tmp_name"]);
-    if($check_image !== false) {
+    if(is_uploaded_file($_FILES['image']['tmp_name']) && !($_FILES['image']['error'])) {
         $url_upload_image = $arr[6][6];
         /*echo $url_upload;*/
 
@@ -864,7 +973,12 @@ if ($_POST['uid'] != '' and $_GET["is_user"]==1){
 
   $comment='';
   for($j=0;$j<count($_POST['comment']);$j++){
-    $comment=$comment.",".$_POST['comment'][$j];
+    if($_POST['comment'][$j] == ""){
+      $comment1=' ';
+    }else{
+      $comment1=$_POST['comment'][$j];
+    }
+    $comment=$comment.",".$comment1;
   }
   $comment = ltrim($comment, ',');
 
@@ -890,6 +1004,7 @@ if ($_POST['uid'] != '' and $_GET["is_user"]==1){
                           'STATUS: '.$status,
                           'DATE: '.$date,
                           'COMMENT: '.$comment,
+                          'ACCOUNT-TOKEN: '.$_SESSION['account_token'],
                           ),
       'method'  => 'GET',
     ),
@@ -899,18 +1014,43 @@ if ($_POST['uid'] != '' and $_GET["is_user"]==1){
   $arr_org = json_decode($output_org,true);
 
   if($arr_org['status']==200){
-    /*echo "<script>alert('New Individual Created')</script>";*/
+    // echo "<script>alert('New Individual Created')</script>";
     $_POST = array();
   }
 }
 ?>
+
+<div id='refresh'>
+<?php
+
+/*echo "<script>alert('hi')</script>";*/
+$url_uid = 'https://kyc-application.herokuapp.com/get_uid/';
+$options_uid = array(
+  'http' => array(
+    'header'  => array(
+                        'ACCOUNT-TOKEN: '.$_SESSION['account_token'],
+                        ),
+    'method'  => 'GET',
+  ),
+);
+$context_uid = stream_context_create($options_uid);
+$output_uid = file_get_contents($url_uid, false,$context_uid);
+/*echo $output_uid;*/
+$arr_uid = json_decode($output_uid,true);
+
+
+/*echo "<script type='text/javascript'>alert('$output_uid');</script>";*/
+
+
+?>
+</div>
 
 <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
   <header style="background-color:#08426a;height:110px;-webkit-box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23) !important;
      -moz-box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23) !important;
      box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23) !important;" class="mdl-layout__header mdl-layout__header--transparent">
     <div class="mdl-layout__header-row" >
-    <a href="search.php"><img style="margin-top:36%;margin-left:28px;width:50px;height:50px" src="images/green.png"></img></a>
+    <a href="search.php"><img id="logo1" src="images/green.png"></img></a>
 
     <?php if ($_GET['is_user']==0) { 
            $title="New Entry Organization";
@@ -918,18 +1058,21 @@ if ($_POST['uid'] != '' and $_GET["is_user"]==1){
            $title="New Entry Individual"; 
       }?>
 
-    <h5 style="margin-left:28%;margin-top:9%;"><?php echo $title; ?></h5>
-    <span class="mdl-layout-title" style="margin-left:24%;margin-top:7%;">KYCApp</span>
+    <span class="mdl-layout-title" id="title3"><?php echo $title; ?></span>
+    <span class="mdl-layout-title" id="title1" style="text-align:center">KYCAPP</span>
+    <a href="logout.php"><img id="logout" style="" src="images/logout_btn.png"></img></a>
           <!-- Add spacer, to align navigation to the right -->
   </header>
       <div class="mdl-layout__drawer">
-        <span class="mdl-layout-title">Title</span>
+        <span class="mdl-layout-title" style="background: transparent;color:black;" >KYCAPP</span>
         <nav class="mdl-navigation">
           <a class="mdl-navigation__link" href="search.php">Home</a>
           <a class="mdl-navigation__link" href="new.php?is_user=0">New Entry Organization</a>
           <a class="mdl-navigation__link" href="new.php?is_user=1">New Entry Individual</a>
           <a class="mdl-navigation__link" href="missing_reports.php">Missing Reports</a>
-          <a class="mdl-navigation__link" href="search.php">Admin</a>
+        <?php if($_SESSION['is_admin'] == 1){?>
+          <a class="mdl-navigation__link" href="admin_page.php">Admin</a>
+        <?php }?>
           <a class="mdl-navigation__link" href="">Help</a>
           <a class="mdl-navigation__link" href="">About Us</a>
           <a class="mdl-navigation__link" href="">Contact</a>
@@ -943,10 +1086,12 @@ if ($_POST['uid'] != '' and $_GET["is_user"]==1){
 
 <fieldset>
 <!-- Select Basic -->
+  
+
 <div class="form-group" style="margin-top:12%;">
   <label class="col-md-4 control-label" for="type_of_org">Type of Organization:</label>
   <div class="col-md-4">
-    <select id="type_of_org" name="type_of_org" class="form-control" ONCHANGE="enable_disable(this);" >
+    <select id="type_of_org" name="type_of_org" class="form-control" ONCHANGE="enable_disable(this);" style="width: 80%;">
       <option value="Proprietorship">Proprietorship</option>
       <option value="HUF">HUF</option>
       <option value="Society">Society</option>
@@ -962,7 +1107,7 @@ if ($_POST['uid'] != '' and $_GET["is_user"]==1){
 <div class="form-group">
   <label class="col-md-4 control-label" for="textname">Name:</label>  
   <div class="col-md-4">
-  <input id="name" name="name" type="text" placeholder="Enter Name" class="form-control input-md" required/>
+  <input id="name" name="name" type="text" placeholder="Enter Name" class="form-control input-md" required style="width: 80%;"/>
     
   </div>
 </div>
@@ -986,10 +1131,13 @@ if ($_POST['uid'] != '' and $_GET["is_user"]==1){
 <div class="form-group">
 <label class="col-md-4 control-label" for="reg_certificate">Registration Certificate:</label>
   <div class="col-md-4">
-    <input id="uploadFile" placeholder="Choose File" class="form-control input-md" readonly/>
-    <div class="fileUpload btn btn-info" style="margin-left:105%;margin-top:-12%;">
+    <input id="uploadFile" placeholder="Choose File" class="form-control input-md" readonly style="width: 80%;" />
+    </div>
+    <div class="col-md-1">
+    <div class="fileUpload btn btn-info" style="margin-left:-50%;margin-top:0%;">
     <label style="font-weight:500;margin-bottom: 2px;">ATTACH</label>
     <input id="reg_certificate" name="reg_certificate" type="file" class="upload" onchange="setfilename(this.value);" />
+    </div>
 </div>
 </div>
 </div>
@@ -998,7 +1146,7 @@ if ($_POST['uid'] != '' and $_GET["is_user"]==1){
 <div class="form-group">
   <label class="col-md-4 control-label" for="textinput">PAN: </label>  
   <div class="col-md-4">
-  <input id="pan" pattern="-?[a-zA-Z]{5}[0-9]{4}[a-zA-Z]{1}?" title="Must be of the form ARLPA0061H" name="pan" type="text" placeholder="PAN Card Number" class="form-control input-md">
+  <input id="pan" pattern="-?[a-zA-Z]{5}[0-9]{4}[a-zA-Z]{1}?" title="Must be of the form ARLPA0061H" name="pan" type="text" placeholder="PAN Card Number" class="form-control input-md" style="width: 80%;" required>
     
   </div>
 </div>
@@ -1007,10 +1155,13 @@ if ($_POST['uid'] != '' and $_GET["is_user"]==1){
 <div class="form-group">
   <label class="col-md-4 control-label" for="filebutton">PAN Card:</label>
   <div class="col-md-4">
-    <input id="pan_upload" placeholder="Choose File" class="form-control input-md" readonly/>
-    <div class="fileUpload btn btn-info" style="margin-left:105%;margin-top:-12%;">
+    <input id="pan_upload" placeholder="Choose File" class="form-control input-md" readonly style="width: 80%;"/>
+    </div>
+    <div class="col-md-1">
+    <div class="fileUpload btn btn-info" style="margin-left:-50%;margin-top:0%;">
     <label style="font-weight:500;margin-bottom: 2px;">ATTACH</label>
     <input id="pan_card" name="pan_card" type="file" class="upload" onchange="panfilename(this.value);" />
+    </div>
   </div>
 </div>
 </div>
@@ -1019,7 +1170,7 @@ if ($_POST['uid'] != '' and $_GET["is_user"]==1){
 <div class="form-group">
   <label class="col-md-4 control-label" for="textarea">Address:</label>
   <div class="col-md-4">                     
-    <textarea class="form-control" id="address" name="address">Enter Address</textarea>
+    <textarea class="form-control" id="address" name="address" style="width: 80%;"  >Enter Address</textarea>
   </div>
 </div>
 
@@ -1029,12 +1180,14 @@ if ($_POST['uid'] != '' and $_GET["is_user"]==1){
  <label class="col-md-4 control-label" for="checkboxes">Address Proof:</label>
  <div class="col-md-4">
    <label class="checkbox-inline" for="checkboxes-0">
-
     <input type="checkbox" name="checkboxes" id="checkboxes-0" value="1" onchange="document.getElementById('telephone_bill').disabled = !this.checked;" >Telephone</label>
-     <input id="telephone_upload" style="width:68%;margin-left:32%;margin-top:-5%" readonly/>
-    <div class="fileUpload btn btn-info" style="margin-left:107%;margin-top:-6%;">
+     <input id="telephone_upload" style="" readonly/>
+     </div>
+     <div class="col-md-1">
+    <div class="fileUpload btn btn-info" style="margin-left:-50%;margin-top:0%;">
     <label style="font-weight:500;margin-bottom: 2px;">ATTACH</label>
     <input id="telephone_bill" name="telephone_bill" type="file" class="upload" onchange="telefilename(this.value);"/> 
+    </div>
  </div>
 </div>
 </div>
@@ -1045,10 +1198,13 @@ if ($_POST['uid'] != '' and $_GET["is_user"]==1){
  <div class="col-md-4" style="margin-left:33.5%;margin-top:1%">
    <label class="checkbox-inline" for="checkboxes-0" >
      <input type="checkbox" name="checkboxes" id="checkboxes-0" value="1" onchange="document.getElementById('bank_pass_book').disabled = !this.checked;">Bank Passbook</label>
-     <input id="bank_upload" style="width:68%;margin-left:32%;margin-top:0%" readonly/>
-    <div class="fileUpload btn btn-info" style="margin-left:105%;margin-top:-12%;">
+     <input id="bank_upload" style="" readonly/>
+     </div>
+     <div class="col-md-1">
+    <div class="fileUpload btn btn-info" style="margin-left:-50%;margin-top:0%;">
     <label style="font-weight:500;margin-bottom: 2px;">ATTACH</label>
-    <input id="bank_pass_book" name="bank_pass_book" type="file" class="upload" onchange="bankfilename(this.value);" />     
+    <input id="bank_pass_book" name="bank_pass_book" type="file" class="upload" onchange="bankfilename(this.value);" /> 
+    </div>    
  </div>
 </div>
 </div>
@@ -1076,14 +1232,14 @@ if ($_POST['uid'] != '' and $_GET["is_user"]==1){
 <div class="form-group">
   <label class="col-md-4 control-label" for="textinput">Name: </label>  
   <div class="col-md-4 col-sm-2 col-2">
-  <input id="partner_names[]" name="partner_names[]" type="text" placeholder="Enter Full Name" class="form-control input-md newentry partner_names" style="width: 100%;">
+  <input id="partner_names[]" name="partner_names[]" type="text" placeholder="Enter Full Name" class="form-control input-md newentry partner_names" style="width: 80%;">
   </div>
 
   <div class="col-md-2 col-sm-2 col-2">
 
     <a href="new_user_popup.php" style="color:white" target="_blank" data-toggle="modal" data-target="#myModal">
 
-     <button type="button" class="btn btn-info new_entry_btn" style="margin-left:-6%">
+     <button type="button" class="btn btn-info new_entry_btn" /*style="margin-left:0%"*/>
        New Entry
      </button>
     </a>
@@ -1102,16 +1258,16 @@ if ($_POST['uid'] != '' and $_GET["is_user"]==1){
   </div>
 
   <div class="col-md-2">
-     <input id="textinput" name="textinput" type="text" placeholder="Specify if Other" class="form-control input-md partner_others"  style="width:103%;">
+     <input id="textinput" name="textinput" type="text" placeholder="Specify if Other" class="form-control input-md partner_others"  style="">
 </div>
 </div>
-<a href="" class="remove_field_present" style="margin-left:850px;margin-top:-40px;position:absolute"><img src="images/del24.png" ></a>
+<a href="" class="remove_field_present p" style=""><img src="images/del24.png" ></a>
 </div>
 
 <div class="form-group">
 <div class="col-md-2 col-sm-2 col-2">
     <div class="input_fields_wrap" style="color:black">
-         <button class="add_field_button btn partner_btn" onclick="incrementValue()" style="margin-left: 443px;">Add New Partners</button>
+         <button class="add_field_button btn partner_btn" onclick="incrementValue()" >Add New Partners</button>
          <input type="text" name="mytext[]" hidden="" ></div>
 </div>
   </div>
@@ -1123,45 +1279,52 @@ if ($_POST['uid'] != '' and $_GET["is_user"]==1){
 <div class="present_fields_1">
 <!-- Select Basic -->
 <div class="form-group">
-  <label class="col-md-4 control-label" for="selectbasic">Type of work</label>
+  <label class="col-md-4 control-label" for="selectbasic">Type of work:</label>
   <div class="col-md-4">
-    <select id="type_of_work[]" name="type_of_work[]" class="form-control">
-      <option value="Option one">Option one</option>
-      <option value="Option two">Option two</option>
-      <option value="Option three">Option three</option>
+    <select id="type_of_work[]" name="type_of_work[]" class="form-control" style="width: 80%;">
+     <option value=""></option>
+     <option value="Audit Report">Audit Report</option>
+      <option value="ITR filing">ITR filing</option>
+      <option value="VAT Filing">VAT Filing</option>
+      <option value="Accounting">Accounting</option>
+      <option value="Registration">Registration</option>
+      <option value="Certification">Certification</option>
+      <option value="Others">Others</option>
     </select>
   </div>
 </div>
 
 <!-- Select Basic -->
 <div class="form-group">
-  <label class="col-md-4 control-label" for="selectbasic">Status</label>
+  <label class="col-md-4 control-label" for="selectbasic">Status:</label>
   <div class="col-md-4">
-    <select id="status[]" name="status[]" class="form-control">
+    <select id="status" name="status[]" class="form-control" style="width:80%" >
+      <option value=""></option>
       <option value="Pending">Pending</option>
       <option value="Work in process">Work in process</option>
       <option value="Completed">Completed</option>
     </select>
   </div>
 </div>
+
 <!--date-->
   <div class="form-group">
-  <label class="col-md-4 control-label" for="textinput">DATE</label>  
+  <label class="col-md-4 control-label" for="textinput">DATE:</label>  
   <div class="col-md-4">
-  <input id="date[]" name="date[]" value="<?php echo $_POST['date'] ?>" style="width:100%;margin-left:-0.4%;margin-top:0%;" type="text" class="form-control input-md datepicker" readonly>
-    
+  <input id="date[]" name="date[]" value="<?php echo $_POST['date'] ?>" style="width:80%;margin-left:-0.4%;margin-top:0%;" type="text" class="form-control input-md datepicker pick" readonly>
   </div>
 </div>
 
 <!-- Text input-->
 <div class="form-group">
-  <label class="col-md-4 control-label" for="textinput">Comment</label>  
+  <label class="col-md-4 control-label" for="textinput">Comment:</label>  
   <div class="col-md-4">
-  <input id="comment[]" name="comment[]" type="text" placeholder="" class="form-control input-md" /> 
+
+  <input id="commentss" name="comment[]" type="text" placeholder="" class="form-control input-md" style="width: 80%;" /> 
   </div>
 </div>
 
-<a href="#" class="remove_field_pre1" style="margin-left:863px; margin-top: -46px;position:absolute">
+<a href="#" class="remove_field_pre1">
  <img src="images/del24.png" >
 </a>
 
@@ -1171,7 +1334,7 @@ if ($_POST['uid'] != '' and $_GET["is_user"]==1){
 
 <div class="col-md-8 col-sm-12 col-24">
     <div class="input_fields" style="color:black">
-         <button class="add_field btn " onclick="incrementValue()" style="margin-left: 443px;">Add More</button>
+         <button class="add_field btn " onclick="incrementValue()" >Add More</button>
          <div>
          <input type="text" name="mytextt[]" hidden="" ></div>
 </div>
@@ -1182,9 +1345,8 @@ if ($_POST['uid'] != '' and $_GET["is_user"]==1){
 <div class="form-group">
   <label class="col-md-4 control-label" for="save_btn"></label>
   <div class="col-md-8">
-    <button id="save_btn" name="save_btn" type="submit" class="btn btn-success" style="width: 10em;margin-left:10px">Save</button><span><span></span></span>
+    <button id="save_btn" name="save_btn" type="submit" class="btn btn-success" style="width: 10em;margin-left:1px">Save</button><span><span></span></span>
     <button onclick="ClickEvent()" class="btn btn-warning" style="width: 10em;"><a style="color:white" href="search.php">Cancel</a></button>
-  
   </div>
 </div>
 </fieldset>
@@ -1193,62 +1355,86 @@ if ($_POST['uid'] != '' and $_GET["is_user"]==1){
 
 <script type="text/javascript">
 
-$('.partner_names').attr('readonly', true);
-$('.partner_designations').attr('readonly', true);
-$('.partner_others').attr('readonly', true);
-$('.partner_btn').attr('readonly', true);
-$('.new_entry_btn').attr('readonly', true);
+$('.partner_names').attr('disabled', true);
+$('.partner_designations').attr('disabled', true);
+$('.partner_others').attr('disabled', true);
+$('.partner_btn').attr('disabled', true);
+$('.new_entry_btn').attr('disabled', true);
 
 function enable_disable(that){
 
   /*alert(that.value);*/
   if(that.value != "Partnership"){
-      $('.partner_names').attr('readonly', true);
-      $('.partner_designations').attr('readonly', true);
-      $('.partner_others').attr('readonly', true);
-      $('.partner_btn').attr('readonly', true);
-      $('.new_entry_btn').attr('readonly', true);
+      $('.partner_names').attr('disabled', true);
+      $('.partner_designations').attr('disabled', true);
+      $('.partner_others').attr('disabled', true);
+      $('.partner_btn').attr('disabled', true);
+      $('.new_entry_btn').attr('disabled', true);
   }else{
-      $('.partner_names').attr('readonly', false);
-      $('.partner_designations').attr('readonly', false);
-      $('.partner_others').attr('readonly', false);
-      $('.partner_btn').attr('readonly', false);
-      $('.new_entry_btn').attr('readonly', false);
+      $('.partner_names').attr('disabled', false);
+      $('.partner_designations').attr('disabled', false);
+      $('.partner_others').attr('disabled', false);
+      $('.partner_btn').attr('disabled', false);
+      $('.new_entry_btn').attr('disabled', false);
   }
 }
 </script>
+<script type="text/javascript">
+ $(document).ready(function () {
+        $("#status").click(function () {
+
+            if ($("#status").val() == "Completed") {
+                $("#commentss").attr("required", "required");
+            }
+            else
+              $("#commentss").attr("required", false);
+        });
+});
+</script>
 <?php } else { ?>
-
-
-<!-- <p>Click on the "x" symbol to close the alert message.</p> -->
 <div class="alert" id="popup1" class="popup1" style="display:none;text-align:center;position:absolute;
     width:100%;
     top: 70%;z-index:2">
- <!--  <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> -->
- <!--  <form method="post" action="new.php">  -->
   <label>UID Generated</label><br>
   <input type="text" id="uid_in_popup" name="uid_in_popup" style="text-align:center;background-color:transparent;color:black;border:none"></input><br><br>
   <button style="margin-left:1%;" id="done" class="btn btn-success" name="done" onclick="submit_form()">Done</button>
   <button style="margin-top:-1%;" onclick="make_uid_null()" id="cancel1" class="btn btn-warning" name="cancel1">Cancel</button>
-  <!-- </form> -->
 </div>
+
+<script type="text/javascript">
+ $(document).ready(function () {
+        $("#statuss").click(function () {
+
+            if ($("#statuss").val() == "Completed") {
+                $("#commentsss").attr("required", "required");
+            }
+            else
+              $("#commentsss").attr("required", false);
+        });
+});
+</script>
+
+
+<!-- <p>Click on the "x" symbol to close the alert message.</p> -->
 
 
 <form name="Form" id="Form" class="form-horizontal" method="post" action="new.php?is_user=1" enctype="multipart/form-data">
 <fieldset>
 
 <div style="margin-top:12%">
-<img class="profile-pic" style="margin-left:77%;position:absolute;z-index:2;" src="images/boy-512.png" />
+<img class="profile-pic" src="images/boy-512.png" />
 
-<div class="upload-button" style="position:absolute;z-index:2;margin-left:79%;cursor:pointer;margin-top:14%;">Upload Image</div>
+<div class="upload-button up" style="">Upload Image</div>
 
-<input onchange="check_image_user()" name="image" id="image" class="file-upload1" style="position:absolute;z-index:-2;margin-left:46%;margin-top:16%;" type="file">
+<input onchange="check_image_user()" name="image" id="image" class="file-upload1" style="position:absolute;z-index:-2;margin-left:46%;margin-top:16%;display:none" type="file">
 <!-- Text input-->
 <div class="form-group">
   <label class="col-md-4 control-label" for="textinput" >UID:</label>  
   <div class="col-md-4">
-  <input id="uid" name="uid" type="text" value="<?php echo $_POST['uid'] ?>" placeholder="" class="form-control input-md">
-    
+
+  <input id="uid" name="uid" type="text" value="<?php echo $_POST['uid'] ?>" placeholder="" class="form-control input-md" style="width:80%" readonly>
+  
+  <input type="hidden" name="uid_format" id="uid_format" value="<?php echo $arr_uid['uid'] ?>"></input>
   </div>
 </div>
 
@@ -1256,8 +1442,7 @@ function enable_disable(that){
 <div class="form-group">
   <label class="col-md-4 control-label" for="textinput">Name:</label>  
   <div class="col-md-4">
-  <input id="name" name="name" value="<?php echo $_POST['name'] ?>" type="text" placeholder="" class="form-control input-md" required/>
-    
+  <input id="name" name="name" value="<?php echo $_POST['name'] ?>" type="text" placeholder="" class="form-control input-md" style="width: 80%;" required/> 
   </div>
 </div>
 <!--date-->
@@ -1265,21 +1450,100 @@ function enable_disable(that){
 <div class="form-group">
   <label class="col-md-4 control-label" for="textinput">DOB:</label>  
   <div class="col-md-4">
-  <input id="date1" name="date1" value="<?php echo $_POST['date1'] ?>" type="text" class="form-control input-md datepicker" readonly>
-    
-  </div>
+  <input id="date1" name="date1" value="<?php echo $_POST['date1'] ?>" type="text" class="form-control input-md datepicker picker" readonly style="width: 80%;">
+  </div><img src="/images/calendar.png" style="margin-left: -6%;">
 </div>
 
 <!-- Select Basic -->
 <div class="form-group">
   <label class="col-md-4 control-label" for="selectbasic">Profession:</label>
   <div class="col-md-4">
-    <select id="profession" name="profession" class="form-control">
+    <select id="profession" name="profession" class="form-control" style="width: 80%" >
       <option value="Option one"><?php echo $_POST['profession'] ?></option>
-      <option value="Option one">Option one</option>
+      <optgroup label="Academics">
+        <option value="Professors">Professors</option>
+        <option value="Teachers">Teachers</option>
+      </optgroup>
+      <optgroup label="Cultural">
+      <option value="Clergy">Clergy</option>
+      <option value="Philosophers">Philosophers</option>
+      </optgroup>
+
+      <optgroup label="Medical">
+        <option value="Anesthesiologists">Anesthesiologists</option>
+        <option value="Audiologists">Audiologists</option>
+        <option value="Chiropractors">Chiropractors</option>
+        <option value="Dentists">Dentists</option>
+        <option value="Dietitians">Dietitians</option>
+        <option value="Nurses">Nurses</option>
+        <option value="Occupational therapists">Occupational therapists</option>
+        <option value="Pharmacists">Pharmacists</option>
+      </optgroup>
+
+      <optgroup label="Operating Department Practitioner">
+        <option value="Optometrists">Optometrists</option>
+        <option value="Physical therapists">Physical therapists</option>
+        <option value="Physicians">Physicians</option>
+        <option value="Podiatrists">Podiatrists</option>
+        <option value="Psychologists">Psychologists</option>
+        <option value="Radiographers">Radiographers</option>
+        <option value="Speech-language pathologists">Speech-language pathologists</option>
+        <option value="Surgeons">Surgeons</option>
+        <option value="Veterinarians">Veterinarians</option>
+        <option value="Gynaecologists">Gynaecologists</option>
+      </optgroup>
+
+      <optgroup label="Industry">
+        <option value="Accountants">Accountants</option>
+        <option value="Actuaries">Actuaries</option>
+        <option value="Architects">Architects</option>
+        <option value="Engineers">Engineers</option>
+        <option value="Linguistics - Translators">Linguistics - Translators</option>
+        <option value="Linguistics - Interpreters">Linguistics - Interpreters</option>
+        <option value="Surveyors">Surveyors</option>
+        <option value="Urban Planners">Urban Planners</option>
+
+      </optgroup>
+
+      <optgroup label="Transport">Transport
+      <option value="Air traffic controllers">Air traffic controllers</option>
+      <option value="Aircraft pilots">Aircraft pilots</option>
+      <option value="Sea captains">Sea captains</option>
+      </optgroup>
+
+      <optgroup label="Public services">Public services
+      <option value="Lawyers">Lawyers</option>
+      <option value="Social Workers">Social Workers</option>
+      <option value="Health inspector">Health inspector</option>
+      <option value="Park ranger">Park ranger</option>
+      <option value=" Police officer"> Police officer</option>
+      <option value="Military officers">Military officers</option>
+
+      </optgroup>
+
+      <optgroup label="Science">
+        <option value="Scientists - Astronomers">Scientists - Astronomers</option>
+        <option value="Scientists - Biologists">Scientists - Biologists</option>
+        <option value="Scientists - Biologists - Botanists">Scientists - Biologists - Botanists</option>
+        <option value="Scientists - Biologists - Ecologists">Scientists - Biologists - Ecologists</option>
+        <option value="Scientists - Biologists - Geneticists">Scientists - Biologists - Geneticists</option>
+        <option value="Scientists - Biologists - Immunologists">Scientists - Biologists - Immunologists</option>
+        <option value="Scientists - Biologists - Paleontologists">Scientists - Biologists - Paleontologists</option>
+        <option value="Scientists - Biologists - Pharmacologists">Scientists - Biologists - Pharmacologists</option>
+        <option value="Scientists - Biologists - Virologists">Scientists - Biologists - Virologists</option>
+        <option value="Scientists - Biologists - Zoologists">Scientists - Biologists - Zoologists</option>
+        <option value="Scientists - Chemists">Scientists - Chemists</option>
+        <option value="Scientists - Geologists">Scientists - Geologists</option>
+        <option value="Scientists - Meteorologists">Scientists - Meteorologists</option>
+        <option value="Scientists - Neuroscientists">Scientists - Neuroscientists</option>
+        <option value="Scientists - Oceanographers">Scientists - Oceanographers</option>
+        <option value="Scientists - Physicists">Scientists - Physicists</option>
+      </optgroup>
+      <option value="Other">Other</option>
+      <!-- <option value="Option one">Option one</option>
       <option value="Option two">Option two</option>
       <option value="Option three">Option three</option>
-      <option value="Option four">Option four</option>
+      <option value="Option four">Option four</option> -->
     </select>
   </div>
 </div>
@@ -1288,8 +1552,7 @@ function enable_disable(that){
 <div class="form-group">
   <label class="col-md-4 control-label" for="textinput"></label>  
   <div class="col-md-4">
-  <input id="textinput" name="textinput" type="text" placeholder="specify " class="form-control input-md" >
-    
+  <input id="textinput" name="textinput" type="text" placeholder="Specify if Others" class="form-control input-md"  style="width: 80%" >
   </div>
 </div>
 
@@ -1297,7 +1560,7 @@ function enable_disable(that){
 <div class="form-group">
   <label class="col-md-4 control-label" for="textarea">Address:</label>
   <div class="col-md-4">                     
-    <textarea class="form-control" id="address" name="address" value="<?php echo $_POST['address'] ?>">default text</textarea>
+    <textarea class="form-control" id="address" name="address" value="<?php echo $_POST['address'] ?>" style="width: 80%" placeholder="Enter Address" ></textarea>
   </div>
 </div>
 
@@ -1305,8 +1568,7 @@ function enable_disable(that){
 <div class="form-group">
   <label class="col-md-4 control-label" for="textinput">PAN:</label>  
   <div class="col-md-4">
-  <input pattern="-?[a-zA-Z]{5}[0-9]{4}[a-zA-Z]{1}?" title="Must be of the form ARLPA0061H" id="pan" name="pan" value="<?php echo $_POST['pan'] ?>" type="text" placeholder="" class="form-control input-md" required/>
-    
+  <input pattern="-?[a-zA-Z]{5}[0-9]{4}[a-zA-Z]{1}?" title="Must be of the form ARLPA0061H" id="pan" name="pan" value="<?php echo $_POST['pan'] ?>" type="text" placeholder="" class="form-control input-md" required  style="width: 80%"/> 
   </div>
 </div>
 
@@ -1314,13 +1576,13 @@ function enable_disable(that){
 <div class="form-group">
   <label class="col-md-4 control-label" for="filebutton">PAN card:</label>
   <div class="col-md-4">
-    <input  onchange="check_pan_card_user()" id="pan_card" name="pan_card" value="<?php echo $_POST['pan_card'] ?>" class="input-file" type="file">
+    <input  onchange="check_pan_card_user()" id="pan_card" name="pan_card" value="<?php echo $_POST['pan_card'] ?>" class="input-file" type="file"  style="width: 70%">
   </div>
 </div>
 
 <!--address proof-->
 <div class="form-group">
-  <label class="col-md-4 control-label" for="checkboxes">Address Proof</label>
+  <label class="col-md-4 control-label" for="checkboxes">Address Proof:</label>
   <div class="col-md-4">
    <label class="checkbox-inline" for="checkboxes-0">
      <input type="checkbox" name="checkboxes" id="checkboxes-0" value="1">Telephone</label>
@@ -1342,7 +1604,7 @@ function enable_disable(that){
 
 <!--address proof-->
 <div class="form-group">
-  <label class="col-md-4 control-label" for="checkboxes">ID Proof</label>
+  <label class="col-md-4 control-label" for="checkboxes">ID Proof:</label>
   <div class="col-md-4">
    <label class="checkbox-inline" for="checkboxes-0">
      <input type="checkbox" name="checkboxes" id="checkboxes-0" value="1">voter ID</label>
@@ -1362,10 +1624,9 @@ function enable_disable(that){
 
 <!-- Text input-->
 <div class="form-group">
-  <label class="col-md-4 control-label" for="textinput">Adhar card No.</label>  
+  <label class="col-md-4 control-label" for="textinput">Adhar card No:</label>  
   <div class="col-md-4">
-  <input id="aadhar_no" name="aadhar_no" value="<?php echo $_POST['aadhar_no'] ?>" type="text" placeholder="" class="form-control input-md" >
-    
+  <input id="aadhar_no" name="aadhar_no" value="<?php echo $_POST['aadhar_no'] ?>" type="text" placeholder="" class="form-control input-md"  style="width: 80%" >  
   </div>
 </div>
 
@@ -1373,51 +1634,58 @@ function enable_disable(that){
 <div class="form-group">
   <label class="col-md-4 control-label" for="filebutton">Adhar card:</label>
   <div class="col-md-4">
-    <input onchange="check_aadhar_card_user()" id="aadhar_card" name="aadhar_card" value="<?php echo $_POST['aadhar_card'] ?>" class="input-file" type="file">
+    <input onchange="check_aadhar_card_user()" id="aadhar_card" name="aadhar_card" value="<?php echo $_POST['aadhar_card'] ?>" class="input-file" type="file"  style="width: 70%">
   </div>
 </div>
 
 <div class="present_fields_1">
 <!-- Select Basic -->
 <div class="form-group">
-  <label class="col-md-4 control-label" for="selectbasic">Type of work</label>
+  <label class="col-md-4 control-label" for="selectbasic">Type of work:</label>
   <div class="col-md-4">
-    <select id="type_of_work[]" name="type_of_work[]" class="form-control">
-      <option value="Option one">Option one</option>
-      <option value="Option two">Option two</option>
-      <option value="Option three">Option three</option>
+    <select id="type_of_work[]" name="type_of_work[]" class="form-control"  style="width: 80%">
+      <option value=""></option>
+      <option value="Audit Report">Audit Report</option>
+      <option value="ITR filing">ITR filing</option>
+      <option value="VAT Filing">VAT Filing</option>
+      <option value="Accounting">Accounting</option>
+      <option value="Registration">Registration</option>
+      <option value="Certification">Certification</option>
+      <option value="Others">Others</option>
     </select>
   </div>
 </div>
 
 <!-- Select Basic -->
 <div class="form-group">
-  <label class="col-md-4 control-label" for="selectbasic">Status</label>
+  <label class="col-md-4 control-label" for="selectbasic">Status:</label>
   <div class="col-md-4">
-    <select id="status[]" name="status[]" class="form-control">
+    <select id="statuss" name="status[]" class="form-control"  style="width: 80%">
+      <option value=""></option>
       <option value="Pending">Pending</option>
       <option value="Work in process">Work in process</option>
       <option value="Completed">Completed</option>
     </select>
   </div>
 </div>
-<!--date-->
-<div class="form-group row">
-  <label for="example-date-input" class="col-2 col-form-label" style="margin-left:29.5%;">DATE</label>
-  <div class="col-10">
-    <input class="form-control datepicker" id="date[]" name="date[]" value="<?php echo $_POST['date'] ?>" style="width:31%;margin-left:34.6%;margin-top:-2%;" type="text" readonly>
+
+<!--date __Individual page___-->
+<div class="form-group">
+  <label for="example-date-input" class="col-md-4 col-label date-label-individual">DATE:</label>
+  <div class="col-md-4">
+    <input class="form-control datepicker pick date-individual" id="date[]" name="date[]" value="<?php echo $_POST['date'] ?>" type="text" readonly>
   </div>
 </div>
 
 
 <!-- Text input-->
 <div class="form-group">
-  <label class="col-md-4 control-label" for="textinput">Comment</label>  
+  <label class="col-md-4 control-label" for="textinput">Comment:</label>  
   <div class="col-md-4">
-  <input id="comment[]" name="comment[]" type="text" placeholder="" class="form-control input-md"/>
+  <input id="commentsss" name="comment[]" type="text" placeholder="" class="form-control input-md"  style="width: 80%"/>
   </div>
 </div>
-<a href="#" class="remove_field_pre1" style="margin-left: 866px; margin-top: -42px;position:absolute">
+<a href="#" class="remove_field_pre1">
  <img src="images/del24.png" >
 </a>
 </div>
@@ -1426,7 +1694,7 @@ function enable_disable(that){
 
 <div class="col-md-8 col-sm-12 col-24">
     <div class="input_fields" style="color:black">
-         <button class="add_field btn " onclick="incrementValue()" style="margin-left: 443px;">Add More</button>
+         <button class="add_field btn " onclick="incrementValue()" style="">Add More</button>
          <div>
          <input type="text" name="mytextt[]" hidden="" ></div>
 </div>
@@ -1437,15 +1705,27 @@ function enable_disable(that){
 <div class="form-group">
   <label class="col-md-4 control-label" for="singlebutton"></label>
   <div class="col-md-4">
-    <button onclick="return proceed()" id="generate_btn" name="generate_btn">Generate</button>
+    <button onclick="return validate();" id="generate_btn" name="generate_btn" class="btn btn-success">Generate</button>
     <button id="singlebutton" style="margin-left:13%;" name="singlebutton" class="btn btn-primary"><a style="color:white" href="search.php">Discard</a></button>
   </div>
 </div>
 </fieldset>
 </form>
+
 <?php } ?>
+<script type="text/javascript">
+  function validate(){
+    var Form=document.getElementById("Form");
+    if(Form.checkValidity()==true)
+    {
+
+      /*alert("hello");*/
+      return proceed();
 
 
+    }
+  }
+</script>
 
 <script type="text/javascript">
 $(function(){
@@ -1455,6 +1735,12 @@ $('#trigger').click(function(){
   return false;
 })
 
+});
+
+$('#myModal').on('shown.bs.modal', function () {
+    $(this).find('.modal-dialog').css({width:'auto',
+                               height:'auto', 
+                              'max-height':'100%'});
 });
 </script>
 
@@ -1470,7 +1756,6 @@ $('#trigger').click(function(){
         </div>
     </div>
 </div>
-
 <!--<script
   src="https://code.jquery.com/jquery-2.2.4.js"
   integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI="
@@ -1491,10 +1776,10 @@ $('#trigger').click(function(){
         e.preventDefault();
         if(x < max_fields){ //max input box allowed
             x++; //text box increment
-            $(wrapper).prepend('<br><div style="margin-left:50px;"><center><div class="form-group"> <label class=" control-label" for="textinput" style="margin-left:327px;">Name: </label> <div > <input id="partner_names[]" name="partner_names[]" type="text" placeholder="Enter Full Name" class="form-control input-md newentry partner_names" style="margin-top: -25px;margin-left: 403px;width: 241%;">  </div>  <div class="col-md-6" > <a href="new_user_popup.php" style="color:white" target="_blank" data-toggle="modal" data-target="#myModal"><button  type="button" class="btn btn-info new_entry_btn" style="margin-left: 809px;margin-top: -61px;">New Entry</button> </a> </div></div> <div class="form-group">  <label class="control-label" for="selectbasic" style="margin-left:293px;">Designation: </label>  <div> <select id="partner_designations[]" name="partner_designations[]" class="form-control partner_designations" style="margin-left: 405px;margin-top: -34px;width:118%;">      <option value="Managing Partner">Managing Partner</option>      <option value="Manager">Manager</option>      <option value="Other">Other</option>    </select>  </div>  <div>  <input style="margin-left: 617px;margin-top: -35px;width:114%" id="textinput" name="textinput" type="text" placeholder="Specify if Other" class="form-control input-md partner_others"></div></div></center><a href="#" class="remove_field" style="margin-left:810px;margin-top:-40px;position:absolute"><img src="images/del24.png"></a></a></div>'); //add input box\
+            $('<div style="margin-left:50%;"><center><div class="form-group"> <label class="control-label name" for="textinput" style="">Name: </label> <div class="partner_name"> <input id="partner_names[]" name="partner_names[]" type="text" placeholder="Enter Full Name" class="form-control input-md newentry partner_names"     style="width: 80%;margin-left: -20%;">  </div>  <div class="col-md-6" > <a href="new_user_popup.php" style="color:white" target="_blank" data-toggle="modal" data-target="#myModal"><button  type="button" class="btn btn-info new_entry_btn entry">New Entry</button> </a> </div></div> <div class="form-group">  <label class="control-label designation" for="selectbasic">Designation: </label>  <div class="partner_designation"> <select id="partner_designations[]" name="partner_designations[]" class="form-control partner_designations newpartner" >      <option value="Managing Partner">Managing Partner</option>      <option value="Manager">Manager</option>      <option value="Other">Other</option>    </select>  </div>  <div class="partner_designation col2">  <input style="" id="textinput" name="textinput" type="text" placeholder="Specify if Other" class="form-control input-md partner_others"></div></div></center><a href="#" class="remove_field_partner" style="/*margin-left:349%;*//*margin-top:-36px;*//*position:absolute;*/"><img src="images/del24.png"></a></a></div>').insertBefore(add_button) //add input box\
         }
     });
-    
+
     $(wrapper).on("click",".remove_field", function(e){ //user click on remove text
         e.preventDefault(); $(this).parent('div').remove(); x--;
     })
@@ -1502,30 +1787,37 @@ $('#trigger').click(function(){
     $(wrapper_present).on("click",".remove_field_present", function(e){ //user click on remove text
         e.preventDefault(); $(this).parent('div').remove(); x--;
     })
+
 });
     </script>
 
   <script type="text/javascript">
-
-
-     $(document).ready(function() {
+$(document).ready(function() {
     var max_fields      = 10; //maximum input boxes allowed
     var wrapper         = $(".input_fields"); //Fields wrapper
     var add_button      = $(".add_field"); //Add button ID
-
     var wrapper_pre1         = $(".present_fields_1"); //Fields wrapper
-    
     var x = 1; //initlal text box count
     $(add_button).click(function(e){ //on add input button click
         e.preventDefault();
+
         if(x < max_fields){ //max input box allowed
             x++; //text box increment
+            $('<div style="margin-left:50%;"><div class="form-group"><label class="control-label type" for="selectbasic" style="">Type of work:</label><div class="col-md-6"><select id="type_of_work[]" name="type_of_work[]" class="form-control type_of_work"><option value=""></option><option value="Audit Report">Audit Report</option><option value="ITR filing">ITR filing</option><option value="VAT Filing">VAT Filing</option><option value="Accounting">Accounting</option><option value="Registration">Registration</option><option value="Certification">Certification</option><option value="Others">Others</option></select></div></div><div class="form-group"> <label class="col-md-4 control-label statuss1" for="selectbasic" style="">Status:</label><div class="col-md-6"><select id="status1' + x + '"  name="status[]"  class="form-control status"><option value=""></option><option value="Pending">Pending</option><option value="Work in process">Work in process</option><option value="Completed">Completed</option></select></div></div><div class="form-group row"><label for="example-date-input" class="col-2 col-form-label date">DATE:</label><div class="col-10 col"><input class="form-control datepicker pickers" id="date' + x +'" name="date[]" type="text" readonly></div></div><div class="form-group"><label class="col-md-4 control-label comment" for="textinput" style="">Comment:</label><div class="col-md-4"><input id="comments' + x + '" name="comment[]" type="text" placeholder="" class="form-control input-md comment" style=""></div></div></center><a href="#" class="remove_field"><img src="images/del24.png" ></a></a></div>').insertBefore(add_button)//add input box\
+          var newInput=$("#date"+ x).datepicker({dateFormat: 'dd/mm/yy',changeMonth : true,changeYear : true});
+          newInput.datepicker({dateFormat: 'dd/mm/yy'}).datepicker("setDate", new Date());
 
-            $(wrapper).prepend('<br><div style="margin-left:50%;"><div class="form-group"><label class="control-label" for="selectbasic" style="margin-left:-325px;">Type of work</label><div class="col-md-6"><select id="type_of_work[]" name="type_of_work[]" class="form-control" style="margin-left:9%;width:208%"><option value="Option one">Option one</option><option value="Option two">Option two</option><option value="Option three">Option three</option></select></div></div><div class="form-group"> <label class="col-md-4 control-label" for="selectbasic" style="margin-left:-29%">Status</label><div class="col-md-6"><select id="status[]" name="status[]" style="width:210%;margin-left:-1%;" class="form-control"><option value="Pending">Pending</option><option value="Work in process">Work in process</option><option value="Completed">Completed</option></select></div></div><div class="form-group row"><label for="example-date-input" class="col-2 col-form-label" style="margin-left:-8.5%;";">DATE</label><div class="col-10"><input class="form-control datepicker" id="date[]" name="date[]" style="width:91%;margin-left:6.6%;margin-top:-6%;" type="text"></div></div><div class="form-group"><label class="col-md-4 control-label" for="textinput" style="margin-left:-29%">Comment</label><div class="col-md-4"><input id="comment[]" name="comment[]" type="text" placeholder="" class="form-control input-md" style="width:342%"></div></div></center><a href="#" class="remove_field" style="margin-left:446px;margin-top:-40px;position:absolute"><img src="images/del24.png" ></a></a></div>'); //add input box\
-            $( ".datepicker" ).datepick({dateFormat: 'dd/mm/yyyy'});
-        }
+          $("#status1" + x).click(function () {
+
+            if ($("#status1" + x).val() == "Completed") {
+                $("#comments" + x).attr("required", "required");
+            }
+            else
+              $("#comments" + x).attr("required", false);
+        });
+
+      }
     });
-    
     $(wrapper).on("click",".remove_field", function(e){ //user click on remove text
         e.preventDefault(); $(this).parent('div').remove(); x--;
     })
@@ -1533,10 +1825,10 @@ $('#trigger').click(function(){
     $(wrapper_pre1).on("click",".remove_field_pre1", function(e){ //user click on remove text
         e.preventDefault(); $(this).parent('div').remove(); x--;
     })
+      
+  });
 
-
-
-});
+  
 </script>
 
  <!-- AutoSearch Script files don't move -->
@@ -1552,11 +1844,13 @@ $('#trigger').click(function(){
 
 <?php
 
+session_start();
+
  $db = pg_connect("host=ec2-107-20-191-76.compute-1.amazonaws.com port=5432 dbname=deu9vahl80fvjn user=vdvqpruzihrics password=17b3e7a56da97ca021e3da54bb1694bb799849a2b5911014ed6caa05e1e4e02d");
  pg_select($db, 'post_log', $_POST);
  
 
- $query=pg_query("SELECT id,name FROM users_users");
+ $query=pg_query("SELECT id,name,account_token,is_active FROM users_users WHERE is_active = 'true' AND account_token = '".$_SESSION['account_token']."'");
 
  $json=array();
 
