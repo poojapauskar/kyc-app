@@ -10,6 +10,13 @@ if($_SESSION['login_kyc_app'] == 1){
 
 <html>
   <head>
+
+ <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
   <link rel="icon" type="image/png" sizes="36x36" href="images/green.png">
 
 <link rel="stylesheet" type="text/css" href="css/material.indigo-pink.min.css">
@@ -72,6 +79,35 @@ td, th {
 
 <?php
 session_start();
+?>
+
+<?php
+
+if(isset($_POST['new_save'])){
+  $url_edit = 'https://kyc-application.herokuapp.com/edit_status_comment/';
+  $options_edit = array(
+    'http' => array(
+      'header'  => array(
+                          'PK: '.$_POST['pk'],
+                          'STATUS: '.$_POST['new_status'],
+                          'COMMENT: '.$_POST['new_comment'],
+                         ),
+      'method'  => 'GET',
+    ),
+  );
+  $context_edit = stream_context_create($options_edit);
+  $output_edit = file_get_contents($url_edit, false,$context_edit);
+  /*echo $output_status;*/
+  $arr_edit = json_decode($output_edit,true);
+  /*echo $arr_status[0]['additional_info']['status'];
+  echo $arr_status[0]['details']['name'];
+  echo $arr_status[0]['is_user'];*/
+} 
+
+?>
+
+<?php
+
   $url_status = 'https://kyc-application.herokuapp.com/search_on_status/';
   $options_status = array(
     'http' => array(
@@ -162,10 +198,53 @@ $('#test').click(function() {
     <td><?php echo $arr_status[$i]['additional_info']['date'] ?></td>
     <td><?php echo $arr_status[$i]['additional_info']['comment'] ?></td>
     <td>
-    <form method="post" action="<?php echo $field2; ?>">
-      <button type="submit" class="btn btn-success" style="color:white">Details</button>
-    </form>
+   <!--  <form method="post" action="<?php echo $field2; ?>"> -->
+      <!-- <button type="submit" class="btn btn-success" style="color:white">Details</button> -->
+       <button type="button" class="btn btn-success" style="color:white;" data-toggle="modal" data-target="#myModal<?php echo $i ?>">Edit</button>
+   <!--  </form> -->
 
+<div class="modal fade" id="myModal<?php echo $i ?>" role="dialog" style="background-color:transparent;width:100%;min-height:100%;">
+    <div class="modal-dialog" style="margin-top:11%">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Edit</h4> 
+        </div>
+        <div class="modal-body">
+          <form name="new_form" method="post" action="">
+          <input id="pk" name="pk" type="hidden" placeholder="" value="<?php echo $arr_status[$i]['additional_info']['pk'] ?>" class="form-control input-md" style="width: 80%;">
+          </input>
+
+          <div style="text-align:left">
+          <label>Status</label> 
+          </div>
+          <select id="new_status" name="new_status" class="form-control" style="width: 80%;">
+            <option value="<?php echo $arr_status[$i]['additional_info']['status'] ?>"><?php echo $arr_status[$i]['additional_info']['status'] ?></option>
+            <option value=""></option>
+            <option value="Pending">Pending</option>
+            <option value="Work in process">Work in process</option>
+            <option value="Completed">Completed</option>
+          </select>
+
+          <div style="text-align:left;margin-top:2%">
+          <label>Comment</label> 
+          </div>
+           <input id="new_comment" value="<?php echo $arr_status[$i]['additional_info']['comment'] ?>" name="new_comment" type="text" placeholder="" class="form-control input-md" style="width: 80%;">
+           </input>
+
+           <button class="btn btn-success" style="color:white" name="new_save" id="new_save" type="submit">Save</button>
+           </form>
+ 
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
     </td>
   </tr>
   <?php }?>
