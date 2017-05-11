@@ -2450,12 +2450,13 @@ width: 155%;
     position:absolute;
 }*/
 .remove_field_pre1 {
-    margin-left: 62%;
-    margin-top: -2.7%;
+
+    margin-left: 63%;
+    margin-top: -3.2%;
     position: absolute;
 }
 .remove_field_present{
-    margin-left:68%; 
+    margin-left:63%; 
     margin-top:-3%;
     position:absolute;
 }
@@ -2621,7 +2622,8 @@ div.fileUpload.btn.btn-info{
 }
 
 /*date input field*/
-/*.col-10.col {
+
+.col-10.col {
     width: 72%;
     margin-left: 6.6%;
     margin-top: -6%;
@@ -2633,17 +2635,9 @@ div.fileUpload.btn.btn-info{
 }
 .form-control.status-edit {
     width: 166%;
-    margin-left: -2%;*/
-.col-10.col{
-    width:72%;
-    margin-left:6.5%;
-    margin-top:-6%;
+    margin-left: -2%;
 }
-.form-control.type_of_work
-{
-    margin-left:7.6%;
-    width:165%;
-}
+>>>>>>> resolved conflict
 .form-group.designation{
     margin-left:175%;
 }
@@ -2733,9 +2727,11 @@ margin-top:-1%;
     margin-top: 0%;
 }
 
-.form-control.input-md.comment{
-    width:267%;
-    margin-left: 3%;
+
+.form-control.input-md.comment {
+    width: 271%;
+    margin-left: -4%;
+
 }
 a.searchview.btn.btn-info {
     color: white;
