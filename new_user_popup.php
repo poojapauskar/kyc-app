@@ -361,13 +361,9 @@ $arr_uid_popup = json_decode($output_uid_popup,true);
   <label>UID Generated</label><br>
   <input type="text" id="uid_in_popup" name="uid_in_popup" style="text-align:center;background-color:transparent;color:black;border:none"></input><br><br>
   <button style="margin-left:1%" id="done" class="btn btn-success" name="done" onclick="submit_form()">Done</button>
-  <button onclick="make_uid_null()" id="cancel1" class="btn btn-warning" name="cancel1">Cancel</button>
+  <button onclick="make_uid_null()" style="margin-top:0%;margin-left:6%;width:5em" id="cancel1" class="btn btn-warning" name="cancel1">Cancel</button>
   <!-- </form> -->
 </div>
-
-
-
-
 <div class="demo-layout-transparent mdl-layout mdl-js-layout">
       <header style="background-color:#08426a;height:110px;-webkit-box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23) !important;
      -moz-box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23) !important;
@@ -405,13 +401,13 @@ $arr_uid_popup = json_decode($output_uid_popup,true);
 
 <div style="margin-top:7%">
 <img class="profile-pic" style="margin-left:77%;position:absolute;z-index:2;" src="images/boy-512.png" />
-<div class="upload-button" style="position:absolute;z-index:2;margin-left:79%;margin-top:23%;">Upload Image</div>
+<div class="upload-button" style="position:absolute;z-index:2;margin-left:79%;margin-top:26%!important;">Upload Image</div>
 <input onchange="check_image_1_user()" name="image" id="image" class="file-upload1" style="position:absolute;z-index:-2;margin-left:46%;margin-top:16%;" type="file">
 <!-- Text input-->
 <div class="form-group">
   <label class="col-md-4 control-label" for="textinput">UID:</label>  
   <div class="col-md-4">
-  <input id="uid" name="uid" type="text" value="<?php echo $_POST['uid'] ?>" placeholder="" class="form-control input-md">
+  <input id="uid" name="uid" type="text" value="<?php echo $_POST['uid'] ?>" placeholder="" class="form-control input-md" readonly>
   </div>
 </div>
 

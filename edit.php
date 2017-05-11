@@ -14,7 +14,6 @@ if($_SESSION['login_kyc_app'] == 1){
   <title></title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" type="text/css" href="css/material.indigo-pink.min.css">
-<!-- <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"> -->
   <link rel="icon" type="image/png" sizes="36x36" href="images/green.png">
 
   <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
@@ -1055,7 +1054,7 @@ if($profile22 == ""){
     <a href="search.php"><img id="logo1" src="images/green.png"></img></a>
      <span class="mdl-layout-title" id="title3"><?php echo $arr_search['response'][0]['organization_details']['name'] ?><?php echo $arr_search['response'][0]['user_details']['name'] ?></span>
     <span class="mdl-layout-title" id="title1" style="text-align:center">KYCAPP</span>
-    <a href="index.php"><img id="logout" style="" src="images/logout_btn.png"></img></a>
+     <a href="logout.php"><img id="logout" style="" src="images/logout_btn.png"></img></a>
           <!-- Add spacer, to align navigation to the right -->
 
     </header>
@@ -1327,7 +1326,7 @@ VIEW</a>
 </div>
 
 <!-- Added Partner 1 -->
-<label for="comment" style="margin-left: 236px;font-size: 17px;"> Partner 1: </label>
+<label for="comment" style="margin-left: 26%;font-size: 17px;"> Partner 1: </label>
 
 
 
@@ -1511,64 +1510,6 @@ function enable_disable(that){
 }
 </script>
 
-
-
-<script type="text/javascript">
-
-$('.partner_names').attr('disabled', true);
-$('.partner_designations').attr('disabled', true);
-$('.partner_others').attr('disabled', true);
-$('.partner_btn').attr('disabled', true);
-$('.new_entry_btn').attr('disabled', true);
-
-function enable_disable(that){
-
-  /*alert(that.value);*/
-  if(that.value != "Partnership"){
-      $('.partner_names').attr('disabled', true);
-      $('.partner_designations').attr('disabled', true);
-      $('.partner_others').attr('disabled', true);
-      $('.partner_btn').attr('disabled', true);
-      $('.new_entry_btn').attr('disabled', true);
-  }else{
-      $('.partner_names').attr('disabled', false);
-      $('.partner_designations').attr('disabled', false);
-      $('.partner_others').attr('disabled', false);
-      $('.partner_btn').attr('disabled', false);
-      $('.new_entry_btn').attr('disabled', false);
-  }
-}
-</script>
-
-
-
-<script type="text/javascript">
-
-$('.partner_names').attr('disabled', true);
-$('.partner_designations').attr('disabled', true);
-$('.partner_others').attr('disabled', true);
-$('.partner_btn').attr('disabled', true);
-$('.new_entry_btn').attr('disabled', true);
-
-function enable_disable(that){
-
-  /*alert(that.value);*/
-  if(that.value != "Partnership"){
-      $('.partner_names').attr('disabled', true);
-      $('.partner_designations').attr('disabled', true);
-      $('.partner_others').attr('disabled', true);
-      $('.partner_btn').attr('disabled', true);
-      $('.new_entry_btn').attr('disabled', true);
-  }else{
-      $('.partner_names').attr('disabled', false);
-      $('.partner_designations').attr('disabled', false);
-      $('.partner_others').attr('disabled', false);
-      $('.partner_btn').attr('disabled', false);
-      $('.new_entry_btn').attr('disabled', false);
-  }
-}
-</script>
-
 <form method="post" id="deleteForm" action="search.php" style="text-align:center">
 <input type="hidden" name="pk_delete" id="pk_delete" value="<?php echo $_GET['id'] ?>"></input>  
 <input type="hidden" name="is_user_delete" id="is_user_delete" value="<?php echo $_GET['is_user'] ?>"></input>  
@@ -1588,7 +1529,7 @@ function enable_disable(that){
    }
 </script>  
 
-<script type="text/javascript">
+<!-- <script type="text/javascript">
 
 if(document.getElementById('type_of_org').value == "Partnership"){
   $('.partner_names').attr('readonly', false);
@@ -1620,7 +1561,7 @@ function enable_disable(that){
       $('.new_entry_btn').attr('readonly', false);
   }
 }
-</script>
+</script> -->
 
 <?php } else { ?>
 <form class="form-horizontal" method="post" action="" enctype="multipart/form-data">
@@ -2915,11 +2856,11 @@ function print_image() {
         e.preventDefault();
         if(x < max_fields){ //max input box allowed
             x++; //text box increment
-           $(wrapper).prepend('<div style="margin-left:50%;"><center><div class="form-group"> <label class="control-label name" for="textinput" style="">Name: </label> <div class="partner_name"> <input id="partner_names[]" name="partner_names[]" type="text" placeholder="Enter Full Name" class="form-control input-md newentry partner_names" style="">  </div>  <div class="col-md-6" > <a href="new_user_popup.php" style="color:white" target="_blank" data-toggle="modal" data-target="#myModal"><button  type="button" class="btn btn-info new_entry_btn entry">New Entry</button> </a> </div></div> <div class="form-group">  <label class="control-label designation" for="selectbasic">Designation: </label>  <div class="partner_designation"> <select id="partner_designations[]" name="partner_designations[]" class="form-control partner_designations" >      <option value="Managing Partner">Managing Partner</option>      <option value="Manager">Manager</option>      <option value="Other">Other</option>    </select>  </div>  <div class="partner_designation col2">  <input style="" id="textinput" name="textinput" type="text" placeholder="Specify if Other" class="form-control input-md partner_others"></div></div></center><a href="#" class="remove_field" style="margin-left:370%;margin-top:-40px;position:absolute"><img src="images/del24.png"></a></a></div>'); //add input box\
+           $(wrapper).prepend('<div style="margin-left:50%;"><center><div class="form-group"> <label class="control-label name" for="textinput" style="">Name: </label> <div class="partner_name"> <input id="partner_names[]" name="partner_names[]" type="text" placeholder="Enter Full Name" class="form-control input-md newentry partner_names" style="">  </div>  <div class="col-md-6" > <a href="new_user_popup.php" style="color:white" target="_blank" data-toggle="modal" data-target="#myModal"><button  type="button" class="btn btn-info new_entry_btn entry">New Entry</button> </a> </div></div> <div class="form-group">  <label class="control-label designation" for="selectbasic">Designation: </label>  <div class="partner_designation"> <select id="partner_designations[]" name="partner_designations[]" class="form-control partner_designations" >      <option value="Managing Partner">Managing Partner</option>      <option value="Manager">Manager</option>      <option value="Other">Other</option>    </select>  </div>  <div class="partner_designation col2">  <input style="" id="textinput" name="textinput" type="text" placeholder="Specify if Other" class="form-control input-md partner_others"></div></div></center><a href="#" class="remove_field1" ><img src="images/del24.png"></a></a></div>'); //add input box\
         }
     });
     
-    $(wrapper).on("click",".remove_field", function(e){ //user click on remove text
+    $(wrapper).on("click",".remove_field1", function(e){ //user click on remove text
         e.preventDefault(); $(this).parent('div').remove(); x--;
     })
 

@@ -1,4 +1,8 @@
+
 /*Text box CSS class for all the pages , 70%*/
+
+/*Global css*/
+
 .mdl-data-table td {
     text-align: center !important;
 }
@@ -1583,7 +1587,7 @@ a.btn.btn-info{
     background-color:#176fac;
     margin-top:0%;
     margin-left: 28%;
-    width: 139%;
+    /*width: 139%;*/
 }
 
 a.btn.btn-info.edit{
@@ -1787,8 +1791,77 @@ margin-top:-1%;
 }
 }
 @media screen and (max-width:1440px){
-   
 
+#save_btn{
+    width:20%!important;
+}
+.btn.btn-warning.delete {
+    width: 10em;
+    margin-top: -6.1%;
+    margin-left: 41%;
+}
+   
+.search_result.tele {
+    margin-left: -99%;
+    margin-top: 0%;
+    width: 83%;
+}
+
+.col-md-2.search_org {
+    width: 14%;
+    margin-left: -17%;
+}
+
+a.btn.btn-info {
+    color: white;
+    background-color: #176fac;
+    margin-top: 0%;
+    margin-left: 32%;
+    /* width: 139%; */
+}
+
+a.btn.btn-info.edit_modal {
+    color: white;
+    background-color: #176fac;
+    margin-top: 0%;
+    margin-left: -40%;
+    width: 47%;
+    height: 2758%;
+}
+.col-md-4.control-label.statuss1{
+    margin-left: -30%;
+
+}
+
+.btn.btn-warning.delete1 {
+    width: 10em;
+    margin-top: -9.2%;
+    margin-left: 49%;
+}
+
+/*Cancel and Delete button edit page of Individual*/
+.btn.btn-success.successb{   
+    width: 10em;
+    margin-top:0%;
+    padding:0.5em;
+    margin-left:2%
+}
+
+.btn.btn-warning.cancel1 {
+    width: 10em;
+    margin-top: -13%;
+    padding: 0.5em;
+    margin-left: 55%;
+    background: #176fac;
+    border-color: #176fac;
+}
+
+
+div.fileUpload.org.btn.btn-info {
+    margin-left: -92%;
+    margin-top: 0%;
+        /*width: 150%;*/
+}
 /*Card2 sizing*/
 .card1{
     margin-top: 11%;
@@ -1881,22 +1954,17 @@ margin-top:-1%;
     margin-top:7%;
 }
 
-#logout
-{
-   float:right;
-   right:139px;
-   top:47px;
-   position:absolute;
-   /* width: 40px;
-    height: 40px;*/
+#logout {
+    float: right;
+    right: 123px;
+    top: 56px;
+    position: absolute;
 }
 
-#title2
-{
-    margin-left:26%;
-
-    margin-top:7%;
-    font-size:18px;
+#title2 {
+    margin-left: 32%;
+    margin-top: 8.9%;
+    font-size: 18px;
 }
 
 .partner_designation{
@@ -1911,22 +1979,22 @@ width: 155%;
     width: 145%;
 }
 
-#title1{
+#title1 {
     float: right;
     right: 206px;
-    top: 69px;
+    top: 73px;
     position: absolute;
 }
 
 #telephone_upload {
-    width: 63%;
-    margin-left: 11%;
+    width: 48%;
+    margin-left: 10%;
     position: absolute;
     margin-top: 1%;
 }
 
-#bank_upload{
-    width: 63%;
+#bank_upload {
+    width: 48%;
     margin-left: 3%;
     margin-top: 0%;
     position: absolute;
@@ -1959,11 +2027,11 @@ width: 155%;
     border-radius: 5px;
     display: block;
     float: left;
-    position:absolute;
-    z-index:2;
-    margin-left:77%;
-    cursor:pointer;
-    margin-top:10%;
+    position: absolute;
+    z-index: 2;
+    margin-left: 72%;
+    cursor: pointer;
+    margin-top: 11%;
 }
 
 .profile-pic {
@@ -2022,12 +2090,12 @@ a.btn.btn-info.edit_page_modal{
     width: 141%;
 }
 
-a.btn.btn-info.edit{
-    color:white;
-    background-color:#176fac;
-    margin-top:0%;
-    margin-left:40%;
-    width:88%;
+a.btn.btn-info.edit {
+    color: white;
+    background-color: #176fac;
+    margin-top: 0%;
+    margin-left: -87%;
+    width: 88%;
 }
 
 /*attach btn*/
@@ -2089,29 +2157,27 @@ div.fileUpload.btn.btn-info{
 }
 
 /*date input field*/
-.col-10.col{
-    width:64%;
-    margin-left:7.6%;
-    margin-top:-6%;
+.col-10.col {
+    width: 72.5%;
+    margin-left: 6.1%;
+    margin-top: -6%;
 }
-.form-control.type_of_work
-{
-    margin-left:9%;
-    width:145%
+
+.form-control.type_of_work {
+    margin-left: 8%;
+    width: 165%;
 }
 
 .form-group.designation{
     margin-left:175%;
 }
 
-.control-label.type{
-    margin-left:-66%;
+.control-label.type {
+    margin-left: -73%;
 }
-.col-md-4.control-label.status
-{
-    margin-left:-29%;
+.col-md-4.control-label.status {
+    margin-left: -67%;
 }
-
 /*adding extra field*/
 .add_field.btn {
     margin-left: 443px;
@@ -2124,8 +2190,9 @@ div.fileUpload.btn.btn-info{
 .col-2.col-form-label.date{
     margin-left:-8.5%;
 }
-.col-md-4.control-label.comment{
-    margin-left:-29%;
+
+.col-md-4.control-label.comment {
+    margin-left: -30.4%;
 }
 
 .remove_field{
@@ -2140,14 +2207,24 @@ div.fileUpload.btn.btn-info{
 }
 
 /*search result page*/
-.search_result.tele{
-    margin-left: -99%;
+.search_result.tele {
+    margin-left: -109%;
     margin-top: 0%;
     width: 83%;
 }
+.col-10 {
+    width: 32%;
+    margin-left: 34%;
+    margin-top: -1.5%;
+}
+
+.form-control.status-edit {
+    width: 165%;
+    margin-left: 0%;
+}
 
 .search_result.tele1{
-    margin-left: 16%;
+    margin-left: 15%;
     margin-top: 0%;
     width: 83%;
 }
@@ -2172,34 +2249,35 @@ margin-top:-1%;
     position: relative;
 }
 .col-md-3.bkupload.edit {
-    width:28%;
-    margin-left: 45%;
+    width: 28%;
+    margin-left: 43.2%;
     position: absolute;
     margin-top: 0%;
 }
 .col-md-3.teleupload.edit {
     width: 28%;
-    margin-left: 47%;
+    margin-left: 45.2%;
     position: absolute;
     margin-top: 0%;
 }
-.form-control.input-md.comment{
-    width:237%;
+.form-control.input-md.comment {
+    width: 265%;
 }
-.fileUpload.btn.btn-info.tele1{
-margin-left:14%;
-margin-top:-1%;
+.fileUpload.btn.btn-info.tele1 {
+    margin-left: 24%;
+    margin-top: -1%;
 }
 
 .add_field.btn {
     margin-left: 52%;
 }
 
-.btn.btn-info.user{
+.btn.btn-info.user {
     color: white;
     background-color: rgb(23, 111, 172);
     margin-top: 0%;
-    margin-left:116%;
+    margin-left: 116%;
+    width: 92%;
 }
 
 .input-file {
@@ -2217,16 +2295,27 @@ margin-top:-1%;
     margin-left:30%;
 }
 
-.btn.btn-warning.backbutton-searchresult{/*1440 Back Button in Search_result page*/
+/*.btn.btn-warning.backbutton-searchresult{1440 Back Button in Search_result page
     width: 64%;
     margin-top:-17%;
     margin-left:70%
 }
-
-.btn.btn-success.editbutton-searchresult{/*1440 Back Button in Search_result page*/
+*/
+.btn.btn-warning.backbutton-searchresult {
+    width: 42%;
+    margin-top: -17%;
+    margin-left: 59%;
+}
+/*.btn.btn-success.editbutton-searchresult{1440 Back Button in Search_result page
     width: 64%;
     margin-top:-1%;
     margin-left:-3%
+}*/
+
+.btn.btn-success.editbutton-searchresult {
+    width: 42%;
+    margin-top: -1%;
+    margin-left: 1%;
 }
 .btn.btn-success.clear-pendingpage{
    color: white;
@@ -2244,12 +2333,58 @@ margin-top:-1%;
     width: 133%;
     height: 447px
 }
+.mdl-data-table.dataTable.no-footer {
+    margin-left: 13% !important;
+    width: 75%;
+    margin-top: 12%;
+}
+
+.remove_field_present.p {
+    margin-left: 67%;
+    margin-top: -3%;
+    position: absolute;
+}
+
+.upload-button.up {
+    padding: 4px;
+    border: 1px solid #176fac;
+    border-radius: 1px;
+    display: block;
+    float: left;
+    position: absolute;
+    z-index: 2;
+    margin-left: 77%;
+    cursor: pointer;
+    margin-top: 8.6%;
+    color: #fff;
+    background-color: #176fac;
+}
 .card2{
 
     margin-top: -12%;
     width: 133%;
   /*  height: 65%;*/
     margin-left: -30%;
+}
+
+.col-md-2.search_org {
+    width: 14%;
+    margin-left: -17%;
+}
+
+.btn.btn-warning.cancel1 {
+    width: 10em;
+    margin-top: -14%;
+    padding: 0.5em;
+    margin-left: 55%;
+    background: #176fac;
+    border-color: #176fac;
+}
+
+.btn.btn-warning.delete1 {
+    width: 10em;
+    margin-top: -10.2%;
+    margin-left: 49%;
 }
 
 /*search page button css starts below*/
@@ -2313,6 +2448,21 @@ margin-top:-1%;
 /*Search button css above end*/
 
 
+/*Dates fields of Indiv and Org page*/
+
+.col-md-4.col-label.date-label-individual{
+    margin-left: 27.7%;
+    margin-top: 0.7%;
+
+}
+
+.form-control.datepicker.pick.date-individual{
+    margin-left:-89%;
+    width: 80%;   
+}
+    
+
+
 /*Cancel and Delete button edit page of Individual*/
 .btn.btn-success.successb{   
     width: 10em;
@@ -2345,7 +2495,7 @@ margin-top:-1%;
 #title
 {
     margin-left:70%;
-    margin-top:8%;
+    margin-top:9%;
 }
 
 #logout {
@@ -2363,16 +2513,16 @@ margin-top:-1%;
     margin-left: 30%;
 }
 
-.partner_designation{
-margin-left:290%;
-margin-top:-20%;
-width: 155%;
+.partner_designation {
+    margin-left: 288%;
+    margin-top: -20%;
+    width: 152%;
 }
 
-.partner_designation.col2{
-    margin-left: 467%;
-    margin-top: -33px;
-    width: 145%;
+.partner_designation.col2 {
+    margin-left: 445%;
+    margin-top: -35px;
+    width: 107%;
 }
 
 #title1{
@@ -2389,15 +2539,15 @@ width: 155%;
 }
 
 #telephone_upload {
-    width: 63%;
-    margin-left: 11%;
+    width: 47.2%;
+    margin-left: 7.6%;
     position: absolute;
     margin-top: 1%;
 }
 
 #bank_upload{
-    width: 63%;
-    margin-left: 3%;
+    width: 47.2%;
+    margin-left: 2%;
     margin-top: 0%;
     position: absolute;
 }
@@ -2409,35 +2559,44 @@ width: 155%;
     height: 50px;
 }
 
-.remove_field_pre1 {
+/*.remove_field_pre1 {
     margin-left:70%; 
     margin-top:-3%;
     position:absolute;
-}
+}*/
 .remove_field_pre1 {
-    margin-left: 60%;
-    margin-top: -3.2%;
+    margin-left: 62.1%;
+    margin-top: -3.0%;
     position: absolute;
 }
 .remove_field_present{
-    margin-left:70%; 
+    margin-left:63%; 
     margin-top:-3%;
     position:absolute;
 }
 
+.btn.btn-info.new_entry_btn {
+    color: white;
+    background-color: rgb(23, 111, 172);
+    margin-top: 0%;
+    margin-left: -22%;
+
+}
 /*avatar profile upload btn*/
 
  .upload-button {
     padding: 4px;
-    border: 1px solid black;
-    border-radius: 5px;
+    border: 1px solid #176fac;
+    border-radius: 1px;
     display: block;
     float: left;
-    position:absolute;
-    z-index:2;
-    margin-left:77%;
-    cursor:pointer;
-    margin-top:10%;
+    position: absolute;
+    z-index: 2;
+    margin-left: 70%;
+    cursor: pointer;
+    margin-top: 10.6% !important;
+    color: #fff;
+    background-color: #176fac;
 }
 
 .profile-pic {
@@ -2489,11 +2648,11 @@ width: 155%;
 
 /*view btn wth Modal Button in edit*/
 a.btn.btn-info.edit_modal {
-    color:white;
-    background-color:#176fac;
-    margin-top:0%;
-    margin-left:-36%;
-    width: 65%;
+    color: white;
+    background-color: #176fac;
+    margin-top: 0%;
+    margin-left: -35%;
+    width: 47%;
     height: 2758%;
 }
 
@@ -2501,14 +2660,27 @@ a.btn.btn-info.edit{
     color:white;
     background-color:#176fac;
     margin-top:0%;
-    margin-left:40%;
+    margin-left:-69%;
     width: 101%;
+}
+
+div.fileUpload.search.btn.btn-info {
+    margin-left: 16%;
+    margin-top: 0%;
+}
+
+a.btn.btn-info {
+    color: white;
+    background-color: #176fac;
+    margin-top: 0%;
+    margin-left: 2%;
+    width: 158%;
 }
 
 /*attach btn*/
 div.fileUpload.btn.btn-info{
-    margin-left:0%;
-    margin-top:0%;
+   margin-left: -83%;
+    margin-top: 0%;
 }
 
 /*notification bar css*/
@@ -2550,31 +2722,33 @@ div.fileUpload.btn.btn-info{
 }
 
 /*add new partner js*/
-
-.partner_name{
-    margin-top:-20%;
-    margin-left:290%;
-    width: 322%;
+.partner_name {
+    margin-top: -20%;
+    margin-left: 288%;
+    width: 262%;
 }
-.btn.btn-info.new_entry_btn.entry{
-    margin-left:1240%;
-    position:absolute;
-    margin-top: -41px;
-
+.btn.btn-info.new_entry_btn.entry {
+    margin-left: 1122%;
+    position: absolute;
+    margin-top: -35px;
 }
 
 /*date input field*/
-.col-10.col{
-    width:63%;
-    margin-left:6.6%;
-    margin-top:-6%;
+
+.col-10.col {
+    width: 72%;
+    margin-left: 6.6%;
+    margin-top: -6%;
 }
 .form-control.type_of_work
 {
     margin-left:8%;
-    width:145%
+    width:165%
 }
-
+.form-control.status-edit {
+    width: 166%;
+    margin-left: -2%;
+}
 .form-group.designation{
     margin-left:175%;
 }
@@ -2598,22 +2772,26 @@ div.fileUpload.btn.btn-info{
 }
 
 .form-control.status{
-    width:145%;
+    width:165%;
     margin-left:-1%;
 }
 .col-2.col-form-label.date{
     margin-left:-9.5%;
 }
 .col-md-4.control-label.comment{
-    margin-left:-29%;
+    margin-left:-31%;
 }
 
 .remove_field {
-    margin-left: 40%;
-    margin-top: -41px;
+    margin-left: 42.7%;
+    margin-top: -37px;
     position: absolute;
 }
-
+.remove_field_partner{
+    margin-left: 349.7%;
+    margin-top: -37px;
+    position: absolute;
+}
 /*edit page view*/
 .fileUpload.btn.btn-info.view{
 
@@ -2621,24 +2799,24 @@ div.fileUpload.btn.btn-info{
 
 /*search result page*/
 .search_result.tele{
-    margin-left: -95%;
+    margin-left: -105%;
     margin-top: 0%;
     width: 81%;
 }
 
 .search_result.tele1{
-    margin-left: 5%;
+    margin-left: 15%;
     margin-top: 0%;
     width: 83%;
 }
 /*seach_result page view*/
 .btn.btn-info.view1 {
-    margin-left: -283%;
-    margin-top: -1%;
+    margin-left: -222%;
+    margin-top: -4%;
     position: relative;
     color: white;
+    width: 164%;
 }
-
 
 .fileUpload.btn.btn-info.tele{
 margin-left:12%;
@@ -2652,40 +2830,79 @@ margin-top:-1%;
     position: relative;
 }
 .col-md-3.bkupload.edit {
-    width:28%;
-    margin-left: 45%;
+    width: 33%;
+    margin-left: 40.6%;
     position: absolute;
     margin-top: 0%;
 }
+
 .col-md-3.teleupload.edit {
-    width: 28%;
-    margin-left: 47%;
+    width: 33%;
+    margin-left: 43.2%;
     position: absolute;
     margin-top: 0%;
 }
-.form-control.input-md.comment{
-    width:234%;
-    margin-left: -4%;
+
+.form-control.input-md.comment {
+    width: 271%;
+    margin-left: 3%;
 }
-.fileUpload.btn.btn-info.tele1{
-margin-left:12%;
-margin-top:-1%;
+
+a.searchview.btn.btn-info {
+    color: white;
+    background-color: #176fac;
+    margin-top: 0%;
+    margin-left: 102%;
+    width: 161%;
+}
+
+.fileUpload.btn.btn-info.tele1 {
+    margin-left: 26%;
+    margin-top: -1%;
 }
 
 .add_field.btn {
     margin-left: 52%;
 }
 
+.datepicker.p {
+    width: 77% !important;
+    margin-top: 4% !important;
+    margin-left: 2%;
+}
+
+.upload-button.edit {
+    padding: 4px;
+    border: 1px solid #176fac;
+    border-radius: 1px;
+    display: block;
+    float: left;
+    position: absolute;
+    z-index: 2;
+    margin-left: 72%;
+    cursor: pointer;
+    margin-top: 12.6% !important;
+    color: #fff;
+    background-color: #176fac;
+}
+
 .btn.btn-info.user{
     color: white;
     background-color: rgb(23, 111, 172);
     margin-top: 0%;
-    margin-left:116%;
+    margin-left:73%;
+    width: 103%;
 }
 
 .input-file {
     margin-top: 3px;
     margin-left: 19px;
+    position: absolute;
+}
+
+.input-file.edit-user {
+    margin-top: 7%;
+    margin-left: -50%;
     position: absolute;
 }
 
@@ -2711,7 +2928,7 @@ margin-top:-1%;
 }
 .btn.btn-success.clear-pendingpage{
     color: white;
-    margin-left: 27%;
+    margin-left: 29%;
     margin-top: 4%;
     position: absolute;
 }
@@ -2801,7 +3018,7 @@ a.btn.btn-info.edit_modal {
 }
 .form-control.status-edit {
     width: 163%!important;
-    margin-left: -1%!important;
+    margin-left: -3%!important;
 }
 
 /*edit page of org attach btn*/
@@ -2922,6 +3139,8 @@ div.fileUpload.org.btn.btn-info {
     background-color: rgb(23, 111, 172);
     margin-top: 0%;
     margin-left: 67%;
+    width: 116%;
+
 }
 
 
@@ -2966,7 +3185,7 @@ width: 155%;
 #title1{
     float: right;
     right: 206px;
-    top: 9%;
+    top: 11%;
     position: absolute;
 }
 
@@ -3083,7 +3302,7 @@ a.btn.btn-info{
     background-color:#176fac;
     margin-top:0%;
     margin-left: -41%;
-    width: 159%;
+   /* width: 159%;*/
 }
 
 a.btn.btn-info.edit{
@@ -3167,8 +3386,8 @@ div.fileUpload.btn.btn-info{
 }
 
 .form-control.type_of_work {
-    margin-left: 9%;
-    width: 164%;
+    margin-left: 7%;
+    width: 167%;
 }
 
 .form-group.designation{
@@ -3262,7 +3481,7 @@ margin-top:-1%;
     margin-left: 51%;
 }
 .form-control.input-md.comment{
-   width: 262%;
+   width: 270%;
     margin-left: -1%;
 }
 .fileUpload.btn.btn-info.tele1{
@@ -3343,6 +3562,7 @@ margin-left: 26%;
     margin-left: -5% !important;
     margin-top: -4%;
 }
+
 
 
 /*Card 2 height*/
@@ -3635,16 +3855,20 @@ a.btn.btn-info.edit{
 
     margin-top: -19%;
 }
-
 .partner_name {
     margin-top: -32%;
     margin-left: 283%;
-    width: 318%;
+    width: 248%;
 }
 .btn.btn-info.new_entry_btn.entry {
-    margin-left: 1149%;
+    margin-left: 1101%;
     position: absolute;
     margin-top: -33px;
+}
+.remove_field1 {
+    margin-left: 305.7% !important;
+    margin-top: -36px;
+    position: absolute;
 }
 .col-md-3.bkupload.edit {
     width: 43% !important;
@@ -3679,12 +3903,10 @@ a.btn.btn-info.edit{
     margin-top: -4%;
     position: absolute;
 }
-
-.remove_field_present{
-    margin-left:64%; 
-    margin-top:-3.7%;
-    position:absolute;
-
+.remove_field_present {
+    margin-left: 63%;
+    margin-top: -3.7%;
+    position: absolute;
 }
 .remove_field_present.p{
     margin-left:67%; 
@@ -3718,7 +3940,7 @@ a.btn.btn-info.edit{
     z-index: 2;
     margin-left: 72%;
     cursor: pointer;
-    margin-top: 14.6%;
+    margin-top: 14.6% !important;
     color: #fff;
     background-color: #176fac;
 }
@@ -3865,11 +4087,10 @@ input#partner_names[].form-control.input-md.newentry.partner_names{
     margin-top: -20%;
     width: 143%;
 }
-
-.partner_designation.col2{
-    margin-left: 454%;
-    margin-top: -33px;
-    width: 145%;
+.partner_designation.col2 {
+    margin-left: 437%;
+    margin-top: -35px;
+    width: 96%;
 }
 
 .fileUpload.btn.btn-info.tele1{
@@ -3888,6 +4109,7 @@ margin-top:-1%;
     margin-top: -3%;
     position: relative;
     color: white;
+    width: 237%;
 }
 
 .col-10 {
@@ -3944,6 +4166,7 @@ margin-top:-1%;
     margin-top: 12%;
     margin-left: 76%;
 }
+
 .btn.btn-success.clear-pendingpage{
     color: white;
     margin-left: 30%;
