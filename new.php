@@ -1131,11 +1131,11 @@ $arr_uid = json_decode($output_uid,true);
 
 <div class="alert" id="popup2" class="popup1" style="display:none;text-align:center;position:absolute;
     width:100%;
-    top: 70%;z-index:2">
+    top: 77%;z-index:2">
   <label>UID Generated</label><br>
   <input type="text" id="uid_in_popup_org" name="uid_in_popup_org" style="text-align:center;background-color:transparent;color:black;border:none"></input><br><br>
-  <button style="margin-left:1%;" id="done_org" class="btn btn-success" name="done_org" onclick="submit_form_org()">Done</button>
-  <button style="margin-top:-1%;" onclick="make_uid_null_org()" id="cancel1_org" class="btn btn-warning" name="cancel1_org">Cancel</button>
+  <button style="margin-left:1%;width:10em;" id="done_org" class="btn btn-success" name="done_org" onclick="submit_form_org()">Done</button>
+  <button style="margin-top:0%;" onclick="make_uid_null_org()" id="cancel1_org" class="btn btn-warning" name="cancel1_org">Cancel</button>
 </div>
 
 
@@ -1400,7 +1400,7 @@ $arr_uid = json_decode($output_uid,true);
 
 <div class="col-md-8 col-sm-12 col-24">
     <div class="input_fields" style="color:black">
-         <button class="add_field btn " onclick="incrementValue()" >Add More</button>
+         <button class="add_field btn " onclick="incrementValue()" >Add More Task</button>
          <div>
          <input type="text" name="mytextt[]" hidden="" ></div>
 </div>
@@ -1462,11 +1462,11 @@ function enable_disable(that){
 <?php } else { ?>
 <div class="alert" id="popup1" class="popup1" style="display:none;text-align:center;position:absolute;
     width:100%;
-    top: 70%;z-index:2">
+    top: 81%;z-index:2">
   <label>UID Generated</label><br>
   <input type="text" id="uid_in_popup" name="uid_in_popup" style="text-align:center;background-color:transparent;color:black;border:none"></input><br><br>
-  <button style="margin-left:1%;" id="done" class="btn btn-success" name="done" onclick="submit_form()">Done</button>
-  <button style="margin-top:-1%;" onclick="make_uid_null()" id="cancel1" class="btn btn-warning" name="cancel1">Cancel</button>
+  <button style="margin-left:1%;width:10em;" id="done" class="btn btn-success" name="done" onclick="submit_form()">Done</button>
+  <button style="margin-top:0%;" onclick="make_uid_null()" id="cancel1" class="btn btn-warning" name="cancel1">Cancel</button>
 </div>
 
 <script type="text/javascript">
@@ -1762,7 +1762,7 @@ function enable_disable(that){
 
 <div class="col-md-8 col-sm-12 col-24">
     <div class="input_fields" style="color:black">
-         <button class="add_field btn " onclick="incrementValue()" style="">Add More</button>
+         <button class="add_field btn " onclick="incrementValue()" style="">Add More Task</button>
          <div>
          <input type="text" name="mytextt[]" hidden="" ></div>
 </div>
