@@ -1464,7 +1464,7 @@ VIEW</a>
 
 <div class="col-md-8 col-sm-12 col-24">
     <div class="input_fields" style="color:black">
-         <button class="add_field btn " onclick="incrementValue()" style="">Add More</button>
+         <button class="add_field btn " onclick="incrementValue()" style="">Add More Task</button>
          <div>
          <input type="text" name="mytextt[]" hidden="" ></div>
 </div>
@@ -2064,7 +2064,7 @@ function enable_disable(that){
 
 <div class="col-md-8 col-sm-12 col-24">
     <div class="input_fields" style="color:black">
-         <button class="add_field btn " onclick="incrementValue()" style="">Add More</button>
+         <button class="add_field btn " onclick="incrementValue()" style="">Add More Task</button>
          <div>
          <input type="text" name="mytextt[]" hidden="" ></div>
 </div>
