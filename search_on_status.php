@@ -99,9 +99,6 @@ if(isset($_POST['new_save'])){
   $output_edit = file_get_contents($url_edit, false,$context_edit);
   /*echo $output_status;*/
   $arr_edit = json_decode($output_edit,true);
-  /*echo $arr_status[0]['additional_info']['status'];
-  echo $arr_status[0]['details']['name'];
-  echo $arr_status[0]['is_user'];*/
 } 
 
 ?>

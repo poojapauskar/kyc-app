@@ -1158,7 +1158,7 @@ $arr_uid = json_decode($output_uid,true);
   <label class="col-md-4 control-label" for="type_of_org">Type of Organization:</label>
   <div class="col-md-4">
     <select id="type_of_org" name="type_of_org" class="form-control" ONCHANGE="enable_disable(this);" style="width: 80%;">
-      <option value="Proprietorship">Proprietorship</option>
+      <option value="Company">Company</option>
       <option value="HUF">HUF</option>
       <option value="Society">Society</option>
       <option value="Partnership">Partnership</option>

@@ -251,10 +251,9 @@ $('#test').click(function() {
 <table align="center" id="example" class="mdl-data-table" cellspacing="0" style="width:75%;margin-top:4%;text-align: center;">
         <thead>
             <th>Name</th>
-        <th>UID</th>
-          <th>Missing File</th>
+            <th>UID</th>
+            <th>Missing File</th>
             <th>Choose File</th>
-            <!-- <th>Upload</th> -->
             <th>Action</th>
         </thead>
         

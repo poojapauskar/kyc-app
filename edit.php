@@ -1099,7 +1099,7 @@ if($profile22 == ""){
   <div class="col-md-4">
     <select id="type_of_org" name="type_of_org" class="form-control"  ONCHANGE="enable_disable(this);" style="width: 80%;">
       <option value="<?php echo $arr_search['response'][0]['organization_details']['type_of_org'];?>"><?php echo $arr_search['response'][0]['organization_details']['type_of_org'];?></option>
-      <option value="Proprietorship">Proprietorship</option>
+      <option value="Company">Company</option>
       <option value="HUF">HUF</option>
       <option value="Society">Society</option>
       <option value="Partnership">Partnership</option>
