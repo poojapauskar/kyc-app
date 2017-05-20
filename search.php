@@ -288,15 +288,15 @@ $db = pg_connect("host=ec2-107-20-191-76.compute-1.amazonaws.com port=5432 dbnam
  pg_select($db, 'post_log', $_POST);
  
 
- $query=pg_query("(SELECT id,name,is_user,account_token,is_active FROM organization_organization WHERE is_active = 'true' AND account_token = '".$_SESSION['account_token']."')
+ $query=pg_query("(SELECT id,name,is_user,account_token,is_active,pan_card FROM organization_organization WHERE is_active = 'true' AND account_token = '".$_SESSION['account_token']."')
   UNION 
- (SELECT id,name,is_user,account_token,is_active FROM users_users WHERE is_active = 'true' AND account_token = '".$_SESSION['account_token']."')");
+ (SELECT id,name,is_user,account_token,is_active,pan_card FROM users_users WHERE is_active = 'true' AND account_token = '".$_SESSION['account_token']."')");
 
 /*echo $query;*/
 
  $json=array();
 while ($student = pg_fetch_array($query)) {
-    $json[$student["is_user"]."-".$student["id"]] = $student["name"];
+    $json[$student["is_user"]."-".$student["id"]] = $student["name"]."-".$student['pan_card'];
 }
 
 $textval = json_encode($json);
