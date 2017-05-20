@@ -162,6 +162,9 @@ $arr_search = json_decode($output_search,true);
           <a class="mdl-navigation__link" href="new.php?is_user=0">New Entry Organization</a>
           <a class="mdl-navigation__link" href="new.php?is_user=1">New Entry Individual</a>
           <a class="mdl-navigation__link" href="missing_reports.php">Missing Reports</a>
+          <a class="mdl-navigation__link" href="search_on_status.php?status=Work in process">Work In Process</a>
+          <a class="mdl-navigation__link" href="search_on_status.php?status=Pending">Pending</a>
+           <a class="mdl-navigation__link" href="search_on_status.php?status=Completed">Completed</a>
         <?php if($_SESSION['is_admin'] == 1){?>
           <a class="mdl-navigation__link" href="admin_page.php">Admin</a>
         <?php }?>

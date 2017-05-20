@@ -1116,6 +1116,9 @@ $arr_uid = json_decode($output_uid,true);
           <a class="mdl-navigation__link" href="new.php?is_user=0">New Entry Organization</a>
           <a class="mdl-navigation__link" href="new.php?is_user=1">New Entry Individual</a>
           <a class="mdl-navigation__link" href="missing_reports.php">Missing Reports</a>
+          <a class="mdl-navigation__link" href="search_on_status.php?status=Work in process">Work In Process</a>
+          <a class="mdl-navigation__link" href="search_on_status.php?status=Pending">Pending</a>
+           <a class="mdl-navigation__link" href="search_on_status.php?status=Completed">Completed</a>
         <?php if($_SESSION['is_admin'] == 1){?>
           <a class="mdl-navigation__link" href="admin_page.php">Admin</a>
         <?php }?>
@@ -1276,21 +1279,7 @@ $arr_uid = json_decode($output_uid,true);
 </div>
 </div>
 
-<!-- Input Type : Number -->
-<!-- <div class="form-group">
-  <label class="col-md-4 control-label" for="typenumber">No of Partners: </label>
-  <div class="col-md-4">                     
-     <input type="number" name="no_of_partners" min="1" max="5" value="2" id="no_of_partners">
-  </div>
-</div> -->
-
-<!-- <div class="form-group col-md-4 ">
-  <label class="col-md-4 control-label"><b> <font size="4">Partner1</font></b></label>
-
-</div> -->
 <!-- Added Partner 1 -->
-
-
 <label for="comment" id="number" style="margin-left:25%;margin-top:0%;font-size: 16px;font-weight:600;"> PARTNERS : </label>
 
 <div class="present_fields">
@@ -1411,8 +1400,6 @@ $arr_uid = json_decode($output_uid,true);
 <div class="form-group">
   <label class="col-md-4 control-label" for="save_btn"></label>
   <div class="col-md-8">
-    <!-- <button id="save_btn" name="save_btn" type="submit" class="btn btn-success" style="width: 10em;margin-left:1px">Save</button><span><span></span></span>
-    <button onclick="ClickEvent()" class="btn btn-warning" style="width: 10em;"><a style="color:white" href="search.php">Cancel</a></button> -->
     <button onclick="return validate_org();" id="generate_btn_org" name="generate_btn_org" class="btn btn-success">Generate</button>
     <button id="singlebutton" style="margin-left:13%;" name="singlebutton" class="btn btn-primary"><a style="color:white" href="search.php">Discard</a></button>
   </div>

@@ -1065,6 +1065,10 @@ if($profile22 == ""){
           <a class="mdl-navigation__link" href="new.php?is_user=0">New Entry Organization</a>
           <a class="mdl-navigation__link" href="new.php?is_user=1">New Entry Individual</a>
           <a class="mdl-navigation__link" href="missing_reports.php">Missing Reports</a>
+          <a class="mdl-navigation__link" href="search_on_status.php?status=Work in process">Work In Process</a>
+          <a class="mdl-navigation__link" href="search_on_status.php?status=Pending">Pending</a>
+           <a class="mdl-navigation__link" href="search_on_status.php?status=Completed">Completed</a>
+           
           <a class="mdl-navigation__link" href="search.php">Admin</a>
           <a class="mdl-navigation__link" href="">Help</a>
           <a class="mdl-navigation__link" href="">About Us</a>
