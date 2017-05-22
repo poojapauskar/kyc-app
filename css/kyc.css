@@ -2217,6 +2217,11 @@ div.fileUpload.btn.btn-info{
     margin-left: 34%;
     margin-top: -1.5%;
 }
+.col-10.due_date {
+   width: 24.5%;
+    margin-left: 34.8%;
+    margin-top: -0.5%;
+}
 
 .form-control.status-edit {
     width: 165%;
@@ -2778,6 +2783,11 @@ div.fileUpload.btn.btn-info{
 .col-2.col-form-label.date{
     margin-left:-9.5%;
 }
+
+.col-2.col-form-label.duedate{
+       margin-left: -17.5%;
+}
+
 .col-md-4.control-label.comment{
     margin-left:-31%;
 }
