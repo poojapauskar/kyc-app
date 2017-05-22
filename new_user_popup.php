@@ -1,6 +1,6 @@
 
 
-<html>
+<!DOCTYPE html>
   <head>
 
     <!---bootstrap-->
@@ -111,6 +111,29 @@ $(function() {
       return proceed();
 
     }
+
+
+    <?php
+
+       $db = pg_connect("host=ec2-107-20-191-76.compute-1.amazonaws.com port=5432 dbname=deu9vahl80fvjn user=vdvqpruzihrics password=17b3e7a56da97ca021e3da54bb1694bb799849a2b5911014ed6caa05e1e4e02d");
+       pg_select($db, 'post_log', $_POST);
+       
+
+       $query=pg_query("SELECT id,name FROM users_users WHERE is_active = 'true' AND account_token = '".$_SESSION['account_token']."'");
+
+       $json=array();
+
+      while ($student = pg_fetch_array($query)) {
+          $json[$student["id"]] = $student["name"];
+      }
+
+      $textval = json_encode($json);
+      $foo = "var partnames=" . $textval;
+      file_put_contents('autocomplete-Files/NewEntryValues.js', $foo);
+       
+
+  ?>
+
   }
 </script>
 
@@ -605,7 +628,7 @@ $arr_uid_popup = json_decode($output_uid_popup,true);
 
   <div class="col-md-4" style="text-align:center">
     <button onclick="return validate();" id="generate_btn" name="generate_btn" class="btn btn-success">Generate</button>
-    <!-- <button id="singlebutton" style="margin-left:13%;" name="singlebutton" class="btn btn-primary"><a style="color:white" onclick="goBack()">Discard</a></button> -->
+    <!-- <button id="singlebutton" style="margin-left:13%;" name="singlebutton" class="btn  btn-primary"><a style="color:white" onclick="goBack()">Discard</a></button> -->
 
   </div>
 </div>
