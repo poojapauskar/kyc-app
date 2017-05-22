@@ -164,6 +164,16 @@ if($_POST['is_user_delete'] != "" && $_POST['pk_delete'] != ""){
         <button onclick="return fun1()" style="visibility:hidden;display:none;margin-left:58%;margin-top:-3.5%;width:200px;height:37px" class="mdl-button mdl-js-button mdl-button--raised" type="submit" value="Search" id="submit" name="submit">
         </button>
         </form>
+
+        <div class="col-sm-2" style="margin-top:-12%;margin-left:73%;width:70px">
+         <a href="all.php">
+          <button class="mdl-button mdl-js-button mdl-button--raised new-entry-individual-btn">
+          All
+          </button>
+        </a>
+        </div>
+
+
           </div>   
       <!-- Below code for three buttons inside -->
 
