@@ -52,6 +52,40 @@ $(document).ready(function() {
     } );
 } );
 </script>
+<!-- Modal Script -->
+
+
+<script type="text/javascript">
+$(function(){
+
+$('#trigger').click(function(){
+  $('#myModal').modal('show');
+  return false;
+})
+
+});
+
+$('#myModal').on('shown.bs.modal', function () {
+    $(this).find('.modal-dialog').css({width:'auto',
+                               height:'auto', 
+                              'max-height':'100%'});
+});
+</script>
+
+<div class="container">
+
+    
+    <!-- Modal HTML -->
+    <div id="myModal" class="modal fade">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <!-- Content will be loaded here from "remote.php" file -->
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Mdodal End -->
 <style>
 
 .mdl-data-table td:last-of-type {
@@ -191,6 +225,7 @@ $('#test').click(function() {
      }
   ?>
   <tr>
+
     <td><?php echo $arr_status[$i]['details']['name'] ?></td>
     <td><?php echo $field ?></td>
     <td><?php echo $arr_status[$i]['additional_info']['type_of_work'] ?></td>
@@ -202,7 +237,6 @@ $('#test').click(function() {
       <!-- <button type="submit" class="btn btn-success" style="color:white">Details</button> -->
        <button type="button" class="btn btn-success" style="color:white;" data-toggle="modal" data-target="#myModal<?php echo $i ?>">Edit</button>
    <!--  </form> -->
-
 <div class="modal fade" id="myModal<?php echo $i ?>" role="dialog" style="background-color:transparent;width:100%;min-height:100%;">
     <div class="modal-dialog" style="margin-top:11%">
     
@@ -245,6 +279,12 @@ $('#test').click(function() {
       
     </div>
   </div>
+  <!-- <a href="new_user_popup.php" style="color:white" target="_blank" data-toggle="modal" data-target="#myModal">
+
+     <button type="button" class="btn btn-info new_entry_btn" /*style="margin-left:0%"*/>
+       New Entry
+     </button> -->
+
     </td>
   </tr>
   <?php }?>
