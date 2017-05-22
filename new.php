@@ -273,6 +273,22 @@ $(function() {
 }).datepicker("setDate", new Date());
 });
 
+$(function() {
+  $( ".datepicker.due_date" ).datepicker({
+    dateFormat : 'dd/mm/yy',
+    changeMonth: true,changeYear: true,
+     beforeShow: function (input, inst) {
+        setTimeout(function () {
+            inst.dpDiv.css({
+            'z-index':4,
+            width:300,
+             
+            });
+        }, 10);
+     }
+}).datepicker("setDate", new Date());
+});
+
 
 </script>
 
@@ -1239,7 +1255,7 @@ $arr_uid = json_decode($output_uid,true);
 <div class="form-group">
   <label class="col-md-4 control-label" for="textarea">Address:</label>
   <div class="col-md-4">                     
-    <textarea class="form-control" id="address" name="address" style="width: 80%;"  >Enter Address</textarea>
+    <textarea class="form-control" id="address" name="address" style="width: 80%;" placeholder="Enter Address"  ></textarea>
   </div>
 </div>
 
@@ -1386,6 +1402,14 @@ $arr_uid = json_decode($output_uid,true);
   <label class="col-md-4 control-label" for="textinput">DATE:</label>  
   <div class="col-md-4">
   <input id="date[]" name="date[]" value="<?php echo $_POST['date'] ?>" style="width:80%;margin-left:-0.4%;margin-top:0%;" type="text" class="form-control input-md datepicker pick" readonly>
+  </div>
+</div>
+
+<!--date-->
+  <div class="form-group">
+  <label class="col-md-4 control-label" for="textinput">DUE DATE:</label>  
+  <div class="col-md-4">
+  <input id="due_date[]" name="due_date[]" value="<?php echo $_POST['due_date'] ?>" style="width:80%;margin-left:-0.4%;margin-top:0%;" type="text" class="form-control input-md datepicker due_date" readonly>
   </div>
 </div>
 
@@ -1770,6 +1794,14 @@ function enable_disable(that){
   </div>
 </div>
 
+<!--date __Individual page___-->
+<div class="form-group">
+  <label for="example-date-input" class="col-md-1 col-label date-label-individual" style="margin-left:25%">DUE DATE:</label>
+  <div class="col-md-4">
+    <input class="form-control datepicker pick due-date-individual" id="due_date[]" style="width:80%;" name="due_date[]" value="<?php echo $_POST['due_date'] ?>" type="text" readonly>
+  </div>
+</div>
+
 
 <!-- Text input-->
 <div class="form-group">
@@ -1910,9 +1942,12 @@ $(document).ready(function() {
 
         if(x < max_fields){ //max input box allowed
             x++; //text box increment
-            $('<div style="margin-left:50%;"><div class="form-group"><label class="control-label type" for="selectbasic" style="">Type of work:</label><div class="col-md-6"><select id="type_of_work[]" name="type_of_work[]" class="form-control type_of_work"><option value=""></option><option value="Audit Report">Audit Report</option><option value="ITR filing">ITR filing</option><option value="VAT Filing">VAT Filing</option><option value="Accounting">Accounting</option><option value="Registration">Registration</option><option value="Certification">Certification</option><option value="Others">Others</option></select></div></div><div class="form-group"> <label class="col-md-4 control-label statuss1" for="selectbasic" style="">Status:</label><div class="col-md-6"><select id="status1' + x + '"  name="status[]"  class="form-control status"><option value=""></option><option value="Pending">Pending</option><option value="Work in process">Work in process</option><option value="Completed">Completed</option></select></div></div><div class="form-group row"><label for="example-date-input" class="col-2 col-form-label date">DATE:</label><div class="col-10 col"><input class="form-control datepicker pickers" id="date' + x +'" name="date[]" type="text" readonly></div></div><div class="form-group"><label class="col-md-4 control-label comment" for="textinput" style="">Comment:</label><div class="col-md-4"><input id="comments' + x + '" name="comment[]" type="text" placeholder="" class="form-control input-md comment" style=""></div></div></center><a href="#" class="remove_field"><img src="images/del24.png" ></a></a></div>').insertBefore(add_button)//add input box\
+            $('<div style="margin-left:50%;"><div class="form-group"><label class="control-label type" for="selectbasic" style="">Type of work:</label><div class="col-md-6"><select id="type_of_work[]" name="type_of_work[]" class="form-control type_of_work"><option value=""></option><option value="Audit Report">Audit Report</option><option value="ITR filing">ITR filing</option><option value="VAT Filing">VAT Filing</option><option value="Accounting">Accounting</option><option value="Registration">Registration</option><option value="Certification">Certification</option><option value="Others">Others</option></select></div></div><div class="form-group"> <label class="col-md-4 control-label statuss1" for="selectbasic" style="">Status:</label><div class="col-md-6"><select id="status1' + x + '"  name="status[]"  class="form-control status"><option value=""></option><option value="Pending">Pending</option><option value="Work in process">Work in process</option><option value="Completed">Completed</option></select></div></div><div class="form-group row"><label for="example-date-input" class="col-2 col-form-label date">DATE:</label><div class="col-10 col"><input class="form-control datepicker pickers" id="date' + x +'" name="date[]" type="text" readonly></div></div><div class="form-group row"><label for="example-date-input" class="col-2 col-form-label duedate"> DUE DATE:</label><div class="col-10 col"><input class="form-control datepicker pickersS" id="duedate' + x +'" name="due_date[]" type="text" readonly></div></div><div class="form-group"><label class="col-md-4 control-label comment" for="textinput" style="">Comment:</label><div class="col-md-4"><input id="comments' + x + '" name="comment[]" type="text" placeholder="" class="form-control input-md comment" style=""></div></div></center><a href="#" class="remove_field"><img src="images/del24.png" ></a></a></div>').insertBefore(add_button)//add input box\
           var newInput=$("#date"+ x).datepicker({dateFormat: 'dd/mm/yy',changeMonth : true,changeYear : true});
           newInput.datepicker({dateFormat: 'dd/mm/yy'}).datepicker("setDate", new Date());
+          var newInput=$("#duedate"+ x).datepicker({dateFormat: 'dd/mm/yy',changeMonth : true,changeYear : true});
+          newInput.datepicker({dateFormat: 'dd/mm/yy'}).datepicker("setDate", new Date());
+
 
           $("#status1" + x).click(function () {
 
