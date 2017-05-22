@@ -667,6 +667,8 @@ if($tel11 == ""){
                           'DATE: '.$date,
                           'COMMENT: '.$comment,
                           'ACCOUNT-TOKEN: '.$_SESSION['account_token'],
+                          'MOBILE: '.$_POST['mobile'],
+                          'EMAIL: '.$_POST['email'],
                           ),
       'method'  => 'GET',
     ),
@@ -1051,6 +1053,8 @@ if($profile22 == ""){
                           'DATE: '.$date,
                           'COMMENT: '.$comment,
                           'ACCOUNT-TOKEN: '.$_SESSION['account_token'],
+                          'MOBILE: '.$_POST['mobile'],
+                          'EMAIL: '.$_POST['email'],
                           ),
       'method'  => 'GET',
     ),
@@ -1256,7 +1260,7 @@ $arr_uid = json_decode($output_uid,true);
 <div class="form-group">
   <label class="col-md-4 control-label" for="textname">Phone No:</label>  
   <div class="col-md-4">
-  <input id="phone_no" name="phone_no" type="text" placeholder="Enter Phone No" class="form-control input-md" required style="width: 80%;"/>
+  <input id="mobile" name="mobile" type="text" placeholder="Enter Phone No" class="form-control input-md" required style="width: 80%;"/>
     
   </div>
 </div>
@@ -1652,7 +1656,7 @@ function enable_disable(that){
 <div class="form-group">
   <label class="col-md-4 control-label" for="textname">Phone No:</label>  
   <div class="col-md-4">
-  <input id="phone_no" name="phone_no" type="text" placeholder="Enter Phone No" class="form-control input-md" required style="width: 80%;"/>
+  <input id="mobile" name="mobile" type="text" placeholder="Enter Phone No" class="form-control input-md" required style="width: 80%;"/>
     
   </div>
 </div>

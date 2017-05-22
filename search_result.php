@@ -365,7 +365,7 @@ VIEW
 <div class="form-group">
   <label class="col-md-4 control-label" for="textname">Phone No:</label>  
   <div class="col-md-4">
-  <input value="<?php echo $arr_search['response'][0]['organization_details']['phone_no'];?>" id="phone_no" name="phone_no" type="text" placeholder="Enter Phone" class="form-control input-md" readonly style="width:90%;">
+  <input value="<?php echo $arr_search['response'][0]['organization_details']['mobile'];?>" id="mobile" name="mobile" type="text" placeholder="Enter Phone" class="form-control input-md" readonly style="width:90%;">
     
   </div>
 </div>
@@ -601,7 +601,7 @@ VIEW</a>
 <div class="form-group">
   <label class="col-md-4 control-label" for="textname">Phone No:</label>  
   <div class="col-md-4">
-  <input value="<?php echo $arr_search['response'][0]['user_details']['phone_no'];?>" id="phone_no" name="phone_no" type="text" placeholder="Enter Name" class="form-control input-md" readonly style="width:90%;">
+  <input value="<?php echo $arr_search['response'][0]['user_details']['mobile'];?>" id="mobile" name="mobile" type="text" placeholder="Enter Name" class="form-control input-md" readonly style="width:90%;">
     
   </div>
 </div

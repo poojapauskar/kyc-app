@@ -633,6 +633,8 @@ if($tel11 == ""){
                           'STATUS: '.$status,
                           'DATE: '.$date,
                           'COMMENT: '.$comment,
+                          'MOBILE: '.$_POST['mobile'],
+                          'EMAIL: '.$_POST['email'],
                           ),
       'method'  => 'GET',
     ),
@@ -1025,6 +1027,8 @@ if($profile22 == ""){
                           'STATUS: '.$status,
                           'DATE: '.$date,
                           'COMMENT: '.$comment,
+                          'MOBILE: '.$_POST['mobile'],
+                          'EMAIL: '.$_POST['email'],
                           ),
       'method'  => 'GET',
     ),
@@ -1253,7 +1257,7 @@ VIEW</a>
 <div class="form-group">
   <label class="col-md-4 control-label" for="textname">Phone No:</label>  
   <div class="col-md-4">
-  <input value="<?php echo $arr_search['response'][0]['organization_details']['phone'];?>" id="phone" name="phone" type="text" placeholder="Enter Email Address" class="form-control input-md" style="width: 80%;">
+  <input value="<?php echo $arr_search['response'][0]['organization_details']['mobile'];?>" id="mobile" name="mobile" type="text" placeholder="Enter Email Address" class="form-control input-md" style="width: 80%;">
   </div>
 </div>
 
@@ -1781,7 +1785,7 @@ function enable_disable(that){
 <div class="form-group">
   <label class="col-md-4 control-label" for="textname">Phone No:</label>  
   <div class="col-md-4">
-  <input value="<?php echo $arr_search['response'][0]['user_details']['phone'];?>" id="phone" name="phone" type="text" placeholder="Enter Email Address" class="form-control input-md" style="width: 80%;">
+  <input value="<?php echo $arr_search['response'][0]['user_details']['mobile'];?>" id="mobile" name="mobile" type="text" placeholder="Enter Email Address" class="form-control input-md" style="width: 80%;">
   </div>
 </div>
 
