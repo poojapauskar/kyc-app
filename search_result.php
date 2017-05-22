@@ -180,7 +180,7 @@ $arr_search = json_decode($output_search,true);
         <strong>
 
         <?php for($q=0;$q<count($arr_search['response'][0]['add_info']);$q++){
-         echo "&nbsp".$arr_search['response'][0]['add_info'][$q]['type_of_work']."&nbsp &rarr;&nbsp".$arr_search['response'][0]['add_info'][$q]['status']."&nbsp &rarr; &nbsp".$arr_search['response'][0]['add_info'][$q]['date']."&nbsp";
+         echo "&nbsp".$arr_search['response'][0]['add_info'][$q]['type_of_work']."&nbsp &rarr;&nbsp".$arr_search['response'][0]['add_info'][$q]['status']."&nbsp &rarr; &nbsp".$arr_search['response'][0]['add_info'][$q]['date']."&nbsp &rarr; &nbsp".$arr_search['response'][0]['add_info'][$q]['due_date']."&nbsp";
          echo "<br>";
         }?>
 
@@ -909,6 +909,7 @@ VIEW</a>
                    <strong>Type of work: </strong><?php echo $arr_search['response'][0]['add_info'][$q]['type_of_work'];echo "<br>";?>
                    <strong>Status: </strong><?php echo $arr_search['response'][0]['add_info'][$q]['status'];echo "<br>";?>
                    <strong>Date: </strong><?php echo $arr_search['response'][0]['add_info'][$q]['date'];echo "<br>";?>
+                   <strong>Due Date: </strong><?php echo $arr_search['response'][0]['add_info'][$q]['due_date'];echo "<br>";?>
                    <strong>Comment: </strong><?php echo $arr_search['response'][0]['add_info'][$q]['comment'];echo "<br>";?>
                    <br>
                    <br>
