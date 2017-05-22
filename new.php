@@ -1236,7 +1236,7 @@ $arr_uid = json_decode($output_uid,true);
 <div class="form-group">
   <label class="col-md-4 control-label" for="textarea">Address:</label>
   <div class="col-md-4">                     
-    <textarea class="form-control" id="address" name="address" style="width: 80%;"  >Enter Address</textarea>
+    <textarea class="form-control" id="address" name="address" style="width: 80%;" placeholder="Enter Address" ></textarea>
   </div>
 </div>
 
