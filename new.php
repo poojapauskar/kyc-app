@@ -650,6 +650,12 @@ if($tel11 == ""){
   }
   $date = ltrim($date, ',');
 
+  $due_date='';
+  for($j=0;$j<count($_POST['due_date']);$j++){
+    $due_date=$due_date.",".$_POST['due_date'][$j];
+  }
+  $due_date = ltrim($due_date, ',');
+
   $comment='';
   for($j=0;$j<count($_POST['comment']);$j++){
     if($_POST['comment'][$j] == ""){
@@ -681,6 +687,7 @@ if($tel11 == ""){
                           'TYPE-OF-WORK: '.$type_of_work,
                           'STATUS: '.$status,
                           'DATE: '.$date,
+                          'DUE-DATE: '.$due_date,
                           'COMMENT: '.$comment,
                           'ACCOUNT-TOKEN: '.$_SESSION['account_token'],
                           'MOBILE: '.$_POST['mobile'],
@@ -1035,6 +1042,12 @@ if($profile22 == ""){
   }
   $date = ltrim($date, ',');
 
+  $due_date='';
+  for($j=0;$j<count($_POST['due_date']);$j++){
+    $due_date=$due_date.",".$_POST['due_date'][$j];
+  }
+  $due_date = ltrim($due_date, ',');
+
   $comment='';
   for($j=0;$j<count($_POST['comment']);$j++){
     if($_POST['comment'][$j] == ""){
@@ -1066,6 +1079,7 @@ if($profile22 == ""){
                           'IMAGE: '.$image_id,
                           'TYPE-OF-WORK: '.$type_of_work,
                           'STATUS: '.$status,
+                          'DUE-DATE: '.$due_date,
                           'DATE: '.$date,
                           'COMMENT: '.$comment,
                           'ACCOUNT-TOKEN: '.$_SESSION['account_token'],

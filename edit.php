@@ -592,6 +592,18 @@ if($tel11 == ""){
   }
   $status = ltrim($status, ',');
 
+  $due_date='';
+  for($j=0;$j<count($_POST['due_date']);$j++){
+    if($_POST['due_date'][$j] == ""){
+      $due_date_field=" ";
+    }else{
+      $due_date_field=$_POST['due_date'][$j];
+    }
+    $due_date=$due_date.",".$due_date_field;
+  }
+  $due_date = ltrim($due_date, ',');
+
+
   $date='';
   for($j=0;$j<count($_POST['date']);$j++){
     if($_POST['date'][$j] == ""){
@@ -635,6 +647,7 @@ if($tel11 == ""){
                           'PARTNER-DESIGNATIONS: '.$partner_designations,
                           'TYPE-OF-WORK: '.$type_of_work,
                           'STATUS: '.$status,
+                          'DUE-DATE: '.$due_date,
                           'DATE: '.$date,
                           'COMMENT: '.$comment,
                           'MOBILE: '.$_POST['mobile'],
@@ -986,6 +999,18 @@ if($profile22 == ""){
     $status=$status.",".$_POST['status'][$j];
   }
   $status = ltrim($status, ',');
+  
+  $due_date='';
+  for($j=0;$j<count($_POST['due_date']);$j++){
+    if($_POST['due_date'][$j] == ""){
+      $due_date_field=" ";
+    }else{
+      $due_date_field=$_POST['due_date'][$j];
+    }
+    $due_date=$due_date.",".$due_date_field;
+  }
+  $due_date = ltrim($due_date, ',');
+
 
   $date='';
   for($j=0;$j<count($_POST['date']);$j++){
@@ -1029,6 +1054,7 @@ if($profile22 == ""){
                           'IMAGE: '.$image_id,
                           'TYPE-OF-WORK: '.$type_of_work,
                           'STATUS: '.$status,
+                          'DUE-DATE: '.$due_date,
                           'DATE: '.$date,
                           'COMMENT: '.$comment,
                           'MOBILE: '.$_POST['mobile'],
