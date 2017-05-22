@@ -149,96 +149,130 @@ for($c=0;$c<count($arr3['organization']);$c++){
   if($arr3['organization'][$c]['url_telephone_bill'] != ""){
     $download_file = file_get_contents($arr3['organization'][$c]['url_telephone_bill']);
 
+    $extension1 = pathinfo($arr3['organization'][$c]['url_telephone_bill'], PATHINFO_EXTENSION);
+    $extension1 = explode("?",$extension1); 
+
     $parts = explode("?",$arr3['organization'][$c]['url_telephone_bill']); 
 
     #add it to the zip
     $zip->addFromString(basename($parts['0']),$download_file);
-    $zip->renameName(basename($parts['0']),$arr3['organization'][$c]['name']."_telephone_bill");
+    $zip->renameName(basename($parts['0']),$arr3['organization'][$c]['name']."_telephone_bill.".$extension1['0']);
   }
 
   if($arr3['organization'][$c]['url_reg_certificate'] != ""){
     $download_file = file_get_contents($arr3['organization'][$c]['url_reg_certificate']);
+    
+    $extension1 = pathinfo($arr3['organization'][$c]['url_reg_certificate'], PATHINFO_EXTENSION);
+    $extension1 = explode("?",$extension1); 
+
 
     $parts = explode("?",$arr3['organization'][$c]['url_reg_certificate']); 
 
     $zip->addFromString(basename($parts['0']),$download_file);
-    $zip->renameName(basename($parts['0']),$arr3['organization'][$c]['name']."_reg_certificate");
+    $zip->renameName(basename($parts['0']),$arr3['organization'][$c]['name']."_reg_certificate.".$extension1['0']);
   }
 
   if($arr3['organization'][$c]['url_pan_card'] != ""){
     $download_file = file_get_contents($arr3['organization'][$c]['url_pan_card']);
 
+    $extension1 = pathinfo($arr3['organization'][$c]['url_pan_card'], PATHINFO_EXTENSION);
+    $extension1 = explode("?",$extension1);
+
     $parts = explode("?",$arr3['organization'][$c]['url_pan_card']); 
 
     $zip->addFromString(basename($parts['0']),$download_file);
-    $zip->renameName(basename($parts['0']),$arr3['organization'][$c]['name']."_pan_card");
+    $zip->renameName(basename($parts['0']),$arr3['organization'][$c]['name']."_pan_card.".$extension1['0']);
   }
 
   if($arr3['organization'][$c]['url_pass_book'] != ""){
     $download_file = file_get_contents($arr3['organization'][$c]['url_pass_book']);
+    
+    $extension1 = pathinfo($arr3['organization'][$c]['url_pass_book'], PATHINFO_EXTENSION);
+    $extension1 = explode("?",$extension1);
 
     $parts = explode("?",$arr3['organization'][$c]['url_pass_book']); 
 
     $zip->addFromString(basename($parts['0']),$download_file);
-    $zip->renameName(basename($parts['0']),$arr3['organization'][$c]['name']."_pass_book");
+    $zip->renameName(basename($parts['0']),$arr3['organization'][$c]['name']."_pass_book.".$extension1['0']);
   }
 }
 for($c=0;$c<count($arr3['users']);$c++){
   if($arr3['users'][$c]['url_pan_card'] != ""){
     $download_file = file_get_contents($arr3['users'][$c]['url_pan_card']);
 
+    $extension1 = pathinfo($arr3['users'][$c]['url_pan_card'], PATHINFO_EXTENSION);
+    $extension1 = explode("?",$extension1);
+
     $parts = explode("?",$arr3['users'][$c]['url_pan_card']); 
 
     $zip->addFromString(basename($parts['0']),$download_file);
-    $zip->renameName(basename($parts['0']),$arr3['users'][$c]['uid']."_pan_card");
+    $zip->renameName(basename($parts['0']),$arr3['users'][$c]['uid']."_pan_card.".$extension1['0']);
   }
   if($arr3['users'][$c]['url_telephone_bill'] != ""){
     $download_file = file_get_contents($arr3['users'][$c]['url_telephone_bill']);
+    
+    $extension1 = pathinfo($arr3['users'][$c]['url_telephone_bill'], PATHINFO_EXTENSION);
+    $extension1 = explode("?",$extension1);
 
     $parts = explode("?",$arr3['users'][$c]['url_telephone_bill']); 
 
     $zip->addFromString(basename($parts['0']),$download_file);
-    $zip->renameName(basename($parts['0']),$arr3['users'][$c]['uid']."_telephone_bill");
+    $zip->renameName(basename($parts['0']),$arr3['users'][$c]['uid']."_telephone_bill.".$extension1['0']);
   }
   if($arr3['users'][$c]['url_bank_pass_book'] != ""){
     $download_file = file_get_contents($arr3['users'][$c]['url_bank_pass_book']);
+    
+    $extension1 = pathinfo($arr3['users'][$c]['url_bank_pass_book'], PATHINFO_EXTENSION);
+    $extension1 = explode("?",$extension1);
 
     $parts = explode("?",$arr3['users'][$c]['url_bank_pass_book']); 
 
     $zip->addFromString(basename($parts['0']),$download_file);
-    $zip->renameName(basename($parts['0']),$arr3['users'][$c]['uid']."_bank_pass_book");
+    $zip->renameName(basename($parts['0']),$arr3['users'][$c]['uid']."_bank_pass_book.".$extension1['0']);
   }
   if($arr3['users'][$c]['url_voter_id'] != ""){
     $download_file = file_get_contents($arr3['users'][$c]['url_voter_id']);
+    
+    $extension1 = pathinfo($arr3['users'][$c]['url_voter_id'], PATHINFO_EXTENSION);
+    $extension1 = explode("?",$extension1);
 
     $parts = explode("?",$arr3['users'][$c]['url_voter_id']); 
 
     $zip->addFromString(basename($parts['0']),$download_file);
-    $zip->renameName(basename($parts['0']),$arr3['users'][$c]['uid']."_voter_id");
+    $zip->renameName(basename($parts['0']),$arr3['users'][$c]['uid']."_voter_id.".$extension1['0']);
   }
   if($arr3['users'][$c]['url_passbook'] != ""){
     $download_file = file_get_contents($arr3['users'][$c]['url_passbook']);
+    
+    $extension1 = pathinfo($arr3['users'][$c]['url_passbook'], PATHINFO_EXTENSION);
+    $extension1 = explode("?",$extension1);
 
     $parts = explode("?",$arr3['users'][$c]['url_passbook']); 
 
     $zip->addFromString(basename($parts['0']),$download_file);
-    $zip->renameName(basename($parts['0']),$arr3['users'][$c]['uid']."_passbook");
+    $zip->renameName(basename($parts['0']),$arr3['users'][$c]['uid']."_passbook.".$extension1['0']);
   }
   if($arr3['users'][$c]['url_aadhar_card'] != ""){
     $download_file = file_get_contents($arr3['users'][$c]['url_aadhar_card']);
 
+    $extension1 = pathinfo($arr3['users'][$c]['url_aadhar_card'], PATHINFO_EXTENSION);
+    $extension1 = explode("?",$extension1);
+
     $parts = explode("?",$arr3['users'][$c]['url_aadhar_card']); 
 
     $zip->addFromString(basename($parts['0']),$download_file);
-    $zip->renameName(basename($parts['0']),$arr3['users'][$c]['uid']."_aadhar_card");
+    $zip->renameName(basename($parts['0']),$arr3['users'][$c]['uid']."_aadhar_card.".$extension1['0']);
   }
   if($arr3['users'][$c]['url_image'] != ""){
     $download_file = file_get_contents($arr3['users'][$c]['url_image']);
-
+    
+    $extension1 = pathinfo($arr3['users'][$c]['url_image'], PATHINFO_EXTENSION);
+    $extension1 = explode("?",$extension1);
+    
     $parts = explode("?",$arr3['users'][$c]['url_image']); 
 
     $zip->addFromString(basename($parts['0']),$download_file);
-    $zip->renameName(basename($parts['0']),$arr3['users'][$c]['uid']."_image");
+    $zip->renameName(basename($parts['0']),$arr3['users'][$c]['uid']."_image.".$extension1['0']);
   }
 }
 
