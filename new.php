@@ -1116,6 +1116,9 @@ $arr_uid = json_decode($output_uid,true);
           <a class="mdl-navigation__link" href="new.php?is_user=0">New Entry Organization</a>
           <a class="mdl-navigation__link" href="new.php?is_user=1">New Entry Individual</a>
           <a class="mdl-navigation__link" href="missing_reports.php">Missing Reports</a>
+          <a class="mdl-navigation__link" href="search_on_status.php?status=Work in process">Work In Process</a>
+          <a class="mdl-navigation__link" href="search_on_status.php?status=Pending">Pending</a>
+           <a class="mdl-navigation__link" href="search_on_status.php?status=Completed">Completed</a>
         <?php if($_SESSION['is_admin'] == 1){?>
           <a class="mdl-navigation__link" href="admin_page.php">Admin</a>
         <?php }?>
@@ -1131,11 +1134,11 @@ $arr_uid = json_decode($output_uid,true);
 
 <div class="alert" id="popup2" class="popup1" style="display:none;text-align:center;position:absolute;
     width:100%;
-    top: 70%;z-index:2">
+    top: 77%;z-index:2">
   <label>UID Generated</label><br>
   <input type="text" id="uid_in_popup_org" name="uid_in_popup_org" style="text-align:center;background-color:transparent;color:black;border:none"></input><br><br>
-  <button style="margin-left:1%;" id="done_org" class="btn btn-success" name="done_org" onclick="submit_form_org()">Done</button>
-  <button style="margin-top:-1%;" onclick="make_uid_null_org()" id="cancel1_org" class="btn btn-warning" name="cancel1_org">Cancel</button>
+  <button style="margin-left:1%;width:10em;" id="done_org" class="btn btn-success" name="done_org" onclick="submit_form_org()">Done</button>
+  <button style="margin-top:0%;" onclick="make_uid_null_org()" id="cancel1_org" class="btn btn-warning" name="cancel1_org">Cancel</button>
 </div>
 
 
@@ -1158,7 +1161,7 @@ $arr_uid = json_decode($output_uid,true);
   <label class="col-md-4 control-label" for="type_of_org">Type of Organization:</label>
   <div class="col-md-4">
     <select id="type_of_org" name="type_of_org" class="form-control" ONCHANGE="enable_disable(this);" style="width: 80%;">
-      <option value="Proprietorship">Proprietorship</option>
+      <option value="Company">Company</option>
       <option value="HUF">HUF</option>
       <option value="Society">Society</option>
       <option value="Partnership">Partnership</option>
@@ -1240,6 +1243,25 @@ $arr_uid = json_decode($output_uid,true);
   </div>
 </div>
 
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="textname">Email:</label>  
+  <div class="col-md-4">
+  <input id="email" name="email" type="text" placeholder="Enter Email" class="form-control input-md" required style="width: 80%;"/>
+    
+  </div>
+</div>
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="textname">Phone No:</label>  
+  <div class="col-md-4">
+  <input id="phone_no" name="phone_no" type="text" placeholder="Enter Phone No" class="form-control input-md" required style="width: 80%;"/>
+    
+  </div>
+</div>
+
+
 <!-- Multiple Checkboxes  and File upload Button -->   
 
     <div class="form-group">
@@ -1276,21 +1298,7 @@ $arr_uid = json_decode($output_uid,true);
 </div>
 </div>
 
-<!-- Input Type : Number -->
-<!-- <div class="form-group">
-  <label class="col-md-4 control-label" for="typenumber">No of Partners: </label>
-  <div class="col-md-4">                     
-     <input type="number" name="no_of_partners" min="1" max="5" value="2" id="no_of_partners">
-  </div>
-</div> -->
-
-<!-- <div class="form-group col-md-4 ">
-  <label class="col-md-4 control-label"><b> <font size="4">Partner1</font></b></label>
-
-</div> -->
 <!-- Added Partner 1 -->
-
-
 <label for="comment" id="number" style="margin-left:25%;margin-top:0%;font-size: 16px;font-weight:600;"> PARTNERS : </label>
 
 <div class="present_fields">
@@ -1400,7 +1408,7 @@ $arr_uid = json_decode($output_uid,true);
 
 <div class="col-md-8 col-sm-12 col-24">
     <div class="input_fields" style="color:black">
-         <button class="add_field btn " onclick="incrementValue()" >Add More</button>
+         <button class="add_field btn " onclick="incrementValue()" >Add More Task</button>
          <div>
          <input type="text" name="mytextt[]" hidden="" ></div>
 </div>
@@ -1411,8 +1419,6 @@ $arr_uid = json_decode($output_uid,true);
 <div class="form-group">
   <label class="col-md-4 control-label" for="save_btn"></label>
   <div class="col-md-8">
-    <!-- <button id="save_btn" name="save_btn" type="submit" class="btn btn-success" style="width: 10em;margin-left:1px">Save</button><span><span></span></span>
-    <button onclick="ClickEvent()" class="btn btn-warning" style="width: 10em;"><a style="color:white" href="search.php">Cancel</a></button> -->
     <button onclick="return validate_org();" id="generate_btn_org" name="generate_btn_org" class="btn btn-success">Generate</button>
     <button id="singlebutton" style="margin-left:13%;" name="singlebutton" class="btn btn-primary"><a style="color:white" href="search.php">Discard</a></button>
   </div>
@@ -1462,11 +1468,11 @@ function enable_disable(that){
 <?php } else { ?>
 <div class="alert" id="popup1" class="popup1" style="display:none;text-align:center;position:absolute;
     width:100%;
-    top: 70%;z-index:2">
+    top: 81%;z-index:2">
   <label>UID Generated</label><br>
   <input type="text" id="uid_in_popup" name="uid_in_popup" style="text-align:center;background-color:transparent;color:black;border:none"></input><br><br>
-  <button style="margin-left:1%;" id="done" class="btn btn-success" name="done" onclick="submit_form()">Done</button>
-  <button style="margin-top:-1%;" onclick="make_uid_null()" id="cancel1" class="btn btn-warning" name="cancel1">Cancel</button>
+  <button style="margin-left:1%;width:10em;" id="done" class="btn btn-success" name="done" onclick="submit_form()">Done</button>
+  <button style="margin-top:0%;" onclick="make_uid_null()" id="cancel1" class="btn btn-warning" name="cancel1">Cancel</button>
 </div>
 
 <script type="text/javascript">
@@ -1513,6 +1519,7 @@ function enable_disable(that){
   <input id="name" name="name" value="<?php echo $_POST['name'] ?>" type="text" placeholder="" class="form-control input-md" style="width: 80%;" required/> 
   </div>
 </div>
+
 <!--date-->
 <!-- Text input-->
 <div class="form-group">
@@ -1629,6 +1636,24 @@ function enable_disable(that){
   <label class="col-md-4 control-label" for="textarea">Address:</label>
   <div class="col-md-4">                     
     <textarea class="form-control" id="address" name="address" value="<?php echo $_POST['address'] ?>" style="width: 80%" placeholder="Enter Address" ></textarea>
+  </div>
+</div>
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="textname">Email:</label>  
+  <div class="col-md-4">
+  <input id="email" name="email" type="text" placeholder="Enter Email" class="form-control input-md" required style="width: 80%;"/>
+    
+  </div>
+</div>
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="textname">Phone No:</label>  
+  <div class="col-md-4">
+  <input id="phone_no" name="phone_no" type="text" placeholder="Enter Phone No" class="form-control input-md" required style="width: 80%;"/>
+    
   </div>
 </div>
 
@@ -1762,7 +1787,7 @@ function enable_disable(that){
 
 <div class="col-md-8 col-sm-12 col-24">
     <div class="input_fields" style="color:black">
-         <button class="add_field btn " onclick="incrementValue()" style="">Add More</button>
+         <button class="add_field btn " onclick="incrementValue()" style="">Add More Task</button>
          <div>
          <input type="text" name="mytextt[]" hidden="" ></div>
 </div>

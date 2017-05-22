@@ -227,6 +227,9 @@ $arr_missing_report = json_decode($output_missing_report,true);
           <a class="mdl-navigation__link" href="new.php?is_user=0">New Entry Organization</a>
           <a class="mdl-navigation__link" href="new.php?is_user=1">New Entry Individual</a>
           <a class="mdl-navigation__link" href="missing_reports.php">Missing Reports</a>
+          <a class="mdl-navigation__link" href="search_on_status.php?status=Work in process">Work In Process</a>
+          <a class="mdl-navigation__link" href="search_on_status.php?status=Pending">Pending</a>
+           <a class="mdl-navigation__link" href="search_on_status.php?status=Completed">Completed</a>
         <?php if($_SESSION['is_admin'] == 1){?>
           <a class="mdl-navigation__link" href="admin_page.php">Admin</a>
         <?php }?>
@@ -251,10 +254,9 @@ $('#test').click(function() {
 <table align="center" id="example" class="mdl-data-table" cellspacing="0" style="width:75%;margin-top:4%;text-align: center;">
         <thead>
             <th>Name</th>
-        <th>UID</th>
-          <th>Missing File</th>
+            <th>UID</th>
+            <th>Missing File</th>
             <th>Choose File</th>
-            <!-- <th>Upload</th> -->
             <th>Action</th>
         </thead>
         

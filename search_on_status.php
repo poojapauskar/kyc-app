@@ -99,9 +99,6 @@ if(isset($_POST['new_save'])){
   $output_edit = file_get_contents($url_edit, false,$context_edit);
   /*echo $output_status;*/
   $arr_edit = json_decode($output_edit,true);
-  /*echo $arr_status[0]['additional_info']['status'];
-  echo $arr_status[0]['details']['name'];
-  echo $arr_status[0]['is_user'];*/
 } 
 
 ?>
@@ -147,6 +144,9 @@ if(isset($_POST['new_save'])){
           <a class="mdl-navigation__link" href="new.php?is_user=0">New Entry Organization</a>
           <a class="mdl-navigation__link" href="new.php?is_user=1">New Entry Individual</a>
           <a class="mdl-navigation__link" href="missing_reports.php">Missing Reports</a>
+          <a class="mdl-navigation__link" href="search_on_status.php?status=Work in process">Work In Process</a>
+          <a class="mdl-navigation__link" href="search_on_status.php?status=Pending">Pending</a>
+           <a class="mdl-navigation__link" href="search_on_status.php?status=Completed">Completed</a>
         <?php if($_SESSION['is_admin'] == 1){?>
           <a class="mdl-navigation__link" href="admin_page.php">Admin</a>
         <?php }?>

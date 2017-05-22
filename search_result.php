@@ -162,6 +162,9 @@ $arr_search = json_decode($output_search,true);
           <a class="mdl-navigation__link" href="new.php?is_user=0">New Entry Organization</a>
           <a class="mdl-navigation__link" href="new.php?is_user=1">New Entry Individual</a>
           <a class="mdl-navigation__link" href="missing_reports.php">Missing Reports</a>
+          <a class="mdl-navigation__link" href="search_on_status.php?status=Work in process">Work In Process</a>
+          <a class="mdl-navigation__link" href="search_on_status.php?status=Pending">Pending</a>
+           <a class="mdl-navigation__link" href="search_on_status.php?status=Completed">Completed</a>
         <?php if($_SESSION['is_admin'] == 1){?>
           <a class="mdl-navigation__link" href="admin_page.php">Admin</a>
         <?php }?>
@@ -349,6 +352,26 @@ VIEW
   </div>
 </div>
 
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="textname">Email:</label>  
+  <div class="col-md-4">
+  <input value="<?php echo $arr_search['response'][0]['organization_details']['email'];?>" id="email" name="email" type="text" placeholder="Enter Email" class="form-control input-md" readonly style="width:90%;">
+    
+  </div>
+</div>
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="textname">Phone No:</label>  
+  <div class="col-md-4">
+  <input value="<?php echo $arr_search['response'][0]['organization_details']['phone_no'];?>" id="phone_no" name="phone_no" type="text" placeholder="Enter Phone" class="form-control input-md" readonly style="width:90%;">
+    
+  </div>
+</div>
+
+
+
 <!-- Multiple Checkboxes  and File upload Button -->   
 
 <div class="form-group">
@@ -469,7 +492,7 @@ VIEW</a>
 <div class="form-group">
   <label class="col-md-4 control-label" for="save_btn"></label>
   <div class="col-md-8">
-    <button id="save_btn" name="save_btn" type="submit" class="btn btn-success" style="width:27%;margin-left:1%;">Edit</button><span><span></span></span>
+    <button id="save_btn" name="save_btn" type="submit" class="btn btn-success" style="width:27%!important;margin-left:1%;">Edit</button><span><span></span></span>
     <button onclick="javascript:history.back()" style="width: 10em;margin-left:2%;" class="btn btn-warning">Back</button>
 <!--   <a style="color:white" href="javascript:history.back()">Go Back</a>
  <a style="color:white" href="search.php">Back</a>
@@ -564,6 +587,24 @@ VIEW</a>
     <textarea class="form-control" id="address" name="address" value="<?php echo $arr_search['response'][0]['user_details']['address'] ?>" readonly style="width: 80%;"><?php echo $arr_search['response'][0]['user_details']['address'] ?></textarea>
   </div>
 </div>
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="textname">Email:</label>  
+  <div class="col-md-4">
+  <input value="<?php echo $arr_search['response'][0]['user_details']['email'];?>" id="email" name="email" type="text" placeholder="Enter Name" class="form-control input-md" readonly style="width:90%;">
+    
+  </div>
+</div>
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="textname">Phone No:</label>  
+  <div class="col-md-4">
+  <input value="<?php echo $arr_search['response'][0]['user_details']['phone_no'];?>" id="phone_no" name="phone_no" type="text" placeholder="Enter Name" class="form-control input-md" readonly style="width:90%;">
+    
+  </div>
+</div
 
 <!-- Text input-->
 <div class="form-group">

@@ -1065,6 +1065,10 @@ if($profile22 == ""){
           <a class="mdl-navigation__link" href="new.php?is_user=0">New Entry Organization</a>
           <a class="mdl-navigation__link" href="new.php?is_user=1">New Entry Individual</a>
           <a class="mdl-navigation__link" href="missing_reports.php">Missing Reports</a>
+          <a class="mdl-navigation__link" href="search_on_status.php?status=Work in process">Work In Process</a>
+          <a class="mdl-navigation__link" href="search_on_status.php?status=Pending">Pending</a>
+           <a class="mdl-navigation__link" href="search_on_status.php?status=Completed">Completed</a>
+           
           <a class="mdl-navigation__link" href="search.php">Admin</a>
           <a class="mdl-navigation__link" href="">Help</a>
           <a class="mdl-navigation__link" href="">About Us</a>
@@ -1099,7 +1103,7 @@ if($profile22 == ""){
   <div class="col-md-4">
     <select id="type_of_org" name="type_of_org" class="form-control"  ONCHANGE="enable_disable(this);" style="width: 80%;">
       <option value="<?php echo $arr_search['response'][0]['organization_details']['type_of_org'];?>"><?php echo $arr_search['response'][0]['organization_details']['type_of_org'];?></option>
-      <option value="Proprietorship">Proprietorship</option>
+      <option value="Company">Company</option>
       <option value="HUF">HUF</option>
       <option value="Society">Society</option>
       <option value="Partnership">Partnership</option>
@@ -1234,6 +1238,22 @@ VIEW</a>
   <label class="col-md-4 control-label" for="textarea">Address:</label>
   <div class="col-md-4">                     
     <textarea class="form-control" style="width: 80%;" id="address" name="address"><?php echo $arr_search['response'][0]['organization_details']['address'] ?></textarea>
+  </div>
+</div>
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="textname">Email:</label>  
+  <div class="col-md-4">
+  <input value="<?php echo $arr_search['response'][0]['organization_details']['email'];?>" id="email" name="email" type="text" placeholder="Enter Email Address" class="form-control input-md" style="width: 80%;">
+  </div>
+</div>
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="textname">Phone No:</label>  
+  <div class="col-md-4">
+  <input value="<?php echo $arr_search['response'][0]['organization_details']['phone'];?>" id="phone" name="phone" type="text" placeholder="Enter Email Address" class="form-control input-md" style="width: 80%;">
   </div>
 </div>
 
@@ -1464,7 +1484,7 @@ VIEW</a>
 
 <div class="col-md-8 col-sm-12 col-24">
     <div class="input_fields" style="color:black">
-         <button class="add_field btn " onclick="incrementValue()" style="">Add More</button>
+         <button class="add_field btn " onclick="incrementValue()" style="">Add More Task</button>
          <div>
          <input type="text" name="mytextt[]" hidden="" ></div>
 </div>
@@ -1746,6 +1766,22 @@ function enable_disable(that){
   <label class="col-md-4 control-label" for="textarea">Address:</label>
   <div class="col-md-4">                     
     <textarea class="form-control" id="address" name="address" value="<?php echo $arr_search['response'][0]['user_details']['address'] ?>" style="width: 80%;"><?php echo $arr_search['response'][0]['user_details']['address'] ?></textarea>
+  </div>
+</div>
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="textname">Email:</label>  
+  <div class="col-md-4">
+  <input value="<?php echo $arr_search['response'][0]['user_details']['email'];?>" id="email" name="email" type="text" placeholder="Enter Email Address" class="form-control input-md" style="width: 80%;">
+  </div>
+</div>
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="textname">Phone No:</label>  
+  <div class="col-md-4">
+  <input value="<?php echo $arr_search['response'][0]['user_details']['phone'];?>" id="phone" name="phone" type="text" placeholder="Enter Email Address" class="form-control input-md" style="width: 80%;">
   </div>
 </div>
 
@@ -2064,7 +2100,7 @@ function enable_disable(that){
 
 <div class="col-md-8 col-sm-12 col-24">
     <div class="input_fields" style="color:black">
-         <button class="add_field btn " onclick="incrementValue()" style="">Add More</button>
+         <button class="add_field btn " onclick="incrementValue()" style="">Add More Task</button>
          <div>
          <input type="text" name="mytextt[]" hidden="" ></div>
 </div>
