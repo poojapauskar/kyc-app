@@ -1241,6 +1241,22 @@ VIEW</a>
   </div>
 </div>
 
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="textname">Email:</label>  
+  <div class="col-md-4">
+  <input value="<?php echo $arr_search['response'][0]['organization_details']['email'];?>" id="email" name="email" type="text" placeholder="Enter Email Address" class="form-control input-md" style="width: 80%;">
+  </div>
+</div>
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="textname">Phone No:</label>  
+  <div class="col-md-4">
+  <input value="<?php echo $arr_search['response'][0]['organization_details']['phone'];?>" id="phone" name="phone" type="text" placeholder="Enter Email Address" class="form-control input-md" style="width: 80%;">
+  </div>
+</div>
+
 <!-- Multiple Checkboxes  and File upload Button -->   
 
 <div class="form-group">
@@ -1750,6 +1766,22 @@ function enable_disable(that){
   <label class="col-md-4 control-label" for="textarea">Address:</label>
   <div class="col-md-4">                     
     <textarea class="form-control" id="address" name="address" value="<?php echo $arr_search['response'][0]['user_details']['address'] ?>" style="width: 80%;"><?php echo $arr_search['response'][0]['user_details']['address'] ?></textarea>
+  </div>
+</div>
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="textname">Email:</label>  
+  <div class="col-md-4">
+  <input value="<?php echo $arr_search['response'][0]['user_details']['email'];?>" id="email" name="email" type="text" placeholder="Enter Email Address" class="form-control input-md" style="width: 80%;">
+  </div>
+</div>
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="textname">Phone No:</label>  
+  <div class="col-md-4">
+  <input value="<?php echo $arr_search['response'][0]['user_details']['phone'];?>" id="phone" name="phone" type="text" placeholder="Enter Email Address" class="form-control input-md" style="width: 80%;">
   </div>
 </div>
 

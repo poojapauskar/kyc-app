@@ -352,6 +352,26 @@ VIEW
   </div>
 </div>
 
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="textname">Email:</label>  
+  <div class="col-md-4">
+  <input value="<?php echo $arr_search['response'][0]['organization_details']['email'];?>" id="email" name="email" type="text" placeholder="Enter Email" class="form-control input-md" readonly style="width:90%;">
+    
+  </div>
+</div>
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="textname">Phone No:</label>  
+  <div class="col-md-4">
+  <input value="<?php echo $arr_search['response'][0]['organization_details']['phone_no'];?>" id="phone_no" name="phone_no" type="text" placeholder="Enter Phone" class="form-control input-md" readonly style="width:90%;">
+    
+  </div>
+</div>
+
+
+
 <!-- Multiple Checkboxes  and File upload Button -->   
 
 <div class="form-group">
@@ -567,6 +587,24 @@ VIEW</a>
     <textarea class="form-control" id="address" name="address" value="<?php echo $arr_search['response'][0]['user_details']['address'] ?>" readonly style="width: 80%;"><?php echo $arr_search['response'][0]['user_details']['address'] ?></textarea>
   </div>
 </div>
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="textname">Email:</label>  
+  <div class="col-md-4">
+  <input value="<?php echo $arr_search['response'][0]['user_details']['email'];?>" id="email" name="email" type="text" placeholder="Enter Name" class="form-control input-md" readonly style="width:90%;">
+    
+  </div>
+</div>
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="textname">Phone No:</label>  
+  <div class="col-md-4">
+  <input value="<?php echo $arr_search['response'][0]['user_details']['phone_no'];?>" id="phone_no" name="phone_no" type="text" placeholder="Enter Name" class="form-control input-md" readonly style="width:90%;">
+    
+  </div>
+</div
 
 <!-- Text input-->
 <div class="form-group">

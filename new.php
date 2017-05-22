@@ -1243,6 +1243,25 @@ $arr_uid = json_decode($output_uid,true);
   </div>
 </div>
 
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="textname">Email:</label>  
+  <div class="col-md-4">
+  <input id="email" name="email" type="text" placeholder="Enter Email" class="form-control input-md" required style="width: 80%;"/>
+    
+  </div>
+</div>
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="textname">Phone No:</label>  
+  <div class="col-md-4">
+  <input id="phone_no" name="phone_no" type="text" placeholder="Enter Phone No" class="form-control input-md" required style="width: 80%;"/>
+    
+  </div>
+</div>
+
+
 <!-- Multiple Checkboxes  and File upload Button -->   
 
     <div class="form-group">
@@ -1500,6 +1519,7 @@ function enable_disable(that){
   <input id="name" name="name" value="<?php echo $_POST['name'] ?>" type="text" placeholder="" class="form-control input-md" style="width: 80%;" required/> 
   </div>
 </div>
+
 <!--date-->
 <!-- Text input-->
 <div class="form-group">
@@ -1616,6 +1636,24 @@ function enable_disable(that){
   <label class="col-md-4 control-label" for="textarea">Address:</label>
   <div class="col-md-4">                     
     <textarea class="form-control" id="address" name="address" value="<?php echo $_POST['address'] ?>" style="width: 80%" placeholder="Enter Address" ></textarea>
+  </div>
+</div>
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="textname">Email:</label>  
+  <div class="col-md-4">
+  <input id="email" name="email" type="text" placeholder="Enter Email" class="form-control input-md" required style="width: 80%;"/>
+    
+  </div>
+</div>
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="textname">Phone No:</label>  
+  <div class="col-md-4">
+  <input id="phone_no" name="phone_no" type="text" placeholder="Enter Phone No" class="form-control input-md" required style="width: 80%;"/>
+    
   </div>
 </div>
 
