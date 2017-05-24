@@ -36,7 +36,7 @@ header('Pragma: public');
 //print "\xEF\xBB\xBF"; // UTF-8 BOM
 $h = array();
 
-$Header = ["Type of Organization","Name","Registration","Pan","Address","Partner UIDs","Registration Certificate","Pan Card","Telephone Bill","Bank Pass Book"];
+$Header = ["Type of Organization","Name","Mobile","Email","Registration","Pan","Address","Partner UIDs","Registration Certificate","Pan Card","Telephone Bill","Bank Pass Book"];
 
 
 echo '<table border="1"><tr>';
@@ -50,6 +50,8 @@ echo '</tr>';
 for($k=0;$k<count($arr['details']);$k++) {
    echo '<td>' . $arr['details'][$k]['type_of_org'] . '</td>';
    echo '<td>' . $arr['details'][$k]['name'] . '</td>';
+   echo '<td>' . $arr['details'][$k]['mobile'] . '</td>';
+   echo '<td>' . $arr['details'][$k]['email'] . '</td>';
    echo '<td>' . $arr['details'][$k]['registration'] . '</td>';
    echo '<td>' . $arr['details'][$k]['pan'] . '</td>';
    echo '<td>' . $arr['details'][$k]['address'] . '</td>';
@@ -87,7 +89,7 @@ header('Pragma: public');
 //print "\xEF\xBB\xBF"; // UTF-8 BOM
 $h = array();
 
-$Header = ["UID","Name","DOB","Proffesion","Pan","Pan Card","Address","Telephone Bill","Bank Pass Book","Voter Id","Passport","Aadhar No.","Aadhar Card","Image","Designation"];
+$Header = ["Name","Mobile","Email","DOB","Proffesion","Pan","Address","Aadhar No.","Designation","UID","Pan Card","Telephone Bill","Bank Pass Book","Voter Id","Passport","Aadhar Card","Image"];
 
 
 echo '<table border="1"><tr>';
@@ -99,21 +101,23 @@ echo '</tr>';
 
 
 for($k=0;$k<count($arr2['details']);$k++) {
-   echo '<td>' . $arr2['details'][$k]['uid'] . '</td>';
    echo '<td>' . $arr2['details'][$k]['name'] . '</td>';
+   echo '<td>' . $arr2['details'][$k]['mobile'] . '</td>';
+   echo '<td>' . $arr2['details'][$k]['email'] . '</td>';
    echo '<td>' . $arr2['details'][$k]['dob'] . '</td>';
    echo '<td>' . $arr2['details'][$k]['proffesion'] . '</td>';
    echo '<td>' . $arr2['details'][$k]['pan'] . '</td>';
-   echo '<td>' . $arr2['details'][$k]['pan_card'] . '</td>';
    echo '<td>' . $arr2['details'][$k]['address'] . '</td>';
+   echo '<td>' . $arr2['details'][$k]['aadhar_no'] . '</td>';
+   echo '<td>' . $arr2['details'][$k]['designation'] . '</td>';
+   echo '<td>' . $arr2['details'][$k]['uid'] . '</td>';
+   echo '<td>' . $arr2['details'][$k]['pan_card'] . '</td>';
    echo '<td>' . $arr2['details'][$k]['telephone_bill'] . '</td>';
    echo '<td>' . $arr2['details'][$k]['bank_pass_book'] . '</td>';
    echo '<td>' . $arr2['details'][$k]['voter_id'] . '</td>';
    echo '<td>' . $arr2['details'][$k]['passport'] . '</td>';
-   echo '<td>' . $arr2['details'][$k]['aadhar_no'] . '</td>';
    echo '<td>' . $arr2['details'][$k]['aadhar_card'] . '</td>';
    echo '<td>' . $arr2['details'][$k]['image'] . '</td>';
-   echo '<td>' . $arr2['details'][$k]['designation'] . '</td>';
    echo '</tr>';
 }
 
@@ -302,8 +306,36 @@ readfile($tmp_file);
 <br>
 <form action="admin_page.php" method="post">
   <input type="hidden" name="admin_pk" value="<?php echo $_SESSION['admin_pk'] ?>">
-  <button type="submit" class="btn btn-success" style="color:white;margin-left:2%" name="submit_org">Import All Organization</button>
-  <button type="submit" class="btn btn-success" style="color:white;margin-left:2%" name="submit_usr">Import All Users</button>
-  <button type="submit" class="btn btn-success" style="color:white;margin-left:2%" name="submit_img">Import Images</button>
+  <button type="submit" class="btn btn-success" style="color:white;margin-left:2%" name="submit_org">Export All Organization</button>
+  <button type="submit" class="btn btn-success" style="color:white;margin-left:2%" name="submit_usr">Export All Users</button>
+  <button type="submit" class="btn btn-success" style="color:white;margin-left:2%" name="submit_img">Export Images</button>
 </form> 
+
+<form enctype="multipart/form-data" action="excel-upload1.php" method="post" >
+  
+  <!-- <label style="margin-left:2%" class="form-label span3" for="file">Import Students</label><br><br>
+   -->
+   <input style="margin-left:1%;margin-top:2%" type="file" name="file1" id="file1" required />
+  
+  
+  <br><br>
+  <button class="btn btn-success" style="color:white;" type="submit">
+    Import Organization
+    </button>
+
+</form>
+
+<form enctype="multipart/form-data" action="excel-upload2.php" method="post" >
+  
+  <!-- <label style="margin-left:2%" class="form-label span3" for="file">Import Students</label><br><br>
+   -->
+   <input style="margin-left:1%;margin-top:2%" type="file" name="file2" id="file2" required />
+  
+  
+  <br><br>
+  <button class="btn btn-success" style="color:white;" type="submit">
+    Import Users
+    </button>
+
+</form>
 </div>
