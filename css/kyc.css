@@ -2425,10 +2425,10 @@ margin-top:-1%;
 */}
 
 .pending-btn{
- background-color: #176fac !important;
-    width: 210%;
+background-color: #176fac !important;
+    width: 165%;
     margin-top: 19%;
-    margin-left: 13%;
+    margin-left: 52%;
     color: white;
 /*    z-index: 4;
 */
@@ -2444,15 +2444,21 @@ margin-top:-1%;
 */}
 
 .completed-btn{
- background-color: #176fac !important;
-    width: 210%;
+    background-color: #176fac !important;
+    width: 165%;
     margin-top: 18%;
-    margin-left: 77%;
+    margin-left: 20%;
     color: white;
 /*    z-index: 4;
 */
 }
-
+.assignment-btn{
+    background-color: #176fac !important;
+    width: 165%;
+    margin-top: 18%;
+    margin-left: -2%;
+    color: white;
+}
 
 /*Search button css above end*/
 
@@ -3084,29 +3090,29 @@ div.fileUpload.org.btn.btn-info {
 */}
 
 .pending-btn{
- background-color: #176fac !important;
-    width: 210%;
+    background-color: #176fac !important;
+    width: 165%;
     margin-top: 19%;
-    margin-left: 13%;
+    margin-left: 60%;
     color: white;
 /*    z-index: 4;
 */
 }
 
 .workin-btn{
- background-color: #176fac !important;
-    width: 210%;
+    background-color: #176fac !important;
+    width: 165;
     margin-top: 20%;
-    margin-left: 44%;
+    margin-left: 27%;
     color: white;
 /*    z-index: 4;
 */}
 
 .completed-btn{
- background-color: #176fac !important;
-    width: 210%;
+    background-color: #176fac !important;
+    width: 165%;
     margin-top: 18%;
-    margin-left: 70%;
+    margin-left: 12%;
     color: white;
 /*    z-index: 4;
 */

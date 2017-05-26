@@ -230,6 +230,11 @@ if($_POST['is_user_delete'] != "" && $_POST['pk_delete'] != ""){
   <div class="card-header2">Assignment Status</div>
 <div class="card-block2">
   
+  <div class="col-sm-2">
+<!-- Modal for Assignment--> 
+     <button class="mdl-button mdl-js-button mdl-button--raised  assignment-btn" data-toggle="modal" data-target="#myModal<?php echo $i ?>"> Assignment</button>
+    </div>
+
     <div class="col-sm-2">
       <a href="search_on_status.php?status=Pending">
       <button class="mdl-button mdl-js-button mdl-button--raised  pending-btn">
@@ -320,3 +325,46 @@ file_put_contents('autocomplete-Files/SearchValues.js', $foo);
  
 
 ?>
+
+<div class="modal fade" id="myModal<?php echo $i ?>" role="dialog" style="background-color:transparent;width:100%;min-height:100%;">
+    <div class="modal-dialog" style="margin-top:11%">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Edit Assignment</h4> 
+        </div>
+        <div class="modal-body">
+          <form name="new_form" method="post" action="">
+          <input id="pk" name="pk" type="hidden" placeholder="" value="<?php echo $arr_status[$i]['additional_info']['pk'] ?>" class="form-control input-md" style="width: 80%;">
+          </input>
+
+          <div style="text-align:left">
+          <label>Status</label> 
+          </div>
+          <select id="new_status" name="new_status" class="form-control" style="width: 80%;">
+            <option value="<?php echo $arr_status[$i]['additional_info']['status'] ?>"><?php echo $arr_status[$i]['additional_info']['status'] ?></option>
+            <option value=""></option>
+            <option value="Pending">Pending</option>
+            <option value="Work in process">Work in process</option>
+            <option value="Completed">Completed</option>
+          </select>
+
+          <div style="text-align:left;margin-top:2%">
+          <label>Comment</label> 
+          </div>
+           <input id="new_comment" value="<?php echo $arr_status[$i]['additional_info']['comment'] ?>" name="new_comment" type="text" placeholder="" class="form-control input-md" style="width: 80%;">
+           </input>
+
+           <button class="btn btn-success" style="color:white" name="new_save" id="new_save" type="submit">Save</button>
+           </form>
+ 
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+      
+    </div>
+
