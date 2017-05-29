@@ -8512,10 +8512,10 @@ span.badge,
 span.badge.new {
     font-weight: 400
 }
-.alert .alert-link,
+/*.alert .alert-link,
 .alert .close {
     font-weight: 700
-}
+}*/
 #page-message {
     text-align: center;
     margin: 4rem 0
@@ -8846,7 +8846,7 @@ table th[class*=col-] {
 body {
     overflow: hidden
 }
-.alert {
+/*.alert {
     padding: 1rem;
     margin: 1rem 0;
     border-radius: 2px;
@@ -8922,7 +8922,7 @@ body {
 }
 .alert-dismissible {
     padding-right: 35px
-}
+}*/
 @keyframes progress-bar-stripes {
     from {
         background-position: 40px 0
@@ -14420,7 +14420,7 @@ html.rtl i.left {
     margin-right: 0;
     margin-left: 15px
 }
-html.rtl .alert-dismissible {
+/*html.rtl .alert-dismissible {
     padding-right: 1rem;
     padding-left: 35px
 }
@@ -14428,7 +14428,7 @@ html.rtl .alert-dismissible .close {
     float: left;
     right: 0;
     margin-left: -21px
-}
+}*/
 html.rtl .select-wrapper span.caret {
     right: auto;
     left: 0
@@ -23173,10 +23173,10 @@ span.badge,
 span.badge.new {
     font-weight: 400
 }
-.alert .alert-link,
+/*.alert .alert-link,
 .alert .close {
     font-weight: 700
-}
+}*/
 #page-message {
     text-align: center;
     margin: 4rem 0
@@ -23507,7 +23507,7 @@ table th[class*=col-] {
 body {
     overflow: hidden
 }
-.alert {
+./*alert {
     padding: 1rem;
     margin: 1rem 0;
     border-radius: 2px;
@@ -23583,7 +23583,7 @@ body {
 }
 .alert-dismissible {
     padding-right: 35px
-}
+}*/
 @keyframes progress-bar-stripes {
     from {
         background-position: 40px 0
@@ -29081,7 +29081,7 @@ html.rtl i.left {
     margin-right: 0;
     margin-left: 15px
 }
-html.rtl .alert-dismissible {
+/*html.rtl .alert-dismissible {
     padding-right: 1rem;
     padding-left: 35px
 }
@@ -29089,7 +29089,7 @@ html.rtl .alert-dismissible .close {
     float: left;
     right: 0;
     margin-left: -21px
-}
+}*/
 html.rtl .select-wrapper span.caret {
     right: auto;
     left: 0
