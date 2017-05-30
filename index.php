@@ -60,9 +60,10 @@ if($arr2['status']==200 && $arr2['message']=='Is Super Admin'){
   $_SESSION['account_token'] = $arr2['account_token'];
   echo "<script>location='search.php'</script>";
 }elseif($arr2['status']==401){
-  echo "<script>alert('Password Invalid')</script>";
+  echo "<script type='text/javascript'>window.onload = function(){ alert('Password Invalid');}</script>";
 }elseif($arr2['status']==400){
-  echo "<script>alert('Invalid Credentials')</script>";
+  echo "<script type='text/javascript'>window.onload = function(){ alert('Invalid Credentials');}
+</script>";
 }
 
 }
