@@ -229,6 +229,11 @@ if($_POST['is_user_delete'] != "" && $_POST['pk_delete'] != ""){
   <div class="card-header2">Assignment Status</div>
 <div class="card-block2">
   
+  <div class="col-sm-2">
+<!-- Modal for Assignment--> 
+     <button class="mdl-button mdl-js-button mdl-button--raised  assignment-btn" data-toggle="modal" data-target="#myModal<?php echo $i ?>"> Assignment</button>
+    </div>
+
     <div class="col-sm-2">
       <a href="search_on_status.php?status=Pending">
       <button class="mdl-button mdl-js-button mdl-button--raised  pending-btn">
@@ -263,10 +268,10 @@ if($_POST['is_user_delete'] != "" && $_POST['pk_delete'] != ""){
 
     <!-- AutoSearch Script files don't move -->
      <script type="text/javascript" src="autocomplete-Files/jquery-1.8.2.min.js"></script>
-        <script type="text/javascript" src="autocomplete-Files/jquery.mockjax.js"></script>
-        <script type="text/javascript" src="autocomplete-Files/jquery.autocomplete.js"></script>
+     <script type="text/javascript" src="autocomplete-Files/jquery.mockjax.js"></script>
+     <script type="text/javascript" src="autocomplete-Files/jquery.autocomplete.js"></script>
+    <script type="text/javascript" src="autocomplete-Files/Logic_Search.js"></script>
         <script type="text/javascript" src="autocomplete-Files/SearchValues.js"></script>
-        <script type="text/javascript" src="autocomplete-Files/Logic_Search.js"></script>
         <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> -->
 <!--         <script type="text/javascript" src="autocomplete-Files/styles.css"></script>
  --><!--  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
@@ -319,3 +324,145 @@ file_put_contents('autocomplete-Files/SearchValues.js', $foo);
  
 
 ?>
+
+<!-- Assignment Modal  -->
+<?php if($_POST['submit']){
+
+  $string_new="<script>window.location.href='search_result.php?is_user=".$_POST['is_user_field1']."&id=".$_POST['id_field']."'</script>";
+  echo $string_new;
+
+  /*echo $_POST["is_user_field"];
+  echo $_POST["id_field"];*/
+}?>
+<div class="modal fade" id="myModal<?php echo $i ?>" role="dialog" style="background-color:transparent;width:100%;min-height:100%;">
+    <div class="modal-dialog" style="margin-top:11%">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Edit Assignment</h4> 
+        </div>
+        <div class="modal-body">
+<!--           <form name="new_form" method="post" action=""> -->  
+          <div style="text-align:center;">
+
+       <form class="form-group" method="post" action="" style="padding-bottom:1%">
+
+        <input id="assign_search" name="assign_search" type="text" placeholder="Search firms or individuals" class="form-control input-md" style="width:71%;margin-top:4%;height:39px;border-color: #757575;" required autofocus>
+      <input id="is_user_field1" name="is_user_field1" type="hidden"></input>
+      <input id="id_field1" name="id_field1" type="hidden"></input>
+        <button style="visibility:hidden;display:none;margin-left:58%;margin-top:-3.5%;width:200px;height:37px" class="mdl-button mdl-js-button mdl-button--raised" type="submit" value="assign_search" id="submit" name="submit">
+        </button>
+        </form>
+</div>
+
+
+          <div style="text-align:left">
+          <label>Type of work:</label>
+          </div>
+              <select id="type_of_work" name="type_of_work" class="form-control" style="width: 80%;">
+               <option value=""></option>
+               <option value="Audit Report">Audit Report</option>
+                <option value="ITR filing">ITR filing</option>
+                <option value="VAT Filing">VAT Filing</option>
+                <option value="Accounting">Accounting</option>
+                <option value="Registration">Registration</option>
+                <option value="Certification">Certification</option>
+                <option value="Others">Others</option>
+              </select>
+          <div style="text-align:left">
+          <label>Status</label> 
+          </div>
+          <select id="new_status" name="new_status" class="form-control" style="width: 80%;">
+            <option value=""></option>
+            <option value="Pending">Pending</option>
+            <option value="Work in process">Work in process</option>
+            <option value="Completed">Completed</option>
+          </select>
+          
+          <div style="text-align:left">
+            <label>Date:</label>  
+          </div>
+          <input id="date" name="date" value="<?php echo $_POST['date'] ?>" style="width:80%;" type="text" class="form-control input-md datepicker pick" >
+          </input>
+            
+            <div style="text-align:left">
+            <label>Due Date:</label>  
+          </div>
+          <input id="date1" name="date1" value="<?php echo $_POST['date1'] ?>" style="width:80%;" type="text" class="form-control input-md datepicker due_date" >
+          </input>
+
+
+          <div style="text-align:left;margin-top:2%">
+          <label>Comment:</label> 
+          </div>
+           <input id="new_comment" value="<?php echo $arr_status[$i]['additional_info']['comment'] ?>" name="new_comment" type="text" placeholder="" class="form-control input-md" style="width: 80%;">
+           </input>
+
+           <button class="btn btn-save" style="color:white" name="new_save" id="new_save" type="submit">Save</button>
+ 
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+      
+    </div>
+        <script type="text/javascript" src="autocomplete-Files/assign_logic.js"></script>
+
+<!-- Datepicker -->
+ <link rel="stylesheet" href="css/jquery-ui.css"> 
+ <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+ <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="js/jquery-ui.js"></script>
+<script type="text/javascript">
+var jQuery_1_12_0 = $.noConflict(true);
+</script>
+
+<script type="text/javascript">
+   
+jQuery_1_12_0(function() {
+  jQuery_1_12_0( ".datepicker.pick" ).datepicker({
+    dateFormat : 'dd/mm/yy',
+    changeMonth: true,changeYear: true,
+     beforeShow: function (input, inst) {
+        setTimeout(function () {
+            inst.dpDiv.css({
+            // 'z-index':4,
+            width:300,
+             
+            });
+        }, 10);
+     }
+}).datepicker("setDate", new Date());
+});
+
+jQuery_1_12_0(function() {
+  jQuery_1_12_0( ".datepicker.due_date" ).datepicker({
+    dateFormat : 'dd/mm/yy',
+    changeMonth: true,changeYear: true,
+     beforeShow: function (input, inst) {
+        setTimeout(function () {
+            inst.dpDiv.css({
+            // 'z-index':4,
+            width:300,
+             
+            });
+        }, 10);
+     }
+}).datepicker("setDate", new Date());
+});
+
+</script>
+<style type="text/css">
+  
+  .btn-save{
+        color: #fff;
+    background-color: #5cb85c;
+    border-color: #5cb85c;
+    margin-left: 2%;
+    margin-top: 2%;
+    width: 8em;
+  }
+</style>
