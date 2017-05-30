@@ -574,7 +574,7 @@ VIEW</a>
 <div class="form-group">
   <label class="col-md-4 control-label" for="selectbasic">Profession:</label>
   <div class="col-md-5">
-    <select id="profession" name="profession" class="form-control" readonly style="width: 80%;">
+    <select id="profession" name="profession" class="form-control" disabled style="width: 80%;">
       <option value="<?php echo $arr_search['response'][0]['user_details']['proffesion'] ?>"><?php echo $arr_search['response'][0]['user_details']['proffesion'] ?></option>
     </select>
   </div>
@@ -592,7 +592,7 @@ VIEW</a>
 <div class="form-group">
   <label class="col-md-4 control-label" for="textname">Email:</label>  
   <div class="col-md-4">
-  <input value="<?php echo $arr_search['response'][0]['user_details']['email'];?>" id="email" name="email" type="text" placeholder="Enter Name" class="form-control input-md" readonly style="width:90%;">
+  <input value="<?php echo $arr_search['response'][0]['user_details']['email'];?>" id="email" name="email" type="text" placeholder="Enter Email" class="form-control input-md" readonly>
     
   </div>
 </div>
@@ -601,7 +601,7 @@ VIEW</a>
 <div class="form-group">
   <label class="col-md-4 control-label" for="textname">Phone No:</label>  
   <div class="col-md-4">
-  <input value="<?php echo $arr_search['response'][0]['user_details']['mobile'];?>" id="mobile" name="mobile" type="text" placeholder="Enter Name" class="form-control input-md" readonly style="width:90%;">
+  <input value="<?php echo $arr_search['response'][0]['user_details']['mobile'];?>" id="mobile" name="mobile" type="text" placeholder="Enter Phone no" class="form-control input-md" readonly>
     
   </div>
 </div
