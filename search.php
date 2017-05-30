@@ -269,10 +269,10 @@ if($_POST['is_user_delete'] != "" && $_POST['pk_delete'] != ""){
 
     <!-- AutoSearch Script files don't move -->
      <script type="text/javascript" src="autocomplete-Files/jquery-1.8.2.min.js"></script>
-        <script type="text/javascript" src="autocomplete-Files/jquery.mockjax.js"></script>
-        <script type="text/javascript" src="autocomplete-Files/jquery.autocomplete.js"></script>
+     <script type="text/javascript" src="autocomplete-Files/jquery.mockjax.js"></script>
+     <script type="text/javascript" src="autocomplete-Files/jquery.autocomplete.js"></script>
+    <script type="text/javascript" src="autocomplete-Files/Logic_Search.js"></script>
         <script type="text/javascript" src="autocomplete-Files/SearchValues.js"></script>
-        <script type="text/javascript" src="autocomplete-Files/Logic_Search.js"></script>
         <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> -->
 <!--         <script type="text/javascript" src="autocomplete-Files/styles.css"></script>
  --><!--  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
@@ -326,6 +326,15 @@ file_put_contents('autocomplete-Files/SearchValues.js', $foo);
 
 ?>
 
+<!-- Assignment Modal  -->
+<?php if($_POST['submit']){
+
+  $string_new="<script>window.location.href='search_result.php?is_user=".$_POST['is_user_field1']."&id=".$_POST['id_field']."'</script>";
+  echo $string_new;
+
+  /*echo $_POST["is_user_field"];
+  echo $_POST["id_field"];*/
+}?>
 <div class="modal fade" id="myModal<?php echo $i ?>" role="dialog" style="background-color:transparent;width:100%;min-height:100%;">
     <div class="modal-dialog" style="margin-top:11%">
     
@@ -336,9 +345,18 @@ file_put_contents('autocomplete-Files/SearchValues.js', $foo);
           <h4 class="modal-title">Edit Assignment</h4> 
         </div>
         <div class="modal-body">
-          <form name="new_form" method="post" action="">
-          <input id="pk" name="pk" type="hidden" placeholder="" value="<?php echo $arr_status[$i]['additional_info']['pk'] ?>" class="form-control input-md" style="width: 80%;">
-          </input>
+<!--           <form name="new_form" method="post" action=""> -->  
+          <div style="text-align:center;">
+
+       <form class="form-group" method="post" action="" style="padding-bottom:1%">
+
+        <input id="assign_search" name="assign_search" type="text" placeholder="Search firms or individuals" class="form-control input-md" style="width:71%;margin-top:4%;height:39px;border-color: #757575;" required autofocus>
+      <input id="is_user_field1" name="is_user_field1" type="hidden"></input>
+      <input id="id_field1" name="id_field1" type="hidden"></input>
+        <button style="visibility:hidden;display:none;margin-left:58%;margin-top:-3.5%;width:200px;height:37px" class="mdl-button mdl-js-button mdl-button--raised" type="submit" value="assign_search" id="submit" name="submit">
+        </button>
+        </form>
+</div>
 
 
           <div style="text-align:left">
@@ -355,17 +373,11 @@ file_put_contents('autocomplete-Files/SearchValues.js', $foo);
                 <option value="Others">Others</option>
               </select>
 
-          <div style="text-align:left">
-          <label>Status:</label> 
-          </div>
-          <select id="new_status" name="new_status" class="form-control" style="width: 80%;">
-            <!-- <option value="<?php echo $arr_status[$i]['additional_info']['status'] ?>"><?php echo $arr_status[$i]['additional_info']['status'] ?></option> -->
 
           <div style="text-align:left">
           <label>Status</label> 
           </div>
           <select id="new_status" name="new_status" class="form-control" style="width: 80%;">
-            <option value="<?php echo $arr_status[$i]['additional_info']['status'] ?>"><?php echo $arr_status[$i]['additional_info']['status'] ?></option>
             <option value=""></option>
             <option value="Pending">Pending</option>
             <option value="Work in process">Work in process</option>
@@ -391,8 +403,7 @@ file_put_contents('autocomplete-Files/SearchValues.js', $foo);
            <input id="new_comment" value="<?php echo $arr_status[$i]['additional_info']['comment'] ?>" name="new_comment" type="text" placeholder="" class="form-control input-md" style="width: 80%;">
            </input>
 
-           <button class="btn btn-success" style="color:white" name="new_save" id="new_save" type="submit">Save</button>
-           </form>
+           <button class="btn btn-save" style="color:white" name="new_save" id="new_save" type="submit">Save</button>
  
         </div>
         <div class="modal-footer">
@@ -401,16 +412,21 @@ file_put_contents('autocomplete-Files/SearchValues.js', $foo);
       </div>
       
     </div>
+        <script type="text/javascript" src="autocomplete-Files/assign_logic.js"></script>
+
 <!-- Datepicker -->
  <link rel="stylesheet" href="css/jquery-ui.css"> 
  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-
  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 <script src="js/jquery-ui.js"></script>
 <script type="text/javascript">
+var jQuery_1_12_0 = $.noConflict(true);
+</script>
+
+<script type="text/javascript">
    
-$(function() {
-  $( ".datepicker.pick" ).datepicker({
+jQuery_1_12_0(function() {
+  jQuery_1_12_0( ".datepicker.pick" ).datepicker({
     dateFormat : 'dd/mm/yy',
     changeMonth: true,changeYear: true,
      beforeShow: function (input, inst) {
@@ -425,8 +441,8 @@ $(function() {
 }).datepicker("setDate", new Date());
 });
 
-$(function() {
-  $( ".datepicker.due_date" ).datepicker({
+jQuery_1_12_0(function() {
+  jQuery_1_12_0( ".datepicker.due_date" ).datepicker({
     dateFormat : 'dd/mm/yy',
     changeMonth: true,changeYear: true,
      beforeShow: function (input, inst) {
@@ -443,3 +459,14 @@ $(function() {
 
 
 </script>
+<style type="text/css">
+  
+  .btn-save{
+        color: #fff;
+    background-color: #5cb85c;
+    border-color: #5cb85c;
+    margin-left: 2%;
+    margin-top: 2%;
+    width: 8em;
+  }
+</style>
