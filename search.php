@@ -327,29 +327,31 @@ file_put_contents('autocomplete-Files/SearchValues.js', $foo);
 
 <!-- Assignment Modal  -->
 <?php
-$url = 'https://kyc-application.herokuapp.com/add_popup_assignment/';
-$data = array(
-            'user_org_id' => $_POST['user_org_id'],
-            'is_user' => $_POST['is_user'],
-            'type_of_work' => $_POST['type_of_work'],
-            'status' => $_POST['status'],
-            'date' => $_POST['date'],
-            'due_date' => $_POST['due_date'],
-            'comment' => $_POST['comment']
-          );
 
-  $options = array(
-    'http' => array(
-      'header'  => "Content-Type: application/json\r\n" .
-                   "Accept: application/json\r\n",
-      'method'  => 'POST',
-      'content' => json_encode( $data ),
-    ),
-  );
-  $context  = stream_context_create($options);
-  $result = file_get_contents($url, false, $context);
-  $arr = json_decode($result,true);
+if(isset($_POST['assignment_save'])){
+  $url = 'https://kyc-application.herokuapp.com/add_popup_assignment/';
+  $data = array(
+              'user_org_id' => $_POST['user_org_id'],
+              'is_user' => $_POST['is_user'],
+              'type_of_work' => $_POST['type_of_work'],
+              'status' => $_POST['status'],
+              'date' => $_POST['date'],
+              'due_date' => $_POST['due_date'],
+              'comment' => $_POST['comment']
+            );
 
+    $options = array(
+      'http' => array(
+        'header'  => "Content-Type: application/json\r\n" .
+                     "Accept: application/json\r\n",
+        'method'  => 'POST',
+        'content' => json_encode( $data ),
+      ),
+    );
+    $context  = stream_context_create($options);
+    $result = file_get_contents($url, false, $context);
+    $arr = json_decode($result,true);
+}
 
 
 ?>
@@ -374,7 +376,7 @@ $data = array(
 <!--           <form name="new_form" method="post" action=""> -->  
           <div style="text-align:center;">
 
-       <form class="form-group" method="post" action="" style="padding-bottom:1%">
+       <form class="form-group" method="post" action="search.php" style="padding-bottom:1%">
 
         <input id="assign_search" name="assign_search" type="text" placeholder="Search firms or individuals" class="form-control input-md" style="width:71%;margin-top:4%;height:39px;border-color: #757575;" required autofocus>
       <input id="is_user_field1" name="is_user_field1" type="hidden"></input>
@@ -428,7 +430,7 @@ $data = array(
            <input id="comment" value="<?php echo $_POST['comment']?>" name="comment" type="text" placeholder="" class="form-control input-md" style="width: 80%;">
            </input>
 
-           <button class="btn btn-save" style="color:white" name="" id="" type="submit">Save</button>
+           <button class="btn btn-save" style="color:white" name="assignment_save" id="assignment_save" type="submit">Save</button>
  
         </div>
         <div class="modal-footer">
