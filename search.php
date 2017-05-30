@@ -340,19 +340,47 @@ file_put_contents('autocomplete-Files/SearchValues.js', $foo);
           <input id="pk" name="pk" type="hidden" placeholder="" value="<?php echo $arr_status[$i]['additional_info']['pk'] ?>" class="form-control input-md" style="width: 80%;">
           </input>
 
+
           <div style="text-align:left">
-          <label>Status</label> 
+          <label>Type of work:</label>
+          </div>
+              <select id="type_of_work" name="type_of_work" class="form-control" style="width: 80%;">
+               <option value=""></option>
+               <option value="Audit Report">Audit Report</option>
+                <option value="ITR filing">ITR filing</option>
+                <option value="VAT Filing">VAT Filing</option>
+                <option value="Accounting">Accounting</option>
+                <option value="Registration">Registration</option>
+                <option value="Certification">Certification</option>
+                <option value="Others">Others</option>
+              </select>
+
+          <div style="text-align:left">
+          <label>Status:</label> 
           </div>
           <select id="new_status" name="new_status" class="form-control" style="width: 80%;">
-            <option value="<?php echo $arr_status[$i]['additional_info']['status'] ?>"><?php echo $arr_status[$i]['additional_info']['status'] ?></option>
+            <!-- <option value="<?php echo $arr_status[$i]['additional_info']['status'] ?>"><?php echo $arr_status[$i]['additional_info']['status'] ?></option> -->
             <option value=""></option>
             <option value="Pending">Pending</option>
             <option value="Work in process">Work in process</option>
             <option value="Completed">Completed</option>
           </select>
+          
+          <div style="text-align:left">
+            <label>Date:</label>  
+          </div>
+          <input id="date" name="date" value="<?php echo $_POST['date'] ?>" style="width:80%;" type="text" class="form-control input-md datepicker pick" >
+          </input>
+            
+            <div style="text-align:left">
+            <label>Due Date:</label>  
+          </div>
+          <input id="date1" name="date1" value="<?php echo $_POST['date1'] ?>" style="width:80%;" type="text" class="form-control input-md datepicker due_date" >
+          </input>
+
 
           <div style="text-align:left;margin-top:2%">
-          <label>Comment</label> 
+          <label>Comment:</label> 
           </div>
            <input id="new_comment" value="<?php echo $arr_status[$i]['additional_info']['comment'] ?>" name="new_comment" type="text" placeholder="" class="form-control input-md" style="width: 80%;">
            </input>
@@ -367,4 +395,45 @@ file_put_contents('autocomplete-Files/SearchValues.js', $foo);
       </div>
       
     </div>
+<!-- Datepicker -->
+ <link rel="stylesheet" href="css/jquery-ui.css"> 
+ <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 
+ <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="js/jquery-ui.js"></script>
+<script type="text/javascript">
+   
+$(function() {
+  $( ".datepicker.pick" ).datepicker({
+    dateFormat : 'dd/mm/yy',
+    changeMonth: true,changeYear: true,
+     beforeShow: function (input, inst) {
+        setTimeout(function () {
+            inst.dpDiv.css({
+            // 'z-index':4,
+            width:300,
+             
+            });
+        }, 10);
+     }
+}).datepicker("setDate", new Date());
+});
+
+$(function() {
+  $( ".datepicker.due_date" ).datepicker({
+    dateFormat : 'dd/mm/yy',
+    changeMonth: true,changeYear: true,
+     beforeShow: function (input, inst) {
+        setTimeout(function () {
+            inst.dpDiv.css({
+            // 'z-index':4,
+            width:300,
+             
+            });
+        }, 10);
+     }
+}).datepicker("setDate", new Date());
+});
+
+
+</script>
