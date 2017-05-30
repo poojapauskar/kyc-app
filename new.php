@@ -19,7 +19,37 @@ if($_SESSION['login_kyc_app'] == 1){
  <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
   <link rel="stylesheet" type="text/css" href="autocomplete-Files/styles.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script> 
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script type="text/javascript">
+var jQuery_3_1 = $.noConflict(true);
+</script>
+<!-- Ajax auto check for PAN Card number -->
+<script type="text/javascript">
+jQuery_3_1(document).ready(function(){
+jQuery_3_1("#pan").keyup(function() {
+var name = $('#pan').val();
+if(name=="")
+{
+jQuery_3_1("#disp").html("");
+}
+else
+{
+jQuery_3_1.ajax({
+type: "POST",
+url: "check_status_pan.php",
+data: "name="+ name ,
+success: function(html){
+jQuery_3_1("#disp").html(html);
+}
+});
+return false;
+}
+});
+});
+</script>
+
+
+
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <!-- Material Design Lite -->
   <script src="https://code.getmdl.io/1.3.0/material.min.js"></script>
@@ -1701,17 +1731,18 @@ function enable_disable(that){
 
 <!-- Text input-->
 <div class="form-group">
-  <label class="col-md-4 control-label" for="textinput">PAN:</label>  
+  <label class="col-md-4 control-label" for="textinput">PPAN:</label>  
   <div class="col-md-4">
   <input pattern="-?[a-zA-Z]{5}[0-9]{4}[a-zA-Z]{1}?" title="Must be of the form ARLPA0061H" id="pan" name="pan" value="<?php echo $_POST['pan'] ?>" type="text" placeholder="" class="form-control input-md" required  style="width: 80%"/> 
   </div>
+  <div id="disp"></div>
 </div>
 
 <!-- File Button --> 
 <div class="form-group">
   <label class="col-md-4 control-label" for="filebutton">PAN card:</label>
   <div class="col-md-4">
-    <input  onchange="check_pan_card_user()" id="pan_card" name="pan_card" value="<?php echo $_POST['pan_card'] ?>" class="input-file" type="file"  style="width: 70%">
+    <input onchange="check_pan_card_user()" id="pan_card" name="pan_card" value="<?php echo $_POST['pan_card'] ?>" class="input-file" type="file"  style="width: 70%">
   </div>
 </div>
 
@@ -1808,7 +1839,7 @@ function enable_disable(that){
 <div class="form-group">
   <label for="example-date-input" class="col-md-4 col-label date-label-individual">DATE:</label>
   <div class="col-md-4">
-    <input class="form-control datepicker pick date-individual" id="date[]" name="date[]" value="<?php echo $_POST['date'] ?>" type="text" readonly>
+    <input class="form-control datepicker pick date-individual" id="date" name="date" value="<?php echo $_POST['date'] ?>" type="text" readonly>
   </div>
 </div>
 

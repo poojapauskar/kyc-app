@@ -231,7 +231,7 @@ if($_POST['is_user_delete'] != "" && $_POST['pk_delete'] != ""){
   
   <div class="col-sm-2">
 <!-- Modal for Assignment--> 
-     <button class="mdl-button mdl-js-button mdl-button--raised  assignment-btn" data-toggle="modal" data-target="#myModal<?php echo $i ?>"> Assignment</button>
+     <button class="mdl-button mdl-js-button mdl-button--raised  assignment-btn" data-toggle="modal" data-target="#myModal"> Assignment</button>
     </div>
 
     <div class="col-sm-2">
@@ -326,6 +326,33 @@ file_put_contents('autocomplete-Files/SearchValues.js', $foo);
 ?>
 
 <!-- Assignment Modal  -->
+<?php
+$url = 'https://kyc-application.herokuapp.com/add_popup_assignment/';
+$data = array(
+            'user_org_id' => $_POST['user_org_id'],
+            'is_user' => $_POST['is_user'],
+            'type_of_work' => $_POST['type_of_work'],
+            'status' => $_POST['status'],
+            'date' => $_POST['date'],
+            'due_date' => $_POST['due_date'],
+            'comment' => $_POST['comment']
+          );
+
+  $options = array(
+    'http' => array(
+      'header'  => "Content-Type: application/json\r\n" .
+                   "Accept: application/json\r\n",
+      'method'  => 'POST',
+      'content' => json_encode( $data ),
+    ),
+  );
+  $context  = stream_context_create($options);
+  $result = file_get_contents($url, false, $context);
+  $arr = json_decode($result,true);
+
+
+
+?>
 <?php if($_POST['submit']){
 
   $string_new="<script>window.location.href='search_result.php?is_user=".$_POST['is_user_field1']."&id=".$_POST['id_field']."'</script>";
@@ -334,7 +361,7 @@ file_put_contents('autocomplete-Files/SearchValues.js', $foo);
   /*echo $_POST["is_user_field"];
   echo $_POST["id_field"];*/
 }?>
-<div class="modal fade" id="myModal<?php echo $i ?>" role="dialog" style="background-color:transparent;width:100%;min-height:100%;">
+<div class="modal fade" id="myModal" role="dialog" style="background-color:transparent;width:100%;min-height:100%;">
     <div class="modal-dialog" style="margin-top:11%">
     
       <!-- Modal content-->
@@ -362,7 +389,7 @@ file_put_contents('autocomplete-Files/SearchValues.js', $foo);
           <label>Type of work:</label>
           </div>
               <select id="type_of_work" name="type_of_work" class="form-control" style="width: 80%;">
-               <option value=""></option>
+              <option value="Option one"><?php echo $_POST['type_of_work'] ?></option>
                <option value="Audit Report">Audit Report</option>
                 <option value="ITR filing">ITR filing</option>
                 <option value="VAT Filing">VAT Filing</option>
@@ -372,10 +399,11 @@ file_put_contents('autocomplete-Files/SearchValues.js', $foo);
                 <option value="Others">Others</option>
               </select>
           <div style="text-align:left">
+
           <label>Status</label> 
           </div>
           <select id="new_status" name="new_status" class="form-control" style="width: 80%;">
-            <option value=""></option>
+            <option value="Option one"><?php echo $_POST['status'] ?></option>
             <option value="Pending">Pending</option>
             <option value="Work in process">Work in process</option>
             <option value="Completed">Completed</option>
@@ -390,17 +418,17 @@ file_put_contents('autocomplete-Files/SearchValues.js', $foo);
             <div style="text-align:left">
             <label>Due Date:</label>  
           </div>
-          <input id="date1" name="date1" value="<?php echo $_POST['date1'] ?>" style="width:80%;" type="text" class="form-control input-md datepicker due_date" >
+          <input id="due_date" name="due_date" value="<?php echo $_POST['due_date'] ?>" style="width:80%;" type="text" class="form-control input-md datepicker due_date" >
           </input>
 
 
           <div style="text-align:left;margin-top:2%">
           <label>Comment:</label> 
           </div>
-           <input id="new_comment" value="<?php echo $arr_status[$i]['additional_info']['comment'] ?>" name="new_comment" type="text" placeholder="" class="form-control input-md" style="width: 80%;">
+           <input id="comment" value="<?php echo $_POST['comment']?>" name="comment" type="text" placeholder="" class="form-control input-md" style="width: 80%;">
            </input>
 
-           <button class="btn btn-save" style="color:white" name="new_save" id="new_save" type="submit">Save</button>
+           <button class="btn btn-save" style="color:white" name="" id="" type="submit">Save</button>
  
         </div>
         <div class="modal-footer">
