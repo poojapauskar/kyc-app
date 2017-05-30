@@ -360,6 +360,12 @@ file_put_contents('autocomplete-Files/SearchValues.js', $foo);
           </div>
           <select id="new_status" name="new_status" class="form-control" style="width: 80%;">
             <!-- <option value="<?php echo $arr_status[$i]['additional_info']['status'] ?>"><?php echo $arr_status[$i]['additional_info']['status'] ?></option> -->
+
+          <div style="text-align:left">
+          <label>Status</label> 
+          </div>
+          <select id="new_status" name="new_status" class="form-control" style="width: 80%;">
+            <option value="<?php echo $arr_status[$i]['additional_info']['status'] ?>"><?php echo $arr_status[$i]['additional_info']['status'] ?></option>
             <option value=""></option>
             <option value="Pending">Pending</option>
             <option value="Work in process">Work in process</option>
