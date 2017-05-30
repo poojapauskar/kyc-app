@@ -372,19 +372,10 @@ file_put_contents('autocomplete-Files/SearchValues.js', $foo);
                 <option value="Others">Others</option>
               </select>
 
-<<<<<<< c657fc04b164aeb45695f934fc3ac1d94a692a1b
-          <div style="text-align:left">
-          <label>Status:</label> 
-          </div>
-          <select id="new_status" name="new_status" class="form-control" style="width: 80%;">
-            <!-- <option value="<?php echo $arr_status[$i]['additional_info']['status'] ?>"><?php echo $arr_status[$i]['additional_info']['status'] ?></option> -->
-=======
-
           <div style="text-align:left">
           <label>Status</label> 
           </div>
           <select id="new_status" name="new_status" class="form-control" style="width: 80%;">
->>>>>>> Add New Assignment on landing page done with autocomplete
             <option value=""></option>
             <option value="Pending">Pending</option>
             <option value="Work in process">Work in process</option>
@@ -463,11 +454,6 @@ jQuery_1_12_0(function() {
      }
 }).datepicker("setDate", new Date());
 });
-
-
-<<<<<<< c657fc04b164aeb45695f934fc3ac1d94a692a1b
-</script>
-=======
 </script>
 <style type="text/css">
   
@@ -480,4 +466,3 @@ jQuery_1_12_0(function() {
     width: 8em;
   }
 </style>
->>>>>>> Add New Assignment on landing page done with autocomplete
