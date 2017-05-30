@@ -371,7 +371,6 @@ file_put_contents('autocomplete-Files/SearchValues.js', $foo);
                 <option value="Certification">Certification</option>
                 <option value="Others">Others</option>
               </select>
-
           <div style="text-align:left">
           <label>Status</label> 
           </div>
@@ -454,6 +453,7 @@ jQuery_1_12_0(function() {
      }
 }).datepicker("setDate", new Date());
 });
+
 </script>
 <style type="text/css">
   
