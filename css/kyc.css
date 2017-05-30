@@ -64,7 +64,7 @@
     -ms-flex: 1 1 auto !important;
     flex: 1 1 auto !important;
     /* max-height: 40%; */
-    height: 25% !important;
+    height: 18% !important;
     padding: 1.25rem !important;
     margin-left: 30% !important;
 }
@@ -458,7 +458,7 @@ margin-top:-1%;
 .card2{
     margin-top: -12%;
     width: 133%;
-    height: 65%;
+    height: auto;
     margin-left: -30%;
 }
 
@@ -1358,7 +1358,7 @@ margin-top:-1%;
 .card2{
     margin-top: -12%;
     width: 133%;
-    height: 65%;
+    height:auto;
     margin-left: -30%;
 }
 
@@ -2335,6 +2335,37 @@ margin-top:-1%;
 }
 @media screen and (max-width: 1366px){
 
+@-moz-document url-prefix(){
+
+    #title {
+    margin-left: 70%;
+    margin-top: 163% !important;
+    }
+
+    #logo {
+    margin-top: 81% !important;
+    margin-left: 28px;
+    width: 4%;
+    height: 77%;
+    }
+    #title2 {
+    text-align: center;
+    margin-top: 174% !important;
+    font-size: 18px;
+    margin-left: 30%;
+    }
+    #title3 {
+    margin-left: 26%;
+    margin-top: 158% !important;
+    font-size: 18px;
+    }
+    .mdl-data-table.dataTable.no-footer {
+    margin-left: -2% !important;
+    width: 75%;
+    margin-top: 12%;
+}
+}
+
 /*Card2 sizing*/
 .card1{
     margin-top: 11%;
@@ -2343,7 +2374,7 @@ margin-top:-1%;
     height: 447px
 }
 .mdl-data-table.dataTable.no-footer {
-    margin-left: 13% !important;
+    margin-left: 13%;
     width: 75%;
     margin-top: 12%;
 }
@@ -2424,24 +2455,23 @@ margin-top:-1%;
 /*    z-index: 4;
 */}
 
-.pending-btn{
-background-color: #176fac !important;
+.pending-btn {
+    background-color: #176fac !important;
     width: 165%;
-    margin-top: 19%;
-    margin-left: 52%;
+    margin-top: 18%;
+    margin-left: 61%;
     color: white;
-/*    z-index: 4;
-*/
+    z-index: 4;
 }
 
-.workin-btn{
- background-color: #176fac !important;
-    width: 210%;
-    margin-top: 20%;
-    margin-left: 44%;
+.workin-btn {
+    background-color: #176fac !important;
+    width: 165%;
+    margin-top: 18%;
+    margin-left: 37%;
     color: white;
-/*    z-index: 4;
-*/}
+    z-index: 4;
+}
 
 .completed-btn{
     background-color: #176fac !important;
