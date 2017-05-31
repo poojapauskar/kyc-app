@@ -1734,7 +1734,7 @@ function enable_disable(that){
   </div>
 </div>
 
-<!-- Text input-->
+<!-- Text innput-->
 <div class="form-group">
   <label class="col-md-4 control-label" for="textinput">PAN:</label>  
   <div class="col-md-4">
