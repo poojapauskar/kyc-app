@@ -169,7 +169,7 @@ if($_POST['is_user_delete'] != "" && $_POST['pk_delete'] != ""){
 
         <div class="col-sm-2" style="margin-top:-12%;margin-left:73%;width:70px">
          <a href="all.php">
-          <button class="mdl-button mdl-js-button mdl-button--raised new-entry-individual-btn">
+          <button class="mdl-button mdl-js-button mdl-button--raised new-entry-individual-btn-all">
           All
           </button>
         </a>
