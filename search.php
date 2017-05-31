@@ -326,6 +326,15 @@ file_put_contents('autocomplete-Files/SearchValues.js', $foo);
 ?>
 
 <!-- Assignment Modal  -->
+
+<script type="text/javascript">
+  function fun2(){
+    if(document.getElementById("user_org_id").value == ""){
+      alert("Record not found");
+      return false;
+    }
+  }
+</script>
 <?php
 
 if(isset($_POST['assignment_save'])){
@@ -355,14 +364,6 @@ if(isset($_POST['assignment_save'])){
 
 
 ?>
-<?php if($_POST['submit']){
-
-  $string_new="<script>window.location.href='search_result.php?is_user=".$_POST['is_user_field1']."&id=".$_POST['id_field']."'</script>";
-  echo $string_new;
-
-  /*echo $_POST["is_user_field"];
-  echo $_POST["id_field"];*/
-}?>
 <div class="modal fade" id="myModal" role="dialog" style="background-color:transparent;width:100%;min-height:100%;">
     <div class="modal-dialog" style="margin-top:11%">
     
@@ -376,22 +377,21 @@ if(isset($_POST['assignment_save'])){
 <!--           <form name="new_form" method="post" action=""> -->  
           <div style="text-align:center;">
 
-       <form class="form-group" method="post" action="search.php" style="padding-bottom:1%">
+       <form name="Form_ass" class="form-horizontal" method="post" enctype="multipart/form-data">
 
         <input id="assign_search" name="assign_search" type="text" placeholder="Search firms or individuals" class="form-control input-md" style="width:71%;margin-top:4%;height:39px;border-color: #757575;" required autofocus>
-      <input id="is_user_field1" name="is_user_field1" type="hidden"></input>
-      <input id="id_field1" name="id_field1" type="hidden"></input>
-        <button style="visibility:hidden;display:none;margin-left:58%;margin-top:-3.5%;width:200px;height:37px" class="mdl-button mdl-js-button mdl-button--raised" type="submit" value="assign_search" id="submit" name="submit">
-        </button>
-        </form>
-</div>
+      <input id="is_user" name="is_user" type="hidden"></input>
+      <input id="user_org_id" name="user_org_id" type="hidden"></input>
+       <!--  <button style="visibility:hidden;display:none;margin-left:58%;margin-top:-3.5%;width:200px;height:37px" class="mdl-button mdl-js-button mdl-button--raised" type="submit" value="assign_search" id="submit" name="submit">
+        </button> -->
+ 
 
 
           <div style="text-align:left">
           <label>Type of work:</label>
           </div>
               <select id="type_of_work" name="type_of_work" class="form-control" style="width: 80%;">
-              <option value="Option one"><?php echo $_POST['type_of_work'] ?></option>
+              <option value=""></option>
                <option value="Audit Report">Audit Report</option>
                 <option value="ITR filing">ITR filing</option>
                 <option value="VAT Filing">VAT Filing</option>
@@ -404,8 +404,8 @@ if(isset($_POST['assignment_save'])){
 
           <label>Status</label> 
           </div>
-          <select id="new_status" name="new_status" class="form-control" style="width: 80%;">
-            <option value="Option one"><?php echo $_POST['status'] ?></option>
+          <select id="status" name="status" class="form-control" style="width: 80%;">
+            <option value=""></option>
             <option value="Pending">Pending</option>
             <option value="Work in process">Work in process</option>
             <option value="Completed">Completed</option>
@@ -430,7 +430,9 @@ if(isset($_POST['assignment_save'])){
            <input id="comment" value="<?php echo $_POST['comment']?>" name="comment" type="text" placeholder="" class="form-control input-md" style="width: 80%;">
            </input>
 
+
            <button class="btn btn-save" style="color:white" name="assignment_save" id="assignment_save" type="submit">Save</button>
+    </form>
  
         </div>
         <div class="modal-footer">
