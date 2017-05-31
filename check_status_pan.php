@@ -7,25 +7,30 @@ $db = pg_connect("host=ec2-107-20-191-76.compute-1.amazonaws.com port=5432 dbnam
 if(isset($_POST['name']))
 {
 $name=pg_escape_string($_POST['name']);
-$query=pg_query("select pan_card from users_users where pan_card ILIKE '$name'");
+$query=pg_query("(SELECT pan FROM users_users where pan ILIKE '$name')
+    UNION
+(SELECT pan FROM organization_organization where pan ILIKE '$name')");
 $row=pg_num_rows($query);
 if($row==0)
 {
-echo "<span style='color:green;margin-left: 69%;position: absolute;margin-top: -6%;'>.</span>";
-echo "<script type='text/javascript'> var btn = document.getElementById('generate_btn'); btn.disabled = false; </script>";
+echo "<span style='color:green;margin-left: 58%;position: relative;margin-top: -6%;'>.</span>";
+echo "<script type='text/javascript'> var btn = document.getElementById('generate_btn'); btn.disabled = false;</script>";
+
+echo "<script type='text/javascript'> var btn = document.getElementById('generate_btn_org'); btn.disabled = false;</script>";
 
 }
 else
 {
-echo "<span style='color: red;margin-left: 68% !important;position: absolute;margin-top: -6%;' class='blink_text'>Already Exist's</span>";
+echo "<span style='color: red;margin-left: 58% !important;position: relative;margin-top: -6%;' class='blink_text'>Already Exist's</span>";
 echo "<script type='text/javascript'> var btn = document.getElementById('generate_btn'); btn.disabled = true; </script>";
-
+// echo "<script type='text/javascript'> var btn = document.getElementById('generate_btn_org'); btn.setAttribute('disabled', true);</script>";
+echo "<script type='text/javascript'> var btn = document.getElementById('generate_btn_org'); btn.disabled = true; </script>";
 }
 }
-?>	
+?>  
 <style type="text/css">
-	
-	.blink_text {
+    
+    .blink_text {
 
     animation:1s blinker linear infinite;
     -webkit-animation:1s blinker linear infinite;
