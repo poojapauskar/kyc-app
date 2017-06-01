@@ -279,6 +279,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
   }
   $date = ltrim($date, ',');
 
+  $due_date='';
+  for($j=0;$j<count($_POST['due_date']);$j++){
+    $due_date=$due_date.",".$_POST['due_date'][$j];
+  }
+  $due_date = ltrim($due_date, ',');
+
   $comment='';
   for($j=0;$j<count($_POST['comment']);$j++){
     $comment=$comment.",".$_POST['comment'][$j];
@@ -305,9 +311,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
                           'IMAGE: '.$image_id,
                           'TYPE-OF-WORK: '.$type_of_work,
                           'STATUS: '.$status,
+                          'DUE-DATE: '.$due_date,
                           'DATE: '.$date,
                           'COMMENT: '.$comment,
                           'ACCOUNT-TOKEN: '.$_SESSION['account_token'],
+                          'MOBILE: '.$_POST['mobile'],
+                          'EMAIL: '.$_POST['email'],
                           ),
       'method'  => 'GET',
     ),

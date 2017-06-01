@@ -484,6 +484,24 @@ $arr_uid_popup = json_decode($output_uid_popup,true);
 
 <!-- Text input-->
 <div class="form-group">
+  <label class="col-md-4 control-label" for="textname">Email:</label>  
+  <div class="col-md-4">
+  <input id="email" name="email" type="text" placeholder="Enter Email" class="form-control input-md" required style="width: 80%;"/>
+    
+  </div>
+</div>
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="textname">Phone No:</label>  
+  <div class="col-md-4">
+  <input id="mobile" name="mobile" type="text" placeholder="Enter Phone No" class="form-control input-md" required style="width: 80%;"/>
+    
+  </div>
+</div>
+
+<!-- Text input-->
+<div class="form-group">
   <label class="col-md-4 control-label" for="textinput">PAN:</label>  
   <div class="col-md-4">
   <input id="pan" name="pan" value="<?php echo $_POST['pan'] ?>" type="text" placeholder="" class="form-control input-md" required>
