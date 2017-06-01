@@ -2446,6 +2446,15 @@ margin-top:-1%;
 /*    z-index: 4;
 */}
 
+.new-entry-individual-btn-all {
+    background-color: #176fac !important;
+    width: 243%;
+    margin-top: -27%;
+    margin-left: 3%;
+    color: white;
+    /* z-index: 4; */
+}
+
 .new-entry-individual-btn{
  background-color: #176fac !important;
     width: 210%;
@@ -3012,7 +3021,7 @@ a.searchview.btn.btn-info {
 .new-entry-individual-btn-all {
     background-color: #176fac !important;
     width: 243%;
-    margin-top: -45%;
+    margin-top: -27%;
     margin-left: 3%;
     color: white;
     /* z-index: 4; */
