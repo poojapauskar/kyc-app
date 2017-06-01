@@ -18,28 +18,27 @@ if($_SESSION['login_kyc_app'] == 1){
 <!-- <link rel="stylesheet" type="text/css" href="css/material.indigo-pink.min.css"> -->
  <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
-  <link rel="stylesheet" type="text/css" href="autocomplete-Files/styles.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-<script type="text/javascript">
-var jQuery_3_1 = $.noConflict(true);
-</script>
+<!-- <script type="text/javascript">
+var $ = $.noConflict(true);
+</script> -->
 <!-- Ajax auto check for PAN Card number -->
-<script type="text/javascript">
-jQuery_3_1(document).ready(function(){
-jQuery_3_1("#pan").keyup(function() {
+<!-- <script type="text/javascript">
+$(document).ready(function(){
+$("#pan").keyup(function() {
 var name = $('#pan').val();
 if(name=="")
 {
-jQuery_3_1("#disp").html("");
+$("#disp").html("");
 }
 else
 {
-jQuery_3_1.ajax({
+$.ajax({
 type: "POST",
 url: "check_status_pan.php",
 data: "name="+ name ,
 success: function(html){
-jQuery_3_1("#disp").html(html);
+$("#disp").html(html);
 }
 });
 return false;
@@ -48,7 +47,8 @@ return false;
 });
 </script>
 
-
+ -->
+  <link rel="stylesheet" type="text/css" href="autocomplete-Files/styles.css">
 
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <!-- Material Design Lite -->
@@ -260,12 +260,16 @@ if(a==null || a==''){
 <!-- Datepicker -->
  <link rel="stylesheet" href="css/jquery-ui.css"> 
  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-
  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 <script src="js/jquery-ui.js"></script>
+<!-- <script type="text/javascript">
+var $ = $.noConflict(true);
+</script> -->
+
 <script type="text/javascript">
+var $d = jQuery.noConflict();
 $(function() {
-  $( ".datepicker.picker" ).datepicker({dateFormat : 'dd/mm/yy',
+  $d( ".datepicker.picker" ).datepicker({dateFormat : 'dd/mm/yy',
             changeMonth : true,
             changeYear : true,
             yearRange: '-100y:c+nn',
@@ -288,7 +292,7 @@ $(function() {
 
 // });
 $(function() {
-  $( ".datepicker.pick" ).datepicker({
+  $d( ".datepicker.pick" ).datepicker({
     dateFormat : 'dd/mm/yy',
     changeMonth: true,changeYear: true,
      beforeShow: function (input, inst) {
@@ -304,7 +308,7 @@ $(function() {
 });
 
 $(function() {
-  $( ".datepicker.due_date" ).datepicker({
+  $d( ".datepicker.due_date" ).datepicker({
     dateFormat : 'dd/mm/yy',
     changeMonth: true,changeYear: true,
      beforeShow: function (input, inst) {
@@ -1280,6 +1284,8 @@ $arr_uid = json_decode($output_uid,true);
   <label class="col-md-4 control-label" for="textinput">PAN: </label>  
   <div class="col-md-4">
   <input id="pan" pattern="-?[a-zA-Z]{5}[0-9]{4}[a-zA-Z]{1}?" title="Must be of the form ARLPA0061H" name="pan" type="text" placeholder="PAN Card Number" class="form-control input-md" style="width: 80%;" required>
+    <div id="disp"></div>
+
     
   </div>
 </div>
@@ -1487,7 +1493,7 @@ $arr_uid = json_decode($output_uid,true);
 </div>
 </div>
 
-<!-- Buttons SAve and Cancel -->
+<!-- Buttons Save and Cancel -->
 <div class="form-group">
   <label class="col-md-4 control-label" for="save_btn"></label>
   <div class="col-md-8">
@@ -1729,13 +1735,14 @@ function enable_disable(that){
   </div>
 </div>
 
-<!-- Text input-->
+<!-- Text innput-->
 <div class="form-group">
-  <label class="col-md-4 control-label" for="textinput">PPAN:</label>  
+  <label class="col-md-4 control-label" for="textinput">PAN:</label>  
   <div class="col-md-4">
   <input pattern="-?[a-zA-Z]{5}[0-9]{4}[a-zA-Z]{1}?" title="Must be of the form ARLPA0061H" id="pan" name="pan" value="<?php echo $_POST['pan'] ?>" type="text" placeholder="" class="form-control input-md" required  style="width: 80%"/> 
   </div>
   <div id="disp"></div>
+
 </div>
 
 <!-- File Button --> 
@@ -1839,7 +1846,7 @@ function enable_disable(that){
 <div class="form-group">
   <label for="example-date-input" class="col-md-4 col-label date-label-individual">DATE:</label>
   <div class="col-md-4">
-    <input class="form-control datepicker pick date-individual" id="date" name="date" value="<?php echo $_POST['date'] ?>" type="text" readonly>
+    <input class="form-control datepicker pick date-individual" id="date[]" name="date[]" value="<?php echo $_POST['date'] ?>" type="text" readonly>
   </div>
 </div>
 
@@ -1952,7 +1959,7 @@ $('#myModal').on('shown.bs.modal', function () {
   
 <script type="text/javascript">
       
-      $(document).ready(function() {
+    $(document).ready(function() {
     var max_fields      = 10; //maximum input boxes allowed
     var wrapper         = $(".input_fields_wrap"); //Fields wrapper
     var add_button      = $(".add_field_button"); //Add button ID
@@ -1992,10 +1999,10 @@ $(document).ready(function() {
         if(x < max_fields){ //max input box allowed
             x++; //text box increment
             $('<div style="margin-left:50%;"><div class="form-group"><label class="control-label type" for="selectbasic" style="">Type of work:</label><div class="col-md-6"><select id="type_of_work[]" name="type_of_work[]" class="form-control type_of_work"><option value=""></option><option value="Audit Report">Audit Report</option><option value="ITR filing">ITR filing</option><option value="VAT Filing">VAT Filing</option><option value="Accounting">Accounting</option><option value="Registration">Registration</option><option value="Certification">Certification</option><option value="Others">Others</option></select></div></div><div class="form-group"> <label class="col-md-4 control-label statuss1" for="selectbasic" style="">Status:</label><div class="col-md-6"><select id="status1' + x + '"  name="status[]"  class="form-control status"><option value=""></option><option value="Pending">Pending</option><option value="Work in process">Work in process</option><option value="Completed">Completed</option></select></div></div><div class="form-group row"><label for="example-date-input" class="col-2 col-form-label date">DATE:</label><div class="col-10 col"><input class="form-control datepicker pickers" id="date' + x +'" name="date[]" type="text" readonly></div></div><div class="form-group row"><label for="example-date-input" class="col-2 col-form-label duedate"> DUE DATE:</label><div class="col-10 col"><input class="form-control datepicker pickersS" id="duedate' + x +'" name="due_date[]" type="text" readonly></div></div><div class="form-group"><label class="col-md-4 control-label comment" for="textinput" style="">Comment:</label><div class="col-md-4"><input id="comments' + x + '" name="comment[]" type="text" placeholder="" class="form-control input-md comment" style=""></div></div></center><a href="#" class="remove_field"><img src="images/del24.png" ></a></a></div>').insertBefore(add_button)//add input box\
-          var newInput=$("#date"+ x).datepicker({dateFormat: 'dd/mm/yy',changeMonth : true,changeYear : true});
+          var newInput=$d("#date"+ x).datepicker({dateFormat: 'dd/mm/yy',changeMonth : true,changeYear : true});
           newInput.datepicker({dateFormat: 'dd/mm/yy'}).datepicker("setDate", new Date());
-          var newInput=$("#duedate"+ x).datepicker({dateFormat: 'dd/mm/yy',changeMonth : true,changeYear : true});
-          newInput.datepicker({dateFormat: 'dd/mm/yy'}).datepicker("setDate", new Date());
+          var newInputt=$d("#duedate"+ x).datepicker({dateFormat: 'dd/mm/yy',changeMonth : true,changeYear : true});
+          newInputt.datepicker({dateFormat: 'dd/mm/yy'}).datepicker("setDate", new Date());
 
 
           $("#status1" + x).click(function () {
@@ -2022,12 +2029,38 @@ $(document).ready(function() {
   
 </script>
 
+<script type="text/javascript">
+$(document).ready(function(){
+$("#pan").keyup(function() {
+var name = $('#pan').val();
+if(name=="")
+{
+$("#disp").html("");
+}
+else
+{
+$.ajax({
+type: "POST",
+url: "check_status_pan.php",
+data: "name="+ name ,
+success: function(html){
+$("#disp").html(html);
+}
+});
+return false;
+}
+});
+});
+</script>
+
+
+
  <!-- AutoSearch Script files don't move -->
-   <!--  <script type="text/javascript" src="autocomplete-Files/jquery-1.8.2.min.js"></script> -->
+    <!-- <script type="text/javascript" src="autocomplete-Files/jquery-1.8.2.min.js"></script>
         <script type="text/javascript" src="autocomplete-Files/jquery.mockjax.js"></script>
         <script type="text/javascript" src="autocomplete-Files/jquery.autocomplete.js"></script>
         <script type="text/javascript" src="autocomplete-Files/NewEntryValues.js"></script>
-        <script type="text/javascript" src="autocomplete-Files/Logic_NewEntry.js"></script>
+        <script type="text/javascript" src="autocomplete-Files/Logic_NewEntry.js"></script> -->
 </body>
 </html>
 

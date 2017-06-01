@@ -2,16 +2,12 @@
 
 <!DOCTYPE html>
   <head>
-
-    <!---bootstrap-->
-  <!-- <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"> -->
-<!-- <link rel="stylesheet" type="text/css" href="css/material.indigo-pink.min.css"> -->
-
-<link rel="stylesheet" href="css/bootstrap.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="css/bootstrap.css">
+    <script src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+ <!--  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script> -->
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <!-- Material Design Lite -->
-    <script src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+  
     <link rel="stylesheet" type="text/css" href="css/material.css">
     <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
 
@@ -88,16 +84,18 @@
    <!-- Datepicker -->
 <link rel="stylesheet" type="text/css" href="css/jquery-ui.css"> 
  <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"> 
-<!-- <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script> -->
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 <script type="text/javascript" src="js/jquery.plugin.js"></script> 
 <script type="text/javascript" src="js/jquery.datepick.js"></script>
+
 <script type="text/javascript">
+var $j = jQuery.noConflict();
 $(function() {
-  $( ".datepicker.picker" ).datepicker({dateFormat: 'dd/mm/yy',maxDate:0,changeMonth : true,changeYear : true,yearRange: '-100y:c+nn',});
+  $j( ".datepicker.picker" ).datepicker({dateFormat: 'dd/mm/yy',maxDate:0,changeMonth : true,changeYear : true,yearRange: '-100y:c+nn',});
 });
 
 $(function() {
-  $( ".datepicker.pick" ).datepicker({dateFormat: 'dd/mm/yy',changeMonth : true,
+  $j( ".datepicker.pick" ).datepicker({dateFormat: 'dd/mm/yy',changeMonth : true,
             changeYear : true}).datepicker("setDate", new Date());
 });
 </script> 
@@ -596,6 +594,14 @@ $arr_uid_popup = json_decode($output_uid_popup,true);
   </div>
 </div>
 
+<!--date __Individual page___-->
+<div class="form-group">
+  <label for="example-date-input" class="col-sm-4 col-label date-label-individual" style="margin-left:17%">DUE DATE:</label>
+  <div class="col-md-4">
+    <input class="form-control datepicker pick due-date-individual" id="due_dates" style="width:101%;margin-left: -60%" name="due_date[]" value="<?php echo $_POST['due_date'] ?>" type="text" readonly>
+  </div>
+</div>
+
 
 <!-- Text input-->
 <div class="form-group">
@@ -666,10 +672,13 @@ function goBack() {
         e.preventDefault();
         if(x < max_fields){ //max input box allowed
               x++; //text box incrementa
-              $('<div style="margin-left:50%;"><div class="form-group"><label class="control-label" for="selectbasic" style="margin-left:-220px;">Type of work</label><div class="col-md-6"><select id="type_of_work[]" name="type_of_work[]" class="form-control" style="margin-left:17%;width:222%"><option value="Option one"></option><option value="Option one">Audit Report</option><option value="Option two">ITR filing</option><option value="Option three">VAT Filing</option><option value="Option four">Accounting</option><option value="Option five">Registration</option><option value="Option six">Certification</option><option value="Option seven">Others</option></select></div></div><div class="form-group"> <label class="col-md-4 control-label" for="selectbasic" style="margin-left:-29%">Status</label><div class="col-md-6"><select id="status11' + x + '" name="status[]" style="width:223%;margin-left:3%;" class="form-control"><option value="Option one"></option><option value="Pending">Pending</option><option value="Work in process">Work in process</option><option value="Completed">Completed</option></select></div></div><div class="form-group row"><label for="example-date-input" class="col-2 col-form-label" style="margin-left:-15.5%;";">DATE</label><div class="col-8"><input class="form-control datepicker pick" id="date11' + x + '" name="date[]" value="<?php echo $_POST['date'] ?>" style="width:86%;margin-left:11.6%;margin-top:-10%;" type="text" readonly></div></div><div class="form-group"><label class="col-md-4 control-label" for="textinput" style="margin-left:-36%">Comment</label><div class="col-md-4"><input id="comments11' + x + '" name="comment[]" type="text" placeholder="" class="form-control input-md" style="width:432%;margin-left:26%"></div></div></center><a href="#" class="remove_field" style="margin-left: 230px; margin-top: -40px;position:absolute"><img src="images/del24.png"></a></a></div>').insertBefore(add_button) //add input box\         
-              var newInput11=$("#date11" + x).datepicker({dateFormat: 'dd/mm/yy',changeMonth : true,
+              $('<div style="margin-left:50%;"><div class="form-group"><label class="control-label" for="selectbasic" style="margin-left:-220px;">Type of work</label><div class="col-md-6"><select id="type_of_work[]" name="type_of_work[]" class="form-control" style="margin-left:17%;width:222%"><option value="Option one"></option><option value="Option one">Audit Report</option><option value="Option two">ITR filing</option><option value="Option three">VAT Filing</option><option value="Option four">Accounting</option><option value="Option five">Registration</option><option value="Option six">Certification</option><option value="Option seven">Others</option></select></div></div><div class="form-group"> <label class="col-md-4 control-label" for="selectbasic" style="margin-left:-29%">Status</label><div class="col-md-6"><select id="status11' + x + '" name="status[]" style="width:223%;margin-left:3%;" class="form-control"><option value="Option one"></option><option value="Pending">Pending</option><option value="Work in process">Work in process</option><option value="Completed">Completed</option></select></div></div><div class="form-group row"><label for="example-date-input" class="col-2 col-form-label" style="margin-left:-15.5%;";">DATE</label><div class="col-8"><input class="form-control datepicker pick" id="date11' + x + '" name="date[]" value="<?php echo $_POST['date'] ?>" style="width:86%;margin-left:11.6%;margin-top:-10%;" type="text" readonly></div></div><div class="form-group"><label for="example-date-input" class="col-md-6 col-label date-label-individual" style="margin-left:-38%">DUE DATE:</label><div class="col-md-4"><input class="form-control datepicker pick due-date-individual" id="due_datee'+ x +'"style="width:440%;margin-left: -41%" name="due_date[]" value="<?php echo $_POST['due_date'] ?>" type="text" readonly></div></div><div class="form-group"><label class="col-md-4 control-label" for="textinput" style="margin-left:-36%">Comment</label><div class="col-md-4"><input id="comments11' + x + '" name="comment[]" type="text" placeholder="" class="form-control input-md" style="width:432%;margin-left:26%"></div></div></center><a href="#" class="remove_field" style="margin-left: 230px; margin-top: -40px;position:absolute"><img src="images/del24.png"></a></a></div>').insertBefore(add_button) //add input box\         
+              var newInput11=$j("#date11" + x).datepicker({dateFormat: 'dd/mm/yy',changeMonth : true,
             changeYear : true});
               newInput11.datepicker({dateFormat: 'dd/mm/yyyy'}).datepicker("setDate", new Date());
+              var newduedate=$j("#due_datee" + x).datepicker({dateFormat: 'dd/mm/yy',changeMonth : true,
+            changeYear : true});
+              newduedate.datepicker({dateFormat: 'dd/mm/yyyy'}).datepicker("setDate", new Date());
               $("#status11" + x).on("click",".form-control",function () {
 
                  if ($("#status11" + x).val() == "Completed") {

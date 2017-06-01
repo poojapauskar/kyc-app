@@ -14,17 +14,14 @@ $row=pg_num_rows($query);
 if($row==0)
 {
 echo "<span style='color:green;margin-left: 58%;position: relative;margin-top: -6%;'>.</span>";
-echo "<script type='text/javascript'> var btn = document.getElementById('generate_btn'); btn.disabled = false;</script>";
-
-echo "<script type='text/javascript'> var btn = document.getElementById('generate_btn_org'); btn.disabled = false;</script>";
+echo "<script type='text/javascript'> var btn = document.getElementById('edit_btn'); btn.disabled = false;</script>";
 
 }
 else
 {
 echo "<span style='color: red;margin-left: 58% !important;position: relative;margin-top: -6%;' class='blink_text'>Already Exist's</span>";
-echo "<script type='text/javascript'> var btn = document.getElementById('generate_btn'); btn.disabled = true; </script>";
-// echo "<script type='text/javascript'> var btn = document.getElementById('generate_btn_org'); btn.setAttribute('disabled', true);</script>";
-echo "<script type='text/javascript'> var btn = document.getElementById('generate_btn_org'); btn.disabled = true; </script>";
+
+echo "<script type='text/javascript'> var btn = document.getElementById('edit_btn'); btn.disabled = true; </script>";
 }
 }
 ?>  

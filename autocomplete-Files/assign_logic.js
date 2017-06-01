@@ -47,9 +47,9 @@ var peopleArray = $.map(peoplenames, function (value, key) {
 */      var value1= suggestion.data.substr(0, suggestion.data.indexOf('-')); 
         var value2= suggestion.data.substr(suggestion.data.indexOf("-") + 1);
 
-        document.getElementById("is_user_field1").value = value1;
-        document.getElementById("id_field1").value = value2;
-        document.getElementById('submit').click();
+        document.getElementById("is_user").value = value1;
+        document.getElementById("user_org_id").value = value2;
+        // document.getElementById('assignment_save').click();
         }
     });
 });

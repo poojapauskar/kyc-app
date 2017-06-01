@@ -64,7 +64,7 @@
     -ms-flex: 1 1 auto !important;
     flex: 1 1 auto !important;
     /* max-height: 40%; */
-    height: 25% !important;
+    height: 18% !important;
     padding: 1.25rem !important;
     margin-left: 30% !important;
 }
@@ -458,7 +458,7 @@ margin-top:-1%;
 .card2{
     margin-top: -12%;
     width: 133%;
-    height: 65%;
+    height: auto;
     margin-left: -30%;
 }
 
@@ -1358,7 +1358,7 @@ margin-top:-1%;
 .card2{
     margin-top: -12%;
     width: 133%;
-    height: 65%;
+    height:auto;
     margin-left: -30%;
 }
 
@@ -2335,6 +2335,37 @@ margin-top:-1%;
 }
 @media screen and (max-width: 1366px){
 
+@-moz-document url-prefix(){
+
+    #title {
+    margin-left: 70%;
+    margin-top: 163% !important;
+    }
+
+    #logo {
+    margin-top: 81% !important;
+    margin-left: 28px;
+    width: 4%;
+    height: 77%;
+    }
+    #title2 {
+    text-align: center;
+    margin-top: 174% !important;
+    font-size: 18px;
+    margin-left: 30%;
+    }
+    #title3 {
+    margin-left: 26%;
+    margin-top: 158% !important;
+    font-size: 18px;
+    }
+    .mdl-data-table.dataTable.no-footer {
+    margin-left: -2% !important;
+    width: 75%;
+    margin-top: 12%;
+}
+}
+
 /*Card2 sizing*/
 .card1{
     margin-top: 11%;
@@ -2343,7 +2374,7 @@ margin-top:-1%;
     height: 447px
 }
 .mdl-data-table.dataTable.no-footer {
-    margin-left: 13% !important;
+    margin-left: -3%;
     width: 75%;
     margin-top: 12%;
 }
@@ -2415,6 +2446,15 @@ margin-top:-1%;
 /*    z-index: 4;
 */}
 
+.new-entry-individual-btn-all {
+    background-color: #176fac !important;
+    width: 243%;
+    margin-top: -27%;
+    margin-left: 3%;
+    color: white;
+    /* z-index: 4; */
+}
+
 .new-entry-individual-btn{
  background-color: #176fac !important;
     width: 210%;
@@ -2424,24 +2464,23 @@ margin-top:-1%;
 /*    z-index: 4;
 */}
 
-.pending-btn{
-background-color: #176fac !important;
+.pending-btn {
+    background-color: #176fac !important;
     width: 165%;
-    margin-top: 19%;
-    margin-left: 52%;
+    margin-top: 18%;
+    margin-left: 61%;
     color: white;
-/*    z-index: 4;
-*/
+    z-index: 4;
 }
 
-.workin-btn{
- background-color: #176fac !important;
-    width: 210%;
-    margin-top: 20%;
-    margin-left: 44%;
+.workin-btn {
+    background-color: #176fac !important;
+    width: 165%;
+    margin-top: 18%;
+    margin-left: 37%;
     color: white;
-/*    z-index: 4;
-*/}
+    z-index: 4;
+}
 
 .completed-btn{
     background-color: #176fac !important;
@@ -2970,6 +3009,31 @@ a.searchview.btn.btn-info {
     margin-left: -17%;
 }
 
+/*landing page button alignmnet*/
+.assignment-btn {
+    background-color: #176fac !important;
+    width: 165%;
+    margin-top: 18%;
+    margin-left: -2%;
+    color: white;
+}
+
+.new-entry-individual-btn-all {
+    background-color: #176fac !important;
+    width: 243%;
+    margin-top: -27%;
+    margin-left: 3%;
+    color: white;
+    /* z-index: 4; */
+}
+
+#logout {
+    float: right;
+    right: 113px;
+    top: 59px;
+    position: absolute;
+}
+
 .remove_field_present.p {
     margin-left: 67%;
     margin-top: -3.7%;
@@ -3089,33 +3153,30 @@ div.fileUpload.org.btn.btn-info {
 /*    z-index: 4;
 */}
 
-.pending-btn{
+.pending-btn {
     background-color: #176fac !important;
     width: 165%;
-    margin-top: 19%;
-    margin-left: 60%;
+    margin-top: 18%;
+    margin-left: 70%;
     color: white;
-/*    z-index: 4;
-*/
+    /* z-index: 4; */
+}
+.workin-btn {
+    background-color: #176fac !important;
+    width: 166px;
+    margin-top: 18%;
+    margin-left: 55%;
+    color: white;
+    /* z-index: 4; */
 }
 
-.workin-btn{
-    background-color: #176fac !important;
-    width: 165;
-    margin-top: 20%;
-    margin-left: 27%;
-    color: white;
-/*    z-index: 4;
-*/}
-
-.completed-btn{
+.completed-btn {
     background-color: #176fac !important;
     width: 165%;
     margin-top: 18%;
     margin-left: 12%;
     color: white;
-/*    z-index: 4;
-*/
+    /* z-index: 4; */
 }
 
 /*Dates fields of Indiv and Org page*/
@@ -3131,7 +3192,6 @@ div.fileUpload.org.btn.btn-info {
     width: 80%;   
 }
     
-
 #logo
 {
     margin-top:5%;
@@ -3139,14 +3199,14 @@ div.fileUpload.org.btn.btn-info {
     width:4%;
     height:77%;
 }
+
+#title2 {
+    margin-left: 35%;
+    margin-top: 11%;
+    font-size: 18px;
+}
 .add_field.btn {
     margin-left:435%;
-}
-#title2
-{
-    margin-left:35%;
-    margin-top:9%;
-    font-size:18px;
 }
 
 .btn.btn-success.clear{
@@ -3202,10 +3262,10 @@ width: 155%;
     width: 145%;
 }
 
-#title1{
+#title1 {
     float: right;
     right: 206px;
-    top: 11%;
+    top: 10%;
     position: absolute;
 }
 
@@ -3583,15 +3643,13 @@ margin-left: 26%;
     margin-top: -4%;
 }
 
-
-
 /*Card 2 height*/
-.mdl-data-table.dataTable.no-footer{
-    margin-left:7% !important; 
-    width: 75% !important; 
+.mdl-data-table.dataTable.no-footer {
+    margin-left: 8% !important;
+    width: 75% !important;
     margin-top: 12% !important;
-
 }
+
 .dataTables_wrapper .dataTables_info {
     clear: both;
     float: left;
@@ -3690,6 +3748,14 @@ a.btn.btn-info.edit{
 
  }
 
+ .assignment-btn {
+    background-color: #176fac !important;
+    width: 165%;
+    margin-top: 18%;
+    margin-left: -8%;
+    color: white;
+}
+
 .new-entry-individual-btn{
     background-color: #176fac !important;
     width: 243%;
@@ -3700,33 +3766,48 @@ a.btn.btn-info.edit{
 
 }
 
-.pending-btn{
+.new-entry-individual-btn-all {
     background-color: #176fac !important;
     width: 243%;
-    margin-top: 19%;
-    margin-left: 2%;
+    margin-top: -45%;
+    margin-left: 3%;
     color: white;
     /* z-index: 4; */
 }
 
-.workin-btn{
-     background-color: #176fac !important;
-    width: 243%;
-    margin-top: 20%;
-    margin-left: 42%;
+.col-2.col-form-label.duedate {
+    margin-left: -11.5%;
+    margin-top: 1%;
+    position: absolute;
+}
+
+
+.pending-btn {
+    background-color: #176fac !important;
+    width: 168%;
+    margin-top: 17%;
+    margin-left: 54%;
     color: white;
     /* z-index: 4; */
 }
 
-.completed-btn{
-     background-color: #176fac !important;
-    width: 243%;
-    margin-top: 19%;
-    margin-left: 76%;
+.workin-btn {
+    background-color: #176fac !important;
+    width: 168;
+    margin-top: 17%;
+    margin-left: 27%;
     color: white;
     /* z-index: 4; */
 }
 
+.completed-btn {
+    background-color: #176fac !important;
+    width: 168;
+    margin-top: 16%;
+    margin-left: 8%;
+    color: white;
+    /* z-index: 4; */
+}
 
 /*Search button css above end*/
 
@@ -4131,10 +4212,15 @@ margin-top:-1%;
     color: white;
     width: 237%;
 }
-
+/*date and due-date*/
 .col-10 {
-    width: 31%;                                                                         
-    margin-left: 34.6%;
+    width: 31%;
+    margin-left: 33.9%;
+    margin-top: -0.5%;
+}
+.col-10.due_date {
+    width: 25.2%;
+    margin-left: 34.8%;
     margin-top: -0.5%;
 }
 
