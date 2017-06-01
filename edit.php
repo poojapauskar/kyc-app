@@ -1230,6 +1230,8 @@ VIEW</a>
   <div class="col-md-4">
   <input id="pan" name="pan" style="margin-left:0%;width: 80%;" pattern="-?[a-zA-Z]{5}[0-9]{4}[a-zA-Z]{1}?" title="Must be of the form ARLPA0061H"  value="<?php echo $arr_search['response'][0]['organization_details']['pan'] ?>" type="text" placeholder="PAN Card Number" class="form-control input-md"> 
   </div>
+      <div id="disp"></div>
+
 </div>
 
 <!-- File Button --> 
@@ -1832,8 +1834,9 @@ function enable_disable(that){
   <label class="col-md-4 control-label" for="textinput">PAN:</label>  
   <div class="col-md-4">
   <input pattern="-?[a-zA-Z]{5}[0-9]{4}[a-zA-Z]{1}?" title="Must be of the form ARLPA0061H" id="pan" name="pan" value="<?php echo $arr_search['response'][0]['user_details']['pan'] ?>" type="text" placeholder="" class="form-control input-md" style="width: 80%;" required>
-    
   </div>
+      <div id="disp"></div>
+
 </div>
 
 <!-- File Button --> 
@@ -3017,15 +3020,37 @@ function goBack() {
 });
 
     </script>
-
+<script type="text/javascript">
+$(document).ready(function(){
+$("#pan").keyup(function() {
+var name = $('#pan').val();
+if(name=="")
+{
+$("#disp").html("");
+}
+else
+{
+$.ajax({
+type: "POST",
+url: "edit_pan_check.php",
+data: "name="+ name ,
+success: function(html){
+$("#disp").html(html);
+}
+});
+return false;
+}
+});
+});
+</script>
 
     <!-- AutoSearch Script files don't move -->
    <!--  <script type="text/javascript" src="autocomplete-Files/jquery-1.8.2.min.js"></script> -->
-        <script type="text/javascript" src="autocomplete-Files/jquery.mockjax.js"></script>
+        <!-- <script type="text/javascript" src="autocomplete-Files/jquery.mockjax.js"></script>
         <script type="text/javascript" src="autocomplete-Files/jquery.autocomplete.js"></script>
         <script type="text/javascript" src="autocomplete-Files/EditEntryValues.js"></script>
         <script type="text/javascript" src="autocomplete-Files/Logic_EditEntry.js"></script>
-
+ -->
 </main>
 </body>
 </html>
