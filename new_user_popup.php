@@ -554,7 +554,7 @@ $arr_uid_popup = json_decode($output_uid_popup,true);
 <div class="form-group">
   <label class="col-md-4 control-label" for="textarea">Address:</label>
   <div class="col-md-4">                     
-    <textarea class="form-control" id="address" name="address" value="<?php echo $_POST['address'] ?>">default text</textarea>
+    <textarea class="form-control" id="address" name="address" value="<?php echo $_POST['address'] ?>" placeholder="Address"></textarea>
   </div>
 </div>
 
@@ -562,7 +562,7 @@ $arr_uid_popup = json_decode($output_uid_popup,true);
 <div class="form-group">
   <label class="col-md-4 control-label" for="textname">Email:</label>  
   <div class="col-md-4">
-  <input id="email" name="email" type="text" placeholder="Enter Email" class="form-control input-md" required style="width: 80%;"/>
+  <input id="email" name="email" type="text" placeholder="Enter Email" class="form-control input-md" required style="width:100%;"/>
     
   </div>
 </div>
@@ -571,7 +571,7 @@ $arr_uid_popup = json_decode($output_uid_popup,true);
 <div class="form-group">
   <label class="col-md-4 control-label" for="textname">Phone No:</label>  
   <div class="col-md-4">
-  <input id="mobile" name="mobile" type="text" placeholder="Enter Phone No" class="form-control input-md" required style="width: 80%;"/>
+  <input id="mobile" name="mobile" type="text" placeholder="Enter Phone No" class="form-control input-md" required style="width:100%;"/>
     
   </div>
 </div>
