@@ -451,7 +451,7 @@ $arr_uid_popup = json_decode($output_uid_popup,true);
 </div>
 <img src="/images/calendar.png" style="margin-left: 68%;margin-top:-15%">
 
-<!-- Select Basic -->
+<!-- Select Bassic -->
 <div class="form-group">
   <label class="col-md-4 control-label" for="selectbasic">Profession:</label>
   <div class="col-md-4">
