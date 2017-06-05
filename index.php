@@ -9,7 +9,7 @@ if($_SESSION['login_kyc_app'] == 1){
 <html>
 <head>
   <title>CA DATA BASE</title>
-  <link rel="icon" type="image/png" sizes="36x36" href="images/green.png">
+  <link rel="icon" type="image/png" sizes="36x36" href="images/green_icon.svg">
   <link rel="stylesheet" type="text/css" href="css/material.indigo-pink.min.css">
   <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
   <link rel="stylesheet" type="text/css" href="css/kyc.css">
@@ -74,7 +74,7 @@ if($arr2['status']==200 && $arr2['message']=='Is Super Admin'){
      -moz-box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23) !important;
      box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23) !important;" class="mdl-layout__header">
     <div class="mdl-layout__header-row" >
-        <img id="logo" src="images/green.png"></img>
+        <img id="logo" src="images/green_icon.svg"></img>
          <span class="mdl-layout-title" id="title" style="">KYCAPP</span>
           <!-- Add spacer, to align navigation to the right -->
     </div>

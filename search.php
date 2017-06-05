@@ -13,7 +13,7 @@ if($_SESSION['login_kyc_app'] == 1){
     <!---bootstrap-->
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-   <link rel="icon" type="image/png" sizes="36x36" href="images/green.png">
+   <link rel="icon" type="image/png" sizes="36x36" href="images/green_icon.svg">
 
     <!-- Material Design Lite -->
   <script src="https://code.getmdl.io/1.3.0/material.min.js"></script>
@@ -110,7 +110,7 @@ if($_POST['is_user_delete'] != "" && $_POST['pk_delete'] != ""){
     <div class="mdl-layout__header-row" >
 
 
-       <a href="search.php"> <img id="logo1" src="images/green.png"></img></a>
+       <a href="search.php"> <img id="logo1" src="images/green_icon.svg"></img></a>
       <h5 style="" id="title2">ADMIN PANEL</h5>
          <span class="mdl-layout-title" id="title1" style="">KYCAPP</span>
 

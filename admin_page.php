@@ -1,5 +1,5 @@
 <head>
-  <link rel="icon" type="image/png" sizes="36x36" href="images/green.png">
+  <link rel="icon" type="image/png" sizes="36x36" href="images/green_icon.svg">
 
 <link rel="stylesheet" type="text/css" href="css/material.indigo-pink.min.css">
  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/material-design-lite/1.1.0/material.min.css">

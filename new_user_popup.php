@@ -391,7 +391,7 @@ $arr_uid_popup = json_decode($output_uid_popup,true);
      box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23) !important;" class="mdl-layout__header mdl-layout__header--transparent">
         <div class="mdl-layout__header-row" >
 
-        <a href="search.php"><img style="margin-top:5%;margin-left:28px;width:50px;height:50px" src="images/green.png"></img></a>
+        <a href="search.php"><img style="margin-top:5%;margin-left:28px;width:50px;height:50px" src="images/green_icon.svg"></img></a>
 <h5 style="margin-left:35%;margin-top:9%;">New Entry Individual</h5>
          <span class="mdl-layout-title" style="margin-left:26%;margin-top:7%;">KYCAPP</span>
           <!-- Add spacer, to align navigation to the right -->
