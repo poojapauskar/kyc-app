@@ -281,9 +281,22 @@ $(function() {
             width:300,
              
             });
-        }, 0);}
+        }, 0);},
+        onClose: function(dateText, inst) {
+        var validDate = $.datepicker.formatDate( "dd/mm/yy", $(".datepicker.picker").datepicker('getDate'));
+            $(".datepicker.picker").datepicker('setDate', validDate);
+        }
 
-});});
+});
+  $(".datepicker.picker").keyup(function(){
+                if ($(this).val().length == 2){
+                    $(this).val($(this).val() + "/");
+                }else if ($(this).val().length == 5){
+                    $(this).val($(this).val() + "/");
+                }
+            });
+
+});
 
 // $(function() {
 //   $( ".datepicker.pick" ).datepicker({changeMonth: true,changeYear: true}).datepicker("setDate", new Date()).setTimeout(function(){
@@ -1603,7 +1616,7 @@ function enable_disable(that){
 <div class="form-group">
   <label class="col-md-4 control-label" for="textinput">DOB:</label>  
   <div class="col-md-4">
-  <input id="date1" name="date1" value="<?php echo $_POST['date1'] ?>" type="text" class="form-control input-md datepicker picker" readonly style="width: 80%;">
+  <input id="date1" name="date1" value="<?php echo $_POST['date1'] ?>" type="text" class="form-control input-md datepicker picker" style="width: 80%;">
   </div><img src="/images/calendar.png" style="margin-left: -6%;">
 </div>
 

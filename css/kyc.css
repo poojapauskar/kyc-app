@@ -3331,6 +3331,12 @@ a.searchview.btn.btn-info {
     margin-top: 1%;
 }
 
+.col-10.due_date {
+    width: 30.2%;
+    margin-left: 34.8%;
+    margin-top: -0.5%;
+}
+
 
 /*search organization page*/
 .col-md-2.search_org{
