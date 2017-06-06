@@ -481,7 +481,7 @@ VIEW</a>
     </select>
   </div>
   <div class="col-md-2">
-     <input id="textinput" name="textinput" type="text" placeholder="Specify if Other" class="form-control input-md" readonly style="width:83%;margin-left: -139%">
+     <input id="textinput" name="textinput" type="text" placeholder="Specify if Other" class="form-control input-md" readonly style="width:83%;margin-left: -125%">
   </div>
 
 </div>

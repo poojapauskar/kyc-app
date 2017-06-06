@@ -13,7 +13,7 @@ if($_SESSION['login_kyc_app'] == 1){
     <!---bootstrap-->
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-   <link rel="icon" type="image/png" sizes="36x36" href="images/green.png">
+   <link rel="icon" type="image/png" sizes="36x36" href="images/green_icon.svg">
 
     <!-- Material Design Lite -->
   <script src="https://code.getmdl.io/1.3.0/material.min.js"></script>
@@ -110,7 +110,7 @@ if($_POST['is_user_delete'] != "" && $_POST['pk_delete'] != ""){
     <div class="mdl-layout__header-row" >
 
 
-       <a href="search.php"> <img id="logo1" src="images/green.png"></img></a>
+       <a href="search.php"> <img id="logo1" src="images/green_icon.svg"></img></a>
       <h5 style="" id="title2">ADMIN PANEL</h5>
          <span class="mdl-layout-title" id="title1" style="">KYCAPP</span>
 
@@ -305,15 +305,15 @@ $db = pg_connect("host=ec2-107-20-191-76.compute-1.amazonaws.com port=5432 dbnam
  pg_select($db, 'post_log', $_POST);
  
 
- $query=pg_query("(SELECT id,name,is_user,account_token,is_active,pan_card FROM organization_organization WHERE is_active = 'true' AND account_token = '".$_SESSION['account_token']."')
+ $query=pg_query("(SELECT id,name,is_user,account_token,is_active,pan FROM organization_organization WHERE is_active = 'true' AND account_token = '".$_SESSION['account_token']."')
   UNION 
- (SELECT id,name,is_user,account_token,is_active,pan_card FROM users_users WHERE is_active = 'true' AND account_token = '".$_SESSION['account_token']."')");
+ (SELECT id,name,is_user,account_token,is_active,pan FROM users_users WHERE is_active = 'true' AND account_token = '".$_SESSION['account_token']."')");
 
 /*echo $query;*/
 
  $json=array();
 while ($student = pg_fetch_array($query)) {
-    $json[$student["is_user"]."-".$student["id"]] = $student["name"]."-".$student['pan_card'];
+    $json[$student["is_user"]."-".$student["id"]] = $student["name"]."-".$student['pan'];
 }
 
 $textval = json_encode($json);
