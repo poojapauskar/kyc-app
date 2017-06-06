@@ -17,7 +17,7 @@ if($_SESSION['login_kyc_app'] == 1){
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-  <link rel="icon" type="image/png" sizes="36x36" href="images/green.png">
+  <link rel="icon" type="image/png" sizes="36x36" href="images/green_icon.svg">
 
 <link rel="stylesheet" type="text/css" href="css/material.indigo-pink.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/material-design-lite/1.1.0/material.min.css">
@@ -165,7 +165,7 @@ if(isset($_POST['new_save'])){
      -moz-box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23) !important;
      box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23) !important;" class="mdl-layout__header">
     <div class="mdl-layout__header-row" >
-        <a href="search.php"><img id="logo1" src="images/green.png"></img></a>
+        <a href="search.php"><img id="logo1" src="images/green_icon.svg"></img></a>
 <span class="mdl-layout-title" id="title3" style="margin-left:35%"><?php echo $_GET['status'] ?></span>
         <span class="mdl-layout-title" id="title1" style="text-align:center">KYCAPP</span>
    <a href="logout.php"><img id="logout" style="" src="images/logout_btn.png"></img></a>         <!-- Add spacer, to align navigation to the right -->

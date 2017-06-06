@@ -14,7 +14,7 @@ if($_SESSION['login_kyc_app'] == 1){
   <title></title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" type="text/css" href="css/material.indigo-pink.min.css">
-  <link rel="icon" type="image/png" sizes="36x36" href="images/green.png">
+  <link rel="icon" type="image/png" sizes="36x36" href="images/green_icon.svg">
 
   <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
   <link rel="stylesheet" type="text/css" href="css/kyc.css">
@@ -1085,7 +1085,7 @@ if($profile22 == ""){
      -moz-box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23) !important;
      box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23) !important;" class="mdl-layout__header">
     <div class="mdl-layout__header-row" >
-    <a href="search.php"><img id="logo1" src="images/green.png"></img></a>
+    <a href="search.php"><img id="logo1" src="images/green_icon.svg"></img></a>
      <span class="mdl-layout-title" id="title3"><?php echo $arr_search['response'][0]['organization_details']['name'] ?><?php echo $arr_search['response'][0]['user_details']['name'] ?></span>
     <span class="mdl-layout-title" id="title1" style="text-align:center">KYCAPP</span>
      <a href="logout.php"><img id="logout" style="" src="images/logout_btn.png"></img></a>
