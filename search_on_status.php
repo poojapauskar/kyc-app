@@ -139,11 +139,17 @@ if(isset($_POST['new_save'])){
 
 <?php
 
+if($_GET['status'] == "Work%20in%20process"){
+  $status1="Work in process";
+}else{
+  $status1=$_GET['status'];
+}
+
   $url_status = 'https://kyc-application.herokuapp.com/search_on_status/';
   $options_status = array(
     'http' => array(
       'header'  => array(
-                          'STATUS: '.$_GET['status'],
+                          'STATUS: '.$status1,
                           'ACCOUNT-TOKEN: '.$_SESSION['account_token'],
                          ),
       'method'  => 'GET',
