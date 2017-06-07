@@ -209,7 +209,7 @@ $arr_missing_report = json_decode($output_missing_report,true);
 ?>
 
 <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
-  <header style="background-color:#08426a;height:110px;-webkit-box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23) !important;
+  <header style="background-color:#08426a;height:110px;width:104%!important;-webkit-box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23) !important;
      -moz-box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23) !important;
      box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23) !important;" class="mdl-layout__header">
     <div class="mdl-layout__header-row" >
