@@ -1311,7 +1311,7 @@ $arr_uid = json_decode($output_uid,true);
 <div class="form-group">
   <label class="col-md-4 control-label" for="textinput">PAN: </label>  
   <div class="col-md-4">
-  <input id="pan" pattern="-?[a-zA-Z]{5}[0-9]{4}[a-zA-Z]{1}?" title="Must be of the form ARLPA0061H" name="pan" type="text" placeholder="PAN Card Number" class="form-control input-md" style="width: 80%;" required>
+  <input id="pan" pattern="-?[a-zA-Z]{5}[0-9]{4}[a-zA-Z]{1}?" maxlength="10" minlength="10" title="Must be of the form ARLPA0061H" name="pan" type="text" placeholder="PAN Card Number" class="form-control input-md" style="width: 80%;" required>
     <div id="disp"></div>
 
     
@@ -1354,7 +1354,7 @@ $arr_uid = json_decode($output_uid,true);
 <div class="form-group">
   <label class="col-md-4 control-label" for="textname">Phone No:</label>  
   <div class="col-md-4">
-  <input id="mobile" name="mobile" type="text" placeholder="Enter Phone No" class="form-control input-md" required style="width: 80%;"/>
+  <input id="mobile" name="mobile" type="text" placeholder="Enter Phone No" class="form-control input-md" minlength="12" maxlength="12" required style="width: 80%;"/>
     
   </div>
 </div>
@@ -1758,7 +1758,7 @@ function enable_disable(that){
 <div class="form-group">
   <label class="col-md-4 control-label" for="textname">Phone No:</label>  
   <div class="col-md-4">
-  <input id="mobile" name="mobile" type="text" placeholder="Enter Phone No" class="form-control input-md" required style="width: 80%;"/>
+  <input id="mobile" name="mobile" type="text" placeholder="Enter Phone No" class="form-control input-md" minlength="12" maxlength="12" required style="width: 80%;"/>
     
   </div>
 </div>
@@ -1767,7 +1767,7 @@ function enable_disable(that){
 <div class="form-group">
   <label class="col-md-4 control-label" for="textinput">PAN:</label>  
   <div class="col-md-4">
-  <input pattern="-?[a-zA-Z]{5}[0-9]{4}[a-zA-Z]{1}?" title="Must be of the form ARLPA0061H" id="pan" name="pan" value="<?php echo $_POST['pan'] ?>" type="text" placeholder="" class="form-control input-md" required  style="width: 80%"/> 
+  <input pattern="-?[a-zA-Z]{5}[0-9]{4}[a-zA-Z]{1}?" maxlength="10" minlength="10" title="Must be of the form ARLPA0061H" id="pan" name="pan" value="<?php echo $_POST['pan'] ?>" type="text" placeholder="PAN Card Number" class="form-control input-md" required  style="width: 80%"/> 
   </div>
   <div id="disp"></div>
 

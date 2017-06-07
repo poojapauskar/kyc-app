@@ -1283,7 +1283,7 @@ VIEW</a>
 <div class="form-group" style="margin-top:-3%">
   <label class="col-md-4 control-label" for="textinput" style="margin-left:0%">PAN:</label>
   <div class="col-md-4">
-  <input id="pan" name="pan" style="margin-left:0%;width: 80%;" pattern="-?[a-zA-Z]{5}[0-9]{4}[a-zA-Z]{1}?" title="Must be of the form ARLPA0061H"  value="<?php echo $arr_search['response'][0]['organization_details']['pan'] ?>" type="text" placeholder="PAN Card Number" class="form-control input-md"> 
+  <input id="pan" name="pan" style="margin-left:0%;width: 80%;" minlength="10" maxlength="10" pattern="-?[a-zA-Z]{5}[0-9]{4}[a-zA-Z]{1}?" title="Must be of the form ARLPA0061H"  value="<?php echo $arr_search['response'][0]['organization_details']['pan'] ?>" type="text" placeholder="PAN Card Number" class="form-control input-md"> 
   </div>
       <div id="disp"></div>
 
@@ -1344,7 +1344,7 @@ VIEW</a>
 <div class="form-group">
   <label class="col-md-4 control-label" for="textname">Phone No:</label>  
   <div class="col-md-4">
-  <input value="<?php echo $arr_search['response'][0]['organization_details']['mobile'];?>" id="mobile" name="mobile" type="text" placeholder="Enter Email Address" class="form-control input-md" style="width: 80%;">
+  <input value="<?php echo $arr_search['response'][0]['organization_details']['mobile'];?>" id="mobile" name="mobile" type="text" minlength="12" maxlength="12" placeholder="" class="form-control input-md" style="width: 80%;">
   </div>
 </div>
 
@@ -1890,7 +1890,7 @@ function enable_disable(that){
 <div class="form-group">
   <label class="col-md-4 control-label" for="textname">Phone No:</label>  
   <div class="col-md-4">
-  <input value="<?php echo $arr_search['response'][0]['user_details']['mobile'];?>" id="mobile" name="mobile" type="text" placeholder="Enter Email Address" class="form-control input-md" style="width: 80%;">
+  <input value="<?php echo $arr_search['response'][0]['user_details']['mobile'];?>" minlength="12" maxlength="12"  id="mobile" name="mobile" type="text" placeholder="" class="form-control input-md" style="width: 80%;">
   </div>
 </div>
 
@@ -1898,7 +1898,7 @@ function enable_disable(that){
 <div class="form-group">
   <label class="col-md-4 control-label" for="textinput">PAN:</label>  
   <div class="col-md-4">
-  <input pattern="-?[a-zA-Z]{5}[0-9]{4}[a-zA-Z]{1}?" title="Must be of the form ARLPA0061H" id="pan" name="pan" value="<?php echo $arr_search['response'][0]['user_details']['pan'] ?>" type="text" placeholder="" class="form-control input-md" style="width: 80%;" required>
+  <input pattern="-?[a-zA-Z]{5}[0-9]{4}[a-zA-Z]{1}?" minlength="10" maxlength="10" title="Must be of the form ARLPA0061H" id="pan" name="pan" value="<?php echo $arr_search['response'][0]['user_details']['pan'] ?>" type="text" placeholder="" class="form-control input-md" style="width: 80%;" required>
   </div>
       <div id="disp"></div>
 
