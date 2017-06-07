@@ -43,7 +43,7 @@ if($_SESSION['login_kyc_app'] == 1){
     </style>
   </head>
 
-<body style="background-color:#E8E8E8;overflow-x:hidden;">
+<body style="background-color:#E8E8E8;">
 
 <?php
 
