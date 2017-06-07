@@ -2037,6 +2037,12 @@ a.searchview.btn.btn-info {
 }
 }
 
+.col-10.due_date {
+    width: 25.2%;
+    margin-left: 34.8%;
+    margin-top: -0.5%;
+}
+
 /*Card2 sizing*/
 .card1{
     margin-top: 11%;
@@ -2709,6 +2715,12 @@ a.searchview.btn.btn-info {
     margin-top: 12%;
 }
 
+.col-10.due_date {
+    width: 25.2%;
+    margin-left: 34.8%;
+    margin-top: -0.5%;
+}
+
 .remove_field_present.p {
     margin-left: 67%;
     margin-top: -3%;
@@ -3329,6 +3341,12 @@ a.searchview.btn.btn-info {
 .container.contain-align{
      margin-left: -1% !important;
     margin-top: 1%;
+}
+
+.col-10.due_date {
+    width: 30.2%;
+    margin-left: 34.8%;
+    margin-top: -0.5%;
 }
 
 
