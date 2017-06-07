@@ -1483,7 +1483,7 @@ $arr_uid = json_decode($output_uid,true);
   <div class="form-group">
   <label class="col-md-4 control-label" for="textinput">DATE:</label>  
   <div class="col-md-4">
-  <input id="date[]" name="date[]" value="<?php echo $_POST['date'] ?>" style="width:80%;margin-left:-0.4%;margin-top:0%;" type="text" class="form-control input-md datepicker pick">
+  <input id="date[]" name="date[]" value="<?php echo $_POST['date'] ?>" placeholder="dd/mm/yyyy" style="width:80%;margin-left:-0.4%;margin-top:0%;" type="text" class="form-control input-md datepicker pick">
   </div>
 </div>
 
@@ -1491,7 +1491,7 @@ $arr_uid = json_decode($output_uid,true);
   <div class="form-group">
   <label class="col-md-4 control-label" for="textinput">DUE DATE:</label>  
   <div class="col-md-4">
-  <input id="due_date[]" name="due_date[]" value="<?php echo $_POST['due_date'] ?>" style="width:80%;margin-left:-0.4%;margin-top:0%;" type="text" class="form-control input-md datepicker due_date">
+  <input id="due_date[]" name="due_date[]" placeholder="dd/mm/yyyy" value="<?php echo $_POST['due_date'] ?>" style="width:80%;margin-left:-0.4%;margin-top:0%;" type="text" class="form-control input-md datepicker due_date">
   </div>
 </div>
 
@@ -1631,7 +1631,7 @@ function enable_disable(that){
 <div class="form-group">
   <label class="col-md-4 control-label" for="textinput">DOB:</label>  
   <div class="col-md-4">
-  <input id="date1" name="date1" value="<?php echo $_POST['date1'] ?>" type="text" class="form-control input-md datepicker picker" style="width: 80%;">
+  <input id="date1" name="date1" value="<?php echo $_POST['date1'] ?>" type="text" class="form-control input-md datepicker picker" style="width: 80%;" placeholder="dd/mm/yyyy">
   </div><img src="/images/calendar.png" style="margin-left: -6%;">
 </div>
 
@@ -1874,7 +1874,7 @@ function enable_disable(that){
 <div class="form-group">
   <label for="example-date-input" class="col-md-4 col-label date-label-individual">DATE:</label>
   <div class="col-md-4">
-    <input class="form-control datepicker pick date-individual" id="date[]" name="date[]" value="<?php echo $_POST['date'] ?>" type="text" >
+    <input class="form-control datepicker pick date-individual" id="date[]" name="date[]" value="<?php echo $_POST['date'] ?>" placeholder="dd/mm/yyyy" type="text" >
   </div>
 </div>
 
@@ -1882,7 +1882,7 @@ function enable_disable(that){
 <div class="form-group">
   <label for="example-date-input" class="col-md-1 col-label date-label-individual" style="margin-left:25%">DUE DATE:</label>
   <div class="col-md-4">
-    <input class="form-control datepicker pick due-date-individual" id="due_date[]" style="width:80%;" name="due_date[]" value="<?php echo $_POST['due_date'] ?>" type="text">
+    <input class="form-control datepicker pick due-date-individual" id="due_date[]" style="width:80%;" name="due_date[]" placeholder="dd/mm/yyyy" value="<?php echo $_POST['due_date'] ?>" type="text">
   </div>
 </div>
 
@@ -2026,7 +2026,7 @@ $(document).ready(function() {
 
         if(x < max_fields){ //max input box allowed
             x++; //text box increment
-            $('<div style="margin-left:50%;"><div class="form-group"><label class="control-label type" for="selectbasic" style="">Type of work:</label><div class="col-md-6"><select id="type_of_work[]" name="type_of_work[]" class="form-control type_of_work"><option value=""></option><option value="Audit Report">Audit Report</option><option value="ITR filing">ITR filing</option><option value="VAT Filing">VAT Filing</option><option value="Accounting">Accounting</option><option value="Registration">Registration</option><option value="Certification">Certification</option><option value="Others">Others</option></select></div></div><div class="form-group"> <label class="col-md-4 control-label statuss1" for="selectbasic" style="">Status:</label><div class="col-md-6"><select id="status1' + x + '"  name="status[]"  class="form-control status"><option value=""></option><option value="Pending">Pending</option><option value="Work in process">Work in process</option><option value="Completed">Completed</option></select></div></div><div class="form-group row"><label for="example-date-input" class="col-2 col-form-label date">DATE:</label><div class="col-10 col"><input class="form-control datepicker pickers" id="date' + x +'" name="date[]" type="text"></div></div><div class="form-group row"><label for="example-date-input" class="col-2 col-form-label duedate"> DUE DATE:</label><div class="col-10 col"><input class="form-control datepicker pickersS" id="duedate' + x +'" name="due_date[]" type="text"></div></div><div class="form-group"><label class="col-md-4 control-label comment" for="textinput" style="">Comment:</label><div class="col-md-4"><input id="comments' + x + '" name="comment[]" type="text" placeholder="" class="form-control input-md comment" style=""></div></div></center><a href="#" class="remove_field"><img src="images/del24.png" ></a></a></div>').insertBefore(add_button)//add input box\
+            $('<div style="margin-left:50%;"><div class="form-group"><label class="control-label type" for="selectbasic" style="">Type of work:</label><div class="col-md-6"><select id="type_of_work[]" name="type_of_work[]" class="form-control type_of_work"><option value=""></option><option value="Audit Report">Audit Report</option><option value="ITR filing">ITR filing</option><option value="VAT Filing">VAT Filing</option><option value="Accounting">Accounting</option><option value="Registration">Registration</option><option value="Certification">Certification</option><option value="Others">Others</option></select></div></div><div class="form-group"> <label class="col-md-4 control-label statuss1" for="selectbasic" style="">Status:</label><div class="col-md-6"><select id="status1' + x + '"  name="status[]"  class="form-control status"><option value=""></option><option value="Pending">Pending</option><option value="Work in process">Work in process</option><option value="Completed">Completed</option></select></div></div><div class="form-group row"><label for="example-date-input" class="col-2 col-form-label date">DATE:</label><div class="col-10 col"><input class="form-control datepicker pickers" id="date' + x +'" name="date[]" placeholder="dd/mm/yyyy" type="text"></div></div><div class="form-group row"><label for="example-date-input" class="col-2 col-form-label duedate"> DUE DATE:</label><div class="col-10 col"><input class="form-control datepicker pickersS" id="duedate' + x +'" name="due_date[]" placeholder="dd/mm/yyyy" type="text"></div></div><div class="form-group"><label class="col-md-4 control-label comment" for="textinput" style="">Comment:</label><div class="col-md-4"><input id="comments' + x + '" name="comment[]" type="text" placeholder="" class="form-control input-md comment" style=""></div></div></center><a href="#" class="remove_field"><img src="images/del24.png" ></a></a></div>').insertBefore(add_button)//add input box\
           var newInput=$d("#date"+ x).datepicker({dateFormat: 'dd/mm/yy',changeMonth : true,changeYear : true});
           newInput.datepicker({dateFormat: 'dd/mm/yy'}).datepicker("setDate", new Date());
           var newInputt=$d("#duedate"+ x).datepicker({dateFormat: 'dd/mm/yy',changeMonth : true,changeYear : true});

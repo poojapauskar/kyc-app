@@ -214,7 +214,9 @@ $(function() {
         }, 0);}
 
 
-});$(".sspicker.picker").keyup(function(){
+});
+
+  $(".sspicker.picker").keyup(function(){
                 if ($(this).val().length == 2){
                     $(this).val($(this).val() + "/");
                 }else if ($(this).val().length == 5){
@@ -276,6 +278,29 @@ $(function() {
             });
 });
 
+
+$(function() {
+  $( ".datepicker.pic" ).datepicker({
+    changeMonth: true,
+    changeYear: true,
+    beforeShow: function (input, inst) {
+        setTimeout(function () {
+            inst.dpDiv.css({
+            'z-index':4,
+            width:300,
+             
+            });
+        }, 0);
+    }
+});
+  $(".datepicker.pic").keyup(function(){
+                if ($(this).val().length == 2){
+                    $(this).val($(this).val() + "/");
+                }else if ($(this).val().length == 5){
+                    $(this).val($(this).val() + "/");
+                }
+            });
+});
 </script>
 
 </head>
@@ -1721,7 +1746,7 @@ function enable_disable(that){
 <div class="form-group">
   <label class="col-md-4 control-label" for="textinput">DOB:</label>  
   <div class="col-md-4">
-  <input id="date2" name="date2" value="<?php echo $arr_search['response'][0]['user_details']['dob'] ?>" type="text" placeholder="" class="form-control input-md datepicker picker" style="width: 80%;" > 
+  <input id="date2" name="date2" value="<?php echo $arr_search['response'][0]['user_details']['dob'] ?>" type="text" placeholder="dd/mm/yyyy" class="form-control input-md datepicker picker" style="width: 80%;" > 
   </div>
   <script type="text/javascript">
   $(function() {
@@ -1739,7 +1764,17 @@ function enable_disable(that){
             });
         }, 0);}
 
-});});
+});
+
+  $(".datepicker.picker").keyup(function(){
+                if ($(this).val().length == 2){
+                    $(this).val($(this).val() + "/");
+                }else if ($(this).val().length == 5){
+                    $(this).val($(this).val() + "/");
+                }
+            });
+
+});
 </script>
 </div>
 
@@ -2147,7 +2182,7 @@ function enable_disable(that){
 <div class="form-group row">
   <label for="example-date-input" class="col-2 col-form-label" style="margin-left:28.1%;position:absolute">DATE:</label>
   <div class="col-10">
-    <input class="form-control datepicker p" id="date[]" name="date[]" value="<?php echo $arr_search['response'][0]['add_info'][$q]['date']; ?>" style="width: 80%;" type="text"  > 
+    <input class="form-control datepicker p" id="date[]" name="date[]" value="<?php echo $arr_search['response'][0]['add_info'][$q]['date']; ?>" placeholder="dd/mm/yyyy" style="width: 80%;" type="text"  > 
   </div>
 </div>
 
@@ -2155,7 +2190,7 @@ function enable_disable(that){
 <div class="form-group row">
   <label for="example-date-input" class="col-2 col-form-label" style="margin-left:28.1%;position:absolute">DUE DATE:</label>
   <div class="col-10 due_date">
-    <input class="form-control datepicker pic" id="due_date[]" name="due_date[]" value="<?php echo $arr_search['response'][0]['add_info'][$q]['due_date']; ?>" style="width: 80%;" type="text" > 
+    <input class="form-control datepicker pic" id="due_date[]" name="due_date[]" value="<?php echo $arr_search['response'][0]['add_info'][$q]['due_date']; ?>" placeholder="dd/mm/yyyy" style="width:98%;" type="text" > 
   </div>
 </div>
 
@@ -3018,7 +3053,7 @@ function goBack() {
         e.preventDefault();
         if(x < max_fields){ //max input box allowed
             x++; //text box increment
-         $('<div style="margin-left:50%;"><div class="form-group"><label class="control-label type" for="selectbasic" style="">Type of work:</label><div class="col-md-6"><select id="type_of_work[]" name="type_of_work[]" class="form-control type_of_work" style=""><option value="Audit Report">Audit Report</option><option value="ITR filing">ITR filing</option><option value="VAT Filing">VAT Filing</option><option value="Accounting">Accounting</option><option value="Registration">Registration</option><option value="Certification">Certification</option><option value="Others">Others</option></select></div></div><div class="form-group"> <label class="col-md-4 control-label status" for="selectbasic" style="width:70%;">Status:</label><div class="col-md-6"><select id="status1" name="status[]"  class="form-control status-edit"><option value="Pending">Pending</option><option value="Work in process">Work in process</option><option value="Completed">Completed</option></select></div></div><div class="form-group row"><label for="example-date-input" class="col-2 col-form-label date">DATE:</label><div class="col-10 col"><input class="form-control datepicker pickers" id="datee'+ x +'" name="date[]" style="" type="text" ></div></div><div class="form-group row"><label for="example-date-input" class="col-2 col-form-label duedate">DUE DATE:</label><div class="col-10 col"><input class="form-control datepicker pickers" id="due_date'+ x +'" name="due_date[]" style="" type="text"></div></div><div class="form-group"><label class="col-md-4 control-label comment" for="textinput" style="">Comment:</label><div class="col-md-4"><input id="comments" name="comment[]" type="text" placeholder="" class="form-control input-md comment" style=""></div></div></center><a href="#" class="remove_field" style=""><img src="images/del24.png" ></a></a></div>').insertBefore(add_button) //add input box\
+         $('<div style="margin-left:50%;"><div class="form-group"><label class="control-label type" for="selectbasic" style="">Type of work:</label><div class="col-md-6"><select id="type_of_work[]" name="type_of_work[]" class="form-control type_of_work" style=""><option value="Audit Report">Audit Report</option><option value="ITR filing">ITR filing</option><option value="VAT Filing">VAT Filing</option><option value="Accounting">Accounting</option><option value="Registration">Registration</option><option value="Certification">Certification</option><option value="Others">Others</option></select></div></div><div class="form-group"> <label class="col-md-4 control-label status" for="selectbasic" style="width:70%;">Status:</label><div class="col-md-6"><select id="status1" name="status[]"  class="form-control status-edit"><option value="Pending">Pending</option><option value="Work in process">Work in process</option><option value="Completed">Completed</option></select></div></div><div class="form-group row"><label for="example-date-input" class="col-2 col-form-label date">DATE:</label><div class="col-10 col"><input class="form-control datepicker pickers" id="datee'+ x +'" placeholder="dd/mm/yyyy" name="date[]" style="" type="text" ></div></div><div class="form-group row"><label for="example-date-input" class="col-2 col-form-label duedate">DUE DATE:</label><div class="col-10 col"><input class="form-control datepicker pickers" id="due_date'+ x +'" name="due_date[]" style="" placeholder="dd/mm/yyyy" type="text"></div></div><div class="form-group"><label class="col-md-4 control-label comment" for="textinput" style="">Comment:</label><div class="col-md-4"><input id="comments" name="comment[]" type="text" placeholder="" class="form-control input-md comment" style=""></div></div></center><a href="#" class="remove_field" style=""><img src="images/del24.png" ></a></a></div>').insertBefore(add_button) //add input box\
           var newInput=$("#datee"+x).datepicker({dateFormat: 'dd/mm/yy',changeMonth : true,
             changeYear : true,});
           newInput.datepicker({dateFormat: 'dd/mm/yy',changeMonth : true,
@@ -3028,6 +3063,24 @@ function goBack() {
             changeYear : true,});
           newInput.datepicker({dateFormat: 'dd/mm/yy',changeMonth : true,
             changeYear : true,}).datepicker("setDate", new Date());
+
+
+          // auto slash for datepicker
+          $("#datee" + x).keyup(function(){
+                if ($(this).val().length == 2){
+                    $(this).val($(this).val() + "/");
+                }else if ($(this).val().length == 5){
+                    $(this).val($(this).val() + "/");
+                }
+            });
+          $("#due_date" + x).keyup(function(){
+                if ($(this).val().length == 2){
+                    $(this).val($(this).val() + "/");
+                }else if ($(this).val().length == 5){
+                    $(this).val($(this).val() + "/");
+                }
+            });
+
           $("#status1").click(function () {
 
             if ($("#status1" ).val() == "Completed") {
