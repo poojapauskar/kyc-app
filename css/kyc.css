@@ -1586,6 +1586,13 @@ margin-top:-1%;
 }
 }
 
+
+.col-10.due_date {
+    width: 25.5%;
+    margin-left: 34.3%;
+    margin-top: -0.2%;
+}
+
 /*Card2 sizing*/
 .card1{
     margin-top: 11%;
@@ -1635,7 +1642,7 @@ margin-top:-1%;
 
 .btn.btn-warning.cancel1 {
     width: 10em;
-    margin-top: -14%;
+    margin-top: -11%;
     padding: 0.5em;
     margin-left: 55%;
     background: #176fac;
@@ -1644,7 +1651,7 @@ margin-top:-1%;
 
 .btn.btn-warning.delete1 {
     width: 10em;
-    margin-top: -10.2%;
+    margin-top: -8.2%;
     margin-left: 49%;
 }
 
@@ -2122,7 +2129,7 @@ margin-top:-1%;
 }
 
 .form-control.input-md.comment {
-    width: 271%;
+    width: 261%;
     margin-left: 3%;
 }
 
@@ -2144,9 +2151,9 @@ a.searchview.btn.btn-info {
 }
 
 .datepicker.p {
-    width: 77% !important;
+    width: 78% !important;
     margin-top: 4% !important;
-    margin-left: 2%;
+    margin-left: 1%;
 }
 
 .upload-button.edit {
@@ -2206,8 +2213,8 @@ a.searchview.btn.btn-info {
 }
 .btn.btn-success.clear-pendingpage{
     color: white;
-    margin-left: 29%;
-    margin-top: 4%;
+    margin-left: 23%;
+    margin-top: 3.6%;
     position: absolute;
 }
 }
