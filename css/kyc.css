@@ -2297,7 +2297,7 @@ a.searchview.btn.btn-info {
 
 .btn.btn-warning.cancel1 {
     width: 10em;
-    margin-top: -14%;
+    margin-top: -13%;
     padding: 0.5em;
     margin-left: 55%;
     background: #176fac;
@@ -2306,7 +2306,7 @@ a.searchview.btn.btn-info {
 
 .btn.btn-warning.delete1 {
     width: 10em;
-    margin-top: -10.2%;
+    margin-top: -9.2%;
     margin-left: 49%;
 }
 
@@ -2783,7 +2783,7 @@ margin-top:-1%;
 }
 
 .form-control.input-md.comment {
-    width: 271%;
+    width: 266%;
     margin-left: 3%;
 }
 
@@ -3549,6 +3549,11 @@ a.searchview.btn.btn-info {
     margin-top: -0.5%;
 }
 
+.col-2.col-form-label.duedate {
+    margin-left: -8.5%;
+    margin-top: 0%;
+    position: absolute;
+}
 
 /*search organization page*/
 .col-md-2.search_org{
@@ -3648,7 +3653,7 @@ a.btn.btn-info.edit_modal {
     height: 2758%;
 }
 .form-control.status-edit {
-    width: 163%!important;
+    width: 167%!important;
     margin-left: -3%!important;
 }
 
@@ -4107,7 +4112,7 @@ margin-top:-1%;
 }
 .form-control.input-md.comment{
    width: 270%;
-    margin-left: -1%;
+    margin-left: -4%;
 }
 .fileUpload.btn.btn-info.tele1{
 margin-left: 26%;
