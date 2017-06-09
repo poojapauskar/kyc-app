@@ -92,11 +92,27 @@
 var $j = jQuery.noConflict();
 $(function() {
   $j( ".datepicker.picker" ).datepicker({dateFormat: 'dd/mm/yy',maxDate:0,changeMonth : true,changeYear : true,yearRange: '-100y:c+nn',});
+
+   $(".datepicker.picker").keyup(function(){
+                if ($(this).val().length == 2){
+                    $(this).val($(this).val() + "/");
+                }else if ($(this).val().length == 5){
+                    $(this).val($(this).val() + "/");
+                }
+            });
 });
 
 $(function() {
   $j( ".datepicker.pick" ).datepicker({dateFormat: 'dd/mm/yy',changeMonth : true,
             changeYear : true}).datepicker("setDate", new Date());
+
+   $(".datepicker.pick").keyup(function(){
+                if ($(this).val().length == 2){
+                    $(this).val($(this).val() + "/");
+                }else if ($(this).val().length == 5){
+                    $(this).val($(this).val() + "/");
+                }
+            });
 });
 </script> 
 
@@ -445,7 +461,7 @@ $arr_uid_popup = json_decode($output_uid_popup,true);
 
   <label for="example-date-input" class="col-2 col-form-label" style="margin-left:24.5%;">DOB:</label>
   <div class="col-4">
-    <input class="form-control datepicker picker" id="date1" name="date1" value="<?php echo $_POST['date1'] ?>" style="width:28.9%;margin-left:35.6%;margin-top:-4%;" type="text" readonly>
+    <input class="form-control datepicker picker" id="date1" name="date1" value="<?php echo $_POST['date1'] ?>" style="width:28.9%;margin-left:35.6%;margin-top:-4%;" placeholder="DD/MM/YYYY" type="text" >
 
   </div>
 </div>
@@ -684,7 +700,7 @@ $arr_uid_popup = json_decode($output_uid_popup,true);
 <div class="form-group row">
   <label for="example-date-input" class="col-2 col-form-label" style="margin-left:24.5%;">DATE:</label>
   <div class="col-4">
-    <input class="form-control datepicker pick" id="dateuser" name="date[]" value="<?php echo $_POST['date'] ?>" style="width:28.9%;margin-left:35.6%;margin-top:-4%;" type="text" readonly>
+    <input class="form-control datepicker pick" id="dateuser" name="date[]"  placeholder="DD/MM/YYYY" value="<?php echo $_POST['date'] ?>" style="width:28.9%;margin-left:35.6%;margin-top:-4%;" type="text">
   </div>
 </div>
 
@@ -692,7 +708,7 @@ $arr_uid_popup = json_decode($output_uid_popup,true);
 <div class="form-group">
   <label for="example-date-input" class="col-sm-4 col-label date-label-individual" style="margin-left:17%">DUE DATE:</label>
   <div class="col-md-4">
-    <input class="form-control datepicker pick due-date-individual" id="due_dates" style="width:101%;margin-left: -60%" name="due_date[]" value="<?php echo $_POST['due_date'] ?>" type="text" readonly>
+    <input class="form-control datepicker pick due-date-individual" id="due_dates"  placeholder="DD/MM/YYYY" style="width:101%;margin-left: -60%" name="due_date[]" value="<?php echo $_POST['due_date'] ?>" type="text">
   </div>
 </div>
 
@@ -766,13 +782,29 @@ function goBack() {
         e.preventDefault();
         if(x < max_fields){ //max input box allowed
               x++; //text box incrementa
-              $('<div style="margin-left:50%;"><div class="form-group"><label class="control-label" for="selectbasic" style="margin-left:-220px;">Type of work</label><div class="col-md-6"><select id="type_of_work[]" name="type_of_work[]" class="form-control" style="margin-left:17%;width:222%"><option value="Option one"></option><option value="Option one">Audit Report</option><option value="Option two">ITR filing</option><option value="Option three">VAT Filing</option><option value="Option four">Accounting</option><option value="Option five">Registration</option><option value="Option six">Certification</option><option value="Option seven">Others</option></select></div></div><div class="form-group"> <label class="col-md-4 control-label" for="selectbasic" style="margin-left:-29%">Status</label><div class="col-md-6"><select id="status11' + x + '" name="status[]" style="width:223%;margin-left:3%;" class="form-control"><option value="Option one"></option><option value="Pending">Pending</option><option value="Work in process">Work in process</option><option value="Completed">Completed</option></select></div></div><div class="form-group row"><label for="example-date-input" class="col-2 col-form-label" style="margin-left:-15.5%;";">DATE</label><div class="col-8"><input class="form-control datepicker pick" id="date11' + x + '" name="date[]" value="<?php echo $_POST['date'] ?>" style="width:86%;margin-left:11.6%;margin-top:-10%;" type="text" readonly></div></div><div class="form-group"><label for="example-date-input" class="col-md-6 col-label date-label-individual" style="margin-left:-38%">DUE DATE:</label><div class="col-md-4"><input class="form-control datepicker pick due-date-individual" id="due_datee'+ x +'"style="width:440%;margin-left: -41%" name="due_date[]" value="<?php echo $_POST['due_date'] ?>" type="text" readonly></div></div><div class="form-group"><label class="col-md-4 control-label" for="textinput" style="margin-left:-36%">Comment</label><div class="col-md-4"><input id="comments11' + x + '" name="comment[]" type="text" placeholder="" class="form-control input-md" style="width:432%;margin-left:26%"></div></div></center><a href="#" class="remove_field" style="margin-left: 230px; margin-top: -40px;position:absolute"><img src="images/del24.png"></a></a></div>').insertBefore(add_button) //add input box\         
+              $('<div style="margin-left:50%;"><div class="form-group"><label class="control-label" for="selectbasic" style="margin-left:-220px;">Type of work</label><div class="col-md-6"><select id="type_of_work[]" name="type_of_work[]" class="form-control" style="margin-left:17%;width:222%"><option value="Option one"></option><option value="Option one">Audit Report</option><option value="Option two">ITR filing</option><option value="Option three">VAT Filing</option><option value="Option four">Accounting</option><option value="Option five">Registration</option><option value="Option six">Certification</option><option value="Option seven">Others</option></select></div></div><div class="form-group"> <label class="col-md-4 control-label" for="selectbasic" style="margin-left:-29%">Status</label><div class="col-md-6"><select id="status11' + x + '" name="status[]" style="width:223%;margin-left:3%;" class="form-control"><option value="Option one"></option><option value="Pending">Pending</option><option value="Work in process">Work in process</option><option value="Completed">Completed</option></select></div></div><div class="form-group row"><label for="example-date-input" class="col-2 col-form-label" style="margin-left:-15.5%;";">DATE</label><div class="col-8"><input class="form-control datepicker pick" id="date11' + x + '" name="date[]" value="<?php echo $_POST['date'] ?>" style="width:86%;margin-left:11.6%;margin-top:-10%;" type="text"  placeholder="DD/MM/YYYY"></div></div><div class="form-group"><label for="example-date-input" class="col-md-6 col-label date-label-individual" style="margin-left:-38%">DUE DATE:</label><div class="col-md-4"><input class="form-control datepicker pick due-date-individual" id="due_datee'+ x +'" style="width:440%;margin-left: -41%" name="due_date[]" value="<?php echo $_POST['due_date'] ?>" type="text"  placeholder="DD/MM/YYYY"></div></div><div class="form-group"><label class="col-md-4 control-label" for="textinput" style="margin-left:-36%">Comment</label><div class="col-md-4"><input id="comments11' + x + '" name="comment[]" type="text" placeholder="" class="form-control input-md" style="width:432%;margin-left:26%"></div></div></center><a href="#" class="remove_field" style="margin-left: 230px; margin-top: -40px;position:absolute"><img src="images/del24.png"></a></a></div>').insertBefore(add_button) //add input box\         
               var newInput11=$j("#date11" + x).datepicker({dateFormat: 'dd/mm/yy',changeMonth : true,
             changeYear : true});
               newInput11.datepicker({dateFormat: 'dd/mm/yyyy'}).datepicker("setDate", new Date());
               var newduedate=$j("#due_datee" + x).datepicker({dateFormat: 'dd/mm/yy',changeMonth : true,
             changeYear : true});
               newduedate.datepicker({dateFormat: 'dd/mm/yyyy'}).datepicker("setDate", new Date());
+
+               $("#date11" + x).keyup(function(){
+                if ($(this).val().length == 2){
+                    $(this).val($(this).val() + "/");
+                }else if ($(this).val().length == 5){
+                    $(this).val($(this).val() + "/");
+                }
+            });
+
+                $("#due_datee" + x).keyup(function(){
+                if ($(this).val().length == 2){
+                    $(this).val($(this).val() + "/");
+                }else if ($(this).val().length == 5){
+                    $(this).val($(this).val() + "/");
+                }
+            });
               $("#status11" + x).on("click",".form-control",function () {
 
                  if ($("#status11" + x).val() == "Completed") {

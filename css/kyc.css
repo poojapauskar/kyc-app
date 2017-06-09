@@ -3106,7 +3106,18 @@ a.searchview.btn.btn-info {
 }
 }
 @media screen and (max-width: 1366px){
+ /*Edit page Date and Due Date*/
+.col-2.col-form-label.edit_date{
+    margin-left: 28.5%;
+    position: absolute;
 
+}
+
+
+.col-2.col-form-label.duedate_label {
+    margin-left: 27%;
+    position: absolute;
+}
 @-moz-document url-prefix(){
 
     #title {
@@ -3136,6 +3147,13 @@ a.searchview.btn.btn-info {
     margin-top: 12%;
 }
 }
+/*edit date*/
+.col-2.col-form-label.edit_date{
+    margin-left: 28.5%;
+    position: absolute;
+
+}
+
 
 /*Card2 sizing*/
 .card1{
@@ -3791,9 +3809,9 @@ a.searchview.btn.btn-info {
 }
 
 .col-10.due_date {
-    width: 30.2%;
-    margin-left: 34.8%;
-    margin-top: -0.5%;
+    width: 25.2%;
+    margin-left: 34.5%;
+    margin-top: 0%;
 }
 
 .col-2.col-form-label.duedate {
@@ -4461,7 +4479,7 @@ margin-left: 26%;
 
 .datepicker.p
 {
-    width: 80%;
+    width: 80% !important;
     margin-top: 1% !important;
     margin-left: 3%;
 }
