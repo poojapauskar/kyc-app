@@ -1525,8 +1525,8 @@ $arr_uid = json_decode($output_uid,true);
 <div class="form-group">
   <label class="col-md-4 control-label" for="save_btn"></label>
   <div class="col-md-8">
-    <button onclick="return validate_org();" id="generate_btn_org" name="generate_btn_org" class="btn btn-success">Generate</button>
-    <button id="singlebutton" style="margin-left:13%;" name="singlebutton" class="btn btn-primary"><a style="color:white" href="search.php">Discard</a></button>
+    <button onclick="return validate_org();" id="generate_btn_org" name="generate_btn_org" class="btn btn-success" style="width:10em">Generate</button>
+    <button id="singlebutton" style="margin-left:13%;width:10em" name="singlebutton" class="btn btn-primary"><a style="color:white" href="search.php">Discard</a></button>
   </div>
 </div>
 </fieldset>
@@ -1914,8 +1914,8 @@ function enable_disable(that){
 <div class="form-group">
   <label class="col-md-4 control-label" for="singlebutton"></label>
   <div class="col-md-4">
-    <button onclick="return validate();" id="generate_btn" name="generate_btn" class="btn btn-success">Generate</button>
-    <button id="singlebutton" style="margin-left:13%;" name="singlebutton" class="btn btn-primary"><a style="color:white" href="search.php">Discard</a></button>
+    <button onclick="return validate();" style="width:10em" id="generate_btn" name="generate_btn" class="btn btn-success">Generate</button>
+    <button id="singlebutton" style="margin-left:13%;width:10em" name="singlebutton" class="btn btn-primary"><a style="color:white" href="search.php">Discard</a></button>
   </div>
 </div>
 </fieldset>
