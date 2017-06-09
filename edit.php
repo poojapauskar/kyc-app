@@ -1139,7 +1139,7 @@ if($profile22 == ""){
      -moz-box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23) !important;
      box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23) !important;" class="mdl-layout__header">
     <div class="mdl-layout__header-row" >
-    <a href="search.php"><img id="logo1" src="images/green.png"></img></a>
+    <a href="search.php"><img id="logo1" src="images/green_icon.svg"></img></a>
      <span class="mdl-layout-title" id="title3" style="word-wrap: break-word;width: 23em;">
      <p style="font-size: 19px !important;"><?php echo $arr_search['response'][0]['organization_details']['name'] ?><?php echo $arr_search['response'][0]['user_details']['name'] ?></p></span>
          <span class="mdl-layout-title" id="title1" style="text-align:center">KYCAPP</span>
@@ -1532,7 +1532,8 @@ VIEW</a>
 </div>
 <!--date-->
 <div class="form-group row">
-  <label for="example-date-input" class="col-2 col-form-label" style="margin-left:28.5%;position:absolute;">DATE:</label>
+  <label for="example-date-input" class="col-2 col-form-label" style="margin-left: 28.1%;
+    position: absolute;">DATE:</label>
   <div class="col-10">
     <input class="form-control datepicker p" id="date[]" name="date[]" value="<?php echo $arr_search['response'][0]['add_info'][$q]['date']; ?>"   type="text" style="">
   </div>
