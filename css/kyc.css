@@ -708,9 +708,9 @@ margin-top:-1%;
     margin-top: 1%;
 }
 
-#bank_upload{
+#bank_upload {
     width: 47.2%;
-    margin-left: 2%;
+    margin-left: 10%;
     margin-top: 0%;
     position: absolute;
 }
@@ -897,17 +897,15 @@ div.fileUpload.btn.btn-info{
 }
 
 /*date input field*/
-
 .col-10.col {
-    width: 75%;
-    margin-left: 6.3%;
+    width: 74%;
+    margin-left: 5%;
     margin-top: -4%;
 }
 
-.form-control.type_of_work
-{
-    margin-left:8%;
-    width:165%
+.form-control.type_of_work {
+    margin-left: 5%;
+    width: 163%;
 }
 
 .form-control.status-edit {
@@ -937,8 +935,8 @@ div.fileUpload.btn.btn-info{
 }
 
 .form-control.status {
-    width: 165%;
-    margin-left: 3%;
+    width: 163%;
+    margin-left: 0%;
 }
 .col-2.col-form-label.date {
     margin-left: -6.3%;
@@ -1012,14 +1010,14 @@ margin-top:-1%;
 
 .col-md-3.teleupload.edit {
     width: 33%;
-    margin-left: 43.2%;
+    margin-left: 40.9%;
     position: absolute;
     margin-top: 0%;
 }
 
 .form-control.input-md.comment {
-    width: 261%;
-    margin-left: 6%;
+    width: 255%;
+    margin-left: 2%;
 }
 
 a.searchview.btn.btn-info {
