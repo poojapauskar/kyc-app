@@ -1532,8 +1532,7 @@ VIEW</a>
 </div>
 <!--date-->
 <div class="form-group row">
-  <label for="example-date-input" class="col-2 col-form-label" style="margin-left: 28.1%;
-    position: absolute;">DATE:</label>
+  <label for="example-date-input" class="col-2 col-form-label edit_date">DATE:</label>
   <div class="col-10">
     <input class="form-control datepicker p" id="date[]" name="date[]" value="<?php echo $arr_search['response'][0]['add_info'][$q]['date']; ?>"   type="text" style="">
   </div>
@@ -1541,7 +1540,7 @@ VIEW</a>
 
 <!--due date-->
 <div class="form-group row">
-  <label for="example-date-input" class="col-2 col-form-label" style="margin-left:27%;position:absolute;">DUE DATE:</label>
+  <label for="example-date-input" class="col-2 col-form-label duedate_label">DUE DATE:</label>
   <div class="col-10 due_date">
     <input class="form-control datepicker due" id="due_date[]" name="due_date[]" value="<?php echo $arr_search['response'][0]['add_info'][$q]['due_date']; ?>"   type="text" style="">
   </div>
@@ -2182,7 +2181,7 @@ function enable_disable(that){
 </div>
 <!--date-->
 <div class="form-group row">
-  <label for="example-date-input" class="col-2 col-form-label" style="margin-left:28.1%;position:absolute">DATE:</label>
+  <label for="example-date-input" class="col-2 col-form-label edit_date ">DATE:</label>
   <div class="col-10">
     <input class="form-control datepicker p" id="date[]" name="date[]" value="<?php echo $arr_search['response'][0]['add_info'][$q]['date']; ?>" placeholder="dd/mm/yyyy" style="width: 80%;" type="text"  > 
   </div>
@@ -2190,7 +2189,7 @@ function enable_disable(that){
 
 <!--date-->
 <div class="form-group row">
-  <label for="example-date-input" class="col-2 col-form-label" style="margin-left:28.1%;position:absolute">DUE DATE:</label>
+  <label for="example-date-input" class="col-2 col-form-label duedate_label">DUE DATE:</label>
   <div class="col-10 due_date">
     <input class="form-control datepicker pic" id="due_date[]" name="due_date[]" value="<?php echo $arr_search['response'][0]['add_info'][$q]['due_date']; ?>" placeholder="dd/mm/yyyy" style="width:98%;" type="text" > 
   </div>

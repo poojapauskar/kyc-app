@@ -3770,6 +3770,20 @@ a.searchview.btn.btn-info {
 
 @media screen and (max-width:1280px) {
 
+
+/*Edit page Date and Due Date*/
+.col-2.col-form-label.edit_date{
+    margin-left: 28.5%;
+    position: absolute;
+
+}
+
+
+.col-2.col-form-label.duedate_label {
+    margin-left: 27%;
+    position: absolute;
+}
+
 /*Container Alignment of missing reports*/
 .container.contain-align{
      margin-left: -1% !important;
@@ -4385,13 +4399,12 @@ margin-left: 26%;
     position: absolute;
 }
 /*edit page date of org*/
-.datepicker.p
-{
-       width: 77% !important;
-    margin-top: 4% !important;
-    margin-left: 2%;
-
+.datepicker.p {
+    width: 24.8% !important;
+    margin-top: 0% !important;
+    margin-left: 34.5%;
 }
+
 .remove_field_present{
     margin-left:62.2%; 
     margin-top:-3.7%;
@@ -4449,6 +4462,14 @@ margin-left: 26%;
 .datepicker.p
 {
     width: 80%;
+    margin-top: 1% !important;
+    margin-left: 3%;
+}
+
+.col-2.col-form-label.duedate_label{
+        margin-left: 25.1%;
+    position: absolute;
+
 }
 .card1{
     margin-top: 14%;
@@ -4709,6 +4730,14 @@ a.btn.btn-info.edit{
     margin-left: 52%;
 }
  
+
+.col-2.col-form-label.edit_date{
+    margin-left: 28.5%;
+    position: absolute;
+
+}
+
+
 /* add new partner the css for the class which is inside the js*/
 .control-label.name{
         margin-left:212%;
