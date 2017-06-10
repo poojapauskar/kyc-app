@@ -446,6 +446,23 @@ margin-top:-1%;
 
 @media screen and (max-width:1920px){
 
+     /*Edit page Date and Due Date*/
+.col-2.col-form-label.edit_date {
+    margin-left: 30.8%;
+    position: absolute;
+}
+.col-2.col-form-label.duedate_label {
+    margin-left: 29.1%;
+    position: absolute;
+}
+
+.col-10.due_date {
+    width: 25.5%;
+    margin-left: 34.3%;
+    margin-top: -0.2%;
+}
+
+
 @-moz-document url-prefix(){
 
     #title {
@@ -524,17 +541,17 @@ margin-top:-1%;
 
 .btn.btn-warning.cancel1 {
     width: 10em;
-    margin-top: -14%;
+    margin-top: -9%;
     padding: 0.5em;
-    margin-left: 55%;
+    margin-left: 43%;
     background: #176fac;
     border-color: #176fac;
 }
 
 .btn.btn-warning.delete1 {
     width: 10em;
-    margin-top: -10.2%;
-    margin-left: 49%;
+    margin-top: -6.8%;
+    margin-left: 30%;
 }
 
 /*search page button css starts below*/
@@ -656,10 +673,9 @@ margin-top:-1%;
    
 }
 
-#title
-{
-    margin-left:70%;
-    margin-top:9%;
+#title {
+    margin-left: 71%;
+    margin-top: 6%;
 }
 
 #logout {
@@ -836,8 +852,8 @@ a.btn.btn-info {
     color: white;
     background-color: #176fac;
     margin-top: 0%;
-    margin-left: 2%;
-    width: 158%;
+    margin-left: -71%;
+    width: 93%;
 }
 
 /*attach btn*/
@@ -1038,9 +1054,9 @@ a.searchview.btn.btn-info {
 }
 
 .datepicker.p {
-   /* width: 77% !important;*/
-    margin-top: 4% !important;
-    margin-left: 2%;
+    width: 25% !important; 
+    margin-top: 0% !important;
+    margin-left: 34.2%;
 }
 
 .upload-button.edit {
@@ -1087,17 +1103,18 @@ a.searchview.btn.btn-info {
     margin-left:32%;
 }
 
-.btn.btn-warning.backbutton-searchresult{/*1366 Back Button in Search_result page*/
-    width: 64%;
-    margin-top:-19%;
-    margin-left:70%
+.btn.btn-warning.backbutton-searchresult {
+    width:10em;
+    margin-top: -13%;
+    margin-left: 51%;
 }
 
-.btn.btn-success.editbutton-searchresult{/*1366 Back Button in Search_result page*/
-    width: 64%;
-    margin-top:-1%;
-    margin-left:-3%
+.btn.btn-success.editbutton-searchresult {
+    width: 10em;
+    margin-top: -1%;
+    margin-left: 1%;
 }
+
 .btn.btn-success.clear-pendingpage{
     color: white;
     margin-left: 29%;
