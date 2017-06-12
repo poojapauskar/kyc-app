@@ -15,6 +15,9 @@ if($_SESSION['login_kyc_app'] == 1){
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
    <link rel="icon" type="image/png" sizes="36x36" href="images/green_icon.svg">
 
+<script src='js/nprogress.js'></script>
+<link rel='stylesheet' href='css/nprogress.css'/>
+
     <!-- Material Design Lite -->
   <script src="https://code.getmdl.io/1.3.0/material.min.js"></script>
 
@@ -45,13 +48,14 @@ if($_SESSION['login_kyc_app'] == 1){
 
 <body style="background-color:#E8E8E8;">
 
-<div style="position:absolute;z-index:5000;margin-left:34.5%">
+<!-- <div style="position:absolute;z-index:5000;margin-left:34.5%">
 <img id="loading_spinner" style="position:absolute;z-index:2;" src="images/loading-spinner.gif">
-</div>
+</div> -->
 
 
 <script type="text/javascript">
-  $('#loading_spinner').show();
+  /*$('#loading_spinner').show();*/
+  NProgress.start();
 
 
 $.ajax({
@@ -63,7 +67,8 @@ $.ajax({
         /*$('.my_update_panel').html(data);*/
 //Moved the hide event so it waits to run until the prior event completes
 //It hide the spinner immediately, without waiting, until I moved it here
-        $('#loading_spinner').hide();
+        /*$('#loading_spinner').hide();*/
+        NProgress.done();
     }
 });
 </script>
