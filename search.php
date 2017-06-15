@@ -40,10 +40,27 @@ if($_SESSION['login_kyc_app'] == 1){
       border: 2px solid #74b25e;
     border-radius: 7px;
       }
+
+      div#load_screen{
+  background: #e8e8e8;
+  opacity: 1;
+  position: fixed;
+    z-index:10;
+  top: 0px;
+  width: 100%;
+  height: 1600px;
+}
+div#load_screen > div#loading{
+  color:#FFF;
+  width:120px;
+  height:24px;
+  margin: 300px auto;
+}
     </style>
   </head>
 
 <body style="background-color:#E8E8E8;">
+<div id="load_screen"><div id="loading"></div></div>
 
 <?php
 
@@ -453,6 +470,10 @@ var jQuery_1_12_0 = $.noConflict(true);
 </script>
 
 <script type="text/javascript">
+ window.addEventListener("load", function(){
+  var load_screen = document.getElementById("load_screen");
+  document.body.removeChild(load_screen);
+});
    
 jQuery_1_12_0(function() {
   jQuery_1_12_0( ".datepicker.pick" ).datepicker({

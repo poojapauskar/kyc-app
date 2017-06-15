@@ -1,4 +1,4 @@
-
+ 
 /*Text box CSS class for all the pages , 70%*/
 
 /*Global css*/
@@ -3825,6 +3825,15 @@ a.searchview.btn.btn-info {
 }
 }
 @media screen and (max-width: 1366px){
+ 
+/* Enable hardware acceleration to fix laggy transitions */
+-webkit-transform: translateZ(0);
+-moz-transform: translateZ(0);
+-ms-transform: translateZ(0);
+-o-transform: translateZ(0);
+transform: translateZ(0);
+
+
  /*Edit page Date and Due Date*/
 .col-2.col-form-label.edit_date{
     margin-left: 28.5%;
@@ -5176,6 +5185,7 @@ margin-left: 26%;
     margin-top: -4%;
 }
 
+
 /*Card 2 height*/
 .mdl-data-table.dataTable.no-footer {
     margin-left: 8% !important;
@@ -5221,6 +5231,13 @@ a.btn.btn-info.edit{
     margin-top:0%;
     margin-left:-46%!important;
     width: 150%!important;
+}
+a.btn.btn-info {
+    color: white;
+    background-color: #176fac;
+    margin-top: 0%;
+    margin-left: -41%;
+    width: 159%;
 }
 .card2{
      margin-top: -16%;
