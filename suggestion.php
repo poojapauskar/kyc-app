@@ -20,7 +20,7 @@ while ($student = pg_fetch_array($query)) {
 $textval = json_encode($json);
 $foo = "var peoplenames=" . $textval;
 
-file_put_contents('autocomplete-Files/SearchValues.js', $foo);
+file_put_contents('autocomplete-Files/'.$_SESSION['account_token'].'.js', $foo);
 
  
 

@@ -89,6 +89,18 @@ $.ajax({
     }
 });
 </script>
+<?php
+
+$file= "autocomplete-Files/".$_SESSION['account_token'].".js";
+
+?>
+
+    <!-- AutoSearch Script files don't move -->
+     <script type="text/javascript" src="autocomplete-Files/jquery-1.8.2.min.js"></script>
+     <script type="text/javascript" src="autocomplete-Files/jquery.mockjax.js"></script>
+     <script type="text/javascript" src="autocomplete-Files/jquery.autocomplete.js"></script>
+    <script type="text/javascript" src="autocomplete-Files/Logic_Search.js"></script>
+        <script type="text/javascript" src="<?php echo $file; ?>"></script>  
 
 <?php
 
@@ -311,12 +323,7 @@ if($_POST['is_user_delete'] != "" && $_POST['pk_delete'] != ""){
 
 </div>
 
-    <!-- AutoSearch Script files don't move -->
-     <script type="text/javascript" src="autocomplete-Files/jquery-1.8.2.min.js"></script>
-     <script type="text/javascript" src="autocomplete-Files/jquery.mockjax.js"></script>
-     <script type="text/javascript" src="autocomplete-Files/jquery.autocomplete.js"></script>
-    <script type="text/javascript" src="autocomplete-Files/Logic_Search.js"></script>
-        <script type="text/javascript" src="autocomplete-Files/SearchValues.js"></script>
+
         <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> -->
 <!--         <script type="text/javascript" src="autocomplete-Files/styles.css"></script>
  --><!--  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
