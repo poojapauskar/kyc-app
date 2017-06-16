@@ -10,7 +10,7 @@ if($_SESSION['login_kyc_app'] == 1){
 
 <html>
   <head>
-    <!---boottstrap-->
+    <!---booottstrap-->
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
    <link rel="icon" type="image/png" sizes="36x36" href="images/green_icon.svg">
@@ -43,10 +43,27 @@ if($_SESSION['login_kyc_app'] == 1){
       border: 2px solid #74b25e;
     border-radius: 7px;
       }
+
+      div#load_screen{
+  background: #e8e8e8;
+  opacity: 1;
+  position: fixed;
+    z-index:10;
+  top: 0px;
+  width: 100%;
+  height: 1600px;
+}
+div#load_screen > div#loading{
+  color:#FFF;
+  width:120px;
+  height:24px;
+  margin: 300px auto;
+}
     </style>
   </head>
 
 <body style="background-color:#E8E8E8;">
+<div id="load_screen"><div id="loading"></div></div>
 
 <!-- <div style="position:absolute;z-index:5000;margin-left:34.5%">
 <img id="loading_spinner" style="position:absolute;z-index:2;" src="images/loading-spinner.gif">
@@ -455,6 +472,10 @@ var jQuery_1_12_0 = $.noConflict(true);
 </script>
 
 <script type="text/javascript">
+ window.addEventListener("load", function(){
+  var load_screen = document.getElementById("load_screen");
+  document.body.removeChild(load_screen);
+});
    
 jQuery_1_12_0(function() {
   jQuery_1_12_0( ".datepicker.pick" ).datepicker({
