@@ -1,4 +1,6 @@
 <?php
+ob_start("ob_gzhandler");  //Enables Gzip compression 
+
 session_start();
 if($_SESSION['login_kyc_app'] == 1){
   echo "<script>location='search.php'</script>";
@@ -13,8 +15,8 @@ if($_SESSION['login_kyc_app'] == 1){
   <link rel="stylesheet" type="text/css" href="css/material.indigo-pink.min.css">
   <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
   <link rel="stylesheet" type="text/css" href="css/kyc.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js" async></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" async></script>
 
 <!-- Material Design Lite -->
   <script src="https://code.getmdl.io/1.3.0/material.min.js"></script>
@@ -22,7 +24,7 @@ if($_SESSION['login_kyc_app'] == 1){
   <link rel="stylesheet" type="text/css" href="css/fileupload.css">
   <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 
-  <script src="https://storage.googleapis.com/code.getmdl.io/1.0.6/material.min.js"></script>
+  <script src="https://storage.googleapis.com/code.getmdl.io/1.0.6/material.min.js" async></script>
 </head>
 <body style="background-color:#E8E8E8;overflow-x:hidden;">
 

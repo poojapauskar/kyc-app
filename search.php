@@ -1,4 +1,5 @@
 <?php
+ob_start("ob_gzhandler");  //Enables Gzip compression 
 session_start();
 if($_SESSION['login_kyc_app'] == 1){
 
@@ -16,7 +17,7 @@ if($_SESSION['login_kyc_app'] == 1){
    <link rel="icon" type="image/png" sizes="36x36" href="images/green_icon.svg">
 
     <!-- Material Design Lite -->
-  <script src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+  <script src="https://code.getmdl.io/1.3.0/material.min.js" defer></script>
 
   <link rel="stylesheet" type="text/css" href="css/material.css">
 
@@ -26,14 +27,14 @@ if($_SESSION['login_kyc_app'] == 1){
   <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
   <link rel="stylesheet" type="text/css" href="autocomplete-Files/styles.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js" defer></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" defer></script>
 
 <!-- Material Design Lite -->
-  <script src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+  <script src="https://code.getmdl.io/1.3.0/material.min.js" defer></script>
   <link rel="stylesheet" href="css/fileupload.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-  <script src="https://storage.googleapis.com/code.getmdl.io/1.0.6/material.min.js"></script>
+  <script src="https://storage.googleapis.com/code.getmdl.io/1.0.6/material.min.js" defer></script>
     
     <style type="text/css">
       .form-control{
@@ -284,11 +285,11 @@ if($_POST['is_user_delete'] != "" && $_POST['pk_delete'] != ""){
 </div>
 
     <!-- AutoSearch Script files don't move -->
-     <script type="text/javascript" src="autocomplete-Files/jquery-1.8.2.min.js"></script>
-     <script type="text/javascript" src="autocomplete-Files/jquery.mockjax.js"></script>
-     <script type="text/javascript" src="autocomplete-Files/jquery.autocomplete.js"></script>
-    <script type="text/javascript" src="autocomplete-Files/Logic_Search.js"></script>
-        <script type="text/javascript" src="autocomplete-Files/SearchValues.js"></script>
+     <script type="text/javascript" src="autocomplete-Files/jquery-1.8.2.min.js" defer></script>
+     <script type="text/javascript" src="autocomplete-Files/jquery.mockjax.js" defer></script>
+     <script type="text/javascript" src="autocomplete-Files/jquery.autocomplete.js" defer></script>
+    <script type="text/javascript" src="autocomplete-Files/Logic_Search.js" defer></script>
+        <script type="text/javascript" src="autocomplete-Files/SearchValues.js" defer></script>
         <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> -->
 <!--         <script type="text/javascript" src="autocomplete-Files/styles.css"></script>
  --><!--  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
