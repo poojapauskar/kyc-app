@@ -60,6 +60,46 @@ div#load_screen > div#loading{
   margin: 300px auto;
 }
     </style>
+
+<script type="text/javascript">
+
+window.setInterval(function(){
+var Url="check_session_valid.php";
+
+  $.ajax({
+  type: "POST",
+  url: Url,
+  dataType: 'json',
+  data: {},
+  success: function(fields){
+    $.each(fields, function(idx, f){
+      /*alert(f.status);*/
+
+      var base_url = window.location.origin;
+      if(base_url == "http://localhost"){
+        url1="http://localhost/kyc-app/logout.php";
+      }else{
+        url1="https://kyc-application.herokuapp.com/logout.php";
+      }
+
+      /*var host = window.location.host;
+
+      var pathArray = window.location.pathname.split( '/' );*/
+
+      /*alert(base_url);*/
+      /*alert(host);
+      alert(pathArray);*/
+
+      if(f.status==400){
+        /*alert(url1);*/
+        window.location.href=url1;
+      }
+    });
+  }
+});
+
+}, 5000);
+</script>
   </head>
 
 <body style="background-color:#E8E8E8;">
@@ -74,20 +114,17 @@ div#load_screen > div#loading{
   /*$('#loading_spinner').show();*/
   NProgress.start();
 
+window.onload = function () { NProgress.done(); }
 
-$.ajax({
+/*$.ajax({
     url: 'suggestion.php',
     type: 'POST',
     data: '',
     dataType: 'html',
     success: function(data) {
-        /*$('.my_update_panel').html(data);*/
-//Moved the hide event so it waits to run until the prior event completes
-//It hide the spinner immediately, without waiting, until I moved it here
-        /*$('#loading_spinner').hide();*/
         NProgress.done();
     }
-});
+});*/
 </script>
 <?php
 
@@ -167,7 +204,7 @@ if($_POST['is_user_delete'] != "" && $_POST['pk_delete'] != ""){
     <div class="mdl-layout__header-row" >
 
 
-       <a href="search.php"> <img id="logo1" src="images/green_icon.svg"></img></a>
+       <a href="suggestion.php"> <img id="logo1" src="images/green_icon.svg"></img></a>
       <h5 style="" id="title2">ADMIN PANEL</h5>
          <span class="mdl-layout-title" id="title1" style="">KYCAPP</span>
 
@@ -179,7 +216,7 @@ if($_POST['is_user_delete'] != "" && $_POST['pk_delete'] != ""){
     <div class="mdl-layout__drawer">
         <span class="mdl-layout-title">KYCAPP</span>
         <nav class="mdl-navigation">
-          <a class="mdl-navigation__link" href="search.php">Home</a>
+          <a class="mdl-navigation__link" href="suggestion.php">Home</a>
           <a class="mdl-navigation__link" href="new.php?is_user=0">New Entry Organization</a>
           <a class="mdl-navigation__link" href="new.php?is_user=1">New Entry Individual</a>
           <a class="mdl-navigation__link" href="missing_reports.php">Missing Reports</a>

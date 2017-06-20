@@ -66,6 +66,47 @@ table{
     background-color: #dddddd;
 }*/
 </style>
+
+<script type="text/javascript">
+
+window.setInterval(function(){
+var Url="check_session_valid.php";
+
+  $.ajax({
+  type: "POST",
+  url: Url,
+  dataType: 'json',
+  data: {},
+  success: function(fields){
+    $.each(fields, function(idx, f){
+      /*alert(f.status);*/
+
+      var base_url = window.location.origin;
+      if(base_url == "http://localhost"){
+        url1="http://localhost/kyc-app/logout.php";
+      }else{
+        url1="https://kyc-application.herokuapp.com/logout.php";
+      }
+
+      /*var host = window.location.host;
+
+      var pathArray = window.location.pathname.split( '/' );*/
+
+      /*alert(base_url);*/
+      /*alert(host);
+      alert(pathArray);*/
+
+      if(f.status==400){
+        /*alert(url1);*/
+        window.location.href=url1;
+      }
+    });
+  }
+});
+
+}, 5000);
+</script>
+
 </head>
 <body style="background-color:#E8E8E8;overflow-x:hidden;">
 
@@ -213,7 +254,7 @@ $arr_missing_report = json_decode($output_missing_report,true);
      -moz-box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23) !important;
      box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23) !important;" class="mdl-layout__header">
     <div class="mdl-layout__header-row" >
-        <a href="search.php"><img style="" id="logo1" src="images/green_icon.svg"></img></a>
+        <a href="suggestion.php"><img style="" id="logo1" src="images/green_icon.svg"></img></a>
         <span class="mdl-layout-title" id="title3" style="margin-left:35%;">Missing Report</span>
         <span class="mdl-layout-title" id="title1" style="text-align:center">KYCAPP</span>
         <a href="logout.php"><img id="logout" style="" src="images/logout_btn.png"></img></a>
@@ -223,7 +264,7 @@ $arr_missing_report = json_decode($output_missing_report,true);
       <div class="mdl-layout__drawer">
         <span class="mdl-layout-title">KYCAPP</span>
         <nav class="mdl-navigation">
-          <a class="mdl-navigation__link" href="search.php">Home</a>
+          <a class="mdl-navigation__link" href="suggestion.php">Home</a>
           <a class="mdl-navigation__link" href="new.php?is_user=0">New Entry Organization</a>
           <a class="mdl-navigation__link" href="new.php?is_user=1">New Entry Individual</a>
           <a class="mdl-navigation__link" href="missing_reports.php">Missing Reports</a>

@@ -354,7 +354,45 @@ $(function() {
 
 </script>
 
+<script type="text/javascript">
 
+window.setInterval(function(){
+var Url="check_session_valid.php";
+
+  $.ajax({
+  type: "POST",
+  url: Url,
+  dataType: 'json',
+  data: {},
+  success: function(fields){
+    $.each(fields, function(idx, f){
+      /*alert(f.status);*/
+
+      var base_url = window.location.origin;
+      if(base_url == "http://localhost"){
+        url1="http://localhost/kyc-app/logout.php";
+      }else{
+        url1="https://kyc-application.herokuapp.com/logout.php";
+      }
+
+      /*var host = window.location.host;
+
+      var pathArray = window.location.pathname.split( '/' );*/
+
+      /*alert(base_url);*/
+      /*alert(host);
+      alert(pathArray);*/
+
+      if(f.status==400){
+        /*alert(url1);*/
+        window.location.href=url1;
+      }
+    });
+  }
+});
+
+}, 5000);
+</script>
 
 </head>
 
@@ -1192,7 +1230,7 @@ $arr_uid = json_decode($output_uid,true);
      -moz-box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23) !important;
      box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23) !important;" class="mdl-layout__header mdl-layout__header--transparent">
     <div class="mdl-layout__header-row" >
-    <a href="search.php"><img id="logo1" src="images/green_icon.svg"></img></a>
+    <a href="suggestion.php"><img id="logo1" src="images/green_icon.svg"></img></a>
 
     <?php if ($_GET['is_user']==0) { 
            $title="New Entry Organization";
@@ -1208,7 +1246,7 @@ $arr_uid = json_decode($output_uid,true);
       <div class="mdl-layout__drawer">
         <span class="mdl-layout-title" style="background: transparent;color:black;" >KYCAPP</span>
         <nav class="mdl-navigation">
-          <a class="mdl-navigation__link" href="search.php">Home</a>
+          <a class="mdl-navigation__link" href="suggestion.php">Home</a>
           <a class="mdl-navigation__link" href="new.php?is_user=0">New Entry Organization</a>
           <a class="mdl-navigation__link" href="new.php?is_user=1">New Entry Individual</a>
           <a class="mdl-navigation__link" href="missing_reports.php">Missing Reports</a>
@@ -1526,7 +1564,7 @@ $arr_uid = json_decode($output_uid,true);
   <label class="col-md-4 control-label" for="save_btn"></label>
   <div class="col-md-8">
     <button onclick="return validate_org();" id="generate_btn_org" name="generate_btn_org" class="btn btn-success" style="width:10em">Generate</button>
-    <button id="singlebutton" style="margin-left:13%;width:10em" name="singlebutton" class="btn btn-primary"><a style="color:white" href="search.php">Discard</a></button>
+    <button id="singlebutton" style="margin-left:13%;width:10em" name="singlebutton" class="btn btn-primary"><a style="color:white" href="suggestion.php">Discard</a></button>
   </div>
 </div>
 </fieldset>
@@ -1915,7 +1953,7 @@ function enable_disable(that){
   <label class="col-md-4 control-label" for="singlebutton"></label>
   <div class="col-md-4">
     <button onclick="return validate();" style="width:10em" id="generate_btn" name="generate_btn" class="btn btn-success">Generate</button>
-    <button id="singlebutton" style="margin-left:13%;width:10em" name="singlebutton" class="btn btn-primary"><a style="color:white" href="search.php">Discard</a></button>
+    <button id="singlebutton" style="margin-left:13%;width:10em" name="singlebutton" class="btn btn-primary"><a style="color:white" href="suggestion.php">Discard</a></button>
   </div>
 </div>
 </fieldset>

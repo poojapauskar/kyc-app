@@ -1,7 +1,7 @@
 <?php
 session_start();
 if($_SESSION['login_kyc_app'] == 1){
-  echo "<script>location='search.php'</script>";
+  echo "<script>location='suggestion.php'</script>";
 }
 
 ?>
@@ -47,6 +47,26 @@ $output2 = file_get_contents($url2, false,$context2);
 $arr2 = json_decode($output2,true);
 if($arr2['status']==200 && $arr2['message']=='Is Super Admin'){
   $_SESSION['login_kyc_app'] = 1;
+
+  $session_id=uniqid();
+  $_SESSION['session_id']=$session_id;
+
+  $url8 = 'https://kyc-application.herokuapp.com/session/';
+  $data8 = array('username' => $arr2['username'],'password' => $arr2['password'],'session_id' => $session_id);
+  // use key 'http' even if you send the request to https://...
+  $options8 = array(
+    'http' => array(
+      'header'  => "Content-type: application/x-www-form-urlencoded\r\n",
+      'method'  => 'POST',
+      'content' => http_build_query($data8),
+    ),
+  );
+  $context8  = stream_context_create($options8);
+  $result8 = file_get_contents($url8, false, $context8);
+  /*echo $result8;*/
+  $arr9 = json_decode($result8,true);
+
+
   echo "<script>location='super_admin.php'</script>";
 }elseif($arr2['status']==200 && $arr2['message']=='Is Admin'){
   $_SESSION['login_kyc_app'] = 1;
@@ -54,11 +74,51 @@ if($arr2['status']==200 && $arr2['message']=='Is Super Admin'){
   $_SESSION['admin_pk'] = $arr2['admin_pk'];
   $_SESSION['account_token'] = $arr2['account_token'];
   /*echo $_SESSION['account_token'];*/
-  echo "<script>location='search.php'</script>";
+
+  $session_id=uniqid();
+  $_SESSION['session_id']=$session_id;
+
+  $url8 = 'https://kyc-application.herokuapp.com/session/';
+  $data8 = array('username' => $arr2['username'],'password' => $arr2['password'],'session_id' => $session_id);
+  // use key 'http' even if you send the request to https://...
+  $options8 = array(
+    'http' => array(
+      'header'  => "Content-type: application/x-www-form-urlencoded\r\n",
+      'method'  => 'POST',
+      'content' => http_build_query($data8),
+    ),
+  );
+  $context8  = stream_context_create($options8);
+  $result8 = file_get_contents($url8, false, $context8);
+  /*echo $result8;*/
+  $arr9 = json_decode($result8,true);
+
+
+  echo "<script>location='suggestion.php'</script>";
 }elseif($arr2['status']==200 && $arr2['message']=='Is User'){
   $_SESSION['login_kyc_app'] = 1;
   $_SESSION['account_token'] = $arr2['account_token'];
-  echo "<script>location='search.php'</script>";
+
+  $session_id=uniqid();
+  $_SESSION['session_id']=$session_id;
+
+  $url8 = 'https://kyc-application.herokuapp.com/session/';
+  $data8 = array('username' => $arr2['username'],'password' => $arr2['password'],'session_id' => $session_id);
+  // use key 'http' even if you send the request to https://...
+  $options8 = array(
+    'http' => array(
+      'header'  => "Content-type: application/x-www-form-urlencoded\r\n",
+      'method'  => 'POST',
+      'content' => http_build_query($data8),
+    ),
+  );
+  $context8  = stream_context_create($options8);
+  $result8 = file_get_contents($url8, false, $context8);
+  /*echo $result8;*/
+  $arr9 = json_decode($result8,true);
+
+  
+  echo "<script>location='suggestion.php'</script>";
 }elseif($arr2['status']==401){
   echo "<script type='text/javascript'>window.onload = function(){ alert('Password Invalid');}</script>";
 }elseif($arr2['status']==400){

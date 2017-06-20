@@ -4,6 +4,46 @@
 <link rel="stylesheet" type="text/css" href="css/material.indigo-pink.min.css">
  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/material-design-lite/1.1.0/material.min.css">
  <link rel="stylesheet" href="css/bootstrap.css">
+
+<script type="text/javascript">
+
+window.setInterval(function(){
+var Url="check_session_valid.php";
+
+  $.ajax({
+  type: "POST",
+  url: Url,
+  dataType: 'json',
+  data: {},
+  success: function(fields){
+    $.each(fields, function(idx, f){
+      /*alert(f.status);*/
+
+      var base_url = window.location.origin;
+      if(base_url == "http://localhost"){
+        url1="http://localhost/kyc-app/logout.php";
+      }else{
+        url1="https://kyc-application.herokuapp.com/logout.php";
+      }
+
+      /*var host = window.location.host;
+
+      var pathArray = window.location.pathname.split( '/' );*/
+
+      /*alert(base_url);*/
+      /*alert(host);
+      alert(pathArray);*/
+
+      if(f.status==400){
+        /*alert(url1);*/
+        window.location.href=url1;
+      }
+    });
+  }
+});
+
+}, 5000);
+</script>
 </head>
 <?php
 
@@ -301,7 +341,7 @@ readfile($tmp_file);
 ?>
 
 <div style="margin-top:2%">
-<a style="margin-left:2%;" href="search.php">Back</a>
+<a style="margin-left:2%;" href="index.php">Back</a>
 <br>
 <br>
 <form action="admin_page.php" method="post">
