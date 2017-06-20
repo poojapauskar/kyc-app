@@ -31,8 +31,7 @@ if($_SESSION['login_kyc_app'] == 1){
   <link rel="stylesheet" type="text/css" href="autocomplete-Files/styles.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js" async></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" async></script>
-
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" async></script>
 <!-- Material Design Lite -->
   <script src="https://code.getmdl.io/1.3.0/material.min.js" async></script>
   <link rel="stylesheet" href="css/fileupload.css">
@@ -74,8 +73,7 @@ var Url="check_session_valid.php";
   data: {},
   success: function(fields){
     $.each(fields, function(idx, f){
-      /*alert(f.status);*/
-
+   
       var base_url = window.location.origin;
       if(base_url == "http://localhost"){
         url1="http://localhost/kyc-app/logout.php";
@@ -83,16 +81,9 @@ var Url="check_session_valid.php";
         url1="https://kyc-application.herokuapp.com/logout.php";
       }
 
-      /*var host = window.location.host;
-
-      var pathArray = window.location.pathname.split( '/' );*/
-
-      /*alert(base_url);*/
-      /*alert(host);
-      alert(pathArray);*/
+     
 
       if(f.status==400){
-        /*alert(url1);*/
         window.location.href=url1;
       }
     });
@@ -105,11 +96,6 @@ var Url="check_session_valid.php";
 
 <body style="background-color:#E8E8E8;">
 <div id="load_screen"><div id="loading"></div></div>
-
-<!-- <div style="position:absolute;z-index:5000;margin-left:34.5%">
-<img id="loading_spinner" style="position:absolute;z-index:2;" src="images/loading-spinner.gif">
-</div> -->
-
 
 <script type="text/javascript">
   /*$('#loading_spinner').show();*/
@@ -127,18 +113,6 @@ window.onload = function () { NProgress.done(); }
     }
 });*/
 </script>
-<?php
-
-$file= "autocomplete-Files/".$_SESSION['account_token'].".js";
-
-?>
-
-    <!-- AutoSearch Script files don't move -->
-     <script type="text/javascript" src="autocomplete-Files/jquery-1.8.2.min.js"></script>
-     <script type="text/javascript" src="autocomplete-Files/jquery.mockjax.js"></script>
-     <script type="text/javascript" src="autocomplete-Files/jquery.autocomplete.js"></script>
-    <script type="text/javascript" src="autocomplete-Files/Logic_Search.js"></script>
-        <script type="text/javascript" src="<?php echo $file; ?>"></script>  
 
 <?php
 
@@ -361,34 +335,26 @@ if($_POST['is_user_delete'] != "" && $_POST['pk_delete'] != ""){
 
 </div>
 
-    <!-- AutoSearch Script files don't move -->
-     <script type="text/javascript" src="autocomplete-Files/jquery-1.8.2.min.js" async></script>
-     <script type="text/javascript" src="autocomplete-Files/jquery.mockjax.js" async></script>
-     <script type="text/javascript" src="autocomplete-Files/jquery.autocomplete.js" async></script>
-    <script type="text/javascript" src="autocomplete-Files/Logic_Search.js" async></script>
-        <script type="text/javascript" src="autocomplete-Files/SearchValues.js" async></script>
-        <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> -->
-<!--         <script type="text/javascript" src="autocomplete-Files/styles.css"></script>
- --><!--  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
-        <script type="text/javascript"
-        src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.18/jquery-ui.min.js"></script>
-        <link rel="stylesheet" type="text/css"
-        href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css" />
-<script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
-<script type="text/javascript">
-                $(document).ready(function(){
-                    $("#search").autocomplete({
+<?php
 
-                        minLength:1
-                    });
-                });
-        </script> -->
+$file= "autocomplete-Files/".$_SESSION['account_token'].".js";
+
+?>
+
+    <!-- AutoSearch Script files don't move -->
+    <script type="text/javascript" src="autocomplete-Files/jquery-1.8.2.min.js"></script>
+    <script type="text/javascript" src="autocomplete-Files/Logic_Search.js"></script>
+    <script type="text/javascript" src="autocomplete-Files/assign_logic.js"></script>
+     <script type="text/javascript" src="autocomplete-Files/jquery.mockjax.js"></script>
+     <script type="text/javascript" src="autocomplete-Files/jquery.autocomplete.js"></script>
+    <script type="text/javascript" src="<?php echo $file; ?>"></script>  
+        
   </div>  
     </div>
       </div>
-</body>
 
-</html>
+
+
 
      
 
@@ -510,8 +476,8 @@ if(isset($_POST['assignment_save'])){
       </div>
       
     </div>
-        <script type="text/javascript" src="autocomplete-Files/assign_logic.js"></script>
-
+<!--         <script type="text/javascript" src="autocomplete-Files/assign_logic.js"></script>
+ -->
 <!-- Datepicker -->
  <link rel="stylesheet" href="css/jquery-ui.css"> 
  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
@@ -559,6 +525,9 @@ jQuery_1_12_0(function() {
 }).datepicker("setDate", new Date());
 });
 
+// Npprogress
+
+   
 </script>
 <style type="text/css">
   
@@ -571,3 +540,7 @@ jQuery_1_12_0(function() {
     width: 8em;
   }
 </style>
+
+</body>
+
+</html>
