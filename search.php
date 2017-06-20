@@ -442,7 +442,7 @@ if(isset($_POST['assignment_save'])){
 
        <form name="Form_ass" class="form-horizontal" method="post" enctype="multipart/form-data">
 
-        <input id="assign_search" name="assign_search" type="text" placeholder="Search firms or individuals" class="form-control input-md" style="width:71%;margin-top:4%;height:39px;border-color: #757575;" required autofocus>
+        <input id="assign_search" name="assign_search" type="text" placeholder="Search firms or individuals" class="form-control input-md" style="width:80%;margin-top:4%;height:39px;border-color: #757575;" required autofocus>
       <input id="is_user" name="is_user" type="hidden"></input>
       <input id="user_org_id" name="user_org_id" type="hidden"></input>
        <!--  <button style="visibility:hidden;display:none;margin-left:58%;margin-top:-3.5%;width:200px;height:37px" class="mdl-button mdl-js-button mdl-button--raised" type="submit" value="assign_search" id="submit" name="submit">
