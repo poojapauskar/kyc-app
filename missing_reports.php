@@ -321,7 +321,7 @@ $('#test').click(function() {
          <input type="hidden" value="<?php echo $arr_missing_report[$i]['is_user'] ?>" name="is_user_no" id="is_user_no"></input>
          <input type="hidden" value="<?php echo $arr_missing_report[$i]['pk'] ?>" name="pk_field" id="pk_field"></input>
          
-         <button id="upload_btn" name="upload_btn" type="submit" class="btn btn-success" style="margin-top: -9px; margin-left: 71%;" disabled >Upload</button>
+         <button id="upload_btn" name="upload_btn" type="submit" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect" style="margin-top: -9px; margin-left: 71%;" disabled >Upload</button>
        
     </td>
 <!-- </form>

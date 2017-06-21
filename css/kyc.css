@@ -5170,7 +5170,7 @@ margin-left: 26%;
     margin-left: 14%;
 }
 .dataTables_wrapper .dataTables_filter label, .dataTables_wrapper .dataTables_length label {
-    font-size: 1rem;
+    font-size: 1em;
     margin-left: -70%;
     position: absolute;
     margin-top: -6%;
@@ -5200,7 +5200,7 @@ margin-left: 26%;
     margin-left: 7%;
 }
 .dataTables_wrapper .dataTables_filter label, .dataTables_wrapper .dataTables_length label {
-    font-size: 1rem;
+    font-size: 1em;
     margin-left: -71%;
     position: absolute;
     margin-top: -6%;
@@ -5289,7 +5289,7 @@ a.btn.btn-info {
 /*search page button css starts below*/
 .new-entry-org-btn{
     background-color: #176fac !important;
-    width: 243%;
+    width: 244%;
     margin-top: -24%;
     /* z-index: 4; */
     margin-left: 49%;
@@ -5408,7 +5408,6 @@ a.btn.btn-info {
     top: 73px;
     position: absolute;
 }
-
 .search_result.tele {
     margin-left: -103%;
     margin-top: 0%;
@@ -5553,7 +5552,7 @@ a.btn.btn-info {
 #logo{  /*margin-top:5%;    margin-left:28px;   width:4%;   height:77%;*/   
  margin-top: 3.1%;    
  margin-left: 28px;    
-   position: absolute;}
+}
 
 #logo1 {
     margin-top: 0.1%;
@@ -5839,7 +5838,7 @@ margin-top:-1%;
 
 .btn.btn-success.clear-pendingpage{
     color: white;
-    margin-left: 30%;
+    margin-left: 31%;
     margin-top: 4%;
     position: absolute;
 }
