@@ -1,4 +1,6 @@
 <?php
+ob_start("ob_gzhandler");  //Enables Gzip compression 
+
 session_start();
 if($_SESSION['login_kyc_app'] == 1){
 
