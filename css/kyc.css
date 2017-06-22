@@ -4754,7 +4754,7 @@ div.fileUpload.org.btn.btn-info {
 
 .btn.btn-success.clear{
     color:white;
-    margin-left:32%;
+    margin-left:105%;
 }
 
 .btn.btn-info.user{
@@ -5140,8 +5140,8 @@ margin-left: 26%;
 }
 .btn.btn-success.clear-pendingpage{
     color: white;
-    margin-left: 30%;
-    margin-top: 4%;
+    margin-left: 31%;
+    margin-top: 22px;
     position: absolute;
 }
 /*edit page date of org*/
@@ -5173,7 +5173,7 @@ margin-left: 26%;
     font-size: 1em;
     margin-left: -70%;
     position: absolute;
-    margin-top: -6%;
+    margin-top: -9%;
 }
 }
 

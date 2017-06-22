@@ -108,7 +108,7 @@ td, th {
     background-color: #dddddd;
 }*/
 </style>
-
+<!-- 
 <script type="text/javascript">
 
 window.setInterval(function(){
@@ -148,7 +148,7 @@ var Url="check_session_valid.php";
 
 }, 5000);
 </script>
-
+ -->
 </head>
 <body style="background-color:#E8E8E8;overflow-x:hidden;">
 
