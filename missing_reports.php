@@ -284,8 +284,9 @@ $arr_missing_report = json_decode($output_missing_report,true);
 
  <div class="container contain-align">
   <div class="row" style="margin-top:4%;"> 
-
+<div class="col-md-4">
 <button class="btn btn-success clear" style="" type="button" id="test">Clear</button>
+</div>
 <script type="text/javascript">
 $('#test').click(function() {
     /*$('input[type=search]').val('');*/
@@ -313,7 +314,7 @@ $('#test').click(function() {
     
     <form method="post" action="missing_reports.php" enctype="multipart/form-data">
         <td>
-         <input name="file1" id="file1" class="file-upload" type="file" onclick="enableButton2()" style="margin-bottom: -6%">
+         <input name="file1" id="file1" class="file-upload" type="file" onclick="enableButton2()" style="margin-bottom: -6%;margin-left: -18px; ">
          <input type="hidden" value="<?php echo $arr_missing_report[$i]['uid'] ?>" name="uid1" id="uid1"></input>
 
          <input type="hidden" value="<?php echo $arr_missing_report[$i]['missing_file'] ?>" name="missing_file1" id="missing_file1"></input>

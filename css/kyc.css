@@ -5422,9 +5422,9 @@ a.btn.btn-info {
 
 .btn.btn-success.clear{
     color: white;
-    margin-left: 32%;
-    margin-top: 4%;
-    position: absolute;
+    margin-left: 105%;
+    margin-top: 47px;
+    /*position: absolute;*/
 }
 
 .btn.btn-info.user {
@@ -5838,8 +5838,11 @@ margin-top:-1%;
 
 .btn.btn-success.clear-pendingpage{
     color: white;
-    margin-left: 31%;
-    margin-top: 4%;
+/*    margin-left: 31%;
+    margin-top: 4%;*/
+    margin-left: 32%;
+margin-top: 6%;
+
     position: absolute;
 }
 .upload-button.up {
