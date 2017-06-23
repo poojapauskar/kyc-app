@@ -62,7 +62,7 @@ div#load_screen > div#loading{
   margin: 300px auto;
 }
     </style>
-
+<!-- 
 <script type="text/javascript">
 
 window.setInterval(function(){
@@ -101,7 +101,7 @@ var Url="check_session_valid.php";
 });
 
 }, 5000);
-</script>
+</script> -->
   </head>
 
 <body style="background-color:#E8E8E8;">
