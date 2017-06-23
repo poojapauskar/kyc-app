@@ -66,9 +66,9 @@ table {
 }
 
 td, th {
-    border: 1px solid #dddddd;
-    text-align: left;
-    padding: 8px;
+    border: 1px solid #dddddd !important;
+    text-align: left !important;
+    padding: 8px !important;
 }
 
 /*tr:nth-child(even) {
@@ -152,7 +152,7 @@ session_start();
 <div class="container">
   <div class="row" style="margin-top:4%;"> 
 
-  <button class="btn btn-success clear-pendingpage" style="" type="button" id="test">Clear</button>
+  <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect clear-allpage" type="button" id="test">Clear</button>
 <script type="text/javascript">
 $('#test').click(function() {
     /*$('input[type=search]').val('');*/

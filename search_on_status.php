@@ -26,7 +26,7 @@ if($_SESSION['login_kyc_app'] == 1){
 <script src="https://code.getmdl.io/1.3.0/material.min.js"></script>
 <link rel="stylesheet" type="text/css" href="css/material.css">
 <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
-    <!-- <script src="javascript/material.min.js"></script> -->
+    <script src="javascript/material.min.js"></script>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
@@ -240,7 +240,7 @@ if($_GET['status'] == "Work%20in%20process"){
 <div class="container">
   <div class="row" style="margin-top:4%;"> 
 
-  <button class="btn btn-success clear-pendingpage" style="" type="button" id="test">Clear</button>
+  <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect clear-pendingpage" style="" type="button" id="test">Clear</button>
 <script type="text/javascript">
 $('#test').click(function() {
     /*$('input[type=search]').val('');*/

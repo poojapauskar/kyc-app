@@ -68,7 +68,7 @@ table{
     background-color: #dddddd;
 }*/
 </style>
-<!-- 
+
 <script type="text/javascript">
 
 window.setInterval(function(){
@@ -107,7 +107,7 @@ var Url="check_session_valid.php";
 });
 
 }, 5000);
-</script> -->
+</script>
 
 </head>
 <body style="background-color:#E8E8E8;overflow-x:hidden;">
@@ -284,9 +284,7 @@ $arr_missing_report = json_decode($output_missing_report,true);
 
  <div class="container contain-align">
   <div class="row" style="margin-top:4%;"> 
-<div class="col-md-4">
-<button class="btn btn-success clear" style="" type="button" id="test">Clear</button>
-</div>
+<button  class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect clear-missingpage" type="button"  id="test">Clear</button>
 <script type="text/javascript">
 $('#test').click(function() {
     /*$('input[type=search]').val('');*/
@@ -322,7 +320,7 @@ $('#test').click(function() {
          <input type="hidden" value="<?php echo $arr_missing_report[$i]['is_user'] ?>" name="is_user_no" id="is_user_no"></input>
          <input type="hidden" value="<?php echo $arr_missing_report[$i]['pk'] ?>" name="pk_field" id="pk_field"></input>
          
-         <button id="upload_btn" name="upload_btn" type="submit" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect" style="margin-top: -9px; margin-left: 71%;" disabled >Upload</button>
+         <button id="upload_btn" name="upload_btn" type="submit" class="btn btn-success" style="margin-top: -9px; margin-left: 71%;" disabled >Upload</button>
        
     </td>
 <!-- </form>
