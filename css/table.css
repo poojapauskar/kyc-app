@@ -25659,7 +25659,7 @@ textarea[data-parsley-id].parsley-error {
 }
 .dataTables_wrapper .dataTables_filter label,
 .dataTables_wrapper .dataTables_length label {
-    font-size: 1rem;
+    font-size: 1em;
     margin-left: -71%;
     position: absolute;
     margin-top: -6%;

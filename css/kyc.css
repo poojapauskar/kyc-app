@@ -3846,6 +3846,46 @@ transform: translateZ(0);
     margin-left: 27%;
     position: absolute;
 }
+
+
+.mdl-button.mdl-js-button.mdl-button--raised.mdl-js-ripple-effect.clear-allpage{
+    margin-left: 30% !important;
+    margin-top: 43px !important;
+    position: absolute;
+    background-color: #449d44;
+    color: white;
+}
+
+.mdl-button.mdl-js-button.mdl-button--raised.mdl-js-ripple-effect.clear-pendingpage{
+    margin-left: 30% !important;
+    margin-top: 58px !important;
+    position: absolute;
+    background-color: #449d44;
+    color: white;
+}
+.mdl-button.mdl-js-button.mdl-button--raised.mdl-js-ripple-effect.clear-missingpage{
+    margin-left: 30% !important;
+    margin-top: -35px !important;
+    position: absolute;
+    background-color: #449d44;
+    color: white;
+}
+
+.upload-button.up {
+    padding: 4px;
+    border: 1px solid #176fac;
+    border-radius: 1px;
+    display: block;
+    float: left;
+    position: absolute;
+    z-index: 2;
+    margin-left: 77%;
+    cursor: pointer;
+    margin-top: 14.6%;
+    color: #fff;
+    background-color: #176fac;
+}
+
 @-moz-document url-prefix(){
 
     #title {
@@ -3874,6 +3914,31 @@ transform: translateZ(0);
     width: 75%;
     margin-top: 12%;
 }
+
+.mdl-button.mdl-js-button.mdl-button--raised.mdl-js-ripple-effect.clear-allpage{
+    margin-left: 31% !important;
+    margin-top: 46px !important;
+    position: absolute;
+    background-color: #449d44;
+    color: white;
+}
+
+.mdl-button.mdl-js-button.mdl-button--raised.mdl-js-ripple-effect.clear-pendingpage{
+    margin-left: 32% !important;
+    margin-top: 58px !important;
+    position: absolute;
+    background-color: #449d44;
+    color: white;
+}
+.mdl-button.mdl-js-button.mdl-button--raised.mdl-js-ripple-effect.clear-missingpage{
+    margin-left: 31% !important;
+    margin-top: -33px !important;
+    position: absolute;
+    background-color: #449d44;
+    color: white;
+}
+
+
 }
 /*edit date*/
 .col-2.col-form-label.edit_date{
