@@ -249,7 +249,7 @@ $('#test').click(function() {
 });
 </script>
 
-<table id="example" class="mdl-data-table" cellspacing="0" style="margin-left:8%;width:75%;margin-top:12%;">
+<table id="example" class="mdl-data-table" cellspacing="0" style="margin:auto;width:75%;margin-top:12%;">
         <thead>
             <th>Name</th>
             <th>User/Organization</th>
