@@ -462,6 +462,29 @@ margin-top:-1%;
 }
 
 
+.mdl-button.mdl-js-button.mdl-button--raised.mdl-js-ripple-effect.clear-allpage{
+    margin-left: 30% !important;
+    margin-top: 43px !important;
+    position: absolute;
+    background-color: #449d44;
+    color: white;
+}
+
+.mdl-button.mdl-js-button.mdl-button--raised.mdl-js-ripple-effect.clear-pendingpage{
+    margin-left: 28% !important;
+    margin-top: 58px !important;
+    position: absolute;
+    background-color: #449d44;
+    color: white;
+}
+.mdl-button.mdl-js-button.mdl-button--raised.mdl-js-ripple-effect.clear-missingpage{
+    margin-left: 28% !important;
+    margin-top: -35px !important;
+    position: absolute;
+    background-color: #449d44;
+    color: white;
+}
+
 @-moz-document url-prefix(){
 
     #title {
@@ -489,6 +512,32 @@ margin-top:-1%;
     width: 75%;
     margin-top: 12%;
 }
+
+
+.mdl-button.mdl-js-button.mdl-button--raised.mdl-js-ripple-effect.clear-allpage{
+    margin-left: 15% !important;
+    margin-top: 46px !important;
+    position: absolute;
+    background-color: #449d44;
+    color: white;
+}
+
+.mdl-button.mdl-js-button.mdl-button--raised.mdl-js-ripple-effect.clear-pendingpage{
+    margin-left: 15% !important;
+    margin-top: 58px !important;
+    position: absolute;
+    background-color: #449d44;
+    color: white;
+}
+.mdl-button.mdl-js-button.mdl-button--raised.mdl-js-ripple-effect.clear-missingpage{
+    margin-left: 15% !important;
+    margin-top: -33px !important;
+    position: absolute;
+    background-color: #449d44;
+    color: white;
+}
+
+
 }
 
 /*Card2 sizing*/
@@ -1142,6 +1191,30 @@ a.searchview.btn.btn-info {
 }
 
 
+.mdl-button.mdl-js-button.mdl-button--raised.mdl-js-ripple-effect.clear-allpage{
+    margin-left: 30% !important;
+    margin-top: 43px !important;
+    position: absolute;
+    background-color: #449d44;
+    color: white;
+}
+
+.mdl-button.mdl-js-button.mdl-button--raised.mdl-js-ripple-effect.clear-pendingpage{
+    margin-left: 28% !important;
+    margin-top: 58px !important;
+    position: absolute;
+    background-color: #449d44;
+    color: white;
+}
+.mdl-button.mdl-js-button.mdl-button--raised.mdl-js-ripple-effect.clear-missingpage{
+    margin-left: 28% !important;
+    margin-top: -35px !important;
+    position: absolute;
+    background-color: #449d44;
+    color: white;
+}
+
+
 @-moz-document url-prefix(){
 
     #title {
@@ -1165,10 +1238,35 @@ a.searchview.btn.btn-info {
     font-size: 18px;
     }
     .mdl-data-table.dataTable.no-footer {
-    margin-left: -2% !important;
+    margin-left: 12% !important;
     width: 75%;
     margin-top: 12%;
 }
+
+.mdl-button.mdl-js-button.mdl-button--raised.mdl-js-ripple-effect.clear-allpage{
+    margin-left: 21% !important;
+    margin-top: 46px !important;
+    position: absolute;
+    background-color: #449d44;
+    color: white;
+}
+
+.mdl-button.mdl-js-button.mdl-button--raised.mdl-js-ripple-effect.clear-pendingpage{
+    margin-left: 21% !important;
+    margin-top: 58px !important;
+    position: absolute;
+    background-color: #449d44;
+    color: white;
+}
+.mdl-button.mdl-js-button.mdl-button--raised.mdl-js-ripple-effect.clear-missingpage{
+    margin-left: 21% !important;
+    margin-top: -33px !important;
+    position: absolute;
+    background-color: #449d44;
+    color: white;
+}
+
+
 }
 
 /*Card2 sizing*/
@@ -1810,6 +1908,31 @@ a.searchview.btn.btn-info {
     margin-top: -0.2%;
 }
 
+
+.mdl-button.mdl-js-button.mdl-button--raised.mdl-js-ripple-effect.clear-allpage{
+    margin-left: 30% !important;
+    margin-top: 43px !important;
+    position: absolute;
+    background-color: #449d44;
+    color: white;
+}
+
+.mdl-button.mdl-js-button.mdl-button--raised.mdl-js-ripple-effect.clear-pendingpage{
+    margin-left: 28% !important;
+    margin-top: 58px !important;
+    position: absolute;
+    background-color: #449d44;
+    color: white;
+}
+.mdl-button.mdl-js-button.mdl-button--raised.mdl-js-ripple-effect.clear-missingpage{
+    margin-left: 28% !important;
+    margin-top: -35px !important;
+    position: absolute;
+    background-color: #449d44;
+    color: white;
+}
+
+
 @-moz-document url-prefix(){
 
     #title {
@@ -1835,10 +1958,36 @@ a.searchview.btn.btn-info {
     font-size: 18px;
     }
     .mdl-data-table.dataTable.no-footer {
-    margin-left: -2% !important;
+    margin-left: 12% !important;
     width: 75%;
     margin-top: 12%;
 }
+
+
+.mdl-button.mdl-js-button.mdl-button--raised.mdl-js-ripple-effect.clear-allpage{
+    margin-left: 23% !important;
+    margin-top: 46px !important;
+    position: absolute;
+    background-color: #449d44;
+    color: white;
+}
+
+.mdl-button.mdl-js-button.mdl-button--raised.mdl-js-ripple-effect.clear-pendingpage{
+    margin-left: 23% !important;
+    margin-top: 58px !important;
+    position: absolute;
+    background-color: #449d44;
+    color: white;
+}
+.mdl-button.mdl-js-button.mdl-button--raised.mdl-js-ripple-effect.clear-missingpage{
+    margin-left: 23% !important;
+    margin-top: -33px !important;
+    position: absolute;
+    background-color: #449d44;
+    color: white;
+}
+
+
 }
 
 
@@ -2490,6 +2639,29 @@ a.searchview.btn.btn-info {
 }
 
 
+.mdl-button.mdl-js-button.mdl-button--raised.mdl-js-ripple-effect.clear-allpage{
+    margin-left: 28% !important;
+    margin-top: 45px !important;
+    position: absolute;
+    background-color: #449d44;
+    color: white;
+}
+
+.mdl-button.mdl-js-button.mdl-button--raised.mdl-js-ripple-effect.clear-pendingpage{
+    margin-left: 26% !important;
+    margin-top: 58px !important;
+    position: absolute;
+    background-color: #449d44;
+    color: white;
+}
+.mdl-button.mdl-js-button.mdl-button--raised.mdl-js-ripple-effect.clear-missingpage{
+    margin-left: 26% !important;
+    margin-top: -35px !important;
+    position: absolute;
+    background-color: #449d44;
+    color: white;
+}
+
 
 @-moz-document url-prefix(){
 
@@ -2514,10 +2686,36 @@ a.searchview.btn.btn-info {
     font-size: 18px;
     }
     .mdl-data-table.dataTable.no-footer {
-    margin-left: -2% !important;
+    margin-left: 11% !important;
     width: 75%;
     margin-top: 12%;
 }
+
+.mdl-button.mdl-js-button.mdl-button--raised.mdl-js-ripple-effect.clear-allpage{
+    margin-left: 24% !important;
+    margin-top: 46px !important;
+    position: absolute;
+    background-color: #449d44;
+    color: white;
+}
+
+.mdl-button.mdl-js-button.mdl-button--raised.mdl-js-ripple-effect.clear-pendingpage{
+    margin-left: 24% !important;
+    margin-top: 58px !important;
+    position: absolute;
+    background-color: #449d44;
+    color: white;
+}
+.mdl-button.mdl-js-button.mdl-button--raised.mdl-js-ripple-effect.clear-missingpage{
+    margin-left: 24% !important;
+    margin-top: -33px !important;
+    position: absolute;
+    background-color: #449d44;
+    color: white;
+}
+
+
+
 }
 
 
