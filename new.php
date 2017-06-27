@@ -1,4 +1,6 @@
 <?php
+ob_start("ob_gzhandler");  //Enables Gzip compression 
+
 session_start();
 if($_SESSION['login_kyc_app'] == 1){
 
@@ -1562,9 +1564,13 @@ $arr_uid = json_decode($output_uid,true);
 <!-- Buttons Save and Cancel -->
 <div class="form-group">
   <label class="col-md-4 control-label" for="save_btn"></label>
-  <div class="col-md-8">
+ <div class="container">
+ <div class="row">
+  <div class="col-md-4 col-lg-6 ">
     <button onclick="return validate_org();" id="generate_btn_org" name="generate_btn_org" class="btn btn-success" style="width:10em">Generate</button>
-    <button id="singlebutton" style="margin-left:13%;width:10em" name="singlebutton" class="btn btn-primary"><a style="color:white" href="suggestion.php">Discard</a></button>
+    <button id="singlebutton" style="width: 10em;margin-left: 2%;" name="singlebutton" class="btn btn-primary"><a style="color:white" href="suggestion.php">Discard</a></button>
+  </div>
+  </div>
   </div>
 </div>
 </fieldset>
@@ -1951,9 +1957,14 @@ function enable_disable(that){
 <!-- Button -->
 <div class="form-group">
   <label class="col-md-4 control-label" for="singlebutton"></label>
-  <div class="col-md-4">
+  <div class="container">
+ <div class="row">
+  <div class="col-md-4 col-lg-6">
     <button onclick="return validate();" style="width:10em" id="generate_btn" name="generate_btn" class="btn btn-success">Generate</button>
-    <button id="singlebutton" style="margin-left:13%;width:10em" name="singlebutton" class="btn btn-primary"><a style="color:white" href="suggestion.php">Discard</a></button>
+
+    <button id="singlebutton" name="singlebutton" class="btn btn-primary" style="width: 10em;margin-left: 2%;"><a style="color:white" href="suggestion.php">Discard</a></button>
+  </div>
+  </div>
   </div>
 </div>
 </fieldset>
