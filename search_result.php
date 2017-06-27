@@ -172,6 +172,7 @@ $options_search = array(
     'header'  => array(
                   'IS-USER: '.$is_user,
                   'PK: '.$text,
+                  'ACCOUNT-TOKEN: '.$_SESSION['account_token']
                 ),
     'method'  => 'GET',
   ),
@@ -181,6 +182,10 @@ $output_search = file_get_contents($url_search, false,$context_search);
 /*echo $output_search;*/
 $arr_search = json_decode($output_search,true);
 /*echo $arr_search;*/
+
+if($arr_search['status'] == 400){
+  echo "<script>location='suggestion.php'</script>";
+}
 
 /*echo count($arr_search['response'][0]['partner_details'])*/
 ?>
