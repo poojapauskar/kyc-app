@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 
 <?php
-ob_start("ob_gzhandler");  //Enables Gzip compression 
+/*ob_start("ob_gzhandler");*/  //Enables Gzip compression 
 
 session_start();
 if($_SESSION['login_kyc_app'] == 1){
