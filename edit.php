@@ -350,7 +350,7 @@ var Url="check_session_valid.php";
  --><body style="background-color:#E8E8E8;overflow-x:hidden;">
 
 <?php
-
+session_start();
 if ($_GET['is_user']==0) { 
   $is_user="0";
   $pk_value=$_GET['id'];
@@ -365,6 +365,7 @@ $options_search = array(
     'header'  => array(
                   'IS-USER: '.$is_user,
                   'PK: '.$pk_value,
+                  'ACCOUNT-TOKEN: '.$_SESSION['account_token']
                 ),
     'method'  => 'GET',
   ),

@@ -157,7 +157,9 @@ var Url="check_session_valid.php";
 <?php
 /*echo $_POST['search'];*/
 // if its cumin from edit org to search org then query based on edit org name
+session_start();
 
+/*echo $_SESSION['account_token'];*/
 $text=$_GET['id'];
 
 if($_GET["is_user"]==0){
