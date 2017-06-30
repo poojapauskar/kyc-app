@@ -37,7 +37,7 @@ var peopleArray = $.map(partnames, function (value, key) {
 
 
     // Initialize autocomplete with custom appendTo:
-    $('.newentry').autocomplete({
+    $('.namesearch').autocomplete({
         lookup: peopleArray
     });
 });
