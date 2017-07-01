@@ -111,7 +111,7 @@ td, th {
 
 <script type="text/javascript">
 
-window.setInterval(function(){
+/*window.setInterval(function(){*/
 var Url="check_session_valid.php";
 
   $.ajax({
@@ -146,7 +146,7 @@ var Url="check_session_valid.php";
   }
 });
 
-}, 5000);
+/*}, 5000);*/
 </script>
 
 </head>
