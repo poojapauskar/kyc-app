@@ -53,6 +53,47 @@ $(document).ready(function() {
     } );
 } );
 </script>
+
+<script type="text/javascript">
+
+window.setInterval(function(){
+var Url="check_session_valid.php";
+
+  $.ajax({
+  type: "POST",
+  url: Url,
+  dataType: 'json',
+  data: {},
+  success: function(fields){
+    $.each(fields, function(idx, f){
+      /*alert(f.status);*/
+
+      var base_url = window.location.origin;
+      if(base_url == "http://localhost"){
+        url1="http://localhost/kyc-app/logout.php";
+      }else{
+        url1="https://kycapp.herokuapp.com/logout.php";
+      }
+
+      /*var host = window.location.host;
+
+      var pathArray = window.location.pathname.split( '/' );*/
+
+      /*alert(base_url);*/
+      /*alert(host);
+      alert(pathArray);*/
+
+      if(f.status==400){
+        /*alert(url1);*/
+        window.location.href=url1;
+      }
+    });
+  }
+});
+
+}, 5000);
+</script>
+
 <style>
 
 .mdl-data-table td:last-of-type {
