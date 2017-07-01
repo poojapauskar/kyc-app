@@ -341,7 +341,7 @@ readfile($tmp_file);
 ?>
 
 <div style="margin-top:2%">
-<a style="margin-left:2%;" href="index.php">Back</a>
+<a style="margin-left:2%;" href="logout.php">Back</a>
 <br>
 <br>
 <form action="admin_page.php" method="post">
