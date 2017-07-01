@@ -330,7 +330,7 @@ $(function() {
 
 <script type="text/javascript">
 
-window.setInterval(function(){
+/*window.setInterval(function(){*/
 var Url="check_session_valid.php";
 
   $.ajax({
@@ -346,7 +346,7 @@ var Url="check_session_valid.php";
       if(base_url == "http://localhost"){
         url1="http://localhost/kyc-app/logout.php";
       }else{
-        url1="https://kyc-application.herokuapp.com/logout.php";
+        url1="https://kycapp.herokuapp.com/logout.php";
       }
 
       /*var host = window.location.host;
@@ -365,7 +365,7 @@ var Url="check_session_valid.php";
   }
 });
 
-}, 5000);
+/*}, 5000);*/
 </script>
 
 </head>
@@ -386,7 +386,7 @@ $file= "autocomplete-Files/".$_SESSION['account_token']."-partners.js";
  
 
 <?php
-
+session_start();
 if ($_GET['is_user']==0) { 
   $is_user="0";
   $pk_value=$_GET['id'];
@@ -401,6 +401,7 @@ $options_search = array(
     'header'  => array(
                   'IS-USER: '.$is_user,
                   'PK: '.$pk_value,
+                  'ACCOUNT-TOKEN: '.$_SESSION['account_token']
                 ),
     'method'  => 'GET',
   ),

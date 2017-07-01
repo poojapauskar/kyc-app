@@ -65,7 +65,7 @@ div#load_screen > div#loading{
 
 <script type="text/javascript">
 
-window.setInterval(function(){
+/*window.setInterval(function(){*/
 var Url="check_session_valid.php";
 
   $.ajax({
@@ -81,7 +81,7 @@ var Url="check_session_valid.php";
       if(base_url == "http://localhost"){
         url1="http://localhost/kyc-app/logout.php";
       }else{
-        url1="https://kyc-application.herokuapp.com/logout.php";
+        url1="https://kycapp.herokuapp.com/logout.php";
       }
 
       /*var host = window.location.host;
@@ -100,7 +100,7 @@ var Url="check_session_valid.php";
   }
 });
 
-}, 5000);
+/*}, 5000);*/
 </script>
   </head>
 
@@ -437,6 +437,7 @@ if(isset($_POST['assignment_save'])){
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal">&times;</button>
           <h4 class="modal-title" style="text-align: center;">Edit Assignment</h4> 
+
         </div>
         <div class="modal-body">
 <!--           <form name="new_form" method="post" action=""> -->  

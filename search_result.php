@@ -113,7 +113,7 @@ if($_SESSION['login_kyc_app'] == 1){
 
 <script type="text/javascript">
 
-window.setInterval(function(){
+/*window.setInterval(function(){*/
 var Url="check_session_valid.php";
 
   $.ajax({
@@ -129,7 +129,7 @@ var Url="check_session_valid.php";
       if(base_url == "http://localhost"){
         url1="http://localhost/kyc-app/logout.php";
       }else{
-        url1="https://kyc-application.herokuapp.com/logout.php";
+        url1="https://kycapp.herokuapp.com/logout.php";
       }
 
       /*var host = window.location.host;
@@ -148,7 +148,7 @@ var Url="check_session_valid.php";
   }
 });
 
-}, 5000);
+/*}, 5000);*/
 </script>
 
 </head>
@@ -157,7 +157,9 @@ var Url="check_session_valid.php";
 <?php
 /*echo $_POST['search'];*/
 // if its cumin from edit org to search org then query based on edit org name
+session_start();
 
+/*echo $_SESSION['account_token'];*/
 $text=$_GET['id'];
 
 if($_GET["is_user"]==0){
