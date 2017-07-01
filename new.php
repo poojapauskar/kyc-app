@@ -9,6 +9,27 @@ if($_SESSION['login_kyc_app'] == 1){
 }
 
 ?>
+
+<?php
+
+ $db = pg_connect("host=ec2-107-20-191-76.compute-1.amazonaws.com port=5432 dbname=deu9vahl80fvjn user=vdvqpruzihrics password=17b3e7a56da97ca021e3da54bb1694bb799849a2b5911014ed6caa05e1e4e02d");
+ pg_select($db, 'post_log', $_POST);
+ 
+
+ $query=pg_query("SELECT id,name,account_token,is_active FROM users_users WHERE is_active = 'true' AND account_token = '".$_SESSION['account_token']."'");
+
+ $json=array();
+
+while ($student = pg_fetch_array($query)) {
+    $json[$student["id"]] = $student["name"];
+}
+
+$textval = json_encode($json);
+$foo = "var partnames=" . $textval;
+file_put_contents('autocomplete-Files/'.$_SESSION['account_token'].'-partners.js', $foo);
+ 
+
+?>
 <!-- htl starts here -->
 <!DOCTYPE html>
 <html>
@@ -21,35 +42,6 @@ if($_SESSION['login_kyc_app'] == 1){
  <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-<!-- <script type="text/javascript">
-var $ = $.noConflict(true);
-</script> -->
-<!-- Ajax auto check for PAN Card number -->
-<!-- <script type="text/javascript">
-$(document).ready(function(){
-$("#pan").keyup(function() {
-var name = $('#pan').val();
-if(name=="")
-{
-$("#disp").html("");
-}
-else
-{
-$.ajax({
-type: "POST",
-url: "check_status_pan.php",
-data: "name="+ name ,
-success: function(html){
-$("#disp").html(html);
-}
-});
-return false;
-}
-});
-});
-</script>
-
- -->
   <link rel="stylesheet" type="text/css" href="autocomplete-Files/styles.css">
 
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
@@ -399,6 +391,19 @@ var Url="check_session_valid.php";
 </head>
 
 <body style="background-color:#E8E8E8;overflow-x:hidden;">
+
+<?php
+
+$file= "autocomplete-Files/".$_SESSION['account_token']."-partners.js";
+
+?>
+
+    <!-- AutoSearch Script files don't move -->
+     <script type="text/javascript" src="autocomplete-Files/jquery-1.8.2.min.js"></script>
+     <script type="text/javascript" src="autocomplete-Files/jquery.mockjax.js"></script>
+     <script type="text/javascript" src="autocomplete-Files/jquery.autocomplete.js"></script>
+    <script type="text/javascript" src="autocomplete-Files/Logic_NewEntry.js"></script>
+        <script type="text/javascript" src="<?php echo $file; ?>"></script>  
 
 <?php session_start();?>
 <script type="text/javascript">
@@ -1312,7 +1317,7 @@ $arr_uid = json_decode($output_uid,true);
 <div class="form-group">
   <label class="col-md-4 control-label" for="textname">Name:</label>  
   <div class="col-md-4">
-  <input id="name" name="name" type="text" placeholder="Enter Name" class="form-control input-md" required style="width: 80%;"/>
+  <input id="name" name="name" type="text" placeholder="Enter Name" class="form-control input-md instantsearch" required style="width: 80%;"/>
     
   </div>
 </div>
@@ -1444,7 +1449,7 @@ $arr_uid = json_decode($output_uid,true);
 <div class="form-group">
   <label class="col-md-4 control-label" for="textinput">Name: </label>  
   <div class="col-md-4 col-sm-2 col-2">
-  <input id="partner_names[]" name="partner_names[]" type="text" placeholder="Enter Full Name" class="form-control input-md newentry partner_names" style="width: 80%;">
+  <input id="partner_names[]" name="partner_names[]" type="text" placeholder="Enter Full Name" class="form-control input-md newentry partner_names instantsearch" style="width: 80%;">
   </div>
 
   <div class="col-md-2 col-sm-2 col-2">
@@ -1666,7 +1671,7 @@ function enable_disable(that){
 <div class="form-group">
   <label class="col-md-4 control-label" for="textinput">Name:</label>  
   <div class="col-md-4">
-  <input id="name" name="name" value="<?php echo $_POST['name'] ?>" type="text" placeholder="" class="form-control input-md" style="width: 80%;" required/> 
+  <input id="name" name="name" value="<?php echo $_POST['name'] ?>" type="text" placeholder="" class="form-control input-md instantsearch" style="width: 80%;" required/> 
   </div>
 </div>
 
@@ -2048,7 +2053,7 @@ $('#myModal').on('shown.bs.modal', function () {
         e.preventDefault();
         if(x < max_fields){ //max input box allowed
             x++; //text box increment
-            $('<div style="margin-left:50%;"><center><div class="form-group"> <label class="control-label name" for="textinput" style="">Name: </label> <div class="partner_name"> <input id="partner_names[]" name="partner_names[]" type="text" placeholder="Enter Full Name" class="form-control input-md newentry partner_names"     style="width: 80%;margin-left: -20%;">  </div>  <div class="col-md-6" > <a href="new_user_popup.php" style="color:white" target="_blank" data-toggle="modal" data-target="#myModal"><button  type="button" class="btn btn-info new_entry_btn entry">New Entry</button> </a> </div></div> <div class="form-group">  <label class="control-label designation" for="selectbasic">Designation: </label>  <div class="partner_designation"> <select id="partner_designations[]" name="partner_designations[]" class="form-control partner_designations newpartner" >      <option value="Managing Partner">Managing Partner</option>      <option value="Manager">Manager</option>      <option value="Other">Other</option>    </select>  </div>  <div class="partner_designation col2">  <input style="" id="textinput" name="textinput" type="text" placeholder="Specify if Other" class="form-control input-md partner_others"></div></div></center><a href="#" class="remove_field_partner" style="/*margin-left:349%;*//*margin-top:-36px;*//*position:absolute;*/"><img src="images/del24.png"></a></a></div>').insertBefore(add_button) //add input box\
+            $('<div style="margin-left:50%;"><center><div class="form-group"> <label class="control-label name" for="textinput" style="">Name: </label> <div class="partner_name"> <input id="partner_names[]" name="partner_names[]" type="text" placeholder="Enter Full Name" class="form-control input-md newentry partner_names instantsearch"     style="width: 80%;margin-left: -20%;">  </div>  <div class="col-md-6" > <a href="new_user_popup.php" style="color:white" target="_blank" data-toggle="modal" data-target="#myModal"><button  type="button" class="btn btn-info new_entry_btn entry">New Entry</button> </a> </div></div> <div class="form-group">  <label class="control-label designation" for="selectbasic">Designation: </label>  <div class="partner_designation"> <select id="partner_designations[]" name="partner_designations[]" class="form-control partner_designations newpartner" >      <option value="Managing Partner">Managing Partner</option>      <option value="Manager">Manager</option>      <option value="Other">Other</option>    </select>  </div>  <div class="partner_designation col2">  <input style="" id="textinput" name="textinput" type="text" placeholder="Specify if Other" class="form-control input-md partner_others"></div></div></center><a href="#" class="remove_field_partner" style="/*margin-left:349%;*//*margin-top:-36px;*//*position:absolute;*/"><img src="images/del24.png"></a></a></div>').insertBefore(add_button) //add input box\
         }
     });
 
@@ -2147,35 +2152,14 @@ return false;
 
 
  <!-- AutoSearch Script files don't move -->
-    <!-- <script type="text/javascript" src="autocomplete-Files/jquery-1.8.2.min.js"></script>
+  <!--   <script type="text/javascript" src="autocomplete-Files/jquery-1.8.2.min.js"></script>
         <script type="text/javascript" src="autocomplete-Files/jquery.mockjax.js"></script>
         <script type="text/javascript" src="autocomplete-Files/jquery.autocomplete.js"></script>
+        <script type="text/javascript" src="autocomplete-Files/Logic_NewEntry.js"></script> 
         <script type="text/javascript" src="autocomplete-Files/NewEntryValues.js"></script>
-        <script type="text/javascript" src="autocomplete-Files/Logic_NewEntry.js"></script> -->
+         -->
 </body>
 </html>
 
 
 
-<?php
-
-session_start();
-
- $db = pg_connect("host=ec2-107-20-191-76.compute-1.amazonaws.com port=5432 dbname=deu9vahl80fvjn user=vdvqpruzihrics password=17b3e7a56da97ca021e3da54bb1694bb799849a2b5911014ed6caa05e1e4e02d");
- pg_select($db, 'post_log', $_POST);
- 
-
- $query=pg_query("SELECT id,name,account_token,is_active FROM users_users WHERE is_active = 'true' AND account_token = '".$_SESSION['account_token']."'");
-
- $json=array();
-
-while ($student = pg_fetch_array($query)) {
-    $json[$student["id"]] = $student["name"];
-}
-
-$textval = json_encode($json);
-$foo = "var partnames=" . $textval;
-file_put_contents('autocomplete-Files/NewEntryValues.js', $foo);
- 
-
-?>

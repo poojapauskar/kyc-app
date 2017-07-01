@@ -3171,12 +3171,12 @@ return false;
 </script>
 
     <!-- AutoSearch Script files don't move -->
-   <!--  <script type="text/javascript" src="autocomplete-Files/jquery-1.8.2.min.js"></script> -->
-        <!-- <script type="text/javascript" src="autocomplete-Files/jquery.mockjax.js"></script>
+  <script type="text/javascript" src="autocomplete-Files/jquery-1.8.2.min.js"></script>
+        <script type="text/javascript" src="autocomplete-Files/jquery.mockjax.js"></script>
         <script type="text/javascript" src="autocomplete-Files/jquery.autocomplete.js"></script>
         <script type="text/javascript" src="autocomplete-Files/EditEntryValues.js"></script>
         <script type="text/javascript" src="autocomplete-Files/Logic_EditEntry.js"></script>
- -->
+
 </main>
 </body>
 </html>
