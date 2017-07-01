@@ -346,8 +346,21 @@ var Url="check_session_valid.php";
 </script>
 
 </head>
-<!-- <body  style="overflow-y:scroll;background-color:#E8E8E8" >
- --><body style="background-color:#E8E8E8;overflow-x:hidden;">
+<?php
+
+$file= "autocomplete-Files/".$_SESSION['account_token']."-partners.js";
+
+?>
+
+    <!-- AutoSearch Script files don't move -->
+     <script type="text/javascript" src="autocomplete-Files/jquery-1.8.2.min.js"></script>
+     <script type="text/javascript" src="autocomplete-Files/jquery.mockjax.js"></script>
+     <script type="text/javascript" src="autocomplete-Files/jquery.autocomplete.js"></script>
+    <script type="text/javascript" src="autocomplete-Files/Logic_NewEntry.js"></script>
+        <script type="text/javascript" src="<?php echo $file; ?>"></script> 
+        
+<body style="background-color:#E8E8E8;overflow-x:hidden;">
+ 
 
 <?php
 
@@ -1251,7 +1264,7 @@ if($profile22 == ""){
 <div class="form-group">
   <label class="col-md-4 control-label" for="textname">Name:</label>  
   <div class="col-md-4">
-  <input value="<?php echo $arr_search['response'][0]['organization_details']['name'];?>" id="name" name="name" type="text" placeholder="Enter Name" class="form-control input-md" style="width: 80%;">
+  <input value="<?php echo $arr_search['response'][0]['organization_details']['name'];?>" id="name" name="name" type="text" placeholder="Enter Name" class="form-control input-md instantsearch" style="width: 80%;">
   </div>
 </div>
 
@@ -1492,7 +1505,7 @@ VIEW</a>
   <label class="col-md-4 control-label" for="textinput">Name:</label>  
 
   <div class="col-md-4 col-sm-2 col-2">
-  <input id="partner_names[]" value="<?php echo $arr_search['response'][0]['partner_details'][$x]['detail'][0]['name'] ?>" name="partner_names[]" type="text" placeholder="Enter Full Name" class="form-control input-md editentry partner_names" style="width:80%;">
+  <input id="partner_names[]" value="<?php echo $arr_search['response'][0]['partner_details'][$x]['detail'][0]['name'] ?>" name="partner_names[]" type="text" placeholder="Enter Full Name" class="form-control input-md editentry partner_names instantsearch" style="width:80%;">
   </div>
 
   <div class="col-md-2 col-sm-2 col-2">
@@ -1779,7 +1792,7 @@ function enable_disable(that){
 <div class="form-group">
   <label class="col-md-4 control-label" for="textinput">Name:</label>  
   <div class="col-md-4">
-  <input id="name" name="name" value="<?php echo $arr_search['response'][0]['user_details']['name'] ?>" type="text" placeholder="" class="form-control input-md" style="width: 80%;">
+  <input id="name" name="name" value="<?php echo $arr_search['response'][0]['user_details']['name'] ?>" type="text" placeholder="" class="form-control input-md instantsearch" style="width: 80%;">
     
   </div>
 </div>
@@ -3170,34 +3183,34 @@ return false;
 </script>
 
     <!-- AutoSearch Script files don't move -->
-  <script type="text/javascript" src="autocomplete-Files/jquery-1.8.2.min.js"></script>
+  <!-- <script type="text/javascript" src="autocomplete-Files/jquery-1.8.2.min.js"></script>
         <script type="text/javascript" src="autocomplete-Files/jquery.mockjax.js"></script>
         <script type="text/javascript" src="autocomplete-Files/jquery.autocomplete.js"></script>
         <script type="text/javascript" src="autocomplete-Files/EditEntryValues.js"></script>
         <script type="text/javascript" src="autocomplete-Files/Logic_EditEntry.js"></script>
-
+ -->
 </main>
 </body>
 </html>
 
 
-<?php
+<!-- <?php
 
-session_start();
+// session_start();
 
-$db = pg_connect("host=ec2-107-20-191-76.compute-1.amazonaws.com port=5432 dbname=deu9vahl80fvjn user=vdvqpruzihrics password=17b3e7a56da97ca021e3da54bb1694bb799849a2b5911014ed6caa05e1e4e02d");
- pg_select($db, 'post_log', $_POST);
+// $db = pg_connect("host=ec2-107-20-191-76.compute-1.amazonaws.com port=5432 dbname=deu9vahl80fvjn user=vdvqpruzihrics password=17b3e7a56da97ca021e3da54bb1694bb799849a2b5911014ed6caa05e1e4e02d");
+//  pg_select($db, 'post_log', $_POST);
  
 
- $query=pg_query("SELECT id,name,account_token,is_active FROM users_users WHERE is_active = 'true' AND account_token = '".$_SESSION['account_token']."'");
+//  $query=pg_query("SELECT id,name,account_token,is_active FROM users_users WHERE is_active = 'true' AND account_token = '".$_SESSION['account_token']."'");
 
- $json=array();
+//  $json=array();
 
-while ($student = pg_fetch_array($query)) {
-    $json[$student["id"]] = $student["name"];
-}
+// while ($student = pg_fetch_array($query)) {
+//     $json[$student["id"]] = $student["name"];
+// }
 
-$textval = json_encode($json);
-$foo = "var partnames=" . $textval;
-file_put_contents('autocomplete-Files/EditEntryValues.js', $foo);
-?>
+// $textval = json_encode($json);
+// $foo = "var partnames=" . $textval;
+// file_put_contents('autocomplete-Files/EditEntryValues.js', $foo);
+?> -->
