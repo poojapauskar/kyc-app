@@ -445,18 +445,15 @@ if(isset($_POST['assignment_save'])){
 
        <form name="Form_ass" class="form-horizontal" method="post" enctype="multipart/form-data">
 
-        <input id="assign_search" name="assign_search" type="text" placeholder="Search firms or individuals" class="form-control input-md" style="width:80%;margin-top:4%;height:39px;border-color: #757575;" required autofocus>
+        <input id="assign_search" name="assign_search" type="text" placeholder="Search firms or individuals" class="form-control input-md" style="width:288px;margin-top:4%;height:39px;border-color: #757575; margin-bottom: 15px;margin-left: 149px;" required autofocus>
       <input id="is_user" name="is_user" type="hidden"></input>
       <input id="user_org_id" name="user_org_id" type="hidden"></input>
-       <!--  <button style="visibility:hidden;display:none;margin-left:58%;margin-top:-3.5%;width:200px;height:37px" class="mdl-button mdl-js-button mdl-button--raised" type="submit" value="assign_search" id="submit" name="submit">
-        </button> -->
- 
-
-
-          <div style="text-align:left">
-          <label>Type of work:</label>
-          </div>
-              <select id="type_of_work" name="type_of_work" class="form-control" style="width: 80%;">
+            
+            <div class="form-group" style="margin-left: -109px;margin-right: -58px;">
+                 <label class="col-md-4 control-label" for="textname">Work:</label>  
+            <div class="col-md-4">
+          
+              <select id="type_of_work" name="type_of_work" class="form-control" style="width: 288px;">
               <option value=""></option>
                <option value="Audit Report">Audit Report</option>
                 <option value="ITR filing">ITR filing</option>
@@ -466,43 +463,50 @@ if(isset($_POST['assignment_save'])){
                 <option value="Certification">Certification</option>
                 <option value="Others">Others</option>
               </select>
-          <div style="text-align:left">
-
-          <label>Status</label> 
           </div>
-          <select id="status" name="status" class="form-control" style="width: 80%;">
+          </div>
+
+
+            <div class="form-group" style="margin-left: -109px;margin-right: -58px;">
+                 <label class="col-md-4 control-label" for="textname">Status:</label>  
+            <div class="col-md-4">
+          <select id="status" name="status" class="form-control" style="width: 288px;">
             <option value=""></option>
             <option value="Pending">Pending</option>
             <option value="Work in process">Work in process</option>
             <option value="Completed">Completed</option>
           </select>
+          </div>
+          </div>
           
-          <div style="text-align:left">
-            <label>Date:</label>  
+           <div class="form-group" style="margin-left: -109px;margin-right: -58px;">
+                 <label class="col-md-4 control-label" for="textname">Date:</label>  
+            <div class="col-md-4">
+                <input id="date" name="date" value="<?php echo $_POST['date'] ?>" style="width:288px;" type="text" class="form-control input-md datepicker pick" >
+                </input>
           </div>
-          <input id="date" name="date" value="<?php echo $_POST['date'] ?>" style="width:80%;" type="text" class="form-control input-md datepicker pick" >
-          </input>
+          </div>
             
-            <div style="text-align:left">
-            <label>Due Date:</label>  
-          </div>
-          <input id="due_date" name="due_date" value="<?php echo $_POST['due_date'] ?>" style="width:80%;" type="text" class="form-control input-md datepicker due_date" >
+             <div class="form-group" style="margin-left: -109px;margin-right: -58px;">
+                 <label class="col-md-4 control-label" for="textname">Due Date:</label>  
+            <div class="col-md-4">
+          <input id="due_date" name="due_date" value="<?php echo $_POST['due_date'] ?>" style="width:288px;" type="text" class="form-control input-md datepicker due_date" >
           </input>
-
-
-          <div style="text-align:left;margin-top:2%">
-          <label>Comment:</label> 
           </div>
-           <input id="comment" value="<?php echo $_POST['comment']?>" name="comment" type="text" placeholder="" class="form-control input-md" style="width: 80%;">
-           </input>
+          </div>
+
+           <div class="form-group" style="margin-left: -109px;margin-right: -58px;">
+                 <label class="col-md-4 control-label" for="textname">Comment:</label>  
+            <div class="col-md-4">
+                    <input id="comment" value="<?php echo $_POST['comment']?>" name="comment" type="text" placeholder="" class="form-control input-md" style="width: 288px;">
+                    </input>             
+            </div>
+          </div>
 
 
            <button class="btn btn-save" style="color:white;display: inline-block;" name="assignment_save" id="assignment_save" type="submit">Save</button>
     </form>
  
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
         </div>
       </div>
       
