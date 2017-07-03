@@ -94,6 +94,7 @@ var Url="check_session_valid.php";
 
       if(f.status==400){
         /*alert(url1);*/
+        alert("Session expired");
         window.location.href=url1;
       }
     });
