@@ -328,12 +328,12 @@ if($_POST['is_user_delete'] != "" && $_POST['pk_delete'] != ""){
   
   <div class="col-sm-2">
 <!-- Modal for Assignment--> 
-     <button class="mdl-button mdl-js-button mdl-button--raised  assignment-btn" data-toggle="modal" data-target="#myModal"> Assignment</button>
+     <button class="mdl-button mdl-js-button mdl-button--raised  assignment-btn"> Assignment</button>
     </div>
 
-    <div class="col-sm-2">
+    <div class="col-sm-2" >
       <a href="search_on_status.php?status=Pending">
-      <button class="mdl-button mdl-js-button mdl-button--raised  pending-btn">
+      <button class="mdl-button mdl-js-button mdl-button--raised  pending-btn" >
       Pending
       </button>
       </a>
@@ -350,8 +350,8 @@ if($_POST['is_user_delete'] != "" && $_POST['pk_delete'] != ""){
     </div>
     <div class="col-sm-2" style="width:11.66667%;">
     </div>
-    <div class="col-sm-2">
 
+    <div class="col-sm-2">
        <a href="search_on_status.php?status=Completed">
        <button class="mdl-button mdl-js-button mdl-button--raised completed-btn">
        Completed
@@ -449,8 +449,8 @@ if(isset($_POST['assignment_save'])){
         <input id="assign_search" name="assign_search" type="text" placeholder="Search firms or individuals" class="form-control input-md" style="width:288px;margin-top:4%;height:39px;border-color: #757575; margin-bottom: 15px;margin-left: 149px;" required autofocus>
       <input id="is_user" name="is_user" type="hidden"></input>
       <input id="user_org_id" name="user_org_id" type="hidden"></input>
-            
-            <div class="form-group" style="margin-left: -109px;margin-right: -58px;">
+              
+              <div class="form-group" style="margin-left: -109px;margin-right: -58px;">
                  <label class="col-md-4 control-label" for="textname">Work:</label>  
             <div class="col-md-4">
           
