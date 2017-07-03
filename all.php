@@ -124,14 +124,12 @@ session_start();
 ?>
 <?php
 
-  $url_status = 'https://kyc-application.herokuapp.com/users/';
+  $url_status = 'https://kyc-application.herokuapp.com/get_all_users/';
   $options_status = array(
     'http' => array(
-      /*'header'  => array(
-                          'FIRST-NAME: '.$_GET['firstname'],
-                          'Last-NAME: '.$_GET['lastname'],
-                          'DOB: '.$_GET['dob'],
-                         ),*/
+      'header'  => array(
+                          'ACCOUNT-TOKEN: '.$_SESSION['account_token'],
+                         ),
       'method'  => 'GET',
     ),
   );
@@ -139,23 +137,7 @@ session_start();
   $output_status = file_get_contents($url_status, false,$context_status);
   /*echo $output_status;*/
   $arr_status = json_decode($output_status,true);
-
-
-  $url_status = 'https://kyc-application.herokuapp.com/users/';
-  $options_status = array(
-    'http' => array(
-      /*'header'  => array(
-                          'FIRST-NAME: '.$_GET['firstname'],
-                          'Last-NAME: '.$_GET['lastname'],
-                          'DOB: '.$_GET['dob'],
-                         ),*/
-      'method'  => 'GET',
-    ),
-  );
-  $context_status = stream_context_create($options_status);
-  $output_status = file_get_contents($url_status, false,$context_status);
-  /*echo $output_status;*/
-  $arr_status = json_decode($output_status,true);
+  /*echo count($arr_status[0]['objects']);*/
   
 
 ?>
@@ -216,7 +198,7 @@ $('#test').click(function() {
 
 
 
-  <?php for($i=0;$i<count($arr_status);$i++){
+  <?php for($i=0;$i<count($arr_status[0]['objects']);$i++){
 
     if($arr_status[$i]['is_user']=="0"){
       $field="Organization";
@@ -228,10 +210,10 @@ $('#test').click(function() {
 
   ?>
   <tr>
-    <td><?php echo $arr_status[$i]['uid'] ?></td>
-    <td><?php echo $arr_status[$i]['name'] ?></td>
-    <td><?php echo $arr_status[$i]['pan'] ?></td>
-     <td><?php echo $arr_status[$i]['dob'] ?></td>
+    <td><?php echo $arr_status[0]['objects'][$i]['uid'] ?></td>
+    <td><?php echo $arr_status[0]['objects'][$i]['name'] ?></td>
+    <td><?php echo $arr_status[0]['objects'][$i]['pan'] ?></td>
+     <td><?php echo $arr_status[0]['objects'][$i]['dob'] ?></td>
      <td>
        <form method="post" action="<?php echo $field2; ?>"> 
          <button type="submit" class="btn btn-success" style="color:white">Details</button> 
