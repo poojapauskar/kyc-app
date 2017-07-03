@@ -165,7 +165,7 @@ if(isset($_POST['submit'])){
   
 ?>
 
-<a href="index.php">Back</a>
+<a href="logout.php">Back</a>
 
 <form align="center" style="margin-top:1%" action="super_admin.php" method="post">
 
