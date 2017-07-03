@@ -436,7 +436,8 @@ if(isset($_POST['assignment_save'])){
       <div class="modal-content">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h4 class="modal-title" style="text-align:center">Edit Assignment</h4> 
+          <h4 class="modal-title" style="text-align: center;">Edit Assignment</h4> 
+
         </div>
         <div class="modal-body">
 <!--           <form name="new_form" method="post" action=""> -->  
@@ -496,7 +497,7 @@ if(isset($_POST['assignment_save'])){
            </input>
 
 
-           <button class="btn btn-save" style="color:white" name="assignment_save" id="assignment_save" type="submit">Save</button>
+           <button class="btn btn-save" style="color:white;display: inline-block;" name="assignment_save" id="assignment_save" type="submit">Save</button>
     </form>
  
         </div>
