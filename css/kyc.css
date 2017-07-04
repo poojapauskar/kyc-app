@@ -3365,16 +3365,17 @@ a.searchview.btn.btn-info {
     color: white;
 }
 
-.mdl-button.mdl-js-button.mdl-button--raised.mdl-js-ripple-effect.clear-pendingpage{
+.mdl-button.mdl-js-button.mdl-button--raised.mdl-js-ripple-effect.clear-missingpage {
     margin-left: 28% !important;
-    margin-top: 58px !important;
+    margin-top: 24px !important;
     position: absolute;
     background-color: #449d44;
     color: white;
 }
-.mdl-button.mdl-js-button.mdl-button--raised.mdl-js-ripple-effect.clear-missingpage{
+
+.mdl-button.mdl-js-button.mdl-button--raised.mdl-js-ripple-effect.clear-pendingpage{
     margin-left: 28% !important;
-    margin-top: -35px !important;
+    margin-top: 58px !important;
     position: absolute;
     background-color: #449d44;
     color: white;
@@ -5543,6 +5544,13 @@ margin-left: 26%;
 .container.contain-align{
     margin-left: -5% !important;
     margin-top: -4%;
+}
+
+.card1 {
+    margin-top: 143px !important;
+    margin-left: -30%;
+    width: 133%;
+    height: 447px;
 }
 
 /*Card 2 height*/
