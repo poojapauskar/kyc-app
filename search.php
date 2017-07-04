@@ -328,7 +328,7 @@ if($_POST['is_user_delete'] != "" && $_POST['pk_delete'] != ""){
   
   <div class="col-sm-2">
 <!-- Modal for Assignment--> 
-     <button class="mdl-button mdl-js-button mdl-button--raised  assignment-btn" data-toggle="modal" data-target="#myModal"> Assignment</button>
+     <button class="mdl-button mdl-js-button mdl-button--raised  assignment-btn"> Assignment</button>
     </div>
 
     <div class="col-sm-2" >
