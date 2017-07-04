@@ -115,9 +115,9 @@ var Url="check_session_valid.php";
 
 <script type="text/javascript">
   /*$('#loading_spinner').show();*/
-  NProgress.start();
+/*  NProgress.start();
 
-window.onload = function () { NProgress.done(); }
+window.onload = function () { NProgress.done(); }*/
 
 /*$.ajax({
     url: 'suggestion.php',
@@ -128,6 +128,22 @@ window.onload = function () { NProgress.done(); }
         NProgress.done();
     }
 });*/
+
+var Url1="suggestion.php";
+
+  $.ajax({
+  type: "POST",
+  url: Url1,
+  dataType: 'json',
+  data: {},
+  success: function(){
+    NProgress.start();
+  });
+  complete: function(){
+    NProgress.done();
+  });
+});
+
 </script>
 <?php
 
