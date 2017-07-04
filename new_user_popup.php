@@ -82,16 +82,21 @@
 
   </style>
    <!-- Datepicker -->
-<link rel="stylesheet" type="text/css" href="css/jquery-ui.css"> 
+<!-- <link rel="stylesheet" type="text/css" href="css/jquery-ui.css"> 
  <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"> 
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 <script type="text/javascript" src="js/jquery.plugin.js"></script> 
-<script type="text/javascript" src="js/jquery.datepick.js"></script>
+<script type="text/javascript" src="js/jquery.datepick.js"></script> -->
+
+<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <link rel="stylesheet" href="/resources/demos/style.css">
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 
 <script type="text/javascript">
 var $j = jQuery.noConflict();
 $(function() {
-  $j( ".datepicker.picker" ).datepicker({dateFormat: 'dd/mm/yy',maxDate:0,changeMonth : true,changeYear : true,yearRange: '-100y:c+nn',});
+  $d( ".datepicker.picker" ).datepicker({dateFormat: 'dd/mm/yy',maxDate:0,changeMonth : true,changeYear : true,yearRange: '-100y:c+nn',});
 
    $(".datepicker.picker").keyup(function(){
                 if ($(this).val().length == 2){
@@ -103,7 +108,7 @@ $(function() {
 });
 
 $(function() {
-  $j( ".datepicker.pick" ).datepicker({dateFormat: 'dd/mm/yy',changeMonth : true,
+  $d( ".datepicker.pick" ).datepicker({dateFormat: 'dd/mm/yy',changeMonth : true,
             changeYear : true}).datepicker("setDate", new Date());
 
    $(".datepicker.pick").keyup(function(){
@@ -783,10 +788,10 @@ function goBack() {
         if(x < max_fields){ //max input box allowed
               x++; //text box incrementa
               $('<div style="margin-left:50%;"><div class="form-group"><label class="control-label" for="selectbasic" style="margin-left:-220px;">Type of work</label><div class="col-md-6"><select id="type_of_work[]" name="type_of_work[]" class="form-control" style="margin-left:17%;width:222%"><option value="Option one"></option><option value="Option one">Audit Report</option><option value="Option two">ITR filing</option><option value="Option three">VAT Filing</option><option value="Option four">Accounting</option><option value="Option five">Registration</option><option value="Option six">Certification</option><option value="Option seven">Others</option></select></div></div><div class="form-group"> <label class="col-md-4 control-label" for="selectbasic" style="margin-left:-29%">Status</label><div class="col-md-6"><select id="status11' + x + '" name="status[]" style="width:223%;margin-left:3%;" class="form-control"><option value="Option one"></option><option value="Pending">Pending</option><option value="Work in process">Work in process</option><option value="Completed">Completed</option></select></div></div><div class="form-group row"><label for="example-date-input" class="col-2 col-form-label" style="margin-left:-15.5%;";">DATE</label><div class="col-8"><input class="form-control datepicker pick" id="date11' + x + '" name="date[]" value="<?php echo $_POST['date'] ?>" style="width:86%;margin-left:11.6%;margin-top:-10%;" type="text"  placeholder="DD/MM/YYYY"></div></div><div class="form-group"><label for="example-date-input" class="col-md-6 col-label date-label-individual" style="margin-left:-38%">DUE DATE:</label><div class="col-md-4"><input class="form-control datepicker pick due-date-individual" id="due_datee'+ x +'" style="width:440%;margin-left: -41%" name="due_date[]" value="<?php echo $_POST['due_date'] ?>" type="text"  placeholder="DD/MM/YYYY"></div></div><div class="form-group"><label class="col-md-4 control-label" for="textinput" style="margin-left:-36%">Comment</label><div class="col-md-4"><input id="comments11' + x + '" name="comment[]" type="text" placeholder="" class="form-control input-md" style="width:432%;margin-left:26%"></div></div></center><a href="#" class="remove_field" style="margin-left: 230px; margin-top: -40px;position:absolute"><img src="images/del24.png"></a></a></div>').insertBefore(add_button) //add input box\         
-              var newInput11=$j("#date11" + x).datepicker({dateFormat: 'dd/mm/yy',changeMonth : true,
+              var newInput11=$d("#date11" + x).datepicker({dateFormat: 'dd/mm/yy',changeMonth : true,
             changeYear : true});
               newInput11.datepicker({dateFormat: 'dd/mm/yyyy'}).datepicker("setDate", new Date());
-              var newduedate=$j("#due_datee" + x).datepicker({dateFormat: 'dd/mm/yy',changeMonth : true,
+              var newduedate=$d("#due_datee" + x).datepicker({dateFormat: 'dd/mm/yy',changeMonth : true,
             changeYear : true});
               newduedate.datepicker({dateFormat: 'dd/mm/yyyy'}).datepicker("setDate", new Date());
 
