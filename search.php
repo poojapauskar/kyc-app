@@ -141,11 +141,7 @@ var Url="check_session_valid.php";
 </script>
   </head>
 
-<<<<<<< f8dc150d79ec4ad2df1f1fcbbfd59cf4fabeef8f
 <body style="background-color:#E8E8E8;overflow-y:hidden;">
-=======
-<body style="background-color:#E8E8E8; overflow: hidden;" >
->>>>>>> Assignment button and overflow tag added
 <div id="load_screen"><div id="loading"></div></div>
 
 <!-- <div style="position:absolute;z-index:5000;margin-left:34.5%">
