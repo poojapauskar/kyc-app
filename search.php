@@ -169,7 +169,7 @@ $textval = json_encode($json);
 $foo = "var peoplenames=" . $textval;
 
 file_put_contents('autocomplete-Files/'.$_SESSION['account_token'].'.js', $foo);
-echo "<script>location='search.php'</script>";
+/*echo "<script>location='search.php'</script>";*/
  
 
 ?>
