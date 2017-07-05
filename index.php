@@ -3,7 +3,7 @@ ob_start("ob_gzhandler");  //Enables Gzip compression
 
 session_start();
 if($_SESSION['login_kyc_app'] == 1){
-  echo "<script>location='suggestion.php'</script>";
+  echo "<script>location='search.php'</script>";
 }
 
 ?>
@@ -96,7 +96,7 @@ if($arr2['status']==200 && $arr2['message']=='Is Super Admin'){
   $arr9 = json_decode($result8,true);
 
 
-  echo "<script>location='suggestion.php'</script>";
+  echo "<script>location='search.php'</script>";
 }elseif($arr2['status']==200 && $arr2['message']=='Is User'){
   $_SESSION['login_kyc_app'] = 1;
   $_SESSION['account_token'] = $arr2['account_token'];
@@ -120,7 +120,7 @@ if($arr2['status']==200 && $arr2['message']=='Is Super Admin'){
   $arr9 = json_decode($result8,true);
 
   
-  echo "<script>location='suggestion.php'</script>";
+  echo "<script>location='search.php'</script>";
 }elseif($arr2['status']==401){
   echo "<script type='text/javascript'>window.onload = function(){ alert('Password Invalid');}</script>";
 }elseif($arr2['status']==400){

@@ -120,7 +120,7 @@ var Url="check_session_valid.php";
 window.onload = function () { NProgress.done(); }*/
 
 /*$.ajax({
-    url: 'suggestion.php',
+    url: 'search.php',
     type: 'POST',
     data: '',
     dataType: 'html',
@@ -129,7 +129,7 @@ window.onload = function () { NProgress.done(); }*/
     }
 });*/
 
-/*var Url1="suggestion.php";
+/*var Url1="search.php";
 
   $.ajax({
   type: "POST",
@@ -149,6 +149,8 @@ window.onload = function () { NProgress.done(); }*/
 <?php
 
 session_start();
+
+fopen('autocomplete-Files/'.$_SESSION['account_token'].'.js', 'w');
 
 $db = pg_connect("host=ec2-107-20-191-76.compute-1.amazonaws.com port=5432 dbname=deu9vahl80fvjn user=vdvqpruzihrics password=17b3e7a56da97ca021e3da54bb1694bb799849a2b5911014ed6caa05e1e4e02d");
  pg_select($db, 'post_log', $_POST);
@@ -252,7 +254,7 @@ if($_POST['is_user_delete'] != "" && $_POST['pk_delete'] != ""){
     <div class="mdl-layout__header-row" >
 
 
-       <a href="suggestion.php"> <img id="logo1" src="images/green_icon.svg"></img></a>
+       <a href="search.php"> <img id="logo1" src="images/green_icon.svg"></img></a>
       <h5 style="" id="title2">ADMIN PANEL</h5>
          <span class="mdl-layout-title" id="title1" style="">KYCAPP</span>
 
@@ -264,7 +266,7 @@ if($_POST['is_user_delete'] != "" && $_POST['pk_delete'] != ""){
     <div class="mdl-layout__drawer">
         <span class="mdl-layout-title">KYCAPP</span>
         <nav class="mdl-navigation">
-          <a class="mdl-navigation__link" href="suggestion.php">Home</a>
+          <a class="mdl-navigation__link" href="search.php">Home</a>
           <a class="mdl-navigation__link" href="new.php?is_user=0">New Entry Organization</a>
           <a class="mdl-navigation__link" href="new.php?is_user=1">New Entry Individual</a>
           <a class="mdl-navigation__link" href="missing_reports.php">Missing Reports</a>

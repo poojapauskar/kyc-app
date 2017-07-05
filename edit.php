@@ -1219,7 +1219,7 @@ if($profile22 == ""){
      -moz-box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23) !important;
      box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23) !important;" class="mdl-layout__header">
     <div class="mdl-layout__header-row" >
-    <a href="suggestion.php"><img id="logo1" src="images/green_icon.svg"></img></a>
+    <a href="search.php"><img id="logo1" src="images/green_icon.svg"></img></a>
      <span class="mdl-layout-title" id="title3" style="word-wrap: break-word;width: 23em;">
      <p style="font-size: 19px !important;"><?php echo $arr_search['response'][0]['organization_details']['name'] ?><?php echo $arr_search['response'][0]['user_details']['name'] ?></p></span>
          <span class="mdl-layout-title" id="title1" style="text-align:center">KYCAPP</span>
@@ -1230,7 +1230,7 @@ if($profile22 == ""){
     <div class="mdl-layout__drawer">
         <span class="mdl-layout-title">Title</span>
         <nav class="mdl-navigation">
-          <a class="mdl-navigation__link" href="suggestion.php">Home</a>
+          <a class="mdl-navigation__link" href="search.php">Home</a>
           <a class="mdl-navigation__link" href="new.php?is_user=0">New Entry Organization</a>
           <a class="mdl-navigation__link" href="new.php?is_user=1">New Entry Individual</a>
           <a class="mdl-navigation__link" href="missing_reports.php">Missing Reports</a>
@@ -1238,7 +1238,7 @@ if($profile22 == ""){
           <a class="mdl-navigation__link" href="search_on_status.php?status=Pending">Pending</a>
            <a class="mdl-navigation__link" href="search_on_status.php?status=Completed">Completed</a>
            
-          <a class="mdl-navigation__link" href="suggestion.php">Admin</a>
+          <a class="mdl-navigation__link" href="search.php">Admin</a>
           <a class="mdl-navigation__link" href="">Help</a>
           <a class="mdl-navigation__link" href="">About Us</a>
           <a class="mdl-navigation__link" href="">Contact</a>
@@ -1676,7 +1676,7 @@ VIEW</a>
   <label class="col-md-4 control-label" for="save_btn"></label>
   <div class="col-md-8">
     <button  onclick="return check_file_type_org()" id="edit_btn" name="edit_btn" type="submit" class="btn btn-success" style="width: 10em;">Save</button><span><span></span></span>
-    <button onclick="goBack()" class="btn btn-warning cancel" style=""><a style="color:white" href="suggestion.php">Cancel</a></button>
+    <button onclick="goBack()" class="btn btn-warning cancel" style=""><a style="color:white" href="search.php">Cancel</a></button>
   </div>
 </div>
 </fieldset>
@@ -1709,7 +1709,7 @@ function enable_disable(that){
 }
 </script>
 
-<form method="post" id="deleteForm" action="suggestion.php" style="text-align:center">
+<form method="post" id="deleteForm" action="search.php" style="text-align:center">
 <input type="hidden" name="pk_delete" id="pk_delete" value="<?php echo $_GET['id'] ?>"></input>  
 <input type="hidden" name="is_user_delete" id="is_user_delete" value="<?php echo $_GET['is_user'] ?>"></input>  
 <button type="submit" onclick="return ConfirmDelete()" style="" class="btn btn-warning delete">
@@ -2311,7 +2311,7 @@ function enable_disable(that){
   <div class="col-md-4">
     <button  onclick="return check_file_type_user()" id="edit_btn" name="edit_btn" type="submit" class="btn btn-success successb">Save</button><span><span></span></span>
 
-    <button onclick="goBack()" class="btn btn-warning cancel1" ><a style="color:white" href="suggestion.php" >Cancel</a></button>
+    <button onclick="goBack()" class="btn btn-warning cancel1" ><a style="color:white" href="search.php" >Cancel</a></button>
     <!-- style="width: 10em;margin-top: 0%;padding:0.5em;margin-left:2%;" -->
   </div>
 </div>
@@ -2341,7 +2341,7 @@ $arr_can_be_deleted_or_no = json_decode($output_can_be_deleted_or_no,true);
 
 <?php if ($arr_can_be_deleted_or_no['status']==200) { ?>
 
-    <form method="post" id="deleteForm" action="suggestion.php" style="text-align:center">
+    <form method="post" id="deleteForm" action="search.php" style="text-align:center">
     <input type="hidden" name="pk_delete" id="pk_delete" value="<?php echo $_GET['id'] ?>"></input>  
     <input type="hidden" name="is_user_delete" id="is_user_delete" value="<?php echo $_GET['is_user'] ?>"></input>  
     <button type="submit" onclick="return ConfirmDelete()" class="btn btn-warning delete1">

@@ -1238,7 +1238,7 @@ $arr_uid = json_decode($output_uid,true);
      -moz-box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23) !important;
      box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23) !important;" class="mdl-layout__header mdl-layout__header--transparent">
     <div class="mdl-layout__header-row" >
-    <a href="suggestion.php"><img id="logo1" src="images/green_icon.svg"></img></a>
+    <a href="search.php"><img id="logo1" src="images/green_icon.svg"></img></a>
 
     <?php if ($_GET['is_user']==0) { 
            $title="New Entry Organization";
@@ -1254,7 +1254,7 @@ $arr_uid = json_decode($output_uid,true);
       <div class="mdl-layout__drawer">
         <span class="mdl-layout-title" style="background: transparent;color:black;" >KYCAPP</span>
         <nav class="mdl-navigation">
-          <a class="mdl-navigation__link" href="suggestion.php">Home</a>
+          <a class="mdl-navigation__link" href="search.php">Home</a>
           <a class="mdl-navigation__link" href="new.php?is_user=0">New Entry Organization</a>
           <a class="mdl-navigation__link" href="new.php?is_user=1">New Entry Individual</a>
           <a class="mdl-navigation__link" href="missing_reports.php">Missing Reports</a>
@@ -1574,7 +1574,7 @@ $arr_uid = json_decode($output_uid,true);
  <div class="row">
   <div class="col-md-4 col-lg-6 ">
     <button onclick="return validate_org();" id="generate_btn_org" name="generate_btn_org" class="btn btn-success" style="width:10em">Generate</button>
-    <button id="singlebutton" style="width: 10em;margin-left: 2%;" name="singlebutton" class="btn btn-primary"><a style="color:white" href="suggestion.php">Discard</a></button>
+    <button id="singlebutton" style="width: 10em;margin-left: 2%;" name="singlebutton" class="btn btn-primary"><a style="color:white" href="search.php">Discard</a></button>
   </div>
   </div>
   </div>
@@ -1968,7 +1968,7 @@ function enable_disable(that){
   <div class="col-md-4 col-lg-6">
     <button onclick="return validate();" style="width:10em" id="generate_btn" name="generate_btn" class="btn btn-success">Generate</button>
 
-    <button id="singlebutton" name="singlebutton" class="btn btn-primary" style="width: 10em;margin-left: 2%;"><a style="color:white" href="suggestion.php">Discard</a></button>
+    <button id="singlebutton" name="singlebutton" class="btn btn-primary" style="width: 10em;margin-left: 2%;"><a style="color:white" href="search.php">Discard</a></button>
   </div>
   </div>
   </div>
