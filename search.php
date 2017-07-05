@@ -105,7 +105,7 @@ var Url="check_session_valid.php";
 </script>
   </head>
 
-<body style="background-color:#E8E8E8;">
+<body style="background-color:#E8E8E8; overflow: hidden;" >
 <div id="load_screen"><div id="loading"></div></div>
 
 <!-- <div style="position:absolute;z-index:5000;margin-left:34.5%">
@@ -328,7 +328,7 @@ if($_POST['is_user_delete'] != "" && $_POST['pk_delete'] != ""){
   
   <div class="col-sm-2">
 <!-- Modal for Assignment--> 
-     <button class="mdl-button mdl-js-button mdl-button--raised  assignment-btn"> Assignment</button>
+    <button class="mdl-button mdl-js-button mdl-button--raised  assignment-btn" data-toggle="modal" data-target="#myModal"> Assignment</button>
     </div>
 
     <div class="col-sm-2" >
