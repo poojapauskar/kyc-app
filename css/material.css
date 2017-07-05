@@ -2311,7 +2311,7 @@ ol {
     border: 0
 }
 .mdl-button:hover {
-    background-color: rgba(158, 158, 158, .2)
+    background-color: rgb(23, 111, 172);
 }
 .mdl-button:focus:not(:active) {
     background-color: rgba(0, 0, 0, .12)
@@ -2585,8 +2585,9 @@ input.mdl-button[type="submit"] {
     line-height: 18px;
     overflow: hidden;
     padding: 16px;
-    width: 90%
+    width: 100%!important;
 }
+
 .mdl-card__supporting-text.mdl-card--border {
     border-bottom: 1px solid rgba(0, 0, 0, .1)
 }

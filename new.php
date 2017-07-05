@@ -1574,7 +1574,9 @@ $arr_uid = json_decode($output_uid,true);
  <div class="row">
   <div class="col-md-4 col-lg-6 ">
     <button onclick="return validate_org();" id="generate_btn_org" name="generate_btn_org" class="btn btn-success" style="width:10em">Generate</button>
+
     <button id="singlebutton" style="width: 10em;margin-left: 2%;" name="singlebutton" class="btn btn-primary"><a style="color:white" href="search.php">Discard</a></button>
+
   </div>
   </div>
   </div>
@@ -1968,7 +1970,9 @@ function enable_disable(that){
   <div class="col-md-4 col-lg-6">
     <button onclick="return validate();" style="width:10em" id="generate_btn" name="generate_btn" class="btn btn-success">Generate</button>
 
+
     <button id="singlebutton" name="singlebutton" class="btn btn-primary" style="width: 10em;margin-left: 2%;"><a style="color:white" href="search.php">Discard</a></button>
+
   </div>
   </div>
   </div>

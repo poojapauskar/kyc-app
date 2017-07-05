@@ -216,15 +216,19 @@ img.print{
     display: none;
 }
   </style>  
-
-<link rel="stylesheet" href="css/jquery-ui.css"> 
- <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"> 
-
+<!-- Datepicker -->
+ <link rel="stylesheet" href="css/jquery-ui.css"> 
+ <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 <script src="js/jquery-ui.js"></script>
+<!-- <script type="text/javascript">
+var $ = $.noConflict(true);
+</script> -->
+
 <script type="text/javascript">
+var $d = jQuery.noConflict();
 $(function() {
-  $( ".sspicker.picker" ).datepicker({dateFormat : 'mm/dd/yy',
+  $d( ".sspicker.picker" ).datepicker({dateFormat : 'mm/dd/yy',
             changeMonth : true,
             changeYear : true,
             yearRange: '-100y:c+nn',
@@ -241,7 +245,7 @@ $(function() {
 
 });
 
-  $(".sspicker.picker").keyup(function(){
+  $d(".sspicker.picker").keyup(function(){
                 if ($(this).val().length == 2){
                     $(this).val($(this).val() + "/");
                 }else if ($(this).val().length == 5){
