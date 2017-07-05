@@ -1,4 +1,5 @@
 <?php
+ob_start("ob_gzhandler");  //Enables Gzip compression 
 
 session_start();
 if($_SESSION['login_kyc_app'] == 1){
@@ -40,43 +41,6 @@ if($_SESSION['login_kyc_app'] == 1){
   <script src="https://storage.googleapis.com/code.getmdl.io/1.0.6/material.min.js"></script>
     
     <style type="text/css">
-    .demo-card-2.mdl-card{
-/*margin-top:150px ;*/
-    margin:auto;
-    width: 840px;
-  max-height: 190px;
-    min-height: 180px !important;
-}
-.demo-card-2 > .mdl-card__title {
-  color: #fff;
-  height: 58px;
-  font-size: medium;
-background-color: rgb(8, 66, 106);
-}
-
-.demo-card-wide.mdl-card {
-      top: 131px;
-    margin:auto;
-    width: 840px;
-}
-
-.demo-card-wide > .mdl-card__title {
-  color: #fff;
-  height: 58px;
-  font-size: medium;
-background-color: rgb(8, 66, 106);
-}
-.demo-card-wide > .mdl-card__menu {
-  color: #fff;
-}
-
-.mdl-textfield__input{
-  width:430px;
-}
-
-a{
-  text-decoration: none !important;
-}
       .form-control{
       border: 2px solid #74b25e;
     border-radius: 7px;
@@ -141,7 +105,7 @@ var Url="check_session_valid.php";
 </script>
   </head>
 
-<body style="background-color:#E8E8E8;overflow-y:hidden;">
+<body style="background-color:#E8E8E8; overflow: hidden;" >
 <div id="load_screen"><div id="loading"></div></div>
 
 <!-- <div style="position:absolute;z-index:5000;margin-left:34.5%">
@@ -151,12 +115,12 @@ var Url="check_session_valid.php";
 
 <script type="text/javascript">
   /*$('#loading_spinner').show();*/
- /* NProgress.start();
+  NProgress.start();
 
-window.onload = function () { NProgress.done(); }*/
+window.onload = function () { NProgress.done(); }
 
 /*$.ajax({
-    url: 'search.php',
+    url: 'suggestion.php',
     type: 'POST',
     data: '',
     dataType: 'html',
@@ -164,24 +128,19 @@ window.onload = function () { NProgress.done(); }*/
         NProgress.done();
     }
 });*/
-
-/*var Url1="suggestion.php";
-
-  $.ajax({
-  type: "POST",
-  url: Url1,
-  dataType: 'json',
-  data: {},
-  success: function(){
-    NProgress.start();
-  },
-  complete: function(){
-    NProgress.done();
-  }
-});*/
-
 </script>
+<?php
 
+$file= "autocomplete-Files/".$_SESSION['account_token'].".js";
+
+?>
+
+    <!-- AutoSearch Script files don't move -->
+     <script type="text/javascript" src="autocomplete-Files/jquery-1.8.2.min.js"></script>
+     <script type="text/javascript" src="autocomplete-Files/jquery.mockjax.js"></script>
+     <script type="text/javascript" src="autocomplete-Files/jquery.autocomplete.js"></script>
+    <script type="text/javascript" src="autocomplete-Files/Logic_Search.js"></script>
+        <script type="text/javascript" src="<?php echo $file; ?>"></script>  
 
 <?php
 
@@ -248,7 +207,7 @@ if($_POST['is_user_delete'] != "" && $_POST['pk_delete'] != ""){
     <div class="mdl-layout__header-row" >
 
 
-       <a href="search.php"> <img id="logo1" src="images/green_icon.svg"></img></a>
+       <a href="suggestion.php"> <img id="logo1" src="images/green_icon.svg"></img></a>
       <h5 style="" id="title2">ADMIN PANEL</h5>
          <span class="mdl-layout-title" id="title1" style="">KYCAPP</span>
 
@@ -260,7 +219,7 @@ if($_POST['is_user_delete'] != "" && $_POST['pk_delete'] != ""){
     <div class="mdl-layout__drawer">
         <span class="mdl-layout-title">KYCAPP</span>
         <nav class="mdl-navigation">
-          <a class="mdl-navigation__link" href="search.php">Home</a>
+          <a class="mdl-navigation__link" href="suggestion.php">Home</a>
           <a class="mdl-navigation__link" href="new.php?is_user=0">New Entry Organization</a>
           <a class="mdl-navigation__link" href="new.php?is_user=1">New Entry Individual</a>
           <a class="mdl-navigation__link" href="missing_reports.php">Missing Reports</a>
@@ -276,10 +235,8 @@ if($_POST['is_user_delete'] != "" && $_POST['pk_delete'] != ""){
         </nav>
       </div></div>
 
-
-
-<!-- <div class="container">
-  <div class="row" > --> 
+<div class="container">
+  <div class="row" > 
 
 <script type="text/javascript">
   function fun1(){
@@ -292,11 +249,10 @@ if($_POST['is_user_delete'] != "" && $_POST['pk_delete'] != ""){
 
   <!-- AutoSearch TEXT field -->
   <!-- First Card Below -->
-  <div class="demo-card-wide mdl-card mdl-shadow--2dp">
-      <div class="mdl-card__title">
-        <div class="mdl-card__title-text" style="font-size: medium;">Database</div>
-      </div>
-      <div class="mdl-card__supporting-text">
+  <div class="card1" >
+    <div class="card-header"> Database</div> 
+      <div class="card-block">
+
 
         <div class="col-md-12" style="margin-left:11%;">
         <form id="target1" name="target1" class="form-group" method="post" action="" style="padding-bottom:7%">
@@ -352,7 +308,8 @@ if($_POST['is_user_delete'] != "" && $_POST['pk_delete'] != ""){
         </div>
 </div>
   </div>
-    
+    </div>
+      </div>
 
     <!-- AutoSearch Function ends above -->
        <!--  <div id="tagname" style="height:100px; width:300px; border:1px solid #000;"></div>
@@ -361,25 +318,17 @@ if($_POST['is_user_delete'] != "" && $_POST['pk_delete'] != ""){
 
 
 <!-- New row for button below -->
-<!-- <div class="container">
-  <div class="row" >  -->
+<div class="container">
+  <div class="row" > 
         <!-- Second Card below -->
 
-   <!--  <div class="card2">
+   <div class="card2">
   <div class="card-header2">Assignment Status</div>
 <div class="card-block2">
   
-  <div class="col-sm-2"> -->
-<!-- Modal for Assignment -->
-<div class="demo-card-2 mdl-card mdl-shadow--2dp" style="margin-top:150px!important">
-      <div class="mdl-card__title">
-        <div class="mdl-card__title-text" style="font-size: medium;">Assignment Status</div>
-      </div>
-
-      <!-- Two buttons -->
-      <div class="mdl-card__actions mdl-card--border">
-       <div class="col-sm-2">
-     <button class="mdl-button mdl-js-button mdl-button--raised  assignment-btn"> Assignment</button>
+  <div class="col-sm-2">
+<!-- Modal for Assignment--> 
+    <button class="mdl-button mdl-js-button mdl-button--raised  assignment-btn" data-toggle="modal" data-target="#myModal"> Assignment</button>
     </div>
 
     <div class="col-sm-2" >
@@ -414,6 +363,7 @@ if($_POST['is_user_delete'] != "" && $_POST['pk_delete'] != ""){
 
 </div>
 
+
         <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> -->
 <!--         <script type="text/javascript" src="autocomplete-Files/styles.css"></script>
  --><!--  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
@@ -430,9 +380,16 @@ if($_POST['is_user_delete'] != "" && $_POST['pk_delete'] != ""){
                     });
                 });
         </script> -->
-  <!-- </div>  
+  </div>  
     </div>
-      </div> -->
+      </div>
+</body>
+
+</html>
+
+     
+
+
 
 <!-- Assignment Modal  -->
 
@@ -616,55 +573,3 @@ jQuery_1_12_0(function() {
     width: 8em;
   }
 </style>
-
-</body>
-
-</html>
-
-
-
-
-<?php
-
-session_start();
-
-fopen('autocomplete-Files/'.$_SESSION['account_token'].'.js', 'w');
-
-$db = pg_connect("host=ec2-107-20-191-76.compute-1.amazonaws.com port=5432 dbname=deu9vahl80fvjn user=vdvqpruzihrics password=17b3e7a56da97ca021e3da54bb1694bb799849a2b5911014ed6caa05e1e4e02d");
- pg_select($db, 'post_log', $_POST);
-
-echo "<script>NProgress.start();</script>";
-
- $query=pg_query("(SELECT id,name,is_user,account_token,is_active,pan FROM organization_organization WHERE is_active = 'true' AND account_token = '".$_SESSION['account_token']."')
-  UNION 
- (SELECT id,name,is_user,account_token,is_active,pan FROM users_users WHERE is_active = 'true' AND account_token = '".$_SESSION['account_token']."')");
-
-/*echo $query;*/
-
- $json=array();
-while ($student = pg_fetch_array($query)) {
-    $json[$student["is_user"]."-".$student["id"]] = $student["name"]."-".$student['pan'];
-}
-
-$textval = json_encode($json);
-$foo = "var peoplenames=" . $textval;
-
-file_put_contents('autocomplete-Files/'.$_SESSION['account_token'].'.js', $foo);
-
-echo "<script>NProgress.done();</script>";
-
-?>
-
-<?php
-
-$file= "autocomplete-Files/".$_SESSION['account_token'].".js";
-
-?>
-
-    <!-- AutoSearch Script files don't move -->
-     <script type="text/javascript" src="autocomplete-Files/jquery-1.8.2.min.js"></script>
-     <script type="text/javascript" src="autocomplete-Files/jquery.mockjax.js"></script>
-     <script type="text/javascript" src="autocomplete-Files/jquery.autocomplete.js"></script>
-    <script type="text/javascript" src="autocomplete-Files/Logic_Search.js"></script>
-        <script type="text/javascript" src="<?php echo $file; ?>"></script>  
-
