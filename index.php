@@ -26,7 +26,7 @@ if($_SESSION['login_kyc_app'] == 1){
 
   <script src="https://storage.googleapis.com/code.getmdl.io/1.0.6/material.min.js" async></script>
 </head>
-<body style="background-color:#E8E8E8;overflow-x:hidden;">
+<body style="background-color:#E8E8E8;overflow-x: hidden;">
 
 <?php
 
