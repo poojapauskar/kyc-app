@@ -105,7 +105,7 @@ var Url="check_session_valid.php";
 </script>
   </head>
 
-<body style="background-color:#E8E8E8; overflow: hidden;" >
+<body style="background-color:#E8E8E8; overflow: : hidden;" >
 <div id="load_screen"><div id="loading"></div></div>
 
 <!-- <div style="position:absolute;z-index:5000;margin-left:34.5%">
