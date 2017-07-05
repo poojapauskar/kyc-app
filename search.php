@@ -369,6 +369,7 @@ if($_POST['is_user_delete'] != "" && $_POST['pk_delete'] != ""){
   <div class="card-header2">Assignment Status</div>
 <div class="card-block2">
   
+  <div class="col-sm-2">
   <div class="col-sm-2"> -->
 <!-- Modal for Assignment -->
 <div class="demo-card-2 mdl-card mdl-shadow--2dp" style="margin-top:150px!important">
@@ -616,6 +617,7 @@ jQuery_1_12_0(function() {
     width: 8em;
   }
 </style>
+<<<<<<< 78d9e28fb1961ca49914a530e20f1bc81d22006d
 
 </body>
 
@@ -664,4 +666,8 @@ $file= "autocomplete-Files/".$_SESSION['account_token'].".js";
      <script type="text/javascript" src="autocomplete-Files/jquery.autocomplete.js"></script>
     <script type="text/javascript" src="autocomplete-Files/Logic_Search.js"></script>
         <script type="text/javascript" src="<?php echo $file; ?>"></script>  
+
+</body>
+
+</html>
 
