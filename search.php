@@ -617,6 +617,12 @@ jQuery_1_12_0(function() {
   }
 </style>
 
+</body>
+
+</html>
+
+
+
 <?php
 
 session_start();
