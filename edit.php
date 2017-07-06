@@ -1251,7 +1251,7 @@ if($profile22 == ""){
       </div>
 
 
-<main class="mdl-layout">
+<!-- <main class="mdl-layout"> -->
 
 <?php if ($_GET['is_user']==0) { ?>
 <form class="form-horizontal" method="post" action="" enctype="multipart/form-data" style="">
@@ -1678,7 +1678,7 @@ VIEW</a>
 <!-- Buttons SAve and Cancel -->
 <div class="form-group">
   <label class="col-md-4 control-label" for="save_btn"></label>
-  <div class="col-md-8">
+  <div class="col-md-4">
     <button  onclick="return check_file_type_org()" id="edit_btn" name="edit_btn" type="submit" class="btn btn-success" style="width: 10em;">Save</button><span><span></span></span>
     <button onclick="goBack()" class="btn btn-warning cancel" style=""><a style="color:white" href="search.php">Cancel</a></button>
   </div>
@@ -2275,7 +2275,7 @@ function enable_disable(that){
 <div class="form-group row">
   <label for="example-date-input" class="col-2 col-form-label duedate_label">DUE DATE:</label>
   <div class="col-10 due_date">
-    <input class="form-control datepicker pic" id="due_date[]" name="due_date[]" value="<?php echo $arr_search['response'][0]['add_info'][$q]['due_date']; ?>" placeholder="dd/mm/yyyy" style="width:80%;" type="text" > 
+    <input class="form-control datepicker pic" id="due_date[]" name="due_date[]" value="<?php echo $arr_search['response'][0]['add_info'][$q]['due_date']; ?>" placeholder="dd/mm/yyyy" style="width:98%;" type="text" > 
   </div>
 </div>
 
