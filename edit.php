@@ -1251,7 +1251,7 @@ if($profile22 == ""){
       </div>
 
 
-<main class="mdl-layout">
+<!-- <main class="mdl-layout"> -->
 
 <?php if ($_GET['is_user']==0) { ?>
 <form class="form-horizontal" method="post" action="" enctype="multipart/form-data" style="">
@@ -1678,7 +1678,7 @@ VIEW</a>
 <!-- Buttons SAve and Cancel -->
 <div class="form-group">
   <label class="col-md-4 control-label" for="save_btn"></label>
-  <div class="col-md-8">
+  <div class="col-md-4">
     <button  onclick="return check_file_type_org()" id="edit_btn" name="edit_btn" type="submit" class="btn btn-success" style="width: 10em;">Save</button><span><span></span></span>
     <button onclick="goBack()" class="btn btn-warning cancel" style=""><a style="color:white" href="search.php">Cancel</a></button>
   </div>
