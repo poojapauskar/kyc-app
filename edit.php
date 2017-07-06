@@ -2275,7 +2275,7 @@ function enable_disable(that){
 <div class="form-group row">
   <label for="example-date-input" class="col-2 col-form-label duedate_label">DUE DATE:</label>
   <div class="col-10 due_date">
-    <input class="form-control datepicker pic" id="due_date[]" name="due_date[]" value="<?php echo $arr_search['response'][0]['add_info'][$q]['due_date']; ?>" placeholder="dd/mm/yyyy" style="width:80%;" type="text" > 
+    <input class="form-control datepicker pic" id="due_date[]" name="due_date[]" value="<?php echo $arr_search['response'][0]['add_info'][$q]['due_date']; ?>" placeholder="dd/mm/yyyy" style="width:98%;" type="text" > 
   </div>
 </div>
 
