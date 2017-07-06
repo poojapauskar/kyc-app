@@ -380,7 +380,7 @@ if($_POST['is_user_delete'] != "" && $_POST['pk_delete'] != ""){
       <!-- Two buttons -->
       <div class="mdl-card__actions mdl-card--border">
        <div class="col-sm-2">
-     <button class="mdl-button mdl-js-button mdl-button--raised  assignment-btn" class="mdl-button mdl-js-button mdl-button--raised  assignment-btn" data-toggle="modal" data-target="#myModal"> Assignment</button>
+     <button class="mdl-button mdl-js-button mdl-button--raised  assignment-btn" data-toggle="modal" data-target="#myModal"> Assignment</button>
     </div>
 
     <div class="col-sm-2" >
@@ -618,7 +618,6 @@ jQuery_1_12_0(function() {
   }
 </style>
 
-
 <?php
 
 session_start();
@@ -662,6 +661,9 @@ $file= "autocomplete-Files/".$_SESSION['account_token'].".js";
      <script type="text/javascript" src="autocomplete-Files/jquery.autocomplete.js"></script>
     <script type="text/javascript" src="autocomplete-Files/Logic_Search.js"></script>
         <script type="text/javascript" src="<?php echo $file; ?>"></script>  
+</body>
+
+</html>
 
 </body>
 
