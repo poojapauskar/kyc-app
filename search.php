@@ -1,5 +1,4 @@
 <?php
-ob_start("ob_gzhandler");  //Enables Gzip compression 
 
 session_start();
 if($_SESSION['login_kyc_app'] == 1){
@@ -41,6 +40,43 @@ if($_SESSION['login_kyc_app'] == 1){
   <script src="https://storage.googleapis.com/code.getmdl.io/1.0.6/material.min.js"></script>
     
     <style type="text/css">
+    .demo-card-2.mdl-card{
+/*margin-top:150px ;*/
+    margin:auto;
+    width: 840px;
+  max-height: 190px;
+    min-height: 180px !important;
+}
+.demo-card-2 > .mdl-card__title {
+  color: #fff;
+  height: 58px;
+  font-size: medium;
+background-color: rgb(8, 66, 106);
+}
+
+.demo-card-wide.mdl-card {
+      top: 131px;
+    margin:auto;
+    width: 840px;
+}
+
+.demo-card-wide > .mdl-card__title {
+  color: #fff;
+  height: 58px;
+  font-size: medium;
+background-color: rgb(8, 66, 106);
+}
+.demo-card-wide > .mdl-card__menu {
+  color: #fff;
+}
+
+.mdl-textfield__input{
+  width:430px;
+}
+
+a{
+  text-decoration: none !important;
+}
       .form-control{
       border: 2px solid #74b25e;
     border-radius: 7px;
@@ -105,7 +141,7 @@ var Url="check_session_valid.php";
 </script>
   </head>
 
-<body style="background-color:#E8E8E8;">
+<body style="background-color:#E8E8E8;overflow-y:hidden;">
 <div id="load_screen"><div id="loading"></div></div>
 
 <!-- <div style="position:absolute;z-index:5000;margin-left:34.5%">
@@ -240,8 +276,10 @@ if($_POST['is_user_delete'] != "" && $_POST['pk_delete'] != ""){
         </nav>
       </div></div>
 
-<div class="container">
-  <div class="row" > 
+
+
+<!-- <div class="container">
+  <div class="row" > --> 
 
 <script type="text/javascript">
   function fun1(){
@@ -254,10 +292,11 @@ if($_POST['is_user_delete'] != "" && $_POST['pk_delete'] != ""){
 
   <!-- AutoSearch TEXT field -->
   <!-- First Card Below -->
-  <div class="card1" >
-    <div class="card-header"> Database</div> 
-      <div class="card-block">
-
+  <div class="demo-card-wide mdl-card mdl-shadow--2dp">
+      <div class="mdl-card__title">
+        <div class="mdl-card__title-text" style="font-size: medium;">Database</div>
+      </div>
+      <div class="mdl-card__supporting-text">
 
         <div class="col-md-12" style="margin-left:11%;">
         <form id="target1" name="target1" class="form-group" method="post" action="" style="padding-bottom:7%">
@@ -313,8 +352,7 @@ if($_POST['is_user_delete'] != "" && $_POST['pk_delete'] != ""){
         </div>
 </div>
   </div>
-    </div>
-      </div>
+    
 
     <!-- AutoSearch Function ends above -->
        <!--  <div id="tagname" style="height:100px; width:300px; border:1px solid #000;"></div>
@@ -323,17 +361,25 @@ if($_POST['is_user_delete'] != "" && $_POST['pk_delete'] != ""){
 
 
 <!-- New row for button below -->
-<div class="container">
-  <div class="row" > 
+<!-- <div class="container">
+  <div class="row" >  -->
         <!-- Second Card below -->
 
-   <div class="card2">
+   <!--  <div class="card2">
   <div class="card-header2">Assignment Status</div>
 <div class="card-block2">
   
-  <div class="col-sm-2">
-<!-- Modal for Assignment--> 
-     <button class="mdl-button mdl-js-button mdl-button--raised  assignment-btn"> Assignment</button>
+  <div class="col-sm-2"> -->
+<!-- Modal for Assignment -->
+<div class="demo-card-2 mdl-card mdl-shadow--2dp" style="margin-top:150px!important">
+      <div class="mdl-card__title">
+        <div class="mdl-card__title-text" style="font-size: medium;">Assignment Status</div>
+      </div>
+
+      <!-- Two buttons -->
+      <div class="mdl-card__actions mdl-card--border">
+       <div class="col-sm-2">
+     <button class="mdl-button mdl-js-button mdl-button--raised  assignment-btn" class="mdl-button mdl-js-button mdl-button--raised  assignment-btn" data-toggle="modal" data-target="#myModal"> Assignment</button>
     </div>
 
     <div class="col-sm-2" >
@@ -368,7 +414,6 @@ if($_POST['is_user_delete'] != "" && $_POST['pk_delete'] != ""){
 
 </div>
 
-
         <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> -->
 <!--         <script type="text/javascript" src="autocomplete-Files/styles.css"></script>
  --><!--  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
@@ -385,16 +430,9 @@ if($_POST['is_user_delete'] != "" && $_POST['pk_delete'] != ""){
                     });
                 });
         </script> -->
-  </div>  
+  <!-- </div>  
     </div>
-      </div>
-</body>
-
-</html>
-
-     
-
-
+      </div> -->
 
 <!-- Assignment Modal  -->
 
@@ -579,7 +617,9 @@ jQuery_1_12_0(function() {
   }
 </style>
 
+</body>
 
+</html>
 
 <?php
 
@@ -624,3 +664,4 @@ $file= "autocomplete-Files/".$_SESSION['account_token'].".js";
      <script type="text/javascript" src="autocomplete-Files/jquery.autocomplete.js"></script>
     <script type="text/javascript" src="autocomplete-Files/Logic_Search.js"></script>
         <script type="text/javascript" src="<?php echo $file; ?>"></script>  
+

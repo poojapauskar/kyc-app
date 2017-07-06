@@ -294,7 +294,7 @@ $('#test').click(function() {
 });
 </script>
 
-<table align="center" id="example" class="mdl-data-table" cellspacing="0" style="width:75%;margin-top:4%;text-align: center;">
+<table align="center" id="example" class="mdl-data-table" cellspacing="0" style="width:75%;margin-top:110px;text-align: center;">
         <thead>
             <th>Name</th>
             <th>UID</th>

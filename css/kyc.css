@@ -1,4 +1,4 @@
- 
+
 /*Text box CSS class for all the pages , 70%*/
 
 /*Global css*/
@@ -3365,16 +3365,17 @@ a.searchview.btn.btn-info {
     color: white;
 }
 
-.mdl-button.mdl-js-button.mdl-button--raised.mdl-js-ripple-effect.clear-pendingpage{
+.mdl-button.mdl-js-button.mdl-button--raised.mdl-js-ripple-effect.clear-missingpage {
     margin-left: 28% !important;
-    margin-top: 58px !important;
+    margin-top: 24px !important;
     position: absolute;
     background-color: #449d44;
     color: white;
 }
-.mdl-button.mdl-js-button.mdl-button--raised.mdl-js-ripple-effect.clear-missingpage{
+
+.mdl-button.mdl-js-button.mdl-button--raised.mdl-js-ripple-effect.clear-pendingpage{
     margin-left: 28% !important;
-    margin-top: -35px !important;
+    margin-top: 58px !important;
     position: absolute;
     background-color: #449d44;
     color: white;
@@ -4062,15 +4063,6 @@ a.searchview.btn.btn-info {
 }
 }
 @media screen and (max-width: 1366px){
- 
-/* Enable hardware acceleration to fix laggy transitions */
--webkit-transform: translateZ(0);
--moz-transform: translateZ(0);
--ms-transform: translateZ(0);
--o-transform: translateZ(0);
-transform: translateZ(0);
-
-
  /*Edit page Date and Due Date*/
 .col-2.col-form-label.edit_date{
     margin-left: 28.5%;
@@ -5554,6 +5546,12 @@ margin-left: 26%;
     margin-top: -4%;
 }
 
+.card1 {
+    margin-top: 143px !important;
+    margin-left: -30%;
+    width: 133%;
+    height: 447px;
+}
 
 /*Card 2 height*/
 .mdl-data-table.dataTable.no-footer {
@@ -5600,13 +5598,6 @@ a.btn.btn-info.edit{
     margin-top:0%;
     margin-left:-46%!important;
     width: 150%!important;
-}
-a.btn.btn-info {
-    color: white;
-    background-color: #176fac;
-    margin-top: 0%;
-    margin-left: -41%;
-    width: 159%;
 }
 .card2{
      margin-top: -16%;

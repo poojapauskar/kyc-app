@@ -216,15 +216,19 @@ img.print{
     display: none;
 }
   </style>  
-
-<link rel="stylesheet" href="css/jquery-ui.css"> 
- <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"> 
-
+<!-- Datepicker -->
+ <link rel="stylesheet" href="css/jquery-ui.css"> 
+ <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 <script src="js/jquery-ui.js"></script>
+<!-- <script type="text/javascript">
+var $ = $.noConflict(true);
+</script> -->
+
 <script type="text/javascript">
+var $d = jQuery.noConflict();
 $(function() {
-  $( ".sspicker.picker" ).datepicker({dateFormat : 'mm/dd/yy',
+  $d( ".sspicker.picker" ).datepicker({dateFormat : 'mm/dd/yy',
             changeMonth : true,
             changeYear : true,
             yearRange: '-100y:c+nn',
@@ -258,7 +262,7 @@ $(function() {
 // });
 
 $(function() {
- $( ".datepicker.p" ).datepicker({dateFormat: 'dd/mm/yy',changeMonth: true,
+ $d( ".datepicker.p" ).datepicker({dateFormat: 'dd/mm/yy',changeMonth: true,
     changeYear: true});
  $(".datepicker.p").keyup(function(){
                 if ($(this).val().length == 2){
@@ -270,7 +274,7 @@ $(function() {
 });
 
 $(function() {
- $( ".datepicker.due" ).datepicker({dateFormat: 'dd/mm/yy',changeMonth: true,changeYear: true}).datepicker("setDate", new Date());
+ $d( ".datepicker.due" ).datepicker({dateFormat: 'dd/mm/yy',changeMonth: true,changeYear: true}).datepicker("setDate", new Date());
   $(".datepicker.due").keyup(function(){
                 if ($(this).val().length == 2){
                     $(this).val($(this).val() + "/");
@@ -281,7 +285,7 @@ $(function() {
 });
 
 $(function() {
-  $( ".datepicker.pick" ).datepicker({
+  $d( ".datepicker.pick" ).datepicker({
     changeMonth: true,
     changeYear: true,
     beforeShow: function (input, inst) {
@@ -305,7 +309,7 @@ $(function() {
 
 
 $(function() {
-  $( ".datepicker.pic" ).datepicker({
+  $d( ".datepicker.pic" ).datepicker({
     changeMonth: true,
     changeYear: true,
     beforeShow: function (input, inst) {
@@ -1831,7 +1835,7 @@ function enable_disable(that){
   </div>
   <script type="text/javascript">
   $(function() {
-  $( ".datepicker.picker" ).datepicker({dateFormat : 'mm/dd/yy',
+  $d( ".datepicker.picker" ).datepicker({dateFormat : 'mm/dd/yy',
             changeMonth : true,
             changeYear : true,
             yearRange: '-100y:c+nn',
@@ -3135,12 +3139,12 @@ function goBack() {
         if(x < max_fields){ //max input box allowed
             x++; //text box increment
          $('<div style="margin-left:50%;"><div class="form-group"><label class="control-label type" for="selectbasic" style="">Type of work:</label><div class="col-md-6"><select id="type_of_work[]" name="type_of_work[]" class="form-control type_of_work" style=""><option value="Audit Report">Audit Report</option><option value="ITR filing">ITR filing</option><option value="VAT Filing">VAT Filing</option><option value="Accounting">Accounting</option><option value="Registration">Registration</option><option value="Certification">Certification</option><option value="Others">Others</option></select></div></div><div class="form-group"> <label class="col-md-4 control-label status" for="selectbasic" style="width:70%;">Status:</label><div class="col-md-6"><select id="status1" name="status[]"  class="form-control status-edit"><option value="Pending">Pending</option><option value="Work in process">Work in process</option><option value="Completed">Completed</option></select></div></div><div class="form-group row"><label for="example-date-input" class="col-2 col-form-label date">DATE:</label><div class="col-10 col"><input class="form-control datepicker pickers" id="datee'+ x +'" placeholder="dd/mm/yyyy" name="date[]" style="" type="text" ></div></div><div class="form-group row"><label for="example-date-input" class="col-2 col-form-label duedate">DUE DATE:</label><div class="col-10 col"><input class="form-control datepicker pickers" id="due_date'+ x +'" name="due_date[]" style="" placeholder="dd/mm/yyyy" type="text"></div></div><div class="form-group"><label class="col-md-4 control-label comment" for="textinput" style="">Comment:</label><div class="col-md-4"><input id="comments" name="comment[]" type="text" placeholder="" class="form-control input-md comment" style=""></div></div></center><a href="#" class="remove_field" style=""><img src="images/del24.png" ></a></a></div>').insertBefore(add_button) //add input box\
-          var newInput=$("#datee"+x).datepicker({dateFormat: 'dd/mm/yy',changeMonth : true,
+          var newInput=$d("#datee"+x).datepicker({dateFormat: 'dd/mm/yy',changeMonth : true,
             changeYear : true,});
           newInput.datepicker({dateFormat: 'dd/mm/yy',changeMonth : true,
             changeYear : true,}).datepicker("setDate", new Date());
 
-          var newInput=$("#due_date"+x).datepicker({dateFormat: 'dd/mm/yy',changeMonth : true,
+          var newInput=$d("#due_date"+x).datepicker({dateFormat: 'dd/mm/yy',changeMonth : true,
             changeYear : true,});
           newInput.datepicker({dateFormat: 'dd/mm/yy',changeMonth : true,
             changeYear : true,}).datepicker("setDate", new Date());
