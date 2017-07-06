@@ -1575,7 +1575,6 @@ $arr_uid = json_decode($output_uid,true);
   <div class="col-md-4 col-lg-6 ">
     <button onclick="return validate_org();" id="generate_btn_org" name="generate_btn_org" class="btn btn-success" style="width:10em">Generate</button>
     <button id="singlebutton" style="width: 10em;margin-left: 2%;" name="singlebutton" class="btn btn-primary" onclick="location.href='suggestion.php'"> Discard</button>
-
   </div>
   </div>
   </div>
