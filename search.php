@@ -616,7 +616,6 @@ jQuery_1_12_0(function() {
     width: 8em;
   }
 </style>
-
 <?php
 
 session_start();
