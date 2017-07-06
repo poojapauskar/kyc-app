@@ -1680,7 +1680,7 @@ VIEW</a>
   <label class="col-md-4 control-label" for="save_btn"></label>
   <div class="col-md-8">
     <button  onclick="return check_file_type_org()" id="edit_btn" name="edit_btn" type="submit" class="btn btn-success" style="width: 10em;">Save</button><span><span></span></span>
-    <button onclick="goBack()" class="btn btn-warning cancel" style=""><a style="color:white" href="search.php">Cancel</a></button>
+    <button onclick="goBack()" class="btn btn-warning cancel" style="color: white;">Cancel</button>
   </div>
 </div>
 </fieldset>
@@ -2315,7 +2315,7 @@ function enable_disable(that){
   <div class="col-md-4">
     <button  onclick="return check_file_type_user()" id="edit_btn" name="edit_btn" type="submit" class="btn btn-success successb">Save</button><span><span></span></span>
 
-    <button onclick="goBack()" class="btn btn-warning cancel1" ><a style="color:white" href="search.php" >Cancel</a></button>
+    <button onclick="window.location.back()" class="btn btn-warning cancel1" style="color: white;">Cancel</button>
     <!-- style="width: 10em;margin-top: 0%;padding:0.5em;margin-left:2%;" -->
   </div>
 </div>
@@ -3110,6 +3110,7 @@ function print_image() {
 
 <script>
 function goBack() {
+    preventDefault();
     window.history.back();
 }
 </script>
