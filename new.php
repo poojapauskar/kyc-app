@@ -1967,7 +1967,7 @@ function enable_disable(that){
  <div class="row">
   <div class="col-md-4 col-lg-6">
     <button onclick="return validate();" style="width:10em" id="generate_btn" name="generate_btn" class="btn btn-success">Generate</button>
-
+    
     <button id="singlebutton" name="singlebutton" class="btn btn-primary" style="width: 10em;margin-left: 2%;" onclick="location.href='suggestion.php'">Discard</a></button>
   </div>
   </div>
