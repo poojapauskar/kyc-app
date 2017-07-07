@@ -301,7 +301,7 @@ if($_POST['is_user_delete'] != "" && $_POST['pk_delete'] != ""){
         <div class="col-md-12" style="margin-left:11%;">
         <form id="target1" name="target1" class="form-group" method="post" action="" style="padding-bottom:7%">
 
-        <input id="search" name="search" type="text" placeholder="Search firms or individuals" class="form-control input-md" style="width:71%;margin-top:4%;height:39px;border-color: #757575;" required onchange="this.form.submit()" autofocus>
+        <input id="search" name="search" type="text" placeholder="Search firms or individuals" class="form-control input-md" style="width:71%;margin-top:4%;height:39px;border-color: #757575;" required onchange="this.form.btnSubmit()" autofocus>
       <input id="is_user_field" name="is_user_field" type="hidden"></input>
       <input id="id_field" name="id_field" type="hidden"></input>
         <button onclick="return fun1()" style="visibility:hidden;display:none;margin-left:58%;margin-top:-3.5%;width:200px;height:37px" class="mdl-button mdl-js-button mdl-button--raised" type="submit" value="Search" id="submit" name="submit">
@@ -368,7 +368,8 @@ if($_POST['is_user_delete'] != "" && $_POST['pk_delete'] != ""){
    <!--  <div class="card2">
   <div class="card-header2">Assignment Status</div>
 <div class="card-block2">
-  
+  <div class="col-sm-2">
+
   <div class="col-sm-2"> -->
 <!-- Modal for Assignment -->
 <div class="demo-card-2 mdl-card mdl-shadow--2dp" style="margin-top:150px!important">
@@ -379,7 +380,7 @@ if($_POST['is_user_delete'] != "" && $_POST['pk_delete'] != ""){
       <!-- Two buttons -->
       <div class="mdl-card__actions mdl-card--border">
        <div class="col-sm-2">
-     <button class="mdl-button mdl-js-button mdl-button--raised  assignment-btn" class="mdl-button mdl-js-button mdl-button--raised  assignment-btn" data-toggle="modal" data-target="#myModal"> Assignment</button>
+     <button class="mdl-button mdl-js-button mdl-button--raised  assignment-btn" data-toggle="modal" data-target="#myModal"> Assignment</button>
     </div>
 
     <div class="col-sm-2" >
@@ -617,10 +618,6 @@ jQuery_1_12_0(function() {
   }
 </style>
 
-</body>
-
-</html>
-
 <?php
 
 session_start();
@@ -664,4 +661,11 @@ $file= "autocomplete-Files/".$_SESSION['account_token'].".js";
      <script type="text/javascript" src="autocomplete-Files/jquery.autocomplete.js"></script>
     <script type="text/javascript" src="autocomplete-Files/Logic_Search.js"></script>
         <script type="text/javascript" src="<?php echo $file; ?>"></script>  
+</body>
+
+</html>
+
+</body>
+
+</html>
 
