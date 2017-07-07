@@ -6147,12 +6147,13 @@ margin-top:-1%;
     margin-top: -0.5%;
 }
 
-.btn.btn-warning.cancel{
+.btn.btn-warning.cancel {
     width: 10em;
     margin-top: 0%;
     padding: 0.5em;
-    margin-left: -5%;
+    margin-left: -11%;
 }
+
 .btn.btn-warning.cancel1{
     width: 10em;
     margin-top:-18%;
@@ -6193,7 +6194,7 @@ margin-top:-1%;
 
 #title{
     margin-top: 12%;
-    margin-left: 76%;
+    margin-left: 68%;
 }
 
 .col-md-2.search_org{
@@ -6264,6 +6265,13 @@ margin-top:-1%;
     color: white;
 }
 
+#title {
+    margin-top: 12%;
+    margin-left: 69% !important;
+}
+#title3 {
+margin-top: 102px !important;
+}
 
 }
 

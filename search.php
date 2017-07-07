@@ -8,7 +8,7 @@ if($_SESSION['login_kyc_app'] == 1){
 }
 
 ?>
-
+<!DOCTYPE html>
 <html>
   <head>
     <!---booottstrap-->
@@ -661,10 +661,6 @@ $file= "autocomplete-Files/".$_SESSION['account_token'].".js";
      <script type="text/javascript" src="autocomplete-Files/jquery.autocomplete.js"></script>
     <script type="text/javascript" src="autocomplete-Files/Logic_Search.js"></script>
         <script type="text/javascript" src="<?php echo $file; ?>"></script>  
-</body>
-
-</html>
-
 </body>
 
 </html>
