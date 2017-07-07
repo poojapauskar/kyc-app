@@ -1,1 +1,1 @@
-var partnames={"425":"testqwertys","418":"redchilles"}
+var partnames={"418":"redchilles","427":"testuserwaer"}
