@@ -543,7 +543,8 @@ VIEW</a>
   <label class="col-md-4 control-label" for="save_btn"></label>
   <div class="col-md-8">
     <button id="save_btn" name="save_btn" type="submit" class="btn btn-success" style="width:10em;margin-left:1%;">Edit</button><span><span></span></span>
-    <button onclick="javascript:history.back()" style="width: 10em;margin-left:2%;" class="btn btn-warning">Back</button>
+    <input type="button" onclick="return goBack();" class="btn btn-warning" value="Back" style="width: 10em;margin-left:2%" />
+ <!--    <button onclick="javascript:history.back()" style="width: 10em;margin-left:2%;" class="btn btn-warning">Back</button> -->
 <!--   <a style="color:white" href="javascript:history.back()">Go Back</a>
  <a style="color:white" href="search.php">Back</a>
  -->  </div>
@@ -938,7 +939,8 @@ VIEW</a>
   <label class="col-md-4 control-label" for="singlebutton"></label>
   <div class="col-md-4">
     <button id="" name="" class="btn btn-success editbutton-searchresult">Edit</button><span><span></span></span>
-    <button onclick="javascript:history.back()" class="btn btn-warning backbutton-searchresult">Back </button>
+ <input type="button" onclick="return goBack();" class="btn btn-warning backbutton-searchresult" value="Back"/>
+    <!-- <button onclick="javascript:history.back()" class="btn btn-warning backbutton-searchresult">Back</button> -->
   </div>
 </div>
 
@@ -1652,11 +1654,13 @@ $(document).on('hidden.bs.modal', function (e) {
 </div>
 </main>
 
-
-
 <script type="text/javascript">
 function print_image() {
     window.print();
+}
+// Back Button function call
+function goBack() {
+    window.history.back();
 }
 </script>
 </body>

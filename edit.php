@@ -3108,7 +3108,7 @@ function print_image() {
 });
     </script>
 
-<script>
+<script type="text/javascript" >
 function goBack() {
     window.history.back();
 }
