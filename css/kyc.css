@@ -470,16 +470,16 @@ margin-top:-1%;
     color: white;
 }
 
-.mdl-button.mdl-js-button.mdl-button--raised.mdl-js-ripple-effect.clear-pendingpage{
-    margin-left: 15% !important;
+.mdl-button.mdl-js-button.mdl-button--raised.mdl-js-ripple-effect.clear-pendingpage {
+    margin-left: 18% !important;
     margin-top: 58px !important;
     position: absolute;
     background-color: #449d44;
     color: white;
 }
-.mdl-button.mdl-js-button.mdl-button--raised.mdl-js-ripple-effect.clear-missingpage{
-    margin-left: 15% !important;
-    margin-top: -35px !important;
+.mdl-button.mdl-js-button.mdl-button--raised.mdl-js-ripple-effect.clear-missingpage {
+    margin-left: 18% !important;
+    margin-top: 22px !important;
     position: absolute;
     background-color: #449d44;
     color: white;
@@ -1205,9 +1205,9 @@ a.searchview.btn.btn-info {
     background-color: #449d44;
     color: white;
 }
-.mdl-button.mdl-js-button.mdl-button--raised.mdl-js-ripple-effect.clear-missingpage{
+.mdl-button.mdl-js-button.mdl-button--raised.mdl-js-ripple-effect.clear-missingpage {
     margin-left: 23% !important;
-    margin-top: -35px !important;
+    margin-top: 20px !important;
     position: absolute;
     background-color: #449d44;
     color: white;
@@ -4092,9 +4092,9 @@ a.searchview.btn.btn-info {
     background-color: #449d44;
     color: white;
 }
-.mdl-button.mdl-js-button.mdl-button--raised.mdl-js-ripple-effect.clear-missingpage{
+.mdl-button.mdl-js-button.mdl-button--raised.mdl-js-ripple-effect.clear-missingpage {
     margin-left: 28% !important;
-    margin-top: -35px !important;
+    margin-top: 10px !important;
     position: absolute;
     background-color: #449d44;
     color: white;
@@ -5100,7 +5100,7 @@ width: 155%;
 #title1 {
     float: right;
     right: 206px;
-    top: 10%;
+    top: 74px;
     position: absolute;
 }
 
@@ -5477,16 +5477,16 @@ margin-left: 26%;
     color: white;
 }
 
-.mdl-button.mdl-js-button.mdl-button--raised.mdl-js-ripple-effect.clear-pendingpage{
+.mdl-button.mdl-js-button.mdl-button--raised.mdl-js-ripple-effect.clear-pendingpage {
     margin-left: 30% !important;
-    margin-top: 58px !important;
+    margin-top: 35px !important;
     position: absolute;
     background-color: #449d44;
     color: white;
 }
-.mdl-button.mdl-js-button.mdl-button--raised.mdl-js-ripple-effect.clear-missingpage{
+.mdl-button.mdl-js-button.mdl-button--raised.mdl-js-ripple-effect.clear-missingpage {
     margin-left: 30% !important;
-    margin-top: -35px !important;
+    margin-top: 18px !important;
     position: absolute;
     background-color: #449d44;
     color: white;
