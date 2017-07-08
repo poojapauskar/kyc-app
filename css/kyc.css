@@ -2626,6 +2626,12 @@ a.searchview.btn.btn-info {
     position: absolute;
 }
 
+.remove_field {
+    margin-left: 42.7%;
+    margin-top: -37px;
+    position: absolute;
+}
+
 .col-2.col-form-label.duedate_label {
     margin-left: 27.8%;
     position: absolute;
@@ -2633,7 +2639,7 @@ a.searchview.btn.btn-info {
 
 
 .mdl-button.mdl-js-button.mdl-button--raised.mdl-js-ripple-effect.clear-allpage{
-    margin-left: 28% !important;
+    margin-left: 25% !important;
     margin-top: 45px !important;
     position: absolute;
     background-color: #449d44;
@@ -2649,7 +2655,7 @@ a.searchview.btn.btn-info {
 }
 .mdl-button.mdl-js-button.mdl-button--raised.mdl-js-ripple-effect.clear-missingpage{
     margin-left: 26% !important;
-    margin-top: -35px !important;
+    margin-top: 24px !important;
     position: absolute;
     background-color: #449d44;
     color: white;
@@ -2886,8 +2892,8 @@ a.searchview.btn.btn-info {
 .btn.btn-warning.delete
 {
     width: 10em;
-    margin-top:-6.7%;
-    margin-left:53%
+    margin-top:-5.7%;
+    margin-left:35%
 }
 
     #logo
@@ -2899,8 +2905,8 @@ a.searchview.btn.btn-info {
 
 #title
 {
-    margin-left:70%;
-    margin-top:9%;
+    margin-left:71%;
+    margin-top:115px;
 }
 
 #logout {
@@ -4460,7 +4466,7 @@ a.searchview.btn.btn-info {
     z-index: 2;
     margin-left: 70%;
     cursor: pointer;
-    margin-top: 10.6% !important;
+    margin-top: 111px !important;
     color: #fff;
     background-color: #176fac;
 }
