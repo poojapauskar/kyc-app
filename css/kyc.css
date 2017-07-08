@@ -1298,7 +1298,7 @@ a.searchview.btn.btn-info {
     z-index: 2;
     margin-left: 77%;
     cursor: pointer;
-    margin-top: 8.6%;
+    margin-top: 115px !important;
     color: #fff;
     background-color: #176fac;
 }
@@ -1699,8 +1699,8 @@ div.fileUpload.btn.btn-info{
 }
 
 .form-control.status-edit {
-    width: 166%;
-    margin-left: 4%;
+    width: 165%;
+    margin-left: 0%;
 }
 
 .form-group.designation{
@@ -1923,7 +1923,7 @@ a.searchview.btn.btn-info {
 }
 .mdl-button.mdl-js-button.mdl-button--raised.mdl-js-ripple-effect.clear-missingpage{
     margin-left: 24% !important;
-    margin-top: -35px !important;
+    margin-top: 19px !important;
     position: absolute;
     background-color: #449d44;
     color: white;
@@ -2159,8 +2159,8 @@ a.searchview.btn.btn-info {
 .btn.btn-warning.delete
 {
     width: 10em;
-    margin-top:-6.7%;
-    margin-left:53%
+    margin-top:-5.7%;
+    margin-left:31%
 }
 
     #logo
@@ -2720,7 +2720,7 @@ a.searchview.btn.btn-info {
 
 
 .col-10.due_date {
-    width: 25.5%;
+    width: 25.1%;
     margin-left: 34.3%;
     margin-top: -0.2%;
 }
@@ -3281,7 +3281,7 @@ a.searchview.btn.btn-info {
 }
 
 .datepicker.p {
-    width: 25% !important;
+    width: 25.3% !important;
     margin-top: 0% !important;
     margin-left: 34.2%;
 }
