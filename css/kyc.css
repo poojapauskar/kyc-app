@@ -4835,7 +4835,7 @@ a.searchview.btn.btn-info {
 }
 
 .col-10.due_date {
-    width: 25.2%;
+    width: 24.8%;
     margin-left: 34.5%;
     margin-top: 0%;
 }
@@ -5098,9 +5098,9 @@ width: 155%;
 }
 
 .partner_designation.col2{
-    margin-left: 467%;
+    margin-left: 451%;
     margin-top: -33px;
-    width: 145%;
+    width: 106%;
 }
 
 #title1 {
@@ -5290,7 +5290,7 @@ div.fileUpload.btn.btn-info{
 .partner_name{
     margin-top:-20%;
     margin-left:290%;
-    width: 322%;
+    width: 259%;
 }
 .btn.btn-info.new_entry_btn.entry{
     margin-left:1204%;
@@ -5476,23 +5476,23 @@ margin-left: 26%;
 
 
 .mdl-button.mdl-js-button.mdl-button--raised.mdl-js-ripple-effect.clear-allpage{
-    margin-left: 34% !important;
-    margin-top: 30px !important;
+    margin-left: 33% !important;
+    margin-top: 43px !important;
     position: absolute;
     background-color: #449d44;
     color: white;
 }
 
 .mdl-button.mdl-js-button.mdl-button--raised.mdl-js-ripple-effect.clear-pendingpage {
-    margin-left: 30% !important;
-    margin-top: 35px !important;
+    margin-left: 31% !important;
+    margin-top: 57px !important;
     position: absolute;
     background-color: #449d44;
     color: white;
 }
 .mdl-button.mdl-js-button.mdl-button--raised.mdl-js-ripple-effect.clear-missingpage {
-    margin-left: 30% !important;
-    margin-top: 18px !important;
+    margin-left: 31% !important;
+    margin-top: 27px !important;
     position: absolute;
     background-color: #449d44;
     color: white;
@@ -5516,7 +5516,7 @@ margin-left: 26%;
 @-moz-document url-prefix(){
 
 .mdl-button.mdl-js-button.mdl-button--raised.mdl-js-ripple-effect.clear-allpage{
-    margin-left: 31% !important;
+    margin-left: 30% !important;
     margin-top: 46px !important;
     position: absolute;
     background-color: #449d44;
@@ -5531,7 +5531,7 @@ margin-left: 26%;
     color: white;
 }
 .mdl-button.mdl-js-button.mdl-button--raised.mdl-js-ripple-effect.clear-missingpage {
-    margin-left: 31% !important;
+    margin-left: 32 !important;
     margin-top: 28px !important;
     position: absolute;
     background-color: #449d44;
@@ -6142,12 +6142,12 @@ margin-top:-1%;
 }
 /*date and due-date*/
 .col-10 {
-    width: 31%;
+    width: 30%;
     margin-left: 33.9%;
     margin-top: -0.5%;
 }
 .col-10.due_date {
-    width: 25.2%;
+    width: 24.2%;
     margin-left: 34.8%;
     margin-top: -0.5%;
 }
@@ -6216,14 +6216,14 @@ margin-top:-1%;
 }
 
 .mdl-button.mdl-js-button.mdl-button--raised.mdl-js-ripple-effect.clear-pendingpage{
-    margin-left: 30% !important;
+    margin-left: 31% !important;
     margin-top: 44px !important;
     position: absolute;
     background-color: #449d44;
     color: white;
 }
 .mdl-button.mdl-js-button.mdl-button--raised.mdl-js-ripple-effect.clear-missingpage{
-    margin-left: 30% !important;
+    margin-left: 31% !important;
     margin-top: 44px !important;
     position: absolute;
     background-color: #449d44;
@@ -6248,7 +6248,7 @@ margin-top:-1%;
 @-moz-document url-prefix(){
 
 .mdl-button.mdl-js-button.mdl-button--raised.mdl-js-ripple-effect.clear-allpage{
-    margin-left: 32% !important;
+    margin-left: 30% !important;
     margin-top: 30px !important;
     position: absolute;
     background-color: #449d44;
@@ -6256,14 +6256,14 @@ margin-top:-1%;
 }
 
 .mdl-button.mdl-js-button.mdl-button--raised.mdl-js-ripple-effect.clear-pendingpage{
-    margin-left: 32% !important;
+    margin-left: 33% !important;
     margin-top: 44px !important;
     position: absolute;
     background-color: #449d44;
     color: white;
 }
 .mdl-button.mdl-js-button.mdl-button--raised.mdl-js-ripple-effect.clear-missingpage{
-    margin-left: 32% !important;
+    margin-left: 33% !important;
     margin-top: 44px !important;
     position: absolute;
     background-color: #449d44;
