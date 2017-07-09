@@ -2058,7 +2058,7 @@ $('#myModal').on('shown.bs.modal', function () {
         }
     });
 
-    $(wrapper).on("click",".remove_field", function(e){ //user click on remove text
+    $(wrapper).on("click",".remove_field_partner", function(e){ //user click on remove text
         e.preventDefault(); $(this).parent('div').remove(); x--;
     })
 
