@@ -452,6 +452,12 @@ margin-top:-1%;
     position: absolute;
 }
 
+.form-control.input-md.Specify
+{
+    width:83%;
+    margin-left: -125%
+}
+
      /*Edit page Date and Due Date*/
 .col-2.col-form-label.edit_date {
     margin-left: 30.8%;
@@ -1184,6 +1190,13 @@ a.searchview.btn.btn-info {
     margin-left: 30.8%;
     position: absolute;
 }
+
+.form-control.input-md.Specify
+{
+    width:83%;
+    margin-left: -125%
+}
+
 .col-2.col-form-label.duedate_label {
     margin-left: 29.1%;
     position: absolute;
@@ -1917,6 +1930,13 @@ a.searchview.btn.btn-info {
     margin-top: -0.2%;
 }
 
+.form-control.input-md.Specify
+{
+    width:83%;
+    margin-left: -125%
+}
+
+
 .remove_field1 {
     margin-left: 305.7% !important;
     margin-top: -36px;
@@ -2643,6 +2663,13 @@ a.searchview.btn.btn-info {
     margin-left: 30.1%;
     position: absolute;
 }
+
+.form-control.input-md.Specify
+{
+    width:83%;
+    margin-left: -125%
+}
+
 
 .remove_field {
     margin-left: 42.7%;
@@ -3380,6 +3407,13 @@ a.searchview.btn.btn-info {
     position: absolute;
 }
 
+.form-control.input-md.Specify
+{
+    width:83%;
+    margin-left: -125%
+}
+
+
 .remove_field1 {
     margin-left: 305.7% !important;
     margin-top: -36px;
@@ -4105,6 +4139,13 @@ a.searchview.btn.btn-info {
 
 }
 
+.form-control.input-md.Specify
+{
+    width:83%;
+    margin-left: -125%
+}
+
+
 .remove_field1 {
     margin-left: 305.7% !important;
     margin-top: -36px;
@@ -4392,7 +4433,7 @@ a.searchview.btn.btn-info {
 {
     width: 10em;
     margin-top:-6.7%;
-    margin-left:53%
+    margin-left:45%
 }
 
     #logo
@@ -4858,6 +4899,13 @@ a.searchview.btn.btn-info {
 
 }
 
+.form-control.input-md.Specify
+{
+    width:83%;
+    margin-left: -125%
+}
+
+
 .remove_field1 {
     margin-left: 305.7% !important;
     margin-top: -36px;
@@ -4982,7 +5030,7 @@ a.btn.btn-info.edit_modal {
     background-color:#176fac;
     margin-top:0%;
     margin-left:-37%;
-    width: 65%;
+    width: 48%;
     height: 2758%;
 }
 .form-control.status-edit {
@@ -5136,13 +5184,13 @@ a.searchview.btn.btn-info {
 .partner_designation{
 margin-left:290%;
 margin-top:-20%;
-width: 155%;
+width: 149%;
 }
 
 .partner_designation.col2{
-    margin-left: 463%;
+    margin-left: 444%;
     margin-top: -33px;
-    width: 151%;
+    width: 102%;
 }
 
 #title1 {
@@ -5332,10 +5380,10 @@ div.fileUpload.btn.btn-info{
 .partner_name{
     margin-top:-20%;
     margin-left:290%;
-    width: 325%;
+    width: 258%;
 }
 .btn.btn-info.new_entry_btn.entry{
-    margin-left:1204%;
+    margin-left:1117%;
     position:absolute;
     margin-top: -34px;
 
@@ -5602,6 +5650,12 @@ margin-left: 26%;
 .container.contain-align{
     margin-left: -5% !important;
     margin-top: -4%;
+}
+
+.form-control.input-md.Specify
+{
+    width:83%;
+    margin-left: -125%
 }
 
 .card1 {
