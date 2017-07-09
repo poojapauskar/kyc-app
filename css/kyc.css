@@ -5098,9 +5098,9 @@ width: 155%;
 }
 
 .partner_designation.col2{
-    margin-left: 451%;
+    margin-left: 463%;
     margin-top: -33px;
-    width: 106%;
+    width: 151%;
 }
 
 #title1 {
@@ -5290,7 +5290,7 @@ div.fileUpload.btn.btn-info{
 .partner_name{
     margin-top:-20%;
     margin-left:290%;
-    width: 259%;
+    width: 325%;
 }
 .btn.btn-info.new_entry_btn.entry{
     margin-left:1204%;
@@ -5431,6 +5431,17 @@ margin-left: 26%;
     border-color: #176fac;
 }
 
+.remove_field {
+    margin-left: 42.7%;
+    margin-top: -37px;
+    position: absolute;
+}
+.remove_field_partner{
+    margin-left: 349.7%;
+    margin-top: -37px;
+    position: absolute;
+}
+
 .btn.btn-success.editbutton-searchresult{/*1280 Back Button in Search_result page*/
     width: 64%;
     margin-top:-1%;
@@ -5531,7 +5542,7 @@ margin-left: 26%;
     color: white;
 }
 .mdl-button.mdl-js-button.mdl-button--raised.mdl-js-ripple-effect.clear-missingpage {
-    margin-left: 32 !important;
+    margin-left: 32% !important;
     margin-top: 28px !important;
     position: absolute;
     background-color: #449d44;
