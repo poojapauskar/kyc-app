@@ -445,6 +445,13 @@ margin-top:-1%;
 
 @media screen and (max-width:2560px){
 
+
+.remove_field1 {
+    margin-left: 305.7% !important;
+    margin-top: -36px;
+    position: absolute;
+}
+
      /*Edit page Date and Due Date*/
 .col-2.col-form-label.edit_date {
     margin-left: 30.8%;
@@ -1181,6 +1188,11 @@ a.searchview.btn.btn-info {
     margin-left: 29.1%;
     position: absolute;
 }
+.remove_field1 {
+    margin-left: 305.7% !important;
+    margin-top: -36px;
+    position: absolute;
+}
 
 .col-10.due_date {
     width: 25.5%;
@@ -1903,6 +1915,12 @@ a.searchview.btn.btn-info {
     width: 25.5%;
     margin-left: 34.3%;
     margin-top: -0.2%;
+}
+
+.remove_field1 {
+    margin-left: 305.7% !important;
+    margin-top: -36px;
+    position: absolute;
 }
 
 
@@ -2632,6 +2650,12 @@ a.searchview.btn.btn-info {
     position: absolute;
 }
 
+.remove_field1 {
+    margin-left: 305.7% !important;
+    margin-top: -36px;
+    position: absolute;
+}
+
 .col-2.col-form-label.duedate_label {
     margin-left: 27.8%;
     position: absolute;
@@ -3356,6 +3380,12 @@ a.searchview.btn.btn-info {
     position: absolute;
 }
 
+.remove_field1 {
+    margin-left: 305.7% !important;
+    margin-top: -36px;
+    position: absolute;
+}
+
 .col-2.col-form-label.duedate_label {
     margin-left: 27.8%;
     position: absolute;
@@ -4073,6 +4103,12 @@ a.searchview.btn.btn-info {
     margin-left: 28.5%;
     position: absolute;
 
+}
+
+.remove_field1 {
+    margin-left: 305.7% !important;
+    margin-top: -36px;
+    position: absolute;
 }
 
 
@@ -4820,6 +4856,12 @@ a.searchview.btn.btn-info {
     margin-left: 28.5%;
     position: absolute;
 
+}
+
+.remove_field1 {
+    margin-left: 305.7% !important;
+    margin-top: -36px;
+    position: absolute;
 }
 
 
