@@ -579,7 +579,7 @@ $arr_uid_popup = json_decode($output_uid_popup,true);
   </div>
 </div>
 
-<!-- Text input-->
+<!--Text input-->
 <div class="form-group">
   <label class="col-md-4 control-label" for="textname">Email:</label>  
   <div class="col-md-4">
