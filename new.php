@@ -1930,7 +1930,7 @@ function enable_disable(that){
 
 <!--date __Individual page___-->
 <div class="form-group">
-  <label for="example-date-input" class="col-md-1 col-label date-label-individual" style="margin-left:25%">DUE DATE:</label>
+  <label for="example-date-input" class="col-md-1 col-label date-label-individual" style="">DUE DATE:</label>
   <div class="col-md-4">
     <input class="form-control datepicker pick due-date-individual" id="due_date[]" style="width:80%;" name="due_date[]" placeholder="DD/MM/YYYY" value="<?php echo $_POST['due_date'] ?>" type="text">
   </div>
