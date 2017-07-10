@@ -592,7 +592,7 @@ $arr_uid_popup = json_decode($output_uid_popup,true);
 <div class="form-group">
   <label class="col-md-4 control-label" for="textname">Phone No:</label>  
   <div class="col-md-4">
-  <input id="mobile" name="mobile" type="text" placeholder="Enter Phone No" class="form-control input-md" required style="width:100%;" maxlength="12" />
+  <input id="mobile" name="mobile" type="text" placeholder="Enter Phone No" class="form-control input-md" minlength="12" maxlength="12" required style="width:100%;"/>
     
   </div>
 </div>
@@ -601,7 +601,7 @@ $arr_uid_popup = json_decode($output_uid_popup,true);
 <div class="form-group">
   <label class="col-md-4 control-label" for="textinput">PAN:</label>  
   <div class="col-md-4">
-  <input id="pan" name="pan" value="<?php echo $_POST['pan'] ?>" type="text" placeholder="" class="form-control input-md" required>
+  <input id="pan" name="pan" pattern="-?[a-zA-Z]{5}[0-9]{4}[a-zA-Z]{1}?" maxlength="10" minlength="10" title="Must be of the form ARLPQ1234H" value="<?php echo $_POST['pan'] ?>" type="text" placeholder="" class="form-control input-md" required>
     
   </div>
 </div>
