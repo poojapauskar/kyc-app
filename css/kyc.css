@@ -2812,14 +2812,14 @@ a.searchview.btn.btn-info {
 }
 
 .mdl-button.mdl-js-button.mdl-button--raised.mdl-js-ripple-effect.clear-pendingpage{
-    margin-left: 24% !important;
+    margin-left: 25% !important;
     margin-top: 58px !important;
     position: absolute;
     background-color: #449d44;
     color: white;
 }
 .mdl-button.mdl-js-button.mdl-button--raised.mdl-js-ripple-effect.clear-missingpage {
-    margin-left: 24% !important;
+    margin-left: 25% !important;
     margin-top: 26px !important;
     position: absolute;
     background-color: #449d44;
@@ -3863,7 +3863,7 @@ a.searchview.btn.btn-info {
     z-index: 2;
     margin-left: 70%;
     cursor: pointer;
-    margin-top: 10.6% !important;
+    margin-top: 111px !important;
     color: #fff;
     background-color: #176fac;
 }
